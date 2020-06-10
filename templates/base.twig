@@ -1,45 +1,77 @@
 {% block html_head_container %}
-
-{% include 'html-header.twig' %}
-	{% block head %}
-	{% endblock %}
-	</head>
+    {% include 'html-header.twig' %}
+    {% block head %}
+    {% endblock %}
+    </head>
 {% endblock %}
 
-	<body class="{{body_class}}" data-template="base.twig">
-		<a class="skip-link screen-reader-text" href="#content">{{ _e( 'Skip to content') }}</a>
-		<header class="header" >
-			{% block header %}
-				<div class="wrapper">
-					<h1 class="hdr-logo" role="banner">
-						<a class="hdr-logo-link" href="{{site.url}}" rel="home">{{site.name}}</a>
-					</h1>
-					<nav id="nav-main" class="nav-main" role="navigation">
-						{% include "menu.twig" with {'items': menu.get_items} %}
-					</nav><!-- #nav -->
-				</div>
-			{% endblock %}
-		</header>
+<body class="{{ body_class }}" data-template="base.twig">
 
-		<section id="content" role="main" class="content-wrapper">
-			{% if title %}<h1>{{title}}</h1>{% endif %}
-			<div class="wrapper {{sidebar_class}}">
-				{% block content %}
-					Sorry, no content
-				{% endblock %}
-			</div>
-			{% if sidebar %}
-				<aside class="layout-sidebar">
-					{{sidebar}}
-				</aside>
-			{% endif %}
-		</section>
+<div class="site-container">
 
-		{% block footer %}
-			<footer id="footer">
-				{% include 'footer.twig' %}
-			</footer>
-			{{ function('wp_footer') }}
-		{% endblock %}
-	</body>
+
+    <ul id="skiplinks">
+        <li><a href="#maincontent">{{ __( 'Direct naar belangrijkste content', 'gctheme' ) }}</a></li>
+        {% if menu %}
+            <li><a href="#mainnav">{{ __( 'Direct naar hoofdnavigatie', 'gctheme' ) }}</a></li>
+        {% endif %}
+    </ul>
+
+
+    <header class="page-header">
+
+        <div class="l-header-top">
+
+            <div class="branding">
+                <a href="{{ site.url }}" class="branding__home-link{{ site.description ? ' branding--with-slogan' }}">
+                    <img src="{{ logo ? logo : 'logo.svg' }}" alt="{{ site_name }} Logo" class="branding__logo">
+                    <span class="branding__name">{{ site_name ? site_name : 'Gebruiker Centraal' }}</span>
+                    {% if site.description %}
+                        <span class="branding__slogan">{{ site.description }} </span>
+                    {% endif %}
+                </a>
+            </div>
+
+            <div class="widget-area header-widget-area">
+                <form tabindex="-1" id="zoeken" class="search-form" method="get" action="{{ site.url }}"
+                      role="search"><label class="search-form-label screen-reader-text" for="searchform-1">Voer een
+                        trefwoord in om te zoeken op de site</label><input class="search-form-input" type="search"
+                                                                           name="s"
+                                                                           id="searchform-1"
+                                                                           placeholder="Zoeken..."><input
+                            class="search-form-submit" type="submit" value="Zoek">
+                    <meta content="{{ site.url }}/?s={s}">
+                </form>
+            </div>
+
+        </div>
+
+        {% include "menu.twig" with {'items': menu.get_items} %}
+
+    </header>
+
+
+    <section id="content" role="main" class="content-wrapper">
+        {% if title %}<h1>{{ title }}</h1>{% endif %}
+        <div class="wrapper {{ sidebar_class }}">
+            {% block content %}
+                Sorry, no content
+            {% endblock %}
+        </div>
+        {% if sidebar %}
+            <aside class="layout-sidebar">
+                {{ sidebar }}
+            </aside>
+        {% endif %}
+    </section>
+
+    {% block footer %}
+        <footer id="footer">
+            {% include 'footer.twig' %}
+        </footer>
+        {{ function('wp_footer') }}
+    {% endblock %}
+</div>
+
+</body>
 </html>
