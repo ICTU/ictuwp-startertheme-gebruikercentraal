@@ -1,0 +1,17 @@
+{
+  "base": {
+    "name": "Optimaal Digitaal",
+    "shortname": "gc_base",
+    "path": "./",
+    "proxy": "optimaaldigitaal.test",
+    "dest": "./"
+  },
+  "gc": {
+    "name": "Gebruiker Centraal",
+    "shortname": "od",
+    "path": "../sites/od/theme/",
+    "dest": "../sites/od/theme/",
+    "proxy": "gctheme.localhost"
+  }
+}
+
