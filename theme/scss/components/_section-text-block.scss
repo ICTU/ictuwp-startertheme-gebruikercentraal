@@ -1,0 +1,107 @@
+// Section
+.section--text-blocks {
+  max-width :$max-width-container;
+
+  .l-section-content {
+    max-width: none;
+
+    @include bp-up(sm) {
+      display: flex;
+
+      section {
+        margin-left: 1.5rem;
+        margin-right: 1.5rem;
+        flex: 1;
+      }
+    }
+
+    @include bp-up(lg) {
+      margin: 5rem auto 0;
+    }
+  }
+}
+
+
+// Text blocks
+
+
+.text-block {
+  margin-top: $gutter;
+
+  p {
+    max-width: 90%;
+    margin: 1.8rem 0 0 0;
+  }
+
+  .btn {
+    margin-top: 2rem;
+    margin-right: 2rem;
+  }
+
+  .text-block--bg & { // If it's within a section with a bg option specifiekd
+    @include gc-box-shadow();
+    padding: 2rem;
+
+    @include bp-up(sm) {
+      padding: 3rem;
+    }
+  }
+
+  .l-bg-white & { // if secti bg is set to white
+    background: $white;
+  }
+
+  .l-bg-primary & { // if secti bg is set to white
+    background: $tb_color_bg;
+    color: $tb_color;
+
+    h2, h3 {
+      color: $tb_heading;
+    }
+
+    .btn--primary {
+      background: $tb_btn_bg;
+      color: $tb_btn_color;
+
+      &:after {
+        background-color: $tb_btn_arrow_bg;
+        background-image: url('../images/arrow-right-blue.svg');
+      }
+
+      &:hover, &:active, &:focus {
+        background-color: lighten($tb_btn_arrow_bg, 10%);
+      }
+    }
+  }
+
+  .l-bg-secondary & { // if secti bg is set to white
+    background: $tb_sec_color_bg;
+    color: $tb_sec_color;
+
+    h2, h3 {
+      color: $tb_sec_heading;
+    }
+
+    .btn--primary {
+      background: $tb_sec_btn_bg;
+      color: $tb_sec_btn_color;
+
+      &:after {
+        background-color: $tb_sec_btn_arrow_bg;
+      }
+
+      &:hover, &:active, &:focus {
+        background-color: lighten($tb_sec_btn_arrow_bg, 10%);
+      }
+    }
+  }
+}
+
+
+.text-block__title,
+.text-block h2 {
+  @include gc-section-header;
+  font-family: $font_secondary;
+  margin: 0;
+  padding: 0;
+}

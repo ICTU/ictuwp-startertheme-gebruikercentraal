@@ -1,0 +1,52 @@
+@font-face {
+  font-family: "icons";
+  src: url('/theme/fonts/iconfont/ho-iconfont-0yzlm.eot');
+  src: url('/theme/fonts/iconfont/ho-iconfont-0yzlm.eot?#iefix') format('eot'),
+  url('/theme/fonts/iconfont/ho-iconfont-0yzlm.woff') format('woff'),
+  url('/theme/fonts/iconfont/ho-iconfont-0yzlm.ttf') format('truetype'),
+  url('/theme/fonts/iconfont/ho-iconfont-0yzlm.svg#icons') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+$icons: (
+ arrow: "\EA01",
+ calendar: "\EA02",
+ check: "\EA03",
+ clock: "\EA04",
+ cross: "\EA05",
+ download: "\EA06",
+ euro: "\EA07",
+ facebook: "\EA08",
+ link: "\EA09",
+ linkedin: "\EA0A",
+ mail: "\EA0B",
+ menu: "\EA0C",
+ phone: "\EA0D",
+ pin: "\EA0E",
+ play: "\EA0F",
+ search: "\EA10",
+ slack: "\EA11",
+ twitter: "\EA12",
+ user: "\EA13",
+
+);
+
+// Use to apply icons
+@mixin icon($position: before, $icon: false, $styles: true) {
+  @if $position == both {
+    $position: 'before, &:after';
+  }
+  &:#{$position} {
+    @if $icon {
+      content: "#{map-get($icons, $icon)}";
+    }
+    @if $styles {
+      speak: none;
+      font-style: normal;
+      font-weight: normal;
+      font-family: 'icons';
+    }
+    @content;
+  }
+}

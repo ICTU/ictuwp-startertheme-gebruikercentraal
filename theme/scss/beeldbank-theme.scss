@@ -1,0 +1,46 @@
+@import "abstracts/variables";
+
+/*
+ * Extra colors
+ */
+
+$bb-cyan-light:   #A4E9E6;
+
+$color-primary:     $gc-pink;
+$color-secondary:   $gc-pink;
+
+$date-badge-bg:         $gc-pink;
+
+$brand-color:           $gc-cyan;
+
+$intro-bg:              $gc-dark-purple;
+$meta-data-icon:        $gc-dark-purple;
+
+$hp-intro-bg:           $gc-cyan;
+$hp-intro-color:        $gc-dark-blue;
+
+$btn-primary-bg:        $color-primary;
+$btn-primary-arrowbg:   $gc-pink-darker;
+
+$steplist_circle_bg:    $color-primary;
+
+//Stepchart
+
+$stepchart_icon_bg:                 $bb-cyan-light;
+$stepchart_icon_color_desktop:      $meta-data;
+$stepchart_label:                   $gc-pink;
+
+$stepnav_icon_bg:                   $stepchart_icon_bg;
+$stepnav_icon_active_bg:            $white;
+$stepnav_icon_color:                $stepchart_icon_color_desktop;
+
+
+@import "all";
+
+.page-content {
+  background: $gc-pantybrown-light;
+}
+
+.section--bg-option:before {
+  background: $gc-pantybrown;
+}

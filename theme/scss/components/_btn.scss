@@ -1,0 +1,218 @@
+// Gebruiker Centraal - -btn.scss
+
+// $desc.     Omvat layout voor buttons
+
+
+.btn {
+  display: inline-block;
+  margin-top: 2rem;
+
+  &--primary,
+  &--secondary {
+    @include gc-box-shadow();
+    @include icon(after, arrow);
+    display: inline-block;
+    font-size: 2.2rem;
+    line-height: 2.2rem;
+    padding: 1rem 4.5rem .9rem 1.5rem;
+    cursor: pointer;
+    text-transform: uppercase;
+    width: auto;
+    border-radius: 0;
+    font-family: $font-secondary;
+    font-weight: normal;
+    text-decoration: none;
+    position: relative;
+    transition: padding .2s;
+
+    @include bp-up(md) {
+      line-height: 2.6rem;
+      font-size: $btn-font-size-lg;
+      padding-top: 1.1rem;
+      padding-bottom: 1rem;
+    }
+
+    &:hover,
+    &:focus,
+    &:active {
+      text-decoration: underline;
+      padding-right: 4.6rem;
+    }
+
+    &:after {
+      position: absolute;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      font-size: 1.2rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 3rem;
+    }
+  }
+
+  &--primary {
+    background: $btn-primary-bg;
+    color: $btn-primary-color;
+
+    &:after {
+      background: $btn-primary-arrowbg;
+    }
+
+    &:hover, &:focus, &:active {
+      background: $btn-primary-hover-bg;
+      color: $btn-primary-hovercolor;
+
+      &:after {
+        background: $btn-primary-hover-arrowbg;
+      }
+    }
+  }
+
+  &--secondary {
+    background: $btn-secondary-bg;
+    color: $btn-secondary-color;
+
+    &:after {
+      background: $btn-secondary-arrowbg;
+    }
+
+    &:hover, &:focus, &:active {
+      background: $btn-secondary-hover-bg;
+      color: $btn-secondary-hovercolor;
+
+      &:after {
+        background: $btn-secondary-hover-arrowbg;
+      }
+    }
+  }
+
+  &--close {
+    padding: 0;
+    width: 3.6rem;
+    height: 4.6rem;
+    color: transparent;
+    border: .1rem solid transparent;
+    transition: border-color .2s;
+
+    .btn__icon {
+      display: block;
+      @include icon(before, cross);
+      color: $inc-a11y-orange;
+      text-align: center;
+    }
+
+    &:hover,
+    &:focus {
+      @include gc-box-shadow();
+      border-color: $border-color;
+      color: transparent;
+    }
+  }
+
+  &--download {
+    @include icon(before, download);
+    @include gc-box-shadow();
+    text-decoration: none;
+    padding: 1rem 1.5rem 1rem 1rem;
+    font-family: $font-secondary;
+    font-size: $btn-font-size-sm;
+    color: $btn-primary-color;
+    text-transform: uppercase;
+    background: $btn-primary-bg;
+
+    &:before {
+      float: left;
+      margin-right: 1.2rem;
+      display: inline-block;
+      transition: margin .3s;
+    }
+
+    &:hover, &:focus {
+      text-decoration: underline;
+      color: $btn-primary-hovercolor;
+      background: $btn-primary-hover-bg;
+
+      &:before {
+        margin-right: 1.3rem;
+      }
+    }
+
+    @include bp-up(lg){
+      font-size: $btn-font-size-lg;
+      padding: 1rem 1.5rem 1rem 1rem;
+    }
+  }
+}
+
+/*
+ * Menu behaviours
+ */
+
+.btn--toggle-menu {
+  display: flex;
+  height: 100%;
+  font-size: $font-smaller;
+  align-items: center;
+  padding-right: 1.5rem;
+  margin: 0 0 0 1rem;
+  width: auto;
+  background: none;
+  font-family: $font-primary-bold;
+  color: $white;
+  border: none;
+
+  .btn--icon {
+    @include icon(before, menu);
+    @include icon(after, cross);
+    display: block;
+    @include square(3rem);
+    overflow: hidden;
+    line-height: 3rem;
+    position: relative;
+    margin-right: 1.5rem;
+
+    &:before,
+    &:after {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      display: flex;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      justify-content: center;
+      align-items: center;
+      color: $white;
+      transition: transform .2s, opacity .2s;
+    }
+
+    &:after {
+      opacity: 0;
+      transform: rotate(-180deg);
+    }
+  }
+
+  &.active .btn--icon {
+    &:after {
+      opacity: 1;
+      transform: rotate(0);
+    }
+
+    &:before {
+      opacity: 0;
+      transform: rotate(180deg);
+    }
+  }
+
+  &:focus, &:hover {
+    background: $gc-darkest-blue;
+  }
+
+  @include bp-up(nav) {
+    display: none;
+  }
+}
+
+

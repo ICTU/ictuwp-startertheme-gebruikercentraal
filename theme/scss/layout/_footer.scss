@@ -1,0 +1,125 @@
+.l-page-footer-wrapper {
+  @include ho-padding;
+  color: $white;
+  background: $gc-dark-blue;
+  font-size: $font-smaller;
+
+  h2, h3, h4 {
+    color: $white;
+  }
+
+  .widget-title {
+    font-family: $font-secondary;
+    font-size: 3.2rem;
+
+    + div {
+      margin-top: 1.6rem;
+    }
+  }
+
+  a {
+    color: $white;
+  }
+}
+
+.page-footer {
+  @include ho-container;
+  max-width: calc(#{$max-width-container} + #{$gutter});
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+
+  @include bp-up(md){
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+  }
+
+  @include bp-up(md){
+    display: flex;
+    flex-wrap: wrap;
+
+    .footer-col {
+      margin-left: $gutter / 2;
+      margin-right: $gutter / 2;
+    }
+
+    .footer-col:first-child {
+      width: calc(60% - #{$gutter});
+    }
+
+    .footer-col:nth-child(2) {
+      width: calc(40% - #{$gutter});
+    }
+  }
+
+  @include bp-down(md) {
+    .footer-col + .footer-col {
+      margin-top: $gutter;
+    }
+  }
+}
+
+.gc-site-footer-widget {
+  min-height: 110px;
+  background: url(../../logo.svg) left top no-repeat;
+  background-size: 110px auto;
+  padding-left: 14rem;
+}
+
+.site-footer-menu {
+  @include ho-padding;
+  position: relative;
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
+  font-size: $font-small;
+
+  &:before {
+    content: " ";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    margin-left: -3rem;
+    margin-right: -3rem;
+    background: $gc-darkest-blue;
+  }
+
+  .menu {
+    @include ho-container;
+    padding: 0;
+    margin: 0 auto;
+    position: relative;
+
+    li {
+      display: block;
+      list-style: none;
+      padding: 0;
+      margin: 0 2rem 0 0;
+    }
+
+    a {
+      @include icon(before, arrow);
+
+      &:before {
+        display: inline-block;
+        margin-right: .8rem;
+        font-size: 1rem;
+        color: $gc-blue-xlight;
+        transition: margin .2s;
+      }
+
+      &:hover:before {
+        margin-right: .9rem;
+      }
+    }
+  }
+
+  @include bp-up(sm){
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+
+    .menu li {
+      display: inline-block;
+    }
+  }
+}

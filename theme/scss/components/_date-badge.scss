@@ -1,0 +1,70 @@
+// components which are used in entries
+.date-badge {
+  @include gc-box-shadow();
+  background: $date-badge-bg;
+  color: $date-badge-color;
+  text-align: center;
+  padding: .6rem .8rem;
+  display: inline-block;
+  text-transform: lowercase;
+
+  span:not(.visually-hidden) {
+    display: block;
+  }
+
+  @include bp-up(sm) {
+    padding: 1.5rem 1rem 1rem;
+    line-height: 2.4rem;
+  }
+
+  &--multiple {
+    font-size: 1.1rem;
+    line-height: 1.2rem;
+    font-family: $font-primary-semi;
+    display: flex;
+    padding-top: 1rem;
+    position: relative;
+    z-index: 5;
+    overflow: hidden;
+
+    .day {
+      font-size: 3rem;
+      line-height: 3rem;
+      font-family: $font-secondary;
+    }
+
+    .date-badge__till {
+      margin-left: 1rem;
+      padding-left: 1rem;
+
+      &:before {
+        position: absolute;
+        content: " ";
+        background: $date-badge-till-bg;
+        transform: rotate(5deg);
+        top: 0;
+        right: 0;
+        bottom: 0;
+        margin: -1rem -1rem -1rem 0;
+        width: 62%;
+        z-index: -1;
+
+      }
+    }
+  }
+}
+
+.date-badge__day {
+  font-family: $font-secondary;
+  font-size: 2.6rem;
+
+  @include bp-up(sm) {
+    font-size: 3.2rem;
+  }
+}
+
+.date-badge__month {
+  font-family: $font-primary-semi;
+  font-size: 1.1rem;
+  line-height: 1.6rem;
+}

@@ -1,0 +1,69 @@
+@import "abstracts/variables";
+
+$color-primary: $inc-orange;
+$brand-color: $inc-orange;
+
+$intro-bg: $gc-a11y-green;
+
+$hp-intro-bg: $inc-a11y-orange;
+
+@import "all";
+
+.section--bg-option:before {
+  background: $gc-pantybrown;
+}
+
+.page-content {
+  background: $gc-pantybrown-light;
+}
+
+.page--type-step {
+  .page-content {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .content {
+    max-width: none;
+    background: none;
+    box-shadow: none;
+  }
+}
+
+.entry--type-step {
+  max-width: none;
+
+  .entry-header {
+    max-width: $max-width-content;
+    margin-bottom: 0;
+
+    + .section--text {
+      margin-top: 0;
+      @include gc-box-shadow;
+      background: $white;
+    }
+  }
+
+  .l-section-content {
+    max-width: $max-width-container;
+  }
+
+  .section__title {
+    border: none;
+  }
+
+  .section--text {
+    padding: 3rem 0;
+    max-width: $max-width-content;
+
+    .l-section-inner {
+      max-width: $max-width-inner;
+      margin: 0 auto;
+    }
+  }
+}
+
+.stepnav {
+  margin-left: 0;
+  margin-right: 0;
+}

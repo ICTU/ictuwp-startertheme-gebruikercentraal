@@ -1,0 +1,232 @@
+.link {
+
+  &--linklist {
+    font-family: $font_primary_bold;
+    font-size: 2rem;
+    line-height: 2.6rem;
+    text-decoration: none;
+    transition: padding .2s;
+
+    &:hover,
+    &:focus {
+      text-decoration: underline;
+      padding-left: .1rem;
+    }
+  }
+
+  &--external {
+    &:after {
+      display: inline-block;
+      content: " ";
+      background: url('./images/ico-external.svg') left center no-repeat;
+      width: 2rem;
+      height: 2rem;
+      margin-left: .8rem;
+    }
+  }
+
+  &--social {
+    @include square(3rem);
+    display: block;
+    border: .1rem solid $border-color;
+    text-decoration: none;
+    overflow: hidden;
+    transition: background-color .2s;
+
+    &:before {
+      display: block;
+      width: 100%;
+      height: 100%;
+      text-align: center;
+      line-height: 3rem;
+      transition: transform .2s;
+    }
+
+    &.linkedin {
+      @include icon(before, linkedin);
+    }
+
+    &.twitter {
+      @include icon(before, twitter);
+    }
+
+    &.facebook {
+      @include icon(before, facebook);
+    }
+
+    &.slack {
+      @include icon(before, slack);
+    }
+
+    &.website {
+      @include icon(before, link);
+    }
+
+    &:hover, &:focus {
+      background: $white;
+      border-color: $gc-dark-blue;
+
+      &:before {
+        transform: scale(1.1);
+      }
+    }
+  }
+
+  &--contact {
+    border: .1rem solid $border_color;
+    display: inline-flex;
+    padding: .2rem 1rem;
+    transition: border-color .2s;
+    text-decoration: none;
+
+    &:before {
+      float: left;
+      margin-right: 1rem;
+      display: inline-block;
+    }
+
+    &:hover,
+    &:focus,
+    &:active {
+      border-color: $gc-dark-blue;
+      text-decoration: underline;
+      background: $white;
+
+      &:before {
+        margin-right: 1.1rem;
+        color: $color-primary;
+      }
+    }
+  }
+
+  &--phone {
+    @include icon(before, phone);
+  }
+
+  &--email {
+    @include icon(before, mail);
+  }
+
+  &--arrow {
+    @include icon(after, arrow);
+    position: relative;
+    padding-right: 3rem;
+    display: block;
+    text-decoration: none;
+
+    &:after {
+      position: absolute;
+      right: .5rem;
+      top: 0;
+      font-size: 1.6rem;
+      transition: right .2s;
+    }
+
+    &:hover, &:focus {
+      text-decoration: underline;
+
+      &:after {
+        right: 0.3rem;
+      }
+    }
+  }
+
+  &--arrow-icon {
+    @include icon(before, arrow);
+    margin-top: 1.4rem;
+    text-decoration: none;
+    font-size: $font-smaller;
+    position: relative;
+    padding-left: 2rem;
+    display: block;
+    font-family: $font-primary-semi;
+    line-height: 2.2rem;
+    transition: padding .3s;
+
+    &:hover, &:focus {
+      padding-left: 2.1rem;
+      text-decoration: underline;
+    }
+
+    &:before {
+      color: $color-primary;
+      font-size: 1rem;
+      position: absolute;
+      left: 0;
+      top: 0;
+    }
+  }
+}
+
+
+$btn_width: 3.2rem;
+
+// Arrow link, in card titles
+.arrow-link {
+  text-decoration: none;
+  position: relative;
+  display: block;
+  padding-right: 3.2rem;
+
+  &:hover,
+  &:focus {
+    text-decoration: underline;
+
+    .arrow-link__icon {
+      @include gc-box-shadow();
+      border-color: $gc-dark-blue;
+    }
+  }
+
+  span {
+    display: block;
+  }
+}
+
+.arrow-link__descr {
+  font-size: $font_small;
+  font-family: $font_primary_semi;
+  text-transform: none;
+}
+
+.arrow-link__text {
+  padding-right: 1.6rem;
+}
+
+.arrow-link__icon {
+  border: .1rem solid transparent;
+  @include icon(before, arrow);
+  height: 4.4rem;
+  line-height: 4rem;
+  text-align: center;
+  font-size: 1.6rem;
+  width: $btn_width;
+  position: absolute;
+  right: 0;
+  top: 0;
+  margin: -.5rem -1rem 0 0;
+}
+
+
+// Double, apparently
+.btn--read-more,
+.link--read-more {
+  @include icon(before, arrow);
+  font-family: $font-primary-semi;
+
+  &:before {
+    float: left;
+    display: inline-block;
+    font-size: 1.2rem;
+    margin-right: 1rem;
+    transition: margin .3s;
+  }
+
+  &:hover, &:focus {
+    text-decoration: none;
+
+    &:before {
+      margin-right: 1.1rem;
+    }
+  }
+}

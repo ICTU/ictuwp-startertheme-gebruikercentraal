@@ -1,0 +1,45 @@
+/*
+ * Include this file if your (sub) site or module has the step single
+ */
+
+.page--type-step {
+  @include gc-page-intro($intro-bg, $intro-color);
+
+  .content {
+    @include gc-box-shadow();
+    padding: 0;
+    z-index: 6;
+  }
+
+  .page-content {
+    padding-top: 3rem;
+
+    @include bp-up(md){
+      padding-top: 5rem;
+    }
+  }
+}
+
+.entry--type-step {
+
+  .entry-header {
+    margin-bottom: 5rem;
+
+    @include bp-up(md){
+      margin-bottom: 8rem;
+    }
+  }
+
+  .section {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+
+  .section:last-child {
+    padding-bottom: 5rem;
+
+    @include bp-up(md){
+      padding-bottom: 8rem;
+    }
+  }
+}
