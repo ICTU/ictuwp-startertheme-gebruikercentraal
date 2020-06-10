@@ -115,7 +115,7 @@ class GebruikerCentraalTheme extends Timber\Site {
 
 		$blog_id = get_current_blog_id();
 
-		$context['logo']        = get_stylesheet_directory_uri() . '/static/img/logo/od.svg';
+		$context['logo']        = get_stylesheet_directory_uri() . '/theme/img/logo/od.svg';
 
 		return $context;
 	}
@@ -204,14 +204,14 @@ class GebruikerCentraalTheme extends Timber\Site {
 
 		wp_enqueue_style(
 			'gc-fonts',
-			get_stylesheet_directory_uri() . '/static/fonts/fonts.css',
+			get_stylesheet_directory_uri() . '/theme/fonts/fonts.css',
 			$dependencies,
 			'',
 			'all'
 		);
 		wp_enqueue_style(
 			ID_SKIPLINKS,
-			get_stylesheet_directory_uri() . '/static/dist/css/gc-theme.css',
+			get_stylesheet_directory_uri() . '/sites/od/theme/dist/css/od-theme.css',
 			$dependencies,
 			CHILD_THEME_VERSION,
 			'all'
