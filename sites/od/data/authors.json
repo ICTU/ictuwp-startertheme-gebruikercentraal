@@ -1,0 +1,37 @@
+{
+  "wolfgang": {
+    "firstname" : "Wolfgang",
+    "lastname" : "Ebbers",
+    "img" : "author-3.jpg",
+    "function" : "CFES Universiteit Twente",
+    "social": {
+      "twitter": "#",
+      "linkedin": "#"
+    }
+  },
+  "elo": {
+    "firstname" : "Elo",
+    "lastname" : "de Mul",
+    "img" : "author-2.jpg",
+    "function" : "Directeur Dienstverlening Drechtsteden",
+    "social": {
+      "twitter": "#",
+      "linkedin": "#"
+    },
+    "contact": {
+      "tel": "078 - 7704577",
+      "email": "nee@nee.nl"
+    }
+  },
+  "iwan": {
+    "firstname" : "Iwan",
+    "lastname" : "van der Wolf",
+    "function" : "Managing Director Portbase"
+  },
+  "bob": {
+    "firstname" : "Bob",
+    "lastname" : "Corporaal",
+    "function" : "UX manager Coolblue",
+    "img" : "person-3.jpg"
+  }
+}

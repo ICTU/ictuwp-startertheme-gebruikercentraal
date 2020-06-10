@@ -22,3 +22,9 @@ node_modules/
 *.sql
 *.sqlite
 frontend/yarn.lock
+sites.zip
+
+sites/*/*.php
+sites/**.json
+sites/**.json
+
