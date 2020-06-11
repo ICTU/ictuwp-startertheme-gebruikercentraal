@@ -15,6 +15,27 @@ define( 'ID_ZOEKEN', 'zoeken' );
 define( 'ID_SKIPLINKS', 'skiplinks' );
 
 
+// Custom Post Types
+if ( ! defined( 'GC_TIP_CPT' ) ) {
+	define( 'GC_TIP_CPT', 'tips' );
+}
+
+// Custom Taxonomies
+if ( ! defined( 'GC_TIPTHEMA' ) ) {
+	define( 'GC_TIPTHEMA', 'tipthema' );
+}
+if ( ! defined( 'GC_TIPVRAAG' ) ) {
+	define( 'GC_TIPVRAAG', 'tipvraag' );
+}
+// Jouw Organisatie wordt niet meer gebruikt
+//	if ( ! defined( 'GC_TIPORGANISATIE' ) ) {
+//		define( 'GC_TIPORGANISATIE', 'tiporganisatie' );
+//	}
+if ( ! defined( 'OD_CITAATAUTEUR' ) ) {
+	define( 'OD_CITAATAUTEUR', 'tipgever' );
+}
+
+
 /**
  * If you are installing Timber as a Composer dependency in your theme, you'll need this block
  * to load your dependencies and initialize Timber. If you are using Timber via the WordPress.org
@@ -108,14 +129,15 @@ class GebruikerCentraalTheme extends Timber\Site {
 	 */
 	public function add_to_context( $context ) {
 
+		$blog_id = get_current_blog_id();
+
 		$context['menu']        = new Timber\Menu( 'primary' );
 		$context['site']        = $this;
 		$context['site_name']   = ( get_bloginfo( 'name' ) ? get_bloginfo( 'name' ) : 'Gebruiker Centraal' );
 		$context['site_slogan'] = ( get_bloginfo( 'description' ) ? get_bloginfo( 'description' ) : null );
-
-		$blog_id = get_current_blog_id();
-
 		$context['logo']        = get_stylesheet_directory_uri() . '/theme/img/logo/od.svg';
+		$context['sprite_url']  = get_stylesheet_directory_uri() . '/theme/img/sprites/optimaal-digitaal/defs/svg/sprite.defs.svg';
+
 
 		return $context;
 	}
@@ -205,7 +227,7 @@ class GebruikerCentraalTheme extends Timber\Site {
 
 		$versie = CHILD_THEME_VERSION;
 		if ( WP_DEBUG ) {
-			$versie = strtotime("now");
+			$versie = strtotime( "now" );
 		}
 
 		// TODO : verwijzen naar de relevante CSS
@@ -286,13 +308,44 @@ class GebruikerCentraalTheme extends Timber\Site {
 new GebruikerCentraalTheme();
 
 
-
 function insert_breadcrumb() {
 
 	// print out Yoast Breadcrumb
-	if ( function_exists('yoast_breadcrumb') ) {
-		yoast_breadcrumb( '<div class="breadcrumb"><nav aria-label="Breadcrumb" class="breadcrumb__list">','</nav></div>' );
+	if ( function_exists( 'yoast_breadcrumb' ) ) {
+		yoast_breadcrumb( '<div class="breadcrumb"><nav aria-label="Breadcrumb" class="breadcrumb__list">', '</nav></div>' );
 	}
 
 }
 
+
+add_filter( 'body_class', 'my_body_classes' );
+
+function my_body_classes( $classes ) {
+
+	global $post;
+
+	$classes[] = 'meh';
+
+
+	if ( is_singular( GC_TIP_CPT ) ) {
+
+		$classes[] = 'page page--type-tipkaart';
+		$taxonomie = get_the_terms( $post, GC_TIPTHEMA );
+
+		if ( $taxonomie && ! is_wp_error( $taxonomie ) ) {
+			$counter = 0;
+			// tip slug
+			foreach ( $taxonomie as $term ) {
+
+				$themakleur = get_field( 'kleur_en_icoon_tipthema', GC_TIPTHEMA . '_' . $term->term_id );
+
+				if ( $themakleur ) {
+					$classes[] = 'page-tipkaart--' . $themakleur;
+				}
+			}
+		}
+	}
+
+	return $classes;
+
+}
