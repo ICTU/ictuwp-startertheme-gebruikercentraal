@@ -246,6 +246,27 @@
   &--gebruiksgemak {
     @include gc-tipkaart-full($gc-dark-purple, $gc-a11y-green, $gc-dark-purple-lighter);
   }
+
+  // TODO Kan het kloppen dat de kleuren hiervoor nog niet uitgewerkt zijn?
+  &--procesaanpak {
+    @include gc-tipkaart-full(red, $gc-a11y-green, $gc-dark-purple-lighter);
+  }
+  &--informatieveiligheid {
+    @include gc-tipkaart-full(red, $gc-a11y-green, $gc-dark-purple-lighter);
+  }
+  &--kanaalsturing {
+    @include gc-tipkaart-full(red, $gc-a11y-green, $gc-dark-purple-lighter);
+  }
+  &--samenwerking {
+    @include gc-tipkaart-full(red, $gc-a11y-green, $gc-dark-purple-lighter);
+  }
+  &--commitment {
+    @include gc-tipkaart-full(red, $gc-a11y-green, $gc-dark-purple-lighter);
+  }
+  &--inclusie {
+    @include gc-tipkaart-full(red, $gc-a11y-green, $gc-dark-purple-lighter);
+  }
+
 }
 
 .section--examples {
