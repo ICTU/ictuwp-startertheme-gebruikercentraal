@@ -31,11 +31,15 @@ const fontName = 'ho-iconfont-' + r;
  */
 
 function makeFont(done) {
-  del(['fonts/iconfont/**'], {
+
+  var currentfolder = '../theme/'
+  del([ currentfolder + 'fonts/iconfont/**'], {
     'force': true
   });
 
-  var iconStream = gulp.src('sourcefiles-gc/img/icons/*.svg')
+  console.log(currentfolder + 'fonts/iconfont/**');
+
+  var iconStream = gulp.src(currentfolder + 'img/icons/*.svg')
     .pipe(svgmin())
     .pipe(iconfont({
       fontName: fontName,
@@ -45,20 +49,24 @@ function makeFont(done) {
 
   const Glyphs = function (cb) {
     iconStream.on('glyphs', function (glyphs, options) {
-      gulp.src('sourcefiles-gc/scss/base/_icons.scss')
+      gulp.src(currentfolder + 'scss/base/_icons.scss')
         .pipe(consolidate('lodash', {
           glyphs: glyphs,
           fontName: fontName
         }))
-        .pipe(gulp.dest('sourcefiles-gc/scss/abstracts'))
+        .pipe(gulp.dest(currentfolder + 'scss/abstracts'))
     });
+
+//    console.log( 'abstracts: ' + currentfolder + 'scss/abstracts' );
 
     cb();
   };
 
+  console.log( 'abstracts: ' + currentfolder + 'scss/abstracts' );
+
   const handleFont = function (cb) {
     iconStream
-      .pipe(gulp.dest('../fonts/iconfont/'))
+      .pipe(gulp.dest(currentfolder + 'fonts/iconfont/'))
     cb();
   };
 
@@ -67,6 +75,7 @@ function makeFont(done) {
   });
 
   return gulp.parallel(Glyphs, handleFont)();
+
 }
 
 /*
@@ -221,21 +230,24 @@ function prodAll(done) {
 
 // Watch files
 function watch() {
-  console.log(siteConfig.path + 'scss/**/*.scss');
-  console.log(siteConfig.name);
+
+  console.log("Watch: " + siteConfig.path + 'scss/**/*.scss');
+  console.log("Watch: ../theme/scss/**/*.scss" );
+  console.log("Name: " + siteConfig.name);
 
   browserSync.init({
     proxy: siteConfig.proxy
   });
 
   if(!(siteConfig.shortname === 'gcbase')){
-    gulp.watch('scss/**/*.scss', gulp.series(baseStyles, styles));
+    console.log("Extra folder in de gaten houden, want " + siteConfig.shortname + ': ' + siteConfig.path + 'scss/' );
+    gulp.watch(siteConfig.path + 'scss/**/*.scss', styles);
   }
 
-  gulp.watch(siteConfig.path + 'scss/**/*.scss', styles);
-  gulp.watch('js/components/*.js', js);
+  gulp.watch('../theme/scss/**/*.scss', styles);
+  gulp.watch('../theme/js/components/*.js', js);
 
-  gulp.watch('img/icons/*.svg', gulp.series(makeFont, styles));
+  gulp.watch('../theme/img/icons/*.svg', gulp.series(makeFont, styles));
 
   //gulp.watch('styleguide/**/*.scss', styleGuide);
   //gulp.watch('styleguide/**/*.html', styleGuide);
