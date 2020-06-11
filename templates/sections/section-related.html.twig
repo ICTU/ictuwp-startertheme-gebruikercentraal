@@ -1,0 +1,81 @@
+{% set base_url = '/uploads' %}
+
+<section class="section section--related{{ cards ? ' l-item-count-' ~ cards|length : '' }}{{ modifier ? ' section--' ~ modifier }}">
+
+  {# Wrapper for section intro #}
+  {% if title or description %}
+  <div class="l-section-top">
+
+    {% if title %}
+      <h2 class="section__title">
+      {{ title }}
+      </h2>
+    {% endif %}
+
+    {% if description %}
+    <p class="section__description">
+      {{ description }}
+    </p>
+    {% endif %}
+  </div>
+
+  {% endif %}
+
+  {# Wrapper for all section content #}
+  <div class="l-section-content">
+
+    {% if cards %}
+      <div class="grid grid--col-{{ cards|length }}">
+
+        {% for card in cards %}
+          {% include 'components/card.html.twig' with {
+            'title' : card.title,
+            'descr' : card.descr,
+            'img' : card.img,
+            'type' : card.type,
+            'url': card.url,
+            'meta': card.meta,
+          } %}
+        {% endfor %}
+      </div>
+
+    {% else %}
+
+      <div class="grid grid--col-2">
+        <div class="card">
+          <div class="card__content">
+            <h2 class="card__title">
+              <a class="arrow-link" href="#">
+                <span class="arrow-link__text">Een andere pagina binnen deze website</span>
+                <span class="arrow-link__icon"></span>
+              </a>
+            </h2>
+            <p class="card__description">
+              [Samenvatting] Een andere, interessante pagina die je zeker moet lezen. Snel klikken voor je het mist!
+            </p>
+          </div>
+        </div>
+
+        <div class="card card--with-image">
+          <div class="card__image">
+            <img src="{{ base_url }}/brand-gc.jpg" alt="Gebruiker Centraal Plaatje">
+          </div>
+          <div class="card__content">
+            <h2 class="card__title">
+              <a class="arrow-link" href="#">
+                <span class="arrow-link__text">Een andere pagina binnen deze website</span>
+                <span class="arrow-link__icon"></span>
+              </a>
+            </h2>
+            <p class="card__description">
+              [Samenvatting] Een andere, interessante pagina die je zeker moet lezen. Snel klikken voor je het mist!
+            </p>
+          </div>
+        </div>
+      </div>
+
+    {% endif %}
+
+  </div>
+</section>
+
