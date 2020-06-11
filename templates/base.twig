@@ -50,20 +50,34 @@
 
     </header>
 
+  {{ function('insert_breadcrumb') }}
 
-    <section id="content" role="main" class="content-wrapper">
-        {% if title %}<h1>{{ title }}</h1>{% endif %}
-        <div class="wrapper {{ sidebar_class }}">
-            {% block content %}
-                Sorry, no content
-            {% endblock %}
+  <div class="page-content" id="maincontent" tabindex="-1">
+
+    <main class="content">
+
+      <article class="entry entry--type-landing entry--full">
+
+        <div class="page__intro">
+          <header class="entry-header">
+            {% if title %}<h1 class="entry-title">{{ title }}</h1>{% endif %}
+
+            <p>Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a. Cras ultricies ligula sed magna dictum porta.</p>
+          </header>
+
+
         </div>
-        {% if sidebar %}
-            <aside class="layout-sidebar">
-                {{ sidebar }}
-            </aside>
-        {% endif %}
-    </section>
+
+        {% block content %}
+          Sorry, no content
+        {% endblock %}
+
+
+      </article>
+    </main>
+  </div>
+
+
 
     {% block footer %}
         <footer id="footer">

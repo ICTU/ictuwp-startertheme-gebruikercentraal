@@ -172,6 +172,10 @@ class GebruikerCentraalTheme extends Timber\Site {
 		);
 
 		add_theme_support( 'menus' );
+
+		// Yoast Breadcrumbs
+		add_theme_support( 'yoast-seo-breadcrumbs' );
+
 	}
 
 	/** This Would return 'foo bar!'.
@@ -280,3 +284,15 @@ class GebruikerCentraalTheme extends Timber\Site {
 }
 
 new GebruikerCentraalTheme();
+
+
+
+function insert_breadcrumb() {
+
+	// print out Yoast Breadcrumb
+	if ( function_exists('yoast_breadcrumb') ) {
+		yoast_breadcrumb( '<div class="breadcrumb"><nav aria-label="Breadcrumb" class="breadcrumb__list">','</nav></div>' );
+	}
+
+}
+
