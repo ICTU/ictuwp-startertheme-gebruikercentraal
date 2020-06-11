@@ -9,7 +9,6 @@
 
 <div class="site-container">
 
-
     <ul id="skiplinks">
         <li><a href="#maincontent">{{ __( 'Direct naar belangrijkste content', 'gctheme' ) }}</a></li>
         {% if menu %}
@@ -56,24 +55,13 @@
 
     <main class="content">
 
-      <article class="entry entry--type-landing entry--full">
 
-        <div class="page__intro">
-          <header class="entry-header">
-            {% if title %}<h1 class="entry-title">{{ title }}</h1>{% endif %}
-
-            <p>Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a. Cras ultricies ligula sed magna dictum porta.</p>
-          </header>
-
-
-        </div>
 
         {% block content %}
           Sorry, no content
         {% endblock %}
 
 
-      </article>
     </main>
   </div>
 

@@ -1861,6 +1861,168 @@ h1 {
 .tip--gebruiksgemak hr {
   border-color: #9267C3; }
 
+.tip--procesaanpak .entry-header {
+  background: red; }
+  .tip--procesaanpak .entry-header:after {
+    background: red; }
+
+.tip--procesaanpak .research {
+  background: red;
+  color: #fff; }
+  .tip--procesaanpak .research h2, .tip--procesaanpak .research h3, .tip--procesaanpak .research a {
+    color: #fff; }
+
+.tip--procesaanpak .research__why {
+  background: #148839 url("../../img/i_brains.svg") top -3rem right -2.5rem no-repeat;
+  position: relative; }
+
+.tip--procesaanpak .l-why-wrapper:before {
+  background: red; }
+
+.tip--procesaanpak .research-block {
+  border: 0.1rem solid #9267C3; }
+
+.tip--procesaanpak .research-block__title {
+  border-bottom: 0.1rem solid #9267C3; }
+
+.tip--procesaanpak hr {
+  border-color: #9267C3; }
+
+.tip--informatieveiligheid .entry-header {
+  background: red; }
+  .tip--informatieveiligheid .entry-header:after {
+    background: red; }
+
+.tip--informatieveiligheid .research {
+  background: red;
+  color: #fff; }
+  .tip--informatieveiligheid .research h2, .tip--informatieveiligheid .research h3, .tip--informatieveiligheid .research a {
+    color: #fff; }
+
+.tip--informatieveiligheid .research__why {
+  background: #148839 url("../../img/i_brains.svg") top -3rem right -2.5rem no-repeat;
+  position: relative; }
+
+.tip--informatieveiligheid .l-why-wrapper:before {
+  background: red; }
+
+.tip--informatieveiligheid .research-block {
+  border: 0.1rem solid #9267C3; }
+
+.tip--informatieveiligheid .research-block__title {
+  border-bottom: 0.1rem solid #9267C3; }
+
+.tip--informatieveiligheid hr {
+  border-color: #9267C3; }
+
+.tip--kanaalsturing .entry-header {
+  background: red; }
+  .tip--kanaalsturing .entry-header:after {
+    background: red; }
+
+.tip--kanaalsturing .research {
+  background: red;
+  color: #fff; }
+  .tip--kanaalsturing .research h2, .tip--kanaalsturing .research h3, .tip--kanaalsturing .research a {
+    color: #fff; }
+
+.tip--kanaalsturing .research__why {
+  background: #148839 url("../../img/i_brains.svg") top -3rem right -2.5rem no-repeat;
+  position: relative; }
+
+.tip--kanaalsturing .l-why-wrapper:before {
+  background: red; }
+
+.tip--kanaalsturing .research-block {
+  border: 0.1rem solid #9267C3; }
+
+.tip--kanaalsturing .research-block__title {
+  border-bottom: 0.1rem solid #9267C3; }
+
+.tip--kanaalsturing hr {
+  border-color: #9267C3; }
+
+.tip--samenwerking .entry-header {
+  background: red; }
+  .tip--samenwerking .entry-header:after {
+    background: red; }
+
+.tip--samenwerking .research {
+  background: red;
+  color: #fff; }
+  .tip--samenwerking .research h2, .tip--samenwerking .research h3, .tip--samenwerking .research a {
+    color: #fff; }
+
+.tip--samenwerking .research__why {
+  background: #148839 url("../../img/i_brains.svg") top -3rem right -2.5rem no-repeat;
+  position: relative; }
+
+.tip--samenwerking .l-why-wrapper:before {
+  background: red; }
+
+.tip--samenwerking .research-block {
+  border: 0.1rem solid #9267C3; }
+
+.tip--samenwerking .research-block__title {
+  border-bottom: 0.1rem solid #9267C3; }
+
+.tip--samenwerking hr {
+  border-color: #9267C3; }
+
+.tip--commitment .entry-header {
+  background: red; }
+  .tip--commitment .entry-header:after {
+    background: red; }
+
+.tip--commitment .research {
+  background: red;
+  color: #fff; }
+  .tip--commitment .research h2, .tip--commitment .research h3, .tip--commitment .research a {
+    color: #fff; }
+
+.tip--commitment .research__why {
+  background: #148839 url("../../img/i_brains.svg") top -3rem right -2.5rem no-repeat;
+  position: relative; }
+
+.tip--commitment .l-why-wrapper:before {
+  background: red; }
+
+.tip--commitment .research-block {
+  border: 0.1rem solid #9267C3; }
+
+.tip--commitment .research-block__title {
+  border-bottom: 0.1rem solid #9267C3; }
+
+.tip--commitment hr {
+  border-color: #9267C3; }
+
+.tip--inclusie .entry-header {
+  background: red; }
+  .tip--inclusie .entry-header:after {
+    background: red; }
+
+.tip--inclusie .research {
+  background: red;
+  color: #fff; }
+  .tip--inclusie .research h2, .tip--inclusie .research h3, .tip--inclusie .research a {
+    color: #fff; }
+
+.tip--inclusie .research__why {
+  background: #148839 url("../../img/i_brains.svg") top -3rem right -2.5rem no-repeat;
+  position: relative; }
+
+.tip--inclusie .l-why-wrapper:before {
+  background: red; }
+
+.tip--inclusie .research-block {
+  border: 0.1rem solid #9267C3; }
+
+.tip--inclusie .research-block__title {
+  border-bottom: 0.1rem solid #9267C3; }
+
+.tip--inclusie hr {
+  border-color: #9267C3; }
+
 .section--examples {
   padding-left: 2rem;
   padding-right: 2rem;

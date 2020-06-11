@@ -1,0 +1,141 @@
+{% extends "base.twig" %}
+
+{% block content %}
+
+  <article class="tip tip--full tip--{{ category }}">
+    <header class="entry-header">
+      <div class="tip__nr">Tip {{ post.meta('tip-nummer') }}</div>
+      <h1 class="entry-title">{{ post.title }}</h1>
+
+      <div class="tipkaart__categorie">
+        <svg class="icon icon--medium icon--tipkaart" focusable="false">
+          <use xmlns:xlink="http://www.w3.org/1999/xlink"
+               xlink:href="{{ sprite_url }}#{{ category|lower }}"></use>
+        </svg>
+        <span class="name">{{ category }}</span>
+      </div>
+
+    </header>
+
+    <div class="entry-content">
+
+      <div class="entry-body">
+        {{ body|raw }}
+      </div>
+
+      <section class="section section--examples">
+        <h2 class="section__title">Voorbeelden</h2>
+
+        {% for item in examples %}
+          <div class="example">
+            <div class="example__content">
+              <h3 class="example__title">{{ item.title }}</h3>
+
+              <div class="example__description">
+                {{ item.descr|raw }}
+
+                {% if item.link %}
+                  <a src="{{ item.link.url ? item.link.url : '#' }}"
+                     class="btn btn--{{ item.link.modifier ? item.link.modifier : 'primary' }}">
+                    {{ item.link.title }}
+                  </a>
+                {% endif %}
+              </div>
+            </div>
+
+            {% if item.author %}
+
+              <div class="example__author">
+
+                <div class="author author--small{{ item.author.img ? ' l-with-picture' }}">
+                  {% if item.author.img %}
+                    <img class="author__image" src="/uploads/styles/author/{{ item.author.img }}">
+                  {% endif %}
+                  <h4 class="author__name">{{ item.author.firstname }} {{ item.author.lastname }}</h4>
+                  {% if item.author.function %}
+                    <span class="author__function">{{ item.author.function }}</span>
+                  {% endif %}
+                  <a class="link link--read-more" href="#">Meer tips van {{ item.author.firstname }}</a>
+                </div>
+              </div>
+
+            {% endif %}
+          </div>
+        {% endfor %}
+
+      </section>
+
+      <div class="research">
+
+
+        <div class="l-why-wrapper">
+          <div class="research__why">
+            <h2 class="research__title">Waarom werkt dit?</h2>
+            {% if why %}
+              <p>{{ why }}</p>
+            {% else %}
+              <p>Mensen zijn niet ratoneel, ze maken niet altijd de beste keuzes. Mensen zijn te beïnvloeden op
+                manieren die ze zelf niet voor mogelijk achten. En dat maakt het gedrag van mensen erg lastig te
+                voorspellen. Alleen aan de hand van observatie bij échte mensen – geen stakeholders of experts met
+                een belang of domeinkennis – is te zien of iets wel of niet werkt.</p>
+            {% endif %}
+          </div>
+        </div>
+
+
+        <div class="research__content">
+
+          <div class="l-inner">
+            <h2 class="research__title">Onderzoek</h2>
+            <p>KING heeft een catalogus gebruikersperspectief ontwikkeld waarmee je op basis van criteria een
+              passend
+              gebruikersonderzoek kunt vinden. Dit is gebaseerd op het onderzoek ‘Digitaal en Gebruikersperspectief’
+              (PDF – 1,5 Mb) van het ministerie van BZK, uitgevoerd door Dialogic.</p>
+
+            <hr>
+            <p>Onderzoek <a href="#">‘Digitaal en Gebruikersperspectief’</a> (PDF – 1,5 Mb) van het ministerie van
+              BZK, uitgevoerd door Dialogic.</p>
+
+
+            <div class="l-research-blocks">
+              {% for block in rblocks %}
+                <div class="research-block">
+                  <span class="research-block__title">{{ block.title }}</span>
+                  <span class="research-block__nr">{{ block.nr }}</span>
+                  <span class="research-block__descr">{{ block.descr }}</span>
+                </div>
+              {% endfor %}
+            </div>
+          </div>
+
+          {# /inner #}
+
+        </div>
+      </div>
+
+      {% if links is empty %}
+        {% set links = {
+          '1': {
+            'title': 'Onderzoek McKinsey',
+            'descr': 'Het belang van toegevoegde waarde in de klantervaring',
+          },
+          '2': {
+            'title': 'Ontwerpprincipes Gebruik Centraal',
+            'descr': 'Ontwerp, test, meet en verbeter. En blijf verbeteren. Doe je dat niet, dan wreekt zich dat vroeg of laat. Tijdens de uitvoering kan dit leiden tot gebruikers die vastlopen, met bijvoorbeeld meer helpdeskcalls tot gevolg. Hoe goed je vooraf ook test, een deel van de problemen zul je pas in de exploitatiefase tegenkomen. Behoeftes, gedrag en gebruik veranderen in de loop van de tijd. Wat ooit een goede oplossing was, hoeft dat later niet meer te zijn. '
+          },
+          '3': {
+            'title': 'Pieter Aarts (Content Kings)',
+            'descr': 'Hoe moeilijk kan het zijn?',
+          }
+        } %}
+      {% endif %}
+
+      {% include 'sections/section-links.html.twig' with {
+        'title': 'Externe links',
+        'items': links
+      } %}
+
+    </div>
+  </article>
+
+{% endblock %}
