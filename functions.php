@@ -198,9 +198,13 @@ class GebruikerCentraalTheme extends Timber\Site {
 	function gc_wbvb_add_css() {
 
 		$dependencies = array();
-// /wp-content/themes/gc-pages-html/dist/css/gc-theme.css
-// /wp-content/themes/gebruiker-centraal/css/gc-style.css
 
+		$versie = CHILD_THEME_VERSION;
+		if ( WP_DEBUG ) {
+			$versie = strtotime("now");
+		}
+
+		// TODO : verwijzen naar de relevante CSS
 
 		wp_enqueue_style(
 			'gc-fonts',
@@ -213,7 +217,7 @@ class GebruikerCentraalTheme extends Timber\Site {
 			ID_SKIPLINKS,
 			get_stylesheet_directory_uri() . '/sites/od/theme/dist/css/od-theme.css',
 			$dependencies,
-			CHILD_THEME_VERSION,
+			$versie,
 			'all'
 		);
 
