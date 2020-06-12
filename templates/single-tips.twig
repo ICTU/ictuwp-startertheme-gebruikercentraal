@@ -20,19 +20,20 @@
     <div class="entry-content">
 
       <div class="entry-body">
-        {{ body|raw }}
+        {{post.content}}
       </div>
 
+      {% if post.meta('goed_voorbeeld') %}
       <section class="section section--examples">
-        <h2 class="section__title">Voorbeelden</h2>
+        <h2 class="section__title">{{ __('Voorbeelden', 'gctheme') }}</h2>
 
-        {% for item in examples %}
+        {% for item in post.meta('goed_voorbeeld') %}
           <div class="example">
             <div class="example__content">
-              <h3 class="example__title">{{ item.title }}</h3>
+              <h3 class="example__title">{{ item.titel_goed_voorbeeld }}</h3>
 
               <div class="example__description">
-                {{ item.descr|raw }}
+                {{ item.tekst_goed_voorbeeld }}
 
                 {% if item.link %}
                   <a src="{{ item.link.url ? item.link.url : '#' }}"
@@ -64,6 +65,9 @@
         {% endfor %}
 
       </section>
+
+      {% endif %}
+      /VOORBEELDEN
 
       <div class="research">
 
