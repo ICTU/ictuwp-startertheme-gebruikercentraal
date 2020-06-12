@@ -3,25 +3,14 @@
   &--linklist {
     font-family: $font_primary_bold;
     font-size: 2rem;
-    line-height: 2.6rem;
-    text-decoration: none;
+    line-height: 2.8rem;
     transition: padding .2s;
+    display: inline-block;
 
     &:hover,
     &:focus {
-      text-decoration: underline;
+      text-decoration: none;
       padding-left: .1rem;
-    }
-  }
-
-  &--external {
-    &:after {
-      display: inline-block;
-      content: " ";
-      background: url('./images/ico-external.svg') left center no-repeat;
-      width: 2rem;
-      height: 2rem;
-      margin-left: .8rem;
     }
   }
 
@@ -156,6 +145,18 @@
       top: 0;
     }
   }
+
+  &--external {
+    display: inline-block;
+    @include icon(after, square-arrow);
+
+    &:after {
+      display: inline-block;
+      font-size: 1.1rem;
+      margin: -.5rem 0 0 1rem;
+      float: right;
+    }
+  }
 }
 
 
@@ -213,6 +214,7 @@ $btn_width: 3.2rem;
 .link--read-more {
   @include icon(before, arrow);
   font-family: $font-primary-semi;
+  display: inline-block;
 
   &:before {
     float: left;
@@ -220,6 +222,7 @@ $btn_width: 3.2rem;
     font-size: 1.2rem;
     margin-right: 1rem;
     transition: margin .3s;
+    color: $meta-data-icon;
   }
 
   &:hover, &:focus {

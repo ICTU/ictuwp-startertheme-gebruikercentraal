@@ -1,0 +1,72 @@
+/*
+ * Download box
+ * Used in singles and download lists
+ *
+ * Twig File
+ * - components/download-box.html.twig
+ */
+
+.download-box {
+  position: relative;
+  font-size: $font-smaller;
+
+  h3,
+  h2 {
+    font-size: 2rem;
+    line-height: 2.6rem;
+    margin-right: 5rem;
+
+    + p {
+      margin-top: .5rem;
+    }
+  }
+
+  .btn {
+    position: absolute;
+    right: 0;
+    top: 0;
+    margin: 0;
+  }
+
+
+  .meta-data + p{
+    margin-top: .5rem;
+  }
+
+  @include bp-down(md) {
+    .btn {
+      width: 3.6rem;
+      height: 3.6rem;
+      padding: 0;
+      overflow: hidden;
+
+      &:before {
+        display: block;
+        width: 100%;
+        height: 100%;
+        line-height: 3.6rem;
+        text-align: center;
+      }
+    }
+  }
+
+  @include bp-up(md){
+    .btn {
+      width: 15rem;
+    }
+
+    &--with-descr {
+      padding-right: 18rem;
+      min-height: 7.5rem;
+
+      .meta-data {
+        position: absolute;
+        right: 0;
+        top: 4.5rem;
+        width: 15rem;
+      }
+
+    }
+  }
+}
+

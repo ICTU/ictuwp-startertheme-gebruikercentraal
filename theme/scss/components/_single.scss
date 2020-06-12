@@ -22,10 +22,12 @@
       margin: 0 auto;
     }
 
-    .entry-content > .section:first-child {
-      // Make margin smaller if first section is a text one
-      &.section--text {
-        margin-top: $gutter;
+    .entry-content {
+      > .section:first-child {
+        // Make margin smaller if first section is a text one
+        &.section--text {
+          margin-top: $gutter;
+        }
       }
     }
   }
@@ -200,7 +202,27 @@
       padding-right: 2rem;
     }
   }
+
+  &.l-with-stepchart {
+    .page__intro {
+      padding-bottom: 5rem;
+
+      + .section--text-blocks {
+        margin-top: 0;
+        padding-top: 0;
+
+        .l-section-content {
+          margin-top: -5rem;
+
+          @include bp-up(md){
+            margin-top: -8rem;
+          }
+        }
+      }
+    }
+  }
 }
+
 
 /*
  * Pagination

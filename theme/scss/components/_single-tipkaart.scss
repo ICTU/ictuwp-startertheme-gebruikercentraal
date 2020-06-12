@@ -32,12 +32,11 @@
         margin: 2rem auto 0;
       }
 
-
       &.section--bg-option {
         background: url('../../img/b_section-bg-option.svg') left top 15rem no-repeat;
         background-size: auto 100%;
 
-        @include bp-up(xlg){
+        @include bp-up(xlg) {
           background-size: 100% auto;
         }
 
@@ -50,7 +49,7 @@
   }
 }
 
-@mixin gc-tipkaart-full($tip-color: $gc-a11y-green, $tip-secondary: $gc-a11y-green, $rblock-border: $gc-a11y-green) {
+@mixin gc-tipkaart-full($tip-color: $gc-a11y-green, $tip-secondary: $gc-a11y-green, $research-bg: $gc-a11y-green, $rblock-border: $gc-a11y-green, $toptip-bg: $gc-a11y-green-darker) {
 
   .entry-header {
     background: $tip-color;
@@ -60,8 +59,12 @@
     }
   }
 
+  .tipkaart__toptip:before {
+    background: $toptip-bg;
+  }
+
   .research {
-    background: $tip-color;
+    background: $research-bg;
     color: $white;
 
     h2, h3, a {
@@ -75,10 +78,11 @@
   }
 
   .l-why-wrapper:before {
-    background: $tip-color;
+    background: $research-bg;
   }
 
-  .research-block {
+  .research-block,
+  .research__conclusion {
     border: .1rem solid $rblock-border;
   }
 
@@ -212,14 +216,13 @@
       }
     }
 
-    .section--links {
+    .section--links,
+    .section--downloads {
       @include ho-padding;
-      padding-bottom: 5rem;
+    }
 
-      .section__title {
-        border: none;
-        padding-top: 0;
-      }
+    .section--links {
+      padding-bottom: 5rem;
 
       @include bp-up(lg) {
         padding-bottom: 8rem;
@@ -243,30 +246,26 @@
     }
   }
 
+  // Set colors for each category
+
+  /* @gc-tipkaart-full
+   * ({$Color for heading / top}, {$color for "Why block}, $(Research block background}, ${Border color for research blocks}, ${Background for toptips})
+   */
   &--gebruiksgemak {
-    @include gc-tipkaart-full($gc-dark-purple, $gc-a11y-green, $gc-dark-purple-lighter);
+    @include gc-tipkaart-full($gc-dark-purple, $gc-a11y-green, $gc-dark-purple, $gc-dark-purple-lighter, $gc-dark-purple-darker);
   }
 
-  // TODO Kan het kloppen dat de kleuren hiervoor nog niet uitgewerkt zijn?
   &--procesaanpak {
-    @include gc-tipkaart-full(red, $gc-a11y-green, $gc-dark-purple-lighter);
-  }
-  &--informatieveiligheid {
-    @include gc-tipkaart-full(red, $gc-a11y-green, $gc-dark-purple-lighter);
-  }
-  &--kanaalsturing {
-    @include gc-tipkaart-full(red, $gc-a11y-green, $gc-dark-purple-lighter);
-  }
-  &--samenwerking {
-    @include gc-tipkaart-full(red, $gc-a11y-green, $gc-dark-purple-lighter);
-  }
-  &--commitment {
-    @include gc-tipkaart-full(red, $gc-a11y-green, $gc-dark-purple-lighter);
-  }
-  &--inclusie {
-    @include gc-tipkaart-full(red, $gc-a11y-green, $gc-dark-purple-lighter);
+    @include gc-tipkaart-full($gc-a11y-cyan-lg, $gc-dark-blue, $gc-a11y-cyan, $gc-cyan, $gc-a11y-cyan);
   }
 
+  &--commitment {
+    @include gc-tipkaart-full($gc-a11y-green, $gc-dark-blue, $gc-a11y-green, $gc-green);
+  }
+
+  &--informatieveiligheid {
+    @include gc-tipkaart-full($gc-pink, $gc-dark-blue, $gc-pink, $gc-pink-lighter, $gc-pink-darker);
+  }
 }
 
 .section--examples {
@@ -344,11 +343,11 @@
     top: -2px;
   }
 
-  @include bp-up(sm){
+  @include bp-up(sm) {
     padding-left: 7rem;
   }
 
-  @include bp-up(lg){
+  @include bp-up(lg) {
     padding-left: 11rem;
 
     &:before {
@@ -365,6 +364,11 @@
 
   @include bp-up(lg) {
     padding-bottom: 8rem;
+  }
+
+  + .section .section__title {
+    border-top: 0;
+    padding-top: 0;
   }
 }
 
@@ -414,14 +418,14 @@
     @include bp-up(md) {
       @include square(18rem);
       transform: rotate(0);
-      margin: 0 0 -3rem 0;
+      margin: -12rem 0 -3rem -5rem;
     }
   }
 
   hr {
     margin: 1.5rem 0;
 
-    @include bp-up(lg){
+    @include bp-up(lg) {
       margin: 2.5rem 0;
     }
   }
@@ -480,4 +484,29 @@
 .research-block__descr {
   font-size: 1.5rem;
   line-height: 2rem;
+}
+
+.research__conclusion {
+  @include icon(before, doc-check);
+  padding: 2rem 2rem 2rem 7rem;
+  margin-top: 3rem;
+  position: relative;
+
+  &:before {
+    position: absolute;
+    left: 2rem;
+    top: 2rem;
+    font-size: 4rem;
+    line-height: 4rem;
+  }
+
+  @include bp-up(md) {
+    padding-left: 10rem;
+
+    &:before {
+      left: 3rem;
+      font-size: 5rem;
+      line-height: 6rem;
+    }
+  }
 }

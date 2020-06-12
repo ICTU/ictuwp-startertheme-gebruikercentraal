@@ -3,7 +3,10 @@
 $color-primary: $inc-orange;
 $brand-color: $inc-orange;
 
-$intro-bg: $gc-a11y-green;
+$intro-bg:        $gc-a11y-green;
+$tb_color_bg:     $gc-a11y-green;
+
+$tb_sec_bg: $gc-a11y-green;
 
 $hp-intro-bg: $inc-a11y-orange;
 
@@ -18,10 +21,6 @@ $hp-intro-bg: $inc-a11y-orange;
 }
 
 .page--type-step {
-  .page-content {
-    padding-left: 0;
-    padding-right: 0;
-  }
 
   .content {
     max-width: none;
@@ -33,37 +32,53 @@ $hp-intro-bg: $inc-a11y-orange;
 .entry--type-step {
   max-width: none;
 
+  .section--text {
+    @include gc-box-shadow;
+    background: $white;
+    padding: 2rem;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: $max-width-content;
+
+    @include bp-up(sm) {
+      padding: 3rem 2rem;
+    }
+
+    .l-section-content {
+      @include ho-container-content;
+    }
+  }
+
   .entry-header {
+    @include gc-box-shadow;
     max-width: $max-width-content;
     margin-bottom: 0;
 
     + .section--text {
       margin-top: 0;
-      @include gc-box-shadow;
-      background: $white;
+
+      @include bp-up(md) {
+        padding-top: 5rem;
+        padding-bottom: 5rem;
+      }
+
+      + .section .section__title {
+        border: none;
+        padding-top: 0;
+      }
     }
-  }
 
-  .l-section-content {
-    max-width: $max-width-container;
-  }
+    .l-section-content {
+      max-width: $max-width-container;
+    }
 
-  .section__title {
-    border: none;
-  }
-
-  .section--text {
-    padding: 3rem 0;
-    max-width: $max-width-content;
-
-    .l-section-inner {
-      max-width: $max-width-inner;
-      margin: 0 auto;
+    .section__title {
+      border: none;
     }
   }
 }
 
-.stepnav {
-  margin-left: 0;
-  margin-right: 0;
+.section--related .l-section-content {
+  max-width: $max-width-container;
 }
+
