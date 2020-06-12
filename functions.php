@@ -27,10 +27,6 @@ if ( ! defined( 'GC_TIPTHEMA' ) ) {
 if ( ! defined( 'GC_TIPVRAAG' ) ) {
 	define( 'GC_TIPVRAAG', 'tipvraag' );
 }
-// Jouw Organisatie wordt niet meer gebruikt
-//	if ( ! defined( 'GC_TIPORGANISATIE' ) ) {
-//		define( 'GC_TIPORGANISATIE', 'tiporganisatie' );
-//	}
 if ( ! defined( 'OD_CITAATAUTEUR' ) ) {
 	define( 'OD_CITAATAUTEUR', 'tipgever' );
 }
