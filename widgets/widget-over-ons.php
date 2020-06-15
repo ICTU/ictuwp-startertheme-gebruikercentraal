@@ -151,7 +151,7 @@ function filter_for_gc_overons_widget( $params ) {
 
 	if ( $overons_link ):
 
-		$params[0]['after_widget'] = '<p><a href="' . $overons_link['url'] . '" class="btn btn--primary">' . $overons_link['title'] . '</a></p>' . $params[0]['after_widget'];
+		$params[0]['after_widget'] = '<p><a href="' . esc_url( $overons_link['url'] ) . '" class="btn btn--primary">' . esc_html($overons_link['title'] ) . '</a></p>' . $params[0]['after_widget'];
 
 	endif;
 
