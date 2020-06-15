@@ -31,6 +31,15 @@ if ( ! defined( 'OD_CITAATAUTEUR' ) ) {
 	define( 'OD_CITAATAUTEUR', 'tipgever' );
 }
 
+// constants for image sizes
+define( 'BLOG_SINGLE_MOBILE', 'blog-single-mobile' );
+define( 'BLOG_SINGLE_TABLET', 'blog-single-tablet' );
+define( 'BLOG_SINGLE_DESKTOP', 'blog-single-desktop' );
+define( 'HALFWIDTH', 'halfwidth' );
+define( 'IMG_SIZE_HUGE', 'feature-huge' );
+define( 'IMG_SIZE_HUGE_MIN_WIDTH', 1200 );
+
+
 
 /**
  * If you are installing Timber as a Composer dependency in your theme, you'll need this block
@@ -92,9 +101,10 @@ class GebruikerCentraalTheme extends Timber\Site {
 		// translation support
 		add_action( 'after_setup_theme', array( $this, 'add_translation_support' ) );
 
-
+		// theme options
 		add_action( 'after_setup_theme', array( $this, 'theme_supports' ) );
 
+		// CSS setup
 		add_action( 'wp_enqueue_scripts', array( $this, 'gc_wbvb_add_css' ) );
 
 		add_filter( 'timber/context', array( $this, 'add_to_context' ) );
@@ -102,7 +112,7 @@ class GebruikerCentraalTheme extends Timber\Site {
 
 		add_action( 'init', array( $this, 'register_taxonomies' ) );
 
-		add_action( 'widgets_init', array( $this, 'arphabet_widgets_init' ) );
+		add_action( 'widgets_init', array( $this, 'setup_widgets_init' ) );
 
 		parent::__construct();
 	}
@@ -131,15 +141,13 @@ class GebruikerCentraalTheme extends Timber\Site {
 
 		$blog_id = get_current_blog_id();
 
-		$context['menu']       = new Timber\Menu( 'primary' );
-		$context['footermenu'] = new Timber\Menu( 'footermenu' );
-
-		$context['site']        = $this;
-		$context['site_name']   = ( get_bloginfo( 'name' ) ? get_bloginfo( 'name' ) : 'Gebruiker Centraal' );
-		$context['site_slogan'] = ( get_bloginfo( 'description' ) ? get_bloginfo( 'description' ) : null );
-		$context['logo']        = get_stylesheet_directory_uri() . '/theme/img/logo/od.svg';
-		$context['sprite_url']  = get_stylesheet_directory_uri() . '/theme/img/sprites/optimaal-digitaal/defs/svg/sprite.defs.svg';
-
+		$context['menu']                = new Timber\Menu( 'primary' );
+		$context['footermenu']          = new Timber\Menu( 'footermenu' );
+		$context['site']                = $this;
+		$context['site_name']           = ( get_bloginfo( 'name' ) ? get_bloginfo( 'name' ) : 'Gebruiker Centraal' );
+		$context['site_slogan']         = ( get_bloginfo( 'description' ) ? get_bloginfo( 'description' ) : null );
+		$context['logo']                = get_stylesheet_directory_uri() . '/theme/img/logo/od.svg';
+		$context['sprite_url']          = get_stylesheet_directory_uri() . '/theme/img/sprites/optimaal-digitaal/defs/svg/sprite.defs.svg';
 		$context['footer_widget_left']  = Timber::get_widgets( 'footer_widget_left' );
 		$context['footer_widget_right'] = Timber::get_widgets( 'footer_widget_right' );
 
@@ -202,6 +210,14 @@ class GebruikerCentraalTheme extends Timber\Site {
 
 		// Yoast Breadcrumbs
 		add_theme_support( 'yoast-seo-breadcrumbs' );
+
+		add_image_size( HALFWIDTH, 380, 9999, false );
+		add_image_size( BLOG_SINGLE_MOBILE, 120, 9999, false );
+		add_image_size( BLOG_SINGLE_TABLET, 250, 9999, false );
+		add_image_size( BLOG_SINGLE_DESKTOP, 380, 9999, false );
+		add_image_size( IMG_SIZE_HUGE, IMG_SIZE_HUGE_MIN_WIDTH, 9999, false );
+
+		add_image_size( 'thumb-cardv3', 99999, 600, false );    // max  600px hoog, niet croppen
 
 
 	}
@@ -318,7 +334,7 @@ class GebruikerCentraalTheme extends Timber\Site {
 	 * Register our sidebars and widgetized areas.
 	 *
 	 */
-	public function arphabet_widgets_init() {
+	public function setup_widgets_init() {
 
 		register_sidebar( array(
 			'name'          => _x( 'Footer widget left', 'Widget area', 'gctheme' ),
