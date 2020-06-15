@@ -9,10 +9,17 @@
             <li class="main-menu__item">
           {% endif %}
           <a target="{{ item.target }}" href="{{ item.link }}"><span>{{ item.title }}</span></a>
+
           {% if item.children %}
-            <ul class="sub-menu">
+            <!-- TODO tekxt aanpassen button -->
+            <button class="main-menu__open-sub">TEXT</button>
+          {% endif %}
+
+
+          {% if item.children %}
+            <ul class="main-menu__sublist">
               {% for child in item.children %}
-                <li class="nav-drop-item">
+                <li class="main-menu__item main-menu__item--sub">
                   <a href="{{ child.link }}">{{ child.title }}</a>
                 </li>
               {% endfor %}
