@@ -101,12 +101,16 @@ class GebruikerCentraalTheme extends Timber\Site {
 		add_filter( 'timber/twig', array( $this, 'add_to_twig' ) );
 
 		add_action( 'init', array( $this, 'register_taxonomies' ) );
+
+		add_action( 'widgets_init', array( $this, 'arphabet_widgets_init' ) );
+
 		parent::__construct();
 	}
 
 	// define menu location and name
 	public function register_my_menu() {
 		register_nav_menu( 'primary', __( 'Main menu location', 'gctheme' ) );
+		register_nav_menu( 'footermenu', __( 'Footer menu location', 'gctheme' ) );
 	}
 
 	function add_translation_support() {
@@ -127,12 +131,17 @@ class GebruikerCentraalTheme extends Timber\Site {
 
 		$blog_id = get_current_blog_id();
 
-		$context['menu']        = new Timber\Menu( 'primary' );
+		$context['menu']       = new Timber\Menu( 'primary' );
+		$context['footermenu'] = new Timber\Menu( 'footermenu' );
+
 		$context['site']        = $this;
 		$context['site_name']   = ( get_bloginfo( 'name' ) ? get_bloginfo( 'name' ) : 'Gebruiker Centraal' );
 		$context['site_slogan'] = ( get_bloginfo( 'description' ) ? get_bloginfo( 'description' ) : null );
 		$context['logo']        = get_stylesheet_directory_uri() . '/theme/img/logo/od.svg';
 		$context['sprite_url']  = get_stylesheet_directory_uri() . '/theme/img/sprites/optimaal-digitaal/defs/svg/sprite.defs.svg';
+
+		$context['footer_widget_left']  = Timber::get_widgets( 'footer_widget_left' );
+		$context['footer_widget_right'] = Timber::get_widgets( 'footer_widget_right' );
 
 
 		return $context;
@@ -194,6 +203,7 @@ class GebruikerCentraalTheme extends Timber\Site {
 		// Yoast Breadcrumbs
 		add_theme_support( 'yoast-seo-breadcrumbs' );
 
+
 	}
 
 	/** This Would return 'foo bar!'.
@@ -217,14 +227,20 @@ class GebruikerCentraalTheme extends Timber\Site {
 		return $twig;
 	}
 
-	function gc_wbvb_add_css() {
+	public function gc_wbvb_add_css() {
+
 
 		$dependencies = array();
-
-		$versie = CHILD_THEME_VERSION;
+		$versie       = CHILD_THEME_VERSION;
+		$infooter     = false;
 		if ( WP_DEBUG ) {
 			$versie = strtotime( "now" );
 		}
+
+		wp_enqueue_script( 'main-min', get_stylesheet_directory_uri() . '/theme/dist/js/main-min.js', $dependencies, $versie, $infooter );
+
+		$dependencies = array();
+
 
 		// TODO : verwijzen naar de relevante CSS
 
@@ -295,6 +311,32 @@ class GebruikerCentraalTheme extends Timber\Site {
 	}';
 
 		wp_add_inline_style( ID_SKIPLINKS, $custom_css );
+
+	}
+
+	/**
+	 * Register our sidebars and widgetized areas.
+	 *
+	 */
+	public function arphabet_widgets_init() {
+
+		register_sidebar( array(
+			'name'          => _x( 'Footer widget left', 'Widget area', 'gctheme' ),
+			'id'            => 'footer_widget_left',
+			'before_widget' => '<section class="widget %s">',
+			'after_widget'  => '</section>',
+			'before_title'  => '<h3 class="widget-title widgettitle">',
+			'after_title'   => '</h3>',
+		) );
+
+		register_sidebar( array(
+			'name'          => _x( 'Footer widget right', 'Widget area', 'gctheme' ),
+			'id'            => 'footer_widget_right',
+			'before_widget' => '<section class="widget %s">',
+			'after_widget'  => '</section>',
+			'before_title'  => '<h3 class="widget-title widgettitle">',
+			'after_title'   => '</h3>',
+		) );
 
 	}
 

@@ -1,1 +1,49 @@
-TODO (footer.twig)
+<div class="l-page-footer-wrapper">
+
+  <footer class="page-footer">
+
+    {% if footer_widget_left or footer_widget_right %}
+      <h2 class="visuallyhidden">{{ _x('Footer', 'Title boven footer widgets', 'gctheme') }}</h2>
+    {% endif %}
+
+    <div class="footer-col footer-col--1">
+
+      {{ footer_widget_left }}
+
+      <section class="widget gc-site-footer-widget">
+        <h4 class="widget-title widgettitle">Over Gebruiker Centraal</h4>
+        <p>Gebruiker Centraal is een community voor professionals die bezig zijn met de online
+          dienstverlening van de overheid.</p>
+        <p>
+          <a href="#" class="btn btn--primary">Meer over Gebruiker Centraal</a></p>
+      </section>
+
+    </div>
+
+    <div class="footer-col footer-col--2">
+
+      {{ footer_widget_right }}
+
+    </div>
+
+
+  </footer>
+
+
+  {% if footermenu %}
+    <div class="site-footer-menu">
+      <nav class="footer-menu">
+        <ul class="footer-menu__list menu">
+          {% for item in footermenu.items %}
+            <li class="footer-menu__list-item"><a target="{{ item.target }}" href="{{ item.link }}"><span>{{ item.title }}</span></a></li>
+          {% endfor %}
+        </ul>
+      </nav>
+    </div>
+  {% endif %}
+
+
+</div>
+
+
+</div>
