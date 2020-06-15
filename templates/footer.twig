@@ -1,22 +1,14 @@
 <div class="l-page-footer-wrapper">
 
-  <footer class="page-footer">
+  {% if footer_widget_left or footer_widget_right %}
+    <h2 class="visuallyhidden">{{ _x('Footer', 'Title boven footer widgets', 'gctheme') }}</h2>
+  {% endif %}
 
-    {% if footer_widget_left or footer_widget_right %}
-      <h2 class="visuallyhidden">{{ _x('Footer', 'Title boven footer widgets', 'gctheme') }}</h2>
-    {% endif %}
+  <footer class="page-footer">
 
     <div class="footer-col footer-col--1">
 
       {{ footer_widget_left }}
-
-      <section class="widget gc-site-footer-widget">
-        <h4 class="widget-title widgettitle">Over Gebruiker Centraal</h4>
-        <p>Gebruiker Centraal is een community voor professionals die bezig zijn met de online
-          dienstverlening van de overheid.</p>
-        <p>
-          <a href="#" class="btn btn--primary">Meer over Gebruiker Centraal</a></p>
-      </section>
 
     </div>
 
