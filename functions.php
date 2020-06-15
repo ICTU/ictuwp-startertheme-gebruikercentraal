@@ -44,7 +44,7 @@ define( 'IMG_SIZE_HUGE_MIN_WIDTH', 1200 );
 if ( ! defined( 'WBVB_GC_ABOUTUS' ) ) {
 	define( 'WBVB_GC_ABOUTUS', 'GC - Over ons' );
 }
-require_once(get_template_directory() . '/widgets/widget-over-ons.php');
+require_once( get_template_directory() . '/widgets/widget-over-ons.php' );
 
 /**
  * If you are installing Timber as a Composer dependency in your theme, you'll need this block
@@ -119,6 +119,8 @@ class GebruikerCentraalTheme extends Timber\Site {
 
 		add_action( 'widgets_init', array( $this, 'setup_widgets_init' ) );
 
+		add_action( 'theme_page_templates', array( $this, 'activate_deactivate_page_templates' ) );
+
 		parent::__construct();
 	}
 
@@ -155,7 +157,6 @@ class GebruikerCentraalTheme extends Timber\Site {
 		$context['sprite_url']          = get_stylesheet_directory_uri() . '/theme/img/sprites/optimaal-digitaal/defs/svg/sprite.defs.svg';
 		$context['footer_widget_left']  = Timber::get_widgets( 'footer_widget_left' );
 		$context['footer_widget_right'] = Timber::get_widgets( 'footer_widget_right' );
-
 
 		return $context;
 	}
@@ -361,6 +362,22 @@ class GebruikerCentraalTheme extends Timber\Site {
 
 	}
 
+	/**
+	 * Remove page templates inherited from the parent theme.
+	 *
+	 * @param array $page_templates List of currently active page templates.
+	 *
+	 * @return array Modified list of page templates.
+	 */
+	public function activate_deactivate_page_templates( $page_templates ) {
+
+		// Remove the templates we don’t need, based on which site we look at
+
+		// do not use sitemap
+		// unset( $page_templates['template-sitemap.php'] );
+
+		return $page_templates;
+	}
 
 }
 
@@ -376,6 +393,11 @@ function insert_breadcrumb() {
 
 }
 
+
+
+/*
+ * filter body class
+ */
 
 add_filter( 'body_class', 'my_body_classes' );
 
