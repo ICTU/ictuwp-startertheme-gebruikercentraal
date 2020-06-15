@@ -1,0 +1,33 @@
+<section class="section section--downloads">
+
+  {% if title or section_descr %}
+    <div class="l-section-top">
+      {% if title %}
+        <h2 class="section__title">
+          Downloads
+        </h2>
+      {% endif %}
+
+      {% if descr %}
+        <p class="section__description">{{ descr }}</p>
+      {% endif %}
+    </div>
+  {% endif %}
+
+  <div class="l-section-content">
+    <ul class="item-list">
+      {% for item in items %}
+
+      <li class="item-list__item">
+        {% include 'components/download-box.html.twig' with {
+          'title': item.title,
+          'descr': item.descr,
+          'meta': item.meta
+        } %}
+        {% endfor %}
+      </li>
+    </ul>
+
+  </div>
+</section>
+
