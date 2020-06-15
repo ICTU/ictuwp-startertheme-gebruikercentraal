@@ -40,6 +40,11 @@ define( 'IMG_SIZE_HUGE', 'feature-huge' );
 define( 'IMG_SIZE_HUGE_MIN_WIDTH', 1200 );
 
 
+// add the widgets
+if ( ! defined( 'WBVB_GC_ABOUTUS' ) ) {
+	define( 'WBVB_GC_ABOUTUS', 'GC - Over ons' );
+}
+require_once(get_template_directory() . '/widgets/widget-over-ons.php');
 
 /**
  * If you are installing Timber as a Composer dependency in your theme, you'll need this block
