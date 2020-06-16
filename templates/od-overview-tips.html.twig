@@ -1,0 +1,82 @@
+{% if id is empty %}
+  {% set id = '1' %}
+{% endif %}
+
+<html lang="nl" dir="ltr">
+
+<head>
+  {% include 'includes/head.html.twig' %}
+</head>
+
+<body class="page page--type-overview site-id-{{ id }}{{ modifier }}">
+
+<div class="site-container">
+
+  {% include 'includes/header.html.twig' %}
+
+  {% if breadcrumb is empty %}
+    {% set breadcrumb = {
+      'page_title': 'Instrumenten',
+      'links': ['Home']
+    } %}
+  {% endif %}
+
+  {% include 'includes/breadcrumb.html.twig' with {
+    'page_title': title,
+    'links': breadcrumb.links
+  } %}
+
+
+  <div class="page-content" id="maincontent" tabindex="-1">
+
+    <main class="content">
+
+      <article class="entry entry--type-overview entry--full">
+
+        <div class="entry-content">
+
+          <div class="page__intro">
+            <header class="entry-header">
+              <h1 class="entry-title">{{ title ? title : 'Onze instrumenten' }}</h1>
+
+              {% if intro %}
+                <p>{{ intro }}</p>
+              {% endif %}
+            </header>
+          </div>
+
+        </div>
+
+        <div class="l-filter-wrapper">
+
+          {% set filters = ['Commitment', 'Gebruiksgemak', 'Informatieveiligheid', 'Kanaalsturing', 'Procesaanpak', 'Samenwerking', 'Inclusie']
+          %}
+
+          <form id="tp-filters" class="form form--filters">
+
+            {% for item in filters %}
+
+              <div class="form-item form-item--checkbox form-item--filter">
+                <input type="checkbox" id="{{ item|lower }}">
+                <label for="{{ item|lower }}">{{ item }}</label>
+              </div>
+
+            {% endfor %}
+
+          </form>
+        </div>
+
+        {% include 'sections/section-overview.html.twig' with {
+          'items': tipkaarts,
+          'title': '',
+          'template': 'card--tipkaart',
+          'modifier': '4col'
+        } %}
+
+      </article>
+
+    </main>
+  </div>
+
+  {% include 'includes/footer.html.twig' %}
+</div>

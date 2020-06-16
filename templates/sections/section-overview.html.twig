@@ -11,7 +11,7 @@
 ] %}
 
 
-<section class="{{ sectionClasses }}">
+<section class="{{ sectionClasses|join(' ') }}">
 
   {# Wrapper for section intro #}
   {% if title or description %}
@@ -44,6 +44,7 @@
     {% endif %}
 
     {% if items %}
+
       <div class="grid {{ extra_class }}">
 
         {% for key, item in items %}
