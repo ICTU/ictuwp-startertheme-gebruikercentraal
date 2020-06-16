@@ -1,1 +1,41 @@
-Copyright {{"now"|date('Y')}}
+<div class="l-page-footer-wrapper">
+
+  {% if footer_widget_left or footer_widget_right %}
+    <h2 class="visuallyhidden">{{ _x('Footer', 'Title boven footer widgets', 'gctheme') }}</h2>
+  {% endif %}
+
+  <footer class="page-footer">
+
+    <div class="footer-col footer-col--1">
+
+      {{ footer_widget_left }}
+
+    </div>
+
+    <div class="footer-col footer-col--2">
+
+      {{ footer_widget_right }}
+
+    </div>
+
+
+  </footer>
+
+
+  {% if footermenu %}
+    <div class="site-footer-menu">
+      <nav class="footer-menu">
+        <ul class="footer-menu__list menu">
+          {% for item in footermenu.items %}
+            <li class="footer-menu__list-item"><a target="{{ item.target }}" href="{{ item.link }}"><span>{{ item.title }}</span></a></li>
+          {% endfor %}
+        </ul>
+      </nav>
+    </div>
+  {% endif %}
+
+
+</div>
+
+
+</div>

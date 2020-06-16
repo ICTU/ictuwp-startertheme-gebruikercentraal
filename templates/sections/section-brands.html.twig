@@ -1,0 +1,41 @@
+<section class="section section--brands{{ modifier ? ' ' ~ modifier }}">
+
+  {% if title or descr %}
+    <div class="l-section-top">
+
+      {% if title %}
+        <h2 class="section__title">{{ title }}</h2>
+      {% endif %}
+
+      {% if descr %}
+        <p class="section__description">
+          {{ descr }}
+        </p>
+      {% endif %}
+    </div>
+
+  {% endif %}
+
+  {% if items %}
+
+  <div class="l-section-content">
+    <div class="grid grid--col-4">
+
+      {% for item in items %}
+
+      <div class="brand">
+        <figure class="brand__image">
+          <img class="image image--brand" src="/uploads/styles/logo/{{ item.img }}">
+        </figure>
+
+        <a class="link link--arrow-icon" href="{{ item.url ? item.url : '#' }}">
+          {{ item.title }}
+        </a>
+      </div>
+
+      {% endfor %}
+    </div>
+  </div>
+
+  {% endif %}
+</section>

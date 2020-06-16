@@ -21,5 +21,10 @@ node_modules/
 *.log
 *.sql
 *.sqlite
-.idea/workspace.xml
 frontend/yarn.lock
+sites.zip
+
+sites/*/*.php
+sites/**.json
+sites/**.json
+

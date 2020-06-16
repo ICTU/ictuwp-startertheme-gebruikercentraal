@@ -1,0 +1,27 @@
+
+
+<div class="section section--spotlight{{ modifier ? ' section--' ~ modifier }}">
+
+    <div class="l-spotlight-wrapper l-item-count-{{ items|length}}">
+
+        {% for item in items %}
+        <div class="spotlight">
+
+            <figure class="spotlight__image">
+                <img src="/uploads/{{ item.img ? item.img : 'img-16-9.jpg' }}" alt="{{ item.title }}">
+            </figure>
+
+            <div class="spotlight__content">
+                <h2>{{ item.title }}</h2>
+                <p>{{ item.descr }} </p>
+
+                {% for cta in item.cta %}
+                    <a href="{{ cta.url ? cta.url ? '#' }}" class="btn btn--{{ cta.class ? class : 'primary' }}">{{ cta.title }}</a>
+                {% endfor %}
+
+            </div>
+        </div>
+
+        {% endfor %}
+    </div>
+</div>

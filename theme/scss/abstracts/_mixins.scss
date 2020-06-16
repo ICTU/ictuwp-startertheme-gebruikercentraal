@@ -1,0 +1,307 @@
+@mixin square($size) {
+  width: $size;
+  height: $size;
+}
+
+@mixin ho-padding() {
+  padding-left: 2rem;
+  padding-right: 2rem;
+  box-sizing: border-box;
+
+  @include bp-up(sm) {
+    padding-right: 3rem;
+    padding-left: 3rem;
+  }
+}
+
+@mixin ho-container() {
+  max-width: $max-width-container;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@mixin ho-container-content() {
+  max-width: $max-width-inner;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@mixin backstretch($background: $color-primary) {
+  position: relative;
+  z-index: 5;
+
+  &:before {
+    content: " ";
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    background: $background;
+    z-index: -1;
+    margin-left: -1000rem;
+    margin-right: -1000rem;
+  }
+}
+
+@mixin bp-up($breakpoint) {
+  // If the key exists in the map
+  @if map-has-key($breakpoints, $breakpoint) {
+    // Prints a media query based on the value
+    @media (min-width: map-get($breakpoints, $breakpoint)) {
+      @content;
+    }
+  }
+
+    // If the key doesn't exist in the map
+  @else {
+    @warn "Unfortunately, no value could be retrieved from `#{$breakpoint}`. "
+        + "Available breakpoints are: #{map-keys($breakpoints)}.";
+  }
+}
+
+@mixin bp-down($breakpoint) {
+
+  // If the key exists in the map
+  @if map-has-key($breakpoints, $breakpoint) {
+    $mw: map-get($breakpoints, $breakpoint) - 1px;
+
+    // Prints a media query based on the value
+    @media (max-width: $mw) {
+      @content;
+    }
+  }
+    // If the key doesn't exist in the map
+  @else {
+    @warn "Unfortunately, no value could be retrieved from `#{$breakpoint}`. "
+        + "Available breakpoints are: #{map-keys($breakpoints)}.";
+  }
+}
+
+@mixin visually-hidden() {
+  margin: -1px;
+  padding: 0;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  clip: rect(0, 0, 0, 0);
+  position: absolute;
+}
+
+@mixin gc-box-shadow($color: #000, $trans: 0.15) {
+  box-shadow: .4rem .4rem 0 rgba($color, $trans);
+}
+
+
+@mixin gc-pagination() {
+  display: flex;
+  margin-top: $gutter;
+  border: none;
+
+  @include bp-up(lg) {
+    margin-top: 3rem;
+  }
+
+  a {
+    //@include gc-box-shadow();
+    //border: .1rem solid $gc_greyblue;
+    font-family: $font_primary_bold;
+    display: inline-block;
+    padding: .5rem 0;
+    text-decoration: none;
+    position: relative;
+    transition: padding .2s, background-color .2s;
+    line-height: 2.6rem;
+
+    &:hover,
+    &:focus,
+    &:active {
+      background: $white;
+      border-color: $gc-dark-blue;
+      text-decoration: underline;
+      color: $base_font_color;
+    }
+  }
+
+  .alignright {
+    margin-left: auto;
+  }
+
+  .pagination-previous a {
+    @include icon(before, arrow);
+  }
+  .pagination-next a {
+    @include icon(after, arrow);
+  }
+
+  .pagination-previous a:before,
+  .pagination-next a:after {
+    @include square(2rem);
+    position: absolute;
+    display: block;
+    top: 1rem;
+    font-size: 1.4rem;
+    color: $gc-dark-blue;
+    line-height: 2rem;
+  }
+
+  .pagination-previous a {
+    padding-left: 3.8rem;
+
+    &:before {
+      left: .6rem;
+      transform: rotate(180deg);
+    }
+
+    &:hover, &:focus, &:active {
+      padding-left: 3.9rem;
+    }
+  }
+
+  .pagination-next a {
+    padding-right: 3.8rem;
+
+    &:after {
+      right: .6rem;
+    }
+
+    &:hover, &:focus, &:active {
+      padding-right: 3.9rem;
+    }
+  }
+
+}
+
+
+@mixin gc-section-header {
+  font-size: 3.2rem;
+  font-family: $font_secondary;
+  line-height: 36px;
+
+  @include bp-up(md) {
+    font-size: 4.2rem;
+    line-height: 44px;
+  }
+}
+
+@mixin gc-card-image-pantybrown() {
+  position: relative;
+  overflow: hidden;
+
+  &.card--with-image {
+
+    .card__image {
+      background: $gc-pantybrown-xlight;
+      padding: 2rem 3rem;
+      height: 34rem;
+
+
+      img {
+        @include gc-box-shadow();
+        width: 18rem;
+        height: auto;
+        margin: 3rem auto 5rem;
+        object-fit: contain;
+      }
+    }
+  }
+}
+
+@mixin gc-page-intro($bg: $intro-bg, $color: $intro-color) {
+
+  .entry-header {
+    background: $bg;
+    color: $color;
+    padding: 3rem;
+    max-width: none;
+
+    @include bp-up(md) {
+      padding: 4rem 5rem;
+    }
+
+    h1, h2 {
+      color: $color;
+    }
+
+    a {
+      color: $color;
+    }
+  }
+
+  .page__intro {
+    background: $white;
+    @include gc-box-shadow();
+    max-width: $max-width-content;
+    margin: 0 auto;
+  }
+}
+
+@mixin gc-bg-rotated($bg: $gc-pantybrown-xlight) {
+  position: relative;
+  //width: 100%;
+  overflow: hidden;
+  z-index: 5;
+  padding-bottom: 5rem;
+
+  @include bp-up(md) {
+    padding-bottom: 8rem;
+  }
+
+  &:before {
+    position: absolute;
+    content: " ";
+    background: $bg;
+    speak: none;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: 0 -5rem -5rem;
+    top: 15rem;
+    transform: rotate(2deg);
+  }
+}
+
+@mixin gc-section-heading() {
+  font-size: 3.2rem;
+  font-family: $font_secondary;
+  //text-transform: uppercase; :(
+  line-height: 36px;
+
+  @include bp-up(md) {
+    font-size: 4.2rem;
+    line-height: 44px;
+  }
+}
+
+@mixin gc-fancy-list($color: $color-primary) {
+  margin: 0;
+  padding: 0;
+
+  li {
+    @include icon(before, arrow);
+    list-style: none;
+    position: relative;
+    padding-left: 2.5rem;
+
+    &:before {
+      position: absolute;
+      left: 0;
+      top: .1rem;
+      color: $color;
+      font-size: 1.2rem;
+    }
+  }
+}
+
+
+@mixin negate-padding() {
+  margin-left: -2rem;
+  margin-right: -2rem;
+
+  @include bp-up(sm){
+    margin-left: -3rem;
+    margin-right: -3rem;
+  }
+}

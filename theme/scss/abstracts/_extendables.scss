@@ -1,0 +1,75 @@
+.clearfix,
+%clearfix {
+  &:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+}
+%nolist {
+  margin: 0;
+  padding: 0;
+
+  li {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+}
+%nicelist {
+  margin: 15px 0;
+  padding: 0;
+
+  li {
+    position: relative;
+    display: inline-block;
+    list-style: none;
+    padding: 0 0 0 20px;
+    margin: 0;
+
+    &:before {
+      left: 0;
+      content: " ";
+      position: absolute;
+      width: 5px;
+      height: 5px;
+      border-radius: 10px;
+      top: 8px;
+      background: #000;
+    }
+  }
+}
+%backstretch {
+  margin-left: -100%;
+  margin-right: -100%;
+  padding-left: 100%;
+  padding-right: 100%;
+}
+%no-table {
+  tr, td, th {
+    display: block;
+    text-align: left;
+  }
+
+  tr {
+    padding: 0;
+  }
+}
+%spread {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
+%visually-hidden {
+  position: absolute !important;
+  clip: rect(1px 1px 1px 1px); /* IE6, IE7 */
+  clip: rect(1px, 1px, 1px, 1px);
+  padding:0 !important;
+  border:0 !important;
+  height: 1px !important;
+  width: 1px !important;
+  overflow: hidden;
+}
+

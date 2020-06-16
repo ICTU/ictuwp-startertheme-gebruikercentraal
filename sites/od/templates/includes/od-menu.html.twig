@@ -1,0 +1,108 @@
+{% set default_url = '#' %}
+
+{% set menu_items = {
+  '1': {
+    'title': 'Home',
+    'url': '/sites/od/index.php',
+    'sub': {
+      '1': {
+        'title': 'Event detail',
+        'url': 'event.php'
+      }
+    }
+  },
+  '2': {
+    'title': 'Het spel',
+    'url': 'landing.php',
+    'sub': {
+      '1': {
+        'title': 'Wat is het?',
+        'url': 'page.php',
+      },
+      '2': {
+        'title': 'Achtergrond',
+      },
+      '3': {
+        'title': 'Handleiding',
+        'url': 'handleiding.php',
+      },
+      '4': {
+        'title': 'Spelbegrippen',
+        'url': '#',
+      },
+      '5': {
+        'title': 'Bestellen',
+      },
+      '6': {
+        'title': 'Print & play',
+      }
+    }
+  },
+  '3': {
+    'title': 'Tips',
+    'url': 'tips.php',
+    'sub': {
+      '1': {
+        'title': 'Alle tips',
+        'url': 'overview-tips.php'
+      },
+      '2': {
+        'title': 'Tipgevers',
+        'url': '#',
+      },
+      '3': {
+        'title': 'Inclusieset',
+        'url': 'page-set.php',
+      },
+    }
+  },
+  '4': {
+    'title': 'Voor spelleiders',
+    'sub': {
+      '1': {
+        'title': 'Tips voor spelleiders'
+      }
+    }
+  },
+  '5': {
+    'title': 'Workshops',
+  },
+  '6': {
+    'title': 'Blog',
+    'url': 'blog-od.php',
+  },
+  '7': {
+    'title': 'Agenda',
+    'url': 'overview-events.php',
+  },
+  '8': {
+    'title': 'Contact',
+    'url': '#'
+  }
+} %}
+
+
+{% for item in menu_items %}
+
+  {% set classes = [
+    'main-menu__item',
+    item.sub ? 'main-menu__item--with-sub'
+  ] %}
+
+  <li class="{{ classes|join(' ') }}">
+
+    <a href="{{ item.url ? item.url : '#' }}" class="menu-link">{{ item.title }}</a>
+
+    {% if item.sub %}
+      <button class="main-menu__open-sub" data-ol-has-click-handler="">Open submenu {{ item.title }}</button>
+
+      <ul class="main-menu__sublist" aria-hidden="false">
+        {% for sub in item.sub %}
+          <li class="main-menu__item main-menu__item--sub"><a href="{{ sub.url ? sub.url : '#' }}" class="menu-link" aria-expanded="false">{{ sub.title }}</a></li>
+        {% endfor %}
+      </ul>
+
+    {% endif %}
+  </li>
+
+{% endfor %}

@@ -1,0 +1,55 @@
+{% extends "base.twig" %}
+
+{% block content %}
+
+
+  <div class="page-content" id="maincontent" tabindex="-1">
+
+    <main class="content">
+
+      <article class="entry entry--type-overview entry--full">
+
+        <div class="entry-content">
+
+          <div class="page__intro">
+            <header class="entry-header">
+              <h1 class="entry-title">{{ title ? title : 'Onze instrumenten' }}</h1>
+
+              {% if intro %}
+                <p>{{ intro }}</p>
+              {% endif %}
+            </header>
+          </div>
+
+        </div>
+
+        {% if filters %}
+        <div class="l-filter-wrapper">
+          <p>Filter werkt nog niet</p>
+          <form id="tp-filters" class="form form--filters">
+            {% for item in filters %}
+              <div class="form-item form-item--checkbox form-item--filter">
+                <input type="checkbox" id="{{ item.class }}">
+                <label for="{{ item.class }}">{{ item.name }}</label>
+              </div>
+            {% endfor %}
+          </form>
+        </div>
+      {% endif %}
+
+
+
+      {% include 'sections/section-overview.html.twig' with {
+        'items': tipkaarts,
+        'title': '',
+        'template': 'card--tipkaart',
+        'modifier': '4col'
+      } %}
+
+
+    </article>
+    </main>
+  </div>
+
+{% endblock %}
+

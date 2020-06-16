@@ -1,0 +1,21 @@
+<div class="tipkaart tipkaart--{{ category|lower }}">
+  <a class="tipkaart__link" title="Neem als bestuurder verant­woordelijkheid voor informatie­veiligheid" href="{{ url ? url : '#' }}">
+
+    {% if toptip %}
+      <span class="tipkaart__toptip">
+        Is toptip
+      </span>
+    {% endif %}
+
+    <span class="tipkaart__nummer">Tip {{ nr }}</span>
+    <h3 class="tipkaart__title">{{ title }}</h3>
+
+    <div class="tipkaart__categorie">
+      <svg class="icon icon--medium icon--tipkaart" focusable="false">
+        <use xmlns:xlink="http://www.w3.org/1999/xlink"
+             xlink:href="{{ sprite_url }}#{{ category|lower}}"></use>
+      </svg>
+      <span class="name">{{ category }}</span>
+    </div>
+  </a>
+</div>
