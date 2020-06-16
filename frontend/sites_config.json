@@ -1,0 +1,20 @@
+{
+  "base": {
+    "name": "Optimaal Digitaal",
+    "shortname": "optimaaldigitaal",
+    "path": "../sites/od/theme/",
+    "dest": "../sites/od/theme/",
+    "absfolder": "/wp-content/themes/ictuwp-theme-gc2020/",
+    "proxy": "optimaaldigitaal.test"
+  },
+  "gc": {
+    "name": "Gebruiker Centraal",
+    "shortname": "gc_base",
+    "path": "./",
+    "proxy": "optimaaldigitaal.test",
+    "absfolder": "/wp-content/themes/ictuwp-theme-gc2020/",
+    "dest": "./"
+  }
+}
+
+

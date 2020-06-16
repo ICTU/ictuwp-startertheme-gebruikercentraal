@@ -1,0 +1,91 @@
+{
+  "1": {
+    "nr" : "100",
+    "title": "Maak je aanpak inclusief",
+    "category": "Inclusie"
+  },
+  "2": {
+    "nr": "111",
+    "title": "Leg uitgangspunten inclusieve dienstverlening vast",
+    "summary": "Met een plan van eisen vóórdat je gaat ontwikkelen is voor alle betrokkenen duidelijk waar je dienstverlening aan moet voldoen. Betrek hier verschillende representatieve gebruikers bij. Verdiep je in richtlijnen, gebruik ervaringsdeskundigheid en kennis die er al is.",
+    "category": "Inclusie"
+  },
+  "3": {
+    "nr": "112",
+    "title": "Verdiep je eerst in één doelgroep",
+    "summary": "",
+    "category": "Inclusie"
+  },
+  "4": {
+    "nr": "113",
+    "title": "Wees je bewust van diversiteit binnen een doelgroep",
+    "summary": "Ervaar zelf de belemmeringen waar een gebruiker tegenaan kan lopen. De beperking zit niet in de gebruiker, maar in jouw ontwerpkeuzes. Als je het zelf voelt begrijp je beter hoe je die dienst kunt verbeteren. En je bent je meer bewust van de urgentie dat ook te doen.",
+    "category": "Inclusie"
+  },
+  "5": {
+    "nr": "114",
+    "title": "Ervaar zelf beperkingen van je dienst",
+    "summary": "Ervaar zelf de belemmeringen waar een gebruiker tegenaan kan lopen. De beperking zit niet in de gebruiker, maar in jouw ontwerpkeuzes. Als je het zelf voelt begrijp je beter hoe je die dienst kunt verbeteren. En je bent je meer bewust van de urgentie dat ook te doen.",
+    "category": "Inclusie"
+  },
+  "6": {
+    "nr": "115",
+    "title": "Wees alert op onbewuste uitsluiting",
+    "summary": "Realiseer je dat alle mensen vanwege allerlei omstandigheden (tijdelijk) hindernissen kunnen ervaren in het gebruik van je dienst. Denk bijvoorbeeld aan ingrijpende levensgebeurtenissen. Psychosociale, cognitieve en taalvaardigheden zijn niet zichtbaar. Wees je daarvan bewust en werk drempels weg.",
+    "category": "Inclusie"
+  },
+  "7": {
+    "nr": "116",
+    "title": "Betrek belangenbehartigers en de doelgroep zelf",
+    "summary": "Laat belangenorganisaties van je doelgroep zo vroeg mogelijk meedenken. Test met mensen uit je doelgroep. Evalueer met alle partijen.",
+    "category": "Inclusie"
+  },
+  "8": {
+    "nr": "117",
+    "title": "Stem je test af op je doelgroep",
+    "summary": "Bereid je test goed voor. Elke doelgroep heeft specifieke kenmerken. Zorg bijvoorbeeld voor begrijpelijk en aantrekkelijk materiaal en een rustige toegankelijke vertrouwde omgeving. Wees alert op sociaal wenselijke antwoorden en schaamte.",
+    "category": "Inclusie"
+  },
+  "9": {
+    "nr": "118",
+    "title": "Ga naar je doelgroep toe",
+    "summary": "Wil je dienstverlening voor iedereen, dan moet je in contact komen met je doelgroepen. Dit om te begrijpen wat nodig is en om te testen. Ga erheen. Denk bijvoorbeeld aan belangenorganisaties, openbare bibliotheken of zorginstellingen.",
+    "category": "Inclusie"
+  },
+  "10": {
+    "nr": "119",
+    "title": "Gebruik de kracht van digitaal",
+    "summary": "Wees je er van bewust dat digitaal ook voordelen kan bieden voor specifieke groepen. Technologie‘n kunnen mensen juist ondersteunen, zoals spraakherkenning, spellingcorrectie, multimedia, robotisering of kunstmatige intelligentie.",
+    "category": "Inclusie"
+  },
+  "11": {
+    "nr": "120",
+    "title": "Wees bewust van angst voor technologie",
+    "summary": "Gebruikers kunnen slechte ervaringen hebben met digitale diensten. Soms hebben ze angst om fouten te maken, of vinden ze computers complex, onveilig en onpersoonlijk. Wees je daar van bewust en toon begrip.",
+    "category": "Inclusie"
+  },
+  "12": {
+    "nr": "121",
+    "title": "Ontwerp een inclusief product",
+    "summary": "Alle mensen moeten je dienst kunnen gebruiken. Houd rekening met diversiteit in fysieke, cognitieve, taal- en psychosociale vaardigheden. Let op omstandigheden en de context van gebruik. Pas vorm en inhoud van je dienst hier op aan.",
+    "category": "Inclusie"
+  },
+  "13": {
+    "nr": "122",
+    "title": "Gebruik beeld, animatie en geluid als dit helpt",
+    "summary": "Ga niet alleen uit van tekst, maar gebruik ook visuele en auditieve middelen. Bedenk met welk doel en voor welke doelgroep je ze gebruikt. Zorg dat ze altijd de boodschap ondersteunen. En dat beeld, animatie en geluid toegankelijk zijn voor iedereen.",
+    "category": "Inclusie"
+  },
+  "14": {
+    "nr": "123",
+    "title": "Beperk je tot de essentie voor de gebruiker",
+    "summary": "Zorg dat de boodschap zo duidelijk en eenduidig mogelijk is, over alle kanalen heen. Vermijd bijzaken. Maak uitzonderingen goed vindbaar.",
+    "category": "Inclusie"
+  },
+  "15": {
+    "nr": "124",
+    "title": "Voorkom overbodige vragen",
+    "summary": "Ga uit van het perspectief van je gebruiker. Maak duidelijk waarom je de vraag stelt. Vraag geen gegevens uit die je al weet. Vraag alleen maar uit als je iets doet met de antwoorden.",
+    "category": "Inclusie"
+  }
+}

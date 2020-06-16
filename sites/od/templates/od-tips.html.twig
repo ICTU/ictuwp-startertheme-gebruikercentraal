@@ -1,0 +1,156 @@
+{% if id is empty %}
+  {% set id = '1' %}
+{% endif %}
+
+<html lang="nl" dir="ltr">
+
+<head>
+  {% include 'includes/head.html.twig' %}
+</head>
+
+<body class="page page--type-landing site-id-{{ id }}{{ modifier }}">
+
+<div class="site-container">
+
+  {% include 'includes/header.html.twig' %}
+
+  {% if breadcrumb is empty %}
+    {% set breadcrumb = {
+      'page_title': 'Instrumenten',
+      'links': ['Home']
+    } %}
+  {% endif %}
+
+  {% include 'includes/breadcrumb.html.twig' with {
+    'page_title': title,
+    'links': breadcrumb.links
+  } %}
+
+
+  <div class="page-content" id="maincontent" tabindex="-1">
+
+    <main class="content">
+
+      <article class="entry entry--type-landing entry--full">
+
+        <div class="entry-content">
+
+          <div class="page__intro">
+            <header class="entry-header">
+              <h1 class="entry-title">{{ title ? title : 'Onze instrumenten' }}</h1>
+
+              {% if intro %}
+                <p>{{ intro }}</p>
+              {% endif %}
+            </header>
+
+            {% if body %}
+              {# default body body #}
+
+              <div class="entry-body">
+                {{ body|raw }}
+              </div>
+
+              {# end body #}
+            {% endif %}
+
+          </div>
+
+
+          {% set text %}
+            <p>De basis van Optimaal Digitaal bestaat uit tips. De tips omvatten goede voorbeelden, een uitleg waarom
+              het werkt, onderbouwing uit onderzoeken en handige links naar andere relevante informatie. </p>
+
+            <a href="overview-tips.php" class="btn btn--primary">Bekijk alle tips</a>
+          {% endset %}
+
+          {% include 'blocks/text.html.twig' with {
+            'title': 'Goede voorbeelden uit de praktijk',
+            'section_text' : text
+          } %}
+
+          {% set toptips = {
+            '1': {
+              'nr': '72',
+              'category': 'Gebruiksgemak',
+              'title': 'Test met échte gebruikers',
+              'toptip': 'ja',
+              'type': 'tipkaart',
+              'url': 'tip-gebruiksgemak.php'
+            },
+            '2': {
+              'nr': '99',
+              'title': 'Ken de wet!',
+              'category': 'Informatieveiligheid',
+            },
+            '3': {
+              'nr': '97',
+              'title': 'Bied aan daar waar de burger zoekt',
+              'category': 'Kanaalsturing',
+            },
+          } %}
+
+          {% include 'sections/section-overview.html.twig' with {
+            'items': toptips,
+            'title': '',
+            'template': 'card--tipkaart',
+          } %}
+
+          {% set cards = {
+            '1': {
+              'title': 'Toptips',
+              'descr': 'We hebben een doorsnede gemaakt van [ineke maak hier iets moois van!] alle spelkaartjes. Met deze kaartjes kan je snel het spel starten.',
+              'img': 'styles/card/toptip.jpg',
+            },
+            '2': {
+              'title': 'Uitbreidingsset voor Inclusie',
+              'descr': 'Hoe maak je je dienstverlening inclusief? Met de uitbreidingsset voor Inclusie kom je er zo achter.',
+              'img': 'styles/card/inclusie.jpg',
+              'url': 'page-set.php'
+            }
+          } %}
+
+
+          {% include 'sections/section-related.html.twig' with {
+            'title': 'Sets en uitbreidingen',
+            'items': cards,
+            'modifier': 'bg-option'
+          }%}
+
+        </div>
+
+      </article>
+    </main>
+
+    {% if spotlight %}
+
+      {% if theme == 'od' %}
+        {% set spotlight = {
+          '1': {
+            'title': 'Ook het spel spelen?',
+            'descr': 'Met het spel wordt verassend snel doorgedrongen tot de kern. Het spel eindigt met concrete acties die de volgende dag kunnen worden opgepakt. Het verbeteren van je (digitale) dienstverlening start dus meteen.',
+            'img': 'img-16-9-od.jpg',
+            'cta': {
+              '1': {
+                'title': 'Bestellen'
+              },
+              '2': {
+                'title': 'Print & play',
+              }
+            }
+          }
+        } %}
+
+      {% endif %}
+
+      {% include 'sections/section-spotlight.html.twig' with {
+        'items': spotlight,
+        'modifier': 'bg-option'
+      } %}
+
+    {% endif %}
+
+  </div>
+
+  {% include 'includes/footer.html.twig' %}
+</div>

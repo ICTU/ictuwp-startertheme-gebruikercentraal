@@ -1,0 +1,136 @@
+{% extends "base.twig" %}
+
+{% block content %}
+
+  <article class="tip tip--full tip--{{ category }}">
+    <header class="entry-header">
+      <div class="tip__nr">Tip {{ post.meta('tip-nummer') }}</div>
+      <h1 class="entry-title">{{ post.title }}</h1>
+
+      <div class="tipkaart__categorie">
+        <svg class="icon icon--medium icon--tipkaart" focusable="false">
+          <use xmlns:xlink="http://www.w3.org/1999/xlink"
+               xlink:href="{{ sprite_url }}#{{ category|lower }}"></use>
+        </svg>
+        <span class="name">{{ category }}</span>
+      </div>
+
+    </header>
+
+    <div class="entry-content">
+
+      <div class="entry-body">
+        {{ post.content }}
+      </div>
+
+      {% if examples %}
+        <section class="section section--examples">
+          <h2 class="section__title">{{ _x('Voorbeelden', 'Title boven voorbeelden', 'gctheme') }}</h2>
+
+          {% for item in examples %}
+            <div class="example">
+              <div class="example__content">
+                <h3 class="example__title">{{ item.title }}</h3>
+
+                <div class="example__description">
+                  {{ item.descr }}
+
+                  {% if item.link %}
+                    <a src="{{ item.link.url ? item.link.url : '#' }}"
+                       class="btn btn--{{ item.link.modifier ? item.link.modifier : 'primary' }}">
+                      {{ item.link.title }}
+                    </a>
+                  {% endif %}
+                </div>
+              </div>
+
+              {% if item.author %}
+
+                <div class="example__author">
+
+                  <div class="author author--small{{ item.author.img ? ' l-with-picture' }}">
+                    {% if item.author.img %}
+                      <img class="author__image" src="{{ item.author.img }}">
+                    {% endif %}
+                    <h4 class="author__name">{{ item.author.name }}</h4>
+                    {% if item.author.function %}
+                      <span class="author__function">{{ item.author.function }}</span>
+                    {% endif %}
+                    {% if item.author.url %}
+                      <a class="link link--read-more" href="{{ item.author.url }}">{{ item.author.linktext }}</a>
+                    {% endif %}
+                  </div>
+                </div>
+
+              {% endif %}
+
+            </div>
+          {% endfor %}
+
+        </section>
+
+      {% endif %}
+
+
+
+      {% if why or research %}
+
+        <div class="research">
+
+          {% if why %}
+            <div class="l-why-wrapper">
+              <div class="research__why">
+                <h2 class="research__title">{{ why.title }}</h2>
+                <p>{{ why.description }}</p>
+              </div>
+            </div>
+          {% endif %}
+
+
+          {% if research %}
+            <div class="research__content">
+              <div class="l-inner">
+                <h2 class="research__title">{{ research.title }}</h2>
+                {{ research.description }}
+                <div class="l-research-blocks">
+                  {% for block in research.blocks %}
+                    <div class="research-block">
+                      <span class="research-block__title">{{ block.title }}</span>
+                      <span class="research-block__nr">{{ block.nr }}</span>
+                      <span class="research-block__descr">{{ block.descr }}</span>
+                    </div>
+                  {% endfor %}
+                </div>
+                {% if research.conclusie %}
+                  <div class="research__conclusion">
+
+                    <h3>{{ research.conclusie.title }}</h3>
+                    {{ research.conclusie.desc }}
+
+                  </div>
+                {% endif %}
+              </div>
+            </div>
+          {% endif %}
+
+        </div>
+
+
+      {% endif %}
+
+      {% if downloads %}
+        {% include 'sections/section-downloads.html.twig' with {
+          'title': 'Downloads',
+          'items': downloads
+        } %}
+      {% endif %}
+
+      {% include 'sections/section-links.html.twig' with {
+        'section_title': _x('Links', 'Section title links', 'gctheme'),
+        'items': links
+      } %}
+
+    </div>
+  </article>
+
+{% endblock %}

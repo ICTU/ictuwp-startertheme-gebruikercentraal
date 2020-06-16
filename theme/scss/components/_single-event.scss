@@ -1,0 +1,194 @@
+// ========================================================================
+
+.event-bookings {
+  @include backstretch($gc_blue_darker);
+  @include ho-container-content;
+  color: $white;
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+  margin-top: 3rem;
+
+  h2, h3 {
+    color: $white;
+  }
+
+  a {
+    color: $white;
+
+    &:hover, &:focus {
+      color: $gc_blue_xlight;
+    }
+  }
+
+  @include bp-up(md) {
+    margin-top: 8rem;
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+  }
+
+  @include bp-up(lg) {
+    padding-bottom: 5rem;
+  }
+
+  h2 {
+    margin: 2rem 0 0 0;
+  }
+
+  .em-booking {
+    > h2 {
+      padding: 0;
+      margin: 0;
+    }
+  }
+}
+
+.em-booking-form {
+  margin-top: 2rem;
+
+  input:not([type='submit']):not([type='checkbox']):not([type='radio']), select, textarea {
+    &:focus {
+      @include gc-box-shadow($gc-darkest-blue, 0.6);
+      border-color: $gc-blue;
+    }
+  }
+}
+
+.event-program {
+  li {
+    display: flex;
+  }
+}
+
+.em-booking-form-details {
+
+  @include bp-up(md) {
+    display: flex;
+    flex-wrap: wrap;
+
+    p {
+      width: 100%;
+    }
+
+    .input-user-field {
+      width: 50%;
+
+      &.input-name {
+        padding-right: $gutter / 2;
+      }
+
+      &.input-user_email {
+        padding-left: $gutter / 2;
+      }
+    }
+  }
+}
+
+.booking-message {
+  @include gc-box-shadow();
+  background: $white;
+  color: $base_font_color;
+  padding: 1rem 2rem;
+
+  .entry-content & {
+    margin: 2rem 0 0 0;
+  }
+}
+
+// Moet
+
+.entry-content .event-attendees {
+  margin: 2rem 0 0 0;
+  padding: 0;
+}
+
+.attendees-list {
+  margin: 3rem 0 0;
+  padding: 0;
+
+  .event-aanmeldingen {
+    @include icon(before, calendar);
+    display: inline-block;
+    margin-left: 2em;
+    font-size: 1.5rem;
+    font-family: $font-primary;
+
+    &:before {
+      float: left;
+      margin-right: 1rem;
+    }
+  }
+
+  @include bp-up(md){
+    margin-top: 8rem;
+  }
+}
+
+
+.attendees-list__list {
+  margin: 2rem 0 0;
+  padding: 0;
+
+  > li {
+    margin: 0;
+    padding: 1.3rem 0;
+    list-style: none;
+    position: relative;
+    display: flex;
+    border-top: 1px solid $blue_border_color;
+    line-height: 2.6rem;
+    font-size: $font-smaller;
+
+
+    > span {
+      display: block;
+    }
+
+    span[itemtype="http://schema.org/Person"] {
+      margin: 0;
+    }
+
+    span[itemprop="attendee"] span {
+      display: block;
+    }
+
+    span[itemprop="name"] {
+      font-family: $font-primary-bold;
+    }
+
+
+    span.additionalinfo {
+      font-size: 85%;
+    }
+  }
+
+  .social-links {
+    margin-left: auto;
+
+    li {
+      display: inline-block;
+    }
+
+    .link--social {
+      border-color: $blue_border_color;
+
+      &:hover, &:focus {
+        background: $gc-blue;
+        border-color: $gc-blue;
+      }
+    }
+  }
+
+
+  @include bp-up(sm) {
+    display: flex;
+    flex-wrap: wrap;
+
+    > li {
+      width: calc(50% - #{$gutter /2});
+
+      &:nth-child(odd) {
+        margin-right: $gutter;
+      }
+    }
+  }
+}

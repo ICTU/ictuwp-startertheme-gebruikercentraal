@@ -1,0 +1,145 @@
+@mixin gc-meta-data() {
+  color: $meta-data;
+  font-size: 1.4rem;
+  line-height: 2.4rem;
+}
+
+@mixin gc-meta-bolletje() {
+  &:after {
+    content: " ";
+    speak: none;
+    background: $border_color;
+    width: .4rem;
+    height: .4rem;
+    margin: 1.1rem 1rem 0;
+    display: inline-block;
+    float: right;
+  }
+}
+
+.meta-data {
+  color: $gc_greyblue;
+  font-size: 1.4rem;
+  line-height: 2.4rem;
+  margin-top: 1.5rem;
+
+  + p {
+    margin-top: 2rem;
+  }
+
+  a {
+    color: $meta-data;
+  }
+
+  dl,
+  dd {
+    margin: 0;
+    padding: 0;
+  }
+
+  dl {
+    display: flex;
+  }
+
+  dt {
+    margin-right: .8rem;
+
+    &:after {
+      content: ": ";
+    }
+  }
+
+  dd {
+    @include gc-meta-bolletje;
+    display: block;
+
+    &:before {
+      display: inline-block;
+      color: $meta-data-icon;
+      margin-right: 1rem;
+      font-size: 1.6rem;
+      float: left;
+    }
+
+    &:last-child {
+      &:after {
+        display: none;
+      }
+    }
+
+    &.datum {
+      @include icon(before, calendar);
+    }
+
+    &.price {
+      @include icon(before, euro);
+    }
+
+    &.tijdstip, &.time {
+      @include icon(before, clock);
+    }
+
+    &.auteur, &.author {
+      @include icon(before, user);
+    }
+
+    &.locatie, &.location {
+      @include icon(before, pin);
+    }
+
+    &.registrations {
+      @include icon(before, calendar);
+    }
+  }
+}
+
+.meta-data__item {
+  display: inline-block;
+
+  &:before {
+    float: left;
+    color: $gc-green;
+    margin-right: .8rem;
+  }
+
+  label {
+    font-weight: normal;
+    font-family: $font_primary_semi;
+  }
+
+  &:after {
+    content: " ";
+    speak: none;
+    background: $border_color;
+    width: .4rem;
+    height: .4rem;
+    margin: 1.1rem 1rem 0;
+    display: inline-block;
+    float: right;
+  }
+
+  &:last-child:after {
+    display: none;
+  }
+
+  &.times,
+  &.datum {
+    @include icon(before, clock);
+  }
+
+  &.location {
+    @include icon(before, pin);
+  }
+
+  &.pricing {
+    @include icon(before, euro);
+  }
+
+  &.aanmeldingen {
+    @include icon(before, calendar);
+  }
+}
+
+.entry-meta {
+  @include gc-meta-data;
+}

@@ -1,0 +1,305 @@
+.stepchart {
+  position: relative;
+  max-width: $max-width-inner;
+  margin-left: auto;
+  margin-right: auto;
+
+
+  @include bp-up(sm) {
+    margin-top: -4rem;
+  }
+
+  @include bp-up(lg) {
+    margin-top: -8rem;
+  }
+}
+
+.stepchart__bg {
+  position: relative;
+  z-index: 1;
+
+  > img {
+    display: none;
+  }
+
+  @include bp-up(sm) {
+    > img {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+  }
+}
+
+.stepchart__items {
+  margin: 0;
+  padding: 0;
+}
+
+.stepchart__item {
+  list-style: none;
+
+  @include bp-down(sm) {
+    @include gc-box-shadow();
+    margin-top: $gutter;
+  }
+
+  @include bp-up(sm) {
+    position: absolute;
+    margin-top: -60px;
+    margin-left: -70px;
+
+    &:first-child {
+      top: 50%;
+      left: 50%;
+    }
+
+    &:nth-child(2) {
+      top: 30%;
+      left: 28%;
+    }
+
+    &:nth-child(3) {
+      top: 45.5%;
+      right: 16%;
+    }
+
+    &:nth-child(4) {
+      bottom: 17%;
+      left: 40%;
+    }
+
+    &:nth-child(5) {
+      bottom: 8%;
+      right: 8%;
+    }
+  }
+}
+
+.stepchart__description {
+  background: $white;
+  color: $gc-dark-blue;
+  padding: 2rem;
+  font-size: $font-smaller;
+  line-height: 2.6rem;
+
+  h2, h3 {
+    color: $base-font-color;
+  }
+
+
+  .btn--close {
+    display: none;
+
+    @include bp-up(sm) {
+      display: block;
+      position: absolute;
+      right: 1.5rem;
+      top: 1.5rem;
+    }
+  }
+
+  .btn--primary {
+    margin-top: 2rem;
+  }
+
+  @include bp-up(sm) {
+    @include gc-box-shadow();
+    position: absolute;
+    bottom: 13.5rem;
+    width: 40rem;
+    left: 50%;
+    margin-left: -20rem;
+    padding: 3rem;
+    z-index: 90;
+    text-align: center;
+
+    .cta {
+      display: inline-block;
+    }
+
+    &:before,
+    &:after {
+      content: " ";
+      position: absolute;
+      display: block;
+      width: 0;
+      height: 0;
+      border-style: solid;
+      border-width: 30px 15px 0 15px;
+      border-color: $white transparent transparent transparent;
+      bottom: 0;
+      margin-bottom: -3rem;
+      left: 50%;
+      margin-left: -15px;
+      speak: none;
+    }
+
+    &:before {
+      z-index: -1;
+      margin-left: -9px;
+      border-top-color: rgba(#000, 0.1);
+    }
+  }
+  @include bp-up(lg) {
+    width: 50rem;
+    margin-left: -25rem;
+  }
+}
+
+.stepchart__title {
+  font-size: 3.2rem;
+  line-height: 3.2rem;
+  font-family: $font_secondary;
+  margin: 0;
+  padding: 0;
+
+  + .description {
+    margin-top: 1rem;
+  }
+
+  @include bp-up(md) {
+    font-size: 4.2rem;
+    line-height: 4.2rem;
+    margin: 0 3rem;
+  }
+}
+
+.btn--stepchart {
+  border: none;
+  font-family: $font_secondary;
+  color: $stepchart_label_color;
+  text-transform: uppercase;
+  background: none;
+
+  &:hover,
+  &:focus {
+    border: none;
+    outline: none;
+  }
+
+  @include bp-down(sm) {
+    @include gc-box-shadow;
+    font-size: 2.6rem;
+    text-align: left;
+    display: flex;
+    background: $stepchart_label;
+    background-size: 30px auto;
+    padding: 1rem 1.5rem;
+    align-items: center;
+    transition: background-color .2s;
+    width: 100%;
+    margin-top: 2rem;
+
+    &:after {
+      content: " ";
+      display: block;
+      margin-left: auto;
+      width: 3rem;
+      height: 3.4rem;
+      background: url(../images/arrow-down.svg) center center no-repeat;
+      border: .1rem solid transparent;
+      speak: none;
+    }
+
+    &:hover,
+    &:focus {
+      text-decoration: underline;
+      background-color: darken($stepchart_label, 10%);
+      color: $white;
+      border: none;
+      outline: none;
+
+      &:after {
+        background: transparent url(../images/arrow-down.svg) center center no-repeat;
+        border-color: $white;
+      }
+    }
+  }
+
+  @include bp-up(sm) {
+    width: 140px;
+    height: 120px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1.5rem 0 0 0;
+    position: relative;
+    z-index: 5;
+
+    &:before {
+      content: " ";
+      position: absolute;
+      width: 8rem;
+      height: 8rem;
+      background: $stepchart_icon_bg;
+      border-radius: 50%;
+      z-index: -1;
+      top: 0;
+      left: 50%;
+      margin-left: -4rem;
+      transition: background-color .2s;
+    }
+
+    &:hover,
+    &:focus {
+      text-decoration: underline;
+      background: none;
+      color: $white;
+
+      &:before {
+        background: $stepchart_icon_bg_hover;
+      }
+
+      .icon--stepchart {
+        transform: scale(1.1);
+        fill: $stepchart_icon_color_desktop_hover;
+      }
+    }
+
+    .btn__text {
+      @include bp-up(sm) {
+        @include gc-box-shadow;
+        display: inline-block;
+        color: white;
+        background: $stepchart_label;
+        margin-top: .5rem;
+        padding: .8rem 1.5rem;
+        font-size: 2.4rem;
+        line-height: 2.4rem
+      }
+    }
+
+  }
+
+  @include bp-up(lg) {
+
+    &:before {
+      width: 9.6rem;
+      height: 9.6rem;
+      background: $stepchart_icon_bg;
+      margin-left: -4.8rem;
+    }
+  }
+}
+
+
+.icon--stepchart {
+  width: 3rem;
+  height: 3.5rem;
+  display: inline-block;
+  transition: transform .2s;
+
+  @include bp-down(md) {
+    margin-right: 1.5rem;
+    fill: $stepchart_icon_color;
+  }
+
+  @include bp-up(md) {
+    width: 6rem;
+    height: 5.5rem;
+    fill: $stepchart_icon_color_desktop;
+    position: relative;
+  }
+}
+

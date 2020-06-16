@@ -1,0 +1,56 @@
+{% if items|length > 3 %}
+  {% set count = '3' %}
+{% else %}
+  {% set count = items|length %}
+{% endif %}
+
+
+<section class="section section--overview-list l-item-count-{{ count }}">
+
+
+  {# Wrapper for all section content #}
+  <div class="l-section-content">
+
+    {% if items %}
+      <div class="overview overview--list">
+
+        {% if type == 'events' %}
+          {{ items|group }}
+        {% else %}
+
+          {% if spotlight %}
+            {% include 'components/teaser.html.twig' with {
+              'title' : spotlight_item.title,
+              'descr' : spotlight_item.descr,
+              'img' : spotlight_item.img,
+              'meta' : spotlight_item.meta,
+              'post_date': spotlight_item.post_date,
+              'url': 'blog-hero.php',
+              'modifier' : 'spotlight',
+            } %}
+          {% endif %}
+
+          {% for item in items %}
+            {% include 'components/teaser.html.twig' with {
+              'title' : item.title,
+              'descr' : item.descr,
+              'img' : item.img,
+              'type' : item.type,
+              'meta': item.meta,
+              'post_date': item.post_date,
+              'url': 'blog.php',
+            } %}
+          {% endfor %}
+
+        {% endif %}
+      </div>
+
+    {% else %}
+
+      Hemmeneks!
+
+    {% endif %}
+
+  </div>
+</section>
+

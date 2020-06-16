@@ -1,0 +1,384 @@
+// Gebruiker Centraal - less/components/_card.less
+// ----------------------------------------------------------------------------------
+// basic styling for all card elements
+// ----------------------------------------------------------------------------------
+
+// $author  Tamara de Haas
+
+//=========================================================================================================
+
+.card {
+  @include gc-box-shadow();
+  display: flex;
+  flex-direction: column;
+  background: $white;
+  position: relative;
+  border: .1rem solid $border_color;
+  box-sizing: border-box;
+
+  > p {
+    margin-right: 1.5rem;
+  }
+
+  p:last-child {
+    margin-bottom: 0;
+  }
+
+  .meta-data dd:not(.location):before {
+    display: none;
+  }
+
+  &--featured-image {
+    padding: 0;
+
+    // bepalingen voor title weggehaald - staan nu in card__title
+
+    .card__image {
+      width: 100%;
+      height: 21rem;
+      background-repeat: no-repeat;
+      background-position: center center;
+      background-size: cover;
+      position: relative;
+      overflow: hidden;
+
+      &:before {
+        content: ' ';
+        background: $white;
+        display: block;
+        position: absolute;
+        bottom: 0;
+        margin-bottom: -11rem;
+        left: 0;
+        right: 0;
+        margin-left: -2rem;
+        margin-right: -2rem;
+        height: 125px;
+        transform: rotate(2.5deg);
+      }
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+
+    .card__content {
+      padding-top: 0;
+    }
+  }
+
+  &--type-brief {
+    @include gc-card-image-pantybrown;
+  }
+
+  .meta-data {
+    margin-top: auto;
+    padding-top: 2rem;
+  }
+}
+
+// Atomic design, componentjes
+
+.card__title {
+  margin: 0;
+  padding: 0;
+  font-size: 20px;
+  line-height: 28px;
+  font-family: $font-primary-bold;
+
+  + p {
+    margin-top: 1.5rem;
+  }
+}
+
+.card__title-descr {
+  display: block;
+  font-size: $font_small;
+  font-family: $font_primary_semi;
+}
+
+.card__content {
+  background: $white;
+  position: relative;
+  z-index: 0;
+  width: 100%;
+  padding: 2rem;
+  background: none;
+  font-size: $font_smaller;
+  line-height: 2.6rem;
+
+  @include bp-up(lg) {
+    padding-left: 3rem;
+    padding-right: 3rem;
+  }
+
+  .link--arrow .link__icon {
+    margin-right: -1rem;
+  }
+}
+
+.card__title {
+  font-size: 2.2rem;
+  line-height: 3.2rem;
+}
+
+// Cards with image
+
+.card--with-image {
+  overflow: hidden;
+
+  img {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+
+  .card__content {
+    padding-top: .3rem;
+    position: relative;
+    z-index: 5;
+
+    &:before {
+      position: absolute;
+      content: " ";
+      background: $white;
+      speak: none;
+      height: 5rem;
+      left: 0;
+      top: 0;
+      width: 110%;
+      z-index: -1;
+      margin-top: -2rem;
+      margin-left: -2rem;
+      transform: rotate(2deg);
+    }
+  }
+
+  .card__image {
+    height: 208px;
+    width: 100%;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    img {
+      object-fit: cover;
+      display: inline;
+      height: 100%;
+      width: 100%;
+    }
+  }
+
+
+  // display within a 1 col grid
+
+  .grid--col-1 & {
+    @include bp-up(md) {
+      width: 100%;
+      flex-direction: row;
+
+      .card__image {
+        width: 40%;
+        height: 100%;
+      }
+
+      .card__content {
+        width: 60%;
+        padding-top: 1.5rem;
+
+        &:before {
+          width: 4rem;
+          height: auto;
+          bottom: 0;
+          margin: -2rem 0 -2rem -1rem;
+          transform: rotate(-2deg);
+        }
+      }
+    }
+
+    @include bp-up(lg) {
+      .card__image {
+        width: 30%;
+      }
+
+      .card__content {
+        width: 70%;
+      }
+    }
+  }
+}
+
+
+// Types
+
+.card {
+  &--type-event {
+    .date-badge {
+      position: absolute;
+      top: 2rem;
+      left: 2rem;
+    }
+
+    .card__title {
+      padding-left: 5.5rem;
+      min-height: 6rem;
+    }
+
+    @include bp-up(md) {
+      .date-badge {
+        left: 1.5rem;
+        top: 1.5rem;
+      }
+      .card__title {
+        padding-left: 5.5rem;
+      }
+    }
+  }
+
+  &--type-doelgroep {
+
+    .card__image {
+      background: $gc-a11y-green;
+    }
+
+    .card__content {
+      position: static;
+    }
+
+    .card__quote {
+      @include gc-box-shadow;
+      position: absolute;
+      top: 0;
+      left: 1.5rem;
+      right: 1.5rem;
+
+      padding: 2rem;
+      min-height: 120px;
+      background: white;
+      margin: -3rem 0 0;
+
+      font-size: 2.2rem;
+      line-height: 34px;
+
+      @include bp-up(md) {
+        padding-left: 3rem;
+        padding-right: 3rem;
+      }
+
+      cite {
+        display: block;
+        font-size: $font-small;
+        width: 100%;
+        font-style: normal;
+        font-family: $font-primary-bold;
+        margin-top: 1rem;
+      }
+
+      &:before {
+        content: ' ';
+        display: block;
+        height: 28px;
+        width: 28px;
+        position: absolute;
+        right: 1.8rem;
+        bottom: 0;
+        background: rgba(#000, 0.2); // @wit;
+        transform: translateY(28px);
+        z-index: 450;
+        clip-path: polygon(0 0, 0 100%, 70% 0);
+        speak: none;
+      }
+
+      &:after {
+        content: ' ';
+        display: block;
+        height: 30px;
+        width: 30px;
+        position: absolute;
+        right: 2rem;
+        bottom: 0;
+        background: $white;
+        transform: translateY(25px);
+        z-index: 450;
+        box-shadow: 3px 3px 0px rgba(#000, 0.2);
+        clip-path: polygon(0 0, 0 100%, 70% 0);
+        speak: none;
+      }
+
+      p {
+        margin: 0;
+      }
+    }
+
+    .design-for {
+      font-size: $font-small;
+      font-family: $font-primary-semi;
+      line-height: 2.6rem;
+    }
+
+    .card__title {
+      font-family: $font-secondary;
+      font-size: 3.8rem;
+      line-height: 3.8rem;
+    }
+
+    .arrow-link__icon {
+      margin-top: 3.2rem;
+    }
+  }
+
+  // With images, by type
+  &--with-image {
+
+    &.card--type-event {
+      .date-badge {
+        top: 0;
+        margin-top: -7rem;
+        left: 2rem;
+
+      }
+
+      .card__title {
+        padding-left: 0;
+      }
+    }
+  }
+
+  &.card--type-doelgroep {
+    overflow: visible;
+
+    .card__content:before {
+      display: none;
+    }
+
+    .card__image {
+      padding-top: 41rem;
+      display: flex;
+      align-items: flex-end;
+      overflow: hidden;
+      position: relative;
+
+      img {
+        height: 30rem;
+        width: 20rem;
+        object-fit: none;
+      }
+
+      &:after {
+        content: " ";
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        display: block;
+        height: 5rem;
+        background: $white;
+        transform: rotate(3deg);
+        margin: 0 -3rem -3rem;
+      }
+    }
+  }
+}

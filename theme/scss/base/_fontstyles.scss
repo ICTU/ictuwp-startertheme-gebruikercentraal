@@ -1,0 +1,99 @@
+
+.text--large {
+  font-size: 2.4rem;
+  line-height: 3.8rem;
+  font-weight: $font-primary;
+}
+
+
+@mixin text-styles() {
+
+  h2,
+  h3,
+  h4 {
+    font-weight: $base-heading-font;
+
+    + p {
+      margin-top: 1rem;
+    }
+  }
+
+  p {
+    + .section--related {
+      margin-top: 1rem;
+    }
+
+    + ul {
+      margin-top: 1.6rem;
+    }
+
+    + h2, + h3, + h4 {
+      margin-top: $gutter;
+    }
+
+    &.arrow {
+      background: url('../../img/i_pijltje.svg') 0 .8rem no-repeat;
+      padding-left: 6rem;
+    }
+  }
+
+  .media--image {
+    img {
+      max-width: 100%;
+      width: auto;
+    }
+
+    + h2,
+    + h3,
+    + h4,
+    p {
+      margin-top: 3rem;
+    }
+  }
+
+  .alignleft {
+    float: left;
+    margin: 0 2rem .5rem 0;
+  }
+
+  .source {
+    margin-top: 2rem;
+    display: block;
+    font-style: italic;
+  }
+
+  .btn,
+  .link--read-more {
+    margin-top: 2rem;
+  }
+}
+
+.section--text,
+.entry-body,
+.manual-item__content,
+.example__content {
+  @include text-styles;
+}
+
+figure {
+  padding: 0;
+  margin: 0;
+
+  img {
+    display: block;
+  }
+
+  figcaption {
+    border-bottom: .1rem solid $border-color;
+    font-size: $font-small;
+    padding: .5rem;
+  }
+
+  &.align-left {
+    margin-right: $gutter;
+  }
+
+  &.align-right {
+    margin-right: $gutter;
+  }
+}

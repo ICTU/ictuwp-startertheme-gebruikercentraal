@@ -1,0 +1,29 @@
+<section class="section section--links">
+
+  {% if section_title or section_descr %}
+    <div class="l-section-top">
+      {% if section_title %}
+        <h2 class="section__title">{{ section_title }}</h2>
+      {% endif %}
+
+      {% if section_descr %}
+        <p class="section__description"> {{ section_descr }}</p>
+      {% endif %}
+    </div>
+  {% endif %}
+
+  <div class="l-section-content">
+    <ul class="item-list">
+      {% for item in items %}
+        <li class="item-list__item">
+          <a href="{{ item.url|e('esc_url') }}" class="link link--linklist">{{ item.title }}</a>
+          {% if item.descr %}
+            <p class="item-list__description">{{ item.descr }}</p>
+          {% endif %}
+        </li>
+      {% endfor %}
+    </ul>
+
+  </div>
+</section>
+

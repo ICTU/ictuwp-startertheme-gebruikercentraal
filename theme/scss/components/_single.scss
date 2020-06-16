@@ -1,0 +1,387 @@
+.entry {
+
+  .entry-intro {
+    font-family: $font-primary-semi;
+
+    @include bp-up(md) {
+      font-size: 2.2rem;
+      line-height: 3.4rem;
+    }
+  }
+
+  &--full {
+    padding-bottom: 5rem;
+
+    @include bp-up(lg) {
+      padding-bottom: 8rem;
+    }
+
+    .entry-body,
+    .entry-header {
+      max-width: $max-width-inner;
+      margin: 0 auto;
+    }
+
+    .entry-content {
+      > .section:first-child {
+        // Make margin smaller if first section is a text one
+        &.section--text {
+          margin-top: $gutter;
+        }
+      }
+    }
+  }
+
+  &--type-page {
+
+    .section--bg-option {
+      @include ho-padding;
+      margin-left: -1.5rem;
+      margin-right: -1.5rem;
+
+      @include bp-up(sm) {
+        margin-left: -3rem;
+        margin-right: -3rem;
+      }
+    }
+  }
+
+  &--type-blog,
+  &--type-event {
+    .entry-header {
+      position: relative;
+      padding-left: 2.5rem;
+
+      .date-badge {
+        position: absolute;
+        left: 0;
+        top: 0;
+        margin-left: -3rem;
+      }
+
+      @include bp-up(sm) {
+        .date-badge {
+          margin-left: -5rem;
+        }
+      }
+
+      @include bp-up(lg) {
+        padding-left: 4rem;
+
+        .date-badge {
+          margin-left: -4rem;
+        }
+      }
+    }
+
+    .entry-content {
+      @include bp-up(sm) {
+        margin-top: 3rem;
+      }
+    }
+  }
+
+  &--type-overview {
+    .entry-header {
+      max-width: none;
+    }
+
+    .page__intro {
+      position: relative;
+      z-index: +2;
+    }
+
+    .entry-body {
+      padding-top: 3rem;
+      padding-bottom: 3rem;
+
+      @include bp-up(sm) {
+        padding-bottom: 5rem;
+      }
+    }
+  }
+
+  &--type-landing {
+    @include gc-page-intro();
+    background: none;
+    padding-bottom: 0;
+
+    .page__intro {
+      box-shadow: none;
+      margin-bottom: 5rem;
+
+      @include bp-up(md) {
+        margin-bottom: 8rem;
+      }
+    }
+
+    .section {
+      @include ho-padding;
+
+      &:last-child {
+        padding-bottom: 5rem;
+
+        @include bp-up(md) {
+          padding-bottom: 8rem;
+        }
+      }
+    }
+  }
+
+  &--type-home {
+    max-width: none;
+
+    .page__intro {
+      @include ho-padding;
+      padding-top: 3rem;
+      padding-bottom: 3rem;
+      background: $hp-intro-bg;
+
+      @include bp-up(sm) {
+        padding-top: 7rem;
+      }
+
+      @include bp-up(sm) {
+        padding-top: 10rem;
+      }
+
+      .entry-header {
+        @include ho-container-content;
+        color: $hp-intro-color;
+        position: relative;
+        z-index: +2;
+
+        h1, h2, h3, h4, a {
+          color: $hp-intro-color;
+        }
+      }
+    }
+
+    .section {
+      @include ho-padding;
+      max-width: none;
+
+      .l-section-top {
+        max-width: $max-width-container;
+      }
+
+      .l-section-content {
+        max-width: calc(#{$max-width-container} + #{$gutter});
+      }
+
+      .section__title {
+        border: none;
+      }
+
+      &--text-blocks {
+        padding-left: 1.5rem;
+        padding-right: 1.5rem;
+
+
+        .l-section-content {
+          max-width: calc(#{$max-width-container} + #{$gutter});
+        }
+      }
+    }
+
+    .entry-content > .section:last-child {
+      padding-bottom: 5rem;
+
+      @include bp-up(lg) {
+        padding-bottom: 8rem;
+      }
+    }
+  }
+
+  &--type-overview {
+    @include gc-page-intro();
+    max-width: none;
+
+    .entry-body {
+      padding-left: 2rem;
+      padding-right: 2rem;
+    }
+  }
+
+  &.l-with-stepchart {
+    .page__intro {
+      padding-bottom: 5rem;
+
+      + .section--text-blocks {
+        margin-top: 0;
+        padding-top: 0;
+
+        .l-section-content {
+          margin-top: -5rem;
+
+          @include bp-up(md){
+            margin-top: -8rem;
+          }
+        }
+      }
+    }
+  }
+}
+
+
+/*
+ * Pagination
+ */
+
+.pagination {
+  @include gc-pagination;
+  width: 100%;
+
+
+  a {
+    border-color: $border_color;
+  }
+
+  > div:not(.pagination) {
+    width: 50%;
+  }
+
+  .pagination-previous {
+    padding-right: $gutter / 2;
+  }
+
+  .pagination-next {
+    padding-left: $gutter / 2;
+  }
+}
+
+/*
+ * Comments
+ */
+
+#comments {
+  @include ho-container-content;
+  margin-top: 5rem;
+}
+
+.comment-list {
+  padding: 0;
+
+  li {
+    list-style: none;
+  }
+}
+
+.comment {
+  @include gc-box-shadow();
+  border: .1rem solid $border_color;
+  padding: 2rem;
+
+  margin-top: $gutter;
+  font-size: $font-smaller;
+  @include bp-up(md) {
+    padding: 2.5rem 3rem 3rem;
+  }
+
+
+  @include bp-up(lg) {
+    padding-left: 3rem;
+    padding-right: 3rem;
+  }
+
+  .comment {
+    box-shadow: none;
+    padding-bottom: 1rem;
+  }
+
+  .children {
+    margin-bottom: 1rem;
+  }
+
+  + .comment {
+    margin-top: $gutter;
+  }
+}
+
+.comment-author {
+  color: $meta-data;
+  font-size: $font_small;
+
+  cite {
+    font-family: $font_primary_semi;
+  }
+}
+
+.comment-content {
+  margin-top: 1.5rem;
+}
+
+.comment-meta {
+  color: $meta-data;
+  font-size: $font_small;
+  font-family: $font_primary_semi;
+  display: flex;
+  border-top: .1rem solid $border-color;
+  margin-top: 2rem;
+  padding-top: .5rem;
+  margin-left: -1rem;
+  margin-right: -1rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+
+  .reply {
+    margin-left: auto;
+    padding-left: 2rem;
+  }
+
+  a {
+    display: inline-block;
+  }
+}
+
+.comment-respond {
+  margin-top: 3rem;
+  padding-bottom: 3rem;
+
+  @include bp-up(lg) {
+    padding-bottom: 5rem;
+    margin-top: 5rem;
+  }
+
+  h3 {
+    font-size: 2.2rem;
+  }
+}
+
+.children .comment {
+  border-top-color: $color-primary;
+  border-top-width: .3rem;
+}
+
+.comment-form {
+  label {
+    + input,
+    + textarea {
+      margin-top: .5rem;
+    }
+  }
+
+
+  @include bp-up(md) {
+    display: flex;
+    flex-wrap: wrap;
+
+    .comment-form-comment,
+    .form-submit {
+      width: 100%;
+    }
+
+    .author,
+    .email {
+      width: 50%;
+    }
+
+    .author {
+      padding-right: $gutter / 2;
+    }
+
+    .email {
+      padding-left: $gutter / 2;
+    }
+  }
+}
