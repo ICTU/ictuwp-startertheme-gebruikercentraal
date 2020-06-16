@@ -271,7 +271,7 @@ class GebruikerCentraalTheme extends Timber\Site {
 
 		wp_enqueue_style(
 			'gc-fonts',
-			get_stylesheet_directory_uri() . '/theme/'.$gc_theme["theme_select"].'/fonts/fonts.css',
+			get_stylesheet_directory_uri() . '/theme/fonts/fonts.css',
 			$dependencies,
 			'',
 			'all'
