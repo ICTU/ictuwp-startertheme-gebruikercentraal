@@ -1,6 +1,6 @@
 <?php
 /**
- * Template Name: Tips
+ * Template Name: [OD] Template tips-pagina
  *
  * @package  WordPress
  * @subpackage  Timber

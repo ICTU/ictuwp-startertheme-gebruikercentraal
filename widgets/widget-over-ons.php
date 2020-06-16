@@ -58,7 +58,7 @@ class GC_widget_over_ons extends WP_Widget {
 
 		$widget_ops = array(
 			'classname'   => 'gc-site-footer-widget ',
-			'description' => __( 'Ruimte voor korte informatie over de site en een doorklik.', 'gctheme' ),
+			'description' => _x( 'Widget met ruimte voor korte informatie over de site en een doorklik.', 'widget', 'gctheme' ),
 		);
 
 
@@ -83,12 +83,12 @@ class GC_widget_over_ons extends WP_Widget {
 		?>
 		<p>
 			<label
-				for="<?php echo $this->get_field_id( 'title' ); ?>"><?php _e( 'Title', 'gctheme' ) ?></label>
+				for="<?php echo $this->get_field_id( 'title' ); ?>"><?php _ex( 'Title', 'widget field name', 'gctheme' ) ?></label>
 			<input class="widefat" id="<?php echo $this->get_field_id( 'title' ); ?>"
 				   name="<?php echo $this->get_field_name( 'title' ); ?>" type="text" value="<?php echo $title; ?>"/>
 		</p>
 		<p><label
-				for="<?php echo $this->get_field_id( 'korte_beschrijving' ) ?>"><?php _e( "Korte beschrijving van de site:", 'gctheme' ) ?></label><br/><textarea
+				for="<?php echo $this->get_field_id( 'korte_beschrijving' ) ?>"><?php _ex( "Korte beschrijving van de site", 'widget field name', 'gctheme' ) ?></label><br/><textarea
 				cols="33" rows="4" id="<?php echo $this->get_field_id( 'korte_beschrijving' ); ?>"
 				name="<?php echo $this->get_field_name( 'korte_beschrijving' ); ?>"><?php echo esc_attr( $korte_beschrijving ); ?></textarea>
 		</p>

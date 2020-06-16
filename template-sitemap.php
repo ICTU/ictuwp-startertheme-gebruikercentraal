@@ -1,6 +1,6 @@
 <?php
 /**
- * Template Name: Sitemap
+ * Template Name: Template sitemap
  *
  * @package  WordPress
  * @subpackage  Timber

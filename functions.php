@@ -126,8 +126,8 @@ class GebruikerCentraalTheme extends Timber\Site {
 
 	// define menu location and name
 	public function register_my_menu() {
-		register_nav_menu( 'primary', __( 'Main menu location', 'gctheme' ) );
-		register_nav_menu( 'footermenu', __( 'Footer menu location', 'gctheme' ) );
+		register_nav_menu( 'primary', _x( 'Menu in header', 'menu location', 'gctheme' ) );
+		register_nav_menu( 'footermenu', _x( 'Menu in footer', 'menu location', 'gctheme' ) );
 	}
 
 	function add_translation_support() {
@@ -273,7 +273,7 @@ class GebruikerCentraalTheme extends Timber\Site {
 			'',
 			'all'
 		);
-		
+
 		wp_enqueue_style(
 			ID_SKIPLINKS,
 			get_stylesheet_directory_uri() . '/sites/od/theme/dist/css/od-theme.css',
