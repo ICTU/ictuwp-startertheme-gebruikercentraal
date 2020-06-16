@@ -27,5 +27,4 @@ sites.zip
 sites/*/*.php
 sites/**.json
 sites/**.json
-.idea/workspace.xml
 

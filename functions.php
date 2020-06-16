@@ -255,6 +255,9 @@ class GebruikerCentraalTheme extends Timber\Site {
 		$dependencies = array();
 		$versie       = CHILD_THEME_VERSION;
 		$infooter     = false;
+		$gc_theme = get_option('gc2020_theme_options');
+
+
 		if ( WP_DEBUG ) {
 			$versie = strtotime( "now" );
 		}
@@ -276,7 +279,7 @@ class GebruikerCentraalTheme extends Timber\Site {
 
 		wp_enqueue_style(
 			ID_SKIPLINKS,
-			get_stylesheet_directory_uri() . '/sites/od/theme/dist/css/od-theme.css',
+			get_stylesheet_directory_uri() . '/sites/'.$gc_theme["theme_select"].'/theme/dist/css/od-theme.css',
 			$dependencies,
 			$versie,
 			'all'
@@ -496,3 +499,40 @@ function unbox_yoast_seo_breadcrumb_append_link( $links ) {
 
 	return $links;
 }
+/**
+ * Add our Customizer content
+ */
+function gc2020_customize_register($wp_customize){
+
+	$wp_customize->add_section('gc2020_theme', array(
+		'title'    => __('GC Theme opties', 'ictuwp-theme-gc2020'),
+		'description' => 'Selecteer hier het thema voor deze subsite',
+		'priority' => 120,
+	));
+	//  =============================
+	//  = Select Box                =
+	//  =============================
+	$wp_customize->add_setting('gc2020_theme_options[theme_select]', array(
+		'default'        => 'GC',
+		'capability'     => 'edit_theme_options',
+		'type'           => 'option',
+
+	));
+	$wp_customize->add_control( 'example_select_box', array(
+		'settings' => 'gc2020_theme_options[theme_select]',
+		'label'   => 'Selecteer thema:',
+		'section' => 'gc2020_theme',
+		'type'    => 'select',
+		'choices'    => array(
+			'GC' => 'Gebruiker Centraal default theme',
+			'OD' => 'Optimaal Digitaal theme',
+
+		),
+	));
+
+
+
+
+}
+
+add_action('customize_register', 'gc2020_customize_register');
