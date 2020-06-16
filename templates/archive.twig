@@ -1,9 +1,19 @@
-{# This file demonstrates using most of the index.twig template and modifying 
+{# This file demonstrates using most of the index.twig template and modifying
    just a small part. See `search.twig` for an example of another approach #}
 
 {% extends "index.twig" %}
 
 {% block content %}
-  <h3>This is my archive</h3>
+  <h3>archive.php {{ title  }}</h3>
+
+  {% include 'sections/section-overview.html.twig' with {
+    'items': tipkaarts,
+    'title': '',
+    'template': 'card--tipkaart',
+    'modifier': '4col'
+  } %}
+
   {{ parent() }}
+
+
 {% endblock %}
