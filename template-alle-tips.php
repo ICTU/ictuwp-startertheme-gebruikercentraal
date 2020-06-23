@@ -1,6 +1,6 @@
 <?php
 /**
- * Template Name: Alle tips
+ * Template Name: [OD] Overzicht alle tips
  *
  * @package  WordPress
  * @subpackage  Timber
