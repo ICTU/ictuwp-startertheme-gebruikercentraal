@@ -47,9 +47,10 @@ if ( ! defined( 'WBVB_GC_ABOUTUS' ) ) {
 require_once( get_template_directory() . '/widgets/widget-over-ons.php' );
 
 /**
- * If you are installing Timber as a Composer dependency in your theme, you'll need this block
- * to load your dependencies and initialize Timber. If you are using Timber via the WordPress.org
- * plug-in, you can safely delete this block.
+ * If you are installing Timber as a Composer dependency in your theme, you'll
+ * need this block to load your dependencies and initialize Timber. If you are
+ * using Timber via the WordPress.org plug-in, you can safely delete this
+ * block.
  */
 $composer_autoload = __DIR__ . '/vendor/autoload.php';
 if ( file_exists( $composer_autoload ) ) {
@@ -59,23 +60,18 @@ if ( file_exists( $composer_autoload ) ) {
 
 /**
  * This ensures that Timber is loaded and available as a PHP class.
- * If not, it gives an error message to help direct developers on where to activate
+ * If not, it gives an error message to help direct developers on where to
+ * activate
  */
 if ( ! class_exists( 'Timber' ) ) {
 
-	add_action(
-		'admin_notices',
-		function () {
-			echo '<div class="error"><p>Timber not activated. Make sure you activate the plugin in <a href="' . esc_url( admin_url( 'plugins.php#timber' ) ) . '">' . esc_url( admin_url( 'plugins.php' ) ) . '</a></p></div>';
-		}
-	);
+	add_action( 'admin_notices', function () {
+		echo '<div class="error"><p>Timber not activated. Make sure you activate the plugin in <a href="' . esc_url( admin_url( 'plugins.php#timber' ) ) . '">' . esc_url( admin_url( 'plugins.php' ) ) . '</a></p></div>';
+	} );
 
-	add_filter(
-		'template_include',
-		function ( $template ) {
-			return get_stylesheet_directory() . '/static/no-timber.html';
-		}
-	);
+	add_filter( 'template_include', function ( $template ) {
+		return get_stylesheet_directory() . '/static/no-timber.html';
+	} );
 
 	return;
 }
@@ -83,43 +79,48 @@ if ( ! class_exists( 'Timber' ) ) {
 /**
  * Sets the directories (inside your theme) to find .twig files
  */
-Timber::$dirname = array( 'templates', 'views' );
+Timber::$dirname = [ 'templates', 'views' ];
 
 /**
- * By default, Timber does NOT autoescape values. Want to enable Twig's autoescape?
- * No prob! Just set this value to true
+ * By default, Timber does NOT autoescape values. Want to enable Twig's
+ * autoescape? No prob! Just set this value to true
  */
-Timber::$autoescape = false;
+Timber::$autoescape = FALSE;
 
 
 /**
  * We're going to configure our theme inside of a subclass of Timber\Site
- * You can move this to its own file and include here via php's include("MySite.php")
+ * You can move this to its own file and include here via php's
+ * include("MySite.php")
  */
 class GebruikerCentraalTheme extends Timber\Site {
+
 	/** Add timber support. */
 	public function __construct() {
 
 		// custom menu locations
-		add_action( 'init', array( $this, 'register_my_menu' ) );
+		add_action( 'init', [ $this, 'register_my_menu' ] );
 
 		// translation support
-		add_action( 'after_setup_theme', array( $this, 'add_translation_support' ) );
+		add_action( 'after_setup_theme', [ $this, 'add_translation_support' ] );
 
 		// theme options
-		add_action( 'after_setup_theme', array( $this, 'theme_supports' ) );
+		add_action( 'after_setup_theme', [ $this, 'theme_supports' ] );
 
 		// CSS setup
-		add_action( 'wp_enqueue_scripts', array( $this, 'gc_wbvb_add_css' ) );
+		add_action( 'wp_enqueue_scripts', [ $this, 'gc_wbvb_add_css' ] );
 
-		add_filter( 'timber/context', array( $this, 'add_to_context' ) );
-		add_filter( 'timber/twig', array( $this, 'add_to_twig' ) );
+		add_filter( 'timber/context', [ $this, 'add_to_context' ] );
+		add_filter( 'timber/twig', [ $this, 'add_to_twig' ] );
 
-		add_action( 'init', array( $this, 'register_taxonomies' ) );
+		add_action( 'init', [ $this, 'register_taxonomies' ] );
 
-		add_action( 'widgets_init', array( $this, 'setup_widgets_init' ) );
+		add_action( 'widgets_init', [ $this, 'setup_widgets_init' ] );
 
-		add_action( 'theme_page_templates', array( $this, 'activate_deactivate_page_templates' ) );
+		add_action( 'theme_page_templates', [
+			$this,
+			'activate_deactivate_page_templates',
+		] );
 
 		parent::__construct();
 	}
@@ -152,12 +153,14 @@ class GebruikerCentraalTheme extends Timber\Site {
 		$context['footermenu']          = new Timber\Menu( 'footermenu' );
 		$context['site']                = $this;
 		$context['site_name']           = ( get_bloginfo( 'name' ) ? get_bloginfo( 'name' ) : 'Gebruiker Centraal' );
-		$context['site_slogan']         = ( get_bloginfo( 'description' ) ? get_bloginfo( 'description' ) : null );
+		$context['site_slogan']         = ( get_bloginfo( 'description' ) ? get_bloginfo( 'description' ) : NULL );
 		$context['logo']                = get_stylesheet_directory_uri() . '/flavors/optimaaldigitaal/logo.svg';
 		$context['sprite_od']           = get_stylesheet_directory_uri() . '/assets/images/sprites/optimaal-digitaal/defs/svg/sprite.defs.svg';
 		$context['sprite_steps']        = get_stylesheet_directory_uri() . '/assets/images/sprites/stepchart/defs/svg/sprite.defs.svg';
 		$context['footer_widget_left']  = Timber::get_widgets( 'footer_widget_left' );
 		$context['footer_widget_right'] = Timber::get_widgets( 'footer_widget_right' );
+
+		((is_archive()) ? $context['pagetype'] = 'archive_' . get_queried_object()->taxonomy : '');
 
 		return $context;
 	}
@@ -185,24 +188,19 @@ class GebruikerCentraalTheme extends Timber\Site {
 		 * Switch default core markup for search form, comment form, and comments
 		 * to output valid HTML5.
 		 */
-		add_theme_support(
-			'html5',
-			array(
+		add_theme_support( 'html5', [
 				'comment-form',
 				'comment-list',
 				'gallery',
 				'caption',
-			)
-		);
+			] );
 
 		/*
 		 * Enable support for Post Formats.
 		 *
 		 * See: https://codex.wordpress.org/Post_Formats
 		 */
-		add_theme_support(
-			'post-formats',
-			array(
+		add_theme_support( 'post-formats', [
 				'aside',
 				'image',
 				'video',
@@ -210,21 +208,20 @@ class GebruikerCentraalTheme extends Timber\Site {
 				'link',
 				'gallery',
 				'audio',
-			)
-		);
+			] );
 
 		add_theme_support( 'menus' );
 
 		// Yoast Breadcrumbs
 		add_theme_support( 'yoast-seo-breadcrumbs' );
 
-		add_image_size( HALFWIDTH, 380, 9999, false );
-		add_image_size( BLOG_SINGLE_MOBILE, 120, 9999, false );
-		add_image_size( BLOG_SINGLE_TABLET, 250, 9999, false );
-		add_image_size( BLOG_SINGLE_DESKTOP, 380, 9999, false );
-		add_image_size( IMG_SIZE_HUGE, IMG_SIZE_HUGE_MIN_WIDTH, 9999, false );
+		add_image_size( HALFWIDTH, 380, 9999, FALSE );
+		add_image_size( BLOG_SINGLE_MOBILE, 120, 9999, FALSE );
+		add_image_size( BLOG_SINGLE_TABLET, 250, 9999, FALSE );
+		add_image_size( BLOG_SINGLE_DESKTOP, 380, 9999, FALSE );
+		add_image_size( IMG_SIZE_HUGE, IMG_SIZE_HUGE_MIN_WIDTH, 9999, FALSE );
 
-		add_image_size( 'thumb-cardv3', 99999, 600, false );    // max  600px hoog, niet croppen
+		add_image_size( 'thumb-cardv3', 99999, 600, FALSE );    // max  600px hoog, niet croppen
 
 
 	}
@@ -245,7 +242,7 @@ class GebruikerCentraalTheme extends Timber\Site {
 	 */
 	public function add_to_twig( $twig ) {
 		$twig->addExtension( new Twig\Extension\StringLoaderExtension() );
-		$twig->addFilter( new Twig\TwigFilter( 'myfoo', array( $this, 'myfoo' ) ) );
+		$twig->addFilter( new Twig\TwigFilter( 'myfoo', [ $this, 'myfoo' ] ) );
 
 		return $twig;
 	}
@@ -253,10 +250,10 @@ class GebruikerCentraalTheme extends Timber\Site {
 	public function gc_wbvb_add_css() {
 
 
-		$dependencies = array();
+		$dependencies = [];
 		$versie       = CHILD_THEME_VERSION;
-		$infooter     = false;
-		$gc_theme = get_option('gc2020_theme_options');
+		$infooter     = FALSE;
+		$gc_theme     = get_option( 'gc2020_theme_options' );
 
 
 		if ( WP_DEBUG ) {
@@ -265,27 +262,15 @@ class GebruikerCentraalTheme extends Timber\Site {
 
 		wp_enqueue_script( 'main-min', get_stylesheet_directory_uri() . '/assets/js/main-min.js', $dependencies, $versie, $infooter );
 
-		$dependencies = array();
+		$dependencies = [];
 
 
 		// TODO : verwijzen naar de relevante CSS
 
-		wp_enqueue_style(
-			'gc-fonts',
-			get_stylesheet_directory_uri() . '/assets/fonts/fonts.css',
-			$dependencies,
-			'',
-			'all'
-		);
+		wp_enqueue_style( 'gc-fonts', get_stylesheet_directory_uri() . '/assets/fonts/fonts.css', $dependencies, '', 'all' );
 
 		// get_stylesheet_directory_uri() . '/flavors/'.$gc_theme["theme_select"].'assets/css/od-theme.css',
-		wp_enqueue_style(
-			ID_SKIPLINKS,
-			get_stylesheet_directory_uri() . '/flavors/optimaaldigitaal/assets/css/od-theme.css',
-			$dependencies,
-			$versie,
-			'all'
-		);
+		wp_enqueue_style( ID_SKIPLINKS, get_stylesheet_directory_uri() . '/flavors/optimaaldigitaal/assets/css/od-theme.css', $dependencies, $versie, 'all' );
 
 		$custom_css = '
 	ul#' . ID_SKIPLINKS . ', ul#' . ID_SKIPLINKS . ' li {
@@ -348,23 +333,23 @@ class GebruikerCentraalTheme extends Timber\Site {
 	 */
 	public function setup_widgets_init() {
 
-		register_sidebar( array(
+		register_sidebar( [
 			'name'          => _x( 'Footer widget left', 'Widget area', 'gctheme' ),
 			'id'            => 'footer_widget_left',
 			'before_widget' => '<section class="widget %s">',
 			'after_widget'  => '</section>',
 			'before_title'  => '<h3 class="widget-title widgettitle">',
 			'after_title'   => '</h3>',
-		) );
+		] );
 
-		register_sidebar( array(
+		register_sidebar( [
 			'name'          => _x( 'Footer widget right', 'Widget area', 'gctheme' ),
 			'id'            => 'footer_widget_right',
 			'before_widget' => '<section class="widget %s">',
 			'after_widget'  => '</section>',
 			'before_title'  => '<h3 class="widget-title widgettitle">',
 			'after_title'   => '</h3>',
-		) );
+		] );
 
 	}
 
@@ -400,7 +385,6 @@ function insert_breadcrumb() {
 }
 
 
-
 /*
  * filter body class
  */
@@ -413,15 +397,16 @@ function my_body_classes( $classes ) {
 
 	$classes[] = 'meh';
 
-if ( is_page() ) {
+	if ( is_page() ) {
 
-	$template = basename( get_page_template() );
-	if ( 'template-alle-tips.php' === $template ) {
-		$classes[] = 'page--type-overview page--overview-archive';
-	}
 
-}
-elseif ( is_singular( GC_TIP_CPT ) ) {
+
+		$template = basename( get_page_template() );
+		if ( 'template-alle-tips.php' === $template ) {
+			$classes[] = 'page--type-overview page--overview-archive';
+		}
+
+	} elseif ( is_singular( GC_TIP_CPT ) ) {
 
 		$classes[] = 'page page--type-tipkaart';
 		$taxonomie = get_the_terms( $post, GC_TIPTHEMA );
@@ -438,13 +423,13 @@ elseif ( is_singular( GC_TIP_CPT ) ) {
 				}
 			}
 		}
+	} elseif (is_archive()){
+		$classes[] = 'page--type-overview page--overview-archive';
 	}
 
 	return $classes;
 
 }
-
-
 
 
 /*
@@ -457,9 +442,8 @@ function unbox_yoast_seo_breadcrumb_append_link( $links ) {
 
 	if ( is_home() || is_front_page() ) {
 		// geen breadcrumb op de homepage
-		return array();
-	}
-	elseif ( is_singular( GC_TIP_CPT ) ) {
+		return [];
+	} elseif ( is_singular( GC_TIP_CPT ) ) {
 		// uit siteopties de pagina ophalen die het overzicht is van alle links
 		$optionpage = get_field( 'op_welke_pagina_staat_het_overzicht_van_alle_tips', 'option' );
 
@@ -469,10 +453,10 @@ function unbox_yoast_seo_breadcrumb_append_link( $links ) {
 			$ancestors  = get_post_ancestors( $optionpage );
 			$currenttip = array_pop( $links );
 			$home       = $links[0];
-			$parents[]  = array(
+			$parents[]  = [
 				'url'  => get_page_link( $optionpage ),
 				'text' => get_the_title( $optionpage ),
-			);
+			];
 
 			// haal de hele keten aan ancestors op en zet ze in de returnstring
 			foreach ( $ancestors as $ancestorid ) {
@@ -480,20 +464,20 @@ function unbox_yoast_seo_breadcrumb_append_link( $links ) {
 				if ( $home['url'] !== get_page_link( $ancestorid ) ) {
 					// home link staat al in $home, dus niet extra toevoegen
 
-					array_unshift( $parents, array(
+					array_unshift( $parents, [
 						'url'  => get_page_link( $ancestorid ),
 						'text' => get_the_title( $ancestorid ),
-					) );
+					] );
 
 				}
 			}
 
 			array_unshift( $parents, $links[0] );
 
-			$parents[] = array(
+			$parents[] = [
 				'url'  => get_page_link( $currenttip['id'] ),
 				'text' => get_the_title( $currenttip['id'] ),
-			);
+			];
 
 			$links = $parents;
 		}
@@ -501,40 +485,39 @@ function unbox_yoast_seo_breadcrumb_append_link( $links ) {
 
 	return $links;
 }
+
 /**
  * Add our Customizer content
  */
-function gc2020_customize_register($wp_customize){
+function gc2020_customize_register( $wp_customize ) {
 
-	$wp_customize->add_section('gc2020_theme', array(
-		'title'    => __('GC Theme opties', 'ictuwp-theme-gc2020'),
+	$wp_customize->add_section( 'gc2020_theme', [
+		'title'       => __( 'GC Theme opties', 'ictuwp-theme-gc2020' ),
 		'description' => 'Selecteer hier het thema voor deze subsite',
-		'priority' => 120,
-	));
+		'priority'    => 120,
+	] );
 	//  =============================
 	//  = Select Box                =
 	//  =============================
-	$wp_customize->add_setting('gc2020_theme_options[theme_select]', array(
-		'default'        => 'GC',
-		'capability'     => 'edit_theme_options',
-		'type'           => 'option',
+	$wp_customize->add_setting( 'gc2020_theme_options[theme_select]', [
+		'default'    => 'GC',
+		'capability' => 'edit_theme_options',
+		'type'       => 'option',
 
-	));
-	$wp_customize->add_control( 'example_select_box', array(
+	] );
+	$wp_customize->add_control( 'example_select_box', [
 		'settings' => 'gc2020_theme_options[theme_select]',
-		'label'   => 'Selecteer thema:',
-		'section' => 'gc2020_theme',
-		'type'    => 'select',
-		'choices'    => array(
+		'label'    => 'Selecteer thema:',
+		'section'  => 'gc2020_theme',
+		'type'     => 'select',
+		'choices'  => [
 			'GC' => 'Gebruiker Centraal default theme',
 			'OD' => 'Optimaal Digitaal theme',
 
-		),
-	));
-
-
+		],
+	] );
 
 
 }
 
-add_action('customize_register', 'gc2020_customize_register');
+add_action( 'customize_register', 'gc2020_customize_register' );

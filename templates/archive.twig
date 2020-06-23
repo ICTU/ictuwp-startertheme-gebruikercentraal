@@ -3,17 +3,27 @@
 
 {% extends "index.twig" %}
 
+
 {% block content %}
-  <h3>archive.php {{ title  }}</h3>
+  <header class="archive__header">
+    <h1>archive.php {{ title }}</h1>
+  </header>
 
-  {% include 'sections/section-overview.html.twig' with {
-    'items': tipkaarts,
-    'title': '',
-    'template': 'card--tipkaart',
-    'modifier': '4col'
-  } %}
+  {% if posts and overview is empty %}
 
-  {{ parent() }}
+    {% for post in posts %}
+      {% include ['tease-'~post.post_type~'.twig', 'tease.twig'] %}
+    {% endfor %}
 
+  {% elseif overview %}
 
+    {% include 'sections/section-overview.html.twig' with {
+      'title': overview.title,
+      'items': overview.items,
+      'template' : overview.template ? overview.template : 'card',
+      'modifier' : overview.modifier ? overview.modifier
+    } %}
+  {% endif %}
+
+  {% include 'partial/pagination.twig' with { pagination: posts.pagination({show_all: false, mid_size: 3, end_size: 2}) } %}
 {% endblock %}
