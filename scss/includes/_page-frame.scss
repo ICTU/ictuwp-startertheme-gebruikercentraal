@@ -1,0 +1,30 @@
+/*
+ * SCSS for pages with a frame
+ *
+ * Include this if you want the pages to be "framed" with a white background and shade
+ * (Beeldbank, Optimaal Digitaal for example
+ */
+
+
+.page--type-landing {
+  .page-content {
+    padding-bottom: 5rem;
+
+    @include bp-up(md){
+      padding-bottom: 8rem;
+    }
+  }
+
+  .content {
+    @include gc-box-shadow();
+    background: $white;
+    padding: 0;
+  }
+}
+
+.page--overview-archive,
+.page--type-overview {
+  .content {
+    box-shadow: none;
+  }
+}

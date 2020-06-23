@@ -1,0 +1,533 @@
+.page--type-tipkaart {
+  .content {
+    padding: 0;
+  }
+
+  .breadcrumb {
+    color: $base-font-color;
+
+    a {
+      color: $base-font-color;
+    }
+  }
+
+  .page-content {
+    padding-bottom: 0;
+
+    &:after {
+      background-color: $gc-pantybrown;
+      background-image: url('../../img/b_page-top-line-panty.svg');
+    }
+
+    > .section--overview {
+      @include negate-padding;
+      @include ho-padding;
+      text-align: center;
+
+      .section__title {
+        border: none;
+      }
+
+      .btn {
+        margin: 2rem auto 0;
+      }
+
+      &.section--bg-option {
+        background: url('../../img/b_section-bg-option.svg') left top 15rem no-repeat;
+        background-size: auto 100%;
+
+        @include bp-up(xlg) {
+          background-size: 100% auto;
+        }
+
+
+        &:before {
+          display: none;
+        }
+      }
+    }
+  }
+}
+
+@mixin gc-tipkaart-full($tip-color: $gc-a11y-green, $tip-secondary: $gc-a11y-green, $research-bg: $gc-a11y-green, $rblock-border: $gc-a11y-green, $toptip-bg: $gc-a11y-green-darker) {
+
+  .entry-header {
+    background: $tip-color;
+
+    &:after {
+      background: $tip-color;
+    }
+  }
+
+  .tipkaart__toptip:before {
+    background: $toptip-bg;
+  }
+
+  .research {
+    background: $research-bg;
+    color: $white;
+
+    h2, h3, a {
+      color: $white;
+    }
+  }
+
+  .research__why {
+    background: $tip-secondary url('../../img/i_brains.svg') top -3rem right -2.5rem no-repeat;
+    position: relative;
+  }
+
+  .l-why-wrapper:before {
+    background: $research-bg;
+  }
+
+  .research-block,
+  .research__conclusion {
+    border: .1rem solid $rblock-border;
+  }
+
+  .research-block__title {
+    border-bottom: .1rem solid $rblock-border;
+  }
+
+  hr {
+    border: none;
+    border-top: .1rem solid $rblock-border;
+  }
+}
+
+.tip {
+  &--full {
+    overflow: hidden;
+
+    // Header
+    .entry-header {
+      text-align: center;
+      position: relative;
+      padding: 3rem 2rem;
+      color: $white;
+      z-index: 5;
+
+      @include bp-up(md) {
+        padding: 5rem 5rem 2rem;
+      }
+
+      &:after {
+        content: " ";
+        position: absolute;
+        display: block;
+        left: 0;
+        bottom: 0;
+        width: 110%;
+        height: 5rem;
+        transform: rotate(2deg);
+        margin-bottom: -2rem;
+        z-index: -1;
+      }
+    }
+
+    .entry-title {
+      color: $white;
+      font-family: $font-primary-bold;
+      font-size: 2.8rem;
+      line-height: 4rem;
+      max-width: 90%;
+      margin: 2rem auto;
+
+      @include bp-up(sm) {
+        font-size: 4rem;
+        line-height: 5.4rem;
+      }
+
+      @include bp-up(lg) {
+        font-size: 5.2rem;
+        line-height: 7rem;
+        margin-top: 4rem;
+      }
+    }
+
+    .tipkaart__categorie {
+      margin-top: 3rem;
+
+      @include bp-up(md) {
+        margin-top: 5rem;
+      }
+    }
+
+    .tip__nr {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: $font-secondary;
+      text-transform: uppercase;
+      font-size: 2rem;
+
+      &:before,
+      &:after {
+        content: " ";
+        height: .2rem;
+        background: $white;
+        display: inline-block;
+        width: 3rem;
+      }
+
+      &:before {
+        margin-right: 2rem;
+      }
+
+      &:after {
+        margin-left: 2rem;
+      }
+
+      @include bp-up(md) {
+        font-size: 2.6rem;
+
+        &:before,
+        &:after {
+          width: 4.5rem;
+        }
+
+        &:before {
+          margin-right: 5rem;
+        }
+
+        &:after {
+          margin-left: 5rem;
+        }
+      }
+    }
+
+    .tipkaart__categorie span {
+      margin-top: .6rem;
+    }
+
+    .icon--tipkaart {
+      height: 6.5rem;
+      width: auto;
+    }
+
+    @include bp-down(sm) {
+      .icon--tipkaart {
+        height: 6rem;
+        width: 5rem;
+      }
+
+      .tipkaart__categorie .name {
+        font-size: 1.8rem;
+      }
+    }
+
+    .section--links,
+    .section--downloads {
+      @include ho-padding;
+    }
+
+    .section--links {
+      padding-bottom: 5rem;
+
+      @include bp-up(lg) {
+        padding-bottom: 8rem;
+      }
+    }
+  }
+
+  // Content
+
+  .entry-body {
+    box-sizing: border-box;
+    max-width: calc(#{$max-width-inner} + 4rem);
+    padding: 3rem 2rem;
+    margin: 0 auto;
+
+    @include bp-up(sm) {
+      width: 90%;
+    }
+    @include bp-up(md) {
+      padding-top: 6rem;
+    }
+  }
+
+  // Set colors for each category
+
+  /* @gc-tipkaart-full
+   * ({$Color for heading / top}, {$color for "Why block}, $(Research block background}, ${Border color for research blocks}, ${Background for toptips})
+   */
+  &--gebruiksgemak {
+    @include gc-tipkaart-full($gc-dark-purple, $gc-a11y-green, $gc-dark-purple, $gc-dark-purple-lighter, $gc-dark-purple-darker);
+  }
+
+  &--procesaanpak {
+    @include gc-tipkaart-full($gc-a11y-cyan-lg, $gc-dark-blue, $gc-a11y-cyan, $gc-cyan, $gc-a11y-cyan);
+  }
+
+  &--commitment {
+    @include gc-tipkaart-full($gc-a11y-green, $gc-dark-blue, $gc-a11y-green, $gc-green);
+  }
+
+  &--informatieveiligheid {
+    @include gc-tipkaart-full($gc-pink, $gc-dark-blue, $gc-pink, $gc-pink-lighter, $gc-pink-darker);
+  }
+
+  &--kanaalsturing {
+    @include gc-tipkaart-full($gc-a11y-orange-lg, $gc-dark-blue, $gc-orange, $gc-a11y-orange-lg, $gc-orange);
+
+    .research__content {
+      color: $base-font-color;
+
+      a, h2, h3 {
+        color: $base-font-color;
+      }
+    }
+  }
+
+  &--inclusie {
+    @include gc-tipkaart-full($inc-orange, $gc-dark-blue, $inc-a11y-orange, lighten($inc-orange, 10%), $inc-orange);
+  }
+
+  &--samenwerking {
+    @include gc-tipkaart-full($gc-blue, $gc-dark-blue, $gc-a11y-blue, $gc-blue, $gc-a11y-blue);
+  }
+}
+
+.section--examples {
+  padding-left: 2rem;
+  padding-right: 2rem;
+  @include gc-bg-rotated();
+
+  h2, .example {
+    position: relative;
+  }
+
+  .section__title {
+    max-width: $max-width-inner;
+    margin: 0 auto;
+    border: none;
+
+    .content & {
+      padding-top: 0;
+    }
+  }
+}
+
+.example {
+  max-width: $max-width-inner;
+  margin: 3rem auto 0;
+
+  @include bp-up(sm) {
+    width: 90%;
+  }
+
+  @include bp-up(lg) {
+    + .example {
+      margin-top: 5rem;
+    }
+  }
+
+  @include bp-up(xlg) {
+    + .example {
+      margin-top: 8rem;
+    }
+  }
+}
+
+.example__content {
+  @include gc-box-shadow();
+  border: .1rem solid $border-color;
+  background: $white;
+  padding: 2rem;
+
+  @include bp-up(md) {
+    padding: 3rem 5rem 4rem;
+  }
+}
+
+.example__description {
+  margin-top: 1.6rem;
+
+  p:first-child {
+    margin-top: 0;
+  }
+}
+
+.example__author {
+  position: relative;
+  padding-top: .1rem;
+
+  &:before {
+    @include square(4rem);
+    position: absolute;
+    display: block;
+    content: " ";
+    background: url('../../img/b_example.svg') top -1px left 0 no-repeat;
+    background-size: 100% auto;
+    left: 1.2rem;
+    top: -2px;
+  }
+
+  @include bp-up(sm) {
+    padding-left: 7rem;
+  }
+
+  @include bp-up(lg) {
+    padding-left: 11rem;
+
+    &:before {
+      left: 4.5rem;
+      @include square(4.5rem);
+    }
+  }
+}
+
+// Onderzoek
+
+.research {
+  padding-bottom: 5rem;
+
+  @include bp-up(lg) {
+    padding-bottom: 8rem;
+  }
+
+  + .section .section__title {
+    border-top: 0;
+    padding-top: 0;
+  }
+}
+
+.l-why-wrapper {
+  @include ho-padding;
+  @include gc-bg-rotated($gc-a11y-green);
+  background: $gc-pantybrown-xlight;
+  position: relative;
+  z-index: auto;
+}
+
+.research__why {
+  @include gc-box-shadow();
+  margin: 0 auto;
+  max-width: $max-width-inner;
+  padding: 3rem;
+  position: relative;
+  z-index: 10;
+
+  @include bp-up(md) {
+    padding: 4rem;
+  }
+
+  h2 {
+    @include gc-section-heading;
+  }
+}
+
+.research__content {
+  @include ho-padding;
+  position: relative;
+
+  &:before {
+    @include square(8rem);
+    content: " ";
+    position: absolute;
+    display: block;
+    background: url('../../img/i_lamp.svg') center center no-repeat;
+    background-size: auto 100%;
+    top: 0;
+    left: 0;
+    margin: -8rem 0 0 -2rem;
+    transform: rotate(40deg);
+    z-index: 5;
+
+
+    @include bp-up(md) {
+      @include square(18rem);
+      transform: rotate(0);
+      margin: -12rem 0 -3rem -5rem;
+    }
+  }
+
+  hr {
+    margin: 1.5rem 0;
+
+    @include bp-up(lg) {
+      margin: 2.5rem 0;
+    }
+  }
+
+  .research__title {
+    @include gc-section-heading;
+  }
+
+  .l-inner {
+    @include ho-container-content;
+  }
+}
+
+.l-research-blocks {
+  margin-top: 2rem;
+
+  @include bp-up(sm) {
+    display: flex;
+    margin-left: -$gutter / 2;
+    margin-right: -$gutter / 2;
+
+    .research-block {
+      margin-left: $gutter / 2;
+      margin-right: $gutter / 2;
+      flex: 1;
+    }
+  }
+}
+
+.research-block {
+  margin-top: $gutter;
+  display: block;
+  padding: 1rem 1.5rem 3rem;
+  text-align: center;
+  font-family: $font-primary-semi;
+
+  span {
+    display: block;
+  }
+}
+
+.research-block__title {
+  font-size: 1.3rem;
+  line-height: 2rem;
+  padding-bottom: .8rem;
+}
+
+.research-block__nr {
+  text-transform: lowercase;
+  font-size: 3.8rem;
+  line-height: 5rem;
+  font-family: $font-primary-bold;
+  padding-top: 1.5rem;
+}
+
+.research-block__descr {
+  font-size: 1.5rem;
+  line-height: 2rem;
+}
+
+.research__conclusion {
+  @include icon(before, doc-check);
+  padding: 2rem 2rem 2rem 7rem;
+  margin-top: 3rem;
+  position: relative;
+
+  &:before {
+    position: absolute;
+    left: 2rem;
+    top: 2rem;
+    font-size: 4rem;
+    line-height: 4rem;
+  }
+
+  @include bp-up(md) {
+    padding-left: 10rem;
+
+    &:before {
+      left: 3rem;
+      font-size: 5rem;
+      line-height: 6rem;
+    }
+  }
+}
