@@ -20,7 +20,7 @@
   }
 
   &:before {
-    background: transparent url('../../img/b_section-bg-option-after.svg') left bottom -.1rem repeat-x;
+    background: transparent url('../images/b_section-bg-option-after.svg') left bottom -.1rem repeat-x;
     z-index: 0;
   }
 
@@ -32,7 +32,7 @@
     right: 0;
     top: 0;
     z-index: -1;
-    background: $brand-color url('../../img/b_page-top-line.svg') top left repeat-x;
+    background: $brand-color url('../images/b_page-top-line.svg') top left repeat-x;
   }
 
   @include bp-up(md) {
@@ -126,7 +126,7 @@
 
   .content > .section--bg-option {
     &:before {
-      background: url('../../img/b_section-bg-option.svg') 0 100% no-repeat;
+      background: url('../images/b_section-bg-option.svg') 0 100% no-repeat;
 
       @include bp-up(xlg){
         background-size: 120% auto;

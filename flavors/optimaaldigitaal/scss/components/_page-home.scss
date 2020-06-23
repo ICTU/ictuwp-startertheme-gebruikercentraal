@@ -11,7 +11,7 @@
 .entry--type-home {
 
   .page__intro {
-    background: url('../../img/b_home-top.svg') center top -25rem no-repeat;
+    background: url('../images/b_home-top.svg') center top -25rem no-repeat;
     background-size: auto 101%;
     position: relative;
     text-align: center;
@@ -25,7 +25,7 @@
 
     &:before {
       @include square(25rem);
-      background: url('../../img/i_dartboard.svg') center center no-repeat;
+      background: url('../images/i_dartboard.svg') center center no-repeat;
       background-size: 100% auto;
       top: 0;
       left: 0;
@@ -37,7 +37,7 @@
       @include square(18rem);
       right: 0;
       top: 20%;
-      background: url('../../img/i_stack.svg') center center no-repeat;
+      background: url('../images/i_stack.svg') center center no-repeat;
       background-size: auto 100%;
       margin-right: -7rem;
       animation: rotatin 60s linear infinite;

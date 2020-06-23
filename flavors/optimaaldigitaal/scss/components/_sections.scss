@@ -6,7 +6,7 @@
   }
 
   &:before {
-    background: url('../../img/b_section-bg-option.svg') 0 100% no-repeat;
+    background: url('../images/b_section-bg-option.svg') 0 100% no-repeat;
     background-size: auto 500px;
     transform: rotate(0deg);
     margin: 0;
@@ -36,7 +36,7 @@
     width: 100%;
     height: 10rem;
     margin-bottom: -.1rem;
-    background: url('../../img/b_section-bg-option-after.svg') left bottom -1rem repeat-x;
+    background: url('../images/b_section-bg-option-after.svg') left bottom -1rem repeat-x;
     background-size: 80% auto;
 
     @include bp-up(lg){
