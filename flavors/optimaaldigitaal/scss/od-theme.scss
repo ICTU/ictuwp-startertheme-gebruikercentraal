@@ -1,0 +1,20 @@
+// Base components
+@import "../../../scss/all";
+
+// Frame content
+@import "../../../scss/includes/page-frame";
+
+
+/* Optimaal Digitaal Flavor */
+
+// Vars
+@import "abstracts/variables";
+
+
+// Components
+@import "components/page-home";
+@import "components/sections";
+@import "components/layout";
+@import "components/manual";
+
+

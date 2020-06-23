@@ -153,8 +153,9 @@ class GebruikerCentraalTheme extends Timber\Site {
 		$context['site']                = $this;
 		$context['site_name']           = ( get_bloginfo( 'name' ) ? get_bloginfo( 'name' ) : 'Gebruiker Centraal' );
 		$context['site_slogan']         = ( get_bloginfo( 'description' ) ? get_bloginfo( 'description' ) : null );
-		$context['logo']                = get_stylesheet_directory_uri() . '/theme/img/logo/od.svg';
-		$context['sprite_url']          = get_stylesheet_directory_uri() . '/theme/img/sprites/optimaal-digitaal/defs/svg/sprite.defs.svg';
+		$context['logo']                = get_stylesheet_directory_uri() . '/flavors/optimaaldigitaal/logo.svg';
+		$context['sprite_od']           = get_stylesheet_directory_uri() . '/assets/images/sprites/optimaal-digitaal/defs/svg/sprite.defs.svg';
+		$context['sprite_steps']        = get_stylesheet_directory_uri() . '/assets/images/sprites/stepchart/defs/svg/sprite.defs.svg';
 		$context['footer_widget_left']  = Timber::get_widgets( 'footer_widget_left' );
 		$context['footer_widget_right'] = Timber::get_widgets( 'footer_widget_right' );
 
@@ -262,7 +263,7 @@ class GebruikerCentraalTheme extends Timber\Site {
 			$versie = strtotime( "now" );
 		}
 
-		wp_enqueue_script( 'main-min', get_stylesheet_directory_uri() . '/theme/dist/js/main-min.js', $dependencies, $versie, $infooter );
+		wp_enqueue_script( 'main-min', get_stylesheet_directory_uri() . '/assets/js/main-min.js', $dependencies, $versie, $infooter );
 
 		$dependencies = array();
 
@@ -271,15 +272,16 @@ class GebruikerCentraalTheme extends Timber\Site {
 
 		wp_enqueue_style(
 			'gc-fonts',
-			get_stylesheet_directory_uri() . '/theme/fonts/fonts.css',
+			get_stylesheet_directory_uri() . '/assets/fonts/fonts.css',
 			$dependencies,
 			'',
 			'all'
 		);
 
+		// get_stylesheet_directory_uri() . '/flavors/'.$gc_theme["theme_select"].'assets/css/od-theme.css',
 		wp_enqueue_style(
 			ID_SKIPLINKS,
-			get_stylesheet_directory_uri() . '/sites/'.$gc_theme["theme_select"].'/theme/dist/css/od-theme.css',
+			get_stylesheet_directory_uri() . '/flavors/optimaaldigitaal/assets/css/od-theme.css',
 			$dependencies,
 			$versie,
 			'all'

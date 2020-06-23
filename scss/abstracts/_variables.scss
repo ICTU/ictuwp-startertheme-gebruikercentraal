@@ -1,0 +1,178 @@
+
+// * COLORS * //
+
+$white:                     #fff;
+$black:                     #000;
+
+// Primary colors
+$gc-green:					#25b34b;
+
+$gc-a11y-green:				#148839;
+$gc-a11y-green-darker:		#0b732c;
+$gc-a11y-green-dark:		#055C21;
+$gc-a11y-green-lg:		    #1DA742; // Ok for large texts
+
+$gc-pantybrown:				#e8d8c7;
+$gc-pantybrown-light:		#f2ebe4;
+$gc-pantybrown-xlight:		#f9f6f3;
+
+$gc-dark-blue:              #004152;
+$gc-darkest-blue:           #00303d;
+
+$gc-blue-darker:            #005870;
+
+$gc-greyblue:               #52757e;
+$gc-blue-xlight:			#D1DFE3;
+
+
+// Secondary colors
+$gc-dark-purple:			#4c2974;
+$gc-dark-purple-darker:     #2D114E;
+$gc-dark-purple-lighter:	#9267C3;
+
+$gc-blue:					#0095da;
+$gc-a11y-blue:              #007BB0;
+
+$gc-pink:					#c42c76;
+$gc-pink-darker:			#A20E56;
+$gc-pink-lighter:           #E86CA8;
+
+$gc-orange:					#f99d1c;
+$gc-a11y-orange-lg:			#D77D00;
+
+$gc-cyan:					#00b4ac;
+$gc-a11y-cyan-lg:			#009C95; // Ok for large texts
+$gc-a11y-cyan:              #00837E;
+
+
+/* Inclusie */
+$inc-orange:                #D94721;
+$inc-a11y-orange:           #c73d19;
+
+
+/* NLDS */
+$nlds-purplish:             #74295f;
+
+
+// Grays
+$grey-x-light:               #F7F7F7;
+
+
+// Voor definities alleen betaande kleuren gebruiken
+$base-font-color:            $gc-dark-blue !default;
+
+$border-color:               $gc-blue-xlight !default;
+$blue_border_color:          #0F90B2 !default;
+
+$brand-color:                $gc-green !default;
+$brand-a11y-color:           $gc-a11y-green !default;
+
+// Page intro's
+$intro-bg:                   $gc-dark-purple !default;
+$intro-color:                $white !default;
+
+
+/* ------- */
+
+$color-primary:             $gc-a11y-green !default;
+$color-secondary:           $gc-dark-purple !default;
+
+$color-x-light:             $gc-pantybrown-xlight !default;
+
+/*
+ * Typography
+ */
+
+$font-primary:              'montserratregular', Helvetica, Arial, sans-serif;
+$font-primary-bold:         'montserratbold', Helvetica, Arial, sans-serif;
+$font-primary-light:        'montserratlight', Helvetica, Arial, sans-serif;
+$font-primary-semi:         'montserratsemibold', Helvetica, Arial, sans-serif;
+
+$font-secondary:            'league_gothicregular', Impact, Helvetica, Arial, sans-serif;
+
+
+// Color Definitions
+$base-font-color:          $gc-dark-blue !default;
+$base-font-size:           1.8rem !default;
+$base-line-height:         3rem !default;
+
+$base-font-weight:         300 !default;
+$base-font-family:         $font-primary !default;
+
+$font-small:               1.4rem !default;
+$font-smaller:             1.6rem !default;
+
+$link:                     $base-font-color !default;
+$link-hover:               $base-font-color !default;
+
+// Fonts and Typography
+
+$fw-reg:                    300 !default;
+$fw-bold:                   700 !default;
+$fw-semi:                   500 !default;
+
+$base-heading-color:        $base-font-color !default;
+$base-heading-font:         $font-primary-bold !default;
+
+$base-h1-size:              56px !default;
+$base-h1-line-height:       66px !default;
+
+$base-h2-size:              2.6rem !default;
+$base-h2-line-height:       3.6rem !default;
+
+$base-h3-size:              2.4rem !default;
+$base-h3-line-height:       3.4rem !default;
+
+$base-h4-size:              22px !default;
+$base-h4-line-height:       28px !default;
+
+/*
+ * Forms
+ */
+
+$input-bg:                 $white;
+$input-border:             $border-color;
+
+$input-focus:              $gc-green;
+$input-focus-bg:           $white;
+
+$input-hover-bg:           $white;
+
+
+// Submit
+
+$submit-bg:                $gc-a11y-green;
+$submit-hover-bg:          $gc-a11y-green-darker;
+$submit-color:             $white;
+$button-font:              $font-secondary;
+
+
+
+/*
+ * Grid + Widths
+ */
+
+$breakpoints: (
+        'sm': 560px,
+        'md': 700px,
+        'lg': 1100px,
+        'xlg': 1600px,
+        'nav': 1000px,
+        'cm': 1400px
+) !default;
+
+$max-width-large:         1900px !default;
+$max-width-container:     1280px !default;
+$max-width-content:       960px !default;
+$max-width-inner:         760px !default;
+
+$gutter:                  3rem !default;
+$gutter-smaller:          2rem !default;
+$gutter-xsmall:           .5rem !default;
+
+// Additional vars for components
+
+@import "vars/btn";
+@import "vars/entry";
+@import "vars/stepchart";
+@import "vars/text-block";

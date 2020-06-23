@@ -1,0 +1,335 @@
+// Author
+
+.author {
+  .author__contact-info {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 2rem;
+  }
+
+  .link--contact {
+    margin: 1rem 1rem 0 0;
+
+    @include bp-up(md) {
+      + .social-links {
+        margin-left: 1rem;
+      }
+    }
+  }
+
+  .social-links {
+    margin: 1rem 0 0;
+    padding: 0;
+    display: flex;
+
+    @include bp-up(md) {
+      margin-top: 0;
+    }
+  }
+
+  .social-links__item {
+    margin: 1rem 1rem 0 0;
+  }
+
+  p {
+    margin: 2rem 0 0;
+  }
+
+
+  &.l-with-image {
+    display: flex;
+    align-items: flex-start;
+
+    .author__picture,
+    .author__image {
+      width: 8rem;
+    }
+
+    .author__content {
+      width: calc(100% - 14rem);
+      padding-left: $gutter;
+    }
+
+    @include bp-up(lg) {
+      .author__picture,
+      .author__image {
+        width: 14rem;
+      }
+
+      .author__content {
+        width: calc(100% - 14rem);
+      }
+    }
+  }
+}
+
+.author__picture,
+.author__image {
+  background: $white;
+
+  img {
+    @include gc-box-shadow();
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+}
+
+.author--box {
+  @include gc-box-shadow;
+  background: $gc_pantybrown_xlight;
+  position: relative;
+  padding: 3rem 2rem 2rem;
+  display: block;
+  font-size: $font-smaller;
+  line-height: 2.6rem;
+  margin-top: 5rem;
+
+  @include bp-up(md) {
+    margin-top: 8rem;
+  }
+
+  &:before {
+    content: " ";
+    position: absolute;
+    width: 3rem;
+    height: 3rem;
+    display: block;
+    background: $gc_pantybrown_xlight;
+    top: 0;
+    left: 6rem;
+    margin-top: -1.5rem;
+    transform: rotate(45deg);
+  }
+
+  .author__content {
+    width: 100%;
+    padding: 0;
+  }
+
+  h2,
+  .author__title {
+    font-size: 2.4rem;
+    margin: 0;
+    padding: 0;
+  }
+
+  .meta-data__item {
+    color: $meta-data;
+    font-size: $font_small;
+  }
+
+  hr {
+    border-color: $gc_pantybrown-light;
+    margin: 1.5rem 0;
+  }
+
+  .author__contact-info {
+    font-size: $font_small;
+    margin-top: 2rem;
+  }
+
+  p {
+    margin: 0;
+  }
+
+  @include bp-up(md) {
+    padding: 3rem;
+  }
+}
+
+// Small, displayed with tips
+
+.author--small {
+  position: relative;
+  margin-top: 2rem;
+
+  img {
+    @include gc-box-shadow();
+    width: 7.5rem;
+    float: left;
+    margin-right: 2.5rem;
+  }
+
+  .author__name {
+    font-size: 2rem;
+    line-height: 2.6rem;
+  }
+
+  span {
+    color: $meta-data;
+    font-size: $font-small;
+    display: block;
+    margin-top: .3rem;
+  }
+
+  .link {
+    display: block;
+    margin-top: .5rem;
+
+    &:before {
+      color: $gc-a11y-green;
+    }
+  }
+}
+
+// As a card, displayed in overviews
+
+$ac-margin: 30rem;
+
+.author--card {
+  text-align: center;
+
+  .card__image {
+    margin-bottom: -11rem;
+  }
+
+  .author__content {
+    @include gc-box-shadow();
+    @include gc-bg-rotated($white);
+    background: $gc-pantybrown-xlight;
+    padding: 13rem 3rem 2rem;
+    position: relative;
+    z-index: -1;
+
+    @include bp-up(md){
+      padding: 13rem 3rem 2rem;
+    }
+
+    &:before {
+      top: 9rem;
+      z-index: -2;
+    }
+  }
+
+  h3 a {
+    text-decoration: underline;
+
+    &:hover, &:focus {
+      text-decoration: none;
+    }
+  }
+
+  .author__function {
+    color: $meta-data;
+    font-size: $font-small;
+    line-height: 2.4rem;
+    margin-top: 1rem;
+    display: block;
+  }
+
+  &.author--with-image {
+    position: relative;
+    z-index: 5;
+
+    img {
+      @include gc-box-shadow();
+      width: 13rem;
+      height: auto;
+      margin: 0 auto;
+      position: relative;
+    }
+  }
+
+  &.author--no-image {
+    .card__image {
+      &:before {
+        @include gc-box-shadow();
+        content: " ";
+        display: block;
+        width: 14rem;
+        height: 15.4rem;
+        background: url('/wp-content/themes/ictuwp-theme-gc2020/assets/images/author-default.jpg') center center no-repeat;
+        background-size: 100% auto;
+        margin: 0 auto;
+      }
+    }
+  }
+}
+
+/*
+ * Author page
+ * For displaying an author
+ */
+
+.page--type-author {
+
+  .page-content {
+    padding-bottom: 0;
+    background: $gc-pantybrown-xlight;
+  }
+
+  .content {
+    padding: 0;
+    background: none;
+    box-shadow: none;
+    max-width: none;
+
+    > .section--bg-option {
+      @include negate-padding;
+
+      &:before {
+        background: $gc-pantybrown-light;
+      }
+
+      .section__title {
+        text-align: center;
+        border: none;
+      }
+    }
+  }
+
+  .author--full {
+    @include gc-box-shadow();
+    max-width: $max-width-content;
+    margin: 0 auto;
+    background: $intro-bg;
+    color: $intro-color;
+    padding: 2rem;
+
+    h1, h2, h3 {
+      color: $intro-color;
+    }
+
+    a {
+      color: $intro-color;
+
+      &:hover, &:focus {
+        color: $intro-color;
+      }
+    }
+
+    .author__contact-info {
+      border-top: .1rem solid  darken($intro-bg, 6%);
+      padding-top: 1.5rem;
+    }
+
+    @include bp-up(md) {
+      padding: 4rem;
+    }
+
+
+    .meta-data {
+      color: $intro-color;
+      font-size: $font-smaller;
+      margin-top: .5rem;
+    }
+  }
+
+  .author__contact-info {
+    a:hover, a:focus {
+      color: $base-font-color;
+    }
+  }
+
+}
+
+.author-items {
+  @include ho-container;
+  margin-top: 5rem;
+
+  @include bp-up(md){
+    margin-top: 8rem;
+  }
+}
+

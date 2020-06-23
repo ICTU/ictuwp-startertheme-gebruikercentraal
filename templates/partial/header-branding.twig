@@ -1,0 +1,10 @@
+<div class="branding">
+  <a href="{{ site.url }}" class="branding__home-link{{ site.description ? ' branding--with-slogan' }}">
+    <img src="{{ logo ? logo : 'logo.svg' }}" alt="{{ site_name }} Logo" class="branding__logo">
+
+    <span class="branding__name">{{ site_name ? site_name : 'Gebruiker Centraal' }}</span>
+    {% if site.description %}
+      <span class="branding__slogan">{{ site.description }} </span>
+    {% endif %}
+  </a>
+</div>

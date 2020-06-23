@@ -23,50 +23,52 @@ const siteConfig = config[(argv.site === undefined) ? 'base' : argv.site];
 
 
 const r = Math.random().toString(36).substring(7);
-const fontName = 'ho-iconfont-' + r;
+const fontName = 'gc-iconfont-' + r;
 
 
 /*  IconFont
  *  Iconfont only needs to be created for the base theme
+ *  Generates a custom iconfont, icons can be used everywhere
  */
 
-function makeFont(done) {
+const fontConfig = {
+  icons: '../assets/images/icons/',
+  name: fontName,
+  themedir: '../scss/',
+  dest: '../assets/fonts/iconfont'
+};
 
-  var currentfolder = '../theme/'
-  del([ currentfolder + 'fonts/iconfont/**'], {
+function makeFont(done) {
+  console.log(fontConfig);
+
+  del([fontConfig.dest + '/**'], {
     'force': true
   });
 
-  console.log(currentfolder + 'fonts/iconfont/**');
-
-  var iconStream = gulp.src(currentfolder + 'img/icons/*.svg')
+  var iconStream = gulp.src(fontConfig.icons + '*.svg')
     .pipe(svgmin())
     .pipe(iconfont({
-      fontName: fontName,
+      fontName: fontConfig.name,
       fontHeight: 1001,
       normalize: true
     }));
 
   const Glyphs = function (cb) {
     iconStream.on('glyphs', function (glyphs, options) {
-      gulp.src(currentfolder + 'scss/base/_icons.scss')
+      gulp.src(fontConfig.themedir + 'base/_icons.scss')
         .pipe(consolidate('lodash', {
           glyphs: glyphs,
           fontName: fontName
         }))
-        .pipe(gulp.dest(currentfolder + 'scss/abstracts'))
+        .pipe(gulp.dest(fontConfig.themedir + 'abstracts'))
     });
-
-//    console.log( 'abstracts: ' + currentfolder + 'scss/abstracts' );
 
     cb();
   };
 
-  console.log( 'abstracts: ' + currentfolder + 'scss/abstracts' );
-
   const handleFont = function (cb) {
     iconStream
-      .pipe(gulp.dest(currentfolder + 'fonts/iconfont/'))
+      .pipe(gulp.dest(fontConfig.dest))
     cb();
   };
 
@@ -75,7 +77,6 @@ function makeFont(done) {
   });
 
   return gulp.parallel(Glyphs, handleFont)();
-
 }
 
 /*
@@ -105,14 +106,14 @@ function getFolders(dir) {
 }
 
 function makeSprites(done) {
-  var folders = getFolders('img/sprites/');
+  var folders = getFolders('images/sprites/');
 
   if (folders) {
     console.log(folders);
 
     folders.map(function (folder) {
 
-      return gulp.src('imgs/sprites/' + folder + '/*.svg')
+      return gulp.src('images/sprites/' + folder + '/*.svg')
         .pipe(svgmin())
         .pipe(svgSprite(svgSpriteConfig)).on('error', function (error) {
           gutil.log(gutil.colors.red(error));
@@ -130,9 +131,9 @@ function makeSprites(done) {
 }
 
 function js(done) {
-  del(['dist/js/*.js'], {force: true});
+  del(['../assets/js/main.js'], {force: true});
 
-  gulp.src('js/components/*.js')
+  gulp.src('../assets/js/components/*.js')
     .pipe(concat('main.js'))
     .pipe(concat.header('(function ($, document, window) { $(document).ready(function() {'))
     .pipe(concat.footer('}); })(jQuery, document, window);'))
@@ -144,7 +145,7 @@ function js(done) {
       },
     }))
     .pipe(sourcemaps.write())
-    .pipe(gulp.dest(siteConfig.dest + 'dist/js'))
+    .pipe(gulp.dest('../assets/js'))
     .pipe(notify({message: 'Theme JS Task complete'}));
 
   done();
@@ -160,7 +161,7 @@ function styles(done) {
     .pipe(sass().on('error', sass.logError))
     .pipe(autoprefixer('last 2 version'))
     .pipe(sourcemaps.write('.'))
-    .pipe(gulp.dest(siteConfig.dest + 'dist/css'))
+    .pipe(gulp.dest(siteConfig.dest + 'css'))
     .pipe(notify({message: 'Theme Styles task complete'}))
     .pipe(browserSync.stream());
 
@@ -168,15 +169,15 @@ function styles(done) {
 }
 
 function baseStyles(done) {
-  console.log('dest: ' + 'dist/css');
+  console.log('dest: ' + 'assets/css');
 
   gulp
-    .src('./scss/*.scss')
+    .src('../scss/*.scss')
     .pipe(sourcemaps.init())
     .pipe(sass().on('error', sass.logError))
     .pipe(autoprefixer('last 2 version'))
     .pipe(sourcemaps.write('.'))
-    .pipe(gulp.dest('dist/css'))
+    .pipe(gulp.dest('assets/css'))
     .pipe(notify({message: 'Regular Styles task complete'}))
     .pipe(browserSync.stream());
 
@@ -191,7 +192,7 @@ function prod(done) {
     .src(siteConfig.path + 'scss/*.scss')
     .pipe(sass().on('error', sass.logError))
     .pipe(autoprefixer('last 2 version'))
-    .pipe(gulp.dest(siteConfig.path + 'dist/css'))
+    .pipe(gulp.dest(siteConfig.dest + 'css'))
     .pipe(notify({message: 'Prod CSS task complete'}))
   done();
 }
@@ -200,6 +201,7 @@ function prodAll(done) {
 
   for (var obj in config) {
     var path = config[obj].path;
+    var dest = config[obj].dest;
     var name = config[obj].name;
 
     var pathExists = fs.existsSync(path);
@@ -212,7 +214,7 @@ function prodAll(done) {
           gulp.src(path + 'scss/*.scss')
             .pipe(sass().on('error', sass.logError))
             .pipe(autoprefixer('last 2 version'))
-            .pipe(gulp.dest(path + 'dist/css'))
+            .pipe(gulp.dest(dest + 'css'))
             .pipe(notify({message: name + ' css task complete'}))
           cb();
         };
@@ -232,25 +234,25 @@ function prodAll(done) {
 function watch() {
 
   console.log("Watch: " + siteConfig.path + 'scss/**/*.scss');
-  console.log("Watch: ../theme/scss/**/*.scss" );
+  console.log("Watch: ../theme/scss/**/*.scss");
   console.log("Name: " + siteConfig.name);
 
   browserSync.init({
     proxy: siteConfig.proxy
   });
 
-  if(!(siteConfig.shortname === 'gcbase')){
-    console.log("Extra folder in de gaten houden, want " + siteConfig.shortname + ': ' + siteConfig.path + 'scss/' );
-    gulp.watch(siteConfig.path + 'scss/**/*.scss', styles);
+  // Watch basetheme + flavor
+  if (!(siteConfig.shortname === 'gc_base')) {
+    console.log("Extra folder in de gaten houden, want " + siteConfig.shortname + ': ' + siteConfig.path + 'scss/');
+    gulp.watch('../scss/**/*.scss', baseStyles);
   }
 
-  gulp.watch('../theme/scss/**/*.scss', styles);
-  gulp.watch('../theme/js/components/*.js', js);
+  // Watch flavor from siteconfog
+  gulp.watch(siteConfig.path + 'scss/**/*.scss', styles);
+  gulp.watch('js/components/*.js', js);
 
-  gulp.watch('../theme/img/icons/*.svg', gulp.series(makeFont, styles));
+  gulp.watch('../assets/images/icons/*.svg', gulp.series(makeFont, styles));
 
-  //gulp.watch('styleguide/**/*.scss', styleGuide);
-  //gulp.watch('styleguide/**/*.html', styleGuide);
 }
 
 
