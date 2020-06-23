@@ -1,0 +1,47 @@
+{% extends "base.twig" %}
+
+{% block content %}
+  <div class="content-wrapper">
+    <article class="post-type-{{ post.post_type }}" id="post-{{ post.ID }}">
+      <section class="article-content">
+        <h1 class="article-h1">{{ post.title }}</h1>
+        <div class="article-body">
+          {{ post.content }}
+        </div>
+
+        {% if sitemap.pages %}
+          <h2>{{ pagetitle }}</h2>
+        <ul>
+          {{ sitemap.pages }}
+        </ul>
+        {% endif %}
+
+        {% if sitemap.posts %}
+          <h2>{{ posttitle }}</h2>
+          <ul>
+          {{ sitemap.posts }}
+          </ul>
+        {% endif %}
+
+        {% if sitemap.tipthema %}
+          <h2>{{ tipthemastitle }}</h2>
+          <ul>
+            {% for item in sitemap.tipthema %}
+              <li><a href="{{ item.link }}">{{ item.name }}</a></li>
+            {% endfor %}
+          </ul>
+        {% endif %}
+
+        {% if sitemap.tipgevers %}
+          <h2>{{ tipgeverstitle }}</h2>
+          <ul>
+            {% for item in sitemap.tipgevers %}
+              <li><a href="{{ item.link }}">{{ item.name }}</a></li>
+            {% endfor %}
+          </ul>
+        {% endif %}
+
+      </section>
+    </article>
+  </div><!-- /content-wrapper -->
+{% endblock %}

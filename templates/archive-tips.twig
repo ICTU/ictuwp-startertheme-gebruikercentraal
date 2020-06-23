@@ -4,16 +4,12 @@
 {% extends "index.twig" %}
 
 {% block content %}
-  <h3>archive.php {{ title  }}</h3>
-
   {% include 'sections/section-overview.html.twig' with {
     'items': tipkaarts,
     'title': '',
     'template': 'card--tipkaart',
     'modifier': '4col'
   } %}
-
-  {{ parent() }}
 
 
 {% endblock %}
