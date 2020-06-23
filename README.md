@@ -17,3 +17,7 @@ Standaard is het GC-smaakje actief, maar we hebben ook vormgeving voor deze subs
 * conference  (nog niet in dit theme verwerkt)
 * volwassenheidsscore  (nog niet in dit theme verwerkt)
 
+### customizer
+Gebruikers met beheerders-rechten kunnen de customizer gebruiken. Deze vind je via 
+[admin] > Weergave > Customizer
+Hier vind je een lijst met opties. Zie de optie 'GC theme-opties'. Hier zie je een selectielijst; je keuze hier beinvloedt de vormgeving van je GC-site.
