@@ -1,0 +1,374 @@
+.page-header {
+  background: $gc_darkest-blue;
+  position: relative;
+  z-index: 10;
+}
+
+.l-header-top {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  height: 8rem;
+  padding-left: 1rem;
+  width: 100%;
+  max-width: $max-width-container;
+  margin: 0 auto;
+
+  @include bp-up(nav) {
+    height: 9rem;
+    padding-left: 3rem;
+    padding-right: 3rem;
+  }
+}
+
+.branding {
+  margin-right: auto;
+
+  @include bp-down(nav) {
+    span {
+      @include visually-hidden;
+    }
+  }
+
+  @include bp-up(nav) {
+    span {
+      display: block;
+    }
+  }
+
+  a {
+    color: $white;
+    text-decoration: none;
+  }
+}
+
+.branding__logo {
+  height: 5.5rem;
+  width: auto;
+  display: block;
+
+  @include bp-up(nav) {
+    height: 6rem;
+  }
+}
+
+.branding__home-link {
+  display: block;
+
+  &:hover, &:focus {
+    img {
+      transform: scale(1.05);
+      margin-right: 2rem;
+    }
+
+    .site__slogan {
+      text-decoration: underline;
+    }
+  }
+
+
+  @include bp-down(nav) {
+    span {
+      @include visually-hidden;
+    }
+  }
+
+  @include bp-up(nav) {
+    min-width: 46rem;
+    line-height: 2rem;
+    display: flex;
+    align-items: center;
+
+    img {
+      margin-right: 1.8rem;
+      transition: transform .2s, margin .2s;
+    }
+
+    span {
+      display: block;
+    }
+
+    &.branding--with-slogan {
+      display: block;
+
+      img {
+        float: left;
+      }
+    }
+  }
+}
+
+.branding__name {
+  font-family: $font-secondary;
+  text-transform: uppercase;
+  font-size: 4.6rem;
+  line-height: 4.6rem;
+}
+
+.branding__slogan {
+  font-size: 1.3rem;
+  line-height: 1.6rem;
+}
+
+.search-form {
+  @include icon(after, search);
+  position: relative;
+
+  &:after {
+    position: absolute;
+    color: $white;
+    right: 1rem;
+    top: 50%;
+    font-size: 2rem;
+    margin-top: -1.2rem;
+  }
+
+  label {
+    @include visually-hidden;
+  }
+
+  input {
+    &[type='search'] {
+      background: none;
+      color: $white;
+      border-color: $gc_greyblue;
+      border-width: .1rem;
+      height: 4rem;
+      font-size: $font_small;
+
+      &::placeholder {
+        color: $white;
+      }
+
+      &:focus {
+        @include gc-box-shadow($color: $gc-darkest-blue, $trans: 0.6);
+        background: $gc_dark-blue;
+        border-color: $gc-blue-xlight;
+      }
+    }
+
+    &[type='submit'] {
+      border: none;
+      position: absolute;
+      color: transparent;
+      top: .1rem;
+      bottom: .1rem;
+      right: .3rem;
+      width: 4rem;
+      height: auto;
+      padding: 0;
+      background: none;
+    }
+  }
+}
+
+// Mobile behaviour
+
+@include bp-down(nav) {
+
+  .page-content {
+    transition: transform .3s;
+    width: 100%;
+  }
+
+  .l-header-nav {
+    transition: margin .2s;
+    margin-left: -80%;
+  }
+
+  .show-menu {
+    .page-content {
+      transform: translateX(80%);
+    }
+
+    .l-header-nav {
+      margin-left: 0;
+    }
+  }
+}
+
+
+.l-header-nav {
+
+  @include bp-down(nav) {
+    position: fixed;
+    left: 0;
+    top: 8rem;
+    bottom: 0;
+    width: 80%;
+    background: $gc_dark-blue;
+    overflow-y: auto;
+  }
+
+  @include bp-down(sm) {
+    width: 100%;
+  }
+
+  @include bp-up(nav) {
+    background: $gc-dark-blue;
+  }
+}
+
+.main-menu {
+  font-size: $font-smaller;
+
+  a {
+    color: $white;
+    display: block;
+    padding: .5rem 2rem;
+    text-decoration: none;
+    position: relative;
+
+    &:hover,
+    &:focus {
+      color: $white;
+      text-decoration: underline;
+    }
+  }
+
+  li {
+    list-style: none;
+  }
+
+  > ul > li {
+
+    > ul a {
+      @include icon(before, arrow);
+      display: flex;
+      padding: .5rem 2rem .5rem 1.5rem;
+
+      &:before {
+        float: left;
+        font-size: 1rem;
+        margin-right: 1rem;
+        transition: margin .2s;
+      }
+
+      &:hover, &:focus {
+        &:before {
+          margin-right: 1.2rem;
+        }
+      }
+    }
+  }
+
+  @include bp-down(nav) {
+    background: $gc_darkest-blue;
+
+    a {
+      width: 100%;
+      transition: padding .2s;
+    }
+
+    > ul {
+
+      > li {
+
+        + li {
+          border-top: .1rem solid $gc-dark-blue;
+        }
+
+        > a {
+          padding: 1rem 2rem;
+
+          &:before {
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: .5rem;
+            content: " ";
+            position: absolute;
+            background: $gc-a11y-green;
+            display: block;
+            transform: scaleY(0);
+            transition: transform .2s;
+          }
+
+          &:hover, &:focus {
+            padding-left: 2.2rem;
+
+            &:before {
+              transform: scaleY(1);
+            }
+          }
+        }
+
+        > ul {
+          background: $gc-dark-blue;
+          padding: 1rem 0;
+          width: 100%;
+
+          a {
+            padding: .5rem 2rem .5rem 2.4rem;
+          }
+        }
+      }
+    }
+  }
+
+  // DEsktop
+
+  @include bp-up(nav) {
+    width: 100%;
+    max-width: $max-width-container;
+    margin: 0 auto;
+
+    > ul {
+      display: flex;
+
+      > li {
+        position: relative;
+
+        > a {
+          padding: 2rem;
+          font-family: $font-primary-semi;
+        }
+
+        &.main-menu__item--with-sub {
+          display: flex;
+          width: auto;
+          align-items: center;
+
+          > a {
+            padding-right: .5rem;
+          }
+        }
+
+        ul {
+          position: absolute;
+          background: $gc-darkest-blue;
+          top: 7rem;
+          width: 26rem;
+          font-size: $font-small;
+        }
+      }
+    }
+  }
+}
+
+.main-menu__list,
+.main-menu__sublist {
+  margin: 0;
+  padding: 0;
+}
+
+.main-menu__item {
+  &--with-sub {
+    display: flex;
+    flex-wrap: wrap;
+  }
+}
+
+.main-menu__open-sub {
+  width: 4rem;
+  height: 4.2rem;
+  overflow: hidden;
+  margin-left: auto;
+  color: transparent;
+  background: transparent url('/wp-content/themes/ictuwp-theme-gc2020/assets/images/arrow-white-down.svg') center center no-repeat;
+  border: none;
+
+  @include bp-down(nav) {
+    display: none;
+  }
+}

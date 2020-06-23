@@ -1,19 +1,19 @@
 {
   "base": {
-    "name": "Optimaal Digitaal",
-    "shortname": "optimaaldigitaal",
-    "path": "../sites/od/theme/",
-    "dest": "../sites/od/theme/",
-    "absfolder": "/wp-content/themes/ictuwp-theme-gc2020/",
-    "proxy": "optimaaldigitaal.test"
-  },
-  "gc": {
-    "name": "Gebruiker Centraal",
+    "name": "Gebruiker Centraal - Base",
     "shortname": "gc_base",
-    "path": "./",
-    "proxy": "optimaaldigitaal.test",
+    "path": "../",
+    "dest": "../assets/",
     "absfolder": "/wp-content/themes/ictuwp-theme-gc2020/",
-    "dest": "./"
+    "proxy": "gc.test"
+  },
+  "od": {
+    "name": "Optimaal Digitaal",
+    "shortname": "od",
+    "absfolder": "/wp-content/themes/ictuwp-theme-gc2020/",
+    "path": "../flavors/optimaaldigitaal/",
+    "dest": "../flavors/optimaaldigitaal/assets/",
+    "proxy": "optimaaldigitaal.test"
   }
 }
 

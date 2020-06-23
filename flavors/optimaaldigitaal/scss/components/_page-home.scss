@@ -1,0 +1,113 @@
+@keyframes rotatin {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  50% {
+    transform: rotate(180deg);
+  }
+}
+
+.entry--type-home {
+
+  .page__intro {
+    background: url('../images/b_home-top.svg') center top -25rem no-repeat;
+    background-size: auto 101%;
+    position: relative;
+    text-align: center;
+
+    &:before,
+    &:after {
+      position: absolute;
+      display: block;
+      content: " ";
+    }
+
+    &:before {
+      @include square(25rem);
+      background: url('../images/i_dartboard.svg') center center no-repeat;
+      background-size: 100% auto;
+      top: 0;
+      left: 0;
+      margin-left: -10rem;
+      animation: rotatin 120s linear infinite;
+    }
+
+    &:after {
+      @include square(18rem);
+      right: 0;
+      top: 20%;
+      background: url('../images/i_stack.svg') center center no-repeat;
+      background-size: auto 100%;
+      margin-right: -7rem;
+      animation: rotatin 60s linear infinite;
+      animation-delay: 3s;
+    }
+
+    @include bp-down(sm){
+      &:before {
+        @include square(18rem);
+        margin-left: -8rem;
+        top: 3%;
+      }
+
+      &:after {
+        margin-right: -7rem;
+        @include square(15rem);
+      }
+    }
+    @include bp-up(md){
+      font-size: 2.2rem;
+
+      &:before {
+        @include square(25rem);
+      }
+
+      &:after {
+        margin-right: 0;
+      }
+    }
+
+    @include bp-up(lg){
+      background-size: cover;
+      background-position: center top -25rem;
+
+      &:before {
+        margin-left: 0;
+      }
+
+      &:after {
+        @include square(20rem);
+      }
+    }
+
+    @include bp-up(xlg){
+      padding-top: 14rem;
+      background-position: center top -25rem;
+
+      &:before {
+        left: 20%;
+        top: 5%;
+      }
+
+      &:after {
+        right: 20%;
+      }
+    }
+  }
+
+  .entry-header {
+    p {
+      max-width: 60rem;
+      margin: 1.8rem auto 0;
+    }
+
+    .btn--primary {
+      margin-top: 2rem;
+    }
+  }
+
+  .section--overview {
+    text-align: center;
+  }
+}

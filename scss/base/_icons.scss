@@ -1,0 +1,37 @@
+@font-face {
+  font-family: "icons";
+  src: url('/wp-content/themes/ictuwp-theme-gc2020/assets/fonts/iconfont/<%= fontName %>.eot');
+  src: url('/wp-content/themes/ictuwp-theme-gc2020/assets/fonts/iconfont/<%= fontName %>.eot?#iefix') format('eot'),
+  url('/wp-content/themes/ictuwp-theme-gc2020/assets/fonts/iconfont/<%= fontName %>.woff') format('woff'),
+  url('/wp-content/themes/ictuwp-theme-gc2020/assets/fonts/iconfont/<%= fontName %>.ttf') format('truetype'),
+  url('/wp-content/themes/ictuwp-theme-gc2020/assets/fonts/iconfont/<%= fontName %>.svg#icons') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+// path has to be absolut because iconfont is used in subthemes as well
+// wp-content/themes/ictuwp-theme-gc2020/assets/conts/iconfont
+
+$icons: (
+<% _.each(glyphs, function(glyph) { %> <%= glyph.name %>: "\<%= glyph.unicode[0].charCodeAt(0).toString(16).toUpperCase() %>",
+<% }); %>
+);
+
+// Use to apply icons
+@mixin icon($position: before, $icon: false, $styles: true) {
+  @if $position == both {
+    $position: 'before, &:after';
+  }
+  &:#{$position} {
+    @if $icon {
+      content: "#{map-get($icons, $icon)}";
+    }
+    @if $styles {
+      speak: none;
+      font-style: normal;
+      font-weight: normal;
+      font-family: 'icons';
+    }
+    @content;
+  }
+}

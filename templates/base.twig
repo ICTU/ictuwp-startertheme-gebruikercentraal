@@ -1,48 +1,52 @@
 {% block html_head_container %}
-    {% include 'html-header.twig' %}
-    {% block head %}
-    {% endblock %}
-    </head>
+  {% include 'html-header.twig' %}
+  {% block head %}
+  {% endblock %}
+  </head>
 {% endblock %}
 
 <body class="{{ body_class }}" data-template="base.twig">
 
 <div class="site-container">
 
-    <ul id="skiplinks">
-        <li><a href="#maincontent">{{ __( 'Direct naar belangrijkste content', 'gctheme' ) }}</a></li>
-        {% if menu %}
-            <li><a href="#mainnav">{{ __( 'Direct naar hoofdnavigatie', 'gctheme' ) }}</a></li>
-        {% endif %}
-    </ul>
+  <ul id="skiplinks">
+    <li><a href="#maincontent">{{ __( 'Direct naar belangrijkste content', 'gctheme' ) }}</a></li>
+    {% if menu %}
+      <li><a href="#mainnav">{{ __( 'Direct naar hoofdnavigatie', 'gctheme' ) }}</a></li>
+    {% endif %}
+  </ul>
 
 
-    <header class="page-header">
+  <header class="page-header">
 
-        <div class="l-header-top">
-          {% include "header-branding.twig"  %}
-          {% include "header-searchform.twig"  %}
-        </div>
+    <div class="l-header-top">
+      {% include "partial/header-branding.twig" %}
+      {% include "header-searchform.twig" %}
+    </div>
 
-        {% include "menu.twig" with {'items': menu.get_items} %}
+    {% include "menu.twig" with {'items': menu.get_items} %}
 
-    </header>
+  </header>
 
   {{ function('insert_breadcrumb') }}
 
-        {% block content %}
-          Sorry, no content
-        {% endblock %}
+  <div class="page-content">
 
+    <main class="content">
+      {% block content %}
+        Sorry, no content
+      {% endblock %}
 
+    </main>
 
+  </div>
 
-    {% block footer %}
-        <footer id="footer">
-            {% include 'footer.twig' %}
-        </footer>
-        {{ function('wp_footer') }}
-    {% endblock %}
+  {% block footer %}
+    <footer id="footer">
+      {% include 'footer.twig' %}
+    </footer>
+    {{ function('wp_footer') }}
+  {% endblock %}
 </div>
 
 </body>

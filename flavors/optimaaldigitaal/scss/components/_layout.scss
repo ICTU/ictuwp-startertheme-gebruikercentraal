@@ -1,0 +1,140 @@
+
+.breadcrumb {
+  background: none;
+  position: absolute;
+  z-index: 6;
+  left: 0;
+  right: 0;
+
+  .breadcrumb__list {
+    @include ho-container;
+  }
+}
+
+.page-content {
+  background: $gc-pantybrown-light;
+
+  &:before,
+  &:after {
+    height: 18rem;
+  }
+
+  &:before {
+    background: transparent url('../images/b_section-bg-option-after.svg') left bottom -.1rem repeat-x;
+    z-index: 0;
+  }
+
+  &:after {
+    content: " ";
+    display: block;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    z-index: -1;
+    background: $brand-color url('../images/b_page-top-line.svg') top left repeat-x;
+  }
+
+  @include bp-up(md) {
+    &:before,
+    &:after {
+      height: 28rem;
+    }
+  }
+
+  @include bp-up(lg) {
+    padding-top: 16rem;
+
+    &:before,
+    &:after {
+      height: 35rem;
+    }
+  }
+}
+
+.l-hero {
+  @include bp-up(lg) {
+    margin-top: -16rem;
+  }
+}
+
+.l-with-hero .breadcrumb {
+  padding-top: 0;
+  padding-bottom: 0;
+
+  .breadcrumb__list li {
+    background: $gc-darkest-blue;
+
+    &:first-child {
+      padding-left: 1.5rem;
+    }
+
+    &:last-child {
+      padding-right: 1.5rem;
+    }
+  }
+
+}
+
+.spotlight__content {
+  background: $brand-color;
+}
+
+.page--type-landing .page-content > .section--spotlight {
+  &:after {
+    display: none;
+  }
+}
+
+.section--spotlight.section--bg-option:before {
+  @include bp-up(lg) {
+    top: 20rem;
+  }
+}
+
+.content {
+  @include gc-box-shadow();
+}
+
+
+.page--type-event {
+  .content {
+    overflow: hidden;
+  }
+
+  .page-content {
+    padding-bottom: 5rem;
+
+    @include bp-up(md) {
+      padding-bottom: 12rem;
+    }
+  }
+
+  .comment-respond {
+    padding-bottom: 0;
+  }
+}
+
+.date-badge--multiple .date-badge__till:before {
+  background: $gc-a11y-green-dark;
+}
+
+.page--type-author {
+  .page-content {
+    background: $gc-pantybrown-light;
+  }
+
+  .content > .section--bg-option {
+    &:before {
+      background: url('../images/b_section-bg-option.svg') 0 100% no-repeat;
+
+      @include bp-up(xlg){
+        background-size: 120% auto;
+      }
+    }
+
+    &:after {
+      display: none;
+    }
+  }
+}
