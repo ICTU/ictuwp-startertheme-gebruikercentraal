@@ -16,7 +16,7 @@
 
     &:after {
       background-color: $gc-pantybrown;
-      background-image: url('../../img/b_page-top-line-panty.svg');
+      background-image: url('/wp-content/themes/ictuwp-theme-gc2020/flavors/optimaaldigitaal/assets/images/b_page-top-line-panty.svg');
     }
 
     > .section--overview {
@@ -33,7 +33,7 @@
       }
 
       &.section--bg-option {
-        background: url('../../img/b_section-bg-option.svg') left top 15rem no-repeat;
+        background: url('/wp-content/themes/ictuwp-theme-gc2020/flavors/optimaaldigitaal/assets/images/b_section-bg-option.svg') left top 15rem no-repeat;
         background-size: auto 100%;
 
         @include bp-up(xlg) {
@@ -73,7 +73,7 @@
   }
 
   .research__why {
-    background: $tip-secondary url('../../img/i_brains.svg') top -3rem right -2.5rem no-repeat;
+    background: $tip-secondary url('/wp-content/themes/ictuwp-theme-gc2020/flavors/optimaaldigitaal/assets/images/i_brains.svg') top -3rem right -2.5rem no-repeat;
     position: relative;
   }
 
@@ -358,7 +358,7 @@
     position: absolute;
     display: block;
     content: " ";
-    background: url('../../img/b_example.svg') top -1px left 0 no-repeat;
+    background: url('/wp-content/themes/ictuwp-theme-gc2020/flavors/optimaaldigitaal/assets/images/b_example.svg') top -1px left 0 no-repeat;
     background-size: 100% auto;
     left: 1.2rem;
     top: -2px;
@@ -427,7 +427,7 @@
     content: " ";
     position: absolute;
     display: block;
-    background: url('../../img/i_lamp.svg') center center no-repeat;
+    background: url('/wp-content/themes/ictuwp-theme-gc2020/flavors/optimaaldigitaal/assets/images/i_lamp.svg') center center no-repeat;
     background-size: auto 100%;
     top: 0;
     left: 0;

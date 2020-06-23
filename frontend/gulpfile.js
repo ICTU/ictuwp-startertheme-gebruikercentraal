@@ -169,7 +169,7 @@ function styles(done) {
 }
 
 function baseStyles(done) {
-  console.log('dest: ' + 'dist/css');
+  console.log('dest: ' + 'assets/css');
 
   gulp
     .src('../scss/*.scss')
@@ -201,6 +201,7 @@ function prodAll(done) {
 
   for (var obj in config) {
     var path = config[obj].path;
+    var dest = config[obj].dest;
     var name = config[obj].name;
 
     var pathExists = fs.existsSync(path);
@@ -213,7 +214,7 @@ function prodAll(done) {
           gulp.src(path + 'scss/*.scss')
             .pipe(sass().on('error', sass.logError))
             .pipe(autoprefixer('last 2 version'))
-            .pipe(gulp.dest(path + 'dist/css'))
+            .pipe(gulp.dest(dest + 'css'))
             .pipe(notify({message: name + ' css task complete'}))
           cb();
         };

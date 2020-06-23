@@ -196,7 +196,7 @@ cite {
 .entry-body p.arrow,
 .manual-item__content p.arrow,
 .example__content p.arrow {
-  background: url("../../img/i_pijltje.svg") 0 0.8rem no-repeat;
+  background: url("/wp-content/themes/ictuwp-theme-gc2020/flavors/optimaaldigitaal/assets/images/i_pijltje.svg") 0 0.8rem no-repeat;
   padding-left: 6rem; }
 
 .section--text .media--image img,
@@ -875,7 +875,7 @@ legend {
   overflow: hidden;
   margin-left: auto;
   color: transparent;
-  background: transparent url("/theme/img/arrow-white-down.svg") center center no-repeat;
+  background: transparent url("/wp-content/themes/ictuwp-theme-gc2020/assets/images/arrow-white-down.svg") center center no-repeat;
   border: none; }
   @media (max-width: 999px) {
     .main-menu__open-sub {
@@ -1771,7 +1771,7 @@ h1 {
   padding-bottom: 0; }
   .page--type-tipkaart .page-content:after {
     background-color: #e8d8c7;
-    background-image: url("../../img/b_page-top-line-panty.svg"); }
+    background-image: url("/wp-content/themes/ictuwp-theme-gc2020/flavors/optimaaldigitaal/assets/images/b_page-top-line-panty.svg"); }
   .page--type-tipkaart .page-content > .section--overview {
     margin-left: -2rem;
     margin-right: -2rem;
@@ -1793,7 +1793,7 @@ h1 {
     .page--type-tipkaart .page-content > .section--overview .btn {
       margin: 2rem auto 0; }
     .page--type-tipkaart .page-content > .section--overview.section--bg-option {
-      background: url("../../img/b_section-bg-option.svg") left top 15rem no-repeat;
+      background: url("/wp-content/themes/ictuwp-theme-gc2020/flavors/optimaaldigitaal/assets/images/b_section-bg-option.svg") left top 15rem no-repeat;
       background-size: auto 100%; }
       @media (min-width: 1600px) {
         .page--type-tipkaart .page-content > .section--overview.section--bg-option {
@@ -1932,7 +1932,7 @@ h1 {
     .tip--gebruiksgemak .research h2, .tip--gebruiksgemak .research h3, .tip--gebruiksgemak .research a {
       color: #fff; }
   .tip--gebruiksgemak .research__why {
-    background: #148839 url("../../img/i_brains.svg") top -3rem right -2.5rem no-repeat;
+    background: #148839 url("/wp-content/themes/ictuwp-theme-gc2020/flavors/optimaaldigitaal/assets/images/i_brains.svg") top -3rem right -2.5rem no-repeat;
     position: relative; }
   .tip--gebruiksgemak .l-why-wrapper:before {
     background: #4c2974; }
@@ -1956,7 +1956,7 @@ h1 {
     .tip--procesaanpak .research h2, .tip--procesaanpak .research h3, .tip--procesaanpak .research a {
       color: #fff; }
   .tip--procesaanpak .research__why {
-    background: #004152 url("../../img/i_brains.svg") top -3rem right -2.5rem no-repeat;
+    background: #004152 url("/wp-content/themes/ictuwp-theme-gc2020/flavors/optimaaldigitaal/assets/images/i_brains.svg") top -3rem right -2.5rem no-repeat;
     position: relative; }
   .tip--procesaanpak .l-why-wrapper:before {
     background: #00837E; }
@@ -1980,7 +1980,7 @@ h1 {
     .tip--commitment .research h2, .tip--commitment .research h3, .tip--commitment .research a {
       color: #fff; }
   .tip--commitment .research__why {
-    background: #004152 url("../../img/i_brains.svg") top -3rem right -2.5rem no-repeat;
+    background: #004152 url("/wp-content/themes/ictuwp-theme-gc2020/flavors/optimaaldigitaal/assets/images/i_brains.svg") top -3rem right -2.5rem no-repeat;
     position: relative; }
   .tip--commitment .l-why-wrapper:before {
     background: #148839; }
@@ -2004,7 +2004,7 @@ h1 {
     .tip--informatieveiligheid .research h2, .tip--informatieveiligheid .research h3, .tip--informatieveiligheid .research a {
       color: #fff; }
   .tip--informatieveiligheid .research__why {
-    background: #004152 url("../../img/i_brains.svg") top -3rem right -2.5rem no-repeat;
+    background: #004152 url("/wp-content/themes/ictuwp-theme-gc2020/flavors/optimaaldigitaal/assets/images/i_brains.svg") top -3rem right -2.5rem no-repeat;
     position: relative; }
   .tip--informatieveiligheid .l-why-wrapper:before {
     background: #c42c76; }
@@ -2028,7 +2028,7 @@ h1 {
     .tip--kanaalsturing .research h2, .tip--kanaalsturing .research h3, .tip--kanaalsturing .research a {
       color: #fff; }
   .tip--kanaalsturing .research__why {
-    background: #004152 url("../../img/i_brains.svg") top -3rem right -2.5rem no-repeat;
+    background: #004152 url("/wp-content/themes/ictuwp-theme-gc2020/flavors/optimaaldigitaal/assets/images/i_brains.svg") top -3rem right -2.5rem no-repeat;
     position: relative; }
   .tip--kanaalsturing .l-why-wrapper:before {
     background: #f99d1c; }
@@ -2056,7 +2056,7 @@ h1 {
     .tip--inclusie .research h2, .tip--inclusie .research h3, .tip--inclusie .research a {
       color: #fff; }
   .tip--inclusie .research__why {
-    background: #004152 url("../../img/i_brains.svg") top -3rem right -2.5rem no-repeat;
+    background: #004152 url("/wp-content/themes/ictuwp-theme-gc2020/flavors/optimaaldigitaal/assets/images/i_brains.svg") top -3rem right -2.5rem no-repeat;
     position: relative; }
   .tip--inclusie .l-why-wrapper:before {
     background: #c73d19; }
@@ -2080,7 +2080,7 @@ h1 {
     .tip--samenwerking .research h2, .tip--samenwerking .research h3, .tip--samenwerking .research a {
       color: #fff; }
   .tip--samenwerking .research__why {
-    background: #004152 url("../../img/i_brains.svg") top -3rem right -2.5rem no-repeat;
+    background: #004152 url("/wp-content/themes/ictuwp-theme-gc2020/flavors/optimaaldigitaal/assets/images/i_brains.svg") top -3rem right -2.5rem no-repeat;
     position: relative; }
   .tip--samenwerking .l-why-wrapper:before {
     background: #007BB0; }
@@ -2161,7 +2161,7 @@ h1 {
     position: absolute;
     display: block;
     content: " ";
-    background: url("../../img/b_example.svg") top -1px left 0 no-repeat;
+    background: url("/wp-content/themes/ictuwp-theme-gc2020/flavors/optimaaldigitaal/assets/images/b_example.svg") top -1px left 0 no-repeat;
     background-size: 100% auto;
     left: 1.2rem;
     top: -2px; }
@@ -2253,7 +2253,7 @@ h1 {
     content: " ";
     position: absolute;
     display: block;
-    background: url("../../img/i_lamp.svg") center center no-repeat;
+    background: url("/wp-content/themes/ictuwp-theme-gc2020/flavors/optimaaldigitaal/assets/images/i_lamp.svg") center center no-repeat;
     background-size: auto 100%;
     top: 0;
     left: 0;
@@ -3040,7 +3040,7 @@ h1 {
     display: block;
     width: 14rem;
     height: 15.4rem;
-    background: url("/theme/img/author-default.jpg") center center no-repeat;
+    background: url("/wp-content/themes/ictuwp-theme-gc2020/assets/images/author-default.jpg") center center no-repeat;
     background-size: 100% auto;
     margin: 0 auto; }
 
@@ -3752,7 +3752,7 @@ h1 {
     height: 3.8rem;
     top: 0;
     right: 0;
-    background: url("/theme/img/ico-star.svg") center center no-repeat; }
+    background: url("/wp-content/themes/ictuwp-theme-gc2020/assets/images/ico-star.svg") center center no-repeat; }
 
 .tipkaart__nummer {
   font-family: "league_gothicregular", Impact, Helvetica, Arial, sans-serif;
@@ -5679,5 +5679,3 @@ h1 {
   @media (min-width: 1100px) {
     .manual-item__content {
       padding: 4rem 5rem; } }
-
-/*# sourceMappingURL=od-theme.css.map */
