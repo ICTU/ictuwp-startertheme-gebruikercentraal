@@ -159,6 +159,8 @@ class GebruikerCentraalTheme extends Timber\Site {
 		$context['footer_widget_left']  = Timber::get_widgets( 'footer_widget_left' );
 		$context['footer_widget_right'] = Timber::get_widgets( 'footer_widget_right' );
 
+		((is_archive()) ? $context['pagetype'] = 'archive_' . get_queried_object()->taxonomy : '');
+
 		return $context;
 	}
 
@@ -438,6 +440,8 @@ function my_body_classes( $classes ) {
 				}
 			}
 		}
+	} elseif (is_archive()){
+		$classes[] = 'page--type-overview page--overview-archive';
 	}
 
 	return $classes;

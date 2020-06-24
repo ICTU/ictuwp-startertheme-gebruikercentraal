@@ -74,10 +74,9 @@
 
 
       {% if why or research %}
+        <div class="research {{ why.description ? 'research--with-why' : 'research--without-why' }}">
 
-        <div class="research">
-
-          {% if why %}
+          {% if not why.description is empty %}
             <div class="l-why-wrapper">
               <div class="research__why">
                 <h2 class="research__title">{{ why.title }}</h2>
@@ -125,10 +124,13 @@
         } %}
       {% endif %}
 
-      {% include 'sections/section-links.html.twig' with {
-        'section_title': _x('Links', 'Section title links', 'gctheme'),
-        'items': links
-      } %}
+      {% if links %}
+
+        {% include 'sections/section-links.html.twig' with {
+          'section_title': _x('Links', 'Section title links', 'gctheme'),
+          'items': links
+        } %}
+      {% endif %}
 
     </div>
   </article>

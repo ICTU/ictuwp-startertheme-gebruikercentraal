@@ -27,7 +27,9 @@
       margin-top: 1.6rem;
     }
 
-    + h2, + h3, + h4 {
+    + h2,
+    + h3,
+    + h4 {
       margin-top: $gutter;
     }
 
@@ -68,10 +70,12 @@
   }
 }
 
+// Fields / Sections which uses the body font styles
 .section--text,
 .entry-body,
 .manual-item__content,
-.example__content {
+.example__content,
+.research__content {
   @include text-styles;
 }
 
