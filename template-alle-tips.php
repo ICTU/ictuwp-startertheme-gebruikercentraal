@@ -67,20 +67,26 @@ if ( $the_query->have_posts() ) {
 	while ( $the_query->have_posts() ) {
 
 		$the_query->the_post();
-		$taxonomie      = get_the_terms( $post->ID, GC_TIPTHEMA );
-
-		$card['title']  = get_the_title();
-		$card['nr']     = get_post_meta( $post->ID, 'tip-nummer', true );
-		$card['url']    = get_the_permalink();
-		$card['toptip'] = true;
+		$card = array();
+		$taxonomie     = get_the_terms( $post->ID, GC_TIPTHEMA );
+		$card['title'] = od_wbvb_custom_post_title( get_the_title() );
+		$card['nr']    = sprintf( _x( 'Tip %s', 'Label tip-ummer', 'gctheme' ), get_post_meta( $post->ID, 'tip-nummer', true ) );
+		$card['url']   = get_the_permalink();
+		$is_toptip     = get_post_meta( $post->ID, 'is_toptip', true );
+		if ( $is_toptip ) {
+			$card['toptip'] = true;
+			$card['toptiptekst'] = 'Toptip';
+		} else {
+			$card['toptip'] = false;
+		}
 		if ( isset( $themakleuren[ $taxonomie[0]->term_id ] ) ) {
 			$card['category'] = $themakleuren[ $taxonomie[0]->term_id ];
 		}
 
-
 		$context['tipkaarts'][] = $card;
 
 	}
+
 }
 /* Restore original Post Data */
 wp_reset_postdata();

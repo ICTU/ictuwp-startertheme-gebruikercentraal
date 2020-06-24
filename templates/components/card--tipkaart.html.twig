@@ -1,13 +1,12 @@
 <div class="tipkaart tipkaart--{{ category|lower }}">
-  <a class="tipkaart__link" title="Neem als bestuurder verant­woordelijkheid voor informatie­veiligheid" href="{{ url ? url : '#' }}">
+  <a class="tipkaart__link" href="{{ url }}">
+
 
     {% if toptip %}
-      <span class="tipkaart__toptip">
-        Is toptip
-      </span>
+      <span class="tipkaart__toptip">{{ toptiptekst }}</span>
     {% endif %}
 
-    <span class="tipkaart__nummer">Tip {{ nr }}</span>
+    <span class="tipkaart__nummer">{{ nr }}</span>
     <h3 class="tipkaart__title">{{ title }}</h3>
 
     <div class="tipkaart__categorie">
