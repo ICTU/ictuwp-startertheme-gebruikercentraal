@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Gebruiker Centraal (2020)\n"
-"POT-Creation-Date: 2020-06-24 17:15+0200\n"
-"PO-Revision-Date: 2020-06-24 17:15+0200\n"
+"POT-Creation-Date: 2020-06-24 17:27+0200\n"
+"PO-Revision-Date: 2020-06-24 17:28+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: nl_NL\n"
@@ -40,29 +40,39 @@ msgctxt "Alt-tekst op logo"
 msgid "Logo %s"
 msgstr ""
 
-#: functions.php:412
+#: functions.php:197
+msgctxt "skiplinks"
+msgid "Jump to main content"
+msgstr "Direct naar de belangrijkste inhoud"
+
+#: functions.php:199
+msgctxt "skiplinks"
+msgid "Jump to main navigation"
+msgstr "Direct naar de hoofdnavigatie"
+
+#: functions.php:413
 msgctxt "Widget area"
 msgid "Footer widget left"
 msgstr ""
 
-#: functions.php:421
+#: functions.php:422
 msgctxt "Widget area"
 msgid "Footer widget right"
 msgstr ""
 
-#: functions.php:566
+#: functions.php:567
 msgctxt "customizer"
 msgid "Gebruiker Centraal Instellingen"
 msgstr ""
 
-#: functions.php:567
+#: functions.php:568
 msgctxt "customizer"
 msgid ""
 "Selecteer hier het kleurenschema voor deze site. Je wijzigt hiermee de "
 "styling, logo en sommige functionaliteit van de site."
 msgstr ""
 
-#: functions.php:590
+#: functions.php:591
 msgctxt "customizer"
 msgid "Kies het kleurenschema"
 msgstr ""

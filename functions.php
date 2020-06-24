@@ -182,20 +182,21 @@ class GebruikerCentraalTheme extends Timber\Site {
 			$this->configuration = $defaultsettings;
 		}
 
-		$context['menu']                = new Timber\Menu( 'primary' );
-		$context['footermenu']          = new Timber\Menu( 'footermenu' );
-		$context['site']                = $this;
-		$context['site_name']           = ( get_bloginfo( 'name' ) ? get_bloginfo( 'name' ) : 'Gebruiker Centraal' );
-		$context['alt_logo']            = sprintf( _x( 'Logo %s', 'Alt-tekst op logo', 'gctheme' ), get_bloginfo( 'name' ) );
-		$context['sprite_od']           = get_stylesheet_directory_uri() . '/assets/images/sprites/optimaal-digitaal/defs/svg/sprite.defs.svg';
-		$context['sprite_steps']        = get_stylesheet_directory_uri() . '/assets/images/sprites/stepchart/defs/svg/sprite.defs.svg';
-		$context['footer_widget_left']  = Timber::get_widgets( 'footer_widget_left' );
-		$context['footer_widget_right'] = Timber::get_widgets( 'footer_widget_right' );
-		$context['site_logo']           = get_stylesheet_directory_uri() . $this->configuration['site_logo'];
-		$context['skiplinks_id']        = ID_SKIPLINKS;
-		$context['maincontent_id']      = 'maincontent';
-		$context['mainnav_id']          = 'menu-primary';
-
+		$context['menu']                    = new Timber\Menu( 'primary' );
+		$context['footermenu']              = new Timber\Menu( 'footermenu' );
+		$context['site']                    = $this;
+		$context['site_name']               = ( get_bloginfo( 'name' ) ? get_bloginfo( 'name' ) : 'Gebruiker Centraal' );
+		$context['alt_logo']                = sprintf( _x( 'Logo %s', 'Alt-tekst op logo', 'gctheme' ), get_bloginfo( 'name' ) );
+		$context['sprite_od']               = get_stylesheet_directory_uri() . '/assets/images/sprites/optimaal-digitaal/defs/svg/sprite.defs.svg';
+		$context['sprite_steps']            = get_stylesheet_directory_uri() . '/assets/images/sprites/stepchart/defs/svg/sprite.defs.svg';
+		$context['footer_widget_left']      = Timber::get_widgets( 'footer_widget_left' );
+		$context['footer_widget_right']     = Timber::get_widgets( 'footer_widget_right' );
+		$context['site_logo']               = get_stylesheet_directory_uri() . $this->configuration['site_logo'];
+		$context['skiplinks_id']            = ID_SKIPLINKS;
+		$context['maincontent_id']          = 'maincontent';
+		$context['maincontent_id_linktext'] = _x( 'Jump to main content', 'skiplinks', 'gctheme' );
+		$context['mainnav_id']              = 'menu-primary';
+		$context['mainnav_id_linktext']     = _x( 'Jump to main navigation', 'skiplinks', 'gctheme' );
 
 		return $context;
 	}
