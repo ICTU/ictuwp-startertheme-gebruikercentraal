@@ -2,23 +2,17 @@
 
 {% block content %}
 
-
-
-
       <article class="entry entry--type-overview entry--full">
 
         <div class="entry-content">
-
           <div class="page__intro">
             <header class="entry-header">
               <h1 class="entry-title">{{ title ? title : 'Onze instrumenten' }}</h1>
-
               {% if intro %}
                 <p>{{ intro }}</p>
               {% endif %}
             </header>
           </div>
-
         </div>
 
         {% if filters %}
@@ -34,8 +28,6 @@
           </form>
         </div>
       {% endif %}
-
-
 
       {% include 'sections/section-overview.html.twig' with {
         'items': tipkaarts,
