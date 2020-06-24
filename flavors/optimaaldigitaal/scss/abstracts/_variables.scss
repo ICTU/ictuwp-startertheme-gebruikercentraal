@@ -8,19 +8,9 @@ $od-orange-darker:   #983A00;
 
 $brand-color:     $od-orange;
 
-$color-primary:       $brand-color;
-$color-secondary:     $gc-a11y-green;
-
-$intro-bg:        $gc-a11y-green;
-$hp-intro-bg:     $od-orange;
-
-$date-badge-bg:             $gc-a11y-green;
-
-$meta-data-icon:            $od-orange;
+$color-primary:             $brand-color;
+$color-secondary:           $gc-a11y-green;
 
 
-$btn-secondary-bg:          $od-orange;
-$btn-secondary-arrowbg:     $od-orange-darker;
-
-$btn-secondary-hover-bg:      $od-orange-darker;
-$btn-secondary-hover-arrowbg: darken($od-orange-darker, 10%);
+// Intro BG
+$intro-bg: $gc-a11y-green;

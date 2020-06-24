@@ -156,21 +156,6 @@
     }
   }
 
-  &-list {
-    @include ho-container;
-
-    .l-section-content {
-      max-width: none;
-    }
-
-    .teaser:not(.teaser--spotlight),
-    h3 {
-      max-width: $max-width-inner;
-      margin-left: auto;
-      margin-right: auto;
-    }
-  }
-
   + .section--brands .section__title {
     border: none;
   }

@@ -1,5 +1,19 @@
-.entry {
 
+
+.post {
+
+  .post__header,
+  .post__body {
+    @include ho-container-content;
+  }
+
+  .post__content {
+    margin-top: $gutter;
+  }
+
+}
+
+/*
   .entry-intro {
     font-family: $font-primary-semi;
 
@@ -220,8 +234,7 @@
         }
       }
     }
-  }
-}
+  }*/
 
 
 /*

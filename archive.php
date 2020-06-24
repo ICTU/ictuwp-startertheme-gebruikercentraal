@@ -19,7 +19,6 @@ $templates = [ 'archive.twig', 'index.twig' ];
 
 $context = Timber::context();
 
-$context['title'] = 'Archive';
 if ( is_day() ) {
 	$context['title'] = 'Archive: ' . get_the_date( 'D M Y' );
 } elseif ( is_month() ) {
@@ -36,14 +35,22 @@ if ( is_day() ) {
 	array_unshift( $templates, 'archive-' . get_post_type() . '.twig' );
 }
 
+// Set vars
+$context['title'] = get_the_archive_title();
 
+// If term archive
+if(isset($context['archive_term']) && !empty($context['archive_term']['descr'])){
+	$context['descr'] = $context['archive_term']['descr'];
+}
+
+
+// Set data for overview
 $context['overview'] = [];
 
 // Set data for tipkaarts
 if ( $context['pagetype'] === 'archive_tipthema' ) {
 
 	$posts = new Timber\PostQuery();
-
 
 	// Set data for overview
 	$i = 0;

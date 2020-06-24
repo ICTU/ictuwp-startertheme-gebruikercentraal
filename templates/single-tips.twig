@@ -71,10 +71,8 @@
 
       {% endif %}
 
-
-
       {% if why or research %}
-        <div class="research {{ why.description ? 'research--with-why' : 'research--without-why' }}">
+        <div class="research {{ why.description ? 'research--with-why' : 'research--without-why' }}{{ research ?: ' research--without-descr' }}">
 
           {% if not why.description is empty %}
             <div class="l-why-wrapper">

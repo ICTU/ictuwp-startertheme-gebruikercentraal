@@ -428,6 +428,11 @@
       padding-top: 8rem;
     }
   }
+
+  &--without-descr {
+    background: none !important;
+    padding-bottom: 0;
+  }
 }
 
 .l-why-wrapper {
@@ -436,6 +441,12 @@
   background: $gc-pantybrown-xlight;
   position: relative;
   z-index: auto;
+
+  .research--without-descr & {
+    &:before {
+      display: none;
+    }
+  }
 }
 
 .research__why {
