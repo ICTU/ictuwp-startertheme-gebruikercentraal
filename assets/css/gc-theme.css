@@ -514,9 +514,9 @@ legend {
       margin-top: 3rem; } }
 
 .gc-site-footer-widget {
-  min-height: 110px;
-  background: url(../../logo.svg) left top no-repeat;
-  background-size: 110px auto;
+  min-height: 12rem;
+  background: url("../images/logo/gc-logo.svg") left top no-repeat;
+  background-size: 12rem auto;
   padding-left: 14rem; }
 
 .site-footer-menu {
@@ -5162,3 +5162,5 @@ h1 {
       clip: rect(0 0 0 0);
       clip: rect(0, 0, 0, 0);
       position: absolute; } }
+
+/*# sourceMappingURL=gc-theme.css.map */

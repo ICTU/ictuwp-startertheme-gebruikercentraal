@@ -1,6 +1,6 @@
 {% if menu %}
   <div class="l-header-nav" aria-hidden="false" id="mainnav">
-    <nav id="menu-primary" class="main-menu" role="navigation">
+    <nav id="{{ mainnav_id }}" class="main-menu" role="navigation">
       <ul id="mainnav" class="main-menu__list">
         {% for item in items %}
           {% if item.children %}
