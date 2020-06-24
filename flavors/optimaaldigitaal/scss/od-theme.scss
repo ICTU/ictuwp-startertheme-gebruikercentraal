@@ -1,5 +1,32 @@
 // Base components
+// Var
+
+
+
+@import "../../../scss/abstracts/variables";
+@import "abstracts/variables";
+
+//$intro-bg:        #00f;
+
 @import "../../../scss/all";
+
+
+
+//@import "abstracts/variables";
+
+/*
+$hp-intro-bg:               $od-orange;
+
+$date-badge-bg:             $gc-a11y-green;
+
+$meta-data-icon:            $od-orange;
+
+$btn-secondary-bg:          $od-orange;
+$btn-secondary-arrowbg:     $od-orange-darker;
+
+$btn-secondary-hover-bg:      $od-orange-darker;
+$btn-secondary-hover-arrowbg: darken($od-orange-darker, 10%);
+*/
 
 // Frame content
 @import "../../../scss/includes/page-frame";
@@ -7,8 +34,7 @@
 
 /* Optimaal Digitaal Flavor */
 
-// Vars
-@import "abstracts/variables";
+
 
 
 // Components
