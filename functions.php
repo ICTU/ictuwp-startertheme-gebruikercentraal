@@ -207,6 +207,15 @@ class GebruikerCentraalTheme extends Timber\Site {
 			$context['pagetype'] = 'archive_' . get_queried_object()->taxonomy;
 		}
 
+		// Additional vars for archives
+
+		if ( is_archive() ) {
+			$context['archive_term']['tid']   = get_queried_object()->term_id;
+			$context['archive_term']['descr'] = get_queried_object()->description;
+
+			$context['pagetype'] = 'archive_' . get_queried_object()->taxonomy;
+		}
+
 		return $context;
 	}
 
