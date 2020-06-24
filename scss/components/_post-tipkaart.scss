@@ -290,9 +290,25 @@
 }
 
 .section--examples {
+  @include gc-bg-rotated();
   padding-left: 2rem;
   padding-right: 2rem;
-  @include gc-bg-rotated();
+
+  &:before {
+    bottom: auto;
+    height: 10rem;
+  }
+
+  &:after {
+    position: absolute;
+    content: " ";
+    top: 18rem;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background: $gc-pantybrown-xlight;
+    z-index: -1;
+  }
 
   h2, .example {
     position: relative;
@@ -307,11 +323,20 @@
       padding-top: 0;
     }
   }
+
+  + .section--links .section__title {
+    border-top: none;
+    padding-top: 0;
+  }
 }
 
 .example {
   max-width: $max-width-inner;
   margin: 3rem auto 0;
+
+  blockquote {
+    margin: 0;
+  }
 
   @include bp-up(sm) {
     width: 90%;
@@ -391,6 +416,23 @@
     border-top: 0;
     padding-top: 0;
   }
+
+  &--without-why {
+    padding-top: 3rem;
+
+    @include bp-up(md){
+      padding-top: 5rem;
+    }
+
+    @include bp-up(lg){
+      padding-top: 8rem;
+    }
+  }
+
+  &--without-descr {
+    background: none !important;
+    padding-bottom: 0;
+  }
 }
 
 .l-why-wrapper {
@@ -399,6 +441,12 @@
   background: $gc-pantybrown-xlight;
   position: relative;
   z-index: auto;
+
+  .research--without-descr & {
+    &:before {
+      display: none;
+    }
+  }
 }
 
 .research__why {

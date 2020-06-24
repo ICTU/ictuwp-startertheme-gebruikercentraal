@@ -50,9 +50,10 @@ if ( ! defined( 'WBVB_GC_ABOUTUS' ) ) {
 require_once( get_template_directory() . '/widgets/widget-over-ons.php' );
 
 /**
- * If you are installing Timber as a Composer dependency in your theme, you'll need this block
- * to load your dependencies and initialize Timber. If you are using Timber via the WordPress.org
- * plug-in, you can safely delete this block.
+ * If you are installing Timber as a Composer dependency in your theme, you'll
+ * need this block to load your dependencies and initialize Timber. If you are
+ * using Timber via the WordPress.org plug-in, you can safely delete this
+ * block.
  */
 $composer_autoload = __DIR__ . '/vendor/autoload.php';
 if ( file_exists( $composer_autoload ) ) {
@@ -62,23 +63,18 @@ if ( file_exists( $composer_autoload ) ) {
 
 /**
  * This ensures that Timber is loaded and available as a PHP class.
- * If not, it gives an error message to help direct developers on where to activate
+ * If not, it gives an error message to help direct developers on where to
+ * activate
  */
 if ( ! class_exists( 'Timber' ) ) {
 
-	add_action(
-		'admin_notices',
-		function () {
-			echo '<div class="error"><p>Timber not activated. Make sure you activate the plugin in <a href="' . esc_url( admin_url( 'plugins.php#timber' ) ) . '">' . esc_url( admin_url( 'plugins.php' ) ) . '</a></p></div>';
-		}
-	);
+	add_action( 'admin_notices', function () {
+		echo '<div class="error"><p>Timber not activated. Make sure you activate the plugin in <a href="' . esc_url( admin_url( 'plugins.php#timber' ) ) . '">' . esc_url( admin_url( 'plugins.php' ) ) . '</a></p></div>';
+	} );
 
-	add_filter(
-		'template_include',
-		function ( $template ) {
-			return get_stylesheet_directory() . '/static/no-timber.html';
-		}
-	);
+	add_filter( 'template_include', function ( $template ) {
+		return get_stylesheet_directory() . '/static/no-timber.html';
+	} );
 
 	return;
 }
@@ -86,18 +82,19 @@ if ( ! class_exists( 'Timber' ) ) {
 /**
  * Sets the directories (inside your theme) to find .twig files
  */
-Timber::$dirname = array( 'templates', 'views' );
+Timber::$dirname = [ 'templates', 'views' ];
 
 /**
- * By default, Timber does NOT autoescape values. Want to enable Twig's autoescape?
- * No prob! Just set this value to true
+ * By default, Timber does NOT autoescape values. Want to enable Twig's
+ * autoescape? No prob! Just set this value to true
  */
-Timber::$autoescape = false;
+Timber::$autoescape = FALSE;
 
 
 /**
  * We're going to configure our theme inside of a subclass of Timber\Site
- * You can move this to its own file and include here via php's include("MySite.php")
+ * You can move this to its own file and include here via php's
+ * include("MySite.php")
  */
 class GebruikerCentraalTheme extends Timber\Site {
 
@@ -108,25 +105,28 @@ class GebruikerCentraalTheme extends Timber\Site {
 	public function __construct() {
 
 		// custom menu locations
-		add_action( 'init', array( $this, 'register_my_menu' ) );
+		add_action( 'init', [ $this, 'register_my_menu' ] );
 
 		// translation support
-		add_action( 'after_setup_theme', array( $this, 'add_translation_support' ) );
+		add_action( 'after_setup_theme', [ $this, 'add_translation_support' ] );
 
 		// theme options
-		add_action( 'after_setup_theme', array( $this, 'theme_supports' ) );
+		add_action( 'after_setup_theme', [ $this, 'theme_supports' ] );
 
 		// CSS setup
-		add_action( 'wp_enqueue_scripts', array( $this, 'gc_wbvb_add_css' ) );
+		add_action( 'wp_enqueue_scripts', [ $this, 'gc_wbvb_add_css' ] );
 
-		add_filter( 'timber/context', array( $this, 'add_to_context' ) );
-		add_filter( 'timber/twig', array( $this, 'add_to_twig' ) );
+		add_filter( 'timber/context', [ $this, 'add_to_context' ] );
+		add_filter( 'timber/twig', [ $this, 'add_to_twig' ] );
 
-		add_action( 'init', array( $this, 'register_taxonomies' ) );
+		add_action( 'init', [ $this, 'register_taxonomies' ] );
 
-		add_action( 'widgets_init', array( $this, 'setup_widgets_init' ) );
+		add_action( 'widgets_init', [ $this, 'setup_widgets_init' ] );
 
-		add_action( 'theme_page_templates', array( $this, 'activate_deactivate_page_templates' ) );
+		add_action( 'theme_page_templates', [
+			$this,
+			'activate_deactivate_page_templates',
+		] );
 
 		parent::__construct();
 
@@ -198,6 +198,15 @@ class GebruikerCentraalTheme extends Timber\Site {
 		$context['mainnav_id']              = 'menu-primary';
 		$context['mainnav_id_linktext']     = _x( 'Jump to main navigation', 'skiplinks', 'gctheme' );
 
+		// Additional vars for archives
+
+		if ( is_archive() ) {
+			$context['archive_term']['tid']   = get_queried_object()->term_id;
+			$context['archive_term']['descr'] = get_queried_object()->description;
+
+			$context['pagetype'] = 'archive_' . get_queried_object()->taxonomy;
+		}
+
 		return $context;
 	}
 
@@ -224,24 +233,19 @@ class GebruikerCentraalTheme extends Timber\Site {
 		 * Switch default core markup for search form, comment form, and comments
 		 * to output valid HTML5.
 		 */
-		add_theme_support(
-			'html5',
-			array(
+		add_theme_support( 'html5', [
 				'comment-form',
 				'comment-list',
 				'gallery',
 				'caption',
-			)
-		);
+			] );
 
 		/*
 		 * Enable support for Post Formats.
 		 *
 		 * See: https://codex.wordpress.org/Post_Formats
 		 */
-		add_theme_support(
-			'post-formats',
-			array(
+		add_theme_support( 'post-formats', [
 				'aside',
 				'image',
 				'video',
@@ -249,21 +253,20 @@ class GebruikerCentraalTheme extends Timber\Site {
 				'link',
 				'gallery',
 				'audio',
-			)
-		);
+			] );
 
 		add_theme_support( 'menus' );
 
 		// Yoast Breadcrumbs
 		add_theme_support( 'yoast-seo-breadcrumbs' );
 
-		add_image_size( HALFWIDTH, 380, 9999, false );
-		add_image_size( BLOG_SINGLE_MOBILE, 120, 9999, false );
-		add_image_size( BLOG_SINGLE_TABLET, 250, 9999, false );
-		add_image_size( BLOG_SINGLE_DESKTOP, 380, 9999, false );
-		add_image_size( IMG_SIZE_HUGE, IMG_SIZE_HUGE_MIN_WIDTH, 9999, false );
+		add_image_size( HALFWIDTH, 380, 9999, FALSE );
+		add_image_size( BLOG_SINGLE_MOBILE, 120, 9999, FALSE );
+		add_image_size( BLOG_SINGLE_TABLET, 250, 9999, FALSE );
+		add_image_size( BLOG_SINGLE_DESKTOP, 380, 9999, FALSE );
+		add_image_size( IMG_SIZE_HUGE, IMG_SIZE_HUGE_MIN_WIDTH, 9999, FALSE );
 
-		add_image_size( 'thumb-cardv3', 99999, 600, false );    // max  600px hoog, niet croppen
+		add_image_size( 'thumb-cardv3', 99999, 600, FALSE );    // max  600px hoog, niet croppen
 
 
 	}
@@ -284,7 +287,7 @@ class GebruikerCentraalTheme extends Timber\Site {
 	 */
 	public function add_to_twig( $twig ) {
 		$twig->addExtension( new Twig\Extension\StringLoaderExtension() );
-		$twig->addFilter( new Twig\TwigFilter( 'myfoo', array( $this, 'myfoo' ) ) );
+		$twig->addFilter( new Twig\TwigFilter( 'myfoo', [ $this, 'myfoo' ] ) );
 
 		return $twig;
 	}
@@ -409,23 +412,23 @@ class GebruikerCentraalTheme extends Timber\Site {
 	 */
 	public function setup_widgets_init() {
 
-		register_sidebar( array(
+		register_sidebar( [
 			'name'          => _x( 'Footer widget left', 'Widget area', 'gctheme' ),
 			'id'            => 'footer_widget_left',
 			'before_widget' => '<section class="widget %s">',
 			'after_widget'  => '</section>',
 			'before_title'  => '<h3 class="widget-title widgettitle">',
 			'after_title'   => '</h3>',
-		) );
+		] );
 
-		register_sidebar( array(
+		register_sidebar( [
 			'name'          => _x( 'Footer widget right', 'Widget area', 'gctheme' ),
 			'id'            => 'footer_widget_right',
 			'before_widget' => '<section class="widget %s">',
 			'after_widget'  => '</section>',
 			'before_title'  => '<h3 class="widget-title widgettitle">',
 			'after_title'   => '</h3>',
-		) );
+		] );
 
 	}
 
@@ -497,12 +500,42 @@ function my_body_classes( $classes ) {
 				}
 			}
 		}
+	} elseif ( is_archive() ) {
+		$classes[] = 'page--type-overview page--overview-archive';
+
+		//print_r(get_queried_object()->taxonomy);
+
+		switch(get_queried_object()->taxonomy){
+			case 'tipthema':
+				$classes[] = 'page--overview-header-lg';
+				break;
+
+		}
 	}
 
 	return $classes;
 
 }
 
+/*
+ * Generate archive titles
+ */
+
+add_filter( 'get_the_archive_title', function ( $title ) {
+	if ( is_category() ) {
+		$title = single_cat_title( '', FALSE );
+	} elseif ( is_tag() ) {
+		$title = single_tag_title( '', FALSE );
+	} elseif ( is_author() ) {
+		$title = '<span class="vcard">' . get_the_author() . '</span>';
+	} elseif ( is_tax() ) { //for custom post types
+		$title = sprintf( __( '%1$s' ), single_term_title( '', FALSE ) );
+	} elseif ( is_post_type_archive() ) {
+		$title = post_type_archive_title( '', FALSE );
+	}
+
+	return $title;
+} );
 
 /*
  * filter for breadcrumb
@@ -525,10 +558,10 @@ function unbox_yoast_seo_breadcrumb_append_link( $links ) {
 			$ancestors  = get_post_ancestors( $optionpage );
 			$currenttip = array_pop( $links );
 			$home       = $links[0];
-			$parents[]  = array(
+			$parents[]  = [
 				'url'  => get_page_link( $optionpage ),
 				'text' => get_the_title( $optionpage ),
-			);
+			];
 
 			// haal de hele keten aan ancestors op en zet ze in de returnstring
 			foreach ( $ancestors as $ancestorid ) {
@@ -536,20 +569,20 @@ function unbox_yoast_seo_breadcrumb_append_link( $links ) {
 				if ( $home['url'] !== get_page_link( $ancestorid ) ) {
 					// home link staat al in $home, dus niet extra toevoegen
 
-					array_unshift( $parents, array(
+					array_unshift( $parents, [
 						'url'  => get_page_link( $ancestorid ),
 						'text' => get_the_title( $ancestorid ),
-					) );
+					] );
 
 				}
 			}
 
 			array_unshift( $parents, $links[0] );
 
-			$parents[] = array(
+			$parents[] = [
 				'url'  => get_page_link( $currenttip['id'] ),
 				'text' => get_the_title( $currenttip['id'] ),
-			);
+			];
 
 			$links = $parents;
 		}
