@@ -538,3 +538,63 @@ function gc2020_customize_register($wp_customize){
 }
 
 add_action('customize_register', 'gc2020_customize_register');
+
+
+//========================================================================================================
+// ervoor zorgen dat specifieke Optimaal Digitaal-termen op de juiste manier afgebroken kunnen worden
+
+if ( ! function_exists( 'od_wbvb_custom_post_title' ) ) {
+
+	function od_wbvb_custom_post_title( $title ) {
+
+		$pattern     = '/erantwoordelijkh/i'; // verantwoordelijkheid
+		$replacement = 'erant&shy;woorde&shy;lijkh';
+		$title       = preg_replace( $pattern, $replacement, $title );
+
+		$pattern     = '/emeenscha/i'; // gemeenschappelijk,  gemeenschap
+		$replacement = 'emeen&shy;scha';
+		$title       = preg_replace( $pattern, $replacement, $title );
+
+		$pattern     = '/ersoonsge/i'; // persoonsgegevens
+		$replacement = 'ersoons&shy;ge';
+		$title       = preg_replace( $pattern, $replacement, $title );
+
+		$pattern     = '/informatiev/i'; // informatieveiligheid
+		$replacement = 'informatie&shy;v';
+		$title       = preg_replace( $pattern, $replacement, $title );
+
+		$pattern     = '/ortermijnd/i'; // kortetermijndenken
+		$replacement = 'ortermijn&shy;d';
+		$title       = preg_replace( $pattern, $replacement, $title );
+
+		$pattern     = '/ebruiksvrien/i';
+		$replacement = 'ebruiks&shy;vrien';
+		$title       = preg_replace( $pattern, $replacement, $title );
+
+		$pattern     = '/gebruikssituatie/i';
+		$replacement = 'gebruiks&shy;situatie';
+		$title       = preg_replace( $pattern, $replacement, $title );
+
+		$pattern     = '/laaggeletterde/i';
+		$replacement = 'laag&shy;geletterde';
+		$title       = preg_replace( $pattern, $replacement, $title );
+
+		$pattern     = '/belangenbehartig/i';
+		$replacement = 'belangen&shy;behartig';
+		$title       = preg_replace( $pattern, $replacement, $title );
+
+		$pattern     = '/ijvingsform/i';
+		$replacement = 'ijvings&shy;form';
+		$title       = preg_replace( $pattern, $replacement, $title );
+
+		$pattern     = '/evensgebeurtenis/i';
+		$replacement = 'evens&shy;gebeurtenis';
+		$title       = preg_replace( $pattern, $replacement, $title );
+
+		return $title;
+
+	}
+
+}
+
+//========================================================================================================
