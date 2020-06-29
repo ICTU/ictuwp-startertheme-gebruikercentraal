@@ -49,6 +49,7 @@ if ( ! defined( 'WBVB_GC_ABOUTUS' ) ) {
 }
 require_once( get_template_directory() . '/widgets/widget-over-ons.php' );
 
+
 /**
  * If you are installing Timber as a Composer dependency in your theme, you'll
  * need this block to load your dependencies and initialize Timber. If you are
@@ -538,7 +539,8 @@ add_filter( 'get_the_archive_title', function ( $title ) {
 	} elseif ( is_author() ) {
 		$title = '<span class="vcard">' . get_the_author() . '</span>';
 	} elseif ( is_tax() ) { //for custom post types
-		$title = sprintf( __( '%1$s' ), single_term_title( '', FALSE ) );
+//		$title = sprintf( __( '%1$s' ), single_term_title( '', FALSE ) );
+		$title = single_term_title( '', FALSE );
 	} elseif ( is_post_type_archive() ) {
 		$title = post_type_archive_title( '', FALSE );
 	}
@@ -646,3 +648,88 @@ if ( ! function_exists( 'od_wbvb_custom_post_title' ) ) {
 }
 
 //========================================================================================================
+
+function gc_wbvb_get_human_filesize( $bytes, $decimals = 2 ) {
+	$sz     = 'BKMGTP';
+	$factor = floor( ( strlen( $bytes ) - 1 ) / 3 );
+
+	return sprintf( "%.{$decimals}f", $bytes / pow( 1024, $factor ) ) . @$sz[ $factor ] . 'B';
+}
+
+//========================================================================================================
+/*
+ * returns an array for the downloads section
+ */
+function getdownloads() {
+
+	global $post;
+	$return = array();
+
+	$return['title'] = get_field( 'downloads_title' ) ? get_field( 'downloads_title' ) : _x( 'Downloads', 'Titel boven downloads', 'gctheme' );
+	$return['desc']  = get_field( 'downloads_description' );
+
+	while ( have_rows( 'download_items' ) ) : the_row();
+
+		$item             = [];
+		$aria_label_type  = '';
+		$aria_label_size  = '';
+		$aria_label       = sprintf( _x( 'Download %s', 'Lange linktekst voor een download', 'gctheme' ), get_sub_field( 'downloaditem_title' ) );
+		$item['title']    = get_sub_field( 'downloaditem_title' );
+		$item['descr']    = get_sub_field( 'downloaditem_description' );
+		$item['linktext'] = _x( 'Download', 'Korte linktekst voor een download', 'gctheme' );
+
+		if ( 'extern' === get_sub_field( 'downloaditem_file' ) ) {
+
+			$item['url'] = get_sub_field( 'downloaditem_link' );
+
+			if ( get_sub_field( 'downloaditem_filetype' ) ) {
+				$item['meta'][]  = [
+					'title' => 'filetype',
+					'descr' => strtoupper( get_sub_field( 'downloaditem_filetype' ) ),
+				];
+				$aria_label_type = get_sub_field( 'downloaditem_filetype' );
+			}
+
+			if ( get_sub_field( 'downloaditem_filesize' ) ) {
+				$item['meta'][]  = [
+					'title' => 'filesize',
+					'descr' => get_sub_field( 'downloaditem_filesize' ),
+				];
+				$aria_label_size = get_sub_field( 'downloaditem_filesize' );
+			}
+		} else {
+			if ( get_sub_field( 'downloaditem_media' ) ) {
+
+				$file = get_sub_field( 'downloaditem_media' );
+
+				if ( $file['subtype'] ) {
+					$item['meta'][]  = [
+						'title' => 'filetype',
+						'descr' => strtoupper( $file['subtype'] ),
+					];
+					$aria_label_type = '"' . strtoupper( $file['subtype'] );
+				}
+
+				if ( $file['filesize'] ) {
+					$item['meta'][]  = [
+						'title' => 'filesize',
+						'descr' => gc_wbvb_get_human_filesize( $file['filesize'] ),
+					];
+					$aria_label_size = gc_wbvb_get_human_filesize( $file['filesize'] );
+				}
+			}
+		}
+
+		if ( $aria_label_type && $aria_label_size ) {
+			$item['aria_label'] = esc_attr( $aria_label . ' (' . $aria_label_type . ', ' . $aria_label_size . ')' );
+		} elseif ( $aria_label_type || $aria_label_size ) {
+			$item['aria_label'] = esc_attr( $aria_label . ' (' . $aria_label_type . $aria_label_size . ')' );
+		}
+
+		$return['items'][] = $item;
+
+	endwhile;
+
+	return $return;
+
+}
