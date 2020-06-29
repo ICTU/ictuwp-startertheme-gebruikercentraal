@@ -132,7 +132,7 @@ if ( get_field( 'inleiding-onderzoek' ) ) {
 
 	$context['research']['title']       = _x( 'Onderzoek', 'Titel boven waaromwerktdit', 'gctheme' );
 	$context['research']['description'] = get_field( 'inleiding-onderzoek' );
-	
+
 	if ( get_field( 'inleiding-conclusie' ) ) {
 		$context['research']['conclusie']['title'] = _x( 'Conclusie', 'Titel boven conclusie', 'gctheme' );
 		$context['research']['conclusie']['desc']  = get_field( 'inleiding-conclusie' );
@@ -156,6 +156,12 @@ if ( get_field( 'inleiding-onderzoek' ) ) {
 
 	$context['why']['title']       = _x( 'Waarom werkt dit?', 'Titel boven waaromwerktdit', 'gctheme' );
 	$context['why']['description'] = get_field( 'waarom_werkt_dit_goed_voorbeeld' );
+}
+
+if ( 'ja' === get_field( 'downloads_tonen' ) && get_field( 'download_items' ) ) {
+
+	$context['downloads'] = getdownloads();
+
 }
 
 

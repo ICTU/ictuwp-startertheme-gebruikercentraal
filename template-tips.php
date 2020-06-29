@@ -14,6 +14,11 @@ $timber_post     = new Timber\Post();
 $context['post'] = $timber_post;
 $context['tips'] = array( 'yo tips');
 
+if ( 'ja' === get_field( 'downloads_tonen' ) && get_field( 'download_items' ) ) {
+
+	$context['downloads'] = getdownloads();
+
+}
 
 
 Timber::render( array( 'page-alle-tips.twig', 'page.twig' ), $context );
