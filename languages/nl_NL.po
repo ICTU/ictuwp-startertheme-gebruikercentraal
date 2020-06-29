@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Gebruiker Centraal (2020)\n"
-"POT-Creation-Date: 2020-06-24 17:27+0200\n"
-"PO-Revision-Date: 2020-06-24 17:28+0200\n"
+"POT-Creation-Date: 2020-06-29 22:09+0200\n"
+"PO-Revision-Date: 2020-06-29 22:09+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: nl_NL\n"
@@ -50,29 +50,29 @@ msgctxt "skiplinks"
 msgid "Jump to main navigation"
 msgstr "Direct naar de hoofdnavigatie"
 
-#: functions.php:413
+#: functions.php:425
 msgctxt "Widget area"
 msgid "Footer widget left"
 msgstr ""
 
-#: functions.php:422
+#: functions.php:434
 msgctxt "Widget area"
 msgid "Footer widget right"
 msgstr ""
 
-#: functions.php:567
+#: functions.php:556
 msgctxt "customizer"
 msgid "Gebruiker Centraal Instellingen"
 msgstr ""
 
-#: functions.php:568
+#: functions.php:557
 msgctxt "customizer"
 msgid ""
 "Selecteer hier het kleurenschema voor deze site. Je wijzigt hiermee de "
 "styling, logo en sommige functionaliteit van de site."
 msgstr ""
 
-#: functions.php:591
+#: functions.php:580
 msgctxt "customizer"
 msgid "Kies het kleurenschema"
 msgstr ""
@@ -101,6 +101,22 @@ msgstr ""
 #: single-tips.php:137
 msgctxt "Titel boven conclusie"
 msgid "Conclusie"
+msgstr ""
+
+#: single-tips.php:173
+msgctxt "Titel boven downloads"
+msgid "Downloads"
+msgstr ""
+
+#: single-tips.php:181
+#, php-format
+msgctxt "Lange linktekst voor een download"
+msgid "Download %s"
+msgstr ""
+
+#: single-tips.php:184
+msgctxt "Korte linktekst voor een download"
+msgid "Download"
 msgstr ""
 
 #: template-alle-tips.php:73
