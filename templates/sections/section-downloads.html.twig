@@ -3,9 +3,7 @@
   {% if title or section_descr %}
     <div class="l-section-top">
       {% if title %}
-        <h2 class="section__title">
-          Downloads
-        </h2>
+        <h2 class="section__title">{{ title }}</h2>
       {% endif %}
 
       {% if descr %}
@@ -22,6 +20,9 @@
         {% include 'components/download-box.html.twig' with {
           'title': item.title,
           'descr': item.descr,
+          'linktext': item.linktext,
+          'url': item.url,
+          'aria_label': item.aria_label,
           'meta': item.meta
         } %}
         {% endfor %}

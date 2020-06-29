@@ -117,8 +117,9 @@
 
       {% if downloads %}
         {% include 'sections/section-downloads.html.twig' with {
-          'title': 'Downloads',
-          'items': downloads
+          'title': downloads.title,
+          'descr': downloads.desc,
+          'items': downloads.items
         } %}
       {% endif %}
 
