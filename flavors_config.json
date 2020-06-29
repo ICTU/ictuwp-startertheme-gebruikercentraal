@@ -55,6 +55,11 @@
     "name": "Direct Duidelijk Tour",
     "shortname": "rdam",
     "site_logo": "/assets/images/logo/beeldmerk-dd-tour.svg"
+  },
+  "NLDESIGN": {
+    "name": "NL Design Sysem",
+    "shortname": "nlds",
+    "site_logo": "/assets/images/logo/gc-nlds-beeldmerk.svg"
   }
 }
 
