@@ -546,60 +546,6 @@ add_filter( 'get_the_archive_title', function ( $title ) {
 	return $title;
 } );
 
-/*
- * filter for breadcrumb
- */
-add_filter( 'wpseo_breadcrumb_links', 'unbox_yoast_seo_breadcrumb_append_link' );
-
-function unbox_yoast_seo_breadcrumb_append_link( $links ) {
-	global $post;
-
-	if ( is_home() || is_front_page() ) {
-		// geen breadcrumb op de homepage
-		return array();
-	} elseif ( is_singular( GC_TIP_CPT ) ) {
-		// uit siteopties de pagina ophalen die het overzicht is van alle links
-		$optionpage = get_field( 'op_welke_pagina_staat_het_overzicht_van_alle_tips', 'option' );
-
-		if ( $optionpage ) {
-			// haal de ancestors op voor de huidige pagina
-
-			$ancestors  = get_post_ancestors( $optionpage );
-			$currenttip = array_pop( $links );
-			$home       = $links[0];
-			$parents[]  = [
-				'url'  => get_page_link( $optionpage ),
-				'text' => get_the_title( $optionpage ),
-			];
-
-			// haal de hele keten aan ancestors op en zet ze in de returnstring
-			foreach ( $ancestors as $ancestorid ) {
-
-				if ( $home['url'] !== get_page_link( $ancestorid ) ) {
-					// home link staat al in $home, dus niet extra toevoegen
-
-					array_unshift( $parents, [
-						'url'  => get_page_link( $ancestorid ),
-						'text' => get_the_title( $ancestorid ),
-					] );
-
-				}
-			}
-
-			array_unshift( $parents, $links[0] );
-
-			$parents[] = [
-				'url'  => get_page_link( $currenttip['id'] ),
-				'text' => get_the_title( $currenttip['id'] ),
-			];
-
-			$links = $parents;
-		}
-	}
-
-	return $links;
-}
-
 /**
  * Add our Customizer content
  */
