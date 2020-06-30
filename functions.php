@@ -49,6 +49,11 @@ if ( ! defined( 'WBVB_GC_ABOUTUS' ) ) {
 }
 require_once( get_template_directory() . '/widgets/widget-over-ons.php' );
 
+// add the gutenberg blocks
+require_once( get_template_directory() . '/gutenberg-blocks/gutenberg-settings.php' );
+require_once( get_template_directory() . '/gutenberg-blocks/download-block.php' );
+
+
 /**
  * Load other dependencies such as VAR DUMPER :D
  */
@@ -275,6 +280,17 @@ class GebruikerCentraalTheme extends Timber\Site {
 		add_image_size( IMG_SIZE_HUGE, IMG_SIZE_HUGE_MIN_WIDTH, 9999, FALSE );
 
 		add_image_size( 'thumb-cardv3', 99999, 600, FALSE );    // max  600px hoog, niet croppen
+
+		// Enable and load CSS for admin editor
+		add_theme_support( 'editor-styles' );
+		$cachebuster = '';
+		if ( WP_DEBUG ) {
+			$cachebuster = '?v=' . filemtime( dirname( __FILE__ ) . '/assets/fonts/editor-fonts.css' );
+		}
+		add_editor_style( get_stylesheet_directory_uri() . '/assets/fonts/editor-fonts.css' . $cachebuster );
+		add_editor_style( get_stylesheet_directory_uri() . '/assets/css/editor-styles.css' . $cachebuster );
+
+
 
 
 	}
@@ -528,7 +544,8 @@ add_filter( 'get_the_archive_title', function ( $title ) {
 	} elseif ( is_author() ) {
 		$title = '<span class="vcard">' . get_the_author() . '</span>';
 	} elseif ( is_tax() ) { //for custom post types
-		$title = sprintf( __( '%1$s' ), single_term_title( '', FALSE ) );
+//		$title = sprintf( __( '%1$s' ), single_term_title( '', FALSE ) );
+		$title = single_term_title( '', FALSE );
 	} elseif ( is_post_type_archive() ) {
 		$title = post_type_archive_title( '', FALSE );
 	}
@@ -633,6 +650,15 @@ if ( ! function_exists( 'od_wbvb_custom_post_title' ) ) {
 
 	}
 
+}
+
+//========================================================================================================
+
+function gc_wbvb_get_human_filesize( $bytes, $decimals = 2 ) {
+	$sz     = 'BKMGTP';
+	$factor = floor( ( strlen( $bytes ) - 1 ) / 3 );
+
+	return sprintf( "%.{$decimals}f", $bytes / pow( 1024, $factor ) ) . @$sz[ $factor ] . 'B';
 }
 
 //========================================================================================================
