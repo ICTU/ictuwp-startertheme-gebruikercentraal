@@ -9,8 +9,9 @@
  * @since    Timber 0.1
  */
 
-$context             = Timber::context();
-$timber_post         = Timber::query_post();
+$context     = Timber::context();
+$timber_post = Timber::query_post();
+
 $context['post']     = $timber_post;
 $context['category'] = 'default'; // let op: dit is NIET de blog category, maar de custom taxonomie GC_TIPTHEMA
 $context['examples'] = [];
@@ -81,6 +82,14 @@ if ( 'nee' !== get_field( 'gerelateerde_tips_tonen', $post ) ) {
 				$items[ $counter ]['category'] = $term_machine_name;
 				$items[ $counter ]['nr']       = get_field( 'tip-nummer', $post->ID );
 			}
+
+			$context['related']['title'] = 'Meer ' . strtolower( $term->name ) . ' tips';
+			$context['related']['items'] = $items;
+
+			$context['related']['cta'] = [
+				'title' => 'Alle ' . $term_machine_name . ' tips',
+				'url'   => get_site_url() . '/tipthema/' . $term->slug,
+			];
 		}
 
 		/* Restore original Post Data */
@@ -132,11 +141,11 @@ if ( have_rows( 'goed_voorbeeld' ) ):
 
 	while ( have_rows( 'goed_voorbeeld' ) ) : the_row();
 
-		$voorbeeld                       = array();
+		$voorbeeld                       = [];
 		$experts                         = get_sub_field( OD_CITAATAUTEUR . '_field' );
 		$voorbeeld['title']              = get_sub_field( 'titel_goed_voorbeeld' );
 		$voorbeeld['descr']              = get_sub_field( 'tekst_goed_voorbeeld' );
-		$voorbeeld['author']             = array();
+		$voorbeeld['author']             = [];
 		$voorbeeld['author']['name']     = get_sub_field( 'voorbeeld-auteur-naam' );
 		$voorbeeld['author']['function'] = get_sub_field( 'voorbeeld-auteur-functie' );
 		$afbeelding_goed_voorbeeld       = get_sub_field( 'afbeelding_goed_voorbeeld' );
@@ -151,11 +160,14 @@ if ( have_rows( 'goed_voorbeeld' ) ):
 
 			foreach ( $experts as $theterm ) {
 
-				$thetermdata   = get_term( $theterm, OD_CITAATAUTEUR );
-				$acfid         = $thetermdata->taxonomy . '_' . $thetermdata->term_id;
-				$tipgever_foto = get_field( 'tipgever_foto', $acfid );
+				$thetermdata = get_term( $theterm, OD_CITAATAUTEUR );
 
-				if ( $thetermdata->name ) {
+				if ( ! empty( $thetermdata->taxonomy ) ) {
+					$acfid         = $thetermdata->taxonomy . '_' . $thetermdata->term_id;
+					$tipgever_foto = get_field( 'tipgever_foto', $acfid );
+				}
+
+				if ( ! empty( $thetermdata->name ) ) {
 
 					$voorbeeld['author']['name'] = $thetermdata->name;
 
@@ -171,7 +183,7 @@ if ( have_rows( 'goed_voorbeeld' ) ):
 					$voorbeeld['author']['function'] = get_field( 'tipgever_functietitel', $acfid );
 				}
 
-				if ( ( $thetermdata->count > 1 ) && $voornaam ) {
+				if ( ! empty( $thetermdata ) && ( $thetermdata->count > 1 ) && $voornaam ) {
 					$voorbeeld['author']['url']      = get_term_link( $thetermdata->term_id );
 					$voorbeeld['author']['linktext'] = sprintf( _x( 'Meer tips van %s', 'linktext auteur voorbeeld', 'gctheme' ), $voornaam );
 				}
@@ -179,6 +191,7 @@ if ( have_rows( 'goed_voorbeeld' ) ):
 					$voorbeeld['author']['img'] = $tipgever_foto['sizes']['thumbnail'];
 				}
 			}
+
 		}
 
 		$context['examples'][] = $voorbeeld;
@@ -192,7 +205,7 @@ if ( have_rows( 'nuttige_links' ) ):
 
 	while ( have_rows( 'nuttige_links' ) ) : the_row();
 
-		$currenturl        = array();
+		$currenturl        = [];
 		$currenturl['url'] = get_sub_field( 'url' );
 		if ( get_sub_field( 'link_beschrijving' ) ) {
 			$currenturl['descr'] = strip_tags( get_sub_field( 'link_beschrijving' ) );
@@ -229,13 +242,13 @@ if ( get_field( 'inleiding-onderzoek' ) ) {
 		$context['research']['conclusie']['desc']  = get_field( 'inleiding-conclusie' );
 	}
 
-	$context['research']['blocks'] = array();
+	$context['research']['blocks'] = [];
 
 	for ( $x = 0; $x <= 3; $x ++ ) {
 
 		if ( get_field( 'inleiding-vraag_' . $x . '_titel' ) ) {
 
-			$cijfers          = array();
+			$cijfers          = [];
 			$cijfers['title'] = get_field( 'inleiding-vraag_' . $x . '_titel' );
 			$cijfers['nr']    = get_field( 'inleiding-vraag_' . $x . '_-_cijfer' );
 			$cijfers['descr'] = get_field( 'inleiding-vraag_' . $x . '_-_antwoord' );
@@ -256,8 +269,7 @@ if ( 'ja' === get_field( 'downloads_tonen' ) && get_field( 'download_items' ) ) 
 }
 
 
-Timber::render( array(
-	'single-tips.twig',
-	'single.twig'
-), $context );
-
+Timber::render( [
+	'single-tip.twig',
+	'single.twig',
+], $context );
