@@ -1,5 +1,5 @@
-<section class="section section--downloads">
 
+<section class="section section--downloads"{% if id %} id="{{ id }}"{% endif %}>
   {% if title or section_descr %}
     <div class="l-section-top">
       {% if title %}

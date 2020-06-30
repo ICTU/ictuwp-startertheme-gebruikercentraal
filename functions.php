@@ -49,6 +49,10 @@ if ( ! defined( 'WBVB_GC_ABOUTUS' ) ) {
 }
 require_once( get_template_directory() . '/widgets/widget-over-ons.php' );
 
+// add the gutenberg blocks
+require_once( get_template_directory() . '/gutenberg-blocks/gutenberg-settings.php' );
+require_once( get_template_directory() . '/gutenberg-blocks/download-block.php' );
+
 
 /**
  * If you are installing Timber as a Composer dependency in your theme, you'll
