@@ -13,27 +13,118 @@ $context             = Timber::context();
 $timber_post         = Timber::query_post();
 $context['post']     = $timber_post;
 $context['category'] = 'default'; // let op: dit is NIET de blog category, maar de custom taxonomie GC_TIPTHEMA
-$context['examples'] = array();
-$context['links']    = array();
+$context['examples'] = [];
+$context['links']    = [];
+$maxnr_tips          = 4;
+$term_id_related     = 0;
 
-
-// kleur en icoon bepalen
+// kleur en icoon van deze tip bepalen
 if ( taxonomy_exists( GC_TIPTHEMA ) ) {
 
 	$taxonomie = get_the_terms( $post->ID, GC_TIPTHEMA );
 
 	if ( $taxonomie && ! is_wp_error( $taxonomie ) ) {
-		$counter = 0;
-		// tip slug
+
 		foreach ( $taxonomie as $term ) {
 
-			$themakleur = get_field( 'kleur_en_icoon_tipthema', GC_TIPTHEMA . '_' . $term->term_id );
+			$term_machine_name   = strtolower( $term->name );
+			$term_id_related     = strtolower( $term->term_id );
+			$context['category'] = $term_machine_name;
 
-			if ( $themakleur ) {
-				$context['category'] = $themakleur;
-			}
 		}
 	}
+}
+
+
+if ( 'nee' !== get_field( 'gerelateerde_tips_tonen', $post ) ) {
+	// het is niet nee, dus het is ja.
+	// hoera, we mogen gerelateerde tips tonen
+
+	if ( 'ja_automatisch' == get_field( 'gerelateerde_tips_tonen', $post ) ) {
+		// we stellen zelf een lijstje van gerelateerde tips samen
+
+		// max vier, tenzij redactie meer tips wil
+		$maxnr_tips = ( intval( get_field( 'hoeveel_tips' ) ) > 0 ) ? get_field( 'hoeveel_tips' ) : 4;
+
+		// Vullen lijst gerelateerde tips.
+		// Letten op post status en dat we niet nog een keer dezelfde tip tonen
+		$args = [
+			'post_type'    => GC_TIP_CPT,
+			'numberposts'  => $maxnr_tips,
+			'orderby'      => 'rand',
+			'tax_query'    => [
+				[
+					'taxonomy'         => GC_TIPTHEMA,
+					'field'            => 'term_id',
+					'terms'            => $term_id_related,
+					'include_children' => FALSE,
+				],
+			],
+			'post__not_in' => [ $post->ID ],
+			'post_status'  => 'publish',
+		];
+
+		$relatedtips = new WP_Query( $args );
+
+		if ( $relatedtips->have_posts() ) {
+
+			$counter = 0;
+
+			while ( $relatedtips->have_posts() ) {
+
+				$relatedtips->the_post();
+				$counter ++;
+
+				// Data klaarzetten voor related blok
+				$items[ $counter ]['title']    = od_wbvb_custom_post_title( $post->post_title ); // TODO: deze functie tot een filter maken voor titels überhaupt
+				$items[ $counter ]['url']      = get_the_permalink( $post );
+				$items[ $counter ]['category'] = $term_machine_name;
+				$items[ $counter ]['nr']       = get_field( 'tip-nummer', $post->ID );
+			}
+		}
+
+		/* Restore original Post Data */
+		wp_reset_postdata();
+
+		$context['related']['title'] = sprintf( _x( 'Meer tips over %s', 'Titel gerelateerde tips', 'gctheme' ), strtolower( $term->name ) );
+		$context['related']['items'] = $items;
+		$context['related']['cta']   = [
+			'title' => sprintf( _x( 'Alle tips over %s', 'Linktekst overzicht tipthema', 'gctheme' ), strtolower( $term->name ) ),
+			'url'   => get_term_link( $term->term_id ),
+		];
+
+	} else {
+		// de redactie heeft zelf een aantal gerelateerde tips gekozen
+		// deze kunnen allerlei tipthema's hebben, dus geen doorklik
+
+		$featured_posts = get_field( 'kies_zelf_gerelateerde_tips_bij_deze_tip', $post );
+		if ( $featured_posts ):
+
+			$counter = 0;
+
+			foreach ( $featured_posts as $post ):
+
+				setup_postdata( $post );
+				$counter ++;
+
+				// Data klaarzetten voor related blok
+				$tax_van_tip                   = get_the_terms( $post->ID, GC_TIPTHEMA );
+				$items[ $counter ]['title']    = od_wbvb_custom_post_title( $post->post_title );
+				$items[ $counter ]['url']      = get_the_permalink( $post );
+				$items[ $counter ]['category'] = $tax_van_tip[0]->name;
+				$items[ $counter ]['nr']       = get_field( 'tip-nummer', $post->ID );
+
+
+			endforeach;
+
+			// hier geen doorklik en een wat algemenere titel
+			$context['related']['title'] = _x( 'Gerelateerde tips', 'Titel gerelateerde tips', 'gctheme' );
+			$context['related']['items'] = $items;
+
+		endif;
+
+	}
+
 }
 
 // vullen array voor goede voorbeelden
@@ -169,3 +260,4 @@ Timber::render( array(
 	'single-tips.twig',
 	'single.twig'
 ), $context );
+
