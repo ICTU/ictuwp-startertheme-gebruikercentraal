@@ -160,7 +160,7 @@ if ( get_field( 'inleiding-onderzoek' ) ) {
 
 if ( 'ja' === get_field( 'downloads_tonen' ) && get_field( 'download_items' ) ) {
 
-	$context['downloads'] = getdownloads();
+	$context['downloads'] = download_block_get_data();
 
 }
 
