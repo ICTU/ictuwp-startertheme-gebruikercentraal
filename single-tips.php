@@ -16,48 +16,104 @@ $context['post']     = $timber_post;
 $context['category'] = 'default'; // let op: dit is NIET de blog category, maar de custom taxonomie GC_TIPTHEMA
 $context['examples'] = [];
 $context['links']    = [];
+$maxnr_tips          = 4;
+$term_id_related     = 0;
 
-
-// kleur en icoon bepalen
+// kleur en icoon van deze tip bepalen
 if ( taxonomy_exists( GC_TIPTHEMA ) ) {
 
 	$taxonomie = get_the_terms( $post->ID, GC_TIPTHEMA );
 
 	if ( $taxonomie && ! is_wp_error( $taxonomie ) ) {
-		$counter = 0;
-		// tip slug
 
 		foreach ( $taxonomie as $term ) {
 
 			$term_machine_name   = strtolower( $term->name );
+			$term_id_related     = strtolower( $term->term_id );
 			$context['category'] = $term_machine_name;
 
-			$i     = 0;
-			$items = [];
+		}
+	}
+}
 
-			// Vullen related posts
-			$related = get_posts( [
-				'post_type'   => 'tips',
-				'numberposts' => 4,
-				'orderby'     => 'rand',
-				'tax_query'   => [
-					[
-						'taxonomy'         => 'tipthema',
-						'field'            => 'term_id',
-						'terms'            => $term->term_id,
-						'include_children' => FALSE,
-					],
+if ( 'nee' !== get_field( 'relatedtips_show_or_not', $post ) ) {
+	// het is niet nee, dus het is ja.
+	// hoera, we mogen gerelateerde tips tonen
+
+	if ( 'ja_redactioneel' == get_field( 'relatedtips_show_or_not', $post ) ) {
+
+		// de redactie heeft zelf een aantal gerelateerde tips gekozen
+		// deze kunnen allerlei tipthema's hebben, dus geen doorklik
+
+		$featured_posts = get_field( 'relatedtips_handpicked_tips', $post );
+
+		if ( $featured_posts ):
+
+			$counter = 0;
+
+			foreach ( $featured_posts as $post ):
+
+				setup_postdata( $post );
+				$counter ++;
+
+				// Data klaarzetten voor related blok
+				$tax_van_tip                   = get_the_terms( $post->ID, GC_TIPTHEMA );
+				$items[ $counter ]['title']    = od_wbvb_custom_post_title( $post->post_title );
+				$items[ $counter ]['url']      = get_the_permalink( $post );
+				$items[ $counter ]['category'] = $tax_van_tip[0]->name;
+				$items[ $counter ]['nr']       = get_field( 'tip-nummer', $post->ID );
+
+
+			endforeach;
+
+			// hier geen doorklik en een wat algemenere titel
+			$context['related']['title'] = _x( 'Gerelateerde tips', 'Titel gerelateerde tips', 'gctheme' );
+			$context['related']['items'] = $items;
+
+		endif;
+
+	}
+	else {
+		// 'relatedtips_show_or_not' is niet 'nee' en is niet 'ja_redactioneel',
+		// dus we stellen zelf een lijstje van gerelateerde tips samen
+
+		// max vier, tenzij redactie meer tips wil
+		$maxnr_tips = ( intval( get_field( 'relatedtips_maxnr' ) ) > 0 ) ? get_field( 'relatedtips_maxnr' ) : 4;
+
+		// Vullen lijst gerelateerde tips.
+		// Letten op post status en dat we niet nog een keer dezelfde tip tonen
+		$args = [
+			'post_type'    => GC_TIP_CPT,
+			'numberposts'  => $maxnr_tips,
+			'orderby'      => 'rand',
+			'tax_query'    => [
+				[
+					'taxonomy'         => GC_TIPTHEMA,
+					'field'            => 'term_id',
+					'terms'            => $term_id_related,
+					'include_children' => FALSE,
 				],
-			] );
+			],
+			'post__not_in' => [ $post->ID ],
+			'post_status'  => 'publish',
+		];
 
-			// Data klaarzetten voor related blok
-			foreach ( $related as $item ) {
-				$i ++;
-				$items[ $i ]['title']    = $item->post_title;
-				$items[ $i ]['nr']       = '1';
-				$items[ $i ]['category'] = $term_machine_name;
-				$items[ $i ]['nr']       = get_field( 'tip-nummer', $item->ID );
+		$relatedtips = new WP_Query( $args );
 
+		if ( $relatedtips->have_posts() ) {
+
+			$counter = 0;
+
+			while ( $relatedtips->have_posts() ) {
+
+				$relatedtips->the_post();
+				$counter ++;
+
+				// Data klaarzetten voor related blok
+				$items[ $counter ]['title']    = od_wbvb_custom_post_title( $post->post_title ); // TODO: deze functie tot een filter maken voor titels überhaupt
+				$items[ $counter ]['url']      = get_the_permalink( $post );
+				$items[ $counter ]['category'] = $term_machine_name;
+				$items[ $counter ]['nr']       = get_field( 'tip-nummer', $post->ID );
 			}
 
 			$context['related']['title'] = 'Meer ' . strtolower( $term->name ) . ' tips';
@@ -68,9 +124,18 @@ if ( taxonomy_exists( GC_TIPTHEMA ) ) {
 				'url'   => get_site_url() . '/tipthema/' . $term->slug,
 			];
 		}
+
+		/* Restore original Post Data */
+		wp_reset_postdata();
+
+		$context['related']['title'] = sprintf( _x( 'Meer tips over %s', 'Titel gerelateerde tips', 'gctheme' ), strtolower( $term->name ) );
+		$context['related']['items'] = $items;
+		$context['related']['cta']   = [
+			'title' => sprintf( _x( 'Alle tips over %s', 'Linktekst overzicht tipthema', 'gctheme' ), strtolower( $term->name ) ),
+			'url'   => get_term_link( $term->term_id ),
+		];
+
 	}
-
-
 }
 
 // vullen array voor goede voorbeelden
@@ -197,6 +262,12 @@ if ( get_field( 'inleiding-onderzoek' ) ) {
 
 	$context['why']['title']       = _x( 'Waarom werkt dit?', 'Titel boven waaromwerktdit', 'gctheme' );
 	$context['why']['description'] = get_field( 'waarom_werkt_dit_goed_voorbeeld' );
+}
+
+if ( 'ja' === get_field( 'downloads_tonen' ) && get_field( 'download_items' ) ) {
+
+	$context['downloads'] = download_block_get_data();
+
 }
 
 

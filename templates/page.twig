@@ -13,6 +13,15 @@
       <div class="post__body">
         {{ post.content }}
       </div>
+
+      {% if downloads %}
+        {% include 'sections/section-downloads.html.twig' with {
+          'title': downloads.title,
+          'descr': downloads.desc,
+          'items': downloads.items
+        } %}
+      {% endif %}
+
     </section>
   </article>
 
