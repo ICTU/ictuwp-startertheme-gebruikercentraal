@@ -5,7 +5,7 @@
         {
             "key": "field_5efb2e507e840",
             "label": "Gerelateerde tips tonen?",
-            "name": "gerelateerde_tips_tonen",
+            "name": "relatedtips_show_or_not",
             "type": "radio",
             "instructions": "",
             "required": 0,
@@ -30,7 +30,7 @@
         {
             "key": "field_5efb2fb6aa4ab",
             "label": "Hoeveel tips",
-            "name": "hoeveel_tips",
+            "name": "relatedtips_maxnr",
             "type": "select",
             "instructions": "Hoeveel gerelateerde tips maximaal?",
             "required": 0,
@@ -62,9 +62,9 @@
             "placeholder": ""
         },
         {
-            "key": "field_5efb3002aa4ac",
-            "label": "Kies zelf gerelateerde tips bij deze tip",
-            "name": "kies_zelf_gerelateerde_tips_bij_deze_tip",
+            "key": "field_5efa0d3f79f01",
+            "label": "Welke andere tips raad je aan bij deze tip?",
+            "name": "relatedtips_handpicked_tips",
             "type": "relationship",
             "instructions": "",
             "required": 0,
@@ -113,5 +113,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1593520340
+    "modified": 1593526897
 }
