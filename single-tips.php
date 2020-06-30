@@ -50,6 +50,8 @@ if ( taxonomy_exists( GC_TIPTHEMA ) ) {
 				],
 			] );
 
+			$voorbeeld = [];
+
 			// Data klaarzetten voor related blok
 			foreach ( $related as $item ) {
 				$i ++;

@@ -6,36 +6,47 @@
 
 {% block content %}
 
+  {% block archive_intro %}
 
-  <div class="page__intro">
-    <header class="archive__header">
-      <h1 class="archive__title">{{ title }}</h1>
-    </header>
+    <div class="page__intro">
+      <header class="archive__header">
+        <h1 class="archive__title">{{ title }}</h1>
+      </header>
 
-    {% if descr %}
-      <p class="archive__descr">
-        {{ descr }}
-      </p>
-    {% endif %}
-  </div>
-
-  {% if posts and overview is empty %}
-
-    <div class="overview--list">
-      {% for post in posts %}
-        {% include ['tease-'~post.post_type~'.twig', 'tease.twig'] %}
-      {% endfor %}
+      {% if descr %}
+        <p class="archive__descr">
+          {{ descr }}
+        </p>
+      {% endif %}
     </div>
 
-  {% elseif overview %}
+  {% endblock %}
 
-    {% include 'sections/section-overview.html.twig' with {
-      'title': overview.title,
-      'items': overview.items,
-      'template' : overview.template ? overview.template : 'card',
-      'modifier' : overview.modifier ? overview.modifier
-    } %}
-  {% endif %}
 
-  {% include 'partial/pagination.twig' with { pagination: posts.pagination({show_all: false, mid_size: 3, end_size: 2}) } %}
+  {% block archive_overview %}
+    {% if posts and overview is empty %}
+
+      <div class="overview--list">
+        {% for post in posts %}
+          {% include ['tease-'~post.post_type~'.twig', 'tease.twig'] %}
+        {% endfor %}
+      </div>
+
+    {% elseif overview %}
+
+      {% include 'sections/section-overview.html.twig' with {
+        'title': overview.title,
+        'items': overview.items,
+        'template' : overview.template ? overview.template : 'card',
+        'modifier' : overview.modifier ? overview.modifier
+      } %}
+    {% endif %}
+
+  {% endblock %}
+
+  {% block pagination %}
+
+    {% include 'partial/pagination.twig' with { pagination: posts.pagination({show_all: false, mid_size: 3, end_size: 2}) } %}
+
+  {% endblock %}
 {% endblock %}

@@ -54,46 +54,33 @@
     }
   }
 }
-/*
 
-.archive__header {
-  @include ho-container-content;
-  @include gc-box-shadow();
-  background: $intro-bg;
-  color: $intro-color;
-  padding: 0;
-
-  h1, h2, h3, a {
-    color: $intro-color;
-  }
-
-  h1 {
-    padding: 2rem 2rem 1rem;
-  }
-
-  .archive__descr {
-    padding: 2rem;
-    background: $white;
-    color: $base-font-color;
-    margin-top: 0;
-  }
+.archive__posts {
+  @include ho-container;
+  padding-bottom: 5rem;
+  margin-top: 3rem;
+  margin-left: -2rem;
+  margin-right: -2rem;
 
   @include bp-up(md){
-    h1 {
-      padding: 3rem 5rem;
-    }
-
-    .archive__descr {
-      padding: 3rem 5rem;
-    }
+    margin-right:-3rem;
+    margin-left: -3rem;
   }
 
-  .page--overview-header-lg & {
-    // display with a wider header
-    max-width: $max-width-content;
+  @include bp-up(lg){
+    margin-top: 8rem;
+    padding-bottom: 12rem;
   }
 }
-*/
+
+.archive__title {
+  @include gc_section-header;
+  text-align: center;
+
+  + .grid {
+    margin-top: $gutter;
+  }
+}
 
 .overview__item-wrapper {
   .teaser {

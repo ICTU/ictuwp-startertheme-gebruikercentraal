@@ -50,15 +50,11 @@ if ( ! defined( 'WBVB_GC_ABOUTUS' ) ) {
 require_once( get_template_directory() . '/widgets/widget-over-ons.php' );
 
 /**
- * If you are installing Timber as a Composer dependency in your theme, you'll
- * need this block to load your dependencies and initialize Timber. If you are
- * using Timber via the WordPress.org plug-in, you can safely delete this
- * block.
+ * Load other dependencies such as VAR DUMPER :D
  */
 $composer_autoload = __DIR__ . '/vendor/autoload.php';
 if ( file_exists( $composer_autoload ) ) {
 	require_once $composer_autoload;
-	$timber = new Timber\Timber();
 }
 
 /**
@@ -156,7 +152,7 @@ class GebruikerCentraalTheme extends Timber\Site {
 
 		// read configuration json file
 		$configfile    = file_get_contents( trailingslashit( get_stylesheet_directory() ) . FLAVORSCONFIG );
-		$configfile    = json_decode( $configfile, true );
+		$configfile    = json_decode( $configfile, TRUE );
 		$theme_options = get_option( 'gc2020_theme_options' );
 		$flavor        = DEFAULTFLAVOR; // default, tenzij er een smaakje is gekozen
 		if ( isset( $theme_options['flavor_select'] ) ) {
@@ -197,6 +193,9 @@ class GebruikerCentraalTheme extends Timber\Site {
 		$context['maincontent_id_linktext'] = _x( 'Jump to main content', 'skiplinks', 'gctheme' );
 		$context['mainnav_id']              = 'menu-primary';
 		$context['mainnav_id_linktext']     = _x( 'Jump to main navigation', 'skiplinks', 'gctheme' );
+
+
+		// Add all terms of the post
 
 		// Additional vars for archives
 
@@ -243,11 +242,11 @@ class GebruikerCentraalTheme extends Timber\Site {
 		 * to output valid HTML5.
 		 */
 		add_theme_support( 'html5', [
-				'comment-form',
-				'comment-list',
-				'gallery',
-				'caption',
-			] );
+			'comment-form',
+			'comment-list',
+			'gallery',
+			'caption',
+		] );
 
 		/*
 		 * Enable support for Post Formats.
@@ -255,14 +254,14 @@ class GebruikerCentraalTheme extends Timber\Site {
 		 * See: https://codex.wordpress.org/Post_Formats
 		 */
 		add_theme_support( 'post-formats', [
-				'aside',
-				'image',
-				'video',
-				'quote',
-				'link',
-				'gallery',
-				'audio',
-			] );
+			'aside',
+			'image',
+			'video',
+			'quote',
+			'link',
+			'gallery',
+			'audio',
+		] );
 
 		add_theme_support( 'menus' );
 
@@ -295,6 +294,9 @@ class GebruikerCentraalTheme extends Timber\Site {
 	 * @param string $twig get extension.
 	 */
 	public function add_to_twig( $twig ) {
+
+
+
 		$twig->addExtension( new Twig\Extension\StringLoaderExtension() );
 		$twig->addFilter( new Twig\TwigFilter( 'myfoo', [ $this, 'myfoo' ] ) );
 
@@ -319,13 +321,7 @@ class GebruikerCentraalTheme extends Timber\Site {
 					$versie = $value['version'];
 				}
 
-				wp_enqueue_script(
-					$value['handle'],
-					get_stylesheet_directory_uri() . $value['file'],
-					$dependencies,
-					$versie,
-					$value['infooter']
-				);
+				wp_enqueue_script( $value['handle'], get_stylesheet_directory_uri() . $value['file'], $dependencies, $versie, $value['infooter'] );
 			}
 		}
 
@@ -341,13 +337,7 @@ class GebruikerCentraalTheme extends Timber\Site {
 					$versie = $value['version'];
 				}
 
-				wp_enqueue_style(
-					$value['handle'],
-					get_stylesheet_directory_uri() . $value['file'],
-					$dependencies,
-					$versie,
-					'all'
-				);
+				wp_enqueue_style( $value['handle'], get_stylesheet_directory_uri() . $value['file'], $dependencies, $versie, 'all' );
 				$skiplinkshandle = $value['handle'];
 
 			}
@@ -514,9 +504,9 @@ function my_body_classes( $classes ) {
 
 		//print_r(get_queried_object()->taxonomy);
 
-		switch(get_queried_object()->taxonomy){
+		switch ( get_queried_object()->taxonomy ) {
 			case 'tipthema':
-				$classes[] = 'page--overview-header-lg';
+				//$classes[] = 'page--overview-header-lg';
 				break;
 
 		}
@@ -551,36 +541,36 @@ add_filter( 'get_the_archive_title', function ( $title ) {
  */
 function gc2020_customize_register( $wp_customize ) {
 
-	$wp_customize->add_section( 'gc2020_theme', array(
+	$wp_customize->add_section( 'gc2020_theme', [
 		'title'       => _x( 'Gebruiker Centraal Instellingen', 'customizer', 'gctheme' ),
 		'description' => _x( 'Selecteer hier het kleurenschema voor deze site. Je wijzigt hiermee de styling, logo en sommige functionaliteit van de site.', 'customizer', 'gctheme' ),
 		'priority'    => 60,
-	) );
+	] );
 	//  =============================
 	//  = Select Box                =
 	//  =============================
-	$wp_customize->add_setting( 'gc2020_theme_options[flavor_select]', array(
+	$wp_customize->add_setting( 'gc2020_theme_options[flavor_select]', [
 		'default'    => DEFAULTFLAVOR,
 		'capability' => 'edit_theme_options',
 		'type'       => 'option',
-	) );
+	] );
 
-	$flavors = array();
+	$flavors = [];
 
 	// read configuration json file
 	$configfile   = file_get_contents( trailingslashit( get_stylesheet_directory() ) . FLAVORSCONFIG );
-	$flavorsource = json_decode( $configfile, true );
+	$flavorsource = json_decode( $configfile, TRUE );
 	foreach ( $flavorsource as $key => $value ) {
 		$flavors[ strtoupper( $key ) ] = $value['name'];
 	}
 
-	$wp_customize->add_control( 'example_select_box', array(
+	$wp_customize->add_control( 'example_select_box', [
 		'settings' => 'gc2020_theme_options[flavor_select]',
 		'label'    => _x( 'Kies het kleurenschema', 'customizer', 'gctheme' ),
 		'section'  => 'gc2020_theme',
 		'type'     => 'select',
 		'choices'  => $flavors,
-	) );
+	] );
 
 
 }

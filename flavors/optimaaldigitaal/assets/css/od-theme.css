@@ -18,6 +18,7 @@
 /*
  * General
  */
+@import url(../assets/fonts/fonts.css);
 .clearfix:after {
   content: "";
   display: table;
@@ -524,9 +525,9 @@ legend {
       margin-top: 3rem; } }
 
 .gc-site-footer-widget {
-  min-height: 110px;
-  background: url(../../logo.svg) left top no-repeat;
-  background-size: 110px auto;
+  min-height: 12rem;
+  background: url("../images/logo/gc-logo.svg") left top no-repeat;
+  background-size: 12rem auto;
   padding-left: 14rem; }
 
 .site-footer-menu {
@@ -1223,46 +1224,35 @@ h1 {
       padding-left: 5rem;
       padding-right: 5rem; } }
 
-/*
+.archive__posts {
+  max-width: 1280px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-bottom: 5rem;
+  margin-top: 3rem;
+  margin-left: -2rem;
+  margin-right: -2rem; }
+  @media (min-width: 700px) {
+    .archive__posts {
+      margin-right: -3rem;
+      margin-left: -3rem; } }
+  @media (min-width: 1100px) {
+    .archive__posts {
+      margin-top: 8rem;
+      padding-bottom: 12rem; } }
 
-.archive__header {
-  @include ho-container-content;
-  @include gc-box-shadow();
-  background: $intro-bg;
-  color: $intro-color;
-  padding: 0;
+.archive__title {
+  font-size: 3.2rem;
+  font-family: "league_gothicregular", Impact, Helvetica, Arial, sans-serif;
+  line-height: 36px;
+  text-align: center; }
+  @media (min-width: 700px) {
+    .archive__title {
+      font-size: 4.2rem;
+      line-height: 44px; } }
+  .archive__title + .grid {
+    margin-top: 3rem; }
 
-  h1, h2, h3, a {
-    color: $intro-color;
-  }
-
-  h1 {
-    padding: 2rem 2rem 1rem;
-  }
-
-  .archive__descr {
-    padding: 2rem;
-    background: $white;
-    color: $base-font-color;
-    margin-top: 0;
-  }
-
-  @include bp-up(md){
-    h1 {
-      padding: 3rem 5rem;
-    }
-
-    .archive__descr {
-      padding: 3rem 5rem;
-    }
-  }
-
-  .page--overview-header-lg & {
-    // display with a wider header
-    max-width: $max-width-content;
-  }
-}
-*/
 .overview__item-wrapper .teaser {
   margin-top: 2rem; }
   .overview__item-wrapper .teaser + .teaser {
@@ -2840,14 +2830,6 @@ h1 {
        object-fit: cover; }
 
 /* Components */
-.author .author__contact-info {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-  margin-top: 2rem; }
-
 .author .link--contact {
   margin: 1rem 1rem 0 0; }
   @media (min-width: 700px) {
@@ -2870,6 +2852,18 @@ h1 {
 .author p {
   margin: 2rem 0 0; }
 
+.author .author__image {
+  -webkit-box-shadow: 0.4rem 0.4rem 0 rgba(0, 0, 0, 0.15);
+          box-shadow: 0.4rem 0.4rem 0 rgba(0, 0, 0, 0.15); }
+
+.author .author__contact-info {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  margin-top: 2rem; }
+
 .author.l-with-image {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -2877,77 +2871,41 @@ h1 {
   -webkit-box-align: start;
       -ms-flex-align: start;
           align-items: flex-start; }
-  .author.l-with-image .author__picture,
   .author.l-with-image .author__image {
     width: 8rem; }
   .author.l-with-image .author__content {
     width: calc(100% - 14rem);
     padding-left: 3rem; }
   @media (min-width: 1100px) {
-    .author.l-with-image .author__picture,
     .author.l-with-image .author__image {
       width: 14rem; }
     .author.l-with-image .author__content {
       width: calc(100% - 14rem); } }
 
-.author__picture,
-.author__image {
-  background: #fff; }
-  .author__picture img,
-  .author__image img {
-    -webkit-box-shadow: 0.4rem 0.4rem 0 rgba(0, 0, 0, 0.15);
-            box-shadow: 0.4rem 0.4rem 0 rgba(0, 0, 0, 0.15);
-    width: 100%;
-    height: auto;
-    display: block; }
-
-.author--box {
-  -webkit-box-shadow: 0.4rem 0.4rem 0 rgba(0, 0, 0, 0.15);
-          box-shadow: 0.4rem 0.4rem 0 rgba(0, 0, 0, 0.15);
-  background: #f9f6f3;
-  position: relative;
-  padding: 3rem 2rem 2rem;
-  display: block;
-  font-size: 1.6rem;
-  line-height: 2.6rem;
-  margin-top: 5rem; }
+.author--full {
+  max-width: 760px;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 960px;
+  padding: 2rem;
+  background: #148839;
+  color: #fff; }
+  .author--full h1, .author--full h2, .author--full h3, .author--full a {
+    color: #fff; }
+  .author--full .author__function {
+    font-size: 1.6rem;
+    line-height: 2.4rem;
+    color: rgba(255, 255, 255, 0.8);
+    margin-top: .8rem; }
+  .author--full .author__contact-info {
+    border-top: 0.1rem solid #117230; }
+    @media (min-width: 700px) {
+      .author--full .author__contact-info {
+        padding-top: 1rem;
+        margin-top: 2rem; } }
   @media (min-width: 700px) {
-    .author--box {
-      margin-top: 8rem; } }
-  .author--box:before {
-    content: " ";
-    position: absolute;
-    width: 3rem;
-    height: 3rem;
-    display: block;
-    background: #f9f6f3;
-    top: 0;
-    left: 6rem;
-    margin-top: -1.5rem;
-    -webkit-transform: rotate(45deg);
-            transform: rotate(45deg); }
-  .author--box .author__content {
-    width: 100%;
-    padding: 0; }
-  .author--box h2,
-  .author--box .author__title {
-    font-size: 2.4rem;
-    margin: 0;
-    padding: 0; }
-  .author--box .meta-data__item {
-    color: #52757e;
-    font-size: 1.4rem; }
-  .author--box hr {
-    border-color: #f2ebe4;
-    margin: 1.5rem 0; }
-  .author--box .author__contact-info {
-    font-size: 1.4rem;
-    margin-top: 2rem; }
-  .author--box p {
-    margin: 0; }
-  @media (min-width: 700px) {
-    .author--box {
-      padding: 3rem; } }
+    .author--full {
+      padding: 4rem 5rem; } }
 
 .author--small {
   position: relative;
@@ -2971,6 +2929,10 @@ h1 {
     margin-top: .5rem; }
     .author--small .link:before {
       color: #148839; }
+  .author--small .author__function {
+    font-size: 1.5rem;
+    line-height: 2.4rem;
+    color: #52757e; }
 
 .author--card {
   text-align: center; }
@@ -5155,19 +5117,6 @@ h1 {
       position: absolute; } }
 
 /*
-$hp-intro-bg:               $od-orange;
-
-$date-badge-bg:             $gc-a11y-green;
-
-$meta-data-icon:            $od-orange;
-
-$btn-secondary-bg:          $od-orange;
-$btn-secondary-arrowbg:     $od-orange-darker;
-
-$btn-secondary-hover-bg:      $od-orange-darker;
-$btn-secondary-hover-arrowbg: darken($od-orange-darker, 10%);
-*/
-/*
  * SCSS for pages with a frame
  *
  * Include this if you want the pages to be "framed" with a white background and shade
@@ -5401,17 +5350,35 @@ $btn-secondary-hover-arrowbg: darken($od-orange-darker, 10%);
 .date-badge--multiple .date-badge__till:before {
   background: #055C21; }
 
-.page--type-author .page-content {
+.archive {
   background: #f2ebe4; }
 
-.page--type-author .content > .section--bg-option:before {
-  background: url("../images/b_section-bg-option.svg") 0 100% no-repeat; }
-  @media (min-width: 1600px) {
-    .page--type-author .content > .section--bg-option:before {
-      background-size: 120% auto; } }
+.tax-tipgever .page-content {
+  padding-bottom: 0; }
 
-.page--type-author .content > .section--bg-option:after {
-  display: none; }
+.archive__posts {
+  padding-left: 2rem;
+  padding-right: 2rem;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  position: relative;
+  max-width: none; }
+  @media (min-width: 560px) {
+    .archive__posts {
+      padding-right: 3rem;
+      padding-left: 3rem; } }
+  .archive__posts:before {
+    content: " ";
+    position: absolute;
+    display: block;
+    background: url("../images/b_section-bg-option.svg") top center no-repeat;
+    background-size: auto 100%;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 16rem; }
+  .archive__posts:after {
+    display: none; }
 
 .page--type-manual .page-content {
   background: #BA4F0C;

@@ -1,0 +1,15 @@
+@mixin od-background-option {
+  position: relative;
+
+  &:before {
+    content: " ";
+    position: absolute;
+    display: block;
+    background: url('../images/b_section-bg-option.svg') top center no-repeat;
+    background-size: auto 100%;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 16rem;
+  }
+}
