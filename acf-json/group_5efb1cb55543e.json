@@ -1,0 +1,117 @@
+{
+    "key": "group_5efb1cb55543e",
+    "title": "[od] gerelateerde tips",
+    "fields": [
+        {
+            "key": "field_5efb2e507e840",
+            "label": "Gerelateerde tips tonen?",
+            "name": "gerelateerde_tips_tonen",
+            "type": "radio",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "ja_automatisch": "Ja, toon een aantal willekeurig gekozen tips uit hetzelfde thema",
+                "ja_redactioneel": "Ja, toon de tips die ik zelf uitkies",
+                "nee": "Nee, toon geen gerelateerde tips"
+            },
+            "allow_null": 0,
+            "other_choice": 0,
+            "default_value": "ja_automatisch",
+            "layout": "vertical",
+            "return_format": "value",
+            "save_other_choice": 0
+        },
+        {
+            "key": "field_5efb2fb6aa4ab",
+            "label": "Hoeveel tips",
+            "name": "hoeveel_tips",
+            "type": "select",
+            "instructions": "Hoeveel gerelateerde tips maximaal?",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_5efb2e507e840",
+                        "operator": "==",
+                        "value": "ja_automatisch"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "4": "4",
+                "6": "6",
+                "8": "8"
+            },
+            "default_value": false,
+            "allow_null": 0,
+            "multiple": 0,
+            "ui": 0,
+            "return_format": "value",
+            "ajax": 0,
+            "placeholder": ""
+        },
+        {
+            "key": "field_5efb3002aa4ac",
+            "label": "Kies zelf gerelateerde tips bij deze tip",
+            "name": "kies_zelf_gerelateerde_tips_bij_deze_tip",
+            "type": "relationship",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_5efb2e507e840",
+                        "operator": "==",
+                        "value": "ja_redactioneel"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "post_type": [
+                "tips"
+            ],
+            "taxonomy": "",
+            "filters": [
+                "search",
+                "taxonomy"
+            ],
+            "elements": "",
+            "min": 1,
+            "max": "",
+            "return_format": "object"
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "tips"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": 1,
+    "description": "",
+    "modified": 1593520340
+}
