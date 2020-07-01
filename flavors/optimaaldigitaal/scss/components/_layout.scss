@@ -131,11 +131,5 @@
 }
 
 .archive__posts {
-  @include ho-padding;
   @include od-background-option();
-  max-width: none;
-
-  &:after {
-    display: none;
-  }
 }

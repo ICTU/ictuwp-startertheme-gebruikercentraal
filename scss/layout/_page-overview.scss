@@ -56,31 +56,43 @@
 }
 
 .archive__posts {
-  @include ho-container;
   padding-bottom: 5rem;
+  max-width: none;
   margin-top: 3rem;
-  margin-left: -2rem;
-  margin-right: -2rem;
 
   @include bp-up(md){
-    margin-right:-3rem;
-    margin-left: -3rem;
+    padding-bottom: 8rem;
   }
 
   @include bp-up(lg){
-    margin-top: 8rem;
     padding-bottom: 12rem;
+    margin-top: 5rem;
   }
+
+  &:before {
+    margin-left: -2rem;
+    margin-right: -2rem;
+
+    @include bp-up(md){
+      margin-left: -3rem;
+      margin-right: -3rem;
+    }
+  }
+
+  .grid {
+    @include ho-container;
+    max-width: calc(#{$max-width-container} + #{$gutter});
+    margin-top: 1rem;
+  }
+
+  .section__title {
+    text-align: center;
+    border: none;
+  }
+
+
 }
 
-.archive__title {
-  @include gc_section-header;
-  text-align: center;
-
-  + .grid {
-    margin-top: $gutter;
-  }
-}
 
 .overview__item-wrapper {
   .teaser {

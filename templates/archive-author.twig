@@ -80,11 +80,13 @@
 {% block archive_overview %}
 
   <div class="archive__posts">
-    {{ overview.title ? '<h2 class="archive__title">' ~ overview.title ~ '</h2>' }}
+
+    {% if overview.title %}
+      <h2 class="section__title">{{ overview.title }}</h2>
+    {% endif %}
 
     <div class="grid grid--{{ overview.modifier ? overview.modifier : 'col-3' }}">
       {% for post in posts %}
-
 
         {% set cat = '' %}
 
