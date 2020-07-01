@@ -29,7 +29,6 @@ if ( taxonomy_exists( GC_TIPTHEMA ) ) {
 		foreach ( $taxonomie as $term ) {
 
 			$term_machine_name   = strtolower( $term->name );
-			$term_id_related     = strtolower( $term->term_id );
 			$context['category'] = $term_machine_name;
 
 		}
@@ -72,13 +71,14 @@ if ( 'nee' !== get_field( 'relatedtips_show_or_not', $post ) ) {
 
 		endif;
 
-	}
-	else {
+	} else {
 		// 'relatedtips_show_or_not' is niet 'nee' en is niet 'ja_redactioneel',
 		// dus we stellen zelf een lijstje van gerelateerde tips samen
 
 		// max vier, tenzij redactie meer tips wil
 		$maxnr_tips = ( intval( get_field( 'relatedtips_maxnr' ) ) > 0 ) ? get_field( 'relatedtips_maxnr' ) : 4;
+
+		$current_term = get_the_terms($timber_post->id, 'tipthema');
 
 		// Vullen lijst gerelateerde tips.
 		// Letten op post status en dat we niet nog een keer dezelfde tip tonen
@@ -90,7 +90,7 @@ if ( 'nee' !== get_field( 'relatedtips_show_or_not', $post ) ) {
 				[
 					'taxonomy'         => GC_TIPTHEMA,
 					'field'            => 'term_id',
-					'terms'            => $term_id_related,
+					'terms'            => $current_term[0]->term_id,
 					'include_children' => FALSE,
 				],
 			],
@@ -104,7 +104,9 @@ if ( 'nee' !== get_field( 'relatedtips_show_or_not', $post ) ) {
 
 			$counter = 0;
 
+
 			while ( $relatedtips->have_posts() ) {
+
 
 				$relatedtips->the_post();
 				$counter ++;
@@ -114,27 +116,29 @@ if ( 'nee' !== get_field( 'relatedtips_show_or_not', $post ) ) {
 				$items[ $counter ]['url']      = get_the_permalink( $post );
 				$items[ $counter ]['category'] = $term_machine_name;
 				$items[ $counter ]['nr']       = get_field( 'tip-nummer', $post->ID );
+				$voorbeeld                     = [];
+
+
+				$context['related']['title'] = 'Meer ' . strtolower( $term->name ) . ' tips';
+				$context['related']['items'] = $items;
+
+				$context['related']['cta'] = [
+					'title' => 'Alle ' . $term_machine_name . ' tips',
+					'url'   => get_site_url() . '/tipthema/' . $term->slug,
+				];
 			}
 
-			$context['related']['title'] = 'Meer ' . strtolower( $term->name ) . ' tips';
+			/* Restore original Post Data */
+			wp_reset_postdata();
+
+			$context['related']['title'] = sprintf( _x( 'Meer tips over %s', 'Titel gerelateerde tips', 'gctheme' ), strtolower( $term->name ) );
 			$context['related']['items'] = $items;
-
-			$context['related']['cta'] = [
-				'title' => 'Alle ' . $term_machine_name . ' tips',
-				'url'   => get_site_url() . '/tipthema/' . $term->slug,
+			$context['related']['cta']   = [
+				'title' => sprintf( _x( 'Alle tips over %s', 'Linktekst overzicht tipthema', 'gctheme' ), strtolower( $term->name ) ),
+				'url'   => get_term_link( $term->term_id ),
 			];
+
 		}
-
-		/* Restore original Post Data */
-		wp_reset_postdata();
-
-		$context['related']['title'] = sprintf( _x( 'Meer tips over %s', 'Titel gerelateerde tips', 'gctheme' ), strtolower( $term->name ) );
-		$context['related']['items'] = $items;
-		$context['related']['cta']   = [
-			'title' => sprintf( _x( 'Alle tips over %s', 'Linktekst overzicht tipthema', 'gctheme' ), strtolower( $term->name ) ),
-			'url'   => get_term_link( $term->term_id ),
-		];
-
 	}
 }
 
@@ -181,7 +185,7 @@ if ( have_rows( 'goed_voorbeeld' ) ):
 					}
 				}
 
-				if ( get_field( 'tipgever_functietitel', $acfid ) ) {
+				if ( !empty($acfid) && get_field( 'tipgever_functietitel', $acfid ) ) {
 					$voorbeeld['author']['function'] = get_field( 'tipgever_functietitel', $acfid );
 				}
 
@@ -189,7 +193,7 @@ if ( have_rows( 'goed_voorbeeld' ) ):
 					$voorbeeld['author']['url']      = get_term_link( $thetermdata->term_id );
 					$voorbeeld['author']['linktext'] = sprintf( _x( 'Meer tips van %s', 'linktext auteur voorbeeld', 'gctheme' ), $voornaam );
 				}
-				if ( $tipgever_foto['sizes']['thumbnail'] ) {
+				if ( !empty($tipgever_foto) && $tipgever_foto['sizes']['thumbnail'] ) {
 					$voorbeeld['author']['img'] = $tipgever_foto['sizes']['thumbnail'];
 				}
 			}
@@ -226,7 +230,6 @@ if ( have_rows( 'nuttige_links' ) ):
 		$context['links'][] = $currenturl;
 
 	endwhile;
-
 endif;
 
 if ( get_field( 'waarom_werkt_dit_goed_voorbeeld' ) ) {
@@ -265,7 +268,6 @@ if ( get_field( 'inleiding-onderzoek' ) ) {
 }
 
 if ( 'ja' === get_field( 'downloads_tonen' ) && get_field( 'download_items' ) ) {
-
 	$context['downloads'] = download_block_get_data();
 
 }

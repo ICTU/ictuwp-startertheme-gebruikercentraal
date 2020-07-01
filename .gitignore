@@ -29,3 +29,5 @@ sites/*/*.php
 sites/**.json
 sites/**.json
 
+
+vendor

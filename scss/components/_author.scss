@@ -1,11 +1,6 @@
 // Author
 
 .author {
-  .author__contact-info {
-    display: flex;
-    flex-wrap: wrap;
-    margin-top: 2rem;
-  }
 
   .link--contact {
     margin: 1rem 1rem 0 0;
@@ -16,6 +11,7 @@
       }
     }
   }
+
 
   .social-links {
     margin: 1rem 0 0;
@@ -35,12 +31,21 @@
     margin: 2rem 0 0;
   }
 
+  .author__image {
+    @include gc-box-shadow();
+  }
+
+  .author__contact-info {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 2rem;
+  }
+
 
   &.l-with-image {
     display: flex;
     align-items: flex-start;
 
-    .author__picture,
     .author__image {
       width: 8rem;
     }
@@ -51,7 +56,6 @@
     }
 
     @include bp-up(lg) {
-      .author__picture,
       .author__image {
         width: 14rem;
       }
@@ -61,80 +65,40 @@
       }
     }
   }
-}
 
-.author__picture,
-.author__image {
-  background: $white;
 
-  img {
-    @include gc-box-shadow();
-    width: 100%;
-    height: auto;
-    display: block;
-  }
-}
+  &--full {
+    // On archive pages
+    @include ho-container-content;
+    max-width: $max-width-content;
+    padding: 2rem;
+    background: $intro-bg;
+    color: $intro-color;
 
-.author--box {
-  @include gc-box-shadow;
-  background: $gc_pantybrown_xlight;
-  position: relative;
-  padding: 3rem 2rem 2rem;
-  display: block;
-  font-size: $font-smaller;
-  line-height: 2.6rem;
-  margin-top: 5rem;
 
-  @include bp-up(md) {
-    margin-top: 8rem;
-  }
+    h1, h2, h3, a {
+      color: $intro-color;
+    }
 
-  &:before {
-    content: " ";
-    position: absolute;
-    width: 3rem;
-    height: 3rem;
-    display: block;
-    background: $gc_pantybrown_xlight;
-    top: 0;
-    left: 6rem;
-    margin-top: -1.5rem;
-    transform: rotate(45deg);
-  }
+    .author__function {
+      font-size: 1.6rem;
+      line-height: 2.4rem;
+      color: rgba($intro-color, 0.8);
+      margin-top: .8rem;
+    }
 
-  .author__content {
-    width: 100%;
-    padding: 0;
-  }
+    .author__contact-info {
+      border-top: .1rem solid darken($intro-bg, 5%);
 
-  h2,
-  .author__title {
-    font-size: 2.4rem;
-    margin: 0;
-    padding: 0;
-  }
+      @include bp-up(md){
+        padding-top: 1rem;
+        margin-top: 2rem;
+      }
+    }
 
-  .meta-data__item {
-    color: $meta-data;
-    font-size: $font_small;
-  }
-
-  hr {
-    border-color: $gc_pantybrown-light;
-    margin: 1.5rem 0;
-  }
-
-  .author__contact-info {
-    font-size: $font_small;
-    margin-top: 2rem;
-  }
-
-  p {
-    margin: 0;
-  }
-
-  @include bp-up(md) {
-    padding: 3rem;
+    @include bp-up(md){
+      padding: 4rem 5rem;
+    }
   }
 }
 
@@ -170,6 +134,12 @@
     &:before {
       color: $gc-a11y-green;
     }
+  }
+
+  .author__function {
+    font-size: 1.5rem;
+    line-height: 2.4rem;
+    color: $meta-data;
   }
 }
 
@@ -332,4 +302,5 @@ $ac-margin: 30rem;
     margin-top: 8rem;
   }
 }
+
 
