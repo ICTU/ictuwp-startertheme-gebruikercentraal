@@ -2,6 +2,9 @@
 
 add_action( 'acf/init', 'gb_add_calltoaction_block' );
 
+/*
+ * Initialize the Call To Action block
+ */
 function gb_add_calltoaction_block() {
 
 	// Check function exists.
@@ -20,7 +23,9 @@ function gb_add_calltoaction_block() {
 	}
 }
 
-
+/*
+ * Render the CTA block
+ */
 function gb_render_calltoaction_block( $block, $content = '', $is_preview = FALSE ) {
 
 	$context = Timber::context();
@@ -41,28 +46,27 @@ function gb_render_calltoaction_block( $block, $content = '', $is_preview = FALS
 }
 
 /*
- * returns an array for the downloads section
+ * Collect the fields and return them
  */
 function cta_block_get_data() {
 
 	global $post;
 
 	$return           = [];
+	$cssclasses       = 'btn--primary';
 	$link             = get_field( 'gc_gb_ctalink' );
 	$gc_gb_ctaclasses = get_field( 'gc_gb_ctaclasses' );
 
-	$classsess = 'btn btn--primary';
-
 	if ( $gc_gb_ctaclasses ) {
-		$classsess = $gc_gb_ctaclasses;
+		$cssclasses = $gc_gb_ctaclasses;
 	}
 
 	if ( $link ):
-		$link_url    = $link['url'];
-		$link_title  = $link['title'];
-		$link_target = $link['target'] ? $link['target'] : '_self';
-		$return['link'] = '<a class="btn ' . $classsess . '" href="' . esc_url( $link_url ) . '" target="' . esc_attr( $link_target ) . '">' . esc_html( $link_title ) . '</a>';
-		$return['linkpreview'] = '<a class="btn ' . $classsess . '" href="#" target="' . esc_attr( $link_target ) . '">' . esc_html( $link_title ) . '</a>';
+		$link_url              = $link['url'];
+		$link_title            = $link['title'];
+		$link_target           = $link['target'] ? $link['target'] : '_self';
+		$return['link']        = '<a class="btn ' . $cssclasses . '" href="' . esc_url( $link_url ) . '" target="' . esc_attr( $link_target ) . '">' . esc_html( $link_title ) . '</a>';
+		$return['linkpreview'] = '<a class="btn ' . $cssclasses . '" href="#" target="' . esc_attr( $link_target ) . '">' . esc_html( $link_title ) . '</a>';
 	endif;
 
 	return $return;
