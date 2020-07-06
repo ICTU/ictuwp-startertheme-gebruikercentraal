@@ -53,6 +53,7 @@ require_once( get_template_directory() . '/widgets/widget-over-ons.php' );
 require_once( get_template_directory() . '/gutenberg-blocks/gutenberg-settings.php' );
 require_once( get_template_directory() . '/gutenberg-blocks/download-block.php' );
 require_once( get_template_directory() . '/gutenberg-blocks/cta-block.php' );
+require_once( get_template_directory() . '/gutenberg-blocks/related-block.php' );
 
 /**
  * Load other dependencies such as VAR DUMPER :D

@@ -1,0 +1,247 @@
+{
+    "key": "group_5c8f9ba967736",
+    "title": "Gerelateerde content",
+    "fields": [
+        {
+            "key": "field_5c8fe203a8435",
+            "label": "Gerelateerde content toevoegen?",
+            "name": "gerelateerde_content_toevoegen",
+            "type": "radio",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "ja": "Ja",
+                "nee": "Nee"
+            },
+            "allow_null": 0,
+            "other_choice": 0,
+            "default_value": "nee",
+            "layout": "vertical",
+            "return_format": "value",
+            "save_other_choice": 0
+        },
+        {
+            "key": "field_5c8fd404bd765",
+            "label": "Title",
+            "name": "content_block_title",
+            "type": "text",
+            "instructions": "",
+            "required": 1,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_5c8fe203a8435",
+                        "operator": "==",
+                        "value": "ja"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_5f03390be2d81",
+            "label": "description",
+            "name": "content_block_description",
+            "type": "textarea",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_5c8fe203a8435",
+                        "operator": "==",
+                        "value": "ja"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "maxlength": "",
+            "rows": "",
+            "new_lines": ""
+        },
+        {
+            "key": "field_5f033a4dfaec8",
+            "label": "Wat wil je tonen?",
+            "name": "content_block_types",
+            "type": "radio",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_5c8fe203a8435",
+                        "operator": "==",
+                        "value": "ja"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "posts": "Losse items, zoals pagina's, berichten, tips",
+                "taxonomie_speelset: Speelsets": "taxonomie_speelset: Speelsets",
+                "taxonomie_tipgevers: Tipgevers": "taxonomie_tipgevers: Tipgevers",
+                "taxonomie_asdf: xxx": "taxonomie_asdf: xxx"
+            },
+            "allow_null": 0,
+            "other_choice": 0,
+            "default_value": "posts",
+            "layout": "vertical",
+            "return_format": "value",
+            "save_other_choice": 0
+        },
+        {
+            "key": "field_5c8fd42e15a23",
+            "label": "Gerelateerde items",
+            "name": "content_block_items",
+            "type": "relationship",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_5c8fe203a8435",
+                        "operator": "==",
+                        "value": "ja"
+                    },
+                    {
+                        "field": "field_5f033a4dfaec8",
+                        "operator": "==",
+                        "value": "posts"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "post_type": [
+                "post",
+                "page",
+                "tips"
+            ],
+            "taxonomy": "",
+            "filters": [
+                "search",
+                "post_type",
+                "taxonomy"
+            ],
+            "elements": [
+                "featured_image"
+            ],
+            "min": "",
+            "max": "",
+            "return_format": "object"
+        },
+        {
+            "key": "field_5f033a2f8c7f0",
+            "label": "Tipgevers",
+            "name": "content_block_taxonomy_tipgever",
+            "type": "taxonomy",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_5f033a4dfaec8",
+                        "operator": "==",
+                        "value": "taxonomie_tipgevers"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "taxonomy": "tipgever",
+            "field_type": "multi_select",
+            "allow_null": 0,
+            "add_term": 0,
+            "save_terms": 0,
+            "load_terms": 0,
+            "return_format": "id",
+            "multiple": 0
+        },
+        {
+            "key": "field_5f033df83c8e7",
+            "label": "Gerelateerde taxonomie: speelsets",
+            "name": "content_block_taxonomy_speelsets",
+            "type": "taxonomy",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_5f033a4dfaec8",
+                        "operator": "==",
+                        "value": "taxonomie_speelset"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "taxonomy": "tipgever",
+            "field_type": "multi_select",
+            "allow_null": 1,
+            "add_term": 0,
+            "save_terms": 0,
+            "load_terms": 0,
+            "return_format": "id",
+            "multiple": 0
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "post"
+            }
+        ],
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "page"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": 1,
+    "description": "",
+    "modified": 1594063698
+}

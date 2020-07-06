@@ -9,7 +9,7 @@
 <div class="card{{ img ? ' card--with-image' : '' }}{{ type ? ' card--type-' ~ type : '' }}">
   {% if img is not empty %}
     <div class="card__image">
-      <img src="/uploads/{{ img }}" alt="{{ title }}">
+      {{ img }}
     </div>
   {% endif %}
   <div class="card__content">
