@@ -1,43 +1,54 @@
-
-<section class="section section--related{{ cards ? ' l-item-count-' ~ cards|length : '' }}{{ modifier ? ' section--' ~ modifier }}"{% if id %} id="{{ id }}"{% endif %}>
+<section
+  class="section section--related{{ related.columncounter ? ' l-item-count-' ~ related.columncounter : '' }}{{ modifier ? ' section--' ~ modifier }}"{% if id %} id="{{ id }}"{% endif %}>
 
   {# Wrapper for section intro #}
-  {% if title or description %}
-  <div class="l-section-top">
+  {% if related.title or related.description %}
+    <div class="l-section-top">
 
-    {% if title %}
-      <h2 class="section__title">
-      {{ title }}
-      </h2>
-    {% endif %}
+      {% if related.title %}
+        <h2 class="section__title">
+          {{ related.title }}
+        </h2>
+      {% endif %}
 
-    {% if description %}
-    <p class="section__description">
-      {{ description }}
-    </p>
-    {% endif %}
-  </div>
+      {% if related.description %}
+        <p class="section__description">
+          {{ related.description }}
+        </p>
+      {% endif %}
+    </div>
   {% endif %}
 
   {# Wrapper for all section content #}
   <div class="l-section-content">
 
-    {% if items %}
-      <div class="grid grid--col-{{ items|length }}">
+    {% if related.items %}
 
-        {% for card in items %}
-          {% include 'components/card.html.twig' with {
-            'title' : card.title,
-            'descr' : card.descr,
-            'img' : card.img,
-            'type' : card.type,
-            'url': card.url,
-            'meta': card.meta,
-          } %}
+      <div class="grid grid--col-{{ is_preview ? '2' : related.columncounter }}">
+
+        {% for card in related.items %}
+
+            {% include 'components/card.html.twig' with {
+              'title': card.title,
+              'descr' : card.descr,
+              'img' : card.img,
+              'type' : card.type,
+              'nr' : card.nr,
+              'category' : card.category,
+              'toptip' : card.toptip,
+              'toptiptekst' : card.toptiptekst,
+              'url': is_preview ? '#' : card.url,
+              'meta': card.meta,
+            } %}
+
         {% endfor %}
       </div>
 
+    {% else %}
+      <small style="background: black; color: white;">Selecteer gerelateerde content, zoals berichten of
+        pagina's</small>
     {% endif %}
+
 
   </div>
 </section>

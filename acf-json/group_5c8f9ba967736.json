@@ -32,7 +32,7 @@
             "name": "content_block_title",
             "type": "text",
             "instructions": "",
-            "required": 1,
+            "required": 0,
             "conditional_logic": [
                 [
                     {
@@ -104,8 +104,7 @@
             "choices": {
                 "posts": "Losse items, zoals pagina's, berichten, tips",
                 "taxonomie_speelset: Speelsets": "taxonomie_speelset: Speelsets",
-                "taxonomie_tipgevers: Tipgevers": "taxonomie_tipgevers: Tipgevers",
-                "taxonomie_asdf: xxx": "taxonomie_asdf: xxx"
+                "taxonomie_tipgevers: Tipgevers": "taxonomie_tipgevers: Tipgevers"
             },
             "allow_null": 0,
             "other_choice": 0,
@@ -233,6 +232,13 @@
                 "operator": "==",
                 "value": "page"
             }
+        ],
+        [
+            {
+                "param": "block",
+                "operator": "==",
+                "value": "acf\/gc-related"
+            }
         ]
     ],
     "menu_order": 0,
@@ -243,5 +249,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1594063698
+    "modified": 1594117955
 }

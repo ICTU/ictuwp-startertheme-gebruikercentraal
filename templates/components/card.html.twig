@@ -1,35 +1,31 @@
-{% if title is empty %}
-  {% set title = 'Kaartje zonder titel' %}
-{% endif %}
+{% if type == 'tips' %}
+  {% include 'components/card--tipkaart.html.twig' %}
+{% else %}
+  <div class="card{{ img ? ' card--with-image' : '' }}{{ type ? ' card--type-' ~ type : '' }}">
+    {% if img is not empty %}
+      <div class="card__image">
+        {{ img }}
+      </div>
+    {% endif %}
+    <div class="card__content">
+      {% if type == 'event' %}
+        {% include 'components/date-badge.html.twig' %}
+      {% endif %}
+      <h2 class="card__title">
+        <a class="arrow-link" href="{{ url }}">
+          <span class="arrow-link__text">
+            {{ title }}
+          </span>
+          <span class="arrow-link__icon"></span>
+        </a>
+      </h2>
+      <p class="card__description">
+        {{ descr }}
+      </p>
 
-{% if descr is empty %}
-  {% set descr = 'Dit is de omschrijving van het kaartje. Hier kan de samenvatting in of de eerste tekst van de detailpagina.' %}
-{% endif %}
-
-<div class="card{{ img ? ' card--with-image' : '' }}{{ type ? ' card--type-' ~ type : '' }}">
-  {% if img is not empty %}
-    <div class="card__image">
-      {{ img }}
+      {% if meta %}
+        {% include 'components/meta-data.html.twig' with {'items': meta} %}
+      {% endif %}
     </div>
-  {% endif %}
-  <div class="card__content">
-    {% if type == 'event' %}
-      {% include 'components/date-badge.html.twig' %}
-    {% endif %}
-    <h2 class="card__title">
-      <a class="arrow-link" href="{{ url }}">
-        <span class="arrow-link__text">
-          {{ title }}
-        </span>
-        <span class="arrow-link__icon"></span>
-      </a>
-    </h2>
-    <p class="card__description">
-      {{ descr }}
-    </p>
-
-    {% if meta %}
-      {% include 'components/meta-data.html.twig' with {'items': meta} %}
-    {% endif %}
   </div>
-</div>
+{% endif %}
