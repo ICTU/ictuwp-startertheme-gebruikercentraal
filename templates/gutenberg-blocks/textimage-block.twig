@@ -1,0 +1,38 @@
+{#
+/**
+ * Block Name: GC Gutenberg block for text and image
+ *
+ * Gutenberg block voor het tonen van Call To Action (CTA)
+ */
+#}
+
+{% if is_preview %}
+  <style type="text/css">
+    #download-{{ block.id }} {
+      margin-top: 0;
+      overflow: hidden;
+    }
+  </style>
+{% endif %}
+
+
+  {% if textimage.text %}
+
+    <div class="{{ textimage.cssclass }}">
+
+      <div class="l-section-content">
+
+        {% if textimage.image %}
+          {{ textimage.image }}
+        {% endif %}
+
+        <div class="text-image__text">
+          {{ textimage.text }}
+        </div>
+
+      </div>
+    </div>
+
+  {% else %}
+    <small style="background: black; color: white;">Voeg een plaatje en tekst toe.</small>
+  {% endif %}
