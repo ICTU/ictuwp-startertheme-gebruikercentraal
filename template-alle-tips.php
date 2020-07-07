@@ -13,43 +13,9 @@ $timber_post          = Timber::query_post();
 $context['post']      = $timber_post;
 $context['filters']   = [];
 $context['tipkaarts'] = [];
-$themakleuren         = [];
+$themakleuren         = get_themakleuren();
 $card                 = [];
 
-// eerst alle tipthema's langs om de kleuren op te halen
-$args  = [
-	'taxonomy'   => GC_TIPTHEMA,
-	'hide_empty' => TRUE,
-	'orderby'    => 'name',
-	'order'      => 'ASC',
-];
-$terms = get_terms( $args );
-
-if ( ! empty( $terms ) && ! is_wp_error( $terms ) ) {
-	$count = count( $terms );
-
-	foreach ( $terms as $term ) {
-
-		$themakleur = get_field( 'kleur_en_icoon_tipthema', GC_TIPTHEMA . '_' . $term->term_id );
-
-		if ( $themakleur ) {
-
-			$themakleuren[ $term->term_id ] = $themakleur;
-			/*
-			 * TODO: filters weer terug zetten
-			 * filter array leeghouden, zodat frontend nog even zo schoon mogelijk blijft
-			$context['filters'][]           = array(
-				'id'    => $term->term_id,
-				'name'  => $term->name,
-				'class' => $themakleur,
-			);
-			*/
-
-		} else {
-			// kleur ontbreekt
-		}
-	}
-}
 
 $args = [
 	// Get post type project
@@ -72,7 +38,7 @@ if ( $the_query->have_posts() ) {
 		$card          = [];
 		$taxonomie     = get_the_terms( $post->ID, GC_TIPTHEMA );
 		$card['title'] = od_wbvb_custom_post_title( get_the_title() );
-		$card['nr']    = sprintf( _x( 'Tip %s', 'Label tip-ummer', 'gctheme' ), get_post_meta( $post->ID, 'tip-nummer', TRUE ) );
+		$card['nr']    = sprintf( _x( 'Tip %s', 'Label tip-nummer', 'gctheme' ), get_post_meta( $post->ID, 'tip-nummer', TRUE ) );
 		$card['url']   = get_the_permalink();
 		$is_toptip     = get_post_meta( $post->ID, 'is_toptip', TRUE );
 		if ( $is_toptip ) {

@@ -664,3 +664,40 @@ function gc_wbvb_get_human_filesize( $bytes, $decimals = 2 ) {
 }
 
 //========================================================================================================
+
+function get_themakleuren() {
+
+	$themakleuren = [];
+
+	// alle tipthema's langs om de kleuren op te halen
+	$args  = [
+		'taxonomy'   => GC_TIPTHEMA,
+		'hide_empty' => TRUE,
+		'orderby'    => 'name',
+		'order'      => 'ASC',
+	];
+	$terms = get_terms( $args );
+
+	if ( ! empty( $terms ) && ! is_wp_error( $terms ) ) {
+		$count = count( $terms );
+
+		foreach ( $terms as $term ) {
+
+			$themakleur = get_field( 'kleur_en_icoon_tipthema', GC_TIPTHEMA . '_' . $term->term_id );
+
+			if ( $themakleur ) {
+
+				$themakleuren[ $term->term_id ] = $themakleur;
+
+			} else {
+				// kleur ontbreekt
+			}
+		}
+	}
+
+	return $themakleuren;
+
+}
+
+//========================================================================================================
+
