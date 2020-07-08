@@ -14,7 +14,7 @@ function gb_add_textimage_block() {
 			'description'     => _x( 'Tekst en plaatje naast elkaar', 'Block description', 'gctheme' ),
 			'render_callback' => 'gb_render_textimage_block',
 			'category'        => 'gc-blocks',
-			'icon'            => 'megaphone', // todo: eigen icon voor dit block
+			'icon'            => 'id', // todo: eigen icon voor dit block
 			'keywords'        => [ 'link', 'text', 'image' ],
 		] );
 	}
