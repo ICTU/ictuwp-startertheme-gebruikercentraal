@@ -9,7 +9,7 @@ function gb_add_downloadblock() {
 
 		// register a testimonial block.
 		acf_register_block_type( [
-			'name'            => 'GC downloads',
+			'name'            => 'gc/downloads',
 			'title'           => _x( 'GC Downloads', 'Block titel', 'gctheme' ),
 			'description'     => _x( 'Lijst met downloads', 'Block description', 'gctheme' ),
 			'render_callback' => 'gb_render_download_block',

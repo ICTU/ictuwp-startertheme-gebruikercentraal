@@ -52,7 +52,10 @@ require_once( get_template_directory() . '/widgets/widget-over-ons.php' );
 // add the gutenberg blocks
 require_once( get_template_directory() . '/gutenberg-blocks/gutenberg-settings.php' );
 require_once( get_template_directory() . '/gutenberg-blocks/download-block.php' );
-
+require_once( get_template_directory() . '/gutenberg-blocks/cta-block.php' );
+require_once( get_template_directory() . '/gutenberg-blocks/related-block.php' );
+require_once( get_template_directory() . '/gutenberg-blocks/textimage-block.php' );
+require_once( get_template_directory() . '/gutenberg-blocks/links-block.php' );
 
 /**
  * Load other dependencies such as VAR DUMPER :D
@@ -662,3 +665,40 @@ function gc_wbvb_get_human_filesize( $bytes, $decimals = 2 ) {
 }
 
 //========================================================================================================
+
+function get_themakleuren() {
+
+	$themakleuren = [];
+
+	// alle tipthema's langs om de kleuren op te halen
+	$args  = [
+		'taxonomy'   => GC_TIPTHEMA,
+		'hide_empty' => TRUE,
+		'orderby'    => 'name',
+		'order'      => 'ASC',
+	];
+	$terms = get_terms( $args );
+
+	if ( ! empty( $terms ) && ! is_wp_error( $terms ) ) {
+		$count = count( $terms );
+
+		foreach ( $terms as $term ) {
+
+			$themakleur = get_field( 'kleur_en_icoon_tipthema', GC_TIPTHEMA . '_' . $term->term_id );
+
+			if ( $themakleur ) {
+
+				$themakleuren[ $term->term_id ] = $themakleur;
+
+			} else {
+				// kleur ontbreekt
+			}
+		}
+	}
+
+	return $themakleuren;
+
+}
+
+//========================================================================================================
+
