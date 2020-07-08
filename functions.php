@@ -39,6 +39,23 @@ define( 'HALFWIDTH', 'halfwidth' );
 define( 'IMG_SIZE_HUGE', 'feature-huge' );
 define( 'IMG_SIZE_HUGE_MIN_WIDTH', 1200 );
 
+//========================================================================================================
+
+//specific flavours functions
+
+$get_theme_option = get_option('gc2020_theme_options');
+$flavor_select = $get_theme_option['flavor_select'];
+
+
+if ( $flavor_select == "OD" ) {
+	require_once( __DIR__ . '/assets/od.php');
+	add_action( 'init', array( 'ICTUWP_GC_OD_registerposttypes', 'init' ), 1 );
+}
+
+
+
+//========================================================================================================
+
 
 // add the widgets
 if ( ! defined( 'WBVB_GC_ABOUTUS' ) ) {
@@ -598,3 +615,17 @@ if ( ! function_exists( 'od_wbvb_custom_post_title' ) ) {
 }
 
 //========================================================================================================
+<<<<<<< Updated upstream
+=======
+
+function gc_wbvb_get_human_filesize( $bytes, $decimals = 2 ) {
+	$sz     = 'BKMGTP';
+	$factor = floor( ( strlen( $bytes ) - 1 ) / 3 );
+
+	return sprintf( "%.{$decimals}f", $bytes / pow( 1024, $factor ) ) . @$sz[ $factor ] . 'B';
+}
+
+//========================================================================================================
+
+
+>>>>>>> Stashed changes
