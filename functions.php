@@ -55,6 +55,7 @@ require_once( get_template_directory() . '/gutenberg-blocks/download-block.php' 
 require_once( get_template_directory() . '/gutenberg-blocks/cta-block.php' );
 require_once( get_template_directory() . '/gutenberg-blocks/related-block.php' );
 require_once( get_template_directory() . '/gutenberg-blocks/textimage-block.php' );
+require_once( get_template_directory() . '/gutenberg-blocks/links-block.php' );
 
 /**
  * Load other dependencies such as VAR DUMPER :D

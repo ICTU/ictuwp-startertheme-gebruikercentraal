@@ -13,6 +13,24 @@ $context         = Timber::context();
 $timber_post     = Timber::query_post();
 $context['post'] = $timber_post;
 
+if ( 'ja' === get_field( 'downloads_tonen' ) && get_field( 'download_items' ) ) {
+
+	$context['downloads'] = download_block_get_data();
+
+}
+
+if ( 'ja' === get_field( 'gerelateerde_content_toevoegen' ) ) {
+
+	$context['related'] = related_block_get_data();
+
+}
+
+if ( 'ja' === get_field( 'links_tonen' ) ) {
+
+	$context['links'] = links_block_get_data();
+
+}
+
 if ( post_password_required( $timber_post->ID ) ) {
 	Timber::render( 'single-password.twig', $context );
 } else {

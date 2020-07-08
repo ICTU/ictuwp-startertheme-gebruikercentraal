@@ -30,6 +30,14 @@
         } %}
       {% endif %}
 
+      {% if links %}
+        {% include 'sections/section-links.html.twig' with {
+          'section_title': links.title,
+          'section_descr': links.desc,
+          'items': links.items
+        } %}
+      {% endif %}
+
     </section>
   </article>
 

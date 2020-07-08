@@ -32,13 +32,18 @@ if ( 'ja' === get_field( 'downloads_tonen' ) && get_field( 'download_items' ) ) 
 
 }
 
-//if ( 'ja' === get_field( 'gerelateerde_content_toevoegen' ) && get_field( 'download_items' ) ) {
 if ( 'ja' === get_field( 'gerelateerde_content_toevoegen' ) ) {
 
 	$context['related'] = related_block_get_data();
 
+}
+
+if ( 'ja' === get_field( 'links_tonen' ) ) {
+
+	$context['links'] = links_block_get_data();
 
 }
+
 
 Timber::render( [
 	'page-' . $timber_post->post_name . '.twig',
