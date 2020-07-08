@@ -1,6 +1,6 @@
 {
     "key": "group_5c8f9ba967736",
-    "title": "Gerelateerde content",
+    "title": "GC - gerelateerde content",
     "fields": [
         {
             "key": "field_5c8fe203a8435",
@@ -153,8 +153,8 @@
             "elements": [
                 "featured_image"
             ],
-            "min": "",
-            "max": "",
+            "min": 1,
+            "max": 3,
             "return_format": "object"
         },
         {
@@ -189,7 +189,7 @@
         },
         {
             "key": "field_5f033df83c8e7",
-            "label": "Gerelateerde taxonomie: speelsets",
+            "label": "Speelsets",
             "name": "content_block_taxonomy_speelsets",
             "type": "taxonomy",
             "instructions": "",
@@ -249,5 +249,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1594117955
+    "modified": 1594214358
 }
