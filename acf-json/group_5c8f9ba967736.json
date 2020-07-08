@@ -142,7 +142,8 @@
             "post_type": [
                 "post",
                 "page",
-                "tips"
+                "tips",
+                "event"
             ],
             "taxonomy": "",
             "filters": [
@@ -239,6 +240,27 @@
                 "operator": "==",
                 "value": "acf\/gc-related"
             }
+        ],
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "event"
+            }
+        ],
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "location"
+            }
+        ],
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "event-recurring"
+            }
         ]
     ],
     "menu_order": 0,
@@ -249,5 +271,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1594214358
+    "modified": 1594215180
 }
