@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Gebruiker Centraal (2020)\n"
-"POT-Creation-Date: 2020-06-16 16:08+0200\n"
-"PO-Revision-Date: 2020-06-16 16:08+0200\n"
+"POT-Creation-Date: 2020-06-30 11:25+0200\n"
+"PO-Revision-Date: 2020-06-30 11:25+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: nl_NL\n"
@@ -24,25 +24,89 @@ msgstr ""
 "X-Poedit-SearchPathExcluded-2: templates\n"
 "X-Poedit-SearchPathExcluded-3: tests\n"
 
-#: functions.php:129
+#: functions.php:142
 msgctxt "menu location"
 msgid "Menu in header"
 msgstr ""
 
-#: functions.php:130
+#: functions.php:143
 msgctxt "menu location"
 msgid "Menu in footer"
 msgstr ""
 
-#: functions.php:347
+#: functions.php:194
+#, php-format
+msgctxt "Alt-tekst op logo"
+msgid "Logo %s"
+msgstr ""
+
+#: functions.php:202
+msgctxt "skiplinks"
+msgid "Jump to main content"
+msgstr "Direct naar de belangrijkste inhoud"
+
+#: functions.php:204
+msgctxt "skiplinks"
+msgid "Jump to main navigation"
+msgstr "Direct naar de hoofdnavigatie"
+
+#: functions.php:441
 msgctxt "Widget area"
 msgid "Footer widget left"
 msgstr ""
 
-#: functions.php:356
+#: functions.php:450
 msgctxt "Widget area"
 msgid "Footer widget right"
 msgstr ""
+
+#: functions.php:572
+msgctxt "customizer"
+msgid "Gebruiker Centraal Instellingen"
+msgstr ""
+
+#: functions.php:573
+msgctxt "customizer"
+msgid ""
+"Selecteer hier het kleurenschema voor deze site. Je wijzigt hiermee de "
+"styling, logo en sommige functionaliteit van de site."
+msgstr ""
+
+#: functions.php:596
+msgctxt "customizer"
+msgid "Kies het kleurenschema"
+msgstr ""
+
+#: gutenberg-blocks/download-block.php:13
+msgctxt "Block titel"
+msgid "GC Downloads"
+msgstr ""
+
+#: gutenberg-blocks/download-block.php:14
+msgctxt "Block description"
+msgid "Lijst met downloads"
+msgstr ""
+
+#: gutenberg-blocks/download-block.php:58
+#, php-format
+msgctxt "Lange linktekst voor een download"
+msgid "Download %s"
+msgstr ""
+
+#: gutenberg-blocks/download-block.php:61
+msgctxt "Korte linktekst voor een download"
+msgid "Download"
+msgstr ""
+
+#: gutenberg-blocks/download-block.php:116
+msgctxt "Titel boven downloads"
+msgid "Downloads"
+msgstr ""
+
+#: gutenberg-blocks/gutenberg-settings.php:17
+msgctxt "Block-categorie"
+msgid "Gebruiker Centraal"
+msgstr "Gebruiker Centraal-blocks"
 
 #: single-tips.php:85
 #, php-format
@@ -68,6 +132,12 @@ msgstr ""
 #: single-tips.php:137
 msgctxt "Titel boven conclusie"
 msgid "Conclusie"
+msgstr ""
+
+#: template-alle-tips.php:79
+#, php-format
+msgctxt "Label tip-ummer"
+msgid "Tip %s"
 msgstr ""
 
 #: template-sitemap.php:25

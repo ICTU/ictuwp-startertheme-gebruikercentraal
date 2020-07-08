@@ -1,0 +1,26 @@
+{#
+ /** Metadata
+ * Template for displaying metadata
+ *
+ * Variables:
+ * - items: all metadatada items
+ *
+ * Per metadata item
+ * - title: Title, is visually hidden
+ * - descr: The item itself
+ * - itemprop: Optional, if the item needs a itemprop
+ * - classname: The classname for metadata. Can be used for displaying proper item. Uses lowercase title if empty
+ *
+ * SCSS:
+ * - components/meta-data.scss
+ */
+#}
+
+<div class="meta-data">
+  <dl class="meta-data__list">
+    {% for item in items %}
+      <dt class="visually-hidden">{{ item.title }}</dt>
+      <dd class="meta-data__item {{ item.classname ? item.classname : item.title|lower }}"{{ item.itemprop ? ' itemprop="'~ item.itemprop ~'"' }}>{{ item.descr }}</dd>
+    {% endfor %}
+  </dl>
+</div>

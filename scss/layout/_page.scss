@@ -54,12 +54,57 @@ html {
   @include ho-container;
 }
 
+
+.page__intro {
+  @include gc-box-shadow();
+  @include ho-container-content;
+  background: $white;
+
+  header {
+    padding: 2rem;
+  }
+
+  @include bp-up(md){
+    header {
+      padding: 3rem 5rem;
+      background: $intro-bg;
+
+      h1, h2, a {
+        color: $intro-color;
+      }
+    }
+  }
+
+  p {
+    padding: 2rem;
+
+    @include bp-up(md){
+      padding: 1rem 5rem 3rem;
+    }
+  }
+
+
+  .page--overview-header-lg & {
+    max-width: $max-width-content;
+
+    p {
+      max-width: $max-width-inner;
+      margin: 3rem auto;
+
+      &:last-child {
+        padding-bottom: 3rem;
+      }
+    }
+  }
+}
+
 .content {
   position: relative;
   background: $white;
   max-width: $max-width-content;
   margin: 0 auto;
   padding-top: 3rem;
+  padding-bottom: 5rem;
 
   @include bp-up(md) {
     padding-top: 5rem;
@@ -67,6 +112,7 @@ html {
 
   @include bp-up(lg) {
     padding-top: 7rem;
+    padding-bottom: 7rem;
   }
 }
 

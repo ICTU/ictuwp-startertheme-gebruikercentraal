@@ -1,5 +1,5 @@
+@import "../assets/fonts/fonts.css";
 
-@import "abstracts/variables";
 @import "abstracts/mixins";
 @import "abstracts/extendables";
 @import "abstracts/icons";
@@ -20,9 +20,9 @@
 @import "layout/page-overview";
 
 /* Entry types */
-@import "components/single";
-@import "components/single-event";
-@import "components/single-tipkaart";
+@import "components/post";
+@import "components/post-tipkaart";
+//@import "components/single-event";
 
 /* Sections */
 @import "components/section";
@@ -43,6 +43,7 @@
 @import "components/social";
 @import "components/teaser";
 @import "components/list";
+@import "components/overview";
 @import "components/video";
 
 

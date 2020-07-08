@@ -177,9 +177,8 @@ function baseStyles(done) {
     .pipe(sass().on('error', sass.logError))
     .pipe(autoprefixer('last 2 version'))
     .pipe(sourcemaps.write('.'))
-    .pipe(gulp.dest('assets/css'))
-    .pipe(notify({message: 'Regular Styles task complete'}))
-    .pipe(browserSync.stream());
+    .pipe(gulp.dest('../assets/css'))
+    .pipe(notify({message: 'Base Styles task complete'}))
 
   done();
 }
@@ -244,7 +243,7 @@ function watch() {
   // Watch basetheme + flavor
   if (!(siteConfig.shortname === 'gc_base')) {
     console.log("Extra folder in de gaten houden, want " + siteConfig.shortname + ': ' + siteConfig.path + 'scss/');
-    gulp.watch('../scss/**/*.scss', baseStyles);
+    gulp.watch('../scss/**/*.scss', gulp.series(baseStyles, styles));
   }
 
   // Watch flavor from siteconfog
