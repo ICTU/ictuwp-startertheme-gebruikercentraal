@@ -1,6 +1,6 @@
 {
     "key": "group_5efa247d90410",
-    "title": "Downloads",
+    "title": "GC - Lijst met downloads",
     "fields": [
         {
             "key": "field_5efa247da4f57",
@@ -315,5 +315,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1593465812
+    "modified": 1594215891
 }
