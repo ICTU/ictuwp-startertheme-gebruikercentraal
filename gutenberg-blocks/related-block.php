@@ -42,7 +42,6 @@ function gb_render_related_block( $block, $content = '', $is_preview = FALSE ) {
 }
 
 
-
 /*
  * returns an array for the related section
  */
@@ -53,66 +52,96 @@ function related_block_get_data() {
 
 	if ( 'ja' === get_field( 'gerelateerde_content_toevoegen' ) ) {
 
-		$featured_posts = get_field( 'content_block_items' );
-		$themakleuren   = [];
+		if ( 'posts' === get_field( 'content_block_types' ) ) {
 
-		if ( $featured_posts ):
+			$featured_posts = get_field( 'content_block_items' );
+			$themakleuren   = [];
 
-			foreach ( $featured_posts as $post ):
+			if ( $featured_posts ):
 
-				$item['title'] = get_the_title( $post );
+				foreach ( $featured_posts as $post ):
 
-				$item          = [];
-				$item['title'] = get_the_title( $post );
-				$item['descr'] = get_the_excerpt( $post );
-				$item['type']  = get_post_type( $post );
-				$item['url']   = get_the_permalink( $post );
-				$image         = get_the_post_thumbnail( $post->ID, 'large', [] );
-				$item['img']   = $image;
+					$item['title'] = get_the_title( $post );
 
-				if ( 'tips' == get_post_type( $post ) ) {
+					$item          = [];
+					$item['title'] = get_the_title( $post );
+					$item['descr'] = get_the_excerpt( $post );
+					$item['type']  = get_post_type( $post );
+					$item['url']   = get_the_permalink( $post );
+					$image         = get_the_post_thumbnail( $post->ID, 'large', [] );
+					$item['img']   = $image;
 
-					// het is een tip
-					// eerst checken of we al alle themakleuren hebben
-					if ( ! $themakleuren ) {
-						$themakleuren = get_themakleuren();
+					if ( 'tips' == get_post_type( $post ) ) {
+
+						// het is een tip
+						// eerst checken of we al alle themakleuren hebben
+						if ( ! $themakleuren ) {
+							$themakleuren = get_themakleuren();
+						}
+
+						$item['nr']     = sprintf( _x( 'Tip %s', 'Label tip-nummer', 'gctheme' ), get_post_meta( $post->ID, 'tip-nummer', TRUE ) );
+						$item['toptip'] = FALSE;
+						$is_toptip      = get_post_meta( $post->ID, 'is_toptip', TRUE );
+
+						if ( $is_toptip ) {
+							$item['toptip']      = TRUE;
+							$item['toptiptekst'] = 'Toptip';
+						}
+
+						$taxonomie = get_the_terms( $post->ID, GC_TIPTHEMA );
+
+						if ( isset( $themakleuren[ $taxonomie[0]->term_id ] ) ) {
+							$item['category'] = $themakleuren[ $taxonomie[0]->term_id ];
+						}
+
+
+					} elseif ( 'post' == get_post_type( $post ) ) {
+
+						$item['meta'][] = [
+							'title' => 'author',
+							'descr' => get_the_author_meta( 'display_name', $post->post_author ),
+						];
+
+						$item['meta'][] = [
+							'title' => 'date',
+							'descr' => get_the_time( get_option( 'date_format' ), $post->ID ),
+						];
+
 					}
 
-					$item['nr']     = sprintf( _x( 'Tip %s', 'Label tip-nummer', 'gctheme' ), get_post_meta( $post->ID, 'tip-nummer', TRUE ) );
-					$item['toptip'] = FALSE;
-					$is_toptip      = get_post_meta( $post->ID, 'is_toptip', TRUE );
+					$return['items'][] = $item;
 
-					if ( $is_toptip ) {
-						$item['toptip']      = TRUE;
-						$item['toptiptekst'] = 'Toptip';
+				endforeach;
+
+			endif;
+
+		} elseif ( 'taxonomie_speelset' === get_field( 'content_block_types' ) ) {
+
+			$terms = get_field( 'content_block_taxonomy_speelsets' );
+
+			if ( $terms ):
+
+				foreach ( $terms as $term ):
+
+					$item          = [];
+					$item['title'] = esc_html( $term->name );
+					//					$item['type']  = 'speelset';
+					$item['descr'] = esc_html( $term->description );
+					$item['url']   = esc_url( get_term_link( $term ) );
+					$image         = get_field( 'speelset_uitgelichte_afbeelding', $term );
+
+					if ( $image ) {
+
+						$size        = 'medium';
+						$item['img'] = '<img src="' . esc_url( $image['sizes'][ $size ] ) . '" alt="' . esc_attr( $image['alt'] ) . '" />';
+
 					}
+					$return['items'][] = $item;
 
-					$taxonomie = get_the_terms( $post->ID, GC_TIPTHEMA );
+				endforeach;
+			endif;
 
-					if ( isset( $themakleuren[ $taxonomie[0]->term_id ] ) ) {
-						$item['category'] = $themakleuren[ $taxonomie[0]->term_id ];
-					}
-
-
-				} elseif ( 'post' == get_post_type( $post ) ) {
-
-					$item['meta'][] = [
-						'title' => 'author',
-						'descr' => get_the_author_meta( 'display_name', $post->post_author ),
-					];
-
-					$item['meta'][] = [
-						'title' => 'date',
-						'descr' => get_the_time( get_option( 'date_format' ), $post->ID ),
-					];
-
-				}
-
-				$return['items'][] = $item;
-
-			endforeach;
-
-		endif;
+		}
 
 		$columncounter = '2';
 
@@ -126,10 +155,16 @@ function related_block_get_data() {
 
 		$return['columncounter'] = $columncounter;
 
+		if ( ! 'none' === get_field( 'content_block_modifier' ) ) {
+			// we moeten wel een achtergrondje tonen
+			$return['modifier'] = get_field( 'content_block_modifier' );
+		}
+
 		if ( $return['items'] ) {
 			$return['description'] = get_field( 'content_block_description' ) ? get_field( 'content_block_description' ) : '';
 			$return['title']       = get_field( 'content_block_title' ) ? get_field( 'content_block_title' ) : '';
 		}
+
 
 	}
 
