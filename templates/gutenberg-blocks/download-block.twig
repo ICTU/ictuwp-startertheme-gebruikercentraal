@@ -1,0 +1,30 @@
+{#
+/**
+ * Block Name: GC downloads
+ *
+ * Gutenberg block voor het tonen van een lijst met downloads
+ */
+#}
+
+{% if is_preview %}
+  <style type="text/css">
+    #download-{{ block.id }} {
+      margin-top: 0;
+      overflow: hidden;
+    }
+  </style>
+{% endif %}
+
+  {% if downloads %}
+    {% include 'sections/section-downloads.html.twig' with {
+      'id': "download-" ~ block.id,
+      'title': downloads.title,
+      'descr': downloads.desc,
+      'items': downloads.items
+    } %}
+  {% else %}
+    {% if is_preview %}
+      <!-- ik weet niet of het handig is om dit te stylen, maar zo weet de redacteur in ieder geval dat het een aanwijzing is -->
+      <p style="background: black; color: white; padding: 1rem; line-height: 1.5;">Kies 'ja' om dit download-block te gebruiken en voer 1 of meer downloads in.</p>
+    {% endif %}
+  {% endif %}

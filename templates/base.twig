@@ -9,13 +9,12 @@
 
 <div class="site-container">
 
-  <ul id="skiplinks">
-    <li><a href="#maincontent">{{ __( 'Direct naar belangrijkste content', 'gctheme' ) }}</a></li>
+  <ul id="{{ skiplinks_id }}">
+    <li><a href="#{{ maincontent_id }}">{{ maincontent_id_linktext }}</a></li>
     {% if menu %}
-      <li><a href="#mainnav">{{ __( 'Direct naar hoofdnavigatie', 'gctheme' ) }}</a></li>
+      <li><a href="#{{ mainnav_id }}">{{ mainnav_id_linktext }}</a></li>
     {% endif %}
   </ul>
-
 
   <header class="page-header">
 
@@ -32,13 +31,17 @@
 
   <div class="page-content">
 
-    <main class="content">
+    <main class="content" id="{{ maincontent_id }}">
       {% block content %}
         Sorry, no content
       {% endblock %}
 
     </main>
 
+
+    {% block page_bottom %}
+
+    {% endblock %}
   </div>
 
   {% block footer %}

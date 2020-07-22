@@ -1,0 +1,111 @@
+{# This file demonstrates using most of the index.twig template and modifying
+   just a small part. See `search.twig` for an example of another approach #}
+
+{% extends "archive.twig" %}
+
+{% block archive_intro %}
+
+  {% if author %}
+
+    <section class="author author--full {{ author.image ? 'l-with-image' : 'l-without-image' }}">
+
+      {% if author.image %}
+        <figure class="author__image">
+          <img src="{{ author.image }}" class="author-photo photo avatar" alt="{{ author.title }}">
+        </figure>
+
+      {% endif %}
+
+      <div class="author__content">
+        <div class="l-author-header">
+          <h1 class="page__title">{{ author.title }}</h1>
+          {% if author.function %}
+            <div class="author__function">{{ author.function }}</div>
+          {% endif %}
+        </div>
+
+        {% if author.descr %}
+
+          {{ author.descr }}
+
+        {% endif %}
+
+        {% if author.contact %}
+
+          <div class="author__contact-info">
+
+            {% for key, link in author.contact %}
+
+              {% set url = link %}
+
+              {% if key == 'email' %}
+                {% set url = 'mailto:' ~ link %}
+              {% elseif key == 'phone' %}
+                {% set url = 'tel:' ~ link %}
+              {% endif %}
+
+              <a href="{{ url }}" class="link link--contact link--{{ key }}"
+                 title="E-mail adres van {{author.title}}">{{ link }}</a>
+
+            {% endfor %}
+
+          </div>
+
+        {% endif %}
+
+          {% if author.social %}
+
+            <ul class="social-links">
+              <li class="social-links__item">
+                <a href="#" class="link link--social linkedin" title="Linked-In profiel van Gebruiker Centraal Auteur">Linked-In
+                  profiel van Gebruiker Centraal Auteur</a></li>
+              <li class="social-links__item">
+                <a href="#" class="link link--social twitter" title="Twitter van Gebruiker Centraal Auteur">Twitter
+                  van Gebruiker Centraal Auteur</a></li>
+              <li class="social-links__item">
+                <a href="#" class="link link--social facebook" title="Facebook van Gebruiker Centraal Auteur">Facebook
+                  van Gebruiker Centraal Auteur</a></li>
+            </ul>
+
+          {% endif %}
+        </div>
+
+    </section>
+
+  {% endif %}
+
+{% endblock %}
+
+
+{% block archive_overview %}
+
+  <div class="archive__posts">
+    {{ overview.title ? '<h2 class="archive__title">' ~ overview.title ~ '</h2>' }}
+
+    <div class="grid grid--{{ overview.modifier ? overview.modifier : 'col-3' }}">
+      {% for post in posts %}
+
+
+        {% set cat = '' %}
+
+        {% set template = post.post_type == 'tips' ? 'card--tipkaart' : 'card' %}
+
+        {% for term in post.terms %}
+          {% if term.taxonomy == 'tipthema' %}
+            {% set cat = term.name|lower %}
+          {% endif %}
+        {% endfor %}
+
+        {% include 'components/'~ template ~'.html.twig' with {
+          'title': post.post_title,
+          'nr': post.tip_nummer,
+          'category': cat,
+          'url': post.link
+        } %}
+
+      {% endfor %}
+
+    </div>
+
+  </div>
+{% endblock %}

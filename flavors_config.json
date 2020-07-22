@@ -1,0 +1,66 @@
+{
+  "GC": {
+    "name": "Gebruiker Centraal",
+    "shortname": "gc",
+    "site_logo": "/assets/images/logo/gc-logo.svg",
+    "jsfiles": {
+      "js1": {
+        "handle": "main-min",
+        "file": "/assets/js/main-min.js",
+        "version": "",
+        "dependencies": "",
+        "infooter": ""
+      }
+    },
+    "cssfiles": {
+      "Fonts": {
+        "handle": "skiplinks",
+        "file": "/assets/fonts/fonts.css",
+        "version": "",
+        "dependencies": ""
+      },
+      "Styling": {
+        "handle": "gc-theme",
+        "file": "/assets/css/gc-theme.css",
+        "version": "",
+        "dependencies": ""
+      }
+    }
+  },
+  "OD": {
+    "name": "Optimaal Digitaal",
+    "shortname": "od",
+    "site_logo": "/assets/images/logo/od.svg",
+    "cssfiles": {
+      "Fonts": {
+        "handle": "skiplinks",
+        "file": "/assets/fonts/fonts.css",
+        "version": "",
+        "dependencies": ""
+      },
+      "css1": {
+        "handle": "od-theme",
+        "file": "/flavors/optimaaldigitaal/assets/css/od-theme.css",
+        "version": "",
+        "dependencies": ""
+      }
+    }
+  },
+  "RDAM": {
+    "name": "Rotterdammer Centraal",
+    "shortname": "rdam",
+    "site_logo": "/assets/images/logo/logo-rotterdammercentraal.svg"
+  },
+  "DIRECTDUIDELIJK": {
+    "name": "Direct Duidelijk Tour",
+    "shortname": "rdam",
+    "site_logo": "/assets/images/logo/beeldmerk-dd-tour.svg"
+  },
+  "NLDESIGN": {
+    "name": "NL Design Sysem",
+    "shortname": "nlds",
+    "site_logo": "/assets/images/logo/gc-nlds-beeldmerk.svg"
+  }
+}
+
+

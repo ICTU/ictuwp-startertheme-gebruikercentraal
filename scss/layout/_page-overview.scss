@@ -38,7 +38,7 @@
   &--overview-archive {
     .entry--type-overview {
       .page__intro {
-        max-width: $max-width-inner;
+        @include ho-container-content;
         position: relative;
         z-index: 10;
       }
@@ -55,6 +55,32 @@
   }
 }
 
+.archive__posts {
+  @include ho-container;
+  padding-bottom: 5rem;
+  margin-top: 3rem;
+  margin-left: -2rem;
+  margin-right: -2rem;
+
+  @include bp-up(md){
+    margin-right:-3rem;
+    margin-left: -3rem;
+  }
+
+  @include bp-up(lg){
+    margin-top: 8rem;
+    padding-bottom: 12rem;
+  }
+}
+
+.archive__title {
+  @include gc_section-header;
+  text-align: center;
+
+  + .grid {
+    margin-top: $gutter;
+  }
+}
 
 .overview__item-wrapper {
   .teaser {

@@ -119,22 +119,23 @@
   background: $gc-a11y-green-dark;
 }
 
-.page--type-author {
+
+.archive {
+  background: $gc-pantybrown-light;
+}
+
+.tax-tipgever{
   .page-content {
-    background: $gc-pantybrown-light;
+    padding-bottom: 0;
   }
+}
 
-  .content > .section--bg-option {
-    &:before {
-      background: url('../images/b_section-bg-option.svg') 0 100% no-repeat;
+.archive__posts {
+  @include ho-padding;
+  @include od-background-option();
+  max-width: none;
 
-      @include bp-up(xlg){
-        background-size: 120% auto;
-      }
-    }
-
-    &:after {
-      display: none;
-    }
+  &:after {
+    display: none;
   }
 }

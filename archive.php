@@ -14,11 +14,19 @@
  * @since   Timber 0.2
  */
 
-$templates = array( 'archive.twig', 'index.twig' );
+
+$archive       = get_queried_object();
+$taxonomy_name = $archive->taxonomy;
+
+$templates = [
+	'archive-' . $taxonomy_name . '.twig',
+	'archive.twig',
+	'index.twig',
+];
 
 $context = Timber::context();
 
-$context['title'] = 'Archive';
+
 if ( is_day() ) {
 	$context['title'] = 'Archive: ' . get_the_date( 'D M Y' );
 } elseif ( is_month() ) {
@@ -26,15 +34,95 @@ if ( is_day() ) {
 } elseif ( is_year() ) {
 	$context['title'] = 'Archive: ' . get_the_date( 'Y' );
 } elseif ( is_tag() ) {
-	$context['title'] = single_tag_title( '', false );
+	$context['title'] = single_tag_title( '', FALSE );
 } elseif ( is_category() ) {
-	$context['title'] = single_cat_title( '', false );
+	$context['title'] = single_cat_title( '', FALSE );
 	array_unshift( $templates, 'archive-' . get_query_var( 'cat' ) . '.twig' );
 } elseif ( is_post_type_archive() ) {
-	$context['title'] = post_type_archive_title( '', false );
+	$context['title'] = post_type_archive_title( '', FALSE );
 	array_unshift( $templates, 'archive-' . get_post_type() . '.twig' );
 }
 
-$context['posts'] = new Timber\PostQuery();
+// Set vars
+$context['title'] = get_the_archive_title();
+
+// If term archive
+if ( isset( $context['archive_term'] ) && ! empty( $context['archive_term']['descr'] ) ) {
+	$context['descr'] = $context['archive_term']['descr'];
+}
+
+$posts = new Timber\PostQuery();
+
+
+// Set data for overview
+$context['overview'] = [];
+
+// Set data for tipkaarts
+if ( $context['pagetype'] === 'archive_tipthema' ) {
+
+	// Set data for overview
+	$i = 0;
+	foreach ( $posts as $post ) {
+		$i ++;
+
+		if ( $post->type->name == 'tips' ) {
+			$terms = get_the_terms( $post->ID, 'tipthema' );
+
+			$items[ $i ]['title']    = $post->post_title;
+			$items[ $i ]['nr']       = $post->tip_nummer;
+			$items[ $i ]['category'] = $terms[0]->name;
+			$items[ $i ]['url']      = get_permalink( $post );
+		}
+	}
+
+	$context['overview']['items']    = $items;
+	$context['overview']['template'] = 'card--tipkaart';
+	$context['overview']['modifier'] = '4col';
+
+} else {
+	$context['posts'] = new Timber\PostQuery();
+}
+
+// For tipgevers taxonomy - set modifier for 4col
+
+if ( $taxonomy_name === 'tipgever' ) {
+
+	//dump($archive);
+
+	// Get all data from the term
+	$cat    = get_term( $archive->term_id );
+	$author = get_term_meta( $archive->term_id );
+
+	// Get fields
+	$image = get_field( 'tipgever_foto', $archive );
+
+	// Set up contact links
+	$contact = [];
+	$ci      = 0;
+
+	if ( ! empty( $author['tipgever_telefoonnummer'][0] ) ) {
+		$contact['phone'] = $author['tipgever_telefoonnummer'][0];
+	}
+
+	if ( ! empty( $author['tipgever_mail'][0] ) ) {
+		$contact['email'] = $author['tipgever_mail'][0];
+	}
+
+
+	// Set author vars
+	$context['author']['title']    = $archive->name;
+	$context['author']['function'] = ( $author['tipgever_functietitel'][0] ? $author['tipgever_functietitel'][0] : '' );
+	$context['author']['image']    = ( $image ? $image['sizes']['medium'] : '' );
+	$context['author']['descr']    = ( $cat->description ? $cat->description : '' );
+	$context['author']['contact']  = ( $contact ? $contact : '' );
+
+
+	// Set overview
+	$fullname = explode( ' ', trim( $archive->name ) );
+
+	// Set 4 column grid for tipgevers. Default is col-3
+	$context['overview']['modifier'] = 'col-4';
+	$context['overview']['title']    = 'Tips van ' . $fullname[0];
+}
 
 Timber::render( $templates, $context );

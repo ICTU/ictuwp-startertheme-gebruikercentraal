@@ -19,6 +19,7 @@
 	  "timber/timber": "1.*"
   },
   "require-dev": {
-    "phpunit/phpunit": "5.7.16|6.*"
+    "phpunit/phpunit": "5.7.16|6.*",
+    "symfony/var-dumper": "^5.1"
   }
 }

@@ -44,7 +44,7 @@
                 </div>
               </div>
 
-              {% if item.author %}
+              {% if item.author and item.author.name %}
 
                 <div class="example__author">
 
@@ -71,13 +71,10 @@
 
       {% endif %}
 
-
-
       {% if why or research %}
+        <div class="research {{ why.description ? 'research--with-why' : 'research--without-why' }}{{ research.description ? '' : ' research--without-descr' }}">
 
-        <div class="research">
-
-          {% if why %}
+          {% if not why.description is empty %}
             <div class="l-why-wrapper">
               <div class="research__why">
                 <h2 class="research__title">{{ why.title }}</h2>
@@ -120,17 +117,33 @@
 
       {% if downloads %}
         {% include 'sections/section-downloads.html.twig' with {
-          'title': 'Downloads',
-          'items': downloads
+          'title': downloads.title,
+          'descr': downloads.desc,
+          'items': downloads.items
         } %}
       {% endif %}
 
-      {% include 'sections/section-links.html.twig' with {
-        'section_title': _x('Links', 'Section title links', 'gctheme'),
-        'items': links
-      } %}
+      {% if links %}
+
+        {% include 'sections/section-links.html.twig' with {
+          'section_title': _x('Links', 'Section title links', 'gctheme'),
+          'items': links
+        } %}
+      {% endif %}
 
     </div>
   </article>
 
+{% endblock %}
+
+
+{% block page_bottom %}
+
+  {% include 'sections/section-overview.html.twig' with {
+    'items': related.items,
+    'title': related.title,
+    'template' : 'card--tipkaart',
+    'cta': related.cta,
+    'modifier' : 'bg-option'
+  } %}
 {% endblock %}
