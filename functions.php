@@ -615,8 +615,6 @@ if ( ! function_exists( 'od_wbvb_custom_post_title' ) ) {
 }
 
 //========================================================================================================
-<<<<<<< Updated upstream
-=======
 
 function gc_wbvb_get_human_filesize( $bytes, $decimals = 2 ) {
 	$sz     = 'BKMGTP';
@@ -628,4 +626,130 @@ function gc_wbvb_get_human_filesize( $bytes, $decimals = 2 ) {
 //========================================================================================================
 
 
->>>>>>> Stashed changes
+add_action('init', 'add_tips_url_json');
+function add_tips_url_json()
+{
+	add_feed( 'tips-json', 'mza_create_json_feed' );
+}
+
+
+
+
+
+function mza_create_json_feed()
+{
+	// $perpage = $_GET['per_page'];
+	$page = $_GET['page'];
+
+
+
+
+
+
+
+
+
+	$args = array(
+		'post_type'      => 'tips',
+		'posts_per_page' => 50,
+
+
+		'paged'          => $page,
+
+
+
+
+	);
+
+
+
+
+
+
+
+	$tips_query = new WP_Query( $args );
+
+
+	$pagedid = $tips_query->query['paged'];
+
+
+
+
+
+	if ( $tips_query->have_posts() ) : while ( $tips_query->have_posts() ) :
+
+
+
+
+		$tips_query->the_post();
+
+		$images = get_attached_media('image');
+		$afbeeldingarray = array();
+		foreach ($images as $image){
+
+			$imageid = $image->ID;
+
+			$afbeeldingarray[] = array(
+				'id' => "$imageid",
+				'url' => wp_get_attachment_url( $image->ID )
+			);
+
+
+
+
+		}
+
+		shuffle($afbeeldingarray);
+
+
+
+		$functionteam = get_post_meta( get_the_ID(),'employee_function',true );
+
+
+
+
+
+
+
+		$imgthumb = wp_get_attachment_image_src(get_post_thumbnail_id(get_the_ID()), 'medium');
+		$movie_data[] = array(
+			'title' => mb_convert_encoding(get_the_title(), "UTF-8", "HTML-ENTITIES"),
+			'commentsEnabled' => false,
+			'date' => get_the_date(),
+			'commentsPostUrl' => '',
+			'commentsUrl' => '',
+			'content' => get_the_content(),
+			'id' => get_the_id(),
+			'largeThumbnail' => get_the_post_thumbnail_url(get_the_ID(),'medium'),
+			'thumbnail' => get_the_post_thumbnail_url(get_the_ID(),'medium'),
+			'originalThumbnail' => get_the_post_thumbnail_url(get_the_ID(),'full'),
+			'smallThumbnail' => get_the_post_thumbnail_url(get_the_ID(),'medium'),
+			'images' => $afbeeldingarray,
+			'isFeatured' => get_post_thumbnail_id(),
+			'type'=> 'article',
+			'summary' => $functionteam,
+			'url' => get_permalink()
+
+
+		);
+
+	endwhile;
+		wp_reset_postdata();
+	endif;
+
+	$next_page = $pagedid+ 1;
+	function getUrl($startRow) {
+		$url = preg_replace('@&page=[\d]+@', '', $_SERVER['REQUEST_URI']);
+		return $url.'&page='.$startRow;
+	}
+
+	update_post_meta(865, 'called_link', $_SERVER['REQUEST_URI']);
+
+
+
+
+	header("Access-Control-Allow-Origin: *");
+	header('Content-Type\': \'application/json\'');
+
+	wp_send_json( array('generated_in'=>'0.0016','items' => $movie_data,'next_page'=>"",'stat'=>'ok','url'=>get_home_url()) );
+}

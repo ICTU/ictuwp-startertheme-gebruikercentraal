@@ -1,0 +1,387 @@
+{
+    "key": "group_5c802617011f8",
+    "title": "Knowledge Base Options Style",
+    "fields": [
+        {
+            "key": "field_5c8043f409b6f",
+            "label": "Style",
+            "name": "pakb_theme",
+            "type": "select",
+            "instructions": "More styles coming soon.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "origin": "Origin"
+            },
+            "default_value": [
+                "origin"
+            ],
+            "allow_null": 0,
+            "multiple": 0,
+            "ui": 0,
+            "return_format": "value",
+            "ajax": 0,
+            "placeholder": ""
+        },
+        {
+            "key": "field_5c3dfab94a3ff",
+            "label": "Layout",
+            "name": "pakb_origin_layout",
+            "type": "radio",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_5c8043f409b6f",
+                        "operator": "==",
+                        "value": "origin"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "1": "List",
+                "2": "Boxes"
+            },
+            "allow_null": 0,
+            "other_choice": 0,
+            "default_value": 2,
+            "layout": "vertical",
+            "return_format": "value",
+            "save_other_choice": 0
+        },
+        {
+            "key": "field_5c3dfdf45b3ad",
+            "label": "Columns",
+            "name": "pakb_origin_columns",
+            "type": "radio",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_5c8043f409b6f",
+                        "operator": "==",
+                        "value": "origin"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "2": "2 Columns",
+                "3": "3 Columns",
+                "4": "4 Columns"
+            },
+            "allow_null": 0,
+            "other_choice": 0,
+            "default_value": 3,
+            "layout": "vertical",
+            "return_format": "value",
+            "save_other_choice": 0
+        },
+        {
+            "key": "field_5c3f82b5afc5b",
+            "label": "Primary Color",
+            "name": "pakb_origin_primary",
+            "type": "color_picker",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_5c8043f409b6f",
+                        "operator": "==",
+                        "value": "origin"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "#3384FF"
+        },
+        {
+            "key": "field_5c3f83a1afc5d",
+            "label": "Secondary Color",
+            "name": "pakb_origin_secondary",
+            "type": "color_picker",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_5c8043f409b6f",
+                        "operator": "==",
+                        "value": "origin"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "#222222"
+        },
+        {
+            "key": "field_5c3f8360afc5c",
+            "label": "Muted Color",
+            "name": "pakb_origin_muted",
+            "type": "color_picker",
+            "instructions": "Breadcrumbs, article meta, view all links.",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_5c8043f409b6f",
+                        "operator": "==",
+                        "value": "origin"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "#AEB4BB"
+        },
+        {
+            "key": "field_5c3e139b66d9b",
+            "label": "Category Icon",
+            "name": "pakb_origin_category_icon",
+            "type": "true_false",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "Enable category icon",
+            "default_value": 1,
+            "ui": 0,
+            "ui_on_text": "",
+            "ui_off_text": ""
+        },
+        {
+            "key": "field_5c3e1cf6bb5cc",
+            "label": "View All Link",
+            "name": "pakb_view_all",
+            "type": "true_false",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "Enable category view all link",
+            "default_value": 1,
+            "ui": 0,
+            "ui_on_text": "",
+            "ui_off_text": ""
+        },
+        {
+            "key": "field_5c3e1cf5bb5cb",
+            "label": "View All Count",
+            "name": "pakb_view_all_count",
+            "type": "true_false",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_5c3e1cf6bb5cc",
+                        "operator": "==",
+                        "value": "1"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "Enable category view all article count",
+            "default_value": 1,
+            "ui": 0,
+            "ui_on_text": "",
+            "ui_off_text": ""
+        },
+        {
+            "key": "field_5c3e1b4bc5bad",
+            "label": "Category Count",
+            "name": "pakb_category_count",
+            "type": "true_false",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_5c3dfab94a3ff",
+                        "operator": "==",
+                        "value": "1"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "Enable category count",
+            "default_value": 0,
+            "ui": 0,
+            "ui_on_text": "",
+            "ui_off_text": ""
+        },
+        {
+            "key": "field_5c802b490c23d",
+            "label": "Articles Per Category",
+            "name": "pakb_posts_per_cat",
+            "type": "number",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_5c3dfab94a3ff",
+                        "operator": "==",
+                        "value": "1"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": 6,
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "min": "",
+            "max": "",
+            "step": ""
+        },
+        {
+            "key": "field_5c89146fb8aac",
+            "label": "Category Icon Size",
+            "name": "pakb_origin_box_icon_size",
+            "type": "number",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_5c8043f409b6f",
+                        "operator": "==",
+                        "value": "origin"
+                    },
+                    {
+                        "field": "field_5c3dfab94a3ff",
+                        "operator": "==",
+                        "value": "2"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": 54,
+            "placeholder": "",
+            "prepend": "",
+            "append": "px",
+            "min": "",
+            "max": "",
+            "step": ""
+        },
+        {
+            "key": "field_5c3f851a8f4f6",
+            "label": "Category Font Size",
+            "name": "pakb_origin_category_font_size",
+            "type": "number",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_5c8043f409b6f",
+                        "operator": "==",
+                        "value": "origin"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": 24,
+            "placeholder": "",
+            "prepend": "",
+            "append": "px",
+            "min": "",
+            "max": "",
+            "step": ""
+        },
+        {
+            "key": "field_5c3f855a8f4f7",
+            "label": "Custom CSS",
+            "name": "pakb_custom_css",
+            "type": "textarea",
+            "instructions": "Add custom CSS styles here.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "maxlength": "",
+            "rows": "",
+            "new_lines": ""
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "options_page",
+                "operator": "==",
+                "value": "pakb-options-style"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "seamless",
+    "label_placement": "left",
+    "instruction_placement": "field",
+    "hide_on_screen": "",
+    "active": 1,
+    "description": "",
+    "modified": 1552502928
+}
