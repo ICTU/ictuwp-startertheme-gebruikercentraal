@@ -1,0 +1,139 @@
+{
+    "key": "group_5f04449c8cf5f",
+    "title": "GC Text + image",
+    "fields": [
+        {
+            "key": "field_5f044501a876a",
+            "label": "Afbeelding",
+            "name": "gc_gt_textimage_image",
+            "type": "image",
+            "instructions": "",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "id",
+            "preview_size": "medium",
+            "library": "all",
+            "min_width": "",
+            "min_height": "",
+            "min_size": "",
+            "max_width": "",
+            "max_height": "",
+            "max_size": "",
+            "mime_types": ""
+        },
+        {
+            "key": "field_5f0444b10a7e4",
+            "label": "Tekst",
+            "name": "gc_gt_textimage_text",
+            "type": "wysiwyg",
+            "instructions": "",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "tabs": "all",
+            "toolbar": "basic",
+            "media_upload": 0,
+            "delay": 0
+        },
+        {
+            "key": "field_5f0445143c0f6",
+            "label": "Uitlijning",
+            "name": "gc_gt_textimage_alignment",
+            "type": "radio",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "align--left": "Plaatje links",
+                "align--right": "Plaatje rechts"
+            },
+            "allow_null": 0,
+            "other_choice": 0,
+            "default_value": "align--left",
+            "layout": "vertical",
+            "return_format": "value",
+            "save_other_choice": 0
+        },
+        {
+            "key": "field_5f0445ab18a38",
+            "label": "Breedte",
+            "name": "gc_gt_textimage_width",
+            "type": "radio",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "none": "Normale breedte",
+                "section--fullwidth": "Extra breed"
+            },
+            "allow_null": 0,
+            "other_choice": 0,
+            "default_value": "none",
+            "layout": "vertical",
+            "return_format": "value",
+            "save_other_choice": 0
+        },
+        {
+            "key": "field_5f0445f1c0fa6",
+            "label": "Achtergrondkleur",
+            "name": "gc_gt_textimage_background",
+            "type": "radio",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "none": "Geen achtergrondkleur",
+                "bg-color--light": "Lichte achtergrondkleur"
+            },
+            "allow_null": 0,
+            "other_choice": 0,
+            "default_value": "none",
+            "layout": "vertical",
+            "return_format": "value",
+            "save_other_choice": 0
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "block",
+                "operator": "==",
+                "value": "acf\/gc-textimage"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": 1,
+    "description": "",
+    "modified": 1594116305
+}

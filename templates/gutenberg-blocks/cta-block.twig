@@ -1,0 +1,26 @@
+{#
+/**
+ * Block Name: GC CTA
+ *
+ * Gutenberg block voor het tonen van Call To Action (CTA)
+ */
+#}
+
+{% if is_preview %}
+  <style type="text/css">
+    #download-{{ block.id }} {
+      margin-top: 0;
+      overflow: hidden;
+    }
+  </style>
+{% endif %}
+
+  {% if ctalink %}
+    {% if is_preview %}
+      <p>{{ ctalink.linkpreview }}</p>
+      <small>(previewlink, niet klikbaar)</small>
+    {% else %}
+      <p>{{ ctalink.link }}</p>
+    {% endif %}
+
+  {% endif %}

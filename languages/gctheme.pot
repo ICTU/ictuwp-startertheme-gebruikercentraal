@@ -1,29 +1,473 @@
-# Copyright (C) 2020 Tamara, Mark, Paul
-# This file is distributed under the GPL-2.0+.
+#, fuzzy
 msgid ""
 msgstr ""
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 "Project-Id-Version: Gebruiker Centraal (2020)\n"
-"Report-Msgid-Bugs-To: https://wordpress.org/support/theme/ictuwp-theme-gc2020\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
+"POT-Creation-Date: 2020-07-08 19:11+0200\n"
+"PO-Revision-Date: 2020-06-16 15:48+0200\n"
+"Last-Translator: \n"
+"Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2020-07-29T12:53:02+00:00\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"X-Generator: WP-CLI 2.5.0-alpha-75cb7e3\n"
-"X-Domain: gctheme\n"
+"X-Generator: Poedit 2.3.1\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-Flags-xgettext: --add-comments=translators:\n"
+"X-Poedit-WPHeader: style.css\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;"
+"esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;"
+"_n_noop:1,2;_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: *.min.js\n"
+"X-Poedit-SearchPathExcluded-1: frontend\n"
+"X-Poedit-SearchPathExcluded-2: templates\n"
+"X-Poedit-SearchPathExcluded-3: tests\n"
 
-#. Theme Name of the theme
-msgid "Gebruiker Centraal (2020)"
+#: assets/od.php:99 assets/od.php:101
+msgid "Tips"
 msgstr ""
 
-#. Description of the theme
-msgid "Theme voor Gebruiker Centraal op basis van .twig bestanden"
+#: assets/od.php:100
+msgid "Tip"
 msgstr ""
 
-#. Author of the theme
-msgid "Tamara, Mark, Paul"
+#: assets/od.php:102
+msgid "Alle tips"
+msgstr ""
+
+#: assets/od.php:103
+msgid "Toevoegen"
+msgstr ""
+
+#: assets/od.php:104
+msgid "Tip toevoegen"
+msgstr ""
+
+#: assets/od.php:105
+msgid "Tip bewerken"
+msgstr ""
+
+#: assets/od.php:106
+msgid "Bewerk tip"
+msgstr ""
+
+#: assets/od.php:107
+msgid "Nieuwe tip"
+msgstr ""
+
+#: assets/od.php:108
+msgid "Bekijk"
+msgstr ""
+
+#: assets/od.php:109
+msgid "Bekijk tip"
+msgstr ""
+
+#: assets/od.php:110
+msgid "Tips zoeken"
+msgstr ""
+
+#: assets/od.php:111
+msgid "Geen tips gevonden"
+msgstr ""
+
+#: assets/od.php:112
+msgid "Geen tips in de prullenbak"
+msgstr ""
+
+#: assets/od.php:117
+msgid "Hier voer je de tips in."
+msgstr ""
+
+#: assets/od.php:125
+msgid "post"
+msgstr ""
+
+#: assets/od.php:148 assets/od.php:149 assets/od.php:150 assets/od.php:168
+msgid "Tip-thema's"
+msgstr ""
+
+#: assets/od.php:151
+msgid "Alle tip-thema's"
+msgstr ""
+
+#: assets/od.php:152
+msgid "Bewerk thema"
+msgstr ""
+
+#: assets/od.php:153
+msgid "Bekijk thema"
+msgstr ""
+
+#: assets/od.php:154
+msgid "thema bijwerken"
+msgstr ""
+
+#: assets/od.php:155
+msgid "thema toevoegen"
+msgstr ""
+
+#: assets/od.php:156
+msgid "Nieuwe thema"
+msgstr ""
+
+#: assets/od.php:157
+msgid "Zoek thema"
+msgstr ""
+
+#: assets/od.php:158
+msgid "Meest gebruikte thema's"
+msgstr ""
+
+#: assets/od.php:159 assets/od.php:243
+msgid "Scheid met komma's"
+msgstr ""
+
+#: assets/od.php:160
+msgid "thema toevoegen of verwijderen"
+msgstr ""
+
+#: assets/od.php:161 assets/od.php:245
+msgid "Kies uit de meest gebruikte"
+msgstr ""
+
+#: assets/od.php:162 assets/od.php:246
+msgid "Niet gevonden"
+msgstr ""
+
+#: assets/od.php:184 assets/od.php:189 assets/od.php:191 assets/od.php:207
+#: assets/od.php:211
+msgid "Speelsets"
+msgstr ""
+
+#: assets/od.php:185 assets/od.php:190
+msgid "Speelset"
+msgstr ""
+
+#: assets/od.php:192
+msgid "Alle speelsets"
+msgstr ""
+
+#: assets/od.php:193
+msgid "Nieuwe speelset toevoegen"
+msgstr ""
+
+#: assets/od.php:194
+msgid "Voeg nieuwe speelset toe"
+msgstr ""
+
+#: assets/od.php:195
+msgid "Bewerk speelset"
+msgstr ""
+
+#: assets/od.php:196
+msgid "Nieuwe speelset"
+msgstr ""
+
+#: assets/od.php:197
+msgid "Bekijk speelset"
+msgstr ""
+
+#: assets/od.php:198
+msgid "Zoek speelset"
+msgstr ""
+
+#: assets/od.php:199
+msgid "Geen speelset gevonden"
+msgstr ""
+
+#: assets/od.php:200
+msgid "Geen speelset gevonden in de prullenbak"
+msgstr ""
+
+#: assets/od.php:201 assets/od.php:285
+msgid "Uitgelichte afbeelding"
+msgstr ""
+
+#: assets/od.php:202 assets/od.php:286
+msgid "Overzichten"
+msgstr ""
+
+#: assets/od.php:203 assets/od.php:287
+msgid "Bijbehorende bestanden"
+msgstr ""
+
+#: assets/od.php:232 assets/od.php:233 assets/od.php:234 assets/od.php:252
+msgid "Jouw vraag"
+msgstr ""
+
+#: assets/od.php:235
+msgid "Alle vragen"
+msgstr ""
+
+#: assets/od.php:236
+msgid "Bewerk vraag"
+msgstr ""
+
+#: assets/od.php:237
+msgid "Bekijk vraag"
+msgstr ""
+
+#: assets/od.php:238
+msgid "vraag bijwerken"
+msgstr ""
+
+#: assets/od.php:239
+msgid "vraag toevoegen"
+msgstr ""
+
+#: assets/od.php:240
+msgid "Nieuwe vraag"
+msgstr ""
+
+#: assets/od.php:241
+msgid "Zoek vraag"
+msgstr ""
+
+#: assets/od.php:242
+msgid "Meest gebruikte vragen"
+msgstr ""
+
+#: assets/od.php:244
+msgid "vraag toevoegen of verwijderen"
+msgstr ""
+
+#: assets/od.php:268 assets/od.php:273 assets/od.php:275 assets/od.php:291
+#: assets/od.php:295
+msgid "Tipgevers"
+msgstr ""
+
+#: assets/od.php:269 assets/od.php:274 assets/od.php:532
+msgid "Tipgever"
+msgstr ""
+
+#: assets/od.php:276
+msgid "Alle tipgevers"
+msgstr ""
+
+#: assets/od.php:277
+msgid "Nieuwe tipgever toevoegen"
+msgstr ""
+
+#: assets/od.php:278
+msgid "Voeg nieuwe tipgever toe"
+msgstr ""
+
+#: assets/od.php:279
+msgid "Bewerk tipgever"
+msgstr ""
+
+#: assets/od.php:280
+msgid "Nieuwe tipgever"
+msgstr ""
+
+#: assets/od.php:281
+msgid "Bekijk tipgever"
+msgstr ""
+
+#: assets/od.php:282
+msgid "Zoek tipgever"
+msgstr ""
+
+#: assets/od.php:283
+msgid "Geen tipgever gevonden"
+msgstr ""
+
+#: assets/od.php:284
+msgid "Geen tipgever gevonden in de prullenbak"
+msgstr ""
+
+#: assets/od.php:319
+msgid ""
+"Extra content: layout-instellingen voor de inleiding, goede voorbeelden, "
+"waarom werkt dit"
+msgstr ""
+
+#: assets/od.php:323
+msgid "Soort inleiding"
+msgstr ""
+
+#: assets/od.php:326
+msgid ""
+"Wil je een inleiding met een grote foto of een aantal opsommingen onder "
+"elkaar?"
+msgstr ""
+
+#: assets/od.php:335
+msgid "Geen foto"
+msgstr ""
+
+#: assets/od.php:336
+msgid "Grote foto naast de tekst"
+msgstr ""
+
+#: assets/od.php:337
+msgid "Lijstje met opsommingen en kleine foto's"
+msgstr ""
+
+#: assets/od.php:346
+msgid "Grote foto"
+msgstr ""
+
+#: assets/od.php:378
+msgid "Lijstjes met kleine foto"
+msgstr ""
+
+#: assets/od.php:401
+msgid "Nieuwe regel"
+msgstr ""
+
+#: assets/od.php:405
+msgid "Bijbehorende foto"
+msgstr ""
+
+#: assets/od.php:429 assets/od.php:489
+msgid "Titel"
+msgstr ""
+
+#: assets/od.php:450
+msgid "Lijstje"
+msgstr ""
+
+#: assets/od.php:453
+msgid "Voer alsjeblieft alleen lijstjes in."
+msgstr ""
+
+#: assets/od.php:470
+msgid "Goed voorbeeld"
+msgstr ""
+
+#: assets/od.php:485
+msgid "Voeg voorbeeld toe"
+msgstr ""
+
+#: assets/od.php:510
+msgid "Tekst"
+msgstr ""
+
+#: assets/od.php:535
+msgid "Selecteer één uit de lijst of voer een nieuwe naam in"
+msgstr ""
+
+#: assets/od.php:556
+msgid "Naam van de tipgever"
+msgstr ""
+
+#: assets/od.php:572
+msgid "Functie van de tipgever"
+msgstr ""
+
+#: assets/od.php:593
+msgid "Afbeelding"
+msgstr ""
+
+#: assets/od.php:620
+msgid "Waarom werkt dit?"
+msgstr ""
+
+#: assets/od.php:642
+msgid "Onderzoek: inleiding"
+msgstr ""
+
+#: assets/od.php:664
+msgid "Vraag 1 - titel"
+msgstr ""
+
+#: assets/od.php:686
+msgid "Vraag 1 - cijfer"
+msgstr ""
+
+#: assets/od.php:710
+msgid "Vraag 1 - antwoord"
+msgstr ""
+
+#: assets/od.php:733
+msgid "Vraag 2 - titel"
+msgstr ""
+
+#: assets/od.php:755
+msgid "Vraag 2 - cijfer"
+msgstr ""
+
+#: assets/od.php:779
+msgid "Vraag 2 - antwoord"
+msgstr ""
+
+#: assets/od.php:802
+msgid "Vraag 3 - titel"
+msgstr ""
+
+#: assets/od.php:824
+msgid "Vraag 3 - cijfer"
+msgstr ""
+
+#: assets/od.php:848
+msgid "Vraag 3 - antwoord"
+msgstr ""
+
+#: assets/od.php:871
+msgid "Onderzoek: conclusie"
+msgstr ""
+
+#: assets/od.php:924
+msgid "Tip-nummer"
+msgstr ""
+
+#: assets/od.php:1054
+msgid "Nuttige links"
+msgstr ""
+
+#: assets/od.php:1057
+msgid "Geen linkbeschrijving ingevoerd"
+msgstr ""
+
+#: assets/od.php:1073
+msgid "URL"
+msgstr ""
+
+#: assets/od.php:1089
+msgid "Link: icoon"
+msgstr ""
+
+#: assets/od.php:1111
+msgid "Link: Titel"
+msgstr ""
+
+#: assets/od.php:1132
+msgid "Link: beschrijving"
+msgstr ""
+
+#: assets/od.php:1153
+msgid "Link: CTA"
+msgstr ""
+
+#: assets/od.php:1174
+msgid "Link: hreflang"
+msgstr ""
+
+#: assets/od.php:1222
+msgid "Functietitel"
+msgstr ""
+
+#: assets/od.php:1242
+msgid "Foto"
+msgstr ""
+
+#: assets/od.php:1267
+msgid "E-mailadres"
+msgstr ""
+
+#: assets/od.php:1286
+msgid "Telefoonnummer"
+msgstr ""
+
+#: assets/od.php:1658
+msgid "Titel op 404-pagina"
+msgstr ""
+
+#: assets/od.php:1679
+msgid "Beschrijving op 404-pagina"
 msgstr ""
 
 #: functions.php:158
@@ -37,6 +481,7 @@ msgid "Menu in footer"
 msgstr ""
 
 #: functions.php:210
+#, php-format
 msgctxt "Alt-tekst op logo"
 msgid "Logo %s"
 msgstr ""
@@ -68,12 +513,24 @@ msgstr ""
 
 #: functions.php:583
 msgctxt "customizer"
-msgid "Selecteer hier het kleurenschema voor deze site. Je wijzigt hiermee de styling, logo en sommige functionaliteit van de site."
+msgid ""
+"Selecteer hier het kleurenschema voor deze site. Je wijzigt hiermee de "
+"styling, logo en sommige functionaliteit van de site."
 msgstr ""
 
 #: functions.php:606
 msgctxt "customizer"
 msgid "Kies het kleurenschema"
+msgstr ""
+
+#: gutenberg-blocks/cta-block.php:16
+msgctxt "Block titel"
+msgid "GC Call To Action (CTA)"
+msgstr ""
+
+#: gutenberg-blocks/cta-block.php:17
+msgctxt "Block description"
+msgid "Opvallende link"
 msgstr ""
 
 #: gutenberg-blocks/download-block.php:13
@@ -87,6 +544,7 @@ msgid "Lijst met downloads"
 msgstr ""
 
 #: gutenberg-blocks/download-block.php:58
+#, php-format
 msgctxt "Lange linktekst voor een download"
 msgid "Download %s"
 msgstr ""
@@ -106,141 +564,40 @@ msgctxt "Block-categorie"
 msgid "Gebruiker Centraal"
 msgstr ""
 
-#: plugin-activatie/kennisbank.php:149
-msgctxt "Plugins installer"
-msgid "Install Required Plugins"
+#: gutenberg-blocks/links-block.php:13
+msgctxt "Block titel"
+msgid "GC Links"
 msgstr ""
 
-#: plugin-activatie/kennisbank.php:150
-msgctxt "Plugins installer"
-msgid "Install Plugins"
+#: gutenberg-blocks/links-block.php:14
+msgctxt "Block description"
+msgid "Lijst met Links"
 msgstr ""
 
-#: plugin-activatie/kennisbank.php:152
-msgctxt "Plugins installer"
-msgid "Installing Plugin: %s"
+#: gutenberg-blocks/related-block.php:14
+msgctxt "Block titel"
+msgid "GC gerelateerde content"
 msgstr ""
 
-#: plugin-activatie/kennisbank.php:154
-msgctxt "Plugins installer"
-msgid "Updating Plugin: %s"
+#: gutenberg-blocks/related-block.php:15
+msgctxt "Block description"
+msgid "Tonen van gerelateerde content in een apart block"
 msgstr ""
 
-#: plugin-activatie/kennisbank.php:155
-msgctxt "Plugins installer"
-msgid "Something went wrong with the plugin API."
+#: gutenberg-blocks/related-block.php:82 template-alle-tips.php:41
+#, php-format
+msgctxt "Label tip-nummer"
+msgid "Tip %s"
 msgstr ""
 
-#: plugin-activatie/kennisbank.php:156
-msgctxt "Plugins installer"
-msgid "This theme requires the following plugin: %1$s."
-msgid_plural "This theme requires the following plugins: %1$s."
-msgstr[0] ""
-msgstr[1] ""
-
-#: plugin-activatie/kennisbank.php:160
-msgctxt "Plugins installer"
-msgid "This theme recommends the following plugin: %1$s."
-msgid_plural "This theme recommends the following plugins: %1$s."
-msgstr[0] ""
-msgstr[1] ""
-
-#: plugin-activatie/kennisbank.php:164
-msgctxt "Plugins installer"
-msgid "The following plugin needs to be updated to its latest version to ensure maximum compatibility with this theme: %1$s."
-msgid_plural "The following plugins need to be updated to their latest version to ensure maximum compatibility with this theme: %1$s."
-msgstr[0] ""
-msgstr[1] ""
-
-#: plugin-activatie/kennisbank.php:168
-msgctxt "Plugins installer"
-msgid "There is an update available for: %1$s."
-msgid_plural "There are updates available for the following plugins: %1$s."
-msgstr[0] ""
-msgstr[1] ""
-
-#: plugin-activatie/kennisbank.php:172
-msgctxt "Plugins installer"
-msgid "The following required plugin is currently inactive: %1$s."
-msgid_plural "The following required plugins are currently inactive: %1$s."
-msgstr[0] ""
-msgstr[1] ""
-
-#: plugin-activatie/kennisbank.php:176
-msgctxt "Plugins installer"
-msgid "The following recommended plugin is currently inactive: %1$s."
-msgid_plural "The following recommended plugins are currently inactive: %1$s."
-msgstr[0] ""
-msgstr[1] ""
-
-#: plugin-activatie/kennisbank.php:180
-msgctxt "Plugins installer"
-msgid "Begin installing plugin"
-msgid_plural "Begin installing plugins"
-msgstr[0] ""
-msgstr[1] ""
-
-#: plugin-activatie/kennisbank.php:183
-msgctxt "Plugins installer"
-msgid "Begin updating plugin"
-msgid_plural "Begin updating plugins"
-msgstr[0] ""
-msgstr[1] ""
-
-#: plugin-activatie/kennisbank.php:186
-msgctxt "Plugins installer"
-msgid "Begin activating plugin"
-msgid_plural "Begin activating plugins"
-msgstr[0] ""
-msgstr[1] ""
-
-#: plugin-activatie/kennisbank.php:189
-msgctxt "Plugins installer"
-msgid "Return to Required Plugins Installer"
+#: gutenberg-blocks/textimage-block.php:13
+msgctxt "Block titel"
+msgid "GC Text + image"
 msgstr ""
 
-#: plugin-activatie/kennisbank.php:190
-msgctxt "Plugins installer"
-msgid "Plugin activated successfully."
-msgstr ""
-
-#: plugin-activatie/kennisbank.php:191
-msgctxt "Plugins installer"
-msgid "The following plugin was activated successfully:"
-msgstr ""
-
-#: plugin-activatie/kennisbank.php:193
-msgctxt "Plugins installer"
-msgid "No action taken. Plugin %1$s was already active."
-msgstr ""
-
-#: plugin-activatie/kennisbank.php:195
-msgctxt "Plugins installer"
-msgid "Plugin not activated. A higher version of %s is needed for this theme. Please update the plugin."
-msgstr ""
-
-#: plugin-activatie/kennisbank.php:197
-msgctxt "Plugins installer"
-msgid "All plugins installed and activated successfully. %1$s"
-msgstr ""
-
-#: plugin-activatie/kennisbank.php:198
-msgctxt "Plugins installer"
-msgid "Dismiss this notice"
-msgstr ""
-
-#: plugin-activatie/kennisbank.php:199
-msgctxt "Plugins installer"
-msgid "There are one or more required or recommended plugins to install, update or activate."
-msgstr ""
-
-#: plugin-activatie/kennisbank.php:200
-msgctxt "Plugins installer"
-msgid "Please contact the administrator of this site for help."
-msgstr ""
-
-#. Template Name of the theme
-msgid "MinervaKB Page Template"
+#: gutenberg-blocks/textimage-block.php:14
+msgctxt "Block description"
+msgid "Tekst en plaatje naast elkaar"
 msgstr ""
 
 #: single-tips.php:69
@@ -249,16 +606,19 @@ msgid "Gerelateerde tips"
 msgstr ""
 
 #: single-tips.php:134
+#, php-format
 msgctxt "Titel gerelateerde tips"
 msgid "Meer tips over %s"
 msgstr ""
 
 #: single-tips.php:137
+#, php-format
 msgctxt "Linktekst overzicht tipthema"
 msgid "Alle tips over %s"
 msgstr ""
 
 #: single-tips.php:194
+#, php-format
 msgctxt "linktext auteur voorbeeld"
 msgid "Meer tips van %s"
 msgstr ""
@@ -268,8 +628,7 @@ msgctxt "default link text"
 msgid "Link"
 msgstr ""
 
-#: single-tips.php:236
-#: single-tips.php:266
+#: single-tips.php:236 single-tips.php:266
 msgctxt "Titel boven waaromwerktdit"
 msgid "Waarom werkt dit?"
 msgstr ""
@@ -282,19 +641,6 @@ msgstr ""
 #: single-tips.php:246
 msgctxt "Titel boven conclusie"
 msgid "Conclusie"
-msgstr ""
-
-#. Template Name of the theme
-msgid "[OD] Overzicht alle tips"
-msgstr ""
-
-#: template-alle-tips.php:73
-msgctxt "Label tip-ummer"
-msgid "Tip %s"
-msgstr ""
-
-#. Template Name of the theme
-msgid "Template sitemap"
 msgstr ""
 
 #: template-sitemap.php:25
@@ -317,10 +663,6 @@ msgctxt "sitemap titel"
 msgid "Tipgevers"
 msgstr ""
 
-#. Template Name of the theme
-msgid "[OD] Template tips-pagina"
-msgstr ""
-
 #: widgets/widget-over-ons.php:61
 msgctxt "widget"
 msgid "Widget met ruimte voor korte informatie over de site en een doorklik."
@@ -334,4 +676,32 @@ msgstr ""
 #: widgets/widget-over-ons.php:91
 msgctxt "widget field name"
 msgid "Korte beschrijving van de site"
+msgstr ""
+
+#. Theme Name of the plugin/theme
+msgid "Gebruiker Centraal (2020)"
+msgstr ""
+
+#. Description of the plugin/theme
+msgid "Theme voor Gebruiker Centraal op basis van .twig bestanden"
+msgstr ""
+
+#. Author of the plugin/theme
+msgid "Tamara, Mark, Paul"
+msgstr ""
+
+#. Template Name of the plugin/theme
+msgid "[OD] Overzicht alle tips"
+msgstr ""
+
+#. Template Name of the plugin/theme
+msgid "Landingspagina"
+msgstr ""
+
+#. Template Name of the plugin/theme
+msgid "[OD] Template tips-pagina"
+msgstr ""
+
+#. Template Name of the plugin/theme
+msgid "Template sitemap"
 msgstr ""

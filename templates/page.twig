@@ -14,11 +14,27 @@
         {{ post.content }}
       </div>
 
+      {% if related %}
+        {% include 'sections/section-related.html.twig' with {
+          'title': related.title,
+          'descr': related.desc,
+          'items': related.items
+        } %}
+      {% endif %}
+
       {% if downloads %}
         {% include 'sections/section-downloads.html.twig' with {
           'title': downloads.title,
           'descr': downloads.desc,
           'items': downloads.items
+        } %}
+      {% endif %}
+
+      {% if links %}
+        {% include 'sections/section-links.html.twig' with {
+          'section_title': links.title,
+          'section_descr': links.desc,
+          'items': links.items
         } %}
       {% endif %}
 

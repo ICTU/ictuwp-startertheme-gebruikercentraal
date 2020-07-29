@@ -1,0 +1,65 @@
+{
+    "key": "group_5f03007497d84",
+    "title": "GC Gutenberg Call To Action",
+    "fields": [
+        {
+            "key": "field_5f0300868b575",
+            "label": "Link en linktekst",
+            "name": "gc_gb_ctalink",
+            "type": "link",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "array"
+        },
+        {
+            "key": "field_5f030affefe22",
+            "label": "Classes",
+            "name": "gc_gb_ctaclasses",
+            "type": "select",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "btn--primary": "Primary",
+                "btn--secondary": "Secundary",
+                "btn--download": "Download"
+            },
+            "default_value": "btn--primary",
+            "allow_null": 0,
+            "multiple": 0,
+            "ui": 0,
+            "return_format": "value",
+            "ajax": 0,
+            "placeholder": ""
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "block",
+                "operator": "==",
+                "value": "acf\/gc-ctalink"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": 1,
+    "description": "",
+    "modified": 1594034567
+}
