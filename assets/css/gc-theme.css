@@ -15,7 +15,7 @@
  * BTN Variables
  * Can be used for buttons and overridden in subthemes
  */
-@import url(../assets/fonts/fonts.css);
+@import url(../fonts/fonts.css);
 .clearfix:after {
   content: "";
   display: table;
