@@ -1,8 +1,10 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Gebruiker Centraal (2020)\n"
-"POT-Creation-Date: 2020-06-30 11:25+0200\n"
-"PO-Revision-Date: 2020-06-30 11:25+0200\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/theme/ictuwp-theme-"
+"gc2020\n"
+"POT-Creation-Date: 2020-07-29T12:53:02+00:00\n"
+"PO-Revision-Date: 2020-07-29 14:59+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: nl_NL\n"
@@ -24,55 +26,66 @@ msgstr ""
 "X-Poedit-SearchPathExcluded-2: templates\n"
 "X-Poedit-SearchPathExcluded-3: tests\n"
 
-#: functions.php:142
+#. Theme Name of the theme
+msgid "Gebruiker Centraal (2020)"
+msgstr ""
+
+#. Description of the theme
+msgid "Theme voor Gebruiker Centraal op basis van .twig bestanden"
+msgstr ""
+
+#. Author of the theme
+msgid "Tamara, Mark, Paul"
+msgstr ""
+
+#: functions.php:158
 msgctxt "menu location"
 msgid "Menu in header"
 msgstr ""
 
-#: functions.php:143
+#: functions.php:159
 msgctxt "menu location"
 msgid "Menu in footer"
 msgstr ""
 
-#: functions.php:194
-#, php-format
+#: functions.php:210
 msgctxt "Alt-tekst op logo"
 msgid "Logo %s"
 msgstr ""
 
-#: functions.php:202
+#: functions.php:218
 msgctxt "skiplinks"
 msgid "Jump to main content"
 msgstr "Direct naar de belangrijkste inhoud"
 
-#: functions.php:204
+#: functions.php:220
 msgctxt "skiplinks"
 msgid "Jump to main navigation"
 msgstr "Direct naar de hoofdnavigatie"
 
-#: functions.php:441
+#: functions.php:451
 msgctxt "Widget area"
 msgid "Footer widget left"
 msgstr ""
 
-#: functions.php:450
+#: functions.php:460
 msgctxt "Widget area"
 msgid "Footer widget right"
 msgstr ""
 
-#: functions.php:572
+#: functions.php:582
 msgctxt "customizer"
 msgid "Gebruiker Centraal Instellingen"
 msgstr ""
 
-#: functions.php:573
+#: functions.php:583
 msgctxt "customizer"
 msgid ""
 "Selecteer hier het kleurenschema voor deze site. Je wijzigt hiermee de "
 "styling, logo en sommige functionaliteit van de site."
 msgstr ""
 
-#: functions.php:596
+#: functions.php:606
 msgctxt "customizer"
 msgid "Kies het kleurenschema"
 msgstr ""
@@ -88,7 +101,6 @@ msgid "Lijst met downloads"
 msgstr ""
 
 #: gutenberg-blocks/download-block.php:58
-#, php-format
 msgctxt "Lange linktekst voor een download"
 msgid "Download %s"
 msgstr ""
@@ -108,36 +120,210 @@ msgctxt "Block-categorie"
 msgid "Gebruiker Centraal"
 msgstr "Gebruiker Centraal-blocks"
 
-#: single-tips.php:85
-#, php-format
+#: plugin-activatie/kennisbank.php:149
+msgctxt "Plugins installer"
+msgid "Install Required Plugins"
+msgstr "Installeer vereiste plugins"
+
+#: plugin-activatie/kennisbank.php:150
+msgctxt "Plugins installer"
+msgid "Install Plugins"
+msgstr "Installeer plugins"
+
+#: plugin-activatie/kennisbank.php:152
+msgctxt "Plugins installer"
+msgid "Installing Plugin: %s"
+msgstr "Plugin installeren: %s"
+
+#: plugin-activatie/kennisbank.php:154
+msgctxt "Plugins installer"
+msgid "Updating Plugin: %s"
+msgstr "Updaten Plugin: %s"
+
+#: plugin-activatie/kennisbank.php:155
+msgctxt "Plugins installer"
+msgid "Something went wrong with the plugin API."
+msgstr "Er ging iets mis met de plugin API."
+
+#: plugin-activatie/kennisbank.php:156
+msgctxt "Plugins installer"
+msgid "This theme requires the following plugin: %1$s."
+msgid_plural "This theme requires the following plugins: %1$s."
+msgstr[0] "Dit thema vereist de volgende plugin: %1$s."
+msgstr[1] "Dit thema vereist de volgende plugins: %1$s."
+
+#: plugin-activatie/kennisbank.php:160
+msgctxt "Plugins installer"
+msgid "This theme recommends the following plugin: %1$s."
+msgid_plural "This theme recommends the following plugins: %1$s."
+msgstr[0] "Dit thema beveelt de volgende plugin aan: %1$s."
+msgstr[1] "Dit thema beveelt de volgende plugins aan: %1$s."
+
+#: plugin-activatie/kennisbank.php:164
+msgctxt "Plugins installer"
+msgid ""
+"The following plugin needs to be updated to its latest version to ensure "
+"maximum compatibility with this theme: %1$s."
+msgid_plural ""
+"The following plugins need to be updated to their latest version to ensure "
+"maximum compatibility with this theme: %1$s."
+msgstr[0] ""
+"De volgende plugin moet worden bijgewerkt naar de nieuwste versie voor "
+"maximale compatibiliteit met dit thema: %1$s."
+msgstr[1] ""
+"De volgende plugins moet worden bijgewerkt naar de nieuwste versie voor "
+"maximale compatibiliteit met dit thema: %1$s."
+
+#: plugin-activatie/kennisbank.php:168
+msgctxt "Plugins installer"
+msgid "There is an update available for: %1$s."
+msgid_plural "There are updates available for the following plugins: %1$s."
+msgstr[0] "Er is een update beschikbaar voor: %1$s."
+msgstr[1] "Er is een update beschikbaar voor: %1$s."
+
+#: plugin-activatie/kennisbank.php:172
+msgctxt "Plugins installer"
+msgid "The following required plugin is currently inactive: %1$s."
+msgid_plural "The following required plugins are currently inactive: %1$s."
+msgstr[0] "De volgende vereiste plugin is momenteel inactief: %1$s."
+msgstr[1] "De volgende vereiste plugins zijn momenteel inactief: %1$s."
+
+#: plugin-activatie/kennisbank.php:176
+msgctxt "Plugins installer"
+msgid "The following recommended plugin is currently inactive: %1$s."
+msgid_plural "The following recommended plugins are currently inactive: %1$s."
+msgstr[0] "De volgende aanbevolen plugin is momenteel inactief: %1$s."
+msgstr[1] "De volgende aanbevolen plugins zijn momenteel inactief: %1$s."
+
+#: plugin-activatie/kennisbank.php:180
+msgctxt "Plugins installer"
+msgid "Begin installing plugin"
+msgid_plural "Begin installing plugins"
+msgstr[0] "Beginnen met het installeren van de plugin"
+msgstr[1] "Beginnen met het installeren van de plugins"
+
+#: plugin-activatie/kennisbank.php:183
+msgctxt "Plugins installer"
+msgid "Begin updating plugin"
+msgid_plural "Begin updating plugins"
+msgstr[0] "Beginnen met bijwerken van de plugin"
+msgstr[1] "Beginnen met bijwerken van de plugins"
+
+#: plugin-activatie/kennisbank.php:186
+msgctxt "Plugins installer"
+msgid "Begin activating plugin"
+msgid_plural "Begin activating plugins"
+msgstr[0] "Beginnen met het activeren van de plugin"
+msgstr[1] "Beginnen met het activeren van de plugins"
+
+#: plugin-activatie/kennisbank.php:189
+msgctxt "Plugins installer"
+msgid "Return to Required Plugins Installer"
+msgstr "Ga terug naar de vereiste plugins installatie"
+
+#: plugin-activatie/kennisbank.php:190
+msgctxt "Plugins installer"
+msgid "Plugin activated successfully."
+msgstr "Plugin succesvol geactiveerd."
+
+#: plugin-activatie/kennisbank.php:191
+msgctxt "Plugins installer"
+msgid "The following plugin was activated successfully:"
+msgstr "De volgende plugin is succesvol geactiveerd:"
+
+#: plugin-activatie/kennisbank.php:193
+msgctxt "Plugins installer"
+msgid "No action taken. Plugin %1$s was already active."
+msgstr "Geen actie uitgevoerd. De plugin %1$s was al geactiveerd."
+
+#: plugin-activatie/kennisbank.php:195
+msgctxt "Plugins installer"
+msgid ""
+"Plugin not activated. A higher version of %s is needed for this theme. "
+"Please update the plugin."
+msgstr ""
+"De plugin is niet geactiveerd. Een nieuwere versie van %s is noodzakelijk "
+"voor dit thema. Werk de plugin bij."
+
+#: plugin-activatie/kennisbank.php:197
+msgctxt "Plugins installer"
+msgid "All plugins installed and activated successfully. %1$s"
+msgstr "Alle plug-ins zijn succesvol geactiveerd. %1$s"
+
+#: plugin-activatie/kennisbank.php:198
+msgctxt "Plugins installer"
+msgid "Dismiss this notice"
+msgstr "Negeer deze melding"
+
+#: plugin-activatie/kennisbank.php:199
+msgctxt "Plugins installer"
+msgid ""
+"There are one or more required or recommended plugins to install, update or "
+"activate."
+msgstr ""
+"Er zijn één of meerdere vereiste of aanbevolen plugins om te installeren, "
+"bij te werken of te activeren."
+
+#: plugin-activatie/kennisbank.php:200
+msgctxt "Plugins installer"
+msgid "Please contact the administrator of this site for help."
+msgstr "Gelieve de administrator van deze website te contacteren voor hulp."
+
+#. Template Name of the theme
+msgid "MinervaKB Page Template"
+msgstr ""
+
+#: single-tips.php:69
+msgctxt "Titel gerelateerde tips"
+msgid "Gerelateerde tips"
+msgstr ""
+
+#: single-tips.php:134
+msgctxt "Titel gerelateerde tips"
+msgid "Meer tips over %s"
+msgstr ""
+
+#: single-tips.php:137
+msgctxt "Linktekst overzicht tipthema"
+msgid "Alle tips over %s"
+msgstr ""
+
+#: single-tips.php:194
 msgctxt "linktext auteur voorbeeld"
 msgid "Meer tips van %s"
 msgstr ""
 
-#: single-tips.php:116
+#: single-tips.php:226
 msgctxt "default link text"
 msgid "Link"
 msgstr ""
 
-#: single-tips.php:127 single-tips.php:157
+#: single-tips.php:236 single-tips.php:266
 msgctxt "Titel boven waaromwerktdit"
 msgid "Waarom werkt dit?"
 msgstr ""
 
-#: single-tips.php:133
+#: single-tips.php:242
 msgctxt "Titel boven waaromwerktdit"
 msgid "Onderzoek"
 msgstr ""
 
-#: single-tips.php:137
+#: single-tips.php:246
 msgctxt "Titel boven conclusie"
 msgid "Conclusie"
 msgstr ""
 
-#: template-alle-tips.php:79
-#, php-format
+#. Template Name of the theme
+msgid "[OD] Overzicht alle tips"
+msgstr ""
+
+#: template-alle-tips.php:73
 msgctxt "Label tip-ummer"
 msgid "Tip %s"
+msgstr ""
+
+#. Template Name of the theme
+msgid "Template sitemap"
 msgstr ""
 
 #: template-sitemap.php:25
@@ -160,6 +346,10 @@ msgctxt "sitemap titel"
 msgid "Tipgevers"
 msgstr ""
 
+#. Template Name of the theme
+msgid "[OD] Template tips-pagina"
+msgstr ""
+
 #: widgets/widget-over-ons.php:61
 msgctxt "widget"
 msgid "Widget met ruimte voor korte informatie over de site en een doorklik."
@@ -173,28 +363,4 @@ msgstr ""
 #: widgets/widget-over-ons.php:91
 msgctxt "widget field name"
 msgid "Korte beschrijving van de site"
-msgstr ""
-
-#. Theme Name of the plugin/theme
-msgid "Gebruiker Centraal (2020)"
-msgstr ""
-
-#. Description of the plugin/theme
-msgid "Theme voor Gebruiker Centraal op basis van .twig bestanden"
-msgstr ""
-
-#. Author of the plugin/theme
-msgid "Tamara, Mark, Paul"
-msgstr ""
-
-#. Template Name of the plugin/theme
-msgid "[OD] Overzicht alle tips"
-msgstr ""
-
-#. Template Name of the plugin/theme
-msgid "[OD] Template tips-pagina"
-msgstr ""
-
-#. Template Name of the plugin/theme
-msgid "Template sitemap"
 msgstr ""

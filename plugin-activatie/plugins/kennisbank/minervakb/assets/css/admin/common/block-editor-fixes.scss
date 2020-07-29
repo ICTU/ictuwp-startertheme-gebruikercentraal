@@ -1,0 +1,73 @@
+/**
+ * Themes compatibility Gutenberg fixes
+ */
+.editor-styles-wrapper {
+
+    i.fa {
+        font-style: normal;
+    }
+
+    .kb-search .kb-search__results ul {
+        list-style-type: none;
+        margin: 0;
+    }
+
+    .kb-topic .kb-topic__articles ul {
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    .kb-topic a,
+    .kb-topic a:hover,
+    .kb-topic a:active,
+    .kb-topic a:visited,
+    .kb-topic a:focus {
+        color: #888;
+        text-decoration: none;
+        outline: 0;
+        box-shadow: none;
+        border: none;
+    }
+
+    .mkb-home-topics .mkb-row {
+        flex-wrap: nowrap;
+    }
+
+    .mkb-columns-4col {
+        .kb-topic {
+            padding: 1em 0.5em;
+
+            .kb-topic__inner {
+                padding: 1.5em .9em;
+            }
+        }
+    }
+
+    .mkb-article-item--simple .mkb-entry-title {
+        font-size: 1em;
+        line-height: 1.5em;
+        font-weight: 500;
+        padding: 0;
+        margin: 0;
+    }
+
+    .mkb-related-content {
+        a,
+        a:hover,
+        a:visited,
+        a:focus {
+            text-decoration: none;
+            box-shadow: none;
+            border: none;
+        }
+    }
+}
+
+.mkb-terms-selected {
+    .components-spinner {
+        margin-top: 0;
+        margin-right: 0;
+    }
+}
+
