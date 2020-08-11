@@ -56,6 +56,9 @@ if ( $flavor_select == "OD" ) {
 }
 
 
+require_once( __DIR__ . '/plugin-activatie/kennisbank.php' );
+
+
 
 //========================================================================================================
 
@@ -716,6 +719,20 @@ function get_themakleuren() {
 	return $themakleuren;
 
 }
+// Hernoem menu naam Kennisbank
+function rename_minervakb() {
+
+	global $menu;
+
+	foreach($menu as $key => $item) {
+		if ( $item[0] === 'minervakb' ) {
+			$menu[$key][0] = __('GC Kennisbank','textdomain');     //change name
+
+		}
+	}
+	return false;
+}
+add_action( 'admin_menu', 'rename_minervakb', 999 );
 
 //========================================================================================================
 
