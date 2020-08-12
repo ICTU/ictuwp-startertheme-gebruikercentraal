@@ -15,7 +15,72 @@
  * BTN Variables
  * Can be used for buttons and overridden in subthemes
  */
+/* Gutenberg color options
+ * see editor-color-palette in functions.php
+--------------------------------------------- */
+/* Color Options
+--------------------------------------------- */
 @import url(../assets/fonts/fonts.css);
+.has-white-color {
+  color: #fff; }
+
+.has-white-background-color {
+  background-color: #fff; }
+
+.has-black-color {
+  color: #000; }
+
+.has-black-background-color {
+  background-color: #000; }
+
+.has-gc-green-color {
+  color: #25b34b; }
+
+.has-gc-green-background-color {
+  background-color: #25b34b; }
+
+.has-gc-dark-blue-color {
+  color: #004152; }
+
+.has-gc-dark-blue-background-color {
+  background-color: #004152; }
+
+.has-gc-pantybrown-color {
+  color: #e8d8c7; }
+
+.has-gc-pantybrown-background-color {
+  background-color: #e8d8c7; }
+
+.has-gc-dark-purple-color {
+  color: #4c2974; }
+
+.has-gc-dark-purple-background-color {
+  background-color: #4c2974; }
+
+.has-gc-blue-color {
+  color: #0095da; }
+
+.has-gc-blue-background-color {
+  background-color: #0095da; }
+
+.has-gc-pink-color {
+  color: #c42c76; }
+
+.has-gc-pink-background-color {
+  background-color: #c42c76; }
+
+.has-gc-orange-color {
+  color: #f99d1c; }
+
+.has-gc-orange-background-color {
+  background-color: #f99d1c; }
+
+.has-gc-cyan-color {
+  color: #00b4ac; }
+
+.has-gc-cyan-background-color {
+  background-color: #00b4ac; }
+
 .clearfix:after {
   content: "";
   display: table;
@@ -469,6 +534,24 @@ legend {
 @media (min-width: 700px) {
   .form-actions {
     padding-left: 30%; } }
+
+/*
+Gutenberg corrections
+ */
+.section--heading + .section--paragraph,
+.section--heading + .section--text {
+  margin-top: 1rem; }
+
+.wp-block-image + .section--paragraph,
+.wp-block-image + .section--text {
+  margin-top: 0; }
+  .wp-block-image + .section--paragraph p,
+  .wp-block-image + .section--text p {
+    margin-top: 0; }
+
+.wp-block-column .section {
+  padding-left: 0;
+  padding-right: 0; }
 
 .l-page-footer-wrapper {
   padding-left: 2rem;
@@ -3579,9 +3662,6 @@ h1 {
   .section--text .section__title {
     border: none;
     padding-top: 0; }
-
-.section--heading + .section--text {
-  margin-top: 1rem; }
 
 .section--overview {
   max-width: none; }
