@@ -313,6 +313,69 @@ class GebruikerCentraalTheme extends Timber\Site {
 		add_editor_style( get_stylesheet_directory_uri() . '/assets/fonts/editor-fonts.css' . $cachebuster );
 		add_editor_style( get_stylesheet_directory_uri() . '/assets/css/editor-styles.css' . $cachebuster );
 
+		// Allow for responsive embedding
+		add_theme_support( 'responsive-embeds' );
+
+		// Disable Custom Colors
+		add_theme_support( 'disable-custom-colors' );
+
+		// Restrict Editor Color Palette
+		add_theme_support( 'editor-color-palette', array(
+
+			// primaire kleuren
+			array(
+				'name'  => __( 'Wit', 'gctheme' ),
+				'slug'  => 'white',
+				'color' => '#fff',
+			),
+			array(
+				'name'  => __( 'Zwart', 'gctheme' ),
+				'slug'  => 'black',
+				'color' => '#000',
+			),
+			array(
+				'name'  => __( 'GC Groen', 'gctheme' ),
+				'slug'  => 'gc-green',
+				'color' => '#25b34b',
+			),
+			array(
+				'name'  => __( 'GC Dark Blue', 'gctheme' ),
+				'slug'  => 'gc-dark-blue',
+				'color' => '#004152',
+			),
+			array(
+				'name'  => __( 'GC Pantybrown', 'gctheme' ),
+				'slug'  => 'gc_pantybrown',
+				'color' => '#e8d8c7',
+			),
+
+			// secundaire kleuren
+			array(
+				'name'  => __( 'GC Dark Purple', 'gctheme' ),
+				'slug'  => 'gc-dark-purple',
+				'color' => '#4c2974',
+			),
+			array(
+				'name'  => __( 'GC Blue', 'gctheme' ),
+				'slug'  => 'gc-blue',
+				'color' => '#0095da',
+			),
+			array(
+				'name'  => __( 'GC Pink', 'gctheme' ),
+				'slug'  => 'gc-pink',
+				'color' => '#c42c76',
+			),
+			array(
+				'name'  => __( 'GC Orange', 'gctheme' ),
+				'slug'  => 'gc-orange',
+				'color' => '#f99d1c',
+			),
+			array(
+				'name'  => __( 'GC Cyan', 'gctheme' ),
+				'slug'  => 'gc-cyan',
+				'color' => '#00b4ac',
+			),
+		) );
 
 
 
@@ -512,13 +575,16 @@ function my_body_classes( $classes ) {
 
 	global $post;
 
-	$classes[] = 'meh';
+	$classes[] = '';
 
 	if ( is_page() ) {
 
 		$template = basename( get_page_template() );
 		if ( 'template-alle-tips.php' === $template ) {
 			$classes[] = 'page--type-overview page--overview-archive';
+		}
+		if ( 'template-landingspagina.php' === $template ) {
+			$classes[] = 'page--type-landing page--overview-archive entry--type-landing';
 		}
 
 	} elseif ( is_singular( GC_TIP_CPT ) ) {
@@ -736,3 +802,114 @@ add_action( 'admin_menu', 'rename_minervakb', 999 );
 
 //========================================================================================================
 
+function append_block_wrappers( $block_content, $block ) {
+	if ( $block['blockName'] === 'core/paragraph' ) {
+		$content = '<div class="section section--paragraph">';
+		$content .= $block_content;
+		$content .= '</div>';
+
+		return $content;
+
+	} elseif ( $block['blockName'] === 'core/heading' ) {
+		$content = '<div class="section section--heading">';
+		$content .= $block_content;
+		$content .= '</div>';
+
+		return $content;
+		/*
+	} elseif ( $block['blockName'] ) {
+		$content = '<div style="border-top: 1px solid #dadada;">';
+		$content .= '<p><strong>Block: ' . $block['blockName'] . '</strong></p>';
+		$content .= $block_content;
+		$content .= '</div>';
+
+		return $content;
+		*/
+	}
+	return $block_content;
+}
+
+add_filter( 'render_block', 'append_block_wrappers', 10, 2 );
+
+//========================================================================================================
+/*
+ * only allow these Gutenberg blocks to be used
+ */
+
+function gc_restrict_gutenberg_blocks( $allowed_blocks ) {
+
+	/*
+		these are most of the core blocks. We will allow only some of them
+		---------------------------------------------
+		Standard block: core-embed/facebook
+		Standard block: core-embed/instagram
+		Standard block: core-embed/twitter
+		Standard block: core-embed/wordpress
+		Standard block: core-embed/vimeo
+		Standard block: core-embed/youtube
+		Standard block: core/audio
+		Standard block: core/button
+		Standard block: core/categories
+		Standard block: core/code
+		Standard block: core/columns
+		Standard block: core/cover
+		Standard block: core/file
+		Standard block: core/gallery
+		Standard block: core/heading
+		Standard block: core/html
+		Standard block: core/image
+		Standard block: core/latest-posts
+		Standard block: core/media-text
+		Standard block: core/list
+		Standard block: core/nextpage
+		Standard block: core/paragraph
+		Standard block: core/preformatted
+		Standard block: core/pullquote
+		Standard block: core/quote
+		Standard block: core/separator
+		Standard block: core/spacer
+		Standard block: core/subhead
+		Standard block: core/table
+		Standard block: core/text-columns
+		Standard block: core/verse
+		Standard block: core/video
+
+
+		these are our custom Gutenberg blocks
+		see folder: /gutenberg-blocks
+		---------------------------------------------
+		GC specific block: acf/gc-links
+		GC specific block: acf/gc-related
+		GC specific block: acf/gc-downloads
+		GC specific block: acf/gc-ctalink
+		GC specific block: acf/gc-textimage
+
+
+	*/
+	return array(
+		'core/image',
+		'core/heading',
+		'core/table',
+		'core/audio',
+		'core/gallery',
+		'core/list',
+		'core/media-text',
+		'core/paragraph',
+		'core/pullquote',
+		'core/subhead',
+		'core-embed/youtube',
+
+		'acf/gc-links',
+		'acf/gc-related',
+		'acf/gc-downloads',
+		'acf/gc-ctalink',
+		'acf/gc-textimage'
+
+
+	);
+
+}
+
+add_filter( 'allowed_block_types', 'gc_restrict_gutenberg_blocks' );
+
+//========================================================================================================

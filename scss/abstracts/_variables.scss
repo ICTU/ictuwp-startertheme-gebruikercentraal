@@ -176,3 +176,33 @@ $gutter-xsmall:           .5rem !default;
 @import "vars/entry";
 @import "vars/stepchart";
 @import "vars/text-block";
+
+
+/* Gutenberg color options
+ * see editor-color-palette in functions.php
+--------------------------------------------- */
+$gc_gutenberg_colors:
+    ( white, $white ),
+    ( black, $black ),
+    ( gc-green, $gc-green ),
+    ( gc-dark-blue, $gc-dark-blue ),
+    ( gc-pantybrown, $gc-pantybrown ),
+    ( gc-dark-purple, $gc-dark-purple ),
+    ( gc-blue, $gc-blue ),
+    ( gc-pink, $gc-pink ),
+    ( gc-orange, $gc-orange ),
+    ( gc-cyan, $gc-cyan );
+
+/* Color Options
+--------------------------------------------- */
+@each $name, $color in $gc_gutenberg_colors {
+
+  .has-#{$name}-color {
+    color: $color;
+  }
+
+  .has-#{$name}-background-color {
+    background-color: $color;
+  }
+}
+
