@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Gebruiker Centraal (2020)\n"
-"POT-Creation-Date: 2020-07-08 19:11+0200\n"
-"PO-Revision-Date: 2020-07-08 19:11+0200\n"
+"POT-Creation-Date: 2020-08-12 20:44+0200\n"
+"PO-Revision-Date: 2020-08-12 20:44+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: en_GB\n"
@@ -16,532 +16,578 @@ msgstr ""
 "X-Poedit-WPHeader: style.css\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 "X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;"
-"esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;"
-"_n_noop:1,2;_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
+"esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;_n_noop:1,2;"
+"_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
 "X-Poedit-SearchPath-0: .\n"
 "X-Poedit-SearchPathExcluded-0: *.min.js\n"
 "X-Poedit-SearchPathExcluded-1: frontend\n"
 "X-Poedit-SearchPathExcluded-2: templates\n"
 "X-Poedit-SearchPathExcluded-3: tests\n"
 
-#: assets/od.php:99 assets/od.php:101
+#: assets/json.php:101 assets/json.php:103 assets/od.php:91 assets/od.php:93
 msgid "Tips"
 msgstr "Hints"
 
-#: assets/od.php:100
+#: assets/json.php:102 assets/od.php:92
 msgid "Tip"
 msgstr "Hint"
 
-#: assets/od.php:102
+#: assets/json.php:104 assets/od.php:94
 msgid "Alle tips"
 msgstr "All hints"
 
-#: assets/od.php:103
+#: assets/json.php:105 assets/od.php:95
 msgid "Toevoegen"
 msgstr "Add"
 
-#: assets/od.php:104
+#: assets/json.php:106 assets/od.php:96
 msgid "Tip toevoegen"
 msgstr ""
 
-#: assets/od.php:105
+#: assets/json.php:107 assets/od.php:97
 msgid "Tip bewerken"
 msgstr ""
 
-#: assets/od.php:106
+#: assets/json.php:108 assets/od.php:98
 msgid "Bewerk tip"
 msgstr ""
 
-#: assets/od.php:107
+#: assets/json.php:109 assets/od.php:99
 msgid "Nieuwe tip"
 msgstr ""
 
-#: assets/od.php:108
+#: assets/json.php:110 assets/od.php:100
 msgid "Bekijk"
 msgstr ""
 
-#: assets/od.php:109
+#: assets/json.php:111 assets/od.php:101
 msgid "Bekijk tip"
 msgstr ""
 
-#: assets/od.php:110
+#: assets/json.php:112 assets/od.php:102
 msgid "Tips zoeken"
 msgstr ""
 
-#: assets/od.php:111
+#: assets/json.php:113 assets/od.php:103
 msgid "Geen tips gevonden"
 msgstr ""
 
-#: assets/od.php:112
+#: assets/json.php:114 assets/od.php:104
 msgid "Geen tips in de prullenbak"
 msgstr ""
 
-#: assets/od.php:117
+#: assets/json.php:119 assets/od.php:109
 msgid "Hier voer je de tips in."
 msgstr ""
 
-#: assets/od.php:125
+#: assets/json.php:127 assets/od.php:117
 msgid "post"
 msgstr ""
 
-#: assets/od.php:148 assets/od.php:149 assets/od.php:150 assets/od.php:168
+#: assets/json.php:141 assets/json.php:142 assets/json.php:143
+#: assets/json.php:161 assets/od.php:140 assets/od.php:141 assets/od.php:142
+#: assets/od.php:160
 #, fuzzy
 #| msgctxt "sitemap titel"
 #| msgid "Tipthema's"
 msgid "Tip-thema's"
 msgstr "Themes"
 
-#: assets/od.php:151
+#: assets/json.php:144 assets/od.php:143
 #, fuzzy
 #| msgctxt "sitemap titel"
 #| msgid "Tipthema's"
 msgid "Alle tip-thema's"
 msgstr "Themes"
 
-#: assets/od.php:152
+#: assets/json.php:145 assets/od.php:144
 msgid "Bewerk thema"
 msgstr ""
 
-#: assets/od.php:153
+#: assets/json.php:146 assets/od.php:145
 msgid "Bekijk thema"
 msgstr ""
 
-#: assets/od.php:154
+#: assets/json.php:147 assets/od.php:146
 msgid "thema bijwerken"
 msgstr ""
 
-#: assets/od.php:155
+#: assets/json.php:148 assets/od.php:147
 msgid "thema toevoegen"
 msgstr ""
 
-#: assets/od.php:156
+#: assets/json.php:149 assets/od.php:148
 msgid "Nieuwe thema"
 msgstr ""
 
-#: assets/od.php:157
+#: assets/json.php:150 assets/od.php:149
 msgid "Zoek thema"
 msgstr ""
 
-#: assets/od.php:158
+#: assets/json.php:151 assets/od.php:150
 msgid "Meest gebruikte thema's"
 msgstr ""
 
-#: assets/od.php:159 assets/od.php:243
+#: assets/json.php:152 assets/json.php:184 assets/od.php:151 assets/od.php:235
 msgid "Scheid met komma's"
 msgstr ""
 
-#: assets/od.php:160
+#: assets/json.php:153 assets/od.php:152
 msgid "thema toevoegen of verwijderen"
 msgstr ""
 
-#: assets/od.php:161 assets/od.php:245
+#: assets/json.php:154 assets/json.php:186 assets/od.php:153 assets/od.php:237
 msgid "Kies uit de meest gebruikte"
 msgstr ""
 
-#: assets/od.php:162 assets/od.php:246
+#: assets/json.php:155 assets/json.php:187 assets/od.php:154 assets/od.php:238
 msgid "Niet gevonden"
 msgstr ""
 
-#: assets/od.php:184 assets/od.php:189 assets/od.php:191 assets/od.php:207
-#: assets/od.php:211
-msgid "Speelsets"
-msgstr ""
-
-#: assets/od.php:185 assets/od.php:190
-msgid "Speelset"
-msgstr ""
-
-#: assets/od.php:192
-msgid "Alle speelsets"
-msgstr ""
-
-#: assets/od.php:193
-msgid "Nieuwe speelset toevoegen"
-msgstr ""
-
-#: assets/od.php:194
-msgid "Voeg nieuwe speelset toe"
-msgstr ""
-
-#: assets/od.php:195
-msgid "Bewerk speelset"
-msgstr ""
-
-#: assets/od.php:196
-msgid "Nieuwe speelset"
-msgstr ""
-
-#: assets/od.php:197
-msgid "Bekijk speelset"
-msgstr ""
-
-#: assets/od.php:198
-msgid "Zoek speelset"
-msgstr ""
-
-#: assets/od.php:199
-msgid "Geen speelset gevonden"
-msgstr ""
-
-#: assets/od.php:200
-msgid "Geen speelset gevonden in de prullenbak"
-msgstr ""
-
-#: assets/od.php:201 assets/od.php:285
-msgid "Uitgelichte afbeelding"
-msgstr ""
-
-#: assets/od.php:202 assets/od.php:286
-#, fuzzy
-#| msgctxt "sitemap titel"
-#| msgid "Berichten"
-msgid "Overzichten"
-msgstr "Posts"
-
-#: assets/od.php:203 assets/od.php:287
-msgid "Bijbehorende bestanden"
-msgstr ""
-
-#: assets/od.php:232 assets/od.php:233 assets/od.php:234 assets/od.php:252
+#: assets/json.php:173 assets/json.php:174 assets/json.php:175
+#: assets/json.php:193 assets/od.php:224 assets/od.php:225 assets/od.php:226
+#: assets/od.php:244
 msgid "Jouw vraag"
 msgstr ""
 
-#: assets/od.php:235
+#: assets/json.php:176 assets/od.php:227
 msgid "Alle vragen"
 msgstr ""
 
-#: assets/od.php:236
+#: assets/json.php:177 assets/od.php:228
 msgid "Bewerk vraag"
 msgstr ""
 
-#: assets/od.php:237
+#: assets/json.php:178 assets/od.php:229
 msgid "Bekijk vraag"
 msgstr ""
 
-#: assets/od.php:238
+#: assets/json.php:179 assets/od.php:230
 msgid "vraag bijwerken"
 msgstr ""
 
-#: assets/od.php:239
+#: assets/json.php:180 assets/od.php:231
 msgid "vraag toevoegen"
 msgstr ""
 
-#: assets/od.php:240
+#: assets/json.php:181 assets/od.php:232
 msgid "Nieuwe vraag"
 msgstr ""
 
-#: assets/od.php:241
+#: assets/json.php:182 assets/od.php:233
 msgid "Zoek vraag"
 msgstr ""
 
-#: assets/od.php:242
+#: assets/json.php:183 assets/od.php:234
 msgid "Meest gebruikte vragen"
 msgstr ""
 
-#: assets/od.php:244
+#: assets/json.php:185 assets/od.php:236
 msgid "vraag toevoegen of verwijderen"
 msgstr ""
 
-#: assets/od.php:268 assets/od.php:273 assets/od.php:275 assets/od.php:291
-#: assets/od.php:295
+#: assets/json.php:205 assets/json.php:210 assets/json.php:212
+#: assets/json.php:228 assets/json.php:232 assets/od.php:260 assets/od.php:265
+#: assets/od.php:267 assets/od.php:283 assets/od.php:287
 #, fuzzy
 #| msgctxt "sitemap titel"
 #| msgid "Tipgevers"
 msgid "Tipgevers"
 msgstr "Authors"
 
-#: assets/od.php:269 assets/od.php:274 assets/od.php:532
+#: assets/json.php:206 assets/json.php:211 assets/json.php:465
+#: assets/od.php:261 assets/od.php:266 assets/od.php:524
 #, fuzzy
 #| msgctxt "sitemap titel"
 #| msgid "Tipgevers"
 msgid "Tipgever"
 msgstr "Authors"
 
-#: assets/od.php:276
+#: assets/json.php:213 assets/od.php:268
 #, fuzzy
 #| msgctxt "sitemap titel"
 #| msgid "Tipgevers"
 msgid "Alle tipgevers"
 msgstr "Authors"
 
-#: assets/od.php:277
+#: assets/json.php:214 assets/od.php:269
 msgid "Nieuwe tipgever toevoegen"
 msgstr ""
 
-#: assets/od.php:278
+#: assets/json.php:215 assets/od.php:270
 msgid "Voeg nieuwe tipgever toe"
 msgstr ""
 
-#: assets/od.php:279
+#: assets/json.php:216 assets/od.php:271
 msgid "Bewerk tipgever"
 msgstr ""
 
-#: assets/od.php:280
+#: assets/json.php:217 assets/od.php:272
 msgid "Nieuwe tipgever"
 msgstr ""
 
-#: assets/od.php:281
+#: assets/json.php:218 assets/od.php:273
 msgid "Bekijk tipgever"
 msgstr ""
 
-#: assets/od.php:282
+#: assets/json.php:219 assets/od.php:274
 #, fuzzy
 #| msgctxt "sitemap titel"
 #| msgid "Tipgevers"
 msgid "Zoek tipgever"
 msgstr "Authors"
 
-#: assets/od.php:283
+#: assets/json.php:220 assets/od.php:275
 msgid "Geen tipgever gevonden"
 msgstr ""
 
-#: assets/od.php:284
+#: assets/json.php:221 assets/od.php:276
 msgid "Geen tipgever gevonden in de prullenbak"
 msgstr ""
 
-#: assets/od.php:319
+#: assets/json.php:222 assets/od.php:193 assets/od.php:277
+msgid "Uitgelichte afbeelding"
+msgstr ""
+
+#: assets/json.php:223 assets/od.php:194 assets/od.php:278
+#, fuzzy
+#| msgctxt "sitemap titel"
+#| msgid "Berichten"
+msgid "Overzichten"
+msgstr "Posts"
+
+#: assets/json.php:224 assets/od.php:195 assets/od.php:279
+msgid "Bijbehorende bestanden"
+msgstr ""
+
+#: assets/json.php:252 assets/od.php:311
 msgid ""
 "Extra content: layout-instellingen voor de inleiding, goede voorbeelden, "
 "waarom werkt dit"
 msgstr ""
 
-#: assets/od.php:323
+#: assets/json.php:256 assets/od.php:315
 msgid "Soort inleiding"
 msgstr ""
 
-#: assets/od.php:326
+#: assets/json.php:259 assets/od.php:318
 msgid ""
 "Wil je een inleiding met een grote foto of een aantal opsommingen onder "
 "elkaar?"
 msgstr ""
 
-#: assets/od.php:335
+#: assets/json.php:268 assets/od.php:327
 msgid "Geen foto"
 msgstr ""
 
-#: assets/od.php:336
+#: assets/json.php:269 assets/od.php:328
 msgid "Grote foto naast de tekst"
 msgstr ""
 
-#: assets/od.php:337
+#: assets/json.php:270 assets/od.php:329
 msgid "Lijstje met opsommingen en kleine foto's"
 msgstr ""
 
-#: assets/od.php:346
+#: assets/json.php:279 assets/od.php:338
 msgid "Grote foto"
 msgstr ""
 
-#: assets/od.php:378
+#: assets/json.php:311 assets/od.php:370
 msgid "Lijstjes met kleine foto"
 msgstr ""
 
-#: assets/od.php:401
+#: assets/json.php:334 assets/od.php:393
 msgid "Nieuwe regel"
 msgstr ""
 
-#: assets/od.php:405
+#: assets/json.php:338 assets/od.php:397
 msgid "Bijbehorende foto"
 msgstr ""
 
-#: assets/od.php:429 assets/od.php:489
+#: assets/json.php:362 assets/json.php:422 assets/od.php:421 assets/od.php:481
 msgid "Titel"
 msgstr ""
 
-#: assets/od.php:450
+#: assets/json.php:383 assets/od.php:442
 msgid "Lijstje"
 msgstr ""
 
-#: assets/od.php:453
+#: assets/json.php:386 assets/od.php:445
 msgid "Voer alsjeblieft alleen lijstjes in."
 msgstr ""
 
-#: assets/od.php:470
+#: assets/json.php:403 assets/od.php:462
 msgid "Goed voorbeeld"
 msgstr ""
 
-#: assets/od.php:485
+#: assets/json.php:418 assets/od.php:477
 msgid "Voeg voorbeeld toe"
 msgstr ""
 
-#: assets/od.php:510
+#: assets/json.php:443 assets/od.php:502
 msgid "Tekst"
 msgstr ""
 
-#: assets/od.php:535
+#: assets/json.php:468 assets/od.php:527
 msgid "Selecteer één uit de lijst of voer een nieuwe naam in"
 msgstr ""
 
-#: assets/od.php:556
+#: assets/json.php:489 assets/od.php:548
 msgid "Naam van de tipgever"
 msgstr ""
 
-#: assets/od.php:572
+#: assets/json.php:505 assets/od.php:564
 msgid "Functie van de tipgever"
 msgstr ""
 
-#: assets/od.php:593
+#: assets/json.php:526 assets/od.php:585
 msgid "Afbeelding"
 msgstr ""
 
-#: assets/od.php:620
+#: assets/json.php:553 assets/od.php:612
 #, fuzzy
 #| msgctxt "Titel boven waaromwerktdit"
 #| msgid "Waarom werkt dit?"
 msgid "Waarom werkt dit?"
 msgstr "Explanation"
 
-#: assets/od.php:642
+#: assets/json.php:575 assets/od.php:634
 #, fuzzy
 #| msgctxt "Titel boven waaromwerktdit"
 #| msgid "Onderzoek"
 msgid "Onderzoek: inleiding"
 msgstr "Research"
 
-#: assets/od.php:664
+#: assets/json.php:597 assets/od.php:656
 msgid "Vraag 1 - titel"
 msgstr ""
 
-#: assets/od.php:686
+#: assets/json.php:619 assets/od.php:678
 msgid "Vraag 1 - cijfer"
 msgstr ""
 
-#: assets/od.php:710
+#: assets/json.php:643 assets/od.php:702
 msgid "Vraag 1 - antwoord"
 msgstr ""
 
-#: assets/od.php:733
+#: assets/json.php:666 assets/od.php:725
 msgid "Vraag 2 - titel"
 msgstr ""
 
-#: assets/od.php:755
+#: assets/json.php:688 assets/od.php:747
 msgid "Vraag 2 - cijfer"
 msgstr ""
 
-#: assets/od.php:779
+#: assets/json.php:712 assets/od.php:771
 msgid "Vraag 2 - antwoord"
 msgstr ""
 
-#: assets/od.php:802
+#: assets/json.php:735 assets/od.php:794
 msgid "Vraag 3 - titel"
 msgstr ""
 
-#: assets/od.php:824
+#: assets/json.php:757 assets/od.php:816
 msgid "Vraag 3 - cijfer"
 msgstr ""
 
-#: assets/od.php:848
+#: assets/json.php:781 assets/od.php:840
 msgid "Vraag 3 - antwoord"
 msgstr ""
 
-#: assets/od.php:871
+#: assets/json.php:804 assets/od.php:863
 #, fuzzy
 #| msgctxt "Titel boven waaromwerktdit"
 #| msgid "Onderzoek"
 msgid "Onderzoek: conclusie"
 msgstr "Research"
 
-#: assets/od.php:924
+#: assets/json.php:857 assets/od.php:916
 msgid "Tip-nummer"
 msgstr ""
 
-#: assets/od.php:1054
+#: assets/json.php:987 assets/od.php:1046
 msgid "Nuttige links"
 msgstr ""
 
-#: assets/od.php:1057
+#: assets/json.php:990 assets/od.php:1049
 msgid "Geen linkbeschrijving ingevoerd"
 msgstr ""
 
-#: assets/od.php:1073
+#: assets/json.php:1006 assets/od.php:1065
 msgid "URL"
 msgstr ""
 
-#: assets/od.php:1089
+#: assets/json.php:1022 assets/od.php:1081
 msgid "Link: icoon"
 msgstr ""
 
-#: assets/od.php:1111
+#: assets/json.php:1044 assets/od.php:1103
 msgid "Link: Titel"
 msgstr ""
 
-#: assets/od.php:1132
+#: assets/json.php:1065 assets/od.php:1124
 msgid "Link: beschrijving"
 msgstr ""
 
-#: assets/od.php:1153
+#: assets/json.php:1086 assets/od.php:1145
 msgid "Link: CTA"
 msgstr ""
 
-#: assets/od.php:1174
+#: assets/json.php:1107 assets/od.php:1166
 msgid "Link: hreflang"
 msgstr ""
 
-#: assets/od.php:1222
+#: assets/json.php:1155 assets/od.php:1214
 msgid "Functietitel"
 msgstr ""
 
-#: assets/od.php:1242
+#: assets/json.php:1175 assets/od.php:1234
 msgid "Foto"
 msgstr ""
 
-#: assets/od.php:1267
+#: assets/json.php:1200 assets/od.php:1259
 msgid "E-mailadres"
 msgstr ""
 
-#: assets/od.php:1286
+#: assets/json.php:1219 assets/od.php:1278
 msgid "Telefoonnummer"
 msgstr ""
 
-#: assets/od.php:1658
+#: assets/json.php:1591 assets/od.php:1650
 msgid "Titel op 404-pagina"
 msgstr ""
 
-#: assets/od.php:1679
+#: assets/json.php:1612 assets/od.php:1671
 msgid "Beschrijving op 404-pagina"
 msgstr ""
 
-#: functions.php:158
+#: assets/od.php:176 assets/od.php:181 assets/od.php:183 assets/od.php:199
+#: assets/od.php:203
+msgid "Speelsets"
+msgstr ""
+
+#: assets/od.php:177 assets/od.php:182
+msgid "Speelset"
+msgstr ""
+
+#: assets/od.php:184
+msgid "Alle speelsets"
+msgstr ""
+
+#: assets/od.php:185
+msgid "Nieuwe speelset toevoegen"
+msgstr ""
+
+#: assets/od.php:186
+msgid "Voeg nieuwe speelset toe"
+msgstr ""
+
+#: assets/od.php:187
+msgid "Bewerk speelset"
+msgstr ""
+
+#: assets/od.php:188
+msgid "Nieuwe speelset"
+msgstr ""
+
+#: assets/od.php:189
+msgid "Bekijk speelset"
+msgstr ""
+
+#: assets/od.php:190
+msgid "Zoek speelset"
+msgstr ""
+
+#: assets/od.php:191
+msgid "Geen speelset gevonden"
+msgstr ""
+
+#: assets/od.php:192
+msgid "Geen speelset gevonden in de prullenbak"
+msgstr ""
+
+#: functions.php:161
 msgctxt "menu location"
 msgid "Menu in header"
 msgstr ""
 
-#: functions.php:159
+#: functions.php:162
 msgctxt "menu location"
 msgid "Menu in footer"
 msgstr ""
 
-#: functions.php:210
+#: functions.php:213
 #, php-format
 msgctxt "Alt-tekst op logo"
 msgid "Logo %s"
 msgstr ""
 
-#: functions.php:218
+#: functions.php:221
 msgctxt "skiplinks"
 msgid "Jump to main content"
 msgstr ""
 
-#: functions.php:220
+#: functions.php:223
 msgctxt "skiplinks"
 msgid "Jump to main navigation"
 msgstr ""
 
-#: functions.php:451
+#: functions.php:327
+msgid "Wit"
+msgstr ""
+
+#: functions.php:332
+msgid "Zwart"
+msgstr ""
+
+#: functions.php:337
+msgid "GC Groen"
+msgstr ""
+
+#: functions.php:342
+msgid "GC Dark Blue"
+msgstr ""
+
+#: functions.php:347
+msgid "GC Pantybrown"
+msgstr ""
+
+#: functions.php:354
+msgid "GC Dark Purple"
+msgstr ""
+
+#: functions.php:359
+msgid "GC Blue"
+msgstr ""
+
+#: functions.php:364
+msgid "GC Pink"
+msgstr ""
+
+#: functions.php:369
+msgid "GC Orange"
+msgstr ""
+
+#: functions.php:374
+msgid "GC Cyan"
+msgstr ""
+
+#: functions.php:517
 msgctxt "Widget area"
 msgid "Footer widget left"
 msgstr ""
 
-#: functions.php:460
+#: functions.php:526
 msgctxt "Widget area"
 msgid "Footer widget right"
 msgstr ""
 
-#: functions.php:582
+#: functions.php:651
 msgctxt "customizer"
 msgid "Gebruiker Centraal Instellingen"
 msgstr "Site layout settings"
 
-#: functions.php:583
+#: functions.php:652
 msgctxt "customizer"
 msgid ""
 "Selecteer hier het kleurenschema voor deze site. Je wijzigt hiermee de "
@@ -550,10 +596,14 @@ msgstr ""
 "Select the color scheme for this site. This changes colors, logo and some "
 "functionality of the site."
 
-#: functions.php:606
+#: functions.php:675
 msgctxt "customizer"
 msgid "Kies het kleurenschema"
 msgstr "Select color scheme"
+
+#: functions.php:795
+msgid "GC Kennisbank"
+msgstr ""
 
 #: gutenberg-blocks/cta-block.php:16
 msgctxt "Block titel"
@@ -632,26 +682,627 @@ msgctxt "Block description"
 msgid "Tekst en plaatje naast elkaar"
 msgstr ""
 
+#: plugin-activatie/class-tgm-plugin-activation.php:334
+msgid "Install Required Plugins"
+msgstr ""
+
+#: plugin-activatie/class-tgm-plugin-activation.php:335
+msgid "Install Plugins"
+msgstr ""
+
+#. translators: %s: plugin name.
+#: plugin-activatie/class-tgm-plugin-activation.php:337
+#, php-format
+msgid "Installing Plugin: %s"
+msgstr ""
+
+#. translators: %s: plugin name.
+#: plugin-activatie/class-tgm-plugin-activation.php:339
+#, php-format
+msgid "Updating Plugin: %s"
+msgstr ""
+
+#: plugin-activatie/class-tgm-plugin-activation.php:340
+msgid "Something went wrong with the plugin API."
+msgstr ""
+
+#. translators: 1: plugin name(s).
+#: plugin-activatie/class-tgm-plugin-activation.php:343
+#, php-format
+msgid "This theme requires the following plugin: %1$s."
+msgid_plural "This theme requires the following plugins: %1$s."
+msgstr[0] ""
+msgstr[1] ""
+
+#. translators: 1: plugin name(s).
+#: plugin-activatie/class-tgm-plugin-activation.php:349
+#, php-format
+msgid "This theme recommends the following plugin: %1$s."
+msgid_plural "This theme recommends the following plugins: %1$s."
+msgstr[0] ""
+msgstr[1] ""
+
+#. translators: 1: plugin name(s).
+#: plugin-activatie/class-tgm-plugin-activation.php:355
+#, php-format
+msgid ""
+"The following plugin needs to be updated to its latest version to ensure "
+"maximum compatibility with this theme: %1$s."
+msgid_plural ""
+"The following plugins need to be updated to their latest version to ensure "
+"maximum compatibility with this theme: %1$s."
+msgstr[0] ""
+msgstr[1] ""
+
+#. translators: 1: plugin name(s).
+#: plugin-activatie/class-tgm-plugin-activation.php:361
+#, php-format
+msgid "There is an update available for: %1$s."
+msgid_plural "There are updates available for the following plugins: %1$s."
+msgstr[0] ""
+msgstr[1] ""
+
+#. translators: 1: plugin name(s).
+#: plugin-activatie/class-tgm-plugin-activation.php:367
+#, php-format
+msgid "The following required plugin is currently inactive: %1$s."
+msgid_plural "The following required plugins are currently inactive: %1$s."
+msgstr[0] ""
+msgstr[1] ""
+
+#. translators: 1: plugin name(s).
+#: plugin-activatie/class-tgm-plugin-activation.php:373
+#, php-format
+msgid "The following recommended plugin is currently inactive: %1$s."
+msgid_plural "The following recommended plugins are currently inactive: %1$s."
+msgstr[0] ""
+msgstr[1] ""
+
+#: plugin-activatie/class-tgm-plugin-activation.php:378
+msgid "Begin installing plugin"
+msgid_plural "Begin installing plugins"
+msgstr[0] ""
+msgstr[1] ""
+
+#: plugin-activatie/class-tgm-plugin-activation.php:383
+msgid "Begin updating plugin"
+msgid_plural "Begin updating plugins"
+msgstr[0] ""
+msgstr[1] ""
+
+#: plugin-activatie/class-tgm-plugin-activation.php:388
+msgid "Begin activating plugin"
+msgid_plural "Begin activating plugins"
+msgstr[0] ""
+msgstr[1] ""
+
+#: plugin-activatie/class-tgm-plugin-activation.php:392
+msgid "Return to Required Plugins Installer"
+msgstr ""
+
+#: plugin-activatie/class-tgm-plugin-activation.php:393
+#: plugin-activatie/class-tgm-plugin-activation.php:920
+#: plugin-activatie/class-tgm-plugin-activation.php:2626
+#: plugin-activatie/class-tgm-plugin-activation.php:3673
+msgid "Return to the Dashboard"
+msgstr ""
+
+#: plugin-activatie/class-tgm-plugin-activation.php:394
+#: plugin-activatie/class-tgm-plugin-activation.php:3252
+msgid "Plugin activated successfully."
+msgstr ""
+
+#: plugin-activatie/class-tgm-plugin-activation.php:395
+#: plugin-activatie/class-tgm-plugin-activation.php:3045
+msgid "The following plugin was activated successfully:"
+msgid_plural "The following plugins were activated successfully:"
+msgstr[0] ""
+msgstr[1] ""
+
+#. translators: 1: plugin name.
+#: plugin-activatie/class-tgm-plugin-activation.php:397
+#, php-format
+msgid "No action taken. Plugin %1$s was already active."
+msgstr ""
+
+#. translators: 1: plugin name.
+#: plugin-activatie/class-tgm-plugin-activation.php:399
+#, php-format
+msgid ""
+"Plugin not activated. A higher version of %s is needed for this theme. "
+"Please update the plugin."
+msgstr ""
+
+#. translators: 1: dashboard link.
+#: plugin-activatie/class-tgm-plugin-activation.php:401
+#, php-format
+msgid "All plugins installed and activated successfully. %1$s"
+msgstr ""
+
+#: plugin-activatie/class-tgm-plugin-activation.php:402
+msgid "Dismiss this notice"
+msgstr ""
+
+#: plugin-activatie/class-tgm-plugin-activation.php:403
+msgid ""
+"There are one or more required or recommended plugins to install, update or "
+"activate."
+msgstr ""
+
+#: plugin-activatie/class-tgm-plugin-activation.php:404
+msgid "Please contact the administrator of this site for help."
+msgstr ""
+
+#: plugin-activatie/class-tgm-plugin-activation.php:607
+msgid "This plugin needs to be updated to be compatible with your theme."
+msgstr ""
+
+#: plugin-activatie/class-tgm-plugin-activation.php:608
+msgid "Update Required"
+msgstr ""
+
+#: plugin-activatie/class-tgm-plugin-activation.php:725
+msgid "Set the parent_slug config variable instead."
+msgstr ""
+
+#: plugin-activatie/class-tgm-plugin-activation.php:1027
+msgid ""
+"The remote plugin package does not contain a folder with the desired slug "
+"and renaming did not work."
+msgstr ""
+
+#: plugin-activatie/class-tgm-plugin-activation.php:1027
+#: plugin-activatie/class-tgm-plugin-activation.php:1030
+msgid ""
+"Please contact the plugin provider and ask them to package their plugin "
+"according to the WordPress guidelines."
+msgstr ""
+
+#: plugin-activatie/class-tgm-plugin-activation.php:1030
+msgid ""
+"The remote plugin package consists of more than one file, but the files are "
+"not packaged in a folder."
+msgstr ""
+
+#: plugin-activatie/class-tgm-plugin-activation.php:1214
+#: plugin-activatie/class-tgm-plugin-activation.php:3041
+msgctxt "plugin A *and* plugin B"
+msgid "and"
+msgstr ""
+
+#. translators: %s: version number
+#: plugin-activatie/class-tgm-plugin-activation.php:2075
+#, php-format
+msgid "TGMPA v%s"
+msgstr ""
+
+#: plugin-activatie/class-tgm-plugin-activation.php:2366
+msgid "Required"
+msgstr ""
+
+#: plugin-activatie/class-tgm-plugin-activation.php:2369
+msgid "Recommended"
+msgstr ""
+
+#: plugin-activatie/class-tgm-plugin-activation.php:2385
+msgid "WordPress Repository"
+msgstr ""
+
+#: plugin-activatie/class-tgm-plugin-activation.php:2388
+msgid "External Source"
+msgstr ""
+
+#: plugin-activatie/class-tgm-plugin-activation.php:2391
+msgid "Pre-Packaged"
+msgstr ""
+
+#: plugin-activatie/class-tgm-plugin-activation.php:2408
+msgid "Not Installed"
+msgstr ""
+
+#: plugin-activatie/class-tgm-plugin-activation.php:2412
+msgid "Installed But Not Activated"
+msgstr ""
+
+#: plugin-activatie/class-tgm-plugin-activation.php:2414
+msgid "Active"
+msgstr ""
+
+#: plugin-activatie/class-tgm-plugin-activation.php:2420
+msgid "Required Update not Available"
+msgstr ""
+
+#: plugin-activatie/class-tgm-plugin-activation.php:2423
+msgid "Requires Update"
+msgstr ""
+
+#: plugin-activatie/class-tgm-plugin-activation.php:2426
+msgid "Update recommended"
+msgstr ""
+
+#. translators: 1: install status, 2: update status
+#: plugin-activatie/class-tgm-plugin-activation.php:2435
+#, php-format
+msgctxt "Install/Update Status"
+msgid "%1$s, %2$s"
+msgstr ""
+
+#. translators: 1: number of plugins.
+#: plugin-activatie/class-tgm-plugin-activation.php:2481
+#, php-format
+msgctxt "plugins"
+msgid "Alles <span class=\"count\">(%s)</span>"
+msgid_plural "All <span class=\"count\">(%s)</span>"
+msgstr[0] ""
+msgstr[1] ""
+
+#. translators: 1: number of plugins.
+#: plugin-activatie/class-tgm-plugin-activation.php:2485
+#, php-format
+msgid "Vereiste plugins <span class=\"count\">(%s)</span>"
+msgid_plural "To Install <span class=\"count\">(%s)</span>"
+msgstr[0] ""
+msgstr[1] ""
+
+#. translators: 1: number of plugins.
+#: plugin-activatie/class-tgm-plugin-activation.php:2489
+#, php-format
+msgid "Update Beschikbaar <span class=\"count\">(%s)</span>"
+msgid_plural "Update Available <span class=\"count\">(%s)</span>"
+msgstr[0] ""
+msgstr[1] ""
+
+#. translators: 1: number of plugins.
+#: plugin-activatie/class-tgm-plugin-activation.php:2493
+#, php-format
+msgid "Nog niet geactiveerd <span class=\"count\">(%s)</span>"
+msgid_plural "To Activate <span class=\"count\">(%s)</span>"
+msgstr[0] ""
+msgstr[1] ""
+
+#: plugin-activatie/class-tgm-plugin-activation.php:2575
+msgctxt "as in: \"version nr unknown\""
+msgid "unknown"
+msgstr ""
+
+#: plugin-activatie/class-tgm-plugin-activation.php:2583
+msgid "Installed version:"
+msgstr ""
+
+#: plugin-activatie/class-tgm-plugin-activation.php:2591
+msgid "Minimum required version:"
+msgstr ""
+
+#: plugin-activatie/class-tgm-plugin-activation.php:2603
+msgid "Available version:"
+msgstr ""
+
+#: plugin-activatie/class-tgm-plugin-activation.php:2626
+msgid "No plugins to install, update or activate."
+msgstr ""
+
+#: plugin-activatie/class-tgm-plugin-activation.php:2640
+msgid "Plugin"
+msgstr ""
+
+#: plugin-activatie/class-tgm-plugin-activation.php:2641
+msgid "Source"
+msgstr ""
+
+#: plugin-activatie/class-tgm-plugin-activation.php:2642
+msgid "Type"
+msgstr ""
+
+#: plugin-activatie/class-tgm-plugin-activation.php:2646
+msgid "Version"
+msgstr ""
+
+#: plugin-activatie/class-tgm-plugin-activation.php:2647
+msgid "Status"
+msgstr ""
+
+#. translators: %2$s: plugin name in screen reader markup
+#: plugin-activatie/class-tgm-plugin-activation.php:2696
+#, php-format
+msgid "Installeer %2$s"
+msgstr ""
+
+#. translators: %2$s: plugin name in screen reader markup
+#: plugin-activatie/class-tgm-plugin-activation.php:2701
+#, php-format
+msgid "Update %2$s"
+msgstr ""
+
+#. translators: %2$s: plugin name in screen reader markup
+#: plugin-activatie/class-tgm-plugin-activation.php:2707
+#, php-format
+msgid "Activeer %2$s"
+msgstr ""
+
+#: plugin-activatie/class-tgm-plugin-activation.php:2777
+msgid "Upgrade message from the plugin author:"
+msgstr ""
+
+#: plugin-activatie/class-tgm-plugin-activation.php:2810
+msgid "Install"
+msgstr ""
+
+#: plugin-activatie/class-tgm-plugin-activation.php:2816
+msgid "Update"
+msgstr ""
+
+#: plugin-activatie/class-tgm-plugin-activation.php:2819
+msgid "Activate"
+msgstr ""
+
+#: plugin-activatie/class-tgm-plugin-activation.php:2850
+msgid "No plugins were selected to be installed. No action taken."
+msgstr ""
+
+#: plugin-activatie/class-tgm-plugin-activation.php:2852
+msgid "No plugins were selected to be updated. No action taken."
+msgstr ""
+
+#: plugin-activatie/class-tgm-plugin-activation.php:2893
+msgid "No plugins are available to be installed at this time."
+msgstr ""
+
+#: plugin-activatie/class-tgm-plugin-activation.php:2895
+msgid "No plugins are available to be updated at this time."
+msgstr ""
+
+#: plugin-activatie/class-tgm-plugin-activation.php:3001
+msgid "No plugins were selected to be activated. No action taken."
+msgstr ""
+
+#: plugin-activatie/class-tgm-plugin-activation.php:3027
+msgid "No plugins are available to be activated at this time."
+msgstr ""
+
+#: plugin-activatie/class-tgm-plugin-activation.php:3251
+msgid "Plugin activation failed."
+msgstr ""
+
+#. translators: 1: plugin name, 2: action number 3: total number of actions.
+#: plugin-activatie/class-tgm-plugin-activation.php:3591
+#, php-format
+msgid "Updating Plugin %1$s (%2$d/%3$d)"
+msgstr ""
+
+#. translators: 1: plugin name, 2: error message.
+#: plugin-activatie/class-tgm-plugin-activation.php:3594
+#, php-format
+msgid "An error occurred while installing %1$s: <strong>%2$s</strong>."
+msgstr ""
+
+#. translators: 1: plugin name.
+#: plugin-activatie/class-tgm-plugin-activation.php:3596
+#, php-format
+msgid "The installation of %1$s failed."
+msgstr ""
+
+#: plugin-activatie/class-tgm-plugin-activation.php:3600
+msgid ""
+"The installation and activation process is starting. This process may take a "
+"while on some hosts, so please be patient."
+msgstr ""
+
+#. translators: 1: plugin name.
+#: plugin-activatie/class-tgm-plugin-activation.php:3602
+#, php-format
+msgid "%1$s installed and activated successfully."
+msgstr ""
+
+#: plugin-activatie/class-tgm-plugin-activation.php:3602
+#: plugin-activatie/class-tgm-plugin-activation.php:3610
+msgid "Show Details"
+msgstr ""
+
+#: plugin-activatie/class-tgm-plugin-activation.php:3602
+#: plugin-activatie/class-tgm-plugin-activation.php:3610
+msgid "Hide Details"
+msgstr ""
+
+#: plugin-activatie/class-tgm-plugin-activation.php:3603
+msgid "All installations and activations have been completed."
+msgstr ""
+
+#. translators: 1: plugin name, 2: action number 3: total number of actions.
+#: plugin-activatie/class-tgm-plugin-activation.php:3605
+#, php-format
+msgid "Installing and Activating Plugin %1$s (%2$d/%3$d)"
+msgstr ""
+
+#: plugin-activatie/class-tgm-plugin-activation.php:3608
+msgid ""
+"The installation process is starting. This process may take a while on some "
+"hosts, so please be patient."
+msgstr ""
+
+#. translators: 1: plugin name.
+#: plugin-activatie/class-tgm-plugin-activation.php:3610
+#, php-format
+msgid "%1$s installed successfully."
+msgstr ""
+
+#: plugin-activatie/class-tgm-plugin-activation.php:3611
+msgid "All installations have been completed."
+msgstr ""
+
+#. translators: 1: plugin name, 2: action number 3: total number of actions.
+#: plugin-activatie/class-tgm-plugin-activation.php:3613
+#, php-format
+msgid "Installing Plugin %1$s (%2$d/%3$d)"
+msgstr ""
+
+#: plugin-activatie/kennisbank.php:149
+msgctxt "Plugins installer"
+msgid "Install Required Plugins"
+msgstr ""
+
+#: plugin-activatie/kennisbank.php:150
+msgctxt "Plugins installer"
+msgid "Install Plugins"
+msgstr ""
+
+#: plugin-activatie/kennisbank.php:152
+#, php-format
+msgctxt "Plugins installer"
+msgid "Installing Plugin: %s"
+msgstr ""
+
+#: plugin-activatie/kennisbank.php:154
+#, php-format
+msgctxt "Plugins installer"
+msgid "Updating Plugin: %s"
+msgstr ""
+
+#: plugin-activatie/kennisbank.php:155
+msgctxt "Plugins installer"
+msgid "Something went wrong with the plugin API."
+msgstr ""
+
+#: plugin-activatie/kennisbank.php:158
+#, php-format
+msgctxt "Plugins installer"
+msgid "This theme requires the following plugin: %1$s."
+msgid_plural "This theme requires the following plugins: %1$s."
+msgstr[0] ""
+msgstr[1] ""
+
+#: plugin-activatie/kennisbank.php:162
+#, php-format
+msgctxt "Plugins installer"
+msgid "This theme recommends the following plugin: %1$s."
+msgid_plural "This theme recommends the following plugins: %1$s."
+msgstr[0] ""
+msgstr[1] ""
+
+#: plugin-activatie/kennisbank.php:166
+#, php-format
+msgctxt "Plugins installer"
+msgid ""
+"The following plugin needs to be updated to its latest version to ensure "
+"maximum compatibility with this theme: %1$s."
+msgid_plural ""
+"The following plugins need to be updated to their latest version to ensure "
+"maximum compatibility with this theme: %1$s."
+msgstr[0] ""
+msgstr[1] ""
+
+#: plugin-activatie/kennisbank.php:170
+#, php-format
+msgctxt "Plugins installer"
+msgid "There is an update available for: %1$s."
+msgid_plural "There are updates available for the following plugins: %1$s."
+msgstr[0] ""
+msgstr[1] ""
+
+#: plugin-activatie/kennisbank.php:174
+#, php-format
+msgctxt "Plugins installer"
+msgid "The following required plugin is currently inactive: %1$s."
+msgid_plural "The following required plugins are currently inactive: %1$s."
+msgstr[0] ""
+msgstr[1] ""
+
+#: plugin-activatie/kennisbank.php:178
+#, php-format
+msgctxt "Plugins installer"
+msgid "The following recommended plugin is currently inactive: %1$s."
+msgid_plural "The following recommended plugins are currently inactive: %1$s."
+msgstr[0] ""
+msgstr[1] ""
+
+#: plugin-activatie/kennisbank.php:181
+msgctxt "Plugins installer"
+msgid "Begin installing plugin"
+msgid_plural "Begin installing plugins"
+msgstr[0] ""
+msgstr[1] ""
+
+#: plugin-activatie/kennisbank.php:184
+msgctxt "Plugins installer"
+msgid "Begin updating plugin"
+msgid_plural "Begin updating plugins"
+msgstr[0] ""
+msgstr[1] ""
+
+#: plugin-activatie/kennisbank.php:187
+msgctxt "Plugins installer"
+msgid "Begin activating plugin"
+msgid_plural "Begin activating plugins"
+msgstr[0] ""
+msgstr[1] ""
+
+#: plugin-activatie/kennisbank.php:189
+msgctxt "Plugins installer"
+msgid "Return to Required Plugins Installer"
+msgstr ""
+
+#: plugin-activatie/kennisbank.php:190
+msgctxt "Plugins installer"
+msgid "Plugin activated successfully."
+msgstr ""
+
+#: plugin-activatie/kennisbank.php:191
+msgctxt "Plugins installer"
+msgid "The following plugin was activated successfully:"
+msgstr ""
+
+#: plugin-activatie/kennisbank.php:193
+#, php-format
+msgctxt "Plugins installer"
+msgid "No action taken. Plugin %1$s was already active."
+msgstr ""
+
+#: plugin-activatie/kennisbank.php:195
+#, php-format
+msgctxt "Plugins installer"
+msgid ""
+"Plugin not activated. A higher version of %s is needed for this theme. "
+"Please update the plugin."
+msgstr ""
+
+#: plugin-activatie/kennisbank.php:197
+#, php-format
+msgctxt "Plugins installer"
+msgid "All plugins installed and activated successfully. %1$s"
+msgstr ""
+
+#: plugin-activatie/kennisbank.php:198
+msgctxt "Plugins installer"
+msgid "Dismiss this notice"
+msgstr ""
+
+#: plugin-activatie/kennisbank.php:199
+msgctxt "Plugins installer"
+msgid ""
+"There are one or more required or recommended plugins to install, update or "
+"activate."
+msgstr ""
+
+#: plugin-activatie/kennisbank.php:200
+msgctxt "Plugins installer"
+msgid "Please contact the administrator of this site for help."
+msgstr ""
+
 #: single-tips.php:69
 msgctxt "Titel gerelateerde tips"
 msgid "Gerelateerde tips"
 msgstr ""
 
 #: single-tips.php:134
-#, fuzzy, php-format
-#| msgctxt "linktext auteur voorbeeld"
-#| msgid "Meer tips van %s"
+#, php-format
 msgctxt "Titel gerelateerde tips"
 msgid "Meer tips over %s"
-msgstr "More tips by %s"
+msgstr "More tips about %s"
 
 #: single-tips.php:137
-#, fuzzy, php-format
-#| msgctxt "linktext auteur voorbeeld"
-#| msgid "Meer tips van %s"
+#, php-format
 msgctxt "Linktekst overzicht tipthema"
 msgid "Alle tips over %s"
-msgstr "More tips by %s"
+msgstr "All tips about %s"
 
 #: single-tips.php:194
 #, php-format
@@ -667,7 +1318,7 @@ msgstr ""
 #: single-tips.php:236 single-tips.php:266
 msgctxt "Titel boven waaromwerktdit"
 msgid "Waarom werkt dit?"
-msgstr "Explanation"
+msgstr "Waarom werkt dit?"
 
 #: single-tips.php:242
 msgctxt "Titel boven waaromwerktdit"
