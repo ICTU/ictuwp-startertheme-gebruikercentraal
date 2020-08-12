@@ -313,6 +313,69 @@ class GebruikerCentraalTheme extends Timber\Site {
 		add_editor_style( get_stylesheet_directory_uri() . '/assets/fonts/editor-fonts.css' . $cachebuster );
 		add_editor_style( get_stylesheet_directory_uri() . '/assets/css/editor-styles.css' . $cachebuster );
 
+		// Allow for responsive embedding
+		add_theme_support( 'responsive-embeds' );
+
+		// Disable Custom Colors
+		add_theme_support( 'disable-custom-colors' );
+
+		// Restrict Editor Color Palette
+		add_theme_support( 'editor-color-palette', array(
+
+			// primaire kleuren
+			array(
+				'name'  => __( 'Wit', 'gctheme' ),
+				'slug'  => 'white',
+				'color' => '#fff',
+			),
+			array(
+				'name'  => __( 'Zwart', 'gctheme' ),
+				'slug'  => 'black',
+				'color' => '#000',
+			),
+			array(
+				'name'  => __( 'GC Groen', 'gctheme' ),
+				'slug'  => 'gc-green',
+				'color' => '#25b34b',
+			),
+			array(
+				'name'  => __( 'GC Dark Blue', 'gctheme' ),
+				'slug'  => 'gc-dark-blue',
+				'color' => '#004152',
+			),
+			array(
+				'name'  => __( 'GC Pantybrown', 'gctheme' ),
+				'slug'  => 'gc_pantybrown',
+				'color' => '#e8d8c7',
+			),
+
+			// secundaire kleuren
+			array(
+				'name'  => __( 'GC Dark Purple', 'gctheme' ),
+				'slug'  => 'gc-dark-purple',
+				'color' => '#4c2974',
+			),
+			array(
+				'name'  => __( 'GC Blue', 'gctheme' ),
+				'slug'  => 'gc-blue',
+				'color' => '#0095da',
+			),
+			array(
+				'name'  => __( 'GC Pink', 'gctheme' ),
+				'slug'  => 'gc-pink',
+				'color' => '#c42c76',
+			),
+			array(
+				'name'  => __( 'GC Orange', 'gctheme' ),
+				'slug'  => 'gc-orange',
+				'color' => '#f99d1c',
+			),
+			array(
+				'name'  => __( 'GC Cyan', 'gctheme' ),
+				'slug'  => 'gc-cyan',
+				'color' => '#00b4ac',
+			),
+		) );
 
 
 
