@@ -126,6 +126,10 @@
     padding-top: 0;
   }
 }
+.section--heading + .section--text {
+  margin-top: 1rem;
+}
+
 // Overviews
 
 .section--overview {

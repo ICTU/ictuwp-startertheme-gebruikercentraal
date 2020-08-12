@@ -512,13 +512,16 @@ function my_body_classes( $classes ) {
 
 	global $post;
 
-	$classes[] = 'meh';
+	$classes[] = '';
 
 	if ( is_page() ) {
 
 		$template = basename( get_page_template() );
 		if ( 'template-alle-tips.php' === $template ) {
 			$classes[] = 'page--type-overview page--overview-archive';
+		}
+		if ( 'template-landingspagina.php' === $template ) {
+			$classes[] = 'page--type-landing page--overview-archive entry--type-landing';
 		}
 
 	} elseif ( is_singular( GC_TIP_CPT ) ) {
@@ -733,6 +736,25 @@ function rename_minervakb() {
 	return false;
 }
 add_action( 'admin_menu', 'rename_minervakb', 999 );
+
+//========================================================================================================
+
+function append_block_wrappers( $block_content, $block ) {
+	if ( $block['blockName'] === 'core/paragraph' ) {
+		$content = '<div class="section section--text">';
+		$content .= $block_content;
+		$content .= '</div>';
+		return $content;
+	} elseif ( $block['blockName'] === 'core/heading' ) {
+		$content = '<div class="section section--heading">';
+		$content .= $block_content;
+		$content .= '</div>';
+		return $content;
+	}
+	return $block_content;
+}
+
+add_filter( 'render_block', 'append_block_wrappers', 10, 2 );
 
 //========================================================================================================
 
