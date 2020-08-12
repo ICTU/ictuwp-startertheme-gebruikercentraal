@@ -804,15 +804,27 @@ add_action( 'admin_menu', 'rename_minervakb', 999 );
 
 function append_block_wrappers( $block_content, $block ) {
 	if ( $block['blockName'] === 'core/paragraph' ) {
-		$content = '<div class="section section--text">';
+		$content = '<div class="section section--paragraph">';
 		$content .= $block_content;
 		$content .= '</div>';
+
 		return $content;
+
 	} elseif ( $block['blockName'] === 'core/heading' ) {
 		$content = '<div class="section section--heading">';
 		$content .= $block_content;
 		$content .= '</div>';
+
 		return $content;
+		/*
+	} elseif ( $block['blockName'] ) {
+		$content = '<div style="border-top: 1px solid #dadada;">';
+		$content .= '<p><strong>Block: ' . $block['blockName'] . '</strong></p>';
+		$content .= $block_content;
+		$content .= '</div>';
+
+		return $content;
+		*/
 	}
 	return $block_content;
 }
@@ -820,4 +832,84 @@ function append_block_wrappers( $block_content, $block ) {
 add_filter( 'render_block', 'append_block_wrappers', 10, 2 );
 
 //========================================================================================================
+/*
+ * only allow these Gutenberg blocks to be used
+ */
 
+function gc_restrict_gutenberg_blocks( $allowed_blocks ) {
+
+	/*
+		these are most of the core blocks. We will allow only some of them
+		---------------------------------------------
+		Standard block: core-embed/facebook
+		Standard block: core-embed/instagram
+		Standard block: core-embed/twitter
+		Standard block: core-embed/wordpress
+		Standard block: core-embed/vimeo
+		Standard block: core-embed/youtube
+		Standard block: core/audio
+		Standard block: core/button
+		Standard block: core/categories
+		Standard block: core/code
+		Standard block: core/columns
+		Standard block: core/cover
+		Standard block: core/file
+		Standard block: core/gallery
+		Standard block: core/heading
+		Standard block: core/html
+		Standard block: core/image
+		Standard block: core/latest-posts
+		Standard block: core/media-text
+		Standard block: core/list
+		Standard block: core/nextpage
+		Standard block: core/paragraph
+		Standard block: core/preformatted
+		Standard block: core/pullquote
+		Standard block: core/quote
+		Standard block: core/separator
+		Standard block: core/spacer
+		Standard block: core/subhead
+		Standard block: core/table
+		Standard block: core/text-columns
+		Standard block: core/verse
+		Standard block: core/video
+
+
+		these are our custom Gutenberg blocks
+		see folder: /gutenberg-blocks
+		---------------------------------------------
+		GC specific block: acf/gc-links
+		GC specific block: acf/gc-related
+		GC specific block: acf/gc-downloads
+		GC specific block: acf/gc-ctalink
+		GC specific block: acf/gc-textimage
+
+
+	*/
+	return array(
+		'core/image',
+		'core/heading',
+		'core/table',
+		'core/audio',
+		'core/gallery',
+		'core/list',
+		'core/media-text',
+		'core/paragraph',
+		'core/pullquote',
+		'core/subhead',
+		'core-embed/youtube',
+
+		'acf/gc-links',
+		'acf/gc-related',
+		'acf/gc-downloads',
+		'acf/gc-ctalink',
+		'acf/gc-textimage'
+
+
+	);
+
+}
+
+add_filter( 'allowed_block_types', 'gc_restrict_gutenberg_blocks' );
+
+//========================================================================================================
