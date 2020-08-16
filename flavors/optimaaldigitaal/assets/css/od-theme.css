@@ -1129,11 +1129,15 @@ html {
       background: #148839; }
       .page__intro header h1, .page__intro header h2, .page__intro header a {
         color: #fff; } }
+  .page__intro ul,
+  .page__intro ol,
   .page__intro p {
     padding: 2rem; }
     @media (min-width: 700px) {
+      .page__intro ul,
+      .page__intro ol,
       .page__intro p {
-        padding: 1rem 5rem 3rem; } }
+        padding: 1rem 5rem 0; } }
   .page--overview-header-lg .page__intro {
     max-width: 960px; }
     .page--overview-header-lg .page__intro p {

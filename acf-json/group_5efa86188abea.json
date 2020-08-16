@@ -6,7 +6,7 @@
             "key": "field_5efa86304a7fa",
             "label": "Inleiding",
             "name": "post_inleiding",
-            "type": "wysiwyg",
+            "type": "textarea",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
@@ -16,10 +16,10 @@
                 "id": ""
             },
             "default_value": "",
-            "tabs": "all",
-            "toolbar": "basic",
-            "media_upload": 0,
-            "delay": 0
+            "new_lines": "",
+            "maxlength": "",
+            "placeholder": "",
+            "rows": ""
         }
     ],
     "location": [
@@ -46,5 +46,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1594214328
+    "modified": 1597256243
 }
