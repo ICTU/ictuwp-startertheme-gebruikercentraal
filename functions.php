@@ -8,7 +8,7 @@
  * @since   Timber 0.1
  */
 
-define( 'CHILD_THEME_VERSION', '5.0.1' );
+define( 'CHILD_THEME_VERSION', '5.0.2' );
 define( 'ID_MAINCONTENT', 'maincontent' );
 define( 'ID_MAINNAV', 'mainnav' );
 define( 'ID_ZOEKEN', 'zoeken' );
@@ -306,7 +306,7 @@ class GebruikerCentraalTheme extends Timber\Site {
 
 		// Enable and load CSS for admin editor
 		add_theme_support( 'editor-styles' );
-		$cachebuster = '';
+		$cachebuster = '?v=' . CHILD_THEME_VERSION;
 		if ( WP_DEBUG ) {
 			$cachebuster = '?v=' . filemtime( dirname( __FILE__ ) . '/assets/fonts/editor-fonts.css' );
 		}
