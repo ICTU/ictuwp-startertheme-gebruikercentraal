@@ -2,14 +2,14 @@
 
 {% block content %}
 
-      <article class="entry entry--type-overview entry--full">
+      <article class="entry entry--type-overview entry--full" id="post-{{ post.ID }}">
 
         <div class="entry-content">
           <div class="page__intro">
             <header class="entry-header">
-              <h1 class="entry-title">{{ title ? title : 'Onze instrumenten' }}</h1>
+              <h1 class="entry-title">{{ post.title }}</h1>
               {% if intro %}
-                <p>{{ intro }}</p>
+                {{ intro }}
               {% endif %}
             </header>
           </div>

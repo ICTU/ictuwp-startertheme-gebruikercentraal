@@ -1,0 +1,26 @@
+/*
+Gutenberg corrections
+ */
+.section--heading {
+  & + .section--paragraph,
+  & + .section--text {
+    margin-top: 1rem;
+  }
+}
+.wp-block-image {
+
+  & + .section--paragraph,
+  & + .section--text {
+    margin-top: 0;
+
+    p {
+      margin-top: 0;
+    }
+  }
+}
+.wp-block-column {
+  .section {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}

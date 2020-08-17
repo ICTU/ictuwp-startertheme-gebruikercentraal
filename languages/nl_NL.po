@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Gebruiker Centraal (2020)\n"
-"POT-Creation-Date: 2020-06-30 11:25+0200\n"
-"PO-Revision-Date: 2020-06-30 11:25+0200\n"
+"POT-Creation-Date: 2020-07-08 19:11+0200\n"
+"PO-Revision-Date: 2020-07-08 19:12+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: nl_NL\n"
@@ -24,57 +24,513 @@ msgstr ""
 "X-Poedit-SearchPathExcluded-2: templates\n"
 "X-Poedit-SearchPathExcluded-3: tests\n"
 
-#: functions.php:142
+#: assets/od.php:99 assets/od.php:101
+msgid "Tips"
+msgstr ""
+
+#: assets/od.php:100
+msgid "Tip"
+msgstr ""
+
+#: assets/od.php:102
+msgid "Alle tips"
+msgstr ""
+
+#: assets/od.php:103
+msgid "Toevoegen"
+msgstr ""
+
+#: assets/od.php:104
+msgid "Tip toevoegen"
+msgstr ""
+
+#: assets/od.php:105
+msgid "Tip bewerken"
+msgstr ""
+
+#: assets/od.php:106
+msgid "Bewerk tip"
+msgstr ""
+
+#: assets/od.php:107
+msgid "Nieuwe tip"
+msgstr ""
+
+#: assets/od.php:108
+msgid "Bekijk"
+msgstr ""
+
+#: assets/od.php:109
+msgid "Bekijk tip"
+msgstr ""
+
+#: assets/od.php:110
+msgid "Tips zoeken"
+msgstr ""
+
+#: assets/od.php:111
+msgid "Geen tips gevonden"
+msgstr ""
+
+#: assets/od.php:112
+msgid "Geen tips in de prullenbak"
+msgstr ""
+
+#: assets/od.php:117
+msgid "Hier voer je de tips in."
+msgstr ""
+
+#: assets/od.php:125
+msgid "post"
+msgstr ""
+
+#: assets/od.php:148 assets/od.php:149 assets/od.php:150 assets/od.php:168
+msgid "Tip-thema's"
+msgstr ""
+
+#: assets/od.php:151
+msgid "Alle tip-thema's"
+msgstr ""
+
+#: assets/od.php:152
+msgid "Bewerk thema"
+msgstr ""
+
+#: assets/od.php:153
+msgid "Bekijk thema"
+msgstr ""
+
+#: assets/od.php:154
+msgid "thema bijwerken"
+msgstr ""
+
+#: assets/od.php:155
+msgid "thema toevoegen"
+msgstr ""
+
+#: assets/od.php:156
+msgid "Nieuwe thema"
+msgstr ""
+
+#: assets/od.php:157
+msgid "Zoek thema"
+msgstr ""
+
+#: assets/od.php:158
+msgid "Meest gebruikte thema's"
+msgstr ""
+
+#: assets/od.php:159 assets/od.php:243
+msgid "Scheid met komma's"
+msgstr ""
+
+#: assets/od.php:160
+msgid "thema toevoegen of verwijderen"
+msgstr ""
+
+#: assets/od.php:161 assets/od.php:245
+msgid "Kies uit de meest gebruikte"
+msgstr ""
+
+#: assets/od.php:162 assets/od.php:246
+msgid "Niet gevonden"
+msgstr ""
+
+#: assets/od.php:184 assets/od.php:189 assets/od.php:191 assets/od.php:207
+#: assets/od.php:211
+msgid "Speelsets"
+msgstr "Spel- en uitbreidingsets"
+
+#: assets/od.php:185 assets/od.php:190
+msgid "Speelset"
+msgstr ""
+
+#: assets/od.php:192
+msgid "Alle speelsets"
+msgstr ""
+
+#: assets/od.php:193
+msgid "Nieuwe speelset toevoegen"
+msgstr ""
+
+#: assets/od.php:194
+msgid "Voeg nieuwe speelset toe"
+msgstr ""
+
+#: assets/od.php:195
+msgid "Bewerk speelset"
+msgstr ""
+
+#: assets/od.php:196
+msgid "Nieuwe speelset"
+msgstr ""
+
+#: assets/od.php:197
+msgid "Bekijk speelset"
+msgstr ""
+
+#: assets/od.php:198
+msgid "Zoek speelset"
+msgstr ""
+
+#: assets/od.php:199
+msgid "Geen speelset gevonden"
+msgstr ""
+
+#: assets/od.php:200
+msgid "Geen speelset gevonden in de prullenbak"
+msgstr ""
+
+#: assets/od.php:201 assets/od.php:285
+msgid "Uitgelichte afbeelding"
+msgstr ""
+
+#: assets/od.php:202 assets/od.php:286
+msgid "Overzichten"
+msgstr ""
+
+#: assets/od.php:203 assets/od.php:287
+msgid "Bijbehorende bestanden"
+msgstr ""
+
+#: assets/od.php:232 assets/od.php:233 assets/od.php:234 assets/od.php:252
+msgid "Jouw vraag"
+msgstr ""
+
+#: assets/od.php:235
+msgid "Alle vragen"
+msgstr ""
+
+#: assets/od.php:236
+msgid "Bewerk vraag"
+msgstr ""
+
+#: assets/od.php:237
+msgid "Bekijk vraag"
+msgstr ""
+
+#: assets/od.php:238
+msgid "vraag bijwerken"
+msgstr ""
+
+#: assets/od.php:239
+msgid "vraag toevoegen"
+msgstr ""
+
+#: assets/od.php:240
+msgid "Nieuwe vraag"
+msgstr ""
+
+#: assets/od.php:241
+msgid "Zoek vraag"
+msgstr ""
+
+#: assets/od.php:242
+msgid "Meest gebruikte vragen"
+msgstr ""
+
+#: assets/od.php:244
+msgid "vraag toevoegen of verwijderen"
+msgstr ""
+
+#: assets/od.php:268 assets/od.php:273 assets/od.php:275 assets/od.php:291
+#: assets/od.php:295
+msgid "Tipgevers"
+msgstr ""
+
+#: assets/od.php:269 assets/od.php:274 assets/od.php:532
+msgid "Tipgever"
+msgstr ""
+
+#: assets/od.php:276
+msgid "Alle tipgevers"
+msgstr ""
+
+#: assets/od.php:277
+msgid "Nieuwe tipgever toevoegen"
+msgstr ""
+
+#: assets/od.php:278
+msgid "Voeg nieuwe tipgever toe"
+msgstr ""
+
+#: assets/od.php:279
+msgid "Bewerk tipgever"
+msgstr ""
+
+#: assets/od.php:280
+msgid "Nieuwe tipgever"
+msgstr ""
+
+#: assets/od.php:281
+msgid "Bekijk tipgever"
+msgstr ""
+
+#: assets/od.php:282
+msgid "Zoek tipgever"
+msgstr ""
+
+#: assets/od.php:283
+msgid "Geen tipgever gevonden"
+msgstr ""
+
+#: assets/od.php:284
+msgid "Geen tipgever gevonden in de prullenbak"
+msgstr ""
+
+#: assets/od.php:319
+msgid ""
+"Extra content: layout-instellingen voor de inleiding, goede voorbeelden, "
+"waarom werkt dit"
+msgstr ""
+
+#: assets/od.php:323
+msgid "Soort inleiding"
+msgstr ""
+
+#: assets/od.php:326
+msgid ""
+"Wil je een inleiding met een grote foto of een aantal opsommingen onder "
+"elkaar?"
+msgstr ""
+
+#: assets/od.php:335
+msgid "Geen foto"
+msgstr ""
+
+#: assets/od.php:336
+msgid "Grote foto naast de tekst"
+msgstr ""
+
+#: assets/od.php:337
+msgid "Lijstje met opsommingen en kleine foto's"
+msgstr ""
+
+#: assets/od.php:346
+msgid "Grote foto"
+msgstr ""
+
+#: assets/od.php:378
+msgid "Lijstjes met kleine foto"
+msgstr ""
+
+#: assets/od.php:401
+msgid "Nieuwe regel"
+msgstr ""
+
+#: assets/od.php:405
+msgid "Bijbehorende foto"
+msgstr ""
+
+#: assets/od.php:429 assets/od.php:489
+msgid "Titel"
+msgstr ""
+
+#: assets/od.php:450
+msgid "Lijstje"
+msgstr ""
+
+#: assets/od.php:453
+msgid "Voer alsjeblieft alleen lijstjes in."
+msgstr ""
+
+#: assets/od.php:470
+msgid "Goed voorbeeld"
+msgstr ""
+
+#: assets/od.php:485
+msgid "Voeg voorbeeld toe"
+msgstr ""
+
+#: assets/od.php:510
+msgid "Tekst"
+msgstr ""
+
+#: assets/od.php:535
+msgid "Selecteer één uit de lijst of voer een nieuwe naam in"
+msgstr ""
+
+#: assets/od.php:556
+msgid "Naam van de tipgever"
+msgstr ""
+
+#: assets/od.php:572
+msgid "Functie van de tipgever"
+msgstr ""
+
+#: assets/od.php:593
+msgid "Afbeelding"
+msgstr ""
+
+#: assets/od.php:620
+msgid "Waarom werkt dit?"
+msgstr ""
+
+#: assets/od.php:642
+msgid "Onderzoek: inleiding"
+msgstr ""
+
+#: assets/od.php:664
+msgid "Vraag 1 - titel"
+msgstr ""
+
+#: assets/od.php:686
+msgid "Vraag 1 - cijfer"
+msgstr ""
+
+#: assets/od.php:710
+msgid "Vraag 1 - antwoord"
+msgstr ""
+
+#: assets/od.php:733
+msgid "Vraag 2 - titel"
+msgstr ""
+
+#: assets/od.php:755
+msgid "Vraag 2 - cijfer"
+msgstr ""
+
+#: assets/od.php:779
+msgid "Vraag 2 - antwoord"
+msgstr ""
+
+#: assets/od.php:802
+msgid "Vraag 3 - titel"
+msgstr ""
+
+#: assets/od.php:824
+msgid "Vraag 3 - cijfer"
+msgstr ""
+
+#: assets/od.php:848
+msgid "Vraag 3 - antwoord"
+msgstr ""
+
+#: assets/od.php:871
+msgid "Onderzoek: conclusie"
+msgstr ""
+
+#: assets/od.php:924
+msgid "Tip-nummer"
+msgstr ""
+
+#: assets/od.php:1054
+msgid "Nuttige links"
+msgstr ""
+
+#: assets/od.php:1057
+msgid "Geen linkbeschrijving ingevoerd"
+msgstr ""
+
+#: assets/od.php:1073
+msgid "URL"
+msgstr ""
+
+#: assets/od.php:1089
+msgid "Link: icoon"
+msgstr ""
+
+#: assets/od.php:1111
+msgid "Link: Titel"
+msgstr ""
+
+#: assets/od.php:1132
+msgid "Link: beschrijving"
+msgstr ""
+
+#: assets/od.php:1153
+msgid "Link: CTA"
+msgstr ""
+
+#: assets/od.php:1174
+msgid "Link: hreflang"
+msgstr ""
+
+#: assets/od.php:1222
+msgid "Functietitel"
+msgstr ""
+
+#: assets/od.php:1242
+msgid "Foto"
+msgstr ""
+
+#: assets/od.php:1267
+msgid "E-mailadres"
+msgstr ""
+
+#: assets/od.php:1286
+msgid "Telefoonnummer"
+msgstr ""
+
+#: assets/od.php:1658
+msgid "Titel op 404-pagina"
+msgstr ""
+
+#: assets/od.php:1679
+msgid "Beschrijving op 404-pagina"
+msgstr ""
+
+#: functions.php:158
 msgctxt "menu location"
 msgid "Menu in header"
 msgstr ""
 
-#: functions.php:143
+#: functions.php:159
 msgctxt "menu location"
 msgid "Menu in footer"
 msgstr ""
 
-#: functions.php:194
+#: functions.php:210
 #, php-format
 msgctxt "Alt-tekst op logo"
 msgid "Logo %s"
 msgstr ""
 
-#: functions.php:202
+#: functions.php:218
 msgctxt "skiplinks"
 msgid "Jump to main content"
 msgstr "Direct naar de belangrijkste inhoud"
 
-#: functions.php:204
+#: functions.php:220
 msgctxt "skiplinks"
 msgid "Jump to main navigation"
 msgstr "Direct naar de hoofdnavigatie"
 
-#: functions.php:441
+#: functions.php:451
 msgctxt "Widget area"
 msgid "Footer widget left"
 msgstr ""
 
-#: functions.php:450
+#: functions.php:460
 msgctxt "Widget area"
 msgid "Footer widget right"
 msgstr ""
 
-#: functions.php:572
+#: functions.php:582
 msgctxt "customizer"
 msgid "Gebruiker Centraal Instellingen"
 msgstr ""
 
-#: functions.php:573
+#: functions.php:583
 msgctxt "customizer"
 msgid ""
 "Selecteer hier het kleurenschema voor deze site. Je wijzigt hiermee de "
 "styling, logo en sommige functionaliteit van de site."
 msgstr ""
 
-#: functions.php:596
+#: functions.php:606
 msgctxt "customizer"
 msgid "Kies het kleurenschema"
+msgstr ""
+
+#: gutenberg-blocks/cta-block.php:16
+msgctxt "Block titel"
+msgid "GC Call To Action (CTA)"
+msgstr ""
+
+#: gutenberg-blocks/cta-block.php:17
+msgctxt "Block description"
+msgid "Opvallende link"
 msgstr ""
 
 #: gutenberg-blocks/download-block.php:13
@@ -108,36 +564,83 @@ msgctxt "Block-categorie"
 msgid "Gebruiker Centraal"
 msgstr "Gebruiker Centraal-blocks"
 
-#: single-tips.php:85
+#: gutenberg-blocks/links-block.php:13
+msgctxt "Block titel"
+msgid "GC Links"
+msgstr ""
+
+#: gutenberg-blocks/links-block.php:14
+msgctxt "Block description"
+msgid "Lijst met Links"
+msgstr ""
+
+#: gutenberg-blocks/related-block.php:14
+msgctxt "Block titel"
+msgid "GC gerelateerde content"
+msgstr ""
+
+#: gutenberg-blocks/related-block.php:15
+msgctxt "Block description"
+msgid "Tonen van gerelateerde content in een apart block"
+msgstr ""
+
+#: gutenberg-blocks/related-block.php:82 template-alle-tips.php:41
+#, php-format
+msgctxt "Label tip-nummer"
+msgid "Tip %s"
+msgstr ""
+
+#: gutenberg-blocks/textimage-block.php:13
+msgctxt "Block titel"
+msgid "GC Text + image"
+msgstr ""
+
+#: gutenberg-blocks/textimage-block.php:14
+msgctxt "Block description"
+msgid "Tekst en plaatje naast elkaar"
+msgstr ""
+
+#: single-tips.php:69
+msgctxt "Titel gerelateerde tips"
+msgid "Gerelateerde tips"
+msgstr ""
+
+#: single-tips.php:134
+#, php-format
+msgctxt "Titel gerelateerde tips"
+msgid "Meer tips over %s"
+msgstr ""
+
+#: single-tips.php:137
+#, php-format
+msgctxt "Linktekst overzicht tipthema"
+msgid "Alle tips over %s"
+msgstr ""
+
+#: single-tips.php:194
 #, php-format
 msgctxt "linktext auteur voorbeeld"
 msgid "Meer tips van %s"
 msgstr ""
 
-#: single-tips.php:116
+#: single-tips.php:226
 msgctxt "default link text"
 msgid "Link"
 msgstr ""
 
-#: single-tips.php:127 single-tips.php:157
+#: single-tips.php:236 single-tips.php:266
 msgctxt "Titel boven waaromwerktdit"
 msgid "Waarom werkt dit?"
 msgstr ""
 
-#: single-tips.php:133
+#: single-tips.php:242
 msgctxt "Titel boven waaromwerktdit"
 msgid "Onderzoek"
 msgstr ""
 
-#: single-tips.php:137
+#: single-tips.php:246
 msgctxt "Titel boven conclusie"
 msgid "Conclusie"
-msgstr ""
-
-#: template-alle-tips.php:79
-#, php-format
-msgctxt "Label tip-ummer"
-msgid "Tip %s"
 msgstr ""
 
 #: template-sitemap.php:25
@@ -189,6 +692,10 @@ msgstr ""
 
 #. Template Name of the plugin/theme
 msgid "[OD] Overzicht alle tips"
+msgstr ""
+
+#. Template Name of the plugin/theme
+msgid "Landingspagina"
 msgstr ""
 
 #. Template Name of the plugin/theme
