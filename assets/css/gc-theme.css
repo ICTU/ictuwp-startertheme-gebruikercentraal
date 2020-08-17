@@ -205,7 +205,7 @@ cite {
 .text--large {
   font-size: 2.4rem;
   line-height: 3.8rem;
-  font-weight: "montserratregular", Helvetica, Arial, sans-serif; }
+  font-weight: normal; }
 
 .section--text h2,
 .section--text h3,
@@ -6319,3 +6319,5 @@ h1 {
       clip: rect(0 0 0 0);
       clip: rect(0, 0, 0, 0);
       position: absolute; } }
+
+/*# sourceMappingURL=gc-theme.css.map */
