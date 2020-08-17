@@ -4,3 +4,5 @@ frontend/node_modules
 # ignore composer generated vendor directory
 vendor
 
+#dont commit .map sites
+assets/css/*.map

@@ -16,6 +16,7 @@ const del = require('del'),
   minify = require("gulp-minify"),
   plumber = require("gulp-plumber"),
   concat = require('gulp-concat-util'),
+  clean = require('gulp-clean'),
   fs = require('node-fs');
 
 const config = require('./sites_config.json');
@@ -196,6 +197,17 @@ function prod(done) {
   done();
 }
 
+function cleanCSS(done){
+
+  gulp
+    .src(siteConfig.dest + 'css/**')
+    .pipe(clean({
+      force: true
+    }));
+
+  done()
+}
+
 function prodAll(done) {
 
   for (var obj in config) {
@@ -256,7 +268,7 @@ function watch() {
 
 
 exports.iconfont = gulp.series(makeFont, prodAll);
-exports.prod = prod;
+exports.prod = gulp.series(cleanCSS, prod);
 exports.styles = styles;
 exports.js = js;
 exports.sprites = makeSprites;
