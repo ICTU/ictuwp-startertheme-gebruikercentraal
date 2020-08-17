@@ -422,7 +422,6 @@ figure {
       margin: 0 2rem 0 0; }
     .site-footer-menu .menu a:before {
       content: "";
-      speak: none;
       font-style: normal;
       font-weight: normal;
       font-family: 'icons'; }
@@ -550,7 +549,6 @@ figure {
   position: relative; }
   .search-form:after {
     content: "";
-    speak: none;
     font-style: normal;
     font-weight: normal;
     font-family: 'icons'; }
@@ -659,7 +657,6 @@ figure {
     padding: .5rem 2rem .5rem 1.5rem; }
     .main-menu > ul > li > ul a:before {
       content: "";
-      speak: none;
       font-style: normal;
       font-weight: normal;
       font-family: 'icons'; }
@@ -1030,7 +1027,6 @@ h1 {
     transition: padding .2s; }
     .breadcrumb a:after {
       content: "";
-      speak: none;
       font-style: normal;
       font-weight: normal;
       font-family: 'icons'; }
@@ -1499,13 +1495,11 @@ h1 {
     margin-left: auto; }
   .pagination .pagination-previous a:before {
     content: "";
-    speak: none;
     font-style: normal;
     font-weight: normal;
     font-family: 'icons'; }
   .pagination .pagination-next a:after {
     content: "";
-    speak: none;
     font-style: normal;
     font-weight: normal;
     font-family: 'icons'; }
@@ -1992,7 +1986,6 @@ h1 {
     position: absolute;
     content: " ";
     background: #f9f6f3;
-    speak: none;
     left: 0;
     right: 0;
     bottom: 0;
@@ -2121,7 +2114,6 @@ h1 {
     position: absolute;
     content: " ";
     background: #148839;
-    speak: none;
     left: 0;
     right: 0;
     bottom: 0;
@@ -2248,7 +2240,6 @@ h1 {
   position: relative; }
   .research__conclusion:before {
     content: "";
-    speak: none;
     font-style: normal;
     font-weight: normal;
     font-family: 'icons'; }
@@ -2291,7 +2282,6 @@ h1 {
       position: absolute;
       content: " ";
       background: #f9f6f3;
-      speak: none;
       left: 0;
       right: 0;
       bottom: 0;
@@ -2875,7 +2865,6 @@ h1 {
       position: absolute;
       content: " ";
       background: #fff;
-      speak: none;
       left: 0;
       right: 0;
       bottom: 0;
@@ -3006,7 +2995,6 @@ h1 {
     transition: padding .2s; }
     .btn--primary:after, .btn--secondary:after {
       content: "";
-      speak: none;
       font-style: normal;
       font-weight: normal;
       font-family: 'icons'; }
@@ -3069,7 +3057,6 @@ h1 {
       text-align: center; }
       .btn--close .btn__icon:before {
         content: "";
-        speak: none;
         font-style: normal;
         font-weight: normal;
         font-family: 'icons'; }
@@ -3090,7 +3077,6 @@ h1 {
     background: #148839; }
     .btn--download:before {
       content: "";
-      speak: none;
       font-style: normal;
       font-weight: normal;
       font-family: 'icons'; }
@@ -3140,13 +3126,11 @@ h1 {
     margin-right: 1.5rem; }
     .btn--toggle-menu .btn--icon:before {
       content: "";
-      speak: none;
       font-style: normal;
       font-weight: normal;
       font-family: 'icons'; }
     .btn--toggle-menu .btn--icon:after {
       content: "";
-      speak: none;
       font-style: normal;
       font-weight: normal;
       font-family: 'icons'; }
@@ -3308,7 +3292,6 @@ h1 {
       position: absolute;
       content: " ";
       background: #fff;
-      speak: none;
       height: 5rem;
       left: 0;
       top: 0;
@@ -3422,8 +3405,7 @@ h1 {
             transform: translateY(28px);
     z-index: 450;
     -webkit-clip-path: polygon(0 0, 0 100%, 70% 0);
-            clip-path: polygon(0 0, 0 100%, 70% 0);
-    speak: none; }
+            clip-path: polygon(0 0, 0 100%, 70% 0); }
   .card--type-doelgroep .card__quote:after {
     content: ' ';
     display: block;
@@ -3439,8 +3421,7 @@ h1 {
     -webkit-box-shadow: 3px 3px 0px rgba(0, 0, 0, 0.2);
             box-shadow: 3px 3px 0px rgba(0, 0, 0, 0.2);
     -webkit-clip-path: polygon(0 0, 0 100%, 70% 0);
-            clip-path: polygon(0 0, 0 100%, 70% 0);
-    speak: none; }
+            clip-path: polygon(0 0, 0 100%, 70% 0); }
   .card--type-doelgroep .card__quote p {
     margin: 0; }
 
@@ -3640,8 +3621,7 @@ h1 {
     display: inline-block;
     -webkit-transform: translateY(-9px);
             transform: translateY(-9px);
-    line-height: 1;
-    speak: none; }
+    line-height: 1; }
   .tipkaart__nummer:before {
     content: '_ ';
     margin-right: 8px; }
@@ -3811,31 +3791,26 @@ h1 {
     transition: transform .2s, -webkit-transform .2s; }
   .link--social.linkedin:before {
     content: "";
-    speak: none;
     font-style: normal;
     font-weight: normal;
     font-family: 'icons'; }
   .link--social.twitter:before {
     content: "";
-    speak: none;
     font-style: normal;
     font-weight: normal;
     font-family: 'icons'; }
   .link--social.facebook:before {
     content: "";
-    speak: none;
     font-style: normal;
     font-weight: normal;
     font-family: 'icons'; }
   .link--social.slack:before {
     content: "";
-    speak: none;
     font-style: normal;
     font-weight: normal;
     font-family: 'icons'; }
   .link--social.website:before {
     content: "";
-    speak: none;
     font-style: normal;
     font-weight: normal;
     font-family: 'icons'; }
@@ -3865,14 +3840,12 @@ h1 {
 
 .link--phone:before {
   content: "";
-  speak: none;
   font-style: normal;
   font-weight: normal;
   font-family: 'icons'; }
 
 .link--email:before {
   content: "";
-  speak: none;
   font-style: normal;
   font-weight: normal;
   font-family: 'icons'; }
@@ -3884,7 +3857,6 @@ h1 {
   text-decoration: none; }
   .link--arrow:after {
     content: "";
-    speak: none;
     font-style: normal;
     font-weight: normal;
     font-family: 'icons'; }
@@ -3913,7 +3885,6 @@ h1 {
   transition: padding .3s; }
   .link--arrow-icon:before {
     content: "";
-    speak: none;
     font-style: normal;
     font-weight: normal;
     font-family: 'icons'; }
@@ -3931,7 +3902,6 @@ h1 {
   display: inline-block; }
   .link--external:after {
     content: "";
-    speak: none;
     font-style: normal;
     font-weight: normal;
     font-family: 'icons'; }
@@ -3976,7 +3946,6 @@ h1 {
   margin: -.5rem -1rem 0 0; }
   .arrow-link__icon:before {
     content: "";
-    speak: none;
     font-style: normal;
     font-weight: normal;
     font-family: 'icons'; }
@@ -3988,7 +3957,6 @@ h1 {
   .btn--read-more:before,
   .link--read-more:before {
     content: "";
-    speak: none;
     font-style: normal;
     font-weight: normal;
     font-family: 'icons'; }
@@ -4035,7 +4003,6 @@ h1 {
     display: block; }
     .meta-data dd:after {
       content: " ";
-      speak: none;
       background: #D1DFE3;
       width: .4rem;
       height: .4rem;
@@ -4052,37 +4019,31 @@ h1 {
       display: none; }
     .meta-data dd.datum:before {
       content: "";
-      speak: none;
       font-style: normal;
       font-weight: normal;
       font-family: 'icons'; }
     .meta-data dd.price:before {
       content: "";
-      speak: none;
       font-style: normal;
       font-weight: normal;
       font-family: 'icons'; }
     .meta-data dd.tijdstip:before, .meta-data dd.time:before {
       content: "";
-      speak: none;
       font-style: normal;
       font-weight: normal;
       font-family: 'icons'; }
     .meta-data dd.auteur:before, .meta-data dd.author:before {
       content: "";
-      speak: none;
       font-style: normal;
       font-weight: normal;
       font-family: 'icons'; }
     .meta-data dd.locatie:before, .meta-data dd.location:before {
       content: "";
-      speak: none;
       font-style: normal;
       font-weight: normal;
       font-family: 'icons'; }
     .meta-data dd.registrations:before {
       content: "";
-      speak: none;
       font-style: normal;
       font-weight: normal;
       font-family: 'icons'; }
@@ -4098,7 +4059,6 @@ h1 {
     font-family: "montserratsemibold", Helvetica, Arial, sans-serif; }
   .meta-data__item:after {
     content: " ";
-    speak: none;
     background: #D1DFE3;
     width: .4rem;
     height: .4rem;
@@ -4109,25 +4069,21 @@ h1 {
     display: none; }
   .meta-data__item.times:before, .meta-data__item.datum:before {
     content: "";
-    speak: none;
     font-style: normal;
     font-weight: normal;
     font-family: 'icons'; }
   .meta-data__item.location:before {
     content: "";
-    speak: none;
     font-style: normal;
     font-weight: normal;
     font-family: 'icons'; }
   .meta-data__item.pricing:before {
     content: "";
-    speak: none;
     font-style: normal;
     font-weight: normal;
     font-family: 'icons'; }
   .meta-data__item.aanmeldingen:before {
     content: "";
-    speak: none;
     font-style: normal;
     font-weight: normal;
     font-family: 'icons'; }
@@ -4361,7 +4317,6 @@ h1 {
   border-top: 0.1rem solid #D1DFE3; }
   .item-list__item:before {
     content: "";
-    speak: none;
     font-style: normal;
     font-weight: normal;
     font-family: 'icons'; }
@@ -4516,7 +4471,6 @@ h1 {
   padding-left: .5rem; }
   .play:before {
     content: "";
-    speak: none;
     font-style: normal;
     font-weight: normal;
     font-family: 'icons'; }
@@ -4531,7 +4485,6 @@ h1 {
   text-decoration: underline; }
   .video__transcription:before {
     content: "";
-    speak: none;
     font-style: normal;
     font-weight: normal;
     font-family: 'icons'; }
@@ -4646,8 +4599,7 @@ h1 {
         bottom: 0;
         margin-bottom: -3rem;
         left: 50%;
-        margin-left: -15px;
-        speak: none; }
+        margin-left: -15px; }
       .stepchart__description:before {
         z-index: -1;
         margin-left: -9px;
@@ -4706,8 +4658,7 @@ h1 {
         width: 3rem;
         height: 3.4rem;
         background: url(../images/arrow-down.svg) center center no-repeat;
-        border: .1rem solid transparent;
-        speak: none; }
+        border: .1rem solid transparent; }
       .btn--stepchart:hover, .btn--stepchart:focus {
         text-decoration: underline;
         background-color: #0d5c26;
@@ -4935,8 +4886,7 @@ h1 {
     top: 2.4rem;
     background: #f2ebe4;
     width: 100%;
-    left: 50%;
-    speak: none; }
+    left: 50%; }
   .stepnav__step:first-child:before, .stepnav__step:nth-last-child(2):before {
     background: rgba(255, 255, 255, 0.6); }
   .stepnav__step:first-child:before {

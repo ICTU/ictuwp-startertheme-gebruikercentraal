@@ -144,7 +144,6 @@
       position: absolute;
       content: " ";
       background: $white;
-      speak: none;
       height: 5rem;
       left: 0;
       top: 0;
@@ -289,7 +288,6 @@
         transform: translateY(28px);
         z-index: 450;
         clip-path: polygon(0 0, 0 100%, 70% 0);
-        speak: none;
       }
 
       &:after {
@@ -305,7 +303,6 @@
         z-index: 450;
         box-shadow: 3px 3px 0px rgba(#000, 0.2);
         clip-path: polygon(0 0, 0 100%, 70% 0);
-        speak: none;
       }
 
       p {
