@@ -22,12 +22,13 @@ frontend/node_modules
 *.log
 *.sql
 *.sqlite
-frontend/yarn.lock
 sites.zip
 
 sites/*/*.php
 sites/**.json
-sites/**.json
 
 
 vendor
+.idea/workspace.xml
+
+sites/od/**.php
