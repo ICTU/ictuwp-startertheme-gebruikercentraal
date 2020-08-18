@@ -40,19 +40,20 @@ $gc-pink-lighter:           #E86CA8;
 $gc-orange:					#f99d1c;
 $gc-a11y-orange-lg:			#D77D00;
 
-$gc-cyan:					#00b4ac;
-$gc-a11y-cyan-lg:			#009C95; // Ok for large texts
-$gc-a11y-cyan:              #00837E;
+$gc-cyan:					        #00b4ac;
+$gc-a11y-cyan-lg:			    #009C95; // Ok for large texts
+$gc-a11y-cyan:            #00837E;
 
+// Optimaal Digitaal
+$od-orange:               #BA4F0C;
+$od-orange-darker:        #983A00;
 
-/* Inclusie */
-$inc-orange:                #D94721;
-$inc-a11y-orange:           #c73d19;
+// Inclusie
+$inc-orange:              #D94721;
+$inc-a11y-orange:         #c73d19;
 
-
-/* NLDS */
+// NLDS
 $nlds-purplish:             #74295f;
-
 
 // Grays
 $grey-x-light:               #F7F7F7;
@@ -72,17 +73,13 @@ $intro-bg:                   $gc-dark-purple !default;
 $intro-color:                $white !default;
 
 
-/* ------- */
-
+// Defaults voor primaire en secundare kleuren
 $color-primary:             $gc-a11y-green !default;
 $color-secondary:           $gc-dark-purple !default;
 
 $color-x-light:             $gc-pantybrown-xlight !default;
 
-/*
- * Typography
- */
-
+// Typography
 $font-primary:              'montserratregular', Helvetica, Arial, sans-serif;
 $font-primary-bold:         'montserratbold', Helvetica, Arial, sans-serif;
 $font-primary-light:        'montserratlight', Helvetica, Arial, sans-serif;
@@ -126,10 +123,7 @@ $base-h3-line-height:       3.4rem !default;
 $base-h4-size:              22px !default;
 $base-h4-line-height:       28px !default;
 
-/*
- * Forms
- */
-
+// Forms
 $input-bg:                 $white;
 $input-border:             $border-color;
 
@@ -148,10 +142,7 @@ $button-font:              $font-secondary;
 
 
 
-/*
- * Grid + Widths
- */
-
+// Grid + Widths
 $breakpoints: (
         'sm': 560px,
         'md': 700px,
@@ -178,23 +169,34 @@ $gutter-xsmall:           .5rem !default;
 @import "vars/text-block";
 
 
-/* Gutenberg color options
- * see editor-color-palette in functions.php
---------------------------------------------- */
+// Gutenberg color options
+// see editor-color-palette in functions.php
+// ---------------------------------------------
 $gc_gutenberg_colors:
     ( white, $white ),
     ( black, $black ),
-    ( gc-green, $gc-green ),
-    ( gc-dark-blue, $gc-dark-blue ),
-    ( gc-pantybrown, $gc-pantybrown ),
-    ( gc-dark-purple, $gc-dark-purple ),
+    ( gc_a11y-blue, $gc_a11y-blue ),
+    ( gc_blue, $gc_blue ),
+    ( gc_pantybrown_xlight, $gc_pantybrown_xlight ),
+    ( gc_pantybrown, $gc_pantybrown ),
     ( gc-blue, $gc-blue ),
-    ( gc-pink, $gc-pink ),
+    ( gc-cyan, $gc-cyan ),
+    ( gc-cyan, $gc-cyan ),
+    ( gc-dark-blue, $gc-dark-blue ),
+    ( gc-dark-purple, $gc-dark-purple ),
+    ( gc-green, $gc-green ),
     ( gc-orange, $gc-orange ),
-    ( gc-cyan, $gc-cyan );
+    ( gc-pantybrown, $gc-pantybrown ),
+    ( gc-pink, $gc-pink ),
+    ( inc_a11y_orange, $inc_a11y_orange ),
+    ( inc_orange, $inc_orange ),
+    ( nlds_purplish, $nlds_purplish ),
+    ( od-orange-darker, $od-orange-darker ),
+    ( od-orange, $od-orange );
 
-/* Color Options
---------------------------------------------- */
+
+// Color Options
+// ---------------------------------------------
 @each $name, $color in $gc_gutenberg_colors {
 
   .has-#{$name}-color {

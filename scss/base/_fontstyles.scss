@@ -5,6 +5,71 @@
   font-weight: normal;
 }
 
+
+@mixin text-styles() {
+
+  h2,
+  h3,
+  h4 {
+    font-weight: $base-heading-font;
+
+    + p {
+      margin-top: 1rem;
+    }
+  }
+
+  p {
+    + .section--related {
+      margin-top: 1rem;
+    }
+
+    + ul {
+      margin-top: 1.6rem;
+    }
+
+    + h2,
+    + h3,
+    + h4 {
+      margin-top: $gutter;
+    }
+
+    &.arrow {
+      background: url('/wp-content/themes/ictuwp-theme-gc2020/flavors/optimaaldigitaal/assets/images/i_pijltje.svg') 0 .8rem no-repeat;
+      padding-left: 6rem;
+    }
+  }
+
+  .media--image {
+    img {
+      max-width: 100%;
+      width: auto;
+    }
+
+    + h2,
+    + h3,
+    + h4,
+    p {
+      margin-top: 3rem;
+    }
+  }
+
+  .alignleft {
+    float: left;
+    margin: 0 2rem .5rem 0;
+  }
+
+  .source {
+    margin-top: 2rem;
+    display: block;
+    font-style: italic;
+  }
+
+  .btn,
+  .link--read-more {
+    margin-top: 2rem;
+  }
+}
+
 // Fields / Sections which uses the body font styles
 .section--text,
 .post__body,

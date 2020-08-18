@@ -47,7 +47,6 @@ $icons: (
       content: "#{map-get($icons, $icon)}";
     }
     @if $styles {
-      speak: none;
       font-style: normal;
       font-weight: normal;
       font-family: 'icons';

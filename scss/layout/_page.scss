@@ -75,11 +75,13 @@ html {
     }
   }
 
+  ul,
+  ol,
   p {
     padding: 2rem;
 
     @include bp-up(md){
-      padding: 1rem 5rem 3rem;
+      padding: 1rem 5rem 0;
     }
   }
 

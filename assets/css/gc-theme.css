@@ -1,26 +1,4 @@
 @charset "UTF-8";
-/* Inclusie */
-/* NLDS */
-/* ------- */
-/*
- * Typography
- */
-/*
- * Forms
- */
-/*
- * Grid + Widths
- */
-/*
- * BTN Variables
- * Can be used for buttons and overridden in subthemes
- */
-/* Gutenberg color options
- * see editor-color-palette in functions.php
---------------------------------------------- */
-/* Color Options
---------------------------------------------- */
-@import url(../assets/fonts/fonts.css);
 .has-white-color {
   color: #fff; }
 
@@ -33,29 +11,29 @@
 .has-black-background-color {
   background-color: #000; }
 
-.has-gc-green-color {
-  color: #25b34b; }
+.has-gc_a11y-blue-color {
+  color: #007BB0; }
 
-.has-gc-green-background-color {
-  background-color: #25b34b; }
+.has-gc_a11y-blue-background-color {
+  background-color: #007BB0; }
 
-.has-gc-dark-blue-color {
-  color: #004152; }
+.has-gc_blue-color {
+  color: #0095da; }
 
-.has-gc-dark-blue-background-color {
-  background-color: #004152; }
+.has-gc_blue-background-color {
+  background-color: #0095da; }
 
-.has-gc-pantybrown-color {
+.has-gc_pantybrown_xlight-color {
+  color: #f9f6f3; }
+
+.has-gc_pantybrown_xlight-background-color {
+  background-color: #f9f6f3; }
+
+.has-gc_pantybrown-color {
   color: #e8d8c7; }
 
-.has-gc-pantybrown-background-color {
+.has-gc_pantybrown-background-color {
   background-color: #e8d8c7; }
-
-.has-gc-dark-purple-color {
-  color: #4c2974; }
-
-.has-gc-dark-purple-background-color {
-  background-color: #4c2974; }
 
 .has-gc-blue-color {
   color: #0095da; }
@@ -63,11 +41,35 @@
 .has-gc-blue-background-color {
   background-color: #0095da; }
 
-.has-gc-pink-color {
-  color: #c42c76; }
+.has-gc-cyan-color {
+  color: #00b4ac; }
 
-.has-gc-pink-background-color {
-  background-color: #c42c76; }
+.has-gc-cyan-background-color {
+  background-color: #00b4ac; }
+
+.has-gc-cyan-color {
+  color: #00b4ac; }
+
+.has-gc-cyan-background-color {
+  background-color: #00b4ac; }
+
+.has-gc-dark-blue-color {
+  color: #004152; }
+
+.has-gc-dark-blue-background-color {
+  background-color: #004152; }
+
+.has-gc-dark-purple-color {
+  color: #4c2974; }
+
+.has-gc-dark-purple-background-color {
+  background-color: #4c2974; }
+
+.has-gc-green-color {
+  color: #25b34b; }
+
+.has-gc-green-background-color {
+  background-color: #25b34b; }
 
 .has-gc-orange-color {
   color: #f99d1c; }
@@ -75,11 +77,47 @@
 .has-gc-orange-background-color {
   background-color: #f99d1c; }
 
-.has-gc-cyan-color {
-  color: #00b4ac; }
+.has-gc-pantybrown-color {
+  color: #e8d8c7; }
 
-.has-gc-cyan-background-color {
-  background-color: #00b4ac; }
+.has-gc-pantybrown-background-color {
+  background-color: #e8d8c7; }
+
+.has-gc-pink-color {
+  color: #c42c76; }
+
+.has-gc-pink-background-color {
+  background-color: #c42c76; }
+
+.has-inc_a11y_orange-color {
+  color: #c73d19; }
+
+.has-inc_a11y_orange-background-color {
+  background-color: #c73d19; }
+
+.has-inc_orange-color {
+  color: #D94721; }
+
+.has-inc_orange-background-color {
+  background-color: #D94721; }
+
+.has-nlds_purplish-color {
+  color: #74295f; }
+
+.has-nlds_purplish-background-color {
+  background-color: #74295f; }
+
+.has-od-orange-darker-color {
+  color: #983A00; }
+
+.has-od-orange-darker-background-color {
+  background-color: #983A00; }
+
+.has-od-orange-color {
+  color: #BA4F0C; }
+
+.has-od-orange-background-color {
+  background-color: #BA4F0C; }
 
 .clearfix:after {
   content: "";
@@ -442,7 +480,6 @@ input[type='submit'] {
     display: flex; }
     .form-item--checkbox label:after {
       content: "";
-      speak: none;
       font-style: normal;
       font-weight: normal;
       font-family: 'icons'; }
@@ -647,7 +684,6 @@ Gutenberg corrections
       margin: 0 2rem 0 0; }
     .site-footer-menu .menu a:before {
       content: "";
-      speak: none;
       font-style: normal;
       font-weight: normal;
       font-family: 'icons'; }
@@ -775,7 +811,6 @@ Gutenberg corrections
   position: relative; }
   .search-form:after {
     content: "";
-    speak: none;
     font-style: normal;
     font-weight: normal;
     font-family: 'icons'; }
@@ -884,7 +919,6 @@ Gutenberg corrections
     padding: .5rem 2rem .5rem 1.5rem; }
     .main-menu > ul > li > ul a:before {
       content: "";
-      speak: none;
       font-style: normal;
       font-weight: normal;
       font-family: 'icons'; }
@@ -1126,11 +1160,15 @@ html {
       background: #4c2974; }
       .page__intro header h1, .page__intro header h2, .page__intro header a {
         color: #fff; } }
+  .page__intro ul,
+  .page__intro ol,
   .page__intro p {
     padding: 2rem; }
     @media (min-width: 700px) {
+      .page__intro ul,
+      .page__intro ol,
       .page__intro p {
-        padding: 1rem 5rem 3rem; } }
+        padding: 1rem 5rem 0; } }
   .page--overview-header-lg .page__intro {
     max-width: 960px; }
     .page--overview-header-lg .page__intro p {
@@ -1191,7 +1229,6 @@ h1 {
     transition: padding .2s; }
     .breadcrumb a:after {
       content: "";
-      speak: none;
       font-style: normal;
       font-weight: normal;
       font-family: 'icons'; }
@@ -1659,13 +1696,11 @@ h1 {
     margin-left: auto; }
   .pagination .pagination-previous a:before {
     content: "";
-    speak: none;
     font-style: normal;
     font-weight: normal;
     font-family: 'icons'; }
   .pagination .pagination-next a:after {
     content: "";
-    speak: none;
     font-style: normal;
     font-weight: normal;
     font-family: 'icons'; }
@@ -2152,7 +2187,6 @@ h1 {
     position: absolute;
     content: " ";
     background: #f9f6f3;
-    speak: none;
     left: 0;
     right: 0;
     bottom: 0;
@@ -2281,7 +2315,6 @@ h1 {
     position: absolute;
     content: " ";
     background: #148839;
-    speak: none;
     left: 0;
     right: 0;
     bottom: 0;
@@ -2408,7 +2441,6 @@ h1 {
   position: relative; }
   .research__conclusion:before {
     content: "";
-    speak: none;
     font-style: normal;
     font-weight: normal;
     font-family: 'icons'; }
@@ -2665,13 +2697,11 @@ h1 {
     margin-left: auto; }
   .pagination .pagination-previous a:before {
     content: "";
-    speak: none;
     font-style: normal;
     font-weight: normal;
     font-family: 'icons'; }
   .pagination .pagination-next a:after {
     content: "";
-    speak: none;
     font-style: normal;
     font-weight: normal;
     font-family: 'icons'; }
@@ -2903,7 +2933,6 @@ h1 {
     font-family: "montserratregular", Helvetica, Arial, sans-serif; }
     .attendees-list .event-aanmeldingen:before {
       content: "";
-      speak: none;
       font-style: normal;
       font-weight: normal;
       font-family: 'icons'; }
@@ -3307,7 +3336,6 @@ h1 {
     position: absolute;
     content: " ";
     background: #f9f6f3;
-    speak: none;
     left: 0;
     right: 0;
     bottom: 0;
@@ -3408,7 +3436,6 @@ h1 {
     position: absolute;
     content: " ";
     background: #148839;
-    speak: none;
     left: 0;
     right: 0;
     bottom: 0;
@@ -3533,7 +3560,6 @@ h1 {
   position: relative; }
   .research__conclusion:before {
     content: "";
-    speak: none;
     font-style: normal;
     font-weight: normal;
     font-family: 'icons'; }
@@ -3576,7 +3602,6 @@ h1 {
       position: absolute;
       content: " ";
       background: #f9f6f3;
-      speak: none;
       left: 0;
       right: 0;
       bottom: 0;
@@ -4160,7 +4185,6 @@ h1 {
       position: absolute;
       content: " ";
       background: #fff;
-      speak: none;
       left: 0;
       right: 0;
       bottom: 0;
@@ -4291,7 +4315,6 @@ h1 {
     transition: padding .2s; }
     .btn--primary:after, .btn--secondary:after {
       content: "";
-      speak: none;
       font-style: normal;
       font-weight: normal;
       font-family: 'icons'; }
@@ -4354,7 +4377,6 @@ h1 {
       text-align: center; }
       .btn--close .btn__icon:before {
         content: "";
-        speak: none;
         font-style: normal;
         font-weight: normal;
         font-family: 'icons'; }
@@ -4375,7 +4397,6 @@ h1 {
     background: #148839; }
     .btn--download:before {
       content: "";
-      speak: none;
       font-style: normal;
       font-weight: normal;
       font-family: 'icons'; }
@@ -4425,13 +4446,11 @@ h1 {
     margin-right: 1.5rem; }
     .btn--toggle-menu .btn--icon:before {
       content: "";
-      speak: none;
       font-style: normal;
       font-weight: normal;
       font-family: 'icons'; }
     .btn--toggle-menu .btn--icon:after {
       content: "";
-      speak: none;
       font-style: normal;
       font-weight: normal;
       font-family: 'icons'; }
@@ -4593,7 +4612,6 @@ h1 {
       position: absolute;
       content: " ";
       background: #fff;
-      speak: none;
       height: 5rem;
       left: 0;
       top: 0;
@@ -4707,8 +4725,7 @@ h1 {
             transform: translateY(28px);
     z-index: 450;
     -webkit-clip-path: polygon(0 0, 0 100%, 70% 0);
-            clip-path: polygon(0 0, 0 100%, 70% 0);
-    speak: none; }
+            clip-path: polygon(0 0, 0 100%, 70% 0); }
   .card--type-doelgroep .card__quote:after {
     content: ' ';
     display: block;
@@ -4724,8 +4741,7 @@ h1 {
     -webkit-box-shadow: 3px 3px 0px rgba(0, 0, 0, 0.2);
             box-shadow: 3px 3px 0px rgba(0, 0, 0, 0.2);
     -webkit-clip-path: polygon(0 0, 0 100%, 70% 0);
-            clip-path: polygon(0 0, 0 100%, 70% 0);
-    speak: none; }
+            clip-path: polygon(0 0, 0 100%, 70% 0); }
   .card--type-doelgroep .card__quote p {
     margin: 0; }
 
@@ -4925,8 +4941,7 @@ h1 {
     display: inline-block;
     -webkit-transform: translateY(-9px);
             transform: translateY(-9px);
-    line-height: 1;
-    speak: none; }
+    line-height: 1; }
   .tipkaart__nummer:before {
     content: '_ ';
     margin-right: 8px; }
@@ -5096,31 +5111,26 @@ h1 {
     transition: transform .2s, -webkit-transform .2s; }
   .link--social.linkedin:before {
     content: "";
-    speak: none;
     font-style: normal;
     font-weight: normal;
     font-family: 'icons'; }
   .link--social.twitter:before {
     content: "";
-    speak: none;
     font-style: normal;
     font-weight: normal;
     font-family: 'icons'; }
   .link--social.facebook:before {
     content: "";
-    speak: none;
     font-style: normal;
     font-weight: normal;
     font-family: 'icons'; }
   .link--social.slack:before {
     content: "";
-    speak: none;
     font-style: normal;
     font-weight: normal;
     font-family: 'icons'; }
   .link--social.website:before {
     content: "";
-    speak: none;
     font-style: normal;
     font-weight: normal;
     font-family: 'icons'; }
@@ -5150,14 +5160,12 @@ h1 {
 
 .link--phone:before {
   content: "";
-  speak: none;
   font-style: normal;
   font-weight: normal;
   font-family: 'icons'; }
 
 .link--email:before {
   content: "";
-  speak: none;
   font-style: normal;
   font-weight: normal;
   font-family: 'icons'; }
@@ -5169,7 +5177,6 @@ h1 {
   text-decoration: none; }
   .link--arrow:after {
     content: "";
-    speak: none;
     font-style: normal;
     font-weight: normal;
     font-family: 'icons'; }
@@ -5198,7 +5205,6 @@ h1 {
   transition: padding .3s; }
   .link--arrow-icon:before {
     content: "";
-    speak: none;
     font-style: normal;
     font-weight: normal;
     font-family: 'icons'; }
@@ -5216,7 +5222,6 @@ h1 {
   display: inline-block; }
   .link--external:after {
     content: "";
-    speak: none;
     font-style: normal;
     font-weight: normal;
     font-family: 'icons'; }
@@ -5261,7 +5266,6 @@ h1 {
   margin: -.5rem -1rem 0 0; }
   .arrow-link__icon:before {
     content: "";
-    speak: none;
     font-style: normal;
     font-weight: normal;
     font-family: 'icons'; }
@@ -5273,7 +5277,6 @@ h1 {
   .btn--read-more:before,
   .link--read-more:before {
     content: "";
-    speak: none;
     font-style: normal;
     font-weight: normal;
     font-family: 'icons'; }
@@ -5320,7 +5323,6 @@ h1 {
     display: block; }
     .meta-data dd:after {
       content: " ";
-      speak: none;
       background: #D1DFE3;
       width: .4rem;
       height: .4rem;
@@ -5337,37 +5339,31 @@ h1 {
       display: none; }
     .meta-data dd.datum:before {
       content: "";
-      speak: none;
       font-style: normal;
       font-weight: normal;
       font-family: 'icons'; }
     .meta-data dd.price:before {
       content: "";
-      speak: none;
       font-style: normal;
       font-weight: normal;
       font-family: 'icons'; }
     .meta-data dd.tijdstip:before, .meta-data dd.time:before {
       content: "";
-      speak: none;
       font-style: normal;
       font-weight: normal;
       font-family: 'icons'; }
     .meta-data dd.auteur:before, .meta-data dd.author:before {
       content: "";
-      speak: none;
       font-style: normal;
       font-weight: normal;
       font-family: 'icons'; }
     .meta-data dd.locatie:before, .meta-data dd.location:before {
       content: "";
-      speak: none;
       font-style: normal;
       font-weight: normal;
       font-family: 'icons'; }
     .meta-data dd.registrations:before {
       content: "";
-      speak: none;
       font-style: normal;
       font-weight: normal;
       font-family: 'icons'; }
@@ -5383,7 +5379,6 @@ h1 {
     font-family: "montserratsemibold", Helvetica, Arial, sans-serif; }
   .meta-data__item:after {
     content: " ";
-    speak: none;
     background: #D1DFE3;
     width: .4rem;
     height: .4rem;
@@ -5394,25 +5389,21 @@ h1 {
     display: none; }
   .meta-data__item.times:before, .meta-data__item.datum:before {
     content: "";
-    speak: none;
     font-style: normal;
     font-weight: normal;
     font-family: 'icons'; }
   .meta-data__item.location:before {
     content: "";
-    speak: none;
     font-style: normal;
     font-weight: normal;
     font-family: 'icons'; }
   .meta-data__item.pricing:before {
     content: "";
-    speak: none;
     font-style: normal;
     font-weight: normal;
     font-family: 'icons'; }
   .meta-data__item.aanmeldingen:before {
     content: "";
-    speak: none;
     font-style: normal;
     font-weight: normal;
     font-family: 'icons'; }
@@ -5646,7 +5637,6 @@ h1 {
   border-top: 0.1rem solid #D1DFE3; }
   .item-list__item:before {
     content: "";
-    speak: none;
     font-style: normal;
     font-weight: normal;
     font-family: 'icons'; }
@@ -5801,7 +5791,6 @@ h1 {
   padding-left: .5rem; }
   .play:before {
     content: "";
-    speak: none;
     font-style: normal;
     font-weight: normal;
     font-family: 'icons'; }
@@ -5816,7 +5805,6 @@ h1 {
   text-decoration: underline; }
   .video__transcription:before {
     content: "";
-    speak: none;
     font-style: normal;
     font-weight: normal;
     font-family: 'icons'; }
@@ -5931,8 +5919,7 @@ h1 {
         bottom: 0;
         margin-bottom: -3rem;
         left: 50%;
-        margin-left: -15px;
-        speak: none; }
+        margin-left: -15px; }
       .stepchart__description:before {
         z-index: -1;
         margin-left: -9px;
@@ -5991,8 +5978,7 @@ h1 {
         width: 3rem;
         height: 3.4rem;
         background: url(../images/arrow-down.svg) center center no-repeat;
-        border: .1rem solid transparent;
-        speak: none; }
+        border: .1rem solid transparent; }
       .btn--stepchart:hover, .btn--stepchart:focus {
         text-decoration: underline;
         background-color: #0d5c26;
@@ -6220,8 +6206,7 @@ h1 {
     top: 2.4rem;
     background: #f2ebe4;
     width: 100%;
-    left: 50%;
-    speak: none; }
+    left: 50%; }
   .stepnav__step:first-child:before, .stepnav__step:nth-last-child(2):before {
     background: rgba(255, 255, 255, 0.6); }
   .stepnav__step:first-child:before {

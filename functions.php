@@ -8,7 +8,7 @@
  * @since   Timber 0.1
  */
 
-define( 'CHILD_THEME_VERSION', '5.0.2.b' );
+define( 'CHILD_THEME_VERSION', '5.0.3' );
 define( 'ID_MAINCONTENT', 'maincontent' );
 define( 'ID_MAINNAV', 'mainnav' );
 define( 'ID_ZOEKEN', 'zoeken' );
@@ -46,18 +46,17 @@ define( 'IMG_SIZE_HUGE_MIN_WIDTH', 1200 );
 
 //specific flavours functions
 
-$get_theme_option = get_option('gc2020_theme_options');
-$flavor_select = $get_theme_option['flavor_select'];
+$get_theme_option = get_option( 'gc2020_theme_options' );
+$flavor_select    = $get_theme_option['flavor_select'];
 
 
 if ( $flavor_select == "OD" ) {
-	require_once( __DIR__ . '/assets/od.php');
+	require_once( __DIR__ . '/assets/od.php' );
 	add_action( 'init', array( 'ICTUWP_GC_OD_registerposttypes', 'init' ), 1 );
 }
 
 
 require_once( __DIR__ . '/plugin-activatie/kennisbank.php' );
-
 
 
 //========================================================================================================
@@ -112,7 +111,7 @@ Timber::$dirname = [ 'templates', 'views' ];
  * By default, Timber does NOT autoescape values. Want to enable Twig's
  * autoescape? No prob! Just set this value to true
  */
-Timber::$autoescape = FALSE;
+Timber::$autoescape = false;
 
 
 /**
@@ -129,28 +128,27 @@ class GebruikerCentraalTheme extends Timber\Site {
 	public function __construct() {
 
 		// custom menu locations
-		add_action( 'init', [ $this, 'register_my_menu' ] );
+		add_action( 'init', array( $this, 'register_my_menu' ) );
 
 		// translation support
-		add_action( 'after_setup_theme', [ $this, 'add_translation_support' ] );
+		add_action( 'after_setup_theme', array( $this, 'add_translation_support' ) );
 
 		// theme options
-		add_action( 'after_setup_theme', [ $this, 'theme_supports' ] );
+		add_action( 'after_setup_theme', array( $this, 'theme_supports' ) );
 
 		// CSS setup
-		add_action( 'wp_enqueue_scripts', [ $this, 'gc_wbvb_add_css' ] );
+		add_action( 'wp_enqueue_scripts', array( $this, 'gc_wbvb_add_css' ) );
 
-		add_filter( 'timber/context', [ $this, 'add_to_context' ] );
-		add_filter( 'timber/twig', [ $this, 'add_to_twig' ] );
+		add_action( 'timber/context', array( $this, 'add_to_context' ) );
+		add_action( 'timber/twig', array( $this, 'add_to_twig' ) );
 
-		add_action( 'init', [ $this, 'register_taxonomies' ] );
+		add_action( 'init', array( $this, 'register_taxonomies' ) );
 
-		add_action( 'widgets_init', [ $this, 'setup_widgets_init' ] );
+		add_action( 'widgets_init', array( $this, 'setup_widgets_init' ) );
 
-		add_action( 'theme_page_templates', [
-			$this,
-			'activate_deactivate_page_templates',
-		] );
+		add_action( 'theme_page_templates', array( $this, 'activate_deactivate_page_templates' ) );
+
+		add_action( 'admin_init', array( $this, 'add_adminstyles' ) );
 
 		parent::__construct();
 
@@ -176,11 +174,11 @@ class GebruikerCentraalTheme extends Timber\Site {
 	 *
 	 * @param string $context context['this'] Being the Twig's {{ this }}.
 	 */
-	public function add_to_context( $context ) {
+	public function read_configuration_files() {
 
 		// read configuration json file
 		$configfile    = file_get_contents( trailingslashit( get_stylesheet_directory() ) . FLAVORSCONFIG );
-		$configfile    = json_decode( $configfile, TRUE );
+		$configfile    = json_decode( $configfile, true );
 		$theme_options = get_option( 'gc2020_theme_options' );
 		$flavor        = DEFAULTFLAVOR; // default, tenzij er een smaakje is gekozen
 		if ( isset( $theme_options['flavor_select'] ) ) {
@@ -206,6 +204,16 @@ class GebruikerCentraalTheme extends Timber\Site {
 			$this->configuration = $defaultsettings;
 		}
 
+	}
+
+	/** This is where you add some context
+	 *
+	 * @param string $context context['this'] Being the Twig's {{ this }}.
+	 */
+	public function add_to_context( $context ) {
+
+		$this->read_configuration_files();
+
 		$context['menu']                    = new Timber\Menu( 'primary' );
 		$context['footermenu']              = new Timber\Menu( 'footermenu' );
 		$context['site']                    = $this;
@@ -222,33 +230,129 @@ class GebruikerCentraalTheme extends Timber\Site {
 		$context['mainnav_id']              = 'menu-primary';
 		$context['mainnav_id_linktext']     = _x( 'Jump to main navigation', 'skiplinks', 'gctheme' );
 
-
-		// Add all terms of the post
-
 		// Additional vars for archives
-
 		if ( is_archive() ) {
 			$context['archive_term']['tid']   = get_queried_object()->term_id;
 			$context['archive_term']['descr'] = get_queried_object()->description;
-
-			$context['pagetype'] = 'archive_' . get_queried_object()->taxonomy;
-		}
-
-		// Additional vars for archives
-
-		if ( is_archive() ) {
-			$context['archive_term']['tid']   = get_queried_object()->term_id;
-			$context['archive_term']['descr'] = get_queried_object()->description;
-
-			$context['pagetype'] = 'archive_' . get_queried_object()->taxonomy;
+			$context['pagetype']              = 'archive_' . get_queried_object()->taxonomy;
 		}
 
 		return $context;
 	}
 
 	public function theme_supports() {
+
+		$this->read_configuration_files();
+
 		// Add default posts and comments RSS feed links to head.
 		add_theme_support( 'automatic-feed-links' );
+
+		$theme_options = get_option( 'gc2020_theme_options' );
+		$flavor        = DEFAULTFLAVOR; // default, tenzij er een smaakje is gekozen
+		if ( isset( $theme_options['flavor_select'] ) ) {
+			$flavor = $theme_options['flavor_select'];
+		}
+
+		// these are the only allowed colors for the editor
+		// keys in the flavors_config.json should match the keys here
+		$arr_acceptable_colors = array(
+			'white'                => array(
+				'name'  => __( 'Wit', 'gctheme' ),
+				'slug'  => 'white',
+				'color' => '#fff'
+			),
+			'black'                => array(
+				'name'  => __( 'Zwart', 'gctheme' ),
+				'slug'  => 'black',
+				'color' => '#000',
+			),
+			'gc-green'             => array(
+				'name'  => __( 'GC Groen', 'gctheme' ),
+				'slug'  => 'gc-green',
+				'color' => '#25b34b',
+			),
+			'gc-dark-blue'         => array(
+				'name'  => __( 'GC Dark Blue', 'gctheme' ),
+				'slug'  => 'gc-dark-blue',
+				'color' => '#004152',
+			),
+			'gc_pantybrown'        => array(
+				'name'  => __( 'GC Pantybrown', 'gctheme' ),
+				'slug'  => 'gc_pantybrown',
+				'color' => '#e8d8c7',
+			),
+			'gc-dark-purple'       => array(
+				'name'  => __( 'GC Dark Purple', 'gctheme' ),
+				'slug'  => 'gc-dark-purple',
+				'color' => '#4c2974',
+			),
+			'gc-blue'              => array(
+				'name'  => __( 'GC Blue', 'gctheme' ),
+				'slug'  => 'gc-blue',
+				'color' => '#0095da',
+			),
+			'gc-pink'              => array(
+				'name'  => __( 'GC Pink', 'gctheme' ),
+				'slug'  => 'gc-pink',
+				'color' => '#c42c76',
+			),
+			'gc-orange'            => array(
+				'name'  => __( 'GC Orange', 'gctheme' ),
+				'slug'  => 'gc-orange',
+				'color' => '#f99d1c',
+			),
+			'gc-cyan'              => array(
+				'name'  => __( 'GC Cyan', 'gctheme' ),
+				'slug'  => 'gc-cyan',
+				'color' => '#00b4ac',
+			),
+			'inc_orange'           => array(
+				'name'  => __( 'Inclusie Orange', 'gctheme' ),
+				'slug'  => 'nlds-orange',
+				'color' => '#D94721',
+			),
+			'inc_a11y_orange'      => array(
+				'name'  => __( 'Inclusie Orange', 'gctheme' ),
+				'slug'  => 'inc-a11y-orange',
+				'color' => '#c73d19',
+			),
+			'nlds_purplish'        => array(
+				'name'  => __( 'NLDS Purplish', 'gctheme' ),
+				'slug'  => 'nlds-purplish',
+				'color' => '#74295f',
+			),
+			'gc_blue'              => array(
+				'name'  => __( 'GC Blue', 'gctheme' ),
+				'slug'  => 'gc-blue',
+				'color' => '#0095da',
+			),
+			'gc_a11y-blue'         => array(
+				'name'  => __( 'GC Blue Safe', 'gctheme' ),
+				'slug'  => 'gc-a11y-blue',
+				'color' => '#007BB0',
+			),
+			'gc_a11y_green'        => array(
+				'name'  => __( 'gc_a11y_green', 'gctheme' ),
+				'slug'  => 'gc-a11y-green',
+				'color' => '#148839',
+			),
+			'od_orange'            => array(
+				'name'  => __( 'od_orange', 'gctheme' ),
+				'slug'  => 'gc-orange',
+				'color' => '#BA4F0C',
+			),
+			'od_orange_darker'     => array(
+				'name'  => __( 'od_orange_darker', 'gctheme' ),
+				'slug'  => 'gc-orange',
+				'color' => '#983A00',
+			),
+			'gc_pantybrown_xlight' => array(
+				'name'  => __( 'GC Pantybrown Xtra Light', 'gctheme' ),
+				'slug'  => 'gc-pantybrown-xlight',
+				'color' => '#f9f6f3',
+			)
+		);
+
 
 		/*
 		 * Let WordPress manage the document title.
@@ -296,22 +400,16 @@ class GebruikerCentraalTheme extends Timber\Site {
 		// Yoast Breadcrumbs
 		add_theme_support( 'yoast-seo-breadcrumbs' );
 
-		add_image_size( HALFWIDTH, 380, 9999, FALSE );
-		add_image_size( BLOG_SINGLE_MOBILE, 120, 9999, FALSE );
-		add_image_size( BLOG_SINGLE_TABLET, 250, 9999, FALSE );
-		add_image_size( BLOG_SINGLE_DESKTOP, 380, 9999, FALSE );
-		add_image_size( IMG_SIZE_HUGE, IMG_SIZE_HUGE_MIN_WIDTH, 9999, FALSE );
+		add_image_size( HALFWIDTH, 380, 9999, false );
+		add_image_size( BLOG_SINGLE_MOBILE, 120, 9999, false );
+		add_image_size( BLOG_SINGLE_TABLET, 250, 9999, false );
+		add_image_size( BLOG_SINGLE_DESKTOP, 380, 9999, false );
+		add_image_size( IMG_SIZE_HUGE, IMG_SIZE_HUGE_MIN_WIDTH, 9999, false );
 
-		add_image_size( 'thumb-cardv3', 99999, 600, FALSE );    // max  600px hoog, niet croppen
+		add_image_size( 'thumb-cardv3', 99999, 600, false );    // max  600px hoog, niet croppen
 
 		// Enable and load CSS for admin editor
 		add_theme_support( 'editor-styles' );
-		$cachebuster = '?v=' . CHILD_THEME_VERSION;
-		if ( WP_DEBUG ) {
-			$cachebuster = '?v=' . filemtime( dirname( __FILE__ ) . '/assets/fonts/editor-fonts.css' );
-		}
-		add_editor_style( get_stylesheet_directory_uri() . '/assets/fonts/editor-fonts.css' . $cachebuster );
-		add_editor_style( get_stylesheet_directory_uri() . '/assets/css/editor-styles.css' . $cachebuster );
 
 		// Allow for responsive embedding
 		add_theme_support( 'responsive-embeds' );
@@ -319,66 +417,60 @@ class GebruikerCentraalTheme extends Timber\Site {
 		// Disable Custom Colors
 		add_theme_support( 'disable-custom-colors' );
 
-		// Restrict Editor Color Palette
-		add_theme_support( 'editor-color-palette', array(
-
-			// primaire kleuren
-			array(
+		$colors_editor = array(
+			// these colors should always be available
+			// any other should be defined in flavors_config.json
+			'white'                => array(
 				'name'  => __( 'Wit', 'gctheme' ),
 				'slug'  => 'white',
 				'color' => '#fff',
 			),
-			array(
+			'black'                => array(
 				'name'  => __( 'Zwart', 'gctheme' ),
 				'slug'  => 'black',
 				'color' => '#000',
 			),
-			array(
-				'name'  => __( 'GC Groen', 'gctheme' ),
-				'slug'  => 'gc-green',
-				'color' => '#25b34b',
-			),
-			array(
-				'name'  => __( 'GC Dark Blue', 'gctheme' ),
-				'slug'  => 'gc-dark-blue',
-				'color' => '#004152',
-			),
-			array(
-				'name'  => __( 'GC Pantybrown', 'gctheme' ),
-				'slug'  => 'gc_pantybrown',
-				'color' => '#e8d8c7',
-			),
+			'gc_pantybrown_xlight' => array(
+				'name'  => __( 'GC Pantybrown Xtra Light', 'gctheme' ),
+				'slug'  => 'gc-pantybrown-xlight',
+				'color' => '#f9f6f3',
+			)
+		);
 
-			// secundaire kleuren
-			array(
-				'name'  => __( 'GC Dark Purple', 'gctheme' ),
-				'slug'  => 'gc-dark-purple',
-				'color' => '#4c2974',
-			),
-			array(
-				'name'  => __( 'GC Blue', 'gctheme' ),
-				'slug'  => 'gc-blue',
-				'color' => '#0095da',
-			),
-			array(
-				'name'  => __( 'GC Pink', 'gctheme' ),
-				'slug'  => 'gc-pink',
-				'color' => '#c42c76',
-			),
-			array(
-				'name'  => __( 'GC Orange', 'gctheme' ),
-				'slug'  => 'gc-orange',
-				'color' => '#f99d1c',
-			),
-			array(
-				'name'  => __( 'GC Cyan', 'gctheme' ),
-				'slug'  => 'gc-cyan',
-				'color' => '#00b4ac',
-			),
-		) );
+		if ( $this->configuration['palette'] ) {
+			// there are extra colors for the current flavor
+			foreach ( $this->configuration['palette'] as $key => $value ) {
+				if ( isset( $arr_acceptable_colors[ $key ] ) ) {
+					// the color is allowed
+					$colors_editor[ $key ] = array(
+						'name'  => $arr_acceptable_colors[ $key ]['name'],
+						'color' => $arr_acceptable_colors[ $key ]['color'],
+						'slug'  => $key
+					);
+				}
+			}
+		}
+
+		// Restrict Editor Color Palette
+		add_theme_support( 'editor-color-palette', $colors_editor );
 
 
+	}
 
+	/*
+	 * add admin styles
+	 */
+	public function add_adminstyles() {
+
+		// Load CSS for admin editor
+		$cachebuster = '?v=' . CHILD_THEME_VERSION;
+		if ( WP_DEBUG ) {
+			$cachebuster = '?v=' . filemtime( dirname( __FILE__ ) . '/assets/fonts/editor-fonts.css' );
+		}
+		add_editor_style( get_stylesheet_directory_uri() . '/assets/fonts/editor-fonts.css' . $cachebuster );
+		add_editor_style( get_stylesheet_directory_uri() . '/assets/css/editor-styles.css' . $cachebuster );
+		/*
+		*/
 	}
 
 	/** This Would return 'foo bar!'.
@@ -396,7 +488,6 @@ class GebruikerCentraalTheme extends Timber\Site {
 	 * @param string $twig get extension.
 	 */
 	public function add_to_twig( $twig ) {
-
 
 
 		$twig->addExtension( new Twig\Extension\StringLoaderExtension() );
@@ -627,16 +718,16 @@ function my_body_classes( $classes ) {
 
 add_filter( 'get_the_archive_title', function ( $title ) {
 	if ( is_category() ) {
-		$title = single_cat_title( '', FALSE );
+		$title = single_cat_title( '', false );
 	} elseif ( is_tag() ) {
-		$title = single_tag_title( '', FALSE );
+		$title = single_tag_title( '', false );
 	} elseif ( is_author() ) {
 		$title = '<span class="vcard">' . get_the_author() . '</span>';
 	} elseif ( is_tax() ) { //for custom post types
 //		$title = sprintf( __( '%1$s' ), single_term_title( '', FALSE ) );
-		$title = single_term_title( '', FALSE );
+		$title = single_term_title( '', false );
 	} elseif ( is_post_type_archive() ) {
-		$title = post_type_archive_title( '', FALSE );
+		$title = post_type_archive_title( '', false );
 	}
 
 	return $title;
@@ -665,7 +756,7 @@ function gc2020_customize_register( $wp_customize ) {
 
 	// read configuration json file
 	$configfile   = file_get_contents( trailingslashit( get_stylesheet_directory() ) . FLAVORSCONFIG );
-	$flavorsource = json_decode( $configfile, TRUE );
+	$flavorsource = json_decode( $configfile, true );
 	foreach ( $flavorsource as $key => $value ) {
 		$flavors[ strtoupper( $key ) ] = $value['name'];
 	}
@@ -759,7 +850,7 @@ function get_themakleuren() {
 	// alle tipthema's langs om de kleuren op te halen
 	$args  = [
 		'taxonomy'   => GC_TIPTHEMA,
-		'hide_empty' => TRUE,
+		'hide_empty' => true,
 		'orderby'    => 'name',
 		'order'      => 'ASC',
 	];
@@ -785,19 +876,22 @@ function get_themakleuren() {
 	return $themakleuren;
 
 }
+
 // Hernoem menu naam Kennisbank
 function rename_minervakb() {
 
 	global $menu;
 
-	foreach($menu as $key => $item) {
+	foreach ( $menu as $key => $item ) {
 		if ( $item[0] === 'minervakb' ) {
-			$menu[$key][0] = __('GC Kennisbank','textdomain');     //change name
+			$menu[ $key ][0] = __( 'GC Kennisbank', 'gctheme' );     //change name
 
 		}
 	}
+
 	return false;
 }
+
 add_action( 'admin_menu', 'rename_minervakb', 999 );
 
 //========================================================================================================
@@ -826,6 +920,7 @@ function append_block_wrappers( $block_content, $block ) {
 		return $content;
 		*/
 	}
+
 	return $block_content;
 }
 
