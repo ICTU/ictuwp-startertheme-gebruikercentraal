@@ -1,27 +1,10 @@
 @charset "UTF-8";
-/* Optimaal Digitaal */
-/* Inclusie */
-/* NLDS */
-/* ------- */
 /*
- * Typography
+ * CSS flavor voor Optimaal Digitaal
+ * Author: Tamara, Mark, Paul
+ * Version: 5.0.2.d
+ *
  */
-/*
- * Forms
- */
-/*
- * Grid + Widths
- */
-/*
- * BTN Variables
- * Can be used for buttons and overridden in subthemes
- */
-/* Gutenberg color options
- * see editor-color-palette in functions.php
---------------------------------------------- */
-/* Color Options
---------------------------------------------- */
-@import url(../assets/fonts/fonts.css);
 .has-white-color {
   color: #fff; }
 

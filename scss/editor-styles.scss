@@ -1,3 +1,10 @@
+/*
+ * Editor styles voor GC-theme
+ * Author: Tamara, Mark, Paul
+ * Version: 5.0.2.d
+ *
+*/
+
 // stijltjes voor de admin
 @import "abstracts/variables";
 
@@ -72,4 +79,8 @@
 
 .wp-block .section__title {
   font-size: 2.5rem;
+}
+
+[data-type="core/paragraph"] {
+  border: 1px solid red;
 }

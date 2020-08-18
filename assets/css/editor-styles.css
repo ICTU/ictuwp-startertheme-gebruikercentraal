@@ -1,26 +1,10 @@
 @charset "UTF-8";
-/* Optimaal Digitaal */
-/* Inclusie */
-/* NLDS */
-/* ------- */
 /*
- * Typography
- */
-/*
- * Forms
- */
-/*
- * Grid + Widths
- */
-/*
- * BTN Variables
- * Can be used for buttons and overridden in subthemes
- */
-/* Gutenberg color options
- * see editor-color-palette in functions.php
---------------------------------------------- */
-/* Color Options
---------------------------------------------- */
+ * Editor styles voor GC-theme
+ * Author: Tamara, Mark, Paul
+ * Version: 5.0.2.d
+ *
+*/
 .has-white-color {
   color: #fff; }
 
@@ -5056,5 +5040,8 @@ h1 {
 
 .wp-block .section__title {
   font-size: 2.5rem; }
+
+[data-type="core/paragraph"] {
+  border: 1px solid red; }
 
 /*# sourceMappingURL=editor-styles.css.map */
