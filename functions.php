@@ -46,18 +46,17 @@ define( 'IMG_SIZE_HUGE_MIN_WIDTH', 1200 );
 
 //specific flavours functions
 
-$get_theme_option = get_option('gc2020_theme_options');
-$flavor_select = $get_theme_option['flavor_select'];
+$get_theme_option = get_option( 'gc2020_theme_options' );
+$flavor_select    = $get_theme_option['flavor_select'];
 
 
 if ( $flavor_select == "OD" ) {
-	require_once( __DIR__ . '/assets/od.php');
+	require_once( __DIR__ . '/assets/od.php' );
 	add_action( 'init', array( 'ICTUWP_GC_OD_registerposttypes', 'init' ), 1 );
 }
 
 
 require_once( __DIR__ . '/plugin-activatie/kennisbank.php' );
-
 
 
 //========================================================================================================
@@ -112,7 +111,7 @@ Timber::$dirname = [ 'templates', 'views' ];
  * By default, Timber does NOT autoescape values. Want to enable Twig's
  * autoescape? No prob! Just set this value to true
  */
-Timber::$autoescape = FALSE;
+Timber::$autoescape = false;
 
 
 /**
@@ -129,28 +128,25 @@ class GebruikerCentraalTheme extends Timber\Site {
 	public function __construct() {
 
 		// custom menu locations
-		add_action( 'init', [ $this, 'register_my_menu' ] );
+		add_action( 'init', array( $this, 'register_my_menu' ) );
 
 		// translation support
-		add_action( 'after_setup_theme', [ $this, 'add_translation_support' ] );
+		add_action( 'after_setup_theme', array( $this, 'add_translation_support' ) );
 
 		// theme options
-		add_action( 'after_setup_theme', [ $this, 'theme_supports' ] );
+		add_action( 'after_setup_theme', array( $this, 'theme_supports' ) );
 
 		// CSS setup
-		add_action( 'wp_enqueue_scripts', [ $this, 'gc_wbvb_add_css' ] );
+		add_action( 'wp_enqueue_scripts', array( $this, 'gc_wbvb_add_css' ) );
 
-		add_filter( 'timber/context', [ $this, 'add_to_context' ] );
-		add_filter( 'timber/twig', [ $this, 'add_to_twig' ] );
+		add_action( 'timber/context', array( $this, 'add_to_context' ) );
+		add_action( 'timber/twig', array( $this, 'add_to_twig' ) );
 
-		add_action( 'init', [ $this, 'register_taxonomies' ] );
+		add_action( 'init', array( $this, 'register_taxonomies' ) );
 
-		add_action( 'widgets_init', [ $this, 'setup_widgets_init' ] );
+		add_action( 'widgets_init', array( $this, 'setup_widgets_init' ) );
 
-		add_action( 'theme_page_templates', [
-			$this,
-			'activate_deactivate_page_templates',
-		] );
+		add_action( 'theme_page_templates', array( $this, 'activate_deactivate_page_templates' ) );
 
 		parent::__construct();
 
@@ -180,7 +176,7 @@ class GebruikerCentraalTheme extends Timber\Site {
 
 		// read configuration json file
 		$configfile    = file_get_contents( trailingslashit( get_stylesheet_directory() ) . FLAVORSCONFIG );
-		$configfile    = json_decode( $configfile, TRUE );
+		$configfile    = json_decode( $configfile, true );
 		$theme_options = get_option( 'gc2020_theme_options' );
 		$flavor        = DEFAULTFLAVOR; // default, tenzij er een smaakje is gekozen
 		if ( isset( $theme_options['flavor_select'] ) ) {
@@ -296,13 +292,13 @@ class GebruikerCentraalTheme extends Timber\Site {
 		// Yoast Breadcrumbs
 		add_theme_support( 'yoast-seo-breadcrumbs' );
 
-		add_image_size( HALFWIDTH, 380, 9999, FALSE );
-		add_image_size( BLOG_SINGLE_MOBILE, 120, 9999, FALSE );
-		add_image_size( BLOG_SINGLE_TABLET, 250, 9999, FALSE );
-		add_image_size( BLOG_SINGLE_DESKTOP, 380, 9999, FALSE );
-		add_image_size( IMG_SIZE_HUGE, IMG_SIZE_HUGE_MIN_WIDTH, 9999, FALSE );
+		add_image_size( HALFWIDTH, 380, 9999, false );
+		add_image_size( BLOG_SINGLE_MOBILE, 120, 9999, false );
+		add_image_size( BLOG_SINGLE_TABLET, 250, 9999, false );
+		add_image_size( BLOG_SINGLE_DESKTOP, 380, 9999, false );
+		add_image_size( IMG_SIZE_HUGE, IMG_SIZE_HUGE_MIN_WIDTH, 9999, false );
 
-		add_image_size( 'thumb-cardv3', 99999, 600, FALSE );    // max  600px hoog, niet croppen
+		add_image_size( 'thumb-cardv3', 99999, 600, false );    // max  600px hoog, niet croppen
 
 		// Enable and load CSS for admin editor
 		add_theme_support( 'editor-styles' );
@@ -378,7 +374,6 @@ class GebruikerCentraalTheme extends Timber\Site {
 		) );
 
 
-
 	}
 
 	/** This Would return 'foo bar!'.
@@ -396,7 +391,6 @@ class GebruikerCentraalTheme extends Timber\Site {
 	 * @param string $twig get extension.
 	 */
 	public function add_to_twig( $twig ) {
-
 
 
 		$twig->addExtension( new Twig\Extension\StringLoaderExtension() );
@@ -627,16 +621,16 @@ function my_body_classes( $classes ) {
 
 add_filter( 'get_the_archive_title', function ( $title ) {
 	if ( is_category() ) {
-		$title = single_cat_title( '', FALSE );
+		$title = single_cat_title( '', false );
 	} elseif ( is_tag() ) {
-		$title = single_tag_title( '', FALSE );
+		$title = single_tag_title( '', false );
 	} elseif ( is_author() ) {
 		$title = '<span class="vcard">' . get_the_author() . '</span>';
 	} elseif ( is_tax() ) { //for custom post types
 //		$title = sprintf( __( '%1$s' ), single_term_title( '', FALSE ) );
-		$title = single_term_title( '', FALSE );
+		$title = single_term_title( '', false );
 	} elseif ( is_post_type_archive() ) {
-		$title = post_type_archive_title( '', FALSE );
+		$title = post_type_archive_title( '', false );
 	}
 
 	return $title;
@@ -665,7 +659,7 @@ function gc2020_customize_register( $wp_customize ) {
 
 	// read configuration json file
 	$configfile   = file_get_contents( trailingslashit( get_stylesheet_directory() ) . FLAVORSCONFIG );
-	$flavorsource = json_decode( $configfile, TRUE );
+	$flavorsource = json_decode( $configfile, true );
 	foreach ( $flavorsource as $key => $value ) {
 		$flavors[ strtoupper( $key ) ] = $value['name'];
 	}
@@ -759,7 +753,7 @@ function get_themakleuren() {
 	// alle tipthema's langs om de kleuren op te halen
 	$args  = [
 		'taxonomy'   => GC_TIPTHEMA,
-		'hide_empty' => TRUE,
+		'hide_empty' => true,
 		'orderby'    => 'name',
 		'order'      => 'ASC',
 	];
@@ -785,19 +779,22 @@ function get_themakleuren() {
 	return $themakleuren;
 
 }
+
 // Hernoem menu naam Kennisbank
 function rename_minervakb() {
 
 	global $menu;
 
-	foreach($menu as $key => $item) {
+	foreach ( $menu as $key => $item ) {
 		if ( $item[0] === 'minervakb' ) {
-			$menu[$key][0] = __('GC Kennisbank','textdomain');     //change name
+			$menu[ $key ][0] = __( 'GC Kennisbank', 'gctheme' );     //change name
 
 		}
 	}
+
 	return false;
 }
+
 add_action( 'admin_menu', 'rename_minervakb', 999 );
 
 //========================================================================================================
@@ -826,6 +823,7 @@ function append_block_wrappers( $block_content, $block ) {
 		return $content;
 		*/
 	}
+
 	return $block_content;
 }
 
