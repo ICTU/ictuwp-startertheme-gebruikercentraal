@@ -8,7 +8,7 @@
  * @since   Timber 0.1
  */
 
-define( 'CHILD_THEME_VERSION', '5.0.1' );
+define( 'CHILD_THEME_VERSION', '5.0.2.d' );
 define( 'ID_MAINCONTENT', 'maincontent' );
 define( 'ID_MAINNAV', 'mainnav' );
 define( 'ID_ZOEKEN', 'zoeken' );
@@ -148,6 +148,8 @@ class GebruikerCentraalTheme extends Timber\Site {
 
 		add_action( 'theme_page_templates', array( $this, 'activate_deactivate_page_templates' ) );
 
+		add_action( 'admin_init', array( $this, 'add_adminstyles' ) );
+
 		parent::__construct();
 
 	}
@@ -182,6 +184,9 @@ class GebruikerCentraalTheme extends Timber\Site {
 		if ( isset( $theme_options['flavor_select'] ) ) {
 			$flavor = $theme_options['flavor_select'];
 		}
+
+		// echo '<h1>Flavor: ' . $flavor . '</h1>';
+
 		if ( isset( $configfile[ DEFAULTFLAVOR ] ) ) {
 			$defaultsettings = $configfile[ DEFAULTFLAVOR ];
 		} else {
@@ -218,25 +223,11 @@ class GebruikerCentraalTheme extends Timber\Site {
 		$context['mainnav_id']              = 'menu-primary';
 		$context['mainnav_id_linktext']     = _x( 'Jump to main navigation', 'skiplinks', 'gctheme' );
 
-
-		// Add all terms of the post
-
 		// Additional vars for archives
-
 		if ( is_archive() ) {
 			$context['archive_term']['tid']   = get_queried_object()->term_id;
 			$context['archive_term']['descr'] = get_queried_object()->description;
-
-			$context['pagetype'] = 'archive_' . get_queried_object()->taxonomy;
-		}
-
-		// Additional vars for archives
-
-		if ( is_archive() ) {
-			$context['archive_term']['tid']   = get_queried_object()->term_id;
-			$context['archive_term']['descr'] = get_queried_object()->description;
-
-			$context['pagetype'] = 'archive_' . get_queried_object()->taxonomy;
+			$context['pagetype']              = 'archive_' . get_queried_object()->taxonomy;
 		}
 
 		return $context;
@@ -245,6 +236,14 @@ class GebruikerCentraalTheme extends Timber\Site {
 	public function theme_supports() {
 		// Add default posts and comments RSS feed links to head.
 		add_theme_support( 'automatic-feed-links' );
+
+		$theme_options = get_option( 'gc2020_theme_options' );
+		$flavor        = DEFAULTFLAVOR; // default, tenzij er een smaakje is gekozen
+		if ( isset( $theme_options['flavor_select'] ) ) {
+			$flavor = $theme_options['flavor_select'];
+		}
+
+		// echo '<h1>theme_supports flavor: ' . $flavor . '</h1>';
 
 		/*
 		 * Let WordPress manage the document title.
@@ -302,12 +301,6 @@ class GebruikerCentraalTheme extends Timber\Site {
 
 		// Enable and load CSS for admin editor
 		add_theme_support( 'editor-styles' );
-		$cachebuster = '';
-		if ( WP_DEBUG ) {
-			$cachebuster = '?v=' . filemtime( dirname( __FILE__ ) . '/assets/fonts/editor-fonts.css' );
-		}
-		add_editor_style( get_stylesheet_directory_uri() . '/assets/fonts/editor-fonts.css' . $cachebuster );
-		add_editor_style( get_stylesheet_directory_uri() . '/assets/css/editor-styles.css' . $cachebuster );
 
 		// Allow for responsive embedding
 		add_theme_support( 'responsive-embeds' );
@@ -374,6 +367,22 @@ class GebruikerCentraalTheme extends Timber\Site {
 		) );
 
 
+	}
+
+	/*
+	 * add admin styles
+	 */
+	public function add_adminstyles(  ) {
+
+		// Load CSS for admin editor
+		$cachebuster = '?v=5.0.2.d';
+		if ( WP_DEBUG ) {
+			$cachebuster = '?v=' . filemtime( dirname( __FILE__ ) . '/assets/fonts/editor-fonts.css' );
+		}
+		add_editor_style( get_stylesheet_directory_uri() . '/assets/fonts/editor-fonts.css' . $cachebuster );
+		add_editor_style( get_stylesheet_directory_uri() . '/assets/css/editor-styles.css' . $cachebuster );
+		/*
+		*/
 	}
 
 	/** This Would return 'foo bar!'.
