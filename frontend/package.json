@@ -12,6 +12,7 @@
     "del": "5.1.0",
     "gulp": "4.0.2",
     "gulp-autoprefixer": "7.0.1",
+    "gulp-clean": "0.4.0",
     "gulp-concat-util": "0.5.5",
     "gulp-consolidate": "0.2.0",
     "gulp-iconfont": "10.0.3",
