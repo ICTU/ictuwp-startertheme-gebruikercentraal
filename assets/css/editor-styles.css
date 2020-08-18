@@ -844,7 +844,9 @@
     color: #52757e; }
 
 .author--card {
-  text-align: center; }
+  text-align: center;
+  position: relative;
+  z-index: 5; }
   .author--card .card__image {
     margin-bottom: -11rem; }
   .author--card .author__content {
@@ -888,16 +890,13 @@
     line-height: 2.4rem;
     margin-top: 1rem;
     display: block; }
-  .author--card.author--with-image {
-    position: relative;
-    z-index: 5; }
-    .author--card.author--with-image img {
-      -webkit-box-shadow: 0.4rem 0.4rem 0 rgba(0, 0, 0, 0.15);
-              box-shadow: 0.4rem 0.4rem 0 rgba(0, 0, 0, 0.15);
-      width: 13rem;
-      height: auto;
-      margin: 0 auto;
-      position: relative; }
+  .author--card.author--with-image img {
+    -webkit-box-shadow: 0.4rem 0.4rem 0 rgba(0, 0, 0, 0.15);
+            box-shadow: 0.4rem 0.4rem 0 rgba(0, 0, 0, 0.15);
+    width: 13rem;
+    height: auto;
+    margin: 0 auto;
+    position: relative; }
   .author--card.author--no-image .card__image:before {
     -webkit-box-shadow: 0.4rem 0.4rem 0 rgba(0, 0, 0, 0.15);
             box-shadow: 0.4rem 0.4rem 0 rgba(0, 0, 0, 0.15);
