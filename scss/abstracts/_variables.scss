@@ -40,19 +40,20 @@ $gc-pink-lighter:           #E86CA8;
 $gc-orange:					#f99d1c;
 $gc-a11y-orange-lg:			#D77D00;
 
-$gc-cyan:					#00b4ac;
-$gc-a11y-cyan-lg:			#009C95; // Ok for large texts
-$gc-a11y-cyan:              #00837E;
+$gc-cyan:					        #00b4ac;
+$gc-a11y-cyan-lg:			    #009C95; // Ok for large texts
+$gc-a11y-cyan:            #00837E;
 
+/* Optimaal Digitaal */
+$od-orange:               #BA4F0C;
+$od-orange-darker:        #983A00;
 
 /* Inclusie */
-$inc-orange:                #D94721;
-$inc-a11y-orange:           #c73d19;
-
+$inc-orange:              #D94721;
+$inc-a11y-orange:         #c73d19;
 
 /* NLDS */
 $nlds-purplish:             #74295f;
-
 
 // Grays
 $grey-x-light:               #F7F7F7;
@@ -184,14 +185,25 @@ $gutter-xsmall:           .5rem !default;
 $gc_gutenberg_colors:
     ( white, $white ),
     ( black, $black ),
-    ( gc-green, $gc-green ),
-    ( gc-dark-blue, $gc-dark-blue ),
-    ( gc-pantybrown, $gc-pantybrown ),
-    ( gc-dark-purple, $gc-dark-purple ),
+    ( gc_a11y-blue, $gc_a11y-blue ),
+    ( gc_blue, $gc_blue ),
+    ( gc_pantybrown_xlight, $gc_pantybrown_xlight ),
+    ( gc_pantybrown, $gc_pantybrown ),
     ( gc-blue, $gc-blue ),
-    ( gc-pink, $gc-pink ),
+    ( gc-cyan, $gc-cyan ),
+    ( gc-cyan, $gc-cyan ),
+    ( gc-dark-blue, $gc-dark-blue ),
+    ( gc-dark-purple, $gc-dark-purple ),
+    ( gc-green, $gc-green ),
     ( gc-orange, $gc-orange ),
-    ( gc-cyan, $gc-cyan );
+    ( gc-pantybrown, $gc-pantybrown ),
+    ( gc-pink, $gc-pink ),
+    ( inc_a11y_orange, $inc_a11y_orange ),
+    ( inc_orange, $inc_orange ),
+    ( nlds_purplish, $nlds_purplish ),
+    ( od-orange-darker, $od-orange-darker ),
+    ( od-orange, $od-orange );
+
 
 /* Color Options
 --------------------------------------------- */

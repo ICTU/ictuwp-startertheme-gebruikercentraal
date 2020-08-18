@@ -1,4 +1,5 @@
 @charset "UTF-8";
+/* Optimaal Digitaal */
 /* Inclusie */
 /* NLDS */
 /* ------- */
@@ -33,29 +34,29 @@
 .has-black-background-color {
   background-color: #000; }
 
-.has-gc-green-color {
-  color: #25b34b; }
+.has-gc_a11y-blue-color {
+  color: #007BB0; }
 
-.has-gc-green-background-color {
-  background-color: #25b34b; }
+.has-gc_a11y-blue-background-color {
+  background-color: #007BB0; }
 
-.has-gc-dark-blue-color {
-  color: #004152; }
+.has-gc_blue-color {
+  color: #0095da; }
 
-.has-gc-dark-blue-background-color {
-  background-color: #004152; }
+.has-gc_blue-background-color {
+  background-color: #0095da; }
 
-.has-gc-pantybrown-color {
+.has-gc_pantybrown_xlight-color {
+  color: #f9f6f3; }
+
+.has-gc_pantybrown_xlight-background-color {
+  background-color: #f9f6f3; }
+
+.has-gc_pantybrown-color {
   color: #e8d8c7; }
 
-.has-gc-pantybrown-background-color {
+.has-gc_pantybrown-background-color {
   background-color: #e8d8c7; }
-
-.has-gc-dark-purple-color {
-  color: #4c2974; }
-
-.has-gc-dark-purple-background-color {
-  background-color: #4c2974; }
 
 .has-gc-blue-color {
   color: #0095da; }
@@ -63,11 +64,35 @@
 .has-gc-blue-background-color {
   background-color: #0095da; }
 
-.has-gc-pink-color {
-  color: #c42c76; }
+.has-gc-cyan-color {
+  color: #00b4ac; }
 
-.has-gc-pink-background-color {
-  background-color: #c42c76; }
+.has-gc-cyan-background-color {
+  background-color: #00b4ac; }
+
+.has-gc-cyan-color {
+  color: #00b4ac; }
+
+.has-gc-cyan-background-color {
+  background-color: #00b4ac; }
+
+.has-gc-dark-blue-color {
+  color: #004152; }
+
+.has-gc-dark-blue-background-color {
+  background-color: #004152; }
+
+.has-gc-dark-purple-color {
+  color: #4c2974; }
+
+.has-gc-dark-purple-background-color {
+  background-color: #4c2974; }
+
+.has-gc-green-color {
+  color: #25b34b; }
+
+.has-gc-green-background-color {
+  background-color: #25b34b; }
 
 .has-gc-orange-color {
   color: #f99d1c; }
@@ -75,11 +100,47 @@
 .has-gc-orange-background-color {
   background-color: #f99d1c; }
 
-.has-gc-cyan-color {
-  color: #00b4ac; }
+.has-gc-pantybrown-color {
+  color: #e8d8c7; }
 
-.has-gc-cyan-background-color {
-  background-color: #00b4ac; }
+.has-gc-pantybrown-background-color {
+  background-color: #e8d8c7; }
+
+.has-gc-pink-color {
+  color: #c42c76; }
+
+.has-gc-pink-background-color {
+  background-color: #c42c76; }
+
+.has-inc_a11y_orange-color {
+  color: #c73d19; }
+
+.has-inc_a11y_orange-background-color {
+  background-color: #c73d19; }
+
+.has-inc_orange-color {
+  color: #D94721; }
+
+.has-inc_orange-background-color {
+  background-color: #D94721; }
+
+.has-nlds_purplish-color {
+  color: #74295f; }
+
+.has-nlds_purplish-background-color {
+  background-color: #74295f; }
+
+.has-od-orange-darker-color {
+  color: #983A00; }
+
+.has-od-orange-darker-background-color {
+  background-color: #983A00; }
+
+.has-od-orange-color {
+  color: #BA4F0C; }
+
+.has-od-orange-background-color {
+  background-color: #BA4F0C; }
 
 /*
  * General
