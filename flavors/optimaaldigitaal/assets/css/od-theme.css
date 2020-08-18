@@ -2,7 +2,7 @@
 /*
  * CSS flavor voor Optimaal Digitaal
  * Author: Tamara, Mark, Paul
- * Version: 5.0.2.d
+ * Version: 5.0.3
  *
  */
 .has-white-color {
@@ -252,7 +252,7 @@ cite {
 .text--large {
   font-size: 2.4rem;
   line-height: 3.8rem;
-  font-weight: "montserratregular", Helvetica, Arial, sans-serif; }
+  font-weight: normal; }
 
 .section--text h2,
 .section--text h3,
@@ -6338,7 +6338,6 @@ h1 {
   -webkit-box-shadow: none;
           box-shadow: none; }
 
-/* Optimaal Digitaal Flavor */
 @-webkit-keyframes rotatin {
   0% {
     -webkit-transform: rotate(0deg);
@@ -6346,6 +6345,7 @@ h1 {
   50% {
     -webkit-transform: rotate(180deg);
             transform: rotate(180deg); } }
+
 @keyframes rotatin {
   0% {
     -webkit-transform: rotate(0deg);

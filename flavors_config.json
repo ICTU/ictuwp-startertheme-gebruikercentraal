@@ -16,22 +16,22 @@
       "Fonts": {
         "handle": "skiplinks",
         "file": "/assets/fonts/fonts.css",
-        "version": "5.0.2.d",
+        "version": "5.0.3",
         "dependencies": ""
       },
       "Styling": {
         "handle": "gc-theme",
         "file": "/assets/css/gc-theme.css",
-        "version": "5.0.2.d",
+        "version": "5.0.3",
         "dependencies": ""
       }
     },
     "palette": {
-      "white": {
+      "gc_a11y_green": {
       },
       "gc_pantybrown_xlight": {
       },
-      "black": {
+      "gc-dark-purple": {
       }
     }
   },
@@ -54,13 +54,13 @@
       "Fonts": {
         "handle": "skiplinks",
         "file": "/assets/fonts/fonts.css",
-        "version": "5.0.2.d",
+        "version": "5.0.3",
         "dependencies": ""
       },
       "css1": {
         "handle": "od-theme",
         "file": "/flavors/optimaaldigitaal/assets/css/od-theme.css",
-        "version": "5.0.2.d",
+        "version": "5.0.3",
         "dependencies": ""
       }
     },
@@ -98,13 +98,13 @@
       "Fonts": {
         "handle": "skiplinks",
         "file": "/assets/fonts/fonts.css",
-        "version": "5.0.2.d",
+        "version": "5.0.3",
         "dependencies": ""
       },
       "Styling": {
         "handle": "gc-theme",
         "file": "/assets/css/gc-theme.css",
-        "version": "5.0.2.d",
+        "version": "5.0.3",
         "dependencies": ""
       }
     }

@@ -8,7 +8,7 @@
  * @since   Timber 0.1
  */
 
-define( 'CHILD_THEME_VERSION', '5.0.2.d' );
+define( 'CHILD_THEME_VERSION', '5.0.3' );
 define( 'ID_MAINCONTENT', 'maincontent' );
 define( 'ID_MAINNAV', 'mainnav' );
 define( 'ID_ZOEKEN', 'zoeken' );
@@ -174,7 +174,7 @@ class GebruikerCentraalTheme extends Timber\Site {
 	 *
 	 * @param string $context context['this'] Being the Twig's {{ this }}.
 	 */
-	public function add_to_context( $context ) {
+	public function read_configuration_files() {
 
 		// read configuration json file
 		$configfile    = file_get_contents( trailingslashit( get_stylesheet_directory() ) . FLAVORSCONFIG );
@@ -184,9 +184,6 @@ class GebruikerCentraalTheme extends Timber\Site {
 		if ( isset( $theme_options['flavor_select'] ) ) {
 			$flavor = $theme_options['flavor_select'];
 		}
-
-		// echo '<h1>Flavor: ' . $flavor . '</h1>';
-
 		if ( isset( $configfile[ DEFAULTFLAVOR ] ) ) {
 			$defaultsettings = $configfile[ DEFAULTFLAVOR ];
 		} else {
@@ -206,6 +203,16 @@ class GebruikerCentraalTheme extends Timber\Site {
 			// no flavor chosen, so set the configuration to the default settings
 			$this->configuration = $defaultsettings;
 		}
+
+	}
+
+	/** This is where you add some context
+	 *
+	 * @param string $context context['this'] Being the Twig's {{ this }}.
+	 */
+	public function add_to_context( $context ) {
+
+		$this->read_configuration_files();
 
 		$context['menu']                    = new Timber\Menu( 'primary' );
 		$context['footermenu']              = new Timber\Menu( 'footermenu' );
@@ -234,6 +241,9 @@ class GebruikerCentraalTheme extends Timber\Site {
 	}
 
 	public function theme_supports() {
+
+		$this->read_configuration_files();
+
 		// Add default posts and comments RSS feed links to head.
 		add_theme_support( 'automatic-feed-links' );
 
@@ -243,7 +253,106 @@ class GebruikerCentraalTheme extends Timber\Site {
 			$flavor = $theme_options['flavor_select'];
 		}
 
-		// echo '<h1>theme_supports flavor: ' . $flavor . '</h1>';
+		// these are the only allowed colors for the editor
+		// keys in the flavors_config.json should match the keys here
+		$arr_acceptable_colors = array(
+			'white'                => array(
+				'name'  => __( 'Wit', 'gctheme' ),
+				'slug'  => 'white',
+				'color' => '#fff'
+			),
+			'black'                => array(
+				'name'  => __( 'Zwart', 'gctheme' ),
+				'slug'  => 'black',
+				'color' => '#000',
+			),
+			'gc-green'             => array(
+				'name'  => __( 'GC Groen', 'gctheme' ),
+				'slug'  => 'gc-green',
+				'color' => '#25b34b',
+			),
+			'gc-dark-blue'         => array(
+				'name'  => __( 'GC Dark Blue', 'gctheme' ),
+				'slug'  => 'gc-dark-blue',
+				'color' => '#004152',
+			),
+			'gc_pantybrown'        => array(
+				'name'  => __( 'GC Pantybrown', 'gctheme' ),
+				'slug'  => 'gc_pantybrown',
+				'color' => '#e8d8c7',
+			),
+			'gc-dark-purple'       => array(
+				'name'  => __( 'GC Dark Purple', 'gctheme' ),
+				'slug'  => 'gc-dark-purple',
+				'color' => '#4c2974',
+			),
+			'gc-blue'              => array(
+				'name'  => __( 'GC Blue', 'gctheme' ),
+				'slug'  => 'gc-blue',
+				'color' => '#0095da',
+			),
+			'gc-pink'              => array(
+				'name'  => __( 'GC Pink', 'gctheme' ),
+				'slug'  => 'gc-pink',
+				'color' => '#c42c76',
+			),
+			'gc-orange'            => array(
+				'name'  => __( 'GC Orange', 'gctheme' ),
+				'slug'  => 'gc-orange',
+				'color' => '#f99d1c',
+			),
+			'gc-cyan'              => array(
+				'name'  => __( 'GC Cyan', 'gctheme' ),
+				'slug'  => 'gc-cyan',
+				'color' => '#00b4ac',
+			),
+			'inc_orange'           => array(
+				'name'  => __( 'Inclusie Orange', 'gctheme' ),
+				'slug'  => 'nlds-orange',
+				'color' => '#D94721',
+			),
+			'inc_a11y_orange'      => array(
+				'name'  => __( 'Inclusie Orange', 'gctheme' ),
+				'slug'  => 'inc-a11y-orange',
+				'color' => '#c73d19',
+			),
+			'nlds_purplish'        => array(
+				'name'  => __( 'NLDS Purplish', 'gctheme' ),
+				'slug'  => 'nlds-purplish',
+				'color' => '#74295f',
+			),
+			'gc_blue'              => array(
+				'name'  => __( 'GC Blue', 'gctheme' ),
+				'slug'  => 'gc-blue',
+				'color' => '#0095da',
+			),
+			'gc_a11y-blue'         => array(
+				'name'  => __( 'GC Blue Safe', 'gctheme' ),
+				'slug'  => 'gc-a11y-blue',
+				'color' => '#007BB0',
+			),
+			'gc_a11y_green'        => array(
+				'name'  => __( 'gc_a11y_green', 'gctheme' ),
+				'slug'  => 'gc-a11y-green',
+				'color' => '#148839',
+			),
+			'od_orange'            => array(
+				'name'  => __( 'od_orange', 'gctheme' ),
+				'slug'  => 'gc-orange',
+				'color' => '#BA4F0C',
+			),
+			'od_orange_darker'     => array(
+				'name'  => __( 'od_orange_darker', 'gctheme' ),
+				'slug'  => 'gc-orange',
+				'color' => '#983A00',
+			),
+			'gc_pantybrown_xlight' => array(
+				'name'  => __( 'GC Pantybrown Xtra Light', 'gctheme' ),
+				'slug'  => 'gc-pantybrown-xlight',
+				'color' => '#f9f6f3',
+			)
+		);
+
 
 		/*
 		 * Let WordPress manage the document title.
@@ -308,63 +417,42 @@ class GebruikerCentraalTheme extends Timber\Site {
 		// Disable Custom Colors
 		add_theme_support( 'disable-custom-colors' );
 
-		// Restrict Editor Color Palette
-		add_theme_support( 'editor-color-palette', array(
-
-			// primaire kleuren
-			array(
+		$colors_editor = array(
+			// these colors should always be available
+			// any other should be defined in flavors_config.json
+			'white'                => array(
 				'name'  => __( 'Wit', 'gctheme' ),
 				'slug'  => 'white',
 				'color' => '#fff',
 			),
-			array(
+			'black'                => array(
 				'name'  => __( 'Zwart', 'gctheme' ),
 				'slug'  => 'black',
 				'color' => '#000',
 			),
-			array(
-				'name'  => __( 'GC Groen', 'gctheme' ),
-				'slug'  => 'gc-green',
-				'color' => '#25b34b',
-			),
-			array(
-				'name'  => __( 'GC Dark Blue', 'gctheme' ),
-				'slug'  => 'gc-dark-blue',
-				'color' => '#004152',
-			),
-			array(
-				'name'  => __( 'GC Pantybrown', 'gctheme' ),
-				'slug'  => 'gc_pantybrown',
-				'color' => '#e8d8c7',
-			),
+			'gc_pantybrown_xlight' => array(
+				'name'  => __( 'GC Pantybrown Xtra Light', 'gctheme' ),
+				'slug'  => 'gc-pantybrown-xlight',
+				'color' => '#f9f6f3',
+			)
+		);
 
-			// secundaire kleuren
-			array(
-				'name'  => __( 'GC Dark Purple', 'gctheme' ),
-				'slug'  => 'gc-dark-purple',
-				'color' => '#4c2974',
-			),
-			array(
-				'name'  => __( 'GC Blue', 'gctheme' ),
-				'slug'  => 'gc-blue',
-				'color' => '#0095da',
-			),
-			array(
-				'name'  => __( 'GC Pink', 'gctheme' ),
-				'slug'  => 'gc-pink',
-				'color' => '#c42c76',
-			),
-			array(
-				'name'  => __( 'GC Orange', 'gctheme' ),
-				'slug'  => 'gc-orange',
-				'color' => '#f99d1c',
-			),
-			array(
-				'name'  => __( 'GC Cyan', 'gctheme' ),
-				'slug'  => 'gc-cyan',
-				'color' => '#00b4ac',
-			),
-		) );
+		if ( $this->configuration['palette'] ) {
+			// there are extra colors for the current flavor
+			foreach ( $this->configuration['palette'] as $key => $value ) {
+				if ( isset( $arr_acceptable_colors[ $key ] ) ) {
+					// the color is allowed
+					$colors_editor[ $key ] = array(
+						'name'  => $arr_acceptable_colors[ $key ]['name'],
+						'color' => $arr_acceptable_colors[ $key ]['color'],
+						'slug'  => $key
+					);
+				}
+			}
+		}
+
+		// Restrict Editor Color Palette
+		add_theme_support( 'editor-color-palette', $colors_editor );
 
 
 	}
@@ -372,10 +460,10 @@ class GebruikerCentraalTheme extends Timber\Site {
 	/*
 	 * add admin styles
 	 */
-	public function add_adminstyles(  ) {
+	public function add_adminstyles() {
 
 		// Load CSS for admin editor
-		$cachebuster = '?v=5.0.2.d';
+		$cachebuster = '?v=' . CHILD_THEME_VERSION;
 		if ( WP_DEBUG ) {
 			$cachebuster = '?v=' . filemtime( dirname( __FILE__ ) . '/assets/fonts/editor-fonts.css' );
 		}

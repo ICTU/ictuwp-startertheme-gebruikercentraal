@@ -2,7 +2,7 @@
 /*
  * Editor styles voor GC-theme
  * Author: Tamara, Mark, Paul
- * Version: 5.0.2.d
+ * Version: 5.0.3
  *
 */
 .has-white-color {
@@ -226,7 +226,7 @@ cite {
 .text--large {
   font-size: 2.4rem;
   line-height: 3.8rem;
-  font-weight: "montserratregular", Helvetica, Arial, sans-serif; }
+  font-weight: normal; }
 
 .section--text h2,
 .section--text h3,
@@ -5040,8 +5040,5 @@ h1 {
 
 .wp-block .section__title {
   font-size: 2.5rem; }
-
-[data-type="core/paragraph"] {
-  border: 1px solid red; }
 
 /*# sourceMappingURL=editor-styles.css.map */
