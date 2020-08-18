@@ -1,0 +1,29 @@
+{% if title is empty %}
+  {% set title = '?' %}
+{% endif %}
+
+{% set styles = [
+  'author',
+  'author--card',
+  img ? 'author--with-image' : 'author--no-image'
+
+] %}
+
+<div class="{{ styles|join(' ') }}">
+  <div class="card__image">
+    {% if img is not empty %}
+      <img src="{{ img }}" alt="{{ img_alt }}" class="image image--doelgroep">
+    {% endif %}
+  </div>
+  <div class="author__content">
+    {% if type == 'event' %}
+      {% include 'components/date-badge.html.twig' %}
+    {% endif %}
+    <h3 class="author__title">
+      <a href="{{ url }}">{{ title }}</a>
+    </h3>
+
+    <span class="author__function">{{ function }}</span>
+
+  </div>
+</div>

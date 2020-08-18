@@ -1,0 +1,68 @@
+{
+    "key": "group_5ee7a4a0c9dfd",
+    "title": "[OD] Overzichtspagina's",
+    "fields": [
+        {
+            "key": "field_5ee7a4b0f1054",
+            "label": "Op welke pagina staat het overzicht van alle tips?",
+            "name": "od_overzicht_alle_tips",
+            "type": "post_object",
+            "instructions": "LET OP: als je hier een pagina hebt gekozen, moet je de site-instellingen voor tips opnieuw laden. Ga daarvoor naar [wp-admin] > Instellingen > Permalinks. Zodra je deze pagina hebt opgevraagd, wordt de permalink voor alle tips bijgewerkt.",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "post_type": [
+                "page"
+            ],
+            "taxonomy": "",
+            "allow_null": 0,
+            "multiple": 0,
+            "return_format": "object",
+            "ui": 1
+        },
+        {
+            "key": "field_5f3c24a825519",
+            "label": "Op welke pagina staat het overzicht van alle tipgevers?",
+            "name": "od_overzicht_alle_tipgevers",
+            "type": "post_object",
+            "instructions": "LET OP: als je hier een pagina hebt gekozen, moet je de site-instellingen voor tips opnieuw laden. Ga daarvoor naar [wp-admin] > Instellingen > Permalinks. Zodra je deze pagina hebt opgevraagd, wordt de permalink voor alle tips bijgewerkt.",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "post_type": [
+                "page"
+            ],
+            "taxonomy": "",
+            "allow_null": 0,
+            "multiple": 0,
+            "return_format": "object",
+            "ui": 1
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "options_page",
+                "operator": "==",
+                "value": "instellingen"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": 1,
+    "description": "",
+    "modified": 1597777089
+}

@@ -8,7 +8,7 @@
  * @since   Timber 0.1
  */
 
-define( 'CHILD_THEME_VERSION', '5.0.3' );
+define( 'CHILD_THEME_VERSION', '5.0.4' );
 define( 'ID_MAINCONTENT', 'maincontent' );
 define( 'ID_MAINNAV', 'mainnav' );
 define( 'ID_ZOEKEN', 'zoeken' );
@@ -625,7 +625,7 @@ class GebruikerCentraalTheme extends Timber\Site {
 	}
 
 	/**
-	 * Remove page templates inherited from the parent theme.
+	 * Only allow some page templates based on the chosen flavor
 	 *
 	 * @param array $page_templates List of currently active page templates.
 	 *
@@ -633,12 +633,34 @@ class GebruikerCentraalTheme extends Timber\Site {
 	 */
 	public function activate_deactivate_page_templates( $page_templates ) {
 
-		// Remove the templates we don’t need, based on which site we look at
+		$allowed_templates = array(
+			"template-landingspagina.php"   => "Landingspagina",
+			"template-overzichtspagina.php" => "Overzichtspagina",
+			"template-sitemap.php"          => "Sitemap"
+		);
 
-		// do not use sitemap
-		// unset( $page_templates['template-sitemap.php'] );
+		// check the flavor
+		$theme_options = get_option( 'gc2020_theme_options' );
+		if ( isset( $theme_options['flavor_select'] ) ) {
+			// flavor is available
+			$flavor = $theme_options['flavor_select'];
 
-		return $page_templates;
+			switch ( $flavor ) {
+				case 'OD':
+					// for Optimaal Digitaal, add tip templates
+					$allowed_templates["template-overzicht-tipgevers.php"]      = "[OD] Overzicht alle tipgevers";
+					$allowed_templates["template-alle-tips.php"]                = "[OD] Overzicht alle tips";
+					$allowed_templates["template-tips.php"]                     = "[OD] Template tips-pagina";
+
+break;
+
+				default:
+					break;
+			}
+
+		}
+
+		return $allowed_templates;
 	}
 
 }
@@ -671,7 +693,9 @@ function my_body_classes( $classes ) {
 	if ( is_page() ) {
 
 		$template = basename( get_page_template() );
-		if ( 'template-alle-tips.php' === $template ) {
+		if (
+			( 'template-alle-tips.php' === $template ) ||
+			( 'template-overzicht-tipgevers.php' === $template ) ) {
 			$classes[] = 'page--type-overview page--overview-archive';
 		}
 		if ( 'template-landingspagina.php' === $template ) {
