@@ -634,6 +634,7 @@ class GebruikerCentraalTheme extends Timber\Site {
 	public function activate_deactivate_page_templates( $page_templates ) {
 
 		$allowed_templates = array(
+			"template-home.php"             => "Homepage",
 			"template-landingspagina.php"   => "Landingspagina",
 			"template-overzichtspagina.php" => "Overzichtspagina",
 			"template-sitemap.php"          => "Sitemap"
@@ -648,11 +649,11 @@ class GebruikerCentraalTheme extends Timber\Site {
 			switch ( $flavor ) {
 				case 'OD':
 					// for Optimaal Digitaal, add tip templates
-					$allowed_templates["template-overzicht-tipgevers.php"]      = "[OD] Overzicht alle tipgevers";
-					$allowed_templates["template-alle-tips.php"]                = "[OD] Overzicht alle tips";
-					$allowed_templates["template-tips.php"]                     = "[OD] Template tips-pagina";
+					$allowed_templates["template-overzicht-tipgevers.php"] = "[OD] Overzicht alle tipgevers";
+					$allowed_templates["template-alle-tips.php"]           = "[OD] Overzicht alle tips";
+					$allowed_templates["template-tips.php"]                = "[OD] Template tips-pagina";
 
-break;
+					break;
 
 				default:
 					break;
@@ -1017,6 +1018,7 @@ function gc_restrict_gutenberg_blocks( $allowed_blocks ) {
 		'core/pullquote',
 		'core/subhead',
 		'core-embed/youtube',
+		'core-embed/vimeo',
 
 		'acf/gc-links',
 		'acf/gc-related',
@@ -1029,6 +1031,6 @@ function gc_restrict_gutenberg_blocks( $allowed_blocks ) {
 
 }
 
-add_filter( 'allowed_block_types', 'gc_restrict_gutenberg_blocks' );
+//add_filter( 'allowed_block_types', 'gc_restrict_gutenberg_blocks' );
 
 //========================================================================================================
