@@ -49,7 +49,7 @@ if ( ! class_exists( 'ICTUWP_GC_OD_registerposttypes' ) ) :
 		/**
 		 * @var Rijksvideo
 		 */
-		public $rhswpregistration = NULL;
+		public $rhswpregistration = null;
 
 		/** ----------------------------------------------------------------------------------------------------
 		 * Init
@@ -107,13 +107,13 @@ if ( ! class_exists( 'ICTUWP_GC_OD_registerposttypes' ) ) :
 			$args = [
 				"labels"              => $labels,
 				"description"         => __( "Hier voer je de tips in.", 'gctheme' ),
-				"public"              => TRUE,
-				"hierarchical"        => FALSE,
-				"exclude_from_search" => FALSE,
-				"publicly_queryable"  => TRUE,
-				"show_ui"             => TRUE,
-				"show_in_menu"        => TRUE,
-				"show_in_rest"        => TRUE,
+				"public"              => true,
+				"hierarchical"        => false,
+				"exclude_from_search" => false,
+				"publicly_queryable"  => true,
+				"show_ui"             => true,
+				"show_in_menu"        => true,
+				"show_in_rest"        => true,
 				"capability_type"     => __( "post", 'gctheme' ),
 				"supports"            => [
 					"title",
@@ -122,15 +122,15 @@ if ( ! class_exists( 'ICTUWP_GC_OD_registerposttypes' ) ) :
 					"revisions",
 					"author",
 				],
-				"has_archive"         => FALSE,
+				"has_archive"         => false,
 				"rewrite"             => [
 					"slug"       => $defaultslugforCPT,
-					"with_front" => TRUE,
+					"with_front" => true,
 				],
-				"can_export"          => TRUE,
-				"delete_with_user"    => FALSE,
-				"map_meta_cap"        => TRUE,
-				"query_var"           => TRUE,
+				"can_export"          => true,
+				"delete_with_user"    => false,
+				"map_meta_cap"        => true,
+				"query_var"           => true,
 			];
 			register_post_type( GC_TIP_CPT, $args );
 
@@ -156,17 +156,17 @@ if ( ! class_exists( 'ICTUWP_GC_OD_registerposttypes' ) ) :
 
 			$args = [
 				"labels"            => $labels,
-				"hierarchical"      => TRUE,
+				"hierarchical"      => true,
 				"label"             => __( "Tip-thema's", 'gctheme' ),
-				"show_ui"           => TRUE,
-				"query_var"         => TRUE,
-				'show_in_rest'      => TRUE,
+				"show_ui"           => true,
+				"query_var"         => true,
+				'show_in_rest'      => true,
 				// Needed for tax to appear in Gutenberg editor.
 				"rewrite"           => [
 					'slug'       => GC_TIPTHEMA,
-					'with_front' => TRUE,
+					'with_front' => true,
 				],
-				"show_admin_column" => FALSE,
+				"show_admin_column" => false,
 			];
 			register_taxonomy( GC_TIPTHEMA, [ GC_TIP_CPT ], $args );
 
@@ -198,22 +198,22 @@ if ( ! class_exists( 'ICTUWP_GC_OD_registerposttypes' ) ) :
 			$args = [
 				"label"              => __( "Speelsets", 'gctheme' ),
 				"labels"             => $labels,
-				"public"             => TRUE,
-				"hierarchical"       => TRUE,
+				"public"             => true,
+				"hierarchical"       => true,
 				"label"              => __( "Speelsets", 'gctheme' ),
-				"show_ui"            => TRUE,
-				"show_in_menu"       => TRUE,
-				"show_in_nav_menus"  => TRUE,
-				"query_var"          => TRUE,
-				'show_in_rest'       => TRUE,
+				"show_ui"            => true,
+				"show_in_menu"       => true,
+				"show_in_nav_menus"  => true,
+				"query_var"          => true,
+				'show_in_rest'       => true,
 				// Needed for tax to appear in Gutenberg editor.
 				"rewrite"            => [
 					'slug'       => GC_ODSPEELSET,
-					'with_front' => TRUE,
+					'with_front' => true,
 				],
-				"show_admin_column"  => FALSE,
+				"show_admin_column"  => false,
 				"rest_base"          => "",
-				"show_in_quick_edit" => FALSE,
+				"show_in_quick_edit" => false,
 			];
 
 			register_taxonomy( GC_ODSPEELSET, [ GC_TIP_CPT ], $args );
@@ -240,17 +240,17 @@ if ( ! class_exists( 'ICTUWP_GC_OD_registerposttypes' ) ) :
 
 			$args = [
 				"labels"            => $labels,
-				"hierarchical"      => TRUE,
+				"hierarchical"      => true,
 				"label"             => __( "Jouw vraag", 'gctheme' ),
-				"show_ui"           => TRUE,
-				"query_var"         => TRUE,
-				'show_in_rest'      => TRUE,
+				"show_ui"           => true,
+				"query_var"         => true,
+				'show_in_rest'      => true,
 				// Needed for tax to appear in Gutenberg editor.
 				"rewrite"           => [
 					'slug'       => GC_TIPVRAAG,
-					'with_front' => TRUE,
+					'with_front' => true,
 				],
-				"show_admin_column" => FALSE,
+				"show_admin_column" => false,
 			];
 			register_taxonomy( GC_TIPVRAAG, [ GC_TIP_CPT ], $args );
 
@@ -282,22 +282,22 @@ if ( ! class_exists( 'ICTUWP_GC_OD_registerposttypes' ) ) :
 			$args = [
 				"label"              => __( "Tipgevers", 'gctheme' ),
 				"labels"             => $labels,
-				"public"             => TRUE,
-				"hierarchical"       => FALSE,
+				"public"             => true,
+				"hierarchical"       => false,
 				"label"              => __( "Tipgevers", 'gctheme' ),
-				"show_ui"            => TRUE,
-				"show_in_menu"       => TRUE,
-				"show_in_nav_menus"  => TRUE,
-				"query_var"          => TRUE,
-				'show_in_rest'       => TRUE,
+				"show_ui"            => true,
+				"show_in_menu"       => true,
+				"show_in_nav_menus"  => true,
+				"query_var"          => true,
+				'show_in_rest'       => true,
 				// Needed for tax to appear in Gutenberg editor.
 				"rewrite"            => [
 					'slug'       => OD_CITAATAUTEUR,
-					'with_front' => TRUE,
+					'with_front' => true,
 				],
-				"show_admin_column"  => FALSE,
+				"show_admin_column"  => false,
 				"rest_base"          => "",
-				"show_in_quick_edit" => FALSE,
+				"show_in_quick_edit" => false,
 			];
 
 			register_taxonomy( OD_CITAATAUTEUR, [ GC_TIP_CPT ], $args );
@@ -1214,7 +1214,7 @@ if ( ! class_exists( 'ICTUWP_GC_OD_registerposttypes' ) ) :
 							'label'             => __( "Functietitel", 'gctheme' ),
 							'name'              => 'tipgever_functietitel',
 							'type'              => 'text',
-							'value'             => NULL,
+							'value'             => null,
 							'instructions'      => '',
 							'required'          => 1,
 							'conditional_logic' => 0,
@@ -1234,7 +1234,7 @@ if ( ! class_exists( 'ICTUWP_GC_OD_registerposttypes' ) ) :
 							'label'             => __( "Foto", 'gctheme' ),
 							'name'              => 'tipgever_foto',
 							'type'              => 'image',
-							'value'             => NULL,
+							'value'             => null,
 							'instructions'      => '',
 							'required'          => 0,
 							'conditional_logic' => 0,
@@ -1259,7 +1259,7 @@ if ( ! class_exists( 'ICTUWP_GC_OD_registerposttypes' ) ) :
 							'label'             => __( "E-mailadres", 'gctheme' ),
 							'name'              => 'tipgever_mail',
 							'type'              => 'email',
-							'value'             => NULL,
+							'value'             => null,
 							'instructions'      => '',
 							'required'          => 0,
 							'conditional_logic' => 0,
@@ -1278,7 +1278,7 @@ if ( ! class_exists( 'ICTUWP_GC_OD_registerposttypes' ) ) :
 							'label'             => __( "Telefoonnummer", 'gctheme' ),
 							'name'              => 'tipgever_telefoonnummer',
 							'type'              => 'text',
-							'value'             => NULL,
+							'value'             => null,
 							'instructions'      => '',
 							'required'          => 0,
 							'conditional_logic' => 0,
@@ -1754,7 +1754,7 @@ if ( ! class_exists( 'ICTUWP_GC_OD_registerposttypes' ) ) :
 					'label_placement'       => 'top',
 					'instruction_placement' => 'label',
 					'hide_on_screen'        => '',
-					'active'                => TRUE,
+					'active'                => true,
 					'description'           => '',
 				] );
 
@@ -1806,57 +1806,81 @@ if ( ! class_exists( 'ICTUWP_GC_OD_registerposttypes' ) ) :
 				'label_placement'       => 'top',
 				'instruction_placement' => 'label',
 				'hide_on_screen'        => '',
-				'active'                => TRUE,
+				'active'                => true,
 				'description'           => 'Is deze tip een toptip?',
 			] );
 
 			///-----
 			// parent voor tips; deze pagina fungeert als de archive page voor tips
-			acf_add_local_field_group( [
+
+			acf_add_local_field_group( array(
 				'key'                   => 'group_5ee7a4a0c9dfd',
-				'title'                 => '[OD] Overzichtspagina voor tips',
-				'fields'                => [
-					[
+				'title'                 => '[OD] Overzichtspagina\'s',
+				'fields'                => array(
+					array(
 						'key'               => 'field_5ee7a4b0f1054',
 						'label'             => 'Op welke pagina staat het overzicht van alle tips?',
 						'name'              => 'od_overzicht_alle_tips',
 						'type'              => 'post_object',
-						'instructions'      => "",
+						'instructions'      => 'LET OP: als je hier een pagina hebt gekozen, moet je de site-instellingen voor tips opnieuw laden. Ga daarvoor naar [wp-admin] > Instellingen > Permalinks. Zodra je deze pagina hebt opgevraagd, wordt de permalink voor alle tips bijgewerkt.',
 						'required'          => 1,
 						'conditional_logic' => 0,
-						'wrapper'           => [
+						'wrapper'           => array(
 							'width' => '',
 							'class' => '',
 							'id'    => '',
-						],
-						'post_type'         => [
+						),
+						'post_type'         => array(
 							0 => 'page',
-						],
+						),
 						'taxonomy'          => '',
 						'allow_null'        => 0,
 						'multiple'          => 0,
 						'return_format'     => 'object',
 						'ui'                => 1,
-					],
-				],
-				'location'              => [
-					[
-						[
+					),
+					array(
+						'key'               => 'field_5f3c24a825519',
+						'label'             => 'Op welke pagina staat het overzicht van alle tipgevers?',
+						'name'              => 'od_overzicht_alle_tipgevers',
+						'type'              => 'post_object',
+						'instructions'      => 'LET OP: als je hier een pagina hebt gekozen, moet je de site-instellingen voor tips opnieuw laden. Ga daarvoor naar [wp-admin] > Instellingen > Permalinks. Zodra je deze pagina hebt opgevraagd, wordt de permalink voor alle tips bijgewerkt.',
+						'required'          => 1,
+						'conditional_logic' => 0,
+						'wrapper'           => array(
+							'width' => '',
+							'class' => '',
+							'id'    => '',
+						),
+						'post_type'         => array(
+							0 => 'page',
+						),
+						'taxonomy'          => '',
+						'allow_null'        => 0,
+						'multiple'          => 0,
+						'return_format'     => 'object',
+						'ui'                => 1,
+					),
+				),
+				'location'              => array(
+					array(
+						array(
 							'param'    => 'options_page',
 							'operator' => '==',
 							'value'    => 'instellingen',
-						],
-					],
-				],
+						),
+					),
+				),
 				'menu_order'            => 0,
 				'position'              => 'normal',
 				'style'                 => 'default',
 				'label_placement'       => 'top',
 				'instruction_placement' => 'label',
 				'hide_on_screen'        => '',
-				'active'                => TRUE,
+				'active'                => true,
 				'description'           => '',
-			] );
+			) );
+
 
 			// ---------------------------------------------------------------------------------------------------
 			// clean up after ourselves
@@ -1881,24 +1905,33 @@ if ( ! function_exists( 'ICTUWP_GC_OD_update_yoast_breadcrumb ' ) ) {
 
 	function ICTUWP_GC_OD_update_yoast_breadcrumb( $links ) {
 		global $post;
+		$currentitem = null;
+		$optionpage  = null;
 
 		if ( is_home() || is_front_page() ) {
 			// geen breadcrumb op de homepage
 			return [];
+		} elseif ( is_tax( OD_CITAATAUTEUR ) ) {
+			// uit siteopties de pagina ophalen die het overzicht is van alle links
+			$optionpage = get_field( 'od_overzicht_alle_tipgevers', 'option' );
 		} elseif ( is_singular( GC_TIP_CPT ) ) {
 			// uit siteopties de pagina ophalen die het overzicht is van alle links
 			$optionpage = get_field( 'od_overzicht_alle_tips', 'option' );
+		} else {
+			return $links;
+		}
 
-			if ( $optionpage ) {
-				// haal de ancestors op voor de huidige pagina
+		if ( $optionpage ) {
+			// haal de ancestors op voor deze pagina
+			$ancestors   = get_post_ancestors( $optionpage );
+			$currentitem = array_pop( $links );
+			$home        = $links[0];
+			$parents[]   = array(
+				'url'  => get_page_link( $optionpage ),
+				'text' => get_the_title( $optionpage ),
+			);
 
-				$ancestors  = get_post_ancestors( $optionpage );
-				$currenttip = array_pop( $links );
-				$home       = $links[0];
-				$parents[]  = [
-					'url'  => get_page_link( $optionpage ),
-					'text' => get_the_title( $optionpage ),
-				];
+			if ( $ancestors ) {
 
 				// haal de hele keten aan ancestors op en zet ze in de returnstring
 				foreach ( $ancestors as $ancestorid ) {
@@ -1906,6 +1939,7 @@ if ( ! function_exists( 'ICTUWP_GC_OD_update_yoast_breadcrumb ' ) ) {
 					if ( $home['url'] !== get_page_link( $ancestorid ) ) {
 						// home link staat al in $home, dus niet extra toevoegen
 
+						// Prepend one or more elements to the beginning of an array
 						array_unshift( $parents, [
 							'url'  => get_page_link( $ancestorid ),
 							'text' => get_the_title( $ancestorid ),
@@ -1913,22 +1947,29 @@ if ( ! function_exists( 'ICTUWP_GC_OD_update_yoast_breadcrumb ' ) ) {
 
 					}
 				}
-
-				array_unshift( $parents, $links[0] );
-				if ( isset( $currenttip['id'] ) ) {
-					$parents[] = [
-						'url'  => get_page_link( $currenttip['id'] ),
-						'text' => get_the_title( $currenttip['id'] ),
-					];
-
-					$links = $parents;
-
-				}
-
 			}
-		}
 
-		return $links;
+			// append the home link
+			array_unshift( $parents, $links[0] );
+
+			if ( isset( $currentitem['id'] ) || isset( $currentitem['term_id'] ) ) {
+
+				if ( isset( $currentitem['id'] ) ) {
+					$parents[] = [
+						'url'  => get_page_link( $currentitem['id'] ),
+						'text' => get_the_title( $currentitem['id'] ),
+					];
+				} elseif ( isset( $currentitem['term_id'] ) ) {
+					$parents[] = [
+						'url'  => get_term_link( $currentitem['term_id'] ),
+						'text' => $currentitem['text'],
+					];
+				}
+				$links = $parents;
+			}
+
+			return $links;
+		}
 	}
 }
 
@@ -1949,9 +1990,12 @@ if ( ! function_exists( 'ICTUWP_OD_change_tip_permalinks ' ) ) {
 
 			if ( $permalink ) {
 
-				$args = [
-					"rewrite" => [ "slug" => $permalink, "with_front" => TRUE ],
-				];
+				$args = array(
+					"rewrite" => array(
+						"slug"       => $permalink,
+						"with_front" => true
+					),
+				);
 
 				register_post_type( GC_TIP_CPT, $args );
 
@@ -1967,10 +2011,8 @@ if ( ! function_exists( 'ICTUWP_OD_change_tip_permalinks ' ) ) {
 				}
 			}
 		}
-
 		return $value;
 	}
-
 }
 
 

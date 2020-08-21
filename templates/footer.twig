@@ -1,10 +1,11 @@
 <div class="l-page-footer-wrapper">
 
-  {% if footer_widget_left or footer_widget_right %}
-    <h2 class="visuallyhidden">{{ _x('Footer', 'Title boven footer widgets', 'gctheme') }}</h2>
-  {% endif %}
 
   <footer class="page-footer">
+
+    {% if footer_widget_left or footer_widget_right %}
+      <h2 class="visuallyhidden">{{ _x('Footer', 'Title boven footer widgets', 'gctheme') }}</h2>
+    {% endif %}
 
     <div class="footer-col footer-col--1">
 
@@ -37,5 +38,3 @@
 
 </div>
 
-
-</div>

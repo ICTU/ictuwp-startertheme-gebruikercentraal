@@ -149,6 +149,8 @@ $ac-margin: 30rem;
 
 .author--card {
   text-align: center;
+  position: relative;
+  z-index: 5;
 
   .card__image {
     margin-bottom: -11rem;
@@ -189,8 +191,6 @@ $ac-margin: 30rem;
   }
 
   &.author--with-image {
-    position: relative;
-    z-index: 5;
 
     img {
       @include gc-box-shadow();

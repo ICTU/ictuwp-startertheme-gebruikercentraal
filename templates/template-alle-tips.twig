@@ -2,42 +2,64 @@
 
 {% block content %}
 
-      <article class="entry entry--type-overview entry--full" id="post-{{ post.ID }}">
+  <article class="entry entry--type-overview entry--full" id="post-{{ post.ID }}">
 
-        <div class="entry-content">
-          <div class="page__intro">
-            <header class="entry-header">
-              <h1 class="entry-title">{{ post.title }}</h1>
-              {% if intro %}
-                {{ intro }}
-              {% endif %}
-            </header>
+    <div class="entry-content">
+      <div class="page__intro">
+        <header class="entry-header">
+          <h1 class="entry-title">{{ post.title }}</h1>
+          {% if intro %}
+            {{ intro }}
+          {% endif %}
+        </header>
+
+        {% if post.content %}
+          <div class="entry-body">
+            {{ post.content }}
           </div>
-        </div>
+        {% endif %}
 
-        {% if filters %}
-        <div class="l-filter-wrapper">
-          <p>Filter werkt nog niet</p>
-          <form id="tp-filters" class="form form--filters">
-            {% for item in filters %}
-              <div class="form-item form-item--checkbox form-item--filter">
-                <input type="checkbox" id="{{ item.class }}">
-                <label for="{{ item.class }}">{{ item.name }}</label>
-              </div>
-            {% endfor %}
-          </form>
-        </div>
-      {% endif %}
+      </div>
+    </div>
 
+    {% if filters %}
+      <div class="l-filter-wrapper">
+        <p>Filter werkt nog niet</p>
+        <form id="tp-filters" class="form form--filters">
+          {% for item in filters %}
+            <div class="form-item form-item--checkbox form-item--filter">
+              <input type="checkbox" id="{{ item.class }}">
+              <label for="{{ item.class }}">{{ item.name }}</label>
+            </div>
+          {% endfor %}
+        </form>
+      </div>
+    {% endif %}
+
+    {% if tipkaarts %}
       {% include 'sections/section-overview.html.twig' with {
         'items': tipkaarts,
         'title': '',
         'template': 'card--tipkaart',
         'modifier': '4col'
       } %}
+    {% endif %}
+    {% if tipgevers %}
 
+      <div class="grid grid--col-3 grid--gutter-wide">
+        {% for item in tipgevers.items %}
+          {% include 'components/card--author.html.twig' with {
+            'type': 'author',
+            'title': item.title,
+            'img': item.img,
+            'function': item.function,
+            'url': item.url
+          } %}
+        {% endfor %}
+      </div>
+    {% endif %}
 
-    </article>
+  </article>
 
 {% endblock %}
 

@@ -1,14 +1,21 @@
 {% if menu %}
-  <div class="l-header-nav" aria-hidden="false" id="mainnav">
+  <div class="l-header-nav" aria-hidden="false">
     <nav id="{{ mainnav_id }}" class="main-menu" role="navigation">
       <ul id="mainnav" class="main-menu__list">
         {% for item in items %}
+
+          {% if item.target is empty %}
+            {% set targetattr = '' %}
+          {% else %}
+            {% set targetattr = ' target="' ~ item.target ~ '"' %}
+          {% endif %}
+
           {% if item.children %}
             <li class="main-menu__item main-menu__item--with-sub" aria-hidden="true">
           {% else %}
             <li class="main-menu__item">
           {% endif %}
-          <a target="{{ item.target }}" href="{{ item.link }}"><span>{{ item.title }}</span></a>
+          <a href="{{ item.link }}"{{ targetattr }}><span>{{ item.title }}</span></a>
 
           {% if item.children %}
             <!-- TODO tekxt aanpassen button -->
