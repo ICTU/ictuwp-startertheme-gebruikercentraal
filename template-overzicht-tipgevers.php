@@ -12,7 +12,12 @@ $context = Timber::context();
 
 $timber_post          = new Timber\Post();
 $context['post']      = $timber_post;
-$context['intro']     = 'Intro poesjemau';
+if ( get_field( 'overzichtspagina_inleiding' ) ) {
+	// ACF veld 'post_inleiding' is gevuld
+	$intro            = get_field( 'overzichtspagina_inleiding' );
+	$context['intro'] = wpautop( $intro );
+
+}
 $context['tipgevers'] = tipgevers_get_data();
 
 
