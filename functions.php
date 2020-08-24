@@ -634,7 +634,6 @@ class GebruikerCentraalTheme extends Timber\Site {
 	public function activate_deactivate_page_templates( $page_templates ) {
 
 		$allowed_templates = array(
-			"template-home.php"             => "Homepage",
 			"template-landingspagina.php"   => "Landingspagina",
 			"template-overzichtspagina.php" => "Overzichtspagina",
 			"template-sitemap.php"          => "Sitemap"
@@ -652,6 +651,7 @@ class GebruikerCentraalTheme extends Timber\Site {
 					$allowed_templates["template-overzicht-tipgevers.php"] = "[OD] Overzicht alle tipgevers";
 					$allowed_templates["template-alle-tips.php"]           = "[OD] Overzicht alle tips";
 					$allowed_templates["template-tips.php"]                = "[OD] Template tips-pagina";
+					$allowed_templates["template-od-home.php"]                = "[OD] Template Home";
 
 					break;
 
