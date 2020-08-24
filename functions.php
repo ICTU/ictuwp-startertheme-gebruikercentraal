@@ -75,6 +75,7 @@ require_once( get_template_directory() . '/gutenberg-blocks/cta-block.php' );
 require_once( get_template_directory() . '/gutenberg-blocks/related-block.php' );
 require_once( get_template_directory() . '/gutenberg-blocks/textimage-block.php' );
 require_once( get_template_directory() . '/gutenberg-blocks/links-block.php' );
+require_once( get_template_directory() . '/gutenberg-blocks/spotlight-block.php' );
 
 /**
  * Load other dependencies such as VAR DUMPER :D
@@ -453,6 +454,19 @@ class GebruikerCentraalTheme extends Timber\Site {
 
 		// Restrict Editor Color Palette
 		add_theme_support( 'editor-color-palette', $colors_editor );
+
+		// options for font size: off!
+		add_theme_support('disable-custom-font-sizes');
+
+		// forces the dropdown for font sizes to only contain "normal"
+		add_theme_support('editor-font-sizes', array(
+			array(
+				'name' => 'Normal',
+				'size' => 16,
+				'slug' => 'normal'
+			)
+		) );
+
 
 
 	}
@@ -1034,3 +1048,21 @@ function gc_restrict_gutenberg_blocks( $allowed_blocks ) {
 //add_filter( 'allowed_block_types', 'gc_restrict_gutenberg_blocks' );
 
 //========================================================================================================
+
+//add_action('after_setup_theme', 'wpse_remove_custom_colors');
+
+function wpse_remove_custom_colors() {
+	// removes the text box where users can enter custom pixel sizes
+	add_theme_support('disable-custom-font-sizes');
+	// forces the dropdown for font sizes to only contain "normal"
+	add_theme_support('editor-font-sizes', array(
+		array(
+			'name' => 'Normal',
+			'size' => 16,
+			'slug' => 'normal'
+		)
+	) );
+}
+
+//========================================================================================================
+
