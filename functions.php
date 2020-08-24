@@ -21,6 +21,9 @@ define( 'FLAVORSCONFIG', 'flavors_config.json' );
 if ( ! defined( 'GC_TIP_CPT' ) ) {
 	define( 'GC_TIP_CPT', 'tips' );
 }
+if ( ! defined( 'GC_SPOTLIGHT_CPT' ) ) {
+	define( 'GC_SPOTLIGHT_CPT', 'spotlight' );
+}
 
 // Custom Taxonomies
 if ( ! defined( 'GC_TIPTHEMA' ) ) {
@@ -130,6 +133,10 @@ class GebruikerCentraalTheme extends Timber\Site {
 
 		// custom menu locations
 		add_action( 'init', array( $this, 'register_my_menu' ) );
+
+		// custom menu locations
+		add_action( 'init', array( $this, 'register_spotlight_cpt' ) );
+
 
 		// translation support
 		add_action( 'after_setup_theme', array( $this, 'add_translation_support' ) );
@@ -461,9 +468,14 @@ class GebruikerCentraalTheme extends Timber\Site {
 		// forces the dropdown for font sizes to only contain "normal"
 		add_theme_support('editor-font-sizes', array(
 			array(
-				'name' => 'Normal',
-				'size' => 16,
+				'name'  => __( 'Larger', 'gctheme' ),
+				'size' => 24,
 				'slug' => 'normal'
+			),
+			array(
+				'name'  => __( 'Extra large', 'gctheme' ),
+				'size' => 32,
+				'slug' => 'large'
 			)
 		) );
 
@@ -677,6 +689,55 @@ class GebruikerCentraalTheme extends Timber\Site {
 
 		return $allowed_templates;
 	}
+
+	public function register_spotlight_cpt() {
+
+		$labels = [
+			"name"               => __( "Spotlight-blokken", 'gctheme' ),
+			"singular_name"      => __( "Spotlight-blok", 'gctheme' ),
+			"menu_name"          => __( "Spotlight", 'gctheme' ),
+			"menu_name"          => __( "Spotlight", 'gctheme' ),
+			"all_items"          => __( "Alle spotlight-blokken", 'gctheme' ),
+			"add_new"            => __( "Toevoegen", 'gctheme' ),
+			"add_new_item"       => __( "Spotlight-blok toevoegen", 'gctheme' ),
+			"edit"               => __( "Spotlight-blok bewerken", 'gctheme' ),
+			"edit_item"          => __( "Bewerk spotlight-blok", 'gctheme' ),
+			"new_item"           => __( "Nieuwe spotlight-blok", 'gctheme' ),
+			"view"               => __( "Bekijk", 'gctheme' ),
+			"view_item"          => __( "Bekijk spotlight-blok", 'gctheme' ),
+			"search_items"       => __( "Spotlight-blokken zoeken", 'gctheme' ),
+			"not_found"          => __( "Geen spotlight-blokken gevonden", 'gctheme' ),
+			"not_found_in_trash" => __( "Geen spotlight-blokken in de prullenbak", 'gctheme' ),
+		];
+
+		$args = [
+			"labels"              => $labels,
+			"description"         => __( "Hier voer je spotlight-blokken in.", 'gctheme' ),
+			"public"              => false,
+			"hierarchical"        => false,
+			"exclude_from_search" => true,
+			"publicly_queryable"  => false,
+			"show_ui"             => true,
+			"show_in_menu"        => true,
+			"show_in_rest"        => true,
+			"capability_type"     => __( "post", 'gctheme' ),
+			"supports"            => [
+				"title",
+				"excerpt",
+				"revisions",
+				"thumbnail",
+			],
+			"has_archive"         => false,
+			"can_export"          => true,
+			"delete_with_user"    => false,
+			"map_meta_cap"        => true,
+			"query_var"           => true,
+		];
+		register_post_type( GC_SPOTLIGHT_CPT, $args );
+
+
+	}
+
 
 }
 
@@ -1046,23 +1107,6 @@ function gc_restrict_gutenberg_blocks( $allowed_blocks ) {
 }
 
 //add_filter( 'allowed_block_types', 'gc_restrict_gutenberg_blocks' );
-
-//========================================================================================================
-
-//add_action('after_setup_theme', 'wpse_remove_custom_colors');
-
-function wpse_remove_custom_colors() {
-	// removes the text box where users can enter custom pixel sizes
-	add_theme_support('disable-custom-font-sizes');
-	// forces the dropdown for font sizes to only contain "normal"
-	add_theme_support('editor-font-sizes', array(
-		array(
-			'name' => 'Normal',
-			'size' => 16,
-			'slug' => 'normal'
-		)
-	) );
-}
 
 //========================================================================================================
 

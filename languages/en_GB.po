@@ -1,15 +1,15 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Gebruiker Centraal (2020)\n"
-"POT-Creation-Date: 2020-08-12 20:44+0200\n"
-"PO-Revision-Date: 2020-08-12 20:44+0200\n"
+"POT-Creation-Date: 2020-08-24 18:53+0200\n"
+"PO-Revision-Date: 2020-08-24 18:58+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: en_GB\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 2.3.1\n"
+"X-Generator: Poedit 2.4.1\n"
 "X-Poedit-Basepath: ..\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Poedit-Flags-xgettext: --add-comments=translators:\n"
@@ -36,7 +36,7 @@ msgstr "Hint"
 msgid "Alle tips"
 msgstr "All hints"
 
-#: assets/json.php:105 assets/od.php:95
+#: assets/json.php:105 assets/od.php:95 functions.php:701
 msgid "Toevoegen"
 msgstr "Add"
 
@@ -56,7 +56,7 @@ msgstr ""
 msgid "Nieuwe tip"
 msgstr ""
 
-#: assets/json.php:110 assets/od.php:100
+#: assets/json.php:110 assets/od.php:100 functions.php:706
 msgid "Bekijk"
 msgstr ""
 
@@ -80,7 +80,7 @@ msgstr ""
 msgid "Hier voer je de tips in."
 msgstr ""
 
-#: assets/json.php:127 assets/od.php:117
+#: assets/json.php:127 assets/od.php:117 functions.php:723
 msgid "post"
 msgstr ""
 
@@ -506,88 +506,176 @@ msgstr ""
 msgid "Geen speelset gevonden in de prullenbak"
 msgstr ""
 
-#: functions.php:161
+#: functions.php:167
 msgctxt "menu location"
 msgid "Menu in header"
 msgstr ""
 
-#: functions.php:162
+#: functions.php:168
 msgctxt "menu location"
 msgid "Menu in footer"
 msgstr ""
 
-#: functions.php:213
+#: functions.php:229
 #, php-format
 msgctxt "Alt-tekst op logo"
 msgid "Logo %s"
 msgstr ""
 
-#: functions.php:221
+#: functions.php:237
 msgctxt "skiplinks"
 msgid "Jump to main content"
 msgstr ""
 
-#: functions.php:223
+#: functions.php:239
 msgctxt "skiplinks"
 msgid "Jump to main navigation"
 msgstr ""
 
-#: functions.php:327
+#: functions.php:268 functions.php:432
 msgid "Wit"
 msgstr ""
 
-#: functions.php:332
+#: functions.php:273 functions.php:437
 msgid "Zwart"
 msgstr ""
 
-#: functions.php:337
+#: functions.php:278
 msgid "GC Groen"
 msgstr ""
 
-#: functions.php:342
+#: functions.php:283
 msgid "GC Dark Blue"
 msgstr ""
 
-#: functions.php:347
+#: functions.php:288
 msgid "GC Pantybrown"
 msgstr ""
 
-#: functions.php:354
+#: functions.php:293
 msgid "GC Dark Purple"
 msgstr ""
 
-#: functions.php:359
+#: functions.php:298 functions.php:333
 msgid "GC Blue"
 msgstr ""
 
-#: functions.php:364
+#: functions.php:303
 msgid "GC Pink"
 msgstr ""
 
-#: functions.php:369
+#: functions.php:308
 msgid "GC Orange"
 msgstr ""
 
-#: functions.php:374
+#: functions.php:313
 msgid "GC Cyan"
 msgstr ""
 
-#: functions.php:517
+#: functions.php:318 functions.php:323
+msgid "Inclusie Orange"
+msgstr ""
+
+#: functions.php:328
+msgid "NLDS Purplish"
+msgstr ""
+
+#: functions.php:338
+msgid "GC Blue Safe"
+msgstr ""
+
+#: functions.php:343
+msgid "gc_a11y_green"
+msgstr ""
+
+#: functions.php:348
+msgid "od_orange"
+msgstr ""
+
+#: functions.php:353
+msgid "od_orange_darker"
+msgstr ""
+
+#: functions.php:358 functions.php:442
+msgid "GC Pantybrown Xtra Light"
+msgstr ""
+
+#: functions.php:471
+msgid "Larger"
+msgstr ""
+
+#: functions.php:476
+msgid "Extra large"
+msgstr ""
+
+#: functions.php:634
 msgctxt "Widget area"
 msgid "Footer widget left"
 msgstr ""
 
-#: functions.php:526
+#: functions.php:643
 msgctxt "Widget area"
 msgid "Footer widget right"
 msgstr ""
 
-#: functions.php:651
+#: functions.php:696
+msgid "Spotlight-blokken"
+msgstr ""
+
+#: functions.php:697
+msgid "Spotlight-blok"
+msgstr ""
+
+#: functions.php:698 functions.php:699
+msgid "Spotlight"
+msgstr ""
+
+#: functions.php:700
+msgid "Alle spotlight-blokken"
+msgstr ""
+
+#: functions.php:702
+msgid "Spotlight-blok toevoegen"
+msgstr ""
+
+#: functions.php:703
+msgid "Spotlight-blok bewerken"
+msgstr ""
+
+#: functions.php:704
+msgid "Bewerk spotlight-blok"
+msgstr ""
+
+#: functions.php:705
+msgid "Nieuwe spotlight-blok"
+msgstr ""
+
+#: functions.php:707
+msgid "Bekijk spotlight-blok"
+msgstr ""
+
+#: functions.php:708
+msgid "Spotlight-blokken zoeken"
+msgstr ""
+
+#: functions.php:709
+msgid "Geen spotlight-blokken gevonden"
+msgstr ""
+
+#: functions.php:710
+msgid "Geen spotlight-blokken in de prullenbak"
+msgstr ""
+
+#: functions.php:715
+msgid "Hier voer je spotlight-blokken in."
+msgstr ""
+
+#: functions.php:842
 msgctxt "customizer"
 msgid "Gebruiker Centraal Instellingen"
 msgstr "Site layout settings"
 
-#: functions.php:652
+#: functions.php:843
 msgctxt "customizer"
 msgid ""
 "Selecteer hier het kleurenschema voor deze site. Je wijzigt hiermee de "
@@ -596,12 +684,12 @@ msgstr ""
 "Select the color scheme for this site. This changes colors, logo and some "
 "functionality of the site."
 
-#: functions.php:675
+#: functions.php:866
 msgctxt "customizer"
 msgid "Kies het kleurenschema"
 msgstr "Select color scheme"
 
-#: functions.php:795
+#: functions.php:987
 msgid "GC Kennisbank"
 msgstr ""
 
@@ -636,7 +724,7 @@ msgctxt "Korte linktekst voor een download"
 msgid "Download"
 msgstr ""
 
-#: gutenberg-blocks/download-block.php:116
+#: gutenberg-blocks/download-block.php:116 template-overzicht-tipgevers.php:57
 msgctxt "Titel boven downloads"
 msgid "Downloads"
 msgstr ""
@@ -662,14 +750,21 @@ msgid "GC gerelateerde content"
 msgstr ""
 
 #: gutenberg-blocks/related-block.php:15
+#: gutenberg-blocks/spotlight-block.php:15
 msgctxt "Block description"
 msgid "Tonen van gerelateerde content in een apart block"
 msgstr ""
 
 #: gutenberg-blocks/related-block.php:82 template-alle-tips.php:41
+#: template-od-home.php:41
 #, php-format
 msgctxt "Label tip-nummer"
 msgid "Tip %s"
+msgstr ""
+
+#: gutenberg-blocks/spotlight-block.php:14
+msgctxt "Block titel"
+msgid "GC Spotlight"
 msgstr ""
 
 #: gutenberg-blocks/textimage-block.php:13
@@ -1384,6 +1479,17 @@ msgstr ""
 #. Template Name of the plugin/theme
 msgid "Landingspagina"
 msgstr ""
+
+#. Template Name of the plugin/theme
+msgid "[OD] Homepage"
+msgstr ""
+
+#. Template Name of the plugin/theme
+#, fuzzy
+#| msgctxt "sitemap titel"
+#| msgid "Berichten"
+msgid "Overzichtspagina"
+msgstr "Posts"
 
 #. Template Name of the plugin/theme
 msgid "[OD] Template tips-pagina"
