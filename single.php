@@ -31,6 +31,14 @@ if ( 'ja' === get_field( 'links_tonen' ) ) {
 
 }
 
+$spotlightblocks = spotlight_block_get_data();
+
+if ( $spotlightblocks ) {
+
+	$context['spotlight'] = $spotlightblocks;
+
+}
+
 if ( post_password_required( $timber_post->ID ) ) {
 	Timber::render( 'single-password.twig', $context );
 } else {
