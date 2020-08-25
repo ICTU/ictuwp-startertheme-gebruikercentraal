@@ -1,0 +1,97 @@
+{
+    "key": "group_5e8af08f196b2",
+    "title": "GC - Spotlight-blokken",
+    "fields": [
+        {
+            "key": "field_5f451e9c7a84e",
+            "label": "Spotlightblok toevoegen?",
+            "name": "spotlightblok_toevoegen",
+            "type": "radio",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "ja": "Ja, voeg spotlightblok toe",
+                "nee": "Nee"
+            },
+            "allow_null": 0,
+            "other_choice": 0,
+            "default_value": "nee",
+            "layout": "vertical",
+            "return_format": "value",
+            "save_other_choice": 0
+        },
+        {
+            "key": "field_5e8af1d837142",
+            "label": "Kies spotlightblokken",
+            "name": "spotlight_blokken",
+            "type": "relationship",
+            "instructions": "Hier kun je 1 of 2 spotlight-blokken selecteren.",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_5f451e9c7a84e",
+                        "operator": "==",
+                        "value": "ja"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "post_type": [
+                "spotlight"
+            ],
+            "taxonomy": "",
+            "filters": [
+                "search"
+            ],
+            "elements": [
+                "featured_image"
+            ],
+            "min": -36,
+            "max": 2,
+            "return_format": "object"
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "page"
+            }
+        ],
+        [
+            {
+                "param": "block",
+                "operator": "==",
+                "value": "acf\/gc-spotlight"
+            }
+        ],
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "post"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "modified": 1598360743
+}

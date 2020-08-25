@@ -21,6 +21,9 @@ define( 'FLAVORSCONFIG', 'flavors_config.json' );
 if ( ! defined( 'GC_TIP_CPT' ) ) {
 	define( 'GC_TIP_CPT', 'tips' );
 }
+if ( ! defined( 'GC_SPOTLIGHT_CPT' ) ) {
+	define( 'GC_SPOTLIGHT_CPT', 'spotlight' );
+}
 
 // Custom Taxonomies
 if ( ! defined( 'GC_TIPTHEMA' ) ) {
@@ -75,6 +78,7 @@ require_once( get_template_directory() . '/gutenberg-blocks/cta-block.php' );
 require_once( get_template_directory() . '/gutenberg-blocks/related-block.php' );
 require_once( get_template_directory() . '/gutenberg-blocks/textimage-block.php' );
 require_once( get_template_directory() . '/gutenberg-blocks/links-block.php' );
+require_once( get_template_directory() . '/gutenberg-blocks/spotlight-block.php' );
 
 /**
  * Load other dependencies such as VAR DUMPER :D
@@ -129,6 +133,10 @@ class GebruikerCentraalTheme extends Timber\Site {
 
 		// custom menu locations
 		add_action( 'init', array( $this, 'register_my_menu' ) );
+
+		// custom menu locations
+		add_action( 'init', array( $this, 'register_spotlight_cpt' ) );
+
 
 		// translation support
 		add_action( 'after_setup_theme', array( $this, 'add_translation_support' ) );
@@ -454,6 +462,24 @@ class GebruikerCentraalTheme extends Timber\Site {
 		// Restrict Editor Color Palette
 		add_theme_support( 'editor-color-palette', $colors_editor );
 
+		// options for font size: off!
+		add_theme_support('disable-custom-font-sizes');
+
+		// forces the dropdown for font sizes to only contain "normal"
+		add_theme_support('editor-font-sizes', array(
+			array(
+				'name'  => __( 'Larger', 'gctheme' ),
+				'size' => 24,
+				'slug' => 'larger'
+			),
+			array(
+				'name'  => __( 'Extra large', 'gctheme' ),
+				'size' => 32,
+				'slug' => 'extra-large'
+			)
+		) );
+
+
 
 	}
 
@@ -634,7 +660,6 @@ class GebruikerCentraalTheme extends Timber\Site {
 	public function activate_deactivate_page_templates( $page_templates ) {
 
 		$allowed_templates = array(
-			"template-home.php"             => "Homepage",
 			"template-landingspagina.php"   => "Landingspagina",
 			"template-overzichtspagina.php" => "Overzichtspagina",
 			"template-sitemap.php"          => "Sitemap"
@@ -652,6 +677,7 @@ class GebruikerCentraalTheme extends Timber\Site {
 					$allowed_templates["template-overzicht-tipgevers.php"] = "[OD] Overzicht alle tipgevers";
 					$allowed_templates["template-alle-tips.php"]           = "[OD] Overzicht alle tips";
 					$allowed_templates["template-tips.php"]                = "[OD] Template tips-pagina";
+					$allowed_templates["template-od-home.php"]                = "[OD] Template Home";
 
 					break;
 
@@ -663,6 +689,55 @@ class GebruikerCentraalTheme extends Timber\Site {
 
 		return $allowed_templates;
 	}
+
+	public function register_spotlight_cpt() {
+
+		$labels = [
+			"name"               => __( "Spotlight-blokken", 'gctheme' ),
+			"singular_name"      => __( "Spotlight-blok", 'gctheme' ),
+			"menu_name"          => __( "Spotlight", 'gctheme' ),
+			"menu_name"          => __( "Spotlight", 'gctheme' ),
+			"all_items"          => __( "Alle spotlight-blokken", 'gctheme' ),
+			"add_new"            => __( "Toevoegen", 'gctheme' ),
+			"add_new_item"       => __( "Spotlight-blok toevoegen", 'gctheme' ),
+			"edit"               => __( "Spotlight-blok bewerken", 'gctheme' ),
+			"edit_item"          => __( "Bewerk spotlight-blok", 'gctheme' ),
+			"new_item"           => __( "Nieuwe spotlight-blok", 'gctheme' ),
+			"view"               => __( "Bekijk", 'gctheme' ),
+			"view_item"          => __( "Bekijk spotlight-blok", 'gctheme' ),
+			"search_items"       => __( "Spotlight-blokken zoeken", 'gctheme' ),
+			"not_found"          => __( "Geen spotlight-blokken gevonden", 'gctheme' ),
+			"not_found_in_trash" => __( "Geen spotlight-blokken in de prullenbak", 'gctheme' ),
+		];
+
+		$args = [
+			"labels"              => $labels,
+			"description"         => __( "Hier voer je spotlight-blokken in.", 'gctheme' ),
+			"public"              => false,
+			"hierarchical"        => false,
+			"exclude_from_search" => true,
+			"publicly_queryable"  => false,
+			"show_ui"             => true,
+			"show_in_menu"        => true,
+			"show_in_rest"        => true,
+			"capability_type"     => __( "post", 'gctheme' ),
+			"supports"            => [
+				"title",
+				"excerpt",
+				"revisions",
+				"thumbnail",
+			],
+			"has_archive"         => false,
+			"can_export"          => true,
+			"delete_with_user"    => false,
+			"map_meta_cap"        => true,
+			"query_var"           => true,
+		];
+		register_post_type( GC_SPOTLIGHT_CPT, $args );
+
+
+	}
+
 
 }
 
@@ -1034,3 +1109,4 @@ function gc_restrict_gutenberg_blocks( $allowed_blocks ) {
 //add_filter( 'allowed_block_types', 'gc_restrict_gutenberg_blocks' );
 
 //========================================================================================================
+

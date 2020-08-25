@@ -1,6 +1,6 @@
 {
     "key": "group_5c8f9ba967736",
-    "title": "GC - gerelateerde content",
+    "title": "GC - Gerelateerde content",
     "fields": [
         {
             "key": "field_5c8fe203a8435",
@@ -118,7 +118,7 @@
             "label": "Gerelateerde items",
             "name": "content_block_items",
             "type": "relationship",
-            "instructions": "Kies uit events, berichten, pagina's en tips. Minimaal 1, maximaal 3.",
+            "instructions": "Kies uit events, berichten, pagina's en tips. Minimaal 1, maximaal 4.",
             "required": 0,
             "conditional_logic": [
                 [
@@ -155,7 +155,7 @@
                 "featured_image"
             ],
             "min": 1,
-            "max": 3,
+            "max": 4,
             "return_format": "object"
         },
         {

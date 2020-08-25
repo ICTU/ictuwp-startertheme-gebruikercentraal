@@ -1,0 +1,54 @@
+{
+    "key": "group_5f43c243647fb",
+    "title": "Spotlight Call To Action",
+    "fields": [
+        {
+            "key": "field_5f43c2641bfeb",
+            "label": "Eerste CTA",
+            "name": "spotlight_cta_1",
+            "type": "link",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "array"
+        },
+        {
+            "key": "field_5f43c39ddbbc5",
+            "label": "Tweede CTA",
+            "name": "spotlight_cta_2",
+            "type": "link",
+            "instructions": "(niet verplicht)",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "array"
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "spotlight"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": 1,
+    "description": "",
+    "modified": 1598276579
+}

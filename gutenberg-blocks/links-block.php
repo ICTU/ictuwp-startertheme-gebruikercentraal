@@ -16,12 +16,14 @@ function gb_add_linksblock() {
 			'category'        => 'gc-blocks',
 			'icon'            => 'download',
 			'keywords'        => [ 'links', 'files', 'attachments' ],
+			'post_types'      => array( 'post', 'page' ),
+			'multiple'        => false,
 		] );
 	}
 }
 
 
-function gb_render_links_block( $block, $content = '', $is_preview = FALSE ) {
+function gb_render_links_block( $block, $content = '', $is_preview = false ) {
 
 	$context = Timber::context();
 

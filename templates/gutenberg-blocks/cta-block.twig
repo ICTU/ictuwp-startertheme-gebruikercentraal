@@ -8,19 +8,35 @@
 
 {% if is_preview %}
   <style type="text/css">
-    #download-{{ block.id }} {
+    #cta-{{ block.id }} {
       margin-top: 0;
       overflow: hidden;
+      border: 3px dashed #dadada;
+    }
+    #cta-{{ block.id }} a {
+      font-size: 1.5rem;
+      padding-top: .5rem;
+      padding-bottom: .5rem;
     }
   </style>
 {% endif %}
 
   {% if ctalink %}
     {% if is_preview %}
-      <p>{{ ctalink.linkpreview }}</p>
-      <small>(previewlink, niet klikbaar)</small>
-    {% else %}
-      <p>{{ ctalink.link }}</p>
+      <div id="cta-{{ block.id }}">
+      <small>(previewlink, niet klikbaar)</small></p>
+    {% endif %}
+    <p>
+      {% for cta in ctalink.links %}
+        {% if is_preview %}
+          <a href="#" class="{{ cta.class }}">{{ cta.title }}</a>
+        {% else %}
+          <a href="{{ cta.url }}" class="{{ cta.class }}">{{ cta.title }}</a>
+        {% endif %}
+      {% endfor %}
+    </p>
+    {% if is_preview %}
+      </div>
     {% endif %}
 
   {% endif %}

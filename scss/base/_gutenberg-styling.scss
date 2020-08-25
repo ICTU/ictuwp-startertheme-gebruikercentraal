@@ -24,3 +24,16 @@ Gutenberg corrections
     padding-right: 0;
   }
 }
+
+.has-larger-font-size,
+.has-extra-large-font-size {
+  line-height: 1.5;
+}
+.has-larger-font-size {
+  font-size: 120%;
+}
+.has-extra-large-font-size {
+  font-size: 135%;
+  font-family: $base-heading-font;
+}
+
