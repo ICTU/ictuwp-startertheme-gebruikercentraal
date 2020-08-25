@@ -44,6 +44,15 @@ if ( 'ja' === get_field( 'links_tonen' ) ) {
 
 }
 
+$spotlightblocks = spotlight_block_get_data();
+
+if ( $spotlightblocks ) {
+
+	$context['spotlight'] = $spotlightblocks;
+
+}
+
+
 
 Timber::render( [
 	'page-' . $timber_post->post_name . '.twig',

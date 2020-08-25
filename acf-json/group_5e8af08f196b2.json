@@ -1,0 +1,65 @@
+{
+    "key": "group_5e8af08f196b2",
+    "title": "GC - Spotlight-blokken",
+    "fields": [
+        {
+            "key": "field_5e8af1d837142",
+            "label": "Kies spotlightblokken",
+            "name": "spotlight_blokken",
+            "type": "relationship",
+            "instructions": "Hier kun je 1 of 2 spotlight-blokken selecteren.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "post_type": [
+                "spotlight"
+            ],
+            "taxonomy": "",
+            "filters": [
+                "search"
+            ],
+            "elements": [
+                "featured_image"
+            ],
+            "min": 1,
+            "max": 2,
+            "return_format": "object"
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "page"
+            }
+        ],
+        [
+            {
+                "param": "block",
+                "operator": "==",
+                "value": "acf\/gc-spotlight"
+            }
+        ],
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "post"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": 1,
+    "description": "",
+    "modified": 1598285099
+}
