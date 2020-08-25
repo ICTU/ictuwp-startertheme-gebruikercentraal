@@ -19,6 +19,7 @@ function gb_add_calltoaction_block() {
 			'category'        => 'gc-blocks',
 			'icon'            => 'megaphone',
 			'keywords'        => [ 'link' ],
+			'multiple'        => true,
 		] );
 	}
 }
@@ -26,7 +27,7 @@ function gb_add_calltoaction_block() {
 /*
  * Render the CTA block
  */
-function gb_render_calltoaction_block( $block, $content = '', $is_preview = FALSE ) {
+function gb_render_calltoaction_block( $block, $content = '', $is_preview = false ) {
 
 	$context = Timber::context();
 
@@ -41,8 +42,17 @@ function gb_render_calltoaction_block( $block, $content = '', $is_preview = FALS
 
 	$context['ctalink'] = cta_block_get_data();
 
+	/*
+	echo 'Preview CTA<pre>';
+	var_dump( $context['ctalink'] );
+	echo '</pre>';
+	 *
+	 */
+
+
 	// Render the block.
 	Timber::render( 'gutenberg-blocks/cta-block.twig', $context );
+
 }
 
 /*
@@ -57,17 +67,36 @@ function cta_block_get_data() {
 	$link             = get_field( 'gc_gb_ctalink' );
 	$gc_gb_ctaclasses = get_field( 'gc_gb_ctaclasses' );
 
+	$link2             = get_field( 'gc_gb_ctalink2' );
+	$gc_gb_ctaclasses2 = get_field( 'gc_gb_ctaclasses2' );
+
 	if ( $gc_gb_ctaclasses ) {
 		$cssclasses = $gc_gb_ctaclasses;
 	}
+	if ( $gc_gb_ctaclasses2 ) {
+		$cssclasses2 = $gc_gb_ctaclasses2;
+	}
 
 	if ( $link ):
-		$link_url              = $link['url'];
-		$link_title            = $link['title'];
 		$link_target           = $link['target'] ? $link['target'] : '_self';
-		$return['link']        = '<a class="btn ' . $cssclasses . '" href="' . esc_url( $link_url ) . '" target="' . esc_attr( $link_target ) . '">' . esc_html( $link_title ) . '</a>';
-		$return['linkpreview'] = '<a class="btn ' . $cssclasses . '" href="#" target="' . esc_attr( $link_target ) . '">' . esc_html( $link_title ) . '</a>';
+//		$return['link']        = '<a class="btn ' . $cssclasses . '" href="' . esc_url( $link['url'] ) . '" target="' . esc_attr( $link_target ) . '">' . esc_html( $link['title'] ) . '</a>';
+		$return['links'][]     = array(
+			'url'   => esc_url( $link['url'] ),
+			'class' => $cssclasses,
+			'title' => esc_html( $link['title'] ),
+		);
+		if ( $link2 ):
+			$return['links'][]     = array(
+				'url'   => esc_url( $link2['url'] ),
+				'class' => $cssclasses2,
+				'title' => esc_html( $link2['title'] ),
+			);
+		endif;
+	else:
+		$return['linkpreview'] = 'Maak een link aan via "Selecteer een link"';
 	endif;
+
+
 
 	return $return;
 
