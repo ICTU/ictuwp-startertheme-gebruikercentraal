@@ -21,7 +21,7 @@ function gb_add_downloadblock() {
 }
 
 
-function gb_render_download_block( $block, $content = '', $is_preview = FALSE ) {
+function gb_render_download_block( $block, $content = '', $is_preview = false ) {
 
 	$context = Timber::context();
 
