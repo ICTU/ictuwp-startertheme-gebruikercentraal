@@ -11,57 +11,45 @@
       margin-top: 0;
       border: 3px dashed #dadada;
       overflow: hidden;
+      padding-left: 0;
+      padding-right: 0;
     }
   </style>
 {% endif %}
 
 
+<div class="section section--spotlight{{ modifier ? ' section--' ~ modifier }}" id="spotlight-{{ block.id }}">
+
   {% if is_preview %}
-    <div class="section section--spotlight{{ modifier ? ' section--' ~ modifier }}" id="spotlight-{{ block.id }}">
+    <p>{{ spotlight.inhoud }}</p>
+  {% endif %}
 
-      <p>{{ spotlight.inhoud }}</p>
+  <div class="l-spotlight-wrapper l-item-count-{{ spotlight.blocks|length }}">
 
-      {% for item in spotlight.blocks %}
-        <div style="padding: 1rem; border: 2px solid green;">
-          <h2>(preview) {{ item.title }}</h2>
+    {% for item in spotlight.blocks %}
+
+      <div class="spotlight">
+        <figure class="spotlight__image">
+          <img src="{{ item.img }}" alt="{{ item.img_alt }}">
+        </figure>
+        <div class="spotlight__content">
+          <h2>{{ item.title }}</h2>
           <p>{{ item.descr }} </p>
+
+          {% for cta in item.cta %}
+            {% if is_preview %}
+              <a href="#" class="btn btn--{{ cta.class ? cta.class : 'primary' }}">{{ cta.title }}</a>
+              <small>(previewlink, niet klikbaar)</small>
+            {% else %}
+              <a href="{{ cta.url }}" class="btn btn--{{ cta.class ? cta.class : 'primary' }}">{{ cta.title }}</a>
+            {% endif %}
+          {% endfor %}
+
         </div>
-      {% endfor %}
-    </div>
-
-  {% else %}
-    <div class="section section--spotlight{{ modifier ? ' section--' ~ modifier }}" id="spotlight-{{ block_id }}">
-
-
-      <div class="l-spotlight-wrapper l-item-count-{{ spotlight.blocks|length }}">
-
-        {% for item in spotlight.blocks %}
-
-          <div class="spotlight">
-
-            <figure class="spotlight__image">
-              <img src="{{ item.img }}" alt="{{ item.img_alt }}">
-            </figure>
-
-            <div class="spotlight__content">
-              <h2>{{ item.title }}</h2>
-              <p>{{ item.descr }} </p>
-
-              {% for cta in item.cta %}
-                {% if is_preview %}
-                  <a href="#" class="btn btn--{{ cta.class ? cta.class : 'primary' }}">{{ cta.title }}</a>
-                  <small>(previewlink, niet klikbaar)</small>
-                {% else %}
-                  <a href="{{ cta.url }}" class="btn btn--{{ cta.class ? cta.class : 'primary' }}">{{ cta.title }}</a>
-                {% endif %}
-
-              {% endfor %}
-
-            </div>
-          </div>
-
-        {% endfor %}
       </div>
 
-    </div>
-  {% endif %}
+    {% endfor %}
+
+  </div>
+
+</div>

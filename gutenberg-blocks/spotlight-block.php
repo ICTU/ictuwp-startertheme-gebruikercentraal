@@ -15,7 +15,7 @@ function gb_add_spotlight_block() {
 			'description'     => _x( 'Tonen van gerelateerde content in een apart block', 'Block description', 'gctheme' ),
 			'render_callback' => 'gb_render_spotlight_block',
 			'category'        => 'gc-blocks',
-			'icon'            => 'megaphone', // todo: eigen icon voor dit block
+			'icon'            => 'welcome-view-site', // todo: eigen icon voor dit block
 			'keywords'        => [ 'link', 'text', 'image' ],
 		] );
 	}
