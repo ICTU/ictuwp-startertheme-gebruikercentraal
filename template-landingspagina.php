@@ -19,5 +19,13 @@ if ( get_field( 'post_inleiding' ) ) {
 
 }
 
+$spotlightblocks = spotlight_block_get_data();
+
+if ( $spotlightblocks ) {
+
+	$context['spotlight'] = $spotlightblocks;
+
+}
+
 
 Timber::render( array( 'page-landing.twig', 'page.twig' ), $context );
