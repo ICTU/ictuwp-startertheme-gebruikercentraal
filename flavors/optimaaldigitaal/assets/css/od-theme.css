@@ -269,7 +269,7 @@ cite {
 .research__content h2,
 .research__content h3,
 .research__content h4 {
-  font-weight: "montserratbold", Helvetica, Arial, sans-serif; }
+  font-family: "montserratbold", Helvetica, Arial, sans-serif; }
   .section--text h2 + p,
   .section--text h3 + p,
   .section--text h4 + p,
@@ -598,6 +598,17 @@ Gutenberg corrections
 .wp-block-column .section {
   padding-left: 0;
   padding-right: 0; }
+
+.has-larger-font-size,
+.has-extra-large-font-size {
+  line-height: 1.5; }
+
+.has-larger-font-size {
+  font-size: 120%; }
+
+.has-extra-large-font-size {
+  font-size: 135%;
+  font-family: "montserratbold", Helvetica, Arial, sans-serif; }
 
 .l-page-footer-wrapper {
   padding-left: 2rem;

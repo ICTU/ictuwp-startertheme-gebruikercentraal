@@ -470,12 +470,12 @@ class GebruikerCentraalTheme extends Timber\Site {
 			array(
 				'name'  => __( 'Larger', 'gctheme' ),
 				'size' => 24,
-				'slug' => 'normal'
+				'slug' => 'larger'
 			),
 			array(
 				'name'  => __( 'Extra large', 'gctheme' ),
 				'size' => 32,
-				'slug' => 'large'
+				'slug' => 'extra-large'
 			)
 		) );
 
