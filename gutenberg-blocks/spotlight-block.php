@@ -44,7 +44,7 @@ function gb_render_spotlight_block( $block, $content = '', $is_preview = false )
 	// Store $is_preview value.
 	$context['is_preview'] = $is_preview;
 
-	$context['items'] = spotlight_block_get_data();
+	$context['spotlight'] = spotlight_block_get_data();
 
 	Timber::render( 'sections/section-spotlight.html.twig', $context );
 
@@ -59,11 +59,13 @@ function spotlight_block_get_data() {
 	global $post;
 	$return = array();
 
-	$featured_posts = get_field( 'spotlight_blokken' );
+	$spotlightblok_toevoegen = get_field( 'spotlightblok_toevoegen' );
+	$spotlight_blokken       = get_field( 'spotlight_blokken' );
+	$return['block_id']      = get_the_id();
 
-	if ( $featured_posts ):
+	if ( $spotlight_blokken && 'ja' === $spotlightblok_toevoegen ):
 
-		foreach ( $featured_posts as $post ):
+		foreach ( $spotlight_blokken as $post ):
 
 			$item            = [];
 			$item['title']   = get_the_title( $post );
@@ -87,19 +89,14 @@ function spotlight_block_get_data() {
 
 			}
 
-			$return[] = $item;
+			$return['blocks'][] = $item;
 
 		endforeach;
 
+	else:
+		$return['inhoud'] = "In de instellingen voor dit block, kies: <br>'<em>Ja, voeg spotlightblok toe</em>' en selecteer een of twee blokken";
+
 	endif;
-
-
-	/*
-	echo '<pre>';
-	var_dump( $return );
-	echo '</pre>';
-	*/
-
 
 	return $return;
 

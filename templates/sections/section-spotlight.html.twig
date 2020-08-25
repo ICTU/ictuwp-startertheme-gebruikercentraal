@@ -1,27 +1,67 @@
+{#
+/**
+ * Block Name: GC Spotlight
+ *
+ * Gutenberg block voor het tonen van 1 of 2 spotlight blokken
+ */
+#}
+{% if is_preview %}
+  <style type="text/css">
+    #spotlight-{{ block.id }} {
+      margin-top: 0;
+      border: 3px dashed #dadada;
+      overflow: hidden;
+    }
+  </style>
+{% endif %}
 
 
-<div class="section section--spotlight{{ modifier ? ' section--' ~ modifier }}">
+  {% if is_preview %}
+    <div class="section section--spotlight{{ modifier ? ' section--' ~ modifier }}" id="spotlight-{{ block.id }}">
 
-    <div class="l-spotlight-wrapper l-item-count-{{ items|length}}">
+      <p>{{ spotlight.inhoud }}</p>
 
-        {% for item in items %}
-        <div class="spotlight">
+      {% for item in spotlight.blocks %}
+        <div style="padding: 1rem; border: 2px solid green;">
+          <h2>(preview) {{ item.title }}</h2>
+          <p>{{ item.descr }} </p>
+        </div>
+      {% endfor %}
+    </div>
+
+  {% else %}
+    <div class="section section--spotlight{{ modifier ? ' section--' ~ modifier }}" id="spotlight-{{ block_id }}">
+
+
+      <div class="l-spotlight-wrapper l-item-count-{{ spotlight.blocks|length }}">
+
+        {% for item in spotlight.blocks %}
+
+          <div class="spotlight">
 
             <figure class="spotlight__image">
-                <img src="/uploads/{{ item.img ? item.img : 'img-16-9.jpg' }}" alt="{{ item.title }}">
+              <img src="{{ item.img }}" alt="{{ item.img_alt }}">
             </figure>
 
             <div class="spotlight__content">
-                <h2>{{ item.title }}</h2>
-                <p>{{ item.descr }} </p>
+              <h2>{{ item.title }}</h2>
+              <p>{{ item.descr }} </p>
 
-                {% for cta in item.cta %}
-                    <a href="{{ cta.url ? cta.url ? '#' }}" class="btn btn--{{ cta.class ? class : 'primary' }}">{{ cta.title }}</a>
-                {% endfor %}
+              {% for cta in item.cta %}
+                {% if is_preview %}
+                  <a href="#" class="btn btn--{{ cta.class ? cta.class : 'primary' }}">{{ cta.title }}</a>
+                  <small>(previewlink, niet klikbaar)</small>
+                {% else %}
+                  <a href="{{ cta.url }}" class="btn btn--{{ cta.class ? cta.class : 'primary' }}">{{ cta.title }}</a>
+                {% endif %}
+
+              {% endfor %}
 
             </div>
-        </div>
+          </div>
 
         {% endfor %}
+      </div>
+
     </div>
-</div>
+  {% endif %}
