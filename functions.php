@@ -1110,3 +1110,18 @@ function gc_restrict_gutenberg_blocks( $allowed_blocks ) {
 //add_filter( 'allowed_block_types', 'gc_restrict_gutenberg_blocks' );
 
 //========================================================================================================
+
+add_filter('acf/fields/relationship/result', 'my_acf_fields_relationship_result', 10, 4);
+
+function my_acf_fields_relationship_result( $text, $post, $field, $post_id ) {
+
+	if ( GC_TIP_CPT === get_post_type( $post ) ) {
+		$tipnummer = get_field( 'tip-nummer', $post->ID );
+		$text     = sprintf( _x( 'Tip %s', 'Label tip-nummer', 'gctheme' ), $tipnummer ). ' - ' . $text;
+	}
+
+	return $text;
+}
+
+//========================================================================================================
+
