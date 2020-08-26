@@ -10,7 +10,11 @@ button {
 }
 $input-size: 20px;
 
-input,
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="file"],
+input[type="date"],
 select, textarea {
   box-sizing: border-box;
   background: $input-bg;
