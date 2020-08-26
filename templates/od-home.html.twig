@@ -1,110 +1,64 @@
-{% if id is empty %}
-  {% set id = '2' %}
-{% endif %}
-
-<html lang="nl" dir="ltr">
-
-<head>
-  {% include 'includes/head.html.twig' %}
-</head>
+{% block html_head_container %}
+  {% include 'html-header.twig' %}
+  {% block head %}
+  {% endblock %}
+  </head>
+{% endblock %}
 
 <body class="page page--type-homepage site-id-{{ id }}">
 
 <div class="site-container">
 
-  {% include 'includes/header.html.twig' %}
+  <ul id="{{ skiplinks_id }}">
+    <li><a href="#{{ maincontent_id }}">{{ maincontent_id_linktext }}</a></li>
+    {% if menu %}
+      <li><a href="#{{ mainnav_id }}">{{ mainnav_id_linktext }}</a></li>
+    {% endif %}
+  </ul>
+
+  <header class="page-header">
+
+    <div class="l-header-top">
+      {% include "partial/header-branding.twig" %}
+      {% include "header-searchform.twig" %}
+    </div>
+
+    {% include "menu.twig" with {'items': menu.get_items} %}
+
+  </header>
 
   <div class="page-content" id="maincontent" tabindex="-1">
 
     <main class="content">
 
-      <article class="entry entry--type-home entry--full{{ stappenplan ? ' l-with-stepchart' }}">
+      <article class="entry entry--type-home entry--full">
 
         <div class="entry-content">
 
           <div class="page__intro">
             <header class="entry-header">
-              <h1 class="entry-title">{{ title ? title : 'Onze instrumenten' }}</h1>
-
-              <p>Optimaal Digitaal biedt meer dan 100 tips om de dienstverlening te verbeteren.</p>
-              <a class="btn btn--primary" href="#">Bestel het spel</a>
+              <h1 class="entry-title">{{ post.title }}</h1>
             </header>
 
-
-            {% include 'components/video.html.twig' with {
-              'title': 'Bekijk de Optimaal Digitaal Video'
-            } %}
+            {{ post.content }}
 
           </div>
           {# /page intro #}
 
-          {% set toptips = {
-            '1': {
-              'nr': '72',
-              'category': 'Gebruiksgemak',
-              'title': 'Test met échte gebruikers',
-              'toptip': 'ja',
-              'type': 'tipkaart',
-              'url': 'tip-gebruiksgemak.php'
-            },
-            '2': {
-              'nr': '99',
-              'title': 'Ken de wet!',
-              'category': 'Informatieveiligheid',
-              'toptip': 'ja',
-              'url': 'tip-informatieveiligheid.php'
-            },
-            '3': {
-              'nr': '97',
-              'title': 'Bied aan daar waar de burger zoekt',
-              'category': 'Kanaalsturing',
-              'toptip': 'ja',
-            },
-            '4': {
-              'nr': '97',
-              'title': 'Formuleer wat je wil bereiken met je dienstverlening',
-              'category': 'Procesaanpak',
-              'toptip': 'ja',
-              'url': 'tip-procesaanpak.php'
-            }
-          } %}
+          {% if related %}
+            {% include 'sections/section-related.html.twig' with {
+              'title': related.title,
+              'descr': related.desc,
+              'items': related.items
+            } %}
+          {% endif %}
 
-          {% include 'sections/section-overview.html.twig' with {
-            'items': toptips,
-            'description': 'Optimaal Digitaal bestaat uit meer dan 100 tips uit de (online) dienstverlening.',
-            'title': 'Onze toptips',
-            'template': 'card--tipkaart',
-            'modifier': 'l-layout-4col'
-          } %}
-
-          {% set spotlight = {
-            '1': {
-              'title': 'Ook het spel spelen',
-              'descr': 'Met het spel wordt verassend snel doorgedrongen tot de kern. Het spel eindigt met concrete acties die de volgende dag kunnen worden opgepakt. Het verbeteren van je (digitale) dienstverlening start dus meteen.',
-              'cta': {
-                '1': {
-                  'title': 'Bestel het spel',
-                },
-                '2': {
-                  'title': 'Print & play'
-                }
-              }
-            },
-            '2': {
-              'title': 'Spelleider cursus',
-              'descr': 'In een Spelleider sessie maak je als deelnemer kennis met het spel en leer je ondertussen de do’s en don’ts in de rol van spelleider. We gaan vol overgave twee uur aan de slag met het spel.',
-              'cta': {
-                '1': {
-                  'title': 'Word ook spelleider'
-                }
-              }
-            }
-          } %}
-
-          {% include 'sections/section-spotlight.html.twig' with {
-            'items': spotlight,
-            'modifier': 'bg-option',
-          } %}
+          {% if spotlight %}
+            {% include 'sections/section-spotlight.html.twig' with {
+              'items': spotlight,
+              'modifier': 'bg-option',
+            } %}
+          {% endif %}
 
           {#actueel#}
 
@@ -141,6 +95,7 @@
             }
           } %}
 
+          {% if actueel %}
           {% include 'sections/section-actual.html.twig' with {
             'items': actueel
           } %}
@@ -158,10 +113,7 @@
               'link_primary': 'Bekijk de inclusieset',
             }
           } %}
-
-          {% include 'sections/section-text-block.html.twig' with {
-            'items': tb_items,
-            'modifier': 'l-bg-white' } %}
+          {% endif %}
 
 
         </div>
@@ -170,6 +122,11 @@
     </main>
   </div>
 
-  {% include 'includes/footer.html.twig' %}
+  {% block footer %}
+    {% include 'footer.twig' %}
+    {{ function('wp_footer') }}
+  {% endblock %}
 </div>
+
 </body>
+</html>
