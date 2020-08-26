@@ -79,6 +79,7 @@ require_once( get_template_directory() . '/gutenberg-blocks/related-block.php' )
 require_once( get_template_directory() . '/gutenberg-blocks/textimage-block.php' );
 require_once( get_template_directory() . '/gutenberg-blocks/links-block.php' );
 require_once( get_template_directory() . '/gutenberg-blocks/spotlight-block.php' );
+require_once( get_template_directory() . '/gutenberg-blocks/rijksvideo-block.php' );
 
 /**
  * Load other dependencies such as VAR DUMPER :D
@@ -1109,4 +1110,3 @@ function gc_restrict_gutenberg_blocks( $allowed_blocks ) {
 //add_filter( 'allowed_block_types', 'gc_restrict_gutenberg_blocks' );
 
 //========================================================================================================
-
