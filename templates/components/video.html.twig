@@ -1,0 +1,22 @@
+{% if is_preview %}
+  <style type="text/css">
+    #section--video-{{ block.id }} {
+      margin-top: 0;
+      overflow: hidden;
+      border: 3px dashed #dadada;
+    }
+    #section--video-{{ block.id }} .video,
+    #section--video-{{ block.id }} h2 {
+      margin: 0;
+    }
+  </style>
+{% endif %}
+<div>
+
+<section class="section section--video" id="section--video-{{ block.id }}">
+  <div class="video">
+    <div class="video__video">
+        {{ data.video }}
+    </div>
+  </div>
+</section>

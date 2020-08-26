@@ -408,7 +408,11 @@ button {
   font-size: 1.8rem;
   line-height: 1.8rem; }
 
-input,
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="file"],
+input[type="date"],
 select, textarea {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
@@ -424,7 +428,11 @@ select, textarea {
   -webkit-appearance: none;
   color: #000;
   border-radius: 0; }
-  input:focus,
+  input[type="text"]:focus,
+  input[type="email"]:focus,
+  input[type="password"]:focus,
+  input[type="file"]:focus,
+  input[type="date"]:focus,
   select:focus, textarea:focus {
     -webkit-box-shadow: 0.4rem 0.4rem 0 rgba(37, 179, 75, 0.2);
             box-shadow: 0.4rem 0.4rem 0 rgba(37, 179, 75, 0.2);
@@ -5754,8 +5762,6 @@ h1 {
       margin-top: 8rem; } }
 
 .video__video {
-  -webkit-box-shadow: 0.4rem 0.4rem 0 rgba(0, 0, 0, 0.15);
-          box-shadow: 0.4rem 0.4rem 0 rgba(0, 0, 0, 0.15);
   position: relative; }
   .video__video img {
     width: 100%;
@@ -5837,6 +5843,62 @@ h1 {
     text-decoration: none; }
     .video__transcription:hover:before, .video__transcription:focus:before {
       margin-right: 1.1rem; }
+
+.video__video {
+  -webkit-box-shadow: none;
+          box-shadow: none; }
+  .video__video .mejs-container {
+    width: 100%; }
+  .video__video .collapsible {
+    padding: 1rem 1.5rem 2rem 1.5rem; }
+  .video__video .collapsetoggle,
+  .video__video .collapsible {
+    background: white;
+    text-align: left;
+    color: #004152; }
+    .video__video .collapsetoggle button,
+    .video__video .collapsible button {
+      background: white;
+      border: 2px solid white;
+      width: 100%;
+      font-family: "montserratbold", Helvetica, Arial, sans-serif;
+      color: #004152;
+      font-size: 22px;
+      line-height: 28px;
+      padding: .5rem 1rem;
+      text-align: left; }
+      .video__video .collapsetoggle button:after,
+      .video__video .collapsible button:after {
+        content: ' ';
+        background-image: url("/wp-content/themes/ictuwp-theme-gc2020/assets/images/icons/arrow.svg");
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: center center;
+        display: block;
+        float: right;
+        height: 1.75rem;
+        width: 1.75rem;
+        -webkit-transform: rotate(90deg);
+                transform: rotate(90deg);
+        margin-top: .5rem; }
+      .video__video .collapsetoggle button[aria-expanded="true"]:after,
+      .video__video .collapsible button[aria-expanded="true"]:after {
+        -webkit-transform: rotate(270deg);
+                transform: rotate(270deg); }
+      .video__video .collapsetoggle button:hover,
+      .video__video .collapsible button:hover {
+        text-decoration: underline; }
+    .video__video .collapsetoggle p, .video__video .collapsetoggle li,
+    .video__video .collapsible p,
+    .video__video .collapsible li {
+      font-size: 1.8rem; }
+    .video__video .collapsetoggle li,
+    .video__video .collapsible li {
+      text-decoration: underline; }
+    .video__video .collapsetoggle p,
+    .video__video .collapsible p {
+      padding: 0 1rem;
+      margin: 0 0 .5rem; }
 
 /* Sites with stepchart */
 .stepchart {
@@ -6367,7 +6429,10 @@ h1 {
   background: url("../images/b_home-top.svg") center top -25rem no-repeat;
   background-size: auto 101%;
   position: relative;
-  text-align: center; }
+  text-align: center;
+  max-width: none;
+  -webkit-box-shadow: none;
+          box-shadow: none; }
   .entry--type-home .page__intro:before, .entry--type-home .page__intro:after {
     position: absolute;
     display: block;
@@ -6431,12 +6496,13 @@ h1 {
       .entry--type-home .page__intro:after {
         right: 20%; } }
 
-.entry--type-home .entry-header p {
-  max-width: 60rem;
-  margin: 1.8rem auto 0; }
-
-.entry--type-home .entry-header .btn--primary {
-  margin-top: 2rem; }
+.entry--type-home .entry-header {
+  background: none; }
+  .entry--type-home .entry-header p {
+    max-width: 60rem;
+    margin: 1.8rem auto 0; }
+  .entry--type-home .entry-header .btn--primary {
+    margin-top: 2rem; }
 
 .entry--type-home .section--overview {
   text-align: center; }

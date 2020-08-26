@@ -8,7 +8,7 @@
 }
 
 .video__video {
-  @include gc-box-shadow();
+//  @include gc-box-shadow();
   position: relative;
 
   img {
@@ -79,3 +79,74 @@
     }
   }
 }
+
+
+// extra styling voor rijksvideo plugin
+.video__video {
+
+  box-shadow: none; // ja sorry
+
+  .mejs-container {
+    width: 100%;
+  }
+
+  .collapsible {
+    padding: 1rem 1.5rem 2rem 1.5rem;
+  }
+
+  .collapsetoggle,
+  .collapsible {
+    background: white;
+    text-align: left;
+    color: $base-font-color;
+
+    button {
+      background: white;
+      border: 2px solid white;
+      width: 100%;
+      font-family: $base-heading-font;
+      color: $base-heading-color;
+      font-size: $base-h4-size;
+      line-height: $base-h4-line-height;
+      padding: .5rem 1rem;
+      text-align: left;
+
+      &:after {
+        content: ' ';
+        background-image: url('/wp-content/themes/ictuwp-theme-gc2020/assets/images/icons/arrow.svg');
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: center center;
+        display: block;
+        float: right;
+        height: 1.75rem;
+        width: 1.75rem;
+        transform: rotate(90deg);
+        margin-top: .5rem;
+      }
+      &[aria-expanded="true"] {
+        &:after {
+          transform: rotate(270deg);
+        }
+      }
+
+      &:hover {
+        text-decoration: underline;
+      }
+
+    }
+
+    p, li {
+      font-size: 1.8rem;
+    }
+    li {
+      text-decoration: underline;
+    }
+    p {
+      padding: 0 1rem;
+      margin: 0 0 .5rem;
+    }
+
+  }
+}
+
