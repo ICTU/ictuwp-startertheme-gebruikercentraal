@@ -42,11 +42,11 @@
         {% for blog in items.blogs.items %}
           <div class="teaser teaser--event teaser--small">
             <div class="teaser__image">
-              <img src="/uploads/{{ blog.img ? blog.img : 'od-default.jpg' }}"/>
+              <img src="{{ blog.img ? blog.img : 'od-default.jpg' }}"/>
             </div>
 
             <h3 class="teaser__title">
-              <a class="link link--arrow">{{ blog.title }}</a>
+              <a href="{{ blog.url }}" class="link link--arrow">{{ blog.title }}</a>
             </h3>
           </div>
 
@@ -54,7 +54,7 @@
       </div>
 
       {% if items.blogs.cta %}
-        <a class="btn btn--primary" href="#">{{ items.blogs.cta.title }}</a>
+        <a class="btn btn--primary" href="{{ items.blogs.cta.url }}">{{ items.blogs.cta.title }}</a>
       {% endif %}
     </section>
 

@@ -43,14 +43,18 @@
             {{ post.content }}
 
           </div>
+
           {# /page intro #}
 
           {% if related %}
-            {% include 'sections/section-related.html.twig' with {
-              'title': related.title,
-              'descr': related.desc,
-              'items': related.items
-            } %}
+          {% include 'sections/section-overview.html.twig' with {
+            'items': related.items,
+            'description': related.desc,
+            'title': related.title,
+            'template': 'card--tipkaart',
+            'modifier': 'l-layout-4col'
+          } %}
+
           {% endif %}
 
           {% if spotlight %}
@@ -62,38 +66,6 @@
 
           {#actueel#}
 
-          {% set actueel = {
-            'events': {
-              'items': {
-                '1': {
-                  'title' : 'Workshop spelleider Optimaal Digitaal',
-                  'date': '2020-07-08'
-                },
-                '2': {
-                  'title': 'Optimaal Digitaal op landelijk congres online',
-                  'date' : '2020-08-24'
-                }
-              },
-              'cta': {
-                'title': 'Alle evenementen'
-              }
-            },
-            'blogs': {
-              'items': {
-                '1': {
-                  'title' : 'We hebben onze doelen nu veel scherper',
-                  'img': 'img-16-9.jpg'
-                },
-                '2': {
-                  'title': 'Hoe krijg je je organisatie mee?',
-                  'img': 'img-16-9-letter.jpg'
-                }
-              },
-              'cta': {
-                'title': 'Alle blogs'
-              }
-            }
-          } %}
 
           {% if actueel %}
           {% include 'sections/section-actual.html.twig' with {

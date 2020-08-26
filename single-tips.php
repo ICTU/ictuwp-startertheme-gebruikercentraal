@@ -78,11 +78,11 @@ if ( 'nee' !== get_field( 'relatedtips_show_or_not', $post ) ) {
 		// max vier, tenzij redactie meer tips wil
 		$maxnr_tips = ( intval( get_field( 'relatedtips_maxnr' ) ) > 0 ) ? get_field( 'relatedtips_maxnr' ) : 4;
 
-		$current_term = get_the_terms($timber_post->id, 'tipthema');
+		$current_term = get_the_terms( $timber_post->id, 'tipthema' );
 
 		// Vullen lijst gerelateerde tips.
 		// Letten op post status en dat we niet nog een keer dezelfde tip tonen
-		$args = [
+		$args = array(
 			'post_type'    => GC_TIP_CPT,
 			'numberposts'  => $maxnr_tips,
 			'orderby'      => 'rand',
@@ -91,12 +91,12 @@ if ( 'nee' !== get_field( 'relatedtips_show_or_not', $post ) ) {
 					'taxonomy'         => GC_TIPTHEMA,
 					'field'            => 'term_id',
 					'terms'            => $current_term[0]->term_id,
-					'include_children' => FALSE,
+					'include_children' => false,
 				],
 			],
 			'post__not_in' => [ $post->ID ],
 			'post_status'  => 'publish',
-		];
+		);
 
 		$relatedtips = new WP_Query( $args );
 
@@ -185,7 +185,7 @@ if ( have_rows( 'goed_voorbeeld' ) ):
 					}
 				}
 
-				if ( !empty($acfid) && get_field( 'tipgever_functietitel', $acfid ) ) {
+				if ( ! empty( $acfid ) && get_field( 'tipgever_functietitel', $acfid ) ) {
 					$voorbeeld['author']['function'] = get_field( 'tipgever_functietitel', $acfid );
 				}
 
@@ -193,7 +193,7 @@ if ( have_rows( 'goed_voorbeeld' ) ):
 					$voorbeeld['author']['url']      = get_term_link( $thetermdata->term_id );
 					$voorbeeld['author']['linktext'] = sprintf( _x( 'Meer tips van %s', 'linktext auteur voorbeeld', 'gctheme' ), $voornaam );
 				}
-				if ( !empty($tipgever_foto) && $tipgever_foto['sizes']['thumbnail'] ) {
+				if ( ! empty( $tipgever_foto ) && $tipgever_foto['sizes']['thumbnail'] ) {
 					$voorbeeld['author']['img'] = $tipgever_foto['sizes']['thumbnail'];
 				}
 			}
