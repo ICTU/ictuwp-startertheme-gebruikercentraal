@@ -15,6 +15,8 @@
     background-size: auto 101%;
     position: relative;
     text-align: center;
+    max-width: none;
+    box-shadow: none;
 
     &:before,
     &:after {
@@ -97,6 +99,8 @@
   }
 
   .entry-header {
+    background: none;
+
     p {
       max-width: 60rem;
       margin: 1.8rem auto 0;

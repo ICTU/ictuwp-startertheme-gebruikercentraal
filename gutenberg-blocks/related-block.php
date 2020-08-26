@@ -15,14 +15,14 @@ function gb_add_related_block() {
 			'description'     => _x( 'Tonen van gerelateerde content in een apart block', 'Block description', 'gctheme' ),
 			'render_callback' => 'gb_render_related_block',
 			'category'        => 'gc-blocks',
-			'icon'            => 'megaphone', // todo: eigen icon voor dit block
+			'icon'            => 'tickets-alt',
 			'keywords'        => [ 'link', 'text', 'image' ],
 		] );
 	}
 }
 
 
-function gb_render_related_block( $block, $content = '', $is_preview = FALSE ) {
+function gb_render_related_block( $block, $content = '', $is_preview = false ) {
 
 	$context = Timber::context();
 
@@ -48,14 +48,14 @@ function gb_render_related_block( $block, $content = '', $is_preview = FALSE ) {
 function related_block_get_data() {
 
 	global $post;
-	$return = [];
+	$return = array();
 
 	if ( 'ja' === get_field( 'gerelateerde_content_toevoegen' ) ) {
 
 		if ( 'posts' === get_field( 'content_block_types' ) ) {
 
 			$featured_posts = get_field( 'content_block_items' );
-			$themakleuren   = [];
+			$themakleuren   = array();
 
 			if ( $featured_posts ):
 
@@ -63,7 +63,7 @@ function related_block_get_data() {
 
 					$item['title'] = get_the_title( $post );
 
-					$item          = [];
+					$item          = array();
 					$item['title'] = get_the_title( $post );
 					$item['descr'] = get_the_excerpt( $post );
 					$item['type']  = get_post_type( $post );
@@ -79,12 +79,12 @@ function related_block_get_data() {
 							$themakleuren = get_themakleuren();
 						}
 
-						$item['nr']     = sprintf( _x( 'Tip %s', 'Label tip-nummer', 'gctheme' ), get_post_meta( $post->ID, 'tip-nummer', TRUE ) );
-						$item['toptip'] = FALSE;
-						$is_toptip      = get_post_meta( $post->ID, 'is_toptip', TRUE );
+						$item['nr']     = sprintf( _x( 'Tip %s', 'Label tip-nummer', 'gctheme' ), get_post_meta( $post->ID, 'tip-nummer', true ) );
+						$item['toptip'] = false;
+						$is_toptip      = get_post_meta( $post->ID, 'is_toptip', true );
 
 						if ( $is_toptip ) {
-							$item['toptip']      = TRUE;
+							$item['toptip']      = true;
 							$item['toptiptekst'] = 'Toptip';
 						}
 
@@ -142,6 +142,7 @@ function related_block_get_data() {
 			endif;
 
 		}
+		wp_reset_postdata();
 
 		$columncounter = '2';
 

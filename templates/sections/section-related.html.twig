@@ -2,8 +2,10 @@
   class="section section--related{{ related.columncounter ? ' l-item-count-' ~ related.columncounter : '' }}{{ modifier ? ' section--' ~ modifier }}"{% if id %} id="{{ id }}"{% endif %}>
 
   {# Wrapper for section intro #}
+
   {% if related.title or related.description %}
     <div class="l-section-top">
+
 
       {% if related.title %}
         <h2 class="section__title">
@@ -28,18 +30,18 @@
 
         {% for card in related.items %}
 
-            {% include 'components/card.html.twig' with {
-              'title': card.title,
-              'descr' : card.descr,
-              'img' : card.img,
-              'type' : card.type,
-              'nr' : card.nr,
-              'category' : card.category,
-              'toptip' : card.toptip,
-              'toptiptekst' : card.toptiptekst,
-              'url': is_preview ? '#' : card.url,
-              'meta': card.meta,
-            } %}
+          {% include 'components/card.html.twig' with {
+            'title': card.title,
+            'descr' : card.descr,
+            'img' : card.img,
+            'type' : card.type,
+            'nr' : card.nr,
+            'category' : card.category,
+            'toptip' : card.toptip,
+            'toptiptekst' : card.toptiptekst,
+            'url': is_preview ? '#' : card.url,
+            'meta': card.meta,
+          } %}
 
         {% endfor %}
       </div>
