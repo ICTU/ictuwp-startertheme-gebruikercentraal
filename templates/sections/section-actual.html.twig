@@ -1,3 +1,4 @@
+
 <div class="section section--actual">
 
   <div class="l-section-content">
@@ -12,7 +13,7 @@
 
           <div class="teaser teaser--event teaser--small">
             <div class="teaser__image">
-              <img src="{{ event.img }}"/>
+              <img src="{{ event.img }}" alt="{{ event.img_alt }}"/>
 
               {% include 'components/date-badge.html.twig' with {
                 'post_date': event.date,
@@ -43,7 +44,7 @@
         {% for blog in items.blogs.items %}
           <div class="teaser teaser--event teaser--small">
             <div class="teaser__image">
-              <img src="{{ blog.img ? blog.img : 'od-default.jpg' }}"/>
+              <img src="{{ blog.img }}" alt="{{ blog.img_alt }}"/>
             </div>
 
             <h3 class="teaser__title">
