@@ -1,14 +1,11 @@
-
 {% if title %}
-
-<section aria-labelledby="{{ id }}" class="text-block">
-  <h2 id="{{ id }}" class="text-block__title">
-    {{ title }}
-  </h2>
+  <section class="text-block">
+    <h2 class="text-block__title">{{ title }}</h2>
     <p>{{ descr }}</p>
-
-  {% if link_primary %}<a href="{{ link_primary.url }}" class="btn btn--primary">{{ link_primary.text }}</a>{% endif %}
-  {% if link_secondary %}<a href="{{ link_secondary.url }}" class="btn btn--primary">{{ link_secondary.text }}</a>{% endif %}
-</section>
+    {% if link_primary %}<a href="{{ link_primary.url }}"
+                            class="btn btn--primary">{{ link_primary.text }}</a>{% endif %}
+    {% if link_secondary %}<a href="{{ link_secondary.url }}"
+                              class="btn btn--primary">{{ link_secondary.text }}</a>{% endif %}
+  </section>
 
 {% endif %}
