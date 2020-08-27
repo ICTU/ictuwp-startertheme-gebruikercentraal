@@ -28,6 +28,16 @@ if ( $spotlightblocks ) {
 
 }
 
+
+$teaserblocks = teaser_block_get_data();
+
+if ( $teaserblocks ) {
+
+	$context['teaserblocks'] = $teaserblocks;
+
+}
+
+
 // events selecteren
 if ( class_exists( 'EM_Events' ) ) {
 
@@ -55,8 +65,6 @@ if ( class_exists( 'EM_Events' ) ) {
 				$item['img']     = $image;
 				$item['img_alt'] = get_post_meta( get_post_thumbnail_id( $post->ID ), '_wp_attachment_image_alt', true );
 			}
-
-
 			$context['actueel']['events']['items'][] = $item;
 
 		endforeach;
