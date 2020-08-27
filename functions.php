@@ -80,6 +80,8 @@ require_once( get_template_directory() . '/gutenberg-blocks/textimage-block.php'
 require_once( get_template_directory() . '/gutenberg-blocks/links-block.php' );
 require_once( get_template_directory() . '/gutenberg-blocks/spotlight-block.php' );
 require_once( get_template_directory() . '/gutenberg-blocks/rijksvideo-block.php' );
+require_once( get_template_directory() . '/gutenberg-blocks/teaser-block.php' );
+
 
 /**
  * Load other dependencies such as VAR DUMPER :D

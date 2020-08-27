@@ -71,22 +71,14 @@
           {% include 'sections/section-actual.html.twig' with {
             'items': actueel
           } %}
-
-          {#regular #}
-          {% set tb_items = {
-            '1': {
-              'title': 'Een workshop of evenement?',
-              'descr': 'De instrumenten helpen je om de online dienstverlening van je organisatie te verbeteren. Gebruik, deel en vul aan!',
-              'link_primary': 'Meer over workshops',
-            } ,
-            '2': {
-              'title': 'Verschillende sets',
-              'descr': 'Er zijn sets beschikbaar om het spel verder aan te vullen. Bijvoorbeeld de set inclusie. Met deze set vul je het spel aan met tips over inclusieve dienstverlening.',
-              'link_primary': 'Bekijk de inclusieset',
-            }
-          } %}
           {% endif %}
 
+
+          {% if teaserblocks %}
+            {% include 'sections/section-text-block.html.twig' with {
+              'items': teaserblocks.blocks,
+              'modifier': 'l-bg-white' } %}
+          {% endif %}
 
         </div>
         {# /entry content #}

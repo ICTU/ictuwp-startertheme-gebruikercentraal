@@ -93,6 +93,10 @@ function spotlight_block_get_data() {
 
 		endforeach;
 
+		/* Restore original Post Data */
+		wp_reset_postdata();
+
+
 	else:
 		$return['inhoud'] = "In de instellingen voor dit block, kies: <br>'<em>Ja, voeg spotlightblok toe</em>' en selecteer een of twee blokken";
 
