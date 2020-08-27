@@ -12,7 +12,7 @@
 
           <div class="teaser teaser--event teaser--small">
             <div class="teaser__image">
-              <img src="/uploads/{{ event.img ? event.img : 'od-default.jpg' }}"/>
+              <img src="{{ event.img }}"/>
 
               {% include 'components/date-badge.html.twig' with {
                 'post_date': event.date,
@@ -29,8 +29,9 @@
       </div>
 
       {% if items.events.cta %}
-        <a class="btn btn--primary" href="#">{{ items.events.cta.title }}</a>
+        <a class="btn btn--primary" href="{{ items.events.cta.url }}">{{ items.events.cta.title }}</a>
       {% endif %}
+
     </section>
 
     {# Blog / news col #}
