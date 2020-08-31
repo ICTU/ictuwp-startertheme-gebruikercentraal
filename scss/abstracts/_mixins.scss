@@ -110,16 +110,19 @@
     margin-top: 3rem;
   }
 
-  a {
+  a, span.current {
     //@include gc-box-shadow();
-    //border: .1rem solid $gc_greyblue;
-    font-family: $font_primary_bold;
     display: inline-block;
-    padding: .5rem 0;
+    padding: .5rem 1rem;
     text-decoration: none;
     position: relative;
     transition: padding .2s, background-color .2s;
     line-height: 2.6rem;
+    border: .1rem solid transparent;
+  }
+
+  a {
+    font-family: $font_primary_bold;
 
     &:hover,
     &:focus,
@@ -128,7 +131,12 @@
       border-color: $gc-dark-blue;
       text-decoration: underline;
       color: $base_font_color;
+      border-color: $gc_greyblue;
     }
+  }
+  span.current {
+    border: .1rem solid $gc_greyblue;
+    padding: .5rem 1rem;
   }
 
   .alignright {

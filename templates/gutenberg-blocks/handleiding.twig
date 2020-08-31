@@ -1,0 +1,61 @@
+{#
+/**
+ * Block Name: GC Gutenberg block for text and image
+ *
+ * Gutenberg block voor het tonen van Call To Action (CTA)
+ */
+#}
+
+{% if is_preview %}
+  <style type="text/css">
+    #cta-{{ block.id }} {
+      margin-top: 0;
+      overflow: hidden;
+      border: 3px dashed #dadada;
+    }
+
+    #cta-{{ block.id }} h2 {
+      font-size: 1.5rem;
+      margin: 0;
+      padding-top: .5rem;
+      padding-bottom: .5rem;
+    }
+
+    #cta-{{ block.id }} .manual-item__content .manual-item__content {
+      border: 3px solid red;
+    }
+    #cta-{{ block.id }} .manual-item__content .manual-item__content:before {
+      content: 'Dubbel block, check je tekst en probeer opnieuw';
+      display: block;
+      color: white;
+      background: black;
+      padding: .5rem;
+    }
+
+  </style>
+{% endif %}
+
+{% if is_preview %}
+  <div id="cta-{{ block.id }}"><small>(preview)</small></p>
+    <h2 class="manual-item__title">{{ handleiding.counter }} - {{ handleiding.title }} <small>({{ handleiding.time }})</small></h2>
+
+{% else %}
+      {% if handleiding.title %}
+        <div class="manual-item__header">
+          {% if handleiding.time %}
+            <span class="manual-item__time">{{ handleiding.time }}</span>
+          {% endif %}
+          <h2 class="manual-item__title">{{ handleiding.title }}</h2>
+        </div>
+      {% endif %}
+{% endif %}
+
+
+
+  <div class="manual-item__content">
+    {{ handleiding.text }}
+  </div>
+
+{% if is_preview %}
+  </div>
+{% endif %}
