@@ -235,6 +235,21 @@
 
 .pagination {
   @include gc-pagination;
+
+  display: flex;
+  justify-content: center;
+
+  // pagination is a list
+  &, li {
+    list-style: none;
+    margin-left: 0;
+    padding-left: 0;
+  }
+
+li {
+  margin: .25rem;
+  padding: .25rem;
+}
   width: 100%;
 
 
