@@ -1,3 +1,36 @@
+{% if is_preview %}
+  <style type="text/css">
+    #related-{{ block.id }} .grid {
+      font-size: 16px !important;
+      margin-top: 0;
+      overflow: hidden;
+      border: 3px dashed #dadada;
+    }
+    #related-{{ block.id }} .card__title {
+      font-size: 22px;
+      line-height: 1.2;
+    }
+    #related-{{ block.id }} .card__description {
+      font-size: 16px;
+    }
+    #related-{{ block.id }} .card {
+      max-width: 48% !important;
+      flex: 0 1 48%;
+      padding: 0;
+    }
+    #related-{{ block.id }} .grid {
+      flex-direction: row;
+      display: flex;
+    }
+  </style>
+
+<div id="related-{{ block.id }}">
+
+
+{% endif %}
+
+
+
 <section
   class="section section--related{{ related.columncounter ? ' l-item-count-' ~ related.columncounter : '' }}{{ modifier ? ' section--' ~ modifier }}"{% if id %} id="{{ id }}"{% endif %}>
 
@@ -5,7 +38,6 @@
 
   {% if related.title or related.description %}
     <div class="l-section-top">
-
 
       {% if related.title %}
         <h2 class="section__title">
@@ -18,6 +50,7 @@
           {{ related.description }}
         </p>
       {% endif %}
+
     </div>
   {% endif %}
 
@@ -55,3 +88,6 @@
   </div>
 </section>
 
+{% if is_preview %}
+</div>
+{% endif %}
