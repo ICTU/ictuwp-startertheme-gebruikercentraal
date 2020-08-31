@@ -7,7 +7,6 @@
  * @since    Timber 0.1
  */
 
-require_once( get_template_directory() . '/gutenberg-blocks/handleiding-block.php' );
 
 $context         = Timber::context();
 $timber_post     = Timber::query_post();

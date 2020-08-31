@@ -81,7 +81,9 @@ require_once( get_template_directory() . '/gutenberg-blocks/links-block.php' );
 require_once( get_template_directory() . '/gutenberg-blocks/spotlight-block.php' );
 require_once( get_template_directory() . '/gutenberg-blocks/rijksvideo-block.php' );
 require_once( get_template_directory() . '/gutenberg-blocks/teaser-block.php' );
-// het block voor de handleiding is alleen beschikbaar voor pagina's met het template 'template-od-handleiding.php'
+
+// TODO: het block voor de handleiding zou alleen beschikbaar voor pagina's met het template 'template-od-handleiding.php'
+require_once( get_template_directory() . '/gutenberg-blocks/handleiding-block.php' );
 
 /**
  * Load other dependencies such as VAR DUMPER :D
