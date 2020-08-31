@@ -761,8 +761,10 @@ Gutenberg corrections
       clip: rect(0, 0, 0, 0);
       position: absolute; } }
   @media (min-width: 1000px) {
-    .branding span {
-      display: block; } }
+    .branding {
+      min-width: 70%; }
+      .branding span {
+        display: block; } }
   .branding a {
     color: #fff;
     text-decoration: none; }
@@ -6376,5 +6378,3 @@ h1 {
       clip: rect(0 0 0 0);
       clip: rect(0, 0, 0, 0);
       position: absolute; } }
-
-/*# sourceMappingURL=gc-theme.css.map */
