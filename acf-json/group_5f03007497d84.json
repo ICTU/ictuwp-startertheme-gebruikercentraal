@@ -33,7 +33,8 @@
             "choices": {
                 "btn--primary": "Primary",
                 "btn--secondary": "Secundary",
-                "btn--download": "Download"
+                "btn--download": "Download",
+                "btn--read-more": "Lees meer"
             },
             "default_value": "btn--primary",
             "allow_null": 0,
@@ -88,7 +89,8 @@
             "choices": {
                 "btn--primary": "Primary",
                 "btn--secondary": "Secundary",
-                "btn--download": "Download"
+                "btn--download": "Download",
+                "btn--read-more": "Lees meer"
             },
             "default_value": "btn--primary",
             "allow_null": 0,
@@ -116,5 +118,5 @@
     "hide_on_screen": "",
     "active": true,
     "description": "",
-    "modified": 1598370761
+    "modified": 1598870906
 }
