@@ -85,8 +85,6 @@ require_once( get_template_directory() . '/gutenberg-blocks/teaser-block.php' );
 // TODO: het block voor de handleiding zou alleen beschikbaar voor pagina's met het template 'template-od-handleiding.php'
 require_once( get_template_directory() . '/gutenberg-blocks/handleiding-block.php' );
 
-die('wajoooo');
-
 /**
  * Load other dependencies such as VAR DUMPER :D
  */
