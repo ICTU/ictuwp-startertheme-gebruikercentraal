@@ -1136,3 +1136,15 @@ function my_acf_fields_relationship_result( $text, $post, $field, $post_id ) {
 }
 
 //========================================================================================================
+
+function tipgever_archive_modify_query( $query ) {
+	if ( ( $query->is_main_query() ) && ( is_tax( 'tipgever' ) ) ) {
+		// geen pagination voor tipgevers overzichten
+		$query->set( 'posts_per_page', - 1 );
+	}
+}
+
+add_action( 'pre_get_posts', 'tipgever_archive_modify_query' );
+
+//========================================================================================================
+
