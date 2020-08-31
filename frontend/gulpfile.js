@@ -188,13 +188,22 @@ function baseStyles(done) {
 function prod(done) {
   console.log(siteConfig.path + 'scss/*.scss');
 
-  gulp
-    .src(siteConfig.path + 'scss/*.scss')
-    .pipe(sass().on('error', sass.logError))
-    .pipe(autoprefixer('last 2 version'))
-    .pipe(gulp.dest(siteConfig.dest + 'css'))
-    .pipe(notify({message: 'Prod CSS task complete'}))
-  done();
+  if(fs.existsSync(siteConfig.path + 'scss')){
+    gulp
+      .src(siteConfig.path + 'scss/*.scss')
+      .pipe(sass().on('error', sass.logError))
+      .pipe(autoprefixer('last 2 version'))
+      .pipe(gulp.dest(siteConfig.dest + 'css'))
+      .pipe(notify({message: 'Prod CSS task complete'}))
+    done();
+  } else {
+    console.log('bestaat niet')
+    console.log(siteConfig.path + 'scss');
+    done();
+  }
+
+
+
 }
 
 function cleanCSS(done){

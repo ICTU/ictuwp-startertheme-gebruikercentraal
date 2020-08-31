@@ -14,6 +14,14 @@
     "path": "../flavors/optimaaldigitaal/",
     "dest": "../flavors/optimaaldigitaal/assets/",
     "proxy": "gebruikercentraal.test/optimaaldigitaal"
+  },
+  "kennisbank": {
+    "name": "Kennisbank",
+    "shortname": "kb",
+    "absfolder": "/wp-content/themes/ictuwp-theme-gc2020/",
+    "path": "../flavors/kennisbank/",
+    "dest": "../flavors/kennisbank/assets/",
+    "proxy": "gebruikercentraal.test/gckennisbank"
   }
 }
 

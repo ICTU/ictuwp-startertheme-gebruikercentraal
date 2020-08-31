@@ -878,6 +878,22 @@ function gc2020_customize_register( $wp_customize ) {
 add_action( 'customize_register', 'gc2020_customize_register' );
 
 
+/**
+ *  Dequeue unwanted CSS from plugins
+ */
+function gc_ho_dequeue_css() {
+	wp_dequeue_style( 'minerva-kb/css' );
+
+	// Add kennisbank CSS if subsite is kennisbank
+	if(get_current_blog_id() === 3){
+		wp_enqueue_style ('gc-kennisbank-style', get_template_directory_uri().'/flavors/kennisbank/assets/css/gc-kennisbank.css');
+	}
+}
+
+add_action( 'wp_enqueue_scripts', 'gc_ho_dequeue_css', 999 );
+
+
+
 //========================================================================================================
 // ervoor zorgen dat specifieke Optimaal Digitaal-termen op de juiste manier afgebroken kunnen worden
 
