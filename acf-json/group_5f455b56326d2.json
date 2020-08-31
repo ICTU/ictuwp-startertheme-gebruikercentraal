@@ -1,0 +1,181 @@
+{
+    "key": "group_5f455b56326d2",
+    "title": "Video-velden",
+    "fields": [
+        {
+            "key": "field_5f4613dd883ab",
+            "label": "URL van thumbnail",
+            "name": "rijksvideo_pf_url_video_thumb",
+            "type": "image",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "array",
+            "preview_size": "medium",
+            "library": "all",
+            "min_width": "",
+            "min_height": "",
+            "min_size": "",
+            "max_width": "",
+            "max_height": "",
+            "max_size": "",
+            "mime_types": ""
+        },
+        {
+            "key": "field_5f46141704f7f",
+            "label": "Lengte van de video (*)",
+            "name": "rijksvideo_pf_video_time",
+            "type": "text",
+            "instructions": "(verplicht) formaat: uu:mm:ss",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_5f46144b91eb7",
+            "label": "URL van MP4-bestand",
+            "name": "rijksvideo_pf_mp4_url",
+            "type": "file",
+            "instructions": "Apple Quicktime-bestand. Eindigt vaak op .mp4",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "array",
+            "library": "all",
+            "min_size": "",
+            "max_size": "",
+            "mime_types": ""
+        },
+        {
+            "key": "field_5f46148576661",
+            "label": "Bestandsgrootte van MP4-bestand",
+            "name": "rijksvideo_pf_mp4_filesize",
+            "type": "text",
+            "instructions": "(verplicht) formaat: uu:mm:ss",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_5f4614afc4627",
+            "label": "URL van Hi-res MP4-bestand",
+            "name": "rijksvideo_pf_mp4_url_hires",
+            "type": "file",
+            "instructions": "Versie van Quicktime-bestand in hoge resolutie.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "array",
+            "library": "all",
+            "min_size": "",
+            "max_size": "",
+            "mime_types": ""
+        },
+        {
+            "key": "field_5f4614a4c4626",
+            "label": "Bestandsgrootte van hi-res MP4-bestand",
+            "name": "rijksvideo_pf_mp4_filesize_hires",
+            "type": "text",
+            "instructions": "(verplicht) formaat: uu:mm:ss",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_5f46152218a7d",
+            "label": "URL van Hi-res MP4-bestand (kopie)",
+            "name": "rijksvideo_pf_mp4_url_hires_kopie",
+            "type": "file",
+            "instructions": "Versie van Quicktime-bestand in hoge resolutie.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "array",
+            "library": "all",
+            "min_size": "",
+            "max_size": "",
+            "mime_types": ""
+        },
+        {
+            "key": "field_5f461514bc792",
+            "label": "Bestandsgrootte van hi-res MP4-bestand (kopie)",
+            "name": "rijksvideo_pf_mp4_filesize_hires_kopie",
+            "type": "text",
+            "instructions": "(verplicht) formaat: uu:mm:ss",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "tips"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "modified": 1598387641
+}

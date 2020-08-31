@@ -119,6 +119,8 @@ if ( $relatedtips->have_posts() ) {
 	wp_reset_postdata();
 }
 
+// VOOR NU GEEN ACTUEEL
+$context['actueel'] = [];
 
 Timber::render( [ 'od-home.html.twig', 'page.twig' ], $context );
 
