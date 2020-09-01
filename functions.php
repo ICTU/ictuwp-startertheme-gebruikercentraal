@@ -58,8 +58,8 @@ if ( $flavor_select == "OD" ) {
 	add_action( 'init', array( 'ICTUWP_GC_OD_registerposttypes', 'init' ), 1 );
 }
 
-
-require_once( __DIR__ . '/plugin-activatie/kennisbank.php' );
+// include file for all must-use plugins
+require_once( __DIR__ . '/plugin-activatie/must-use-plugins.php' );
 
 
 //========================================================================================================
