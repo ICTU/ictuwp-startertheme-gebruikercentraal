@@ -122,36 +122,46 @@ function gctheme_register_required_plugins() {
 
 		];
 	} else {
-		$plugins = [];
+		// not KB
+		//		$plugins = [];
+
+		// append extra plugins that *ANY* GC site must use
+		// add the Yoast SEO plugin (if only for the breadcrumb...)
+		$plugins[] = array(
+			'name'             => 'WordPress SEO by Yoast',
+			'slug'             => 'wordpress-seo',
+			'is_callable'      => 'wpseo_init',
+			'force_activation' => true,
+		);
+
+		// Events Manager plugin
+		$plugins[] = array(
+			'name'     => 'Events Manager',
+			'slug'     => 'events-manager',
+			'required' => false,
+		);
+		// And the Pro version for Events Manager plugin
+		$plugins[] = array(
+			'name'   => 'Events Manager Pro',
+			'slug'   => 'events-manager-pro',
+			'source' => get_template_directory() . '/plugin-activatie/plugins/events-manager-pro.2.6.7.2.zip',
+		);
+
+		// Rijksvideo plugin
+		$plugins[] = array(
+			'name'   => 'ICTU WP Rijksvideo plugin',
+			'slug'   => 'ictuwp-plugin-rijksvideo',
+			'source' => 'https://github.com/ICTU/ictuwp-plugin-rijksvideo/archive/main.zip',
+		);
+		// The Rijksvideo plugin requires CMB2 fields (for now: Sept 1, 2020)
+		$plugins[] = array(
+			'name'             => 'cmb2',
+			'slug'             => 'cmb2',
+			'force_activation' => true,
+		);
+
+
 	}
-
-	// append extra plugins that *ANY* GC site must use
-	// add the Yoast SEO plugin (if only for the breadcrumb...)
-	$plugins[] = array(
-		'name'             => 'WordPress SEO by Yoast',
-		'slug'             => 'wordpress-seo',
-		'is_callable'      => 'wpseo_init',
-		'force_activation' => true,
-	);
-
-	// Events Manager plugin
-	$plugins[] = array(
-		'name'     => 'Events Manager',
-		'slug'     => 'events-manager',
-		'required' => false,
-	);
-	// Rijksvideo plugin
-	$plugins[] = array(
-		'name'   => 'ICTU WP Rijksvideo plugin',
-		'slug'   => 'ictuwp-plugin-rijksvideo',
-		'source' => 'https://github.com/ICTU/ictuwp-plugin-rijksvideo/archive/main.zip',
-	);
-	// The Rijksvideo plugin requires CMB2 fields (for now: Sept 1, 2020)
-	$plugins[] = array(
-		'name'             => 'cmb2',
-		'slug'             => 'cmb2',
-		'force_activation' => true,
-	);
 
 
 	/*
