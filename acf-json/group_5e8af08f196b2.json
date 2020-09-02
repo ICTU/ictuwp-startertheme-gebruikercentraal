@@ -16,8 +16,8 @@
                 "id": ""
             },
             "choices": {
-                "ja": "Ja, voeg spotlightblok toe",
-                "nee": "Nee"
+                "nee": "Nee",
+                "ja": "Ja, voeg spotlightblok toe"
             },
             "allow_null": 0,
             "other_choice": 0,
@@ -93,5 +93,5 @@
     "hide_on_screen": "",
     "active": true,
     "description": "",
-    "modified": 1598360743
+    "modified": 1599057457
 }
