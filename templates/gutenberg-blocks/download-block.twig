@@ -9,12 +9,16 @@
 {% if is_preview %}
   <style type="text/css">
     #download-{{ block.id }} {
+      border: 3px dashed #dadada;
       margin-top: 0;
       overflow: hidden;
     }
   </style>
 {% endif %}
 
+{% if is_preview %}
+<div id="download-{{ block.id }}">
+  {% endif %}
   {% if downloads %}
     {% include 'sections/section-downloads.html.twig' with {
       'id': "download-" ~ block.id,
@@ -25,6 +29,11 @@
   {% else %}
     {% if is_preview %}
       <!-- ik weet niet of het handig is om dit te stylen, maar zo weet de redacteur in ieder geval dat het een aanwijzing is -->
-      <p style="background: black; color: white; padding: 1rem; line-height: 1.5;">Kies 'ja' om dit download-block te gebruiken en voer 1 of meer downloads in.</p>
+      <p style="background: black; color: white; padding: 1rem; line-height: 1.5;">Kies 'ja' om dit download-block te
+        gebruiken en voer 1 of meer downloads in.</p>
     {% endif %}
   {% endif %}
+
+  {% if is_preview %}
+</div>
+{% endif %}

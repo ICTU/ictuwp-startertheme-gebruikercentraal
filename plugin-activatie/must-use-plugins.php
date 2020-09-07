@@ -1,5 +1,7 @@
 <?php
 /**
+ * must-use-plugins.php
+ *
  * This file represents an example of the code that themes would use to register
  * the required plugins.
  *
@@ -53,31 +55,31 @@ add_action( 'tgmpa_register', 'gctheme_register_required_plugins' );
  * This function is hooked into `tgmpa_register`, which is fired on the WP `init` action on priority 10.
  */
 function gctheme_register_required_plugins() {
-	$get_theme_option = get_option('gc2020_theme_options');
-	$flavor_select = $get_theme_option['flavor_select'];
+	$get_theme_option = get_option( 'gc2020_theme_options' );
+	$flavor_select    = $get_theme_option['flavor_select'];
 	if ( $flavor_select == "KB" ) {
 		$plugins = [
 
 			// Load plugins for KB flavour.
 
 			[
-				'name' => 'Kennisbank plugin',
+				'name'               => 'Kennisbank plugin',
 				// The plugin name.
-				'slug' => 'pressapps-knowledge-base',
+				'slug'               => 'pressapps-knowledge-base',
 				// The plugin slug (typically the folder name).
-				'source' => get_template_directory() . '/plugin-activatie/plugins/kennisbank.zip',
+				'source'             => get_template_directory() . '/plugin-activatie/plugins/kennisbank.zip',
 				// The plugin source.
-				'required' => TRUE,
+				'required'           => true,
 				// If false, the plugin is only 'recommended' instead of required.
-				'version' => '',
+				'version'            => '',
 				// E.g. 1.0.0. If set, the active plugin must be this version or higher. If the plugin version is higher than the plugin version installed, the user will be notified to update the plugin.
-				'force_activation' => TRUE,
+				'force_activation'   => true,
 				// If true, plugin is activated upon theme activation and cannot be deactivated until theme switch.
-				'force_deactivation' => FALSE,
+				'force_deactivation' => false,
 				// If true, plugin is deactivated upon theme switch, useful for theme-specific plugins.
-				'external_url' => '',
+				'external_url'       => '',
 				// If set, overrides default API URL and points to an external URL.
-				'is_callable' => '',
+				'is_callable'        => '',
 				// If set, this callable will be be checked for availability to determine if a plugin is active.
 			],
 
@@ -119,10 +121,49 @@ function gctheme_register_required_plugins() {
 			//),
 
 		];
+	} else {
+		// not KB
+		//		$plugins = [];
+
+		// append extra plugins that *ANY* GC site must use
+		// add the Yoast SEO plugin (if only for the breadcrumb...)
+		$plugins[] = array(
+			'name'             => 'WordPress SEO by Yoast',
+			'slug'             => 'wordpress-seo',
+			'is_callable'      => 'wpseo_init',
+			'force_activation' => true,
+		);
+
+		// Events Manager plugin
+		$plugins[] = array(
+			'name'     => 'Events Manager',
+			'slug'     => 'events-manager',
+			'required' => false,
+		);
+		// And the Pro version for Events Manager plugin
+		$plugins[] = array(
+			'name'   => 'Events Manager Pro',
+			'slug'   => 'events-manager-pro',
+			'source' => get_template_directory() . '/plugin-activatie/plugins/events-manager-pro.2.6.7.2.zip',
+		);
+
+		// Rijksvideo plugin
+		$plugins[] = array(
+			'name'   => 'ICTU WP Rijksvideo plugin',
+			'slug'   => 'ictuwp-plugin-rijksvideo',
+			'source' => 'https://github.com/ICTU/ictuwp-plugin-rijksvideo/archive/main.zip',
+		);
+		// The Rijksvideo plugin requires CMB2 fields (for now: Sept 1, 2020)
+		$plugins[] = array(
+			'name'             => 'cmb2',
+			'slug'             => 'cmb2',
+			'force_activation' => true,
+		);
+
+
 	}
-	else {
-		$plugins = [];
-	}
+
+
 	/*
 	 * Array of configuration settings. Amend each line as needed.
 	 *
@@ -133,30 +174,40 @@ function gctheme_register_required_plugins() {
 	 * Only uncomment the strings in the config array if you want to customize the strings.
 	 */
 	$config = array(
-		'id'           => 'kennisbank',                 // Unique ID for hashing notices for multiple instances of TGMPA.
-		'default_path' => '',                      // Default absolute path to bundled plugins.
-		'menu'         => 'tgmpa-install-plugins', // Menu slug.
-		'parent_slug'  => 'themes.php',            // Parent menu slug.
-		'capability'   => 'edit_theme_options',    // Capability needed to view plugin install page, should be a capability associated with the parent menu used.
-		'has_notices'  => true,                    // Show admin notices or not.
-		'dismissable'  => false,                    // If false, a user cannot dismiss the nag message.
-		'dismiss_msg'  => 'Deze plugins zijn vereist om het thema te laten werken',                      // If 'dismissable' is false, this message will be output at top of nag.
-		'is_automatic' => false,                   // Automatically activate plugins after installation or not.
-		'message'      => '',                      // Message to output right before the plugins table.
+		'id'           => 'kennisbank',
+		// Unique ID for hashing notices for multiple instances of TGMPA.
+		'default_path' => '',
+		// Default absolute path to bundled plugins.
+		'menu'         => 'tgmpa-install-plugins',
+		// Menu slug.
+		'parent_slug'  => 'themes.php',
+		// Parent menu slug.
+		'capability'   => 'edit_theme_options',
+		// Capability needed to view plugin install page, should be a capability associated with the parent menu used.
+		'has_notices'  => true,
+		// Show admin notices or not.
+		'dismissable'  => false,
+		// If false, a user cannot dismiss the nag message.
+		'dismiss_msg'  => _x( 'Deze plugins zijn vereist om het thema te laten werken', 'Plugins installer', 'gctheme' ),
+		// If 'dismissable' is false, this message will be output at top of nag.
+		'is_automatic' => false,
+		// Automatically activate plugins after installation or not.
+		'message'      => '',
+		// Message to output right before the plugins table.
 
 
-		'strings'      => array(
-			'page_title'                      => _x( 'Install Required Plugins', 'Plugins installer', 'gctheme' ),
-			'menu_title'                      => _x( 'Install Plugins', 'Plugins installer', 'gctheme' ),
+		'strings' => array(
+			'page_title' => _x( 'Install Required Plugins', 'Plugins installer', 'gctheme' ),
+			'menu_title' => _x( 'Install Plugins', 'Plugins installer', 'gctheme' ),
 
-			'installing'                      => _x( 'Installing Plugin: %s', 'Plugins installer', 'gctheme' ),
+			'installing' => _x( 'Installing Plugin: %s', 'Plugins installer', 'gctheme' ),
 
 			'updating'                        => _x( 'Updating Plugin: %s', 'Plugins installer', 'gctheme' ),
 			'oops'                            => _x( 'Something went wrong with the plugin API.', 'Plugins installer', 'gctheme' ),
 			'notice_can_install_required'     => _nx_noop(
 
 				'This theme requires the following plugin: %1$s.',
-				'This theme requires the following plugins: %1$s.','Plugins installer', 'gctheme' ),
+				'This theme requires the following plugins: %1$s.', 'Plugins installer', 'gctheme' ),
 			'notice_can_install_recommended'  => _nx_noop(
 
 				'This theme recommends the following plugin: %1$s.',
@@ -180,7 +231,7 @@ function gctheme_register_required_plugins() {
 			'install_link'                    => _nx_noop(
 				'Begin installing plugin',
 				'Begin installing plugins', 'Plugins installer', 'gctheme' ),
-			'update_link' 					  => _nx_noop(
+			'update_link'                     => _nx_noop(
 				'Begin updating plugin',
 				'Begin updating plugins', 'Plugins installer', 'gctheme' ),
 			'activate_link'                   => _nx_noop(
@@ -190,16 +241,17 @@ function gctheme_register_required_plugins() {
 			'plugin_activated'                => _x( 'Plugin activated successfully.', 'Plugins installer', 'gctheme' ),
 			'activated_successfully'          => _x( 'The following plugin was activated successfully:', 'Plugins installer', 'gctheme' ),
 
-			'plugin_already_active'           => _x( 'No action taken. Plugin %1$s was already active.', 'Plugins installer', 'gctheme' ),
+			'plugin_already_active' => _x( 'No action taken. Plugin %1$s was already active.', 'Plugins installer', 'gctheme' ),
 
-			'plugin_needs_higher_version'     => _x( 'Plugin not activated. A higher version of %s is needed for this theme. Please update the plugin.', 'Plugins installer', 'gctheme' ),
+			'plugin_needs_higher_version' => _x( 'Plugin not activated. A higher version of %s is needed for this theme. Please update the plugin.', 'Plugins installer', 'gctheme' ),
 
-			'complete'                        => _x( 'All plugins installed and activated successfully. %1$s', 'Plugins installer', 'gctheme' ),
-			'dismiss'                         => _x( 'Dismiss this notice', 'Plugins installer', 'gctheme' ),
-			'notice_cannot_install_activate'  => _x( 'There are one or more required or recommended plugins to install, update or activate.', 'Plugins installer', 'gctheme' ),
-			'contact_admin'                   => _x( 'Please contact the administrator of this site for help.', 'Plugins installer', 'gctheme' ),
+			'complete'                       => _x( 'All plugins installed and activated successfully. %1$s', 'Plugins installer', 'gctheme' ),
+			'dismiss'                        => _x( 'Dismiss this notice', 'Plugins installer', 'gctheme' ),
+			'notice_cannot_install_activate' => _x( 'There are one or more required or recommended plugins to install, update or activate.', 'Plugins installer', 'gctheme' ),
+			'contact_admin'                  => _x( 'Please contact the administrator of this site for help.', 'Plugins installer', 'gctheme' ),
 
-			'nag_type'                        => '', // Determines admin notice type - can only be one of the typical WP notice classes, such as 'updated', 'update-nag', 'notice-warning', 'notice-info' or 'error'. Some of which may not work as expected in older WP versions.
+			'nag_type' => '',
+			// Determines admin notice type - can only be one of the typical WP notice classes, such as 'updated', 'update-nag', 'notice-warning', 'notice-info' or 'error'. Some of which may not work as expected in older WP versions.
 		),
 
 	);

@@ -8,31 +8,33 @@
 
 {% if is_preview %}
   <style type="text/css">
-    #download-{{ block.id }} {
+    #imgtext-{{ block.id }} {
       margin-top: 0;
       overflow: hidden;
+      border: 3px dashed #dadada;
     }
   </style>
 {% endif %}
 
 
+<div class="{{ textimage.cssclass }}" id="imgtext-{{ block.id }}">
+
   {% if textimage.text %}
 
-    <div class="{{ textimage.cssclass }}">
+    <div class="l-section-content">
 
-      <div class="l-section-content">
+      {% if textimage.image %}
+        {{ textimage.image }}
+      {% endif %}
 
-        {% if textimage.image %}
-          {{ textimage.image }}
-        {% endif %}
-
-        <div class="text-image__text">
-          {{ textimage.text }}
-        </div>
-
+      <div class="text-image__text">
+        {{ textimage.text }}
       </div>
+
     </div>
 
   {% else %}
     <small style="background: black; color: white;">Voeg een plaatje en tekst toe.</small>
   {% endif %}
+
+</div>

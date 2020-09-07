@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 "Project-Id-Version: Gebruiker Centraal (2020)\n"
-"POT-Creation-Date: 2020-08-24 18:58+0200\n"
+"POT-Creation-Date: 2020-09-01 10:44+0200\n"
 "PO-Revision-Date: 2020-06-16 15:48+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -36,7 +36,7 @@ msgstr ""
 msgid "Alle tips"
 msgstr ""
 
-#: assets/json.php:105 assets/od.php:95 functions.php:701
+#: assets/json.php:105 assets/od.php:95 functions.php:706
 msgid "Toevoegen"
 msgstr ""
 
@@ -56,7 +56,7 @@ msgstr ""
 msgid "Nieuwe tip"
 msgstr ""
 
-#: assets/json.php:110 assets/od.php:100 functions.php:706
+#: assets/json.php:110 assets/od.php:100 functions.php:711
 msgid "Bekijk"
 msgstr ""
 
@@ -80,7 +80,7 @@ msgstr ""
 msgid "Hier voer je de tips in."
 msgstr ""
 
-#: assets/json.php:127 assets/od.php:117 functions.php:723
+#: assets/json.php:127 assets/od.php:117 functions.php:728
 msgid "post"
 msgstr ""
 
@@ -480,189 +480,196 @@ msgstr ""
 msgid "Geen speelset gevonden in de prullenbak"
 msgstr ""
 
-#: functions.php:167
+#: functions.php:172
 msgctxt "menu location"
 msgid "Menu in header"
 msgstr ""
 
-#: functions.php:168
+#: functions.php:173
 msgctxt "menu location"
 msgid "Menu in footer"
 msgstr ""
 
-#: functions.php:229
+#: functions.php:234
 #, php-format
 msgctxt "Alt-tekst op logo"
 msgid "Logo %s"
 msgstr ""
 
-#: functions.php:237
+#: functions.php:242
 msgctxt "skiplinks"
 msgid "Jump to main content"
 msgstr ""
 
-#: functions.php:239
+#: functions.php:244
 msgctxt "skiplinks"
 msgid "Jump to main navigation"
 msgstr ""
 
-#: functions.php:268 functions.php:432
+#: functions.php:273 functions.php:437
 msgid "Wit"
 msgstr ""
 
-#: functions.php:273 functions.php:437
+#: functions.php:278 functions.php:442
 msgid "Zwart"
 msgstr ""
 
-#: functions.php:278
+#: functions.php:283
 msgid "GC Groen"
 msgstr ""
 
-#: functions.php:283
+#: functions.php:288
 msgid "GC Dark Blue"
 msgstr ""
 
-#: functions.php:288
+#: functions.php:293
 msgid "GC Pantybrown"
 msgstr ""
 
-#: functions.php:293
+#: functions.php:298
 msgid "GC Dark Purple"
 msgstr ""
 
-#: functions.php:298 functions.php:333
+#: functions.php:303 functions.php:338
 msgid "GC Blue"
 msgstr ""
 
-#: functions.php:303
+#: functions.php:308
 msgid "GC Pink"
 msgstr ""
 
-#: functions.php:308
+#: functions.php:313
 msgid "GC Orange"
 msgstr ""
 
-#: functions.php:313
+#: functions.php:318
 msgid "GC Cyan"
 msgstr ""
 
-#: functions.php:318 functions.php:323
+#: functions.php:323 functions.php:328
 msgid "Inclusie Orange"
 msgstr ""
 
-#: functions.php:328
+#: functions.php:333
 msgid "NLDS Purplish"
 msgstr ""
 
-#: functions.php:338
+#: functions.php:343
 msgid "GC Blue Safe"
 msgstr ""
 
-#: functions.php:343
+#: functions.php:348
 msgid "gc_a11y_green"
 msgstr ""
 
-#: functions.php:348
+#: functions.php:353
 msgid "od_orange"
 msgstr ""
 
-#: functions.php:353
+#: functions.php:358
 msgid "od_orange_darker"
 msgstr ""
 
-#: functions.php:358 functions.php:442
+#: functions.php:363 functions.php:447
 msgid "GC Pantybrown Xtra Light"
 msgstr ""
 
-#: functions.php:471
+#: functions.php:476
 msgid "Larger"
 msgstr ""
 
-#: functions.php:476
+#: functions.php:481
 msgid "Extra large"
 msgstr ""
 
-#: functions.php:634
+#: functions.php:638
 msgctxt "Widget area"
 msgid "Footer widget left"
 msgstr ""
 
-#: functions.php:643
+#: functions.php:647
 msgctxt "Widget area"
 msgid "Footer widget right"
 msgstr ""
 
-#: functions.php:696
+#: functions.php:701
 msgid "Spotlight-blokken"
 msgstr ""
 
-#: functions.php:697
+#: functions.php:702
 msgid "Spotlight-blok"
 msgstr ""
 
-#: functions.php:698 functions.php:699
+#: functions.php:703 functions.php:704
 msgid "Spotlight"
 msgstr ""
 
-#: functions.php:700
+#: functions.php:705
 msgid "Alle spotlight-blokken"
 msgstr ""
 
-#: functions.php:702
+#: functions.php:707
 msgid "Spotlight-blok toevoegen"
 msgstr ""
 
-#: functions.php:703
+#: functions.php:708
 msgid "Spotlight-blok bewerken"
 msgstr ""
 
-#: functions.php:704
+#: functions.php:709
 msgid "Bewerk spotlight-blok"
 msgstr ""
 
-#: functions.php:705
+#: functions.php:710
 msgid "Nieuwe spotlight-blok"
 msgstr ""
 
-#: functions.php:707
+#: functions.php:712
 msgid "Bekijk spotlight-blok"
 msgstr ""
 
-#: functions.php:708
+#: functions.php:713
 msgid "Spotlight-blokken zoeken"
 msgstr ""
 
-#: functions.php:709
+#: functions.php:714
 msgid "Geen spotlight-blokken gevonden"
 msgstr ""
 
-#: functions.php:710
+#: functions.php:715
 msgid "Geen spotlight-blokken in de prullenbak"
 msgstr ""
 
-#: functions.php:715
+#: functions.php:720
 msgid "Hier voer je spotlight-blokken in."
 msgstr ""
 
-#: functions.php:842
+#: functions.php:847
 msgctxt "customizer"
 msgid "Gebruiker Centraal Instellingen"
 msgstr ""
 
-#: functions.php:843
+#: functions.php:848
 msgctxt "customizer"
 msgid ""
 "Selecteer hier het kleurenschema voor deze site. Je wijzigt hiermee de "
 "styling, logo en sommige functionaliteit van de site."
 msgstr ""
 
-#: functions.php:866
+#: functions.php:871
 msgctxt "customizer"
 msgid "Kies het kleurenschema"
 msgstr ""
 
-#: functions.php:987
+#: functions.php:1008
 msgid "GC Kennisbank"
+msgstr ""
+
+#: functions.php:1150 gutenberg-blocks/related-block.php:82
+#: taxonomy-tipgever.php:43 template-alle-tips.php:41
+#, php-format
+msgctxt "Label tip-nummer"
+msgid "Tip %s"
 msgstr ""
 
 #: gutenberg-blocks/cta-block.php:16
@@ -697,7 +704,7 @@ msgid "Download"
 msgstr ""
 
 #: gutenberg-blocks/download-block.php:116
-#: template-overzicht-tipgevers.php:57
+#: template-overzicht-tipgevers.php:62
 msgctxt "Titel boven downloads"
 msgid "Downloads"
 msgstr ""
@@ -705,6 +712,16 @@ msgstr ""
 #: gutenberg-blocks/gutenberg-settings.php:17
 msgctxt "Block-categorie"
 msgid "Gebruiker Centraal"
+msgstr ""
+
+#: gutenberg-blocks/handleiding-block.php:16
+msgctxt "Block titel"
+msgid "GC Handleiding block"
+msgstr ""
+
+#: gutenberg-blocks/handleiding-block.php:17
+msgctxt "Block description"
+msgid "Blokken voor de handleiding"
 msgstr ""
 
 #: gutenberg-blocks/links-block.php:13
@@ -728,11 +745,14 @@ msgctxt "Block description"
 msgid "Tonen van gerelateerde content in een apart block"
 msgstr ""
 
-#: gutenberg-blocks/related-block.php:82 template-alle-tips.php:41
-#: template-od-home.php:41
-#, php-format
-msgctxt "Label tip-nummer"
-msgid "Tip %s"
+#: gutenberg-blocks/rijksvideo-block.php:14
+msgctxt "Block titel"
+msgid "GC Video"
+msgstr ""
+
+#: gutenberg-blocks/rijksvideo-block.php:15
+msgctxt "Block description"
+msgid "Tonen van een video in een apart block"
 msgstr ""
 
 #: gutenberg-blocks/spotlight-block.php:14
@@ -862,8 +882,7 @@ msgid "Plugin activated successfully."
 msgstr ""
 
 #: plugin-activatie/class-tgm-plugin-activation.php:395
-msgctxt "succes"
-msgid "The following plugin was activated successfully:"
+msgid "This following plugin was activated successfully:"
 msgstr ""
 
 #. translators: 1: plugin name.
@@ -1208,34 +1227,39 @@ msgstr ""
 msgid "Installing Plugin %1$s (%2$d/%3$d)"
 msgstr ""
 
-#: plugin-activatie/kennisbank.php:149
+#: plugin-activatie/must-use-plugins.php:175
+msgctxt "Plugins installer"
+msgid "Deze plugins zijn vereist om het thema te laten werken"
+msgstr ""
+
+#: plugin-activatie/must-use-plugins.php:184
 msgctxt "Plugins installer"
 msgid "Install Required Plugins"
 msgstr ""
 
-#: plugin-activatie/kennisbank.php:150
+#: plugin-activatie/must-use-plugins.php:185
 msgctxt "Plugins installer"
 msgid "Install Plugins"
 msgstr ""
 
-#: plugin-activatie/kennisbank.php:152
+#: plugin-activatie/must-use-plugins.php:187
 #, php-format
 msgctxt "Plugins installer"
 msgid "Installing Plugin: %s"
 msgstr ""
 
-#: plugin-activatie/kennisbank.php:154
+#: plugin-activatie/must-use-plugins.php:189
 #, php-format
 msgctxt "Plugins installer"
 msgid "Updating Plugin: %s"
 msgstr ""
 
-#: plugin-activatie/kennisbank.php:155
+#: plugin-activatie/must-use-plugins.php:190
 msgctxt "Plugins installer"
 msgid "Something went wrong with the plugin API."
 msgstr ""
 
-#: plugin-activatie/kennisbank.php:158
+#: plugin-activatie/must-use-plugins.php:193
 #, php-format
 msgctxt "Plugins installer"
 msgid "This theme requires the following plugin: %1$s."
@@ -1243,7 +1267,7 @@ msgid_plural "This theme requires the following plugins: %1$s."
 msgstr[0] ""
 msgstr[1] ""
 
-#: plugin-activatie/kennisbank.php:162
+#: plugin-activatie/must-use-plugins.php:197
 #, php-format
 msgctxt "Plugins installer"
 msgid "This theme recommends the following plugin: %1$s."
@@ -1251,7 +1275,7 @@ msgid_plural "This theme recommends the following plugins: %1$s."
 msgstr[0] ""
 msgstr[1] ""
 
-#: plugin-activatie/kennisbank.php:166
+#: plugin-activatie/must-use-plugins.php:201
 #, php-format
 msgctxt "Plugins installer"
 msgid ""
@@ -1263,7 +1287,7 @@ msgid_plural ""
 msgstr[0] ""
 msgstr[1] ""
 
-#: plugin-activatie/kennisbank.php:170
+#: plugin-activatie/must-use-plugins.php:205
 #, php-format
 msgctxt "Plugins installer"
 msgid "There is an update available for: %1$s."
@@ -1271,7 +1295,7 @@ msgid_plural "There are updates available for the following plugins: %1$s."
 msgstr[0] ""
 msgstr[1] ""
 
-#: plugin-activatie/kennisbank.php:174
+#: plugin-activatie/must-use-plugins.php:209
 #, php-format
 msgctxt "Plugins installer"
 msgid "The following required plugin is currently inactive: %1$s."
@@ -1279,7 +1303,7 @@ msgid_plural "The following required plugins are currently inactive: %1$s."
 msgstr[0] ""
 msgstr[1] ""
 
-#: plugin-activatie/kennisbank.php:178
+#: plugin-activatie/must-use-plugins.php:213
 #, php-format
 msgctxt "Plugins installer"
 msgid "The following recommended plugin is currently inactive: %1$s."
@@ -1288,49 +1312,49 @@ msgid_plural ""
 msgstr[0] ""
 msgstr[1] ""
 
-#: plugin-activatie/kennisbank.php:181
+#: plugin-activatie/must-use-plugins.php:216
 msgctxt "Plugins installer"
 msgid "Begin installing plugin"
 msgid_plural "Begin installing plugins"
 msgstr[0] ""
 msgstr[1] ""
 
-#: plugin-activatie/kennisbank.php:184
+#: plugin-activatie/must-use-plugins.php:219
 msgctxt "Plugins installer"
 msgid "Begin updating plugin"
 msgid_plural "Begin updating plugins"
 msgstr[0] ""
 msgstr[1] ""
 
-#: plugin-activatie/kennisbank.php:187
+#: plugin-activatie/must-use-plugins.php:222
 msgctxt "Plugins installer"
 msgid "Begin activating plugin"
 msgid_plural "Begin activating plugins"
 msgstr[0] ""
 msgstr[1] ""
 
-#: plugin-activatie/kennisbank.php:189
+#: plugin-activatie/must-use-plugins.php:224
 msgctxt "Plugins installer"
 msgid "Return to Required Plugins Installer"
 msgstr ""
 
-#: plugin-activatie/kennisbank.php:190
+#: plugin-activatie/must-use-plugins.php:225
 msgctxt "Plugins installer"
 msgid "Plugin activated successfully."
 msgstr ""
 
-#: plugin-activatie/kennisbank.php:191
+#: plugin-activatie/must-use-plugins.php:226
 msgctxt "Plugins installer"
 msgid "The following plugin was activated successfully:"
 msgstr ""
 
-#: plugin-activatie/kennisbank.php:193
+#: plugin-activatie/must-use-plugins.php:228
 #, php-format
 msgctxt "Plugins installer"
 msgid "No action taken. Plugin %1$s was already active."
 msgstr ""
 
-#: plugin-activatie/kennisbank.php:195
+#: plugin-activatie/must-use-plugins.php:230
 #, php-format
 msgctxt "Plugins installer"
 msgid ""
@@ -1338,25 +1362,25 @@ msgid ""
 "Please update the plugin."
 msgstr ""
 
-#: plugin-activatie/kennisbank.php:197
+#: plugin-activatie/must-use-plugins.php:232
 #, php-format
 msgctxt "Plugins installer"
 msgid "All plugins installed and activated successfully. %1$s"
 msgstr ""
 
-#: plugin-activatie/kennisbank.php:198
+#: plugin-activatie/must-use-plugins.php:233
 msgctxt "Plugins installer"
 msgid "Dismiss this notice"
 msgstr ""
 
-#: plugin-activatie/kennisbank.php:199
+#: plugin-activatie/must-use-plugins.php:234
 msgctxt "Plugins installer"
 msgid ""
 "There are one or more required or recommended plugins to install, update "
 "or activate."
 msgstr ""
 
-#: plugin-activatie/kennisbank.php:200
+#: plugin-activatie/must-use-plugins.php:235
 msgctxt "Plugins installer"
 msgid "Please contact the administrator of this site for help."
 msgstr ""
@@ -1457,6 +1481,10 @@ msgstr ""
 
 #. Template Name of the plugin/theme
 msgid "Landingspagina"
+msgstr ""
+
+#. Template Name of the plugin/theme
+msgid "[OD] Handleiding"
 msgstr ""
 
 #. Template Name of the plugin/theme

@@ -8,7 +8,7 @@
  * @since   Timber 0.1
  */
 
-define( 'CHILD_THEME_VERSION', '5.0.7' );
+define( 'CHILD_THEME_VERSION', '5.0.8' );
 define( 'ID_MAINCONTENT', 'maincontent' );
 define( 'ID_MAINNAV', 'mainnav' );
 define( 'ID_ZOEKEN', 'zoeken' );
@@ -58,8 +58,8 @@ if ( $flavor_select == "OD" ) {
 	add_action( 'init', array( 'ICTUWP_GC_OD_registerposttypes', 'init' ), 1 );
 }
 
-
-require_once( __DIR__ . '/plugin-activatie/kennisbank.php' );
+// include file for all must-use plugins
+require_once( __DIR__ . '/plugin-activatie/must-use-plugins.php' );
 
 
 //========================================================================================================
@@ -82,6 +82,8 @@ require_once( get_template_directory() . '/gutenberg-blocks/spotlight-block.php'
 require_once( get_template_directory() . '/gutenberg-blocks/rijksvideo-block.php' );
 require_once( get_template_directory() . '/gutenberg-blocks/teaser-block.php' );
 
+// TODO: het block voor de handleiding zou alleen beschikbaar voor pagina's met het template 'template-od-handleiding.php'
+require_once( get_template_directory() . '/gutenberg-blocks/handleiding-block.php' );
 
 /**
  * Load other dependencies such as VAR DUMPER :D
@@ -466,22 +468,21 @@ class GebruikerCentraalTheme extends Timber\Site {
 		add_theme_support( 'editor-color-palette', $colors_editor );
 
 		// options for font size: off!
-		add_theme_support('disable-custom-font-sizes');
+		add_theme_support( 'disable-custom-font-sizes' );
 
 		// forces the dropdown for font sizes to only contain "normal"
-		add_theme_support('editor-font-sizes', array(
+		add_theme_support( 'editor-font-sizes', array(
 			array(
-				'name'  => __( 'Larger', 'gctheme' ),
+				'name' => __( 'Larger', 'gctheme' ),
 				'size' => 24,
 				'slug' => 'larger'
 			),
 			array(
-				'name'  => __( 'Extra large', 'gctheme' ),
+				'name' => __( 'Extra large', 'gctheme' ),
 				'size' => 32,
 				'slug' => 'extra-large'
 			)
 		) );
-
 
 
 	}
@@ -680,7 +681,8 @@ class GebruikerCentraalTheme extends Timber\Site {
 					$allowed_templates["template-overzicht-tipgevers.php"] = "[OD] Overzicht alle tipgevers";
 					$allowed_templates["template-alle-tips.php"]           = "[OD] Overzicht alle tips";
 					$allowed_templates["template-tips.php"]                = "[OD] Template tips-pagina";
-					$allowed_templates["template-od-home.php"]                = "[OD] Template Home";
+					$allowed_templates["template-od-home.php"]             = "[OD] Template Home";
+					$allowed_templates["template-od-handleiding.php"]      = "[OD] Template Handleiding";
 
 					break;
 
@@ -1029,6 +1031,14 @@ function append_block_wrappers( $block_content, $block ) {
 		$content .= '</div>';
 
 		return $content;
+	} elseif ( $block['blockName'] === 'acf/gc-handleiding' ) {
+		global $handleidingcounter;
+		$handleidingcounter++;
+		$content = '<li class="manual-item manual-item--item-' . $handleidingcounter . '">';
+		$content .= $block_content;
+		$content .= '</li>';
+
+		return $content;
 		/*
 	} elseif ( $block['blockName'] ) {
 		$content = '<div style="border-top: 1px solid #dadada;">';
@@ -1114,10 +1124,12 @@ function gc_restrict_gutenberg_blocks( $allowed_blocks ) {
 		'core-embed/youtube',
 		'core-embed/vimeo',
 
+		'acf/gc-ctalink',
+		'acf/gc-downloads',
+		'acf/gc-handleiding',
 		'acf/gc-links',
 		'acf/gc-related',
-		'acf/gc-downloads',
-		'acf/gc-ctalink',
+		'acf/gc-rijksvideo',
 		'acf/gc-textimage'
 
 
@@ -1125,21 +1137,32 @@ function gc_restrict_gutenberg_blocks( $allowed_blocks ) {
 
 }
 
-//add_filter( 'allowed_block_types', 'gc_restrict_gutenberg_blocks' );
+add_filter( 'allowed_block_types', 'gc_restrict_gutenberg_blocks' );
 
 //========================================================================================================
 
-add_filter('acf/fields/relationship/result', 'my_acf_fields_relationship_result', 10, 4);
+add_filter( 'acf/fields/relationship/result', 'my_acf_fields_relationship_result', 10, 4 );
 
 function my_acf_fields_relationship_result( $text, $post, $field, $post_id ) {
 
 	if ( GC_TIP_CPT === get_post_type( $post ) ) {
 		$tipnummer = get_field( 'tip-nummer', $post->ID );
-		$text     = sprintf( _x( 'Tip %s', 'Label tip-nummer', 'gctheme' ), $tipnummer ). ' - ' . $text;
+		$text      = sprintf( _x( 'Tip %s', 'Label tip-nummer', 'gctheme' ), $tipnummer ) . ' - ' . $text;
 	}
 
 	return $text;
 }
+
+//========================================================================================================
+
+function tipgever_archive_modify_query( $query ) {
+	if ( ( $query->is_main_query() ) && ( is_tax( 'tipgever' ) ) ) {
+		// geen pagination voor tipgevers overzichten
+		$query->set( 'posts_per_page', - 1 );
+	}
+}
+
+add_action( 'pre_get_posts', 'tipgever_archive_modify_query' );
 
 //========================================================================================================
 

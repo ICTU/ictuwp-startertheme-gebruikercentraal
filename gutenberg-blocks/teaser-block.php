@@ -21,10 +21,11 @@ function teaser_block_get_data() {
 
 			$item = [];
 
-			$item['title']  = get_sub_field( 'home_template_teaser_title' );
-			$item['descr']  = get_sub_field( 'home_template_teaser_text' );
-			$link_primary   = get_sub_field( 'link_primary' );
-			$link_secondary = get_sub_field( 'link_secondary' );
+			$item['title']    = get_sub_field( 'home_template_teaser_title' );
+			$item['title_id'] = sanitize_title( $item['title'] );
+			$item['descr']    = get_sub_field( 'home_template_teaser_text' );
+			$link_primary     = get_sub_field( 'link_primary' );
+			$link_secondary   = get_sub_field( 'link_secondary' );
 			if ( $link_primary ) {
 				$item['link_primary']['url']  = $link_primary['url'];
 				$item['link_primary']['text'] = $link_primary['title'];
@@ -39,7 +40,6 @@ function teaser_block_get_data() {
 		endwhile;
 
 	else:
-		$return['inhoud'] = "In de instellingen voor dit block, kies: <br>'<em>Ja, voeg spotlightblok toe</em>' en selecteer een of twee blokken";
 
 	endif;
 
