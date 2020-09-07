@@ -883,16 +883,26 @@ add_action( 'customize_register', 'gc2020_customize_register' );
 /**
  *  Dequeue unwanted CSS from plugins
  */
+
+add_action( 'wp_enqueue_scripts', 'gc_ho_dequeue_css', 999 );
+
 function gc_ho_dequeue_css() {
 	wp_dequeue_style( 'minerva-kb/css' );
+
+	if(is_plugin_active('ictuwp-plugin-rijksvideo/ictuwp-plugin-rijksvideo.php')) {
+		wp_dequeue_script('rhswp_video_collapsible');
+		wp_dequeue_style( 'rhswp-frontend');
+	}
+
 
 	// Add kennisbank CSS if subsite is kennisbank
 	if(get_current_blog_id() === 3){
 		wp_enqueue_style ('gc-kennisbank-style', get_template_directory_uri().'/flavors/kennisbank/assets/css/gc-kennisbank.css');
 	}
+
 }
 
-add_action( 'wp_enqueue_scripts', 'gc_ho_dequeue_css', 999 );
+
 
 
 

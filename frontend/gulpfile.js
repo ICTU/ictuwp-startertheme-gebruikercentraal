@@ -132,7 +132,7 @@ function makeSprites(done) {
 }
 
 function js(done) {
-  del(['../assets/js/main.js'], {force: true});
+  del(['../assets/js/*.js'], {force: true});
 
   gulp.src('../assets/js/components/*.js')
     .pipe(concat('main.js'))
@@ -147,7 +147,7 @@ function js(done) {
     }))
     .pipe(sourcemaps.write())
     .pipe(gulp.dest('../assets/js'))
-    .pipe(notify({message: 'Theme JS Task complete'}));
+    .pipe(notify({message: 'JS Task complete'}));
 
   done();
 }
@@ -201,10 +201,8 @@ function prod(done) {
     console.log(siteConfig.path + 'scss');
     done();
   }
-
-
-
 }
+
 
 function cleanCSS(done){
 
@@ -269,7 +267,7 @@ function watch() {
 
   // Watch flavor from siteconfog
   gulp.watch(siteConfig.path + 'scss/**/*.scss', styles);
-  gulp.watch('js/components/*.js', js);
+  gulp.watch('../assets/js/components/*.js', js);
 
   gulp.watch('../assets/images/icons/*.svg', gulp.series(makeFont, styles));
 

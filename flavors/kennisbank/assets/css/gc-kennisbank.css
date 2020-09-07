@@ -124,6 +124,9 @@
 .has-od-orange-background-color {
   background-color: #BA4F0C; }
 
+/*
+ * Vars for the video
+ */
 .page-content {
   background: #f2ebe4; }
   .page-content .content {
@@ -426,5 +429,3 @@
   color: #777;
   font-size: 0.9em;
   margin-top: 0.5em; }
-
-/*# sourceMappingURL=gc-kennisbank.css.map */

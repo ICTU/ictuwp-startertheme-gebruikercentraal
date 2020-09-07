@@ -8,7 +8,7 @@
 }
 
 .video__video {
-//  @include gc-box-shadow();
+  //  @include gc-box-shadow();
   position: relative;
 
   img {
@@ -31,7 +31,7 @@
 }
 
 .video__play {
-  background :$gc-dark-blue;
+  background: $gc-dark-blue;
   padding: 1.5rem 2rem;
   border: none;
   color: $white;
@@ -82,71 +82,165 @@
 
 
 // extra styling voor rijksvideo plugin
-.video__video {
 
-  box-shadow: none; // ja sorry
+
+.video__video {
+  position: relative;
+  background: $video_bg;
+  border-bottom: .1rem solid $gc-pantybrown;
+  z-index: 40;
+
+  //box-shadow: none; // ja sorry,
+  // Gewoon ontwerp kijken of bespreken:)
 
   .mejs-container {
     width: 100%;
   }
 
-  .collapsible {
-    padding: 1rem 1.5rem 2rem 1.5rem;
+  .block-audio-video {
+    display: flex;
+    flex-wrap: wrap;
   }
 
-  .collapsetoggle,
+  .mejs-video {
+    width: 100%;
+    @include gc-box-shadow();
+  }
+
+  .collapsetoggle button {
+    @include icon(before, subtitle);
+    background: none;
+    border: none;
+    color: $video_btn_color;
+    background: $video_btn_bg;
+    height: 3rem;
+    padding: .8rem 1.5rem .8rem 1rem;
+    font-size: $font_small;
+    font-family: $font-primary-semi;
+
+    &:before {
+      color: $video_btn_icon_color;
+      float: left;
+      margin: .1rem 1rem 0 0;
+    }
+
+    &:focus, &:hover {
+      text-decoration: underline;
+    }
+
+    &[aria-expanded='true'] {
+      background: $video_btn_active_bg;
+
+      &:before {
+        color: $video_btn_active_icon_color;
+      }
+    }
+  }
+
+  .downloads {
+    .collapsetoggle button {
+      @include icon(before, download);
+    }
+  }
+
   .collapsible {
-    background: white;
-    text-align: left;
+    @include gc-box-shadow();
+    position: absolute;
+    z-index: 90;
+    background: $white;
     color: $base-font-color;
+    font-size: $base-font-size;
+    line-height: $base-line-height;
+    text-align: left;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    padding: 2rem;
 
-    button {
-      background: white;
-      border: 2px solid white;
-      width: 100%;
-      font-family: $base-heading-font;
-      color: $base-heading-color;
-      font-size: $base-h4-size;
-      line-height: $base-h4-line-height;
-      padding: .5rem 1rem;
-      text-align: left;
+    @include bp-up(md){
+      padding: 3rem 4rem;
+    }
 
-      &:after {
-        content: ' ';
-        background-image: url('/wp-content/themes/ictuwp-theme-gc2020/assets/images/icons/arrow.svg');
-        background-repeat: no-repeat;
-        background-size: contain;
-        background-position: center center;
-        display: block;
-        float: right;
-        height: 1.75rem;
-        width: 1.75rem;
-        transform: rotate(90deg);
-        margin-top: .5rem;
-      }
-      &[aria-expanded="true"] {
-        &:after {
-          transform: rotate(270deg);
-        }
-      }
+    p {
+      padding: 0;
+    }
+  }
 
-      &:hover {
+  .download {
+    @include icon(before, download);
+    position: relative;
+    padding-left: 2rem;
+    padding-top: 1rem;
+
+    a {
+      display: block;
+      font-family: $font-primary-semi;
+
+      &:hover, &:focus {
         text-decoration: underline;
       }
 
+      .meta {
+        text-decoration: none;
+        display: block;
+        color: $meta-data;
+        font-size: $font-small;
+        font-family: $font-primary;
+      }
     }
 
-    p, li {
-      font-size: 1.8rem;
-    }
-    li {
-      text-decoration: underline;
-    }
-    p {
-      padding: 0 1rem;
-      margin: 0 0 .5rem;
+    &:before {
+      position: absolute;
+      left: 0;
+      top: 1.5rem;
+      color: $color-primary;
     }
 
+    + .download {
+      border-top: .1rem solid $border-color;
+      margin-top: 1rem;
+    }
   }
 }
 
+//Override
+.video__video {
+  .mejs-container .mejs-controls {
+    background: $video_bg;
+  }
+}
+
+
+// overlay
+
+.site-container {
+  &:before {
+    content: " ";
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 0;
+    opacity: 0;
+    background: rgba($gc_darkest-blue, 0.6);
+    z-index: 0;
+    transition: opacity .5s;
+    transition-delay: .1s;
+  }
+
+  &.show-overlay {
+
+    &:before {
+      width: 100vw;
+      height: 100vh;
+      z-index: 6;
+      opacity: 1;
+    }
+
+    .video__video {
+      position: relative;
+      z-index: 50;
+    }
+  }
+}
