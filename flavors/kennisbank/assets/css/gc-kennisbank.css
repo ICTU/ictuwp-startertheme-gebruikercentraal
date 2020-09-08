@@ -157,11 +157,7 @@
     margin-bottom: 0; }
 
 .kb-search {
-<<<<<<< HEAD
-  border-bottom: 0.1rem solid #D1DFE3;
-=======
   border-bottom: 0.2rem solid #D1DFE3;
->>>>>>> tamara-dev
   padding-bottom: 2rem;
   margin-bottom: 2rem; }
   @media (min-width: 700px) {
@@ -430,9 +426,6 @@
   font-size: 0.9em;
   margin-top: 0.5em; }
 
-<<<<<<< HEAD
-/*# sourceMappingURL=gc-kennisbank.css.map */
-=======
 .mkb-columns {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -646,4 +639,3 @@ button[type='reset'] + p {
   @media (min-width: 700px) {
     button[type='reset'] + p {
       margin-top: 5rem; } }
->>>>>>> tamara-dev
