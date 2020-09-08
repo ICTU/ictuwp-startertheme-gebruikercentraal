@@ -895,12 +895,11 @@ add_action( 'wp_enqueue_scripts', 'gc_ho_dequeue_css', 999 );
 function gc_ho_dequeue_css() {
 	wp_dequeue_style( 'minerva-kb/css' );
 
-	if ( ! function_exists( 'is_plugin_active' ) ) {
+	include_once('wp-admin/includes/plugin.php');
 
 	if(is_plugin_active('ictuwp-plugin-rijksvideo/ictuwp-plugin-rijksvideo.php')) {
 		wp_dequeue_script('rhswp_video_collapsible');
 		wp_dequeue_style( 'rhswp-frontend');
-	}
 	}
 
 	// Add kennisbank CSS if subsite is kennisbank
