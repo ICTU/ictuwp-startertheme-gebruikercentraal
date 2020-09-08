@@ -10,7 +10,7 @@
 
 .kb-header {
   @include ho-make-container($max-width-inner);
-  text-align: center;
+  text-align: left;
   padding: 0 !important;
 
   .mkb-content-main--search & {
@@ -28,16 +28,22 @@
   }
 }
 
-.kb-search__title {
-  font-size: $base-h1-size !important;
-  line-height: $base-h1-line-height;
-  font-family: $font-secondary;
-  color: $base-font-color !important;
+.kb-search {
+  border-bottom: .1rem solid $border-color;
+  padding-bottom: 2rem;
+  margin-bottom: 2rem;
 
-  @include bp-up(lg) {
-    font-size: 6.8rem !important;
-    line-height: 6.8rem;
+  @include bp-up(md){
+    padding-bottom: 3rem;
+    margin-bottom: 3rem;
   }
+}
+
+.kb-search__title {
+  font-size: $base-font-size !important;
+  line-height: $base-line-height !important;
+  color: $base-font-color !important;
+  font-family: $font-primary-bold;
 
   + form {
     margin-top: 0;
@@ -47,3 +53,11 @@
 .kb-search__tip {
   color: $meta-data !important;
 }
+
+
+.mkb-section-title {
+  @include gc-section-header;
+  color: $base-font-color !important;
+}
+
+mkb-home-topics mkb-columns mkb-columns-2 mkb-container

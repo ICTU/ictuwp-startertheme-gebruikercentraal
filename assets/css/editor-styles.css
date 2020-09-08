@@ -2514,7 +2514,8 @@
     display: -ms-flexbox;
     display: flex;
     -ms-flex-wrap: wrap;
-        flex-wrap: wrap; }
+        flex-wrap: wrap;
+    padding-bottom: 0; }
   .video__video .mejs-video {
     width: 100%;
     -webkit-box-shadow: 0.4rem 0.4rem 0 rgba(0, 0, 0, 0.15);
@@ -2734,3 +2735,5 @@ h2, h3, h4, h5 {
     min-height: 5.5rem; }
     .download-box--with-descr .meta-data {
       width: auto; }
+
+/*# sourceMappingURL=editor-styles.css.map */
