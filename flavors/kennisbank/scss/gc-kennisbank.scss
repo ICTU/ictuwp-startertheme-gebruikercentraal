@@ -7,7 +7,10 @@
 
 @import "../../../scss/abstracts/variables";
 @import "../../../scss/abstracts/mixins";
+@import "../../../scss/abstracts/icons";
 
 
-@import "components/kb_layout";
-@import "components/kb_search";
+@import "components/kb-layout";
+@import "components/kb-search";
+@import "components/kb-overview";
+@import "components/kb-single";

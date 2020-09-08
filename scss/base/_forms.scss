@@ -14,6 +14,7 @@ input[type="text"],
 input[type="email"],
 input[type="password"],
 input[type="file"],
+input[type="url"],
 input[type="date"],
 select, textarea {
   box-sizing: border-box;
@@ -58,7 +59,8 @@ textarea {
 }
 
 
-input[type='submit']{
+input[type='submit'],
+button[type='submit']{
   @include gc-box-shadow();
   background: $submit-bg;
   border: none;
@@ -81,9 +83,32 @@ input[type='submit']{
     font-size: $btn-font-size-lg;
   }
 
-  &:hover {
+  &:hover, &:focus{
     background-color: $submit-hover-bg;
   }
+}
+
+button[type='reset'] {
+  background: none;
+  border: none;
+  cursor: pointer;
+  -webkit-appearance: none;
+  text-transform: uppercase;
+  font-family: $button-font;
+  font-size: $btn-font-size-sm;
+  color: $base-font-color;
+
+  @include bp-up(md){
+    font-size: $btn-font-size-lg;
+  }
+
+  &:hover, &:focus{
+    text-decoration: underline;
+  }
+}
+
+button[type='submit'] + button[type='reset'] {
+  margin-left: 2rem;
 }
 
 .form-item--checkbox {

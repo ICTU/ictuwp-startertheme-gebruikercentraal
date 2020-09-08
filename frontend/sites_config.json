@@ -15,7 +15,7 @@
     "dest": "../flavors/optimaaldigitaal/assets/",
     "proxy": "gebruikercentraal.test/optimaaldigitaal"
   },
-  "kennisbank": {
+  "kb": {
     "name": "Kennisbank",
     "shortname": "kb",
     "absfolder": "/wp-content/themes/ictuwp-theme-gc2020/",
