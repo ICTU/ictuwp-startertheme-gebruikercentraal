@@ -1,0 +1,122 @@
+.mkb-single {
+  .content {
+    padding-bottom: 0;
+  }
+}
+
+.post-type-kb {
+  .article-header-image {
+    @include gc-add-rotated();
+    margin: -3rem -2rem 3rem -2rem;
+
+    @include bp-up(lg) {
+      margin-top: -7rem;
+      margin-left: -3rem;
+      margin-right: -3rem;
+    }
+
+    img {
+      width: 100%;
+      height: auto;
+    }
+  }
+
+  .article-content {
+    @include ho-make-container($max-width-inner);
+  }
+}
+
+.blog-author {
+  color: $meta-data;
+  font-size: $font-smaller;
+}
+
+.mkb-article-header {
+  border-top: .1rem solid $border-color;
+  margin-top: 3rem;
+  padding-top: 3rem;
+}
+
+.mkb-anchors-list__title {
+  font-family: $font-primary-bold;
+}
+
+.mkb-anchors-list__container {
+  @include gc-fancy-list();
+  margin-top: 2rem;
+}
+
+.mkb-anchor {
+  display: flex;
+}
+
+.section--heading {
+  border-top: .2rem solid $border-color;
+  padding-top: 2rem;
+}
+
+.mkb-back-to-top {
+  font-size: $font-small;
+  margin-left: auto;
+  margin-top: .5rem;
+
+  .fa {
+    color: $gc-icon-color;
+    display: inline-block;
+    margin-left: 1.5rem;
+  }
+}
+
+.comment-box {
+  @include negate-padding;
+  @include ho-padding;
+  @include gc-bg-rotated();
+
+  &:before {
+    z-index: -1;
+  }
+
+  > div {
+    @include ho-make-container($max-width-inner);
+    position: relative;
+  }
+
+  .comments {
+    border-top: .2rem solid $border-color;
+    margin-top: 3rem;
+    padding-top: 3rem;
+
+    h3 {
+      @include gc-section-heading;
+    }
+  }
+}
+
+
+
+.comment-form {
+  display: block;
+  margin-top: 3rem;
+
+  label {
+    margin-bottom: 1.5rem;
+    display: block;
+  }
+
+  .comment-form {
+    margin-top: 1.5rem;
+  }
+}
+
+
+ button[type='reset'] + p {
+   font-size: $font-small;
+   color: $meta-data;
+   border-top: .1rem solid $border-color;
+   margin-top: 2rem;
+   padding-top: 1rem;
+
+   @include bp-up(md) {
+     margin-top: 5rem;
+   }
+}

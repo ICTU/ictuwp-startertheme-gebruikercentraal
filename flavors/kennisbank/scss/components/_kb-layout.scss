@@ -29,7 +29,11 @@
 }
 
 .kb-search {
+<<<<<<< HEAD:flavors/kennisbank/scss/components/_kb_layout.scss
   border-bottom: .1rem solid $border-color;
+=======
+  border-bottom: .2rem solid $border-color;
+>>>>>>> tamara-dev:flavors/kennisbank/scss/components/_kb-layout.scss
   padding-bottom: 2rem;
   margin-bottom: 2rem;
 
@@ -59,5 +63,8 @@
   @include gc-section-header;
   color: $base-font-color !important;
 }
+<<<<<<< HEAD:flavors/kennisbank/scss/components/_kb_layout.scss
 
 mkb-home-topics mkb-columns mkb-columns-2 mkb-container
+=======
+>>>>>>> tamara-dev:flavors/kennisbank/scss/components/_kb-layout.scss

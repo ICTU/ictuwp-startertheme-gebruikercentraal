@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /*
  * CSS flavor voor Kennisbank
  * Author: Tamara, Mark, Paul
@@ -127,6 +128,13 @@
 /*
  * Vars for the video
  */
+@font-face {
+  font-family: "icons";
+  src: url("/wp-content/themes/ictuwp-theme-gc2020/assets/fonts/iconfont/gc-iconfont-9syv7s.eot");
+  src: url("/wp-content/themes/ictuwp-theme-gc2020/assets/fonts/iconfont/gc-iconfont-9syv7s.eot?#iefix") format("eot"), url("/wp-content/themes/ictuwp-theme-gc2020/assets/fonts/iconfont/gc-iconfont-9syv7s.woff") format("woff"), url("/wp-content/themes/ictuwp-theme-gc2020/assets/fonts/iconfont/gc-iconfont-9syv7s.ttf") format("truetype"), url("/wp-content/themes/ictuwp-theme-gc2020/assets/fonts/iconfont/gc-iconfont-9syv7s.svg#icons") format("svg");
+  font-weight: normal;
+  font-style: normal; }
+
 .page-content {
   background: #f2ebe4; }
   .page-content .content {
@@ -149,7 +157,11 @@
     margin-bottom: 0; }
 
 .kb-search {
+<<<<<<< HEAD
   border-bottom: 0.1rem solid #D1DFE3;
+=======
+  border-bottom: 0.2rem solid #D1DFE3;
+>>>>>>> tamara-dev
   padding-bottom: 2rem;
   margin-bottom: 2rem; }
   @media (min-width: 700px) {
@@ -418,4 +430,220 @@
   font-size: 0.9em;
   margin-top: 0.5em; }
 
+<<<<<<< HEAD
 /*# sourceMappingURL=gc-kennisbank.css.map */
+=======
+.mkb-columns {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  margin-left: -1.5rem;
+  margin-right: -1.5rem; }
+  .mkb-columns .mkb-row {
+    margin: 3rem 1.5rem 0;
+    width: calc(100% - 3rem); }
+    .mkb-columns .mkb-row .kb-topic + .kb-topic {
+      border-top: 0.1rem solid #D1DFE3;
+      padding-top: 3rem;
+      margin-top: 3rem; }
+  @media (min-width: 560px) {
+    .mkb-columns-2 .mkb-row {
+      width: calc(50% - 3rem); } }
+
+.kb-topic__title {
+  color: #004152 !important;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end; }
+  .kb-topic__title a {
+    color: #004152 !important; }
+
+.kb-topic__count {
+  background: #148839 !important;
+  color: #fff !important;
+  font-size: 1.2rem;
+  padding: 0 1rem;
+  line-height: 2.4rem;
+  display: inline-block;
+  margin: 0 0 .5rem 1rem; }
+
+.kb-topic__articles ul {
+  margin: 1.5rem 0 0;
+  padding: 0; }
+  .kb-topic__articles ul li {
+    position: relative;
+    list-style: none;
+    padding-left: 2.5rem;
+    margin-top: .5rem; }
+    .kb-topic__articles ul li:before {
+      content: "";
+      font-style: normal;
+      font-weight: normal;
+      font-family: 'icons'; }
+    .kb-topic__articles ul li:before {
+      color: #148839;
+      font-size: 1.1rem;
+      position: absolute;
+      left: 0;
+      top: 0; }
+
+.mkb-single .content {
+  padding-bottom: 0; }
+
+.post-type-kb .article-header-image {
+  position: relative;
+  overflow: hidden;
+  margin: -3rem -2rem 3rem -2rem; }
+  .post-type-kb .article-header-image:after {
+    position: absolute;
+    content: " ";
+    display: block;
+    background: #fff;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 6rem;
+    -webkit-transform: rotate(1.5deg);
+            transform: rotate(1.5deg);
+    margin: 0 -3rem -3rem; }
+  @media (min-width: 1100px) {
+    .post-type-kb .article-header-image {
+      margin-top: -7rem;
+      margin-left: -3rem;
+      margin-right: -3rem; } }
+  .post-type-kb .article-header-image img {
+    width: 100%;
+    height: auto; }
+
+.post-type-kb .article-content {
+  max-width: 760px;
+  margin-left: auto;
+  margin-right: auto; }
+
+.blog-author {
+  color: #52757e;
+  font-size: 1.6rem; }
+
+.mkb-article-header {
+  border-top: 0.1rem solid #D1DFE3;
+  margin-top: 3rem;
+  padding-top: 3rem; }
+
+.mkb-anchors-list__title {
+  font-family: "montserratbold", Helvetica, Arial, sans-serif; }
+
+.mkb-anchors-list__container {
+  margin: 0;
+  padding: 0;
+  margin-top: 2rem; }
+  .mkb-anchors-list__container li {
+    list-style: none;
+    position: relative;
+    padding-left: 2.5rem; }
+    .mkb-anchors-list__container li:before {
+      content: "";
+      font-style: normal;
+      font-weight: normal;
+      font-family: 'icons'; }
+    .mkb-anchors-list__container li:before {
+      position: absolute;
+      left: 0;
+      top: .1rem;
+      color: #148839;
+      font-size: 1.2rem; }
+
+.mkb-anchor {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex; }
+
+.section--heading {
+  border-top: 0.2rem solid #D1DFE3;
+  padding-top: 2rem; }
+
+.mkb-back-to-top {
+  font-size: 1.4rem;
+  margin-left: auto;
+  margin-top: .5rem; }
+  .mkb-back-to-top .fa {
+    color: #4c2974;
+    display: inline-block;
+    margin-left: 1.5rem; }
+
+.comment-box {
+  margin-left: -2rem;
+  margin-right: -2rem;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  position: relative;
+  overflow: hidden;
+  z-index: 5;
+  padding-bottom: 5rem; }
+  @media (min-width: 560px) {
+    .comment-box {
+      margin-left: -3rem;
+      margin-right: -3rem; } }
+  @media (min-width: 560px) {
+    .comment-box {
+      padding-right: 3rem;
+      padding-left: 3rem; } }
+  @media (min-width: 700px) {
+    .comment-box {
+      padding-bottom: 8rem; } }
+  .comment-box:before {
+    position: absolute;
+    content: " ";
+    background: #f9f6f3;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: 0 -5rem -5rem;
+    top: 15rem;
+    -webkit-transform: rotate(2deg);
+            transform: rotate(2deg); }
+  .comment-box:before {
+    z-index: -1; }
+  .comment-box > div {
+    max-width: 760px;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative; }
+  .comment-box .comments {
+    border-top: 0.2rem solid #D1DFE3;
+    margin-top: 3rem;
+    padding-top: 3rem; }
+    .comment-box .comments h3 {
+      font-size: 3.2rem;
+      font-family: "league_gothicregular", Impact, Helvetica, Arial, sans-serif;
+      line-height: 36px; }
+      @media (min-width: 700px) {
+        .comment-box .comments h3 {
+          font-size: 4.2rem;
+          line-height: 44px; } }
+
+.comment-form {
+  display: block;
+  margin-top: 3rem; }
+  .comment-form label {
+    margin-bottom: 1.5rem;
+    display: block; }
+  .comment-form .comment-form {
+    margin-top: 1.5rem; }
+
+button[type='reset'] + p {
+  font-size: 1.4rem;
+  color: #52757e;
+  border-top: 0.1rem solid #D1DFE3;
+  margin-top: 2rem;
+  padding-top: 1rem; }
+  @media (min-width: 700px) {
+    button[type='reset'] + p {
+      margin-top: 5rem; } }
+>>>>>>> tamara-dev

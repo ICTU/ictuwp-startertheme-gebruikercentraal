@@ -415,6 +415,7 @@ input[type="text"],
 input[type="email"],
 input[type="password"],
 input[type="file"],
+input[type="url"],
 input[type="date"],
 select, textarea {
   -webkit-box-sizing: border-box;
@@ -435,6 +436,7 @@ select, textarea {
   input[type="email"]:focus,
   input[type="password"]:focus,
   input[type="file"]:focus,
+  input[type="url"]:focus,
   input[type="date"]:focus,
   select:focus, textarea:focus {
     -webkit-box-shadow: 0.4rem 0.4rem 0 rgba(37, 179, 75, 0.2);
@@ -458,7 +460,8 @@ select {
 textarea {
   min-height: 16rem; }
 
-input[type='submit'] {
+input[type='submit'],
+button[type='submit'] {
   -webkit-box-shadow: 0.4rem 0.4rem 0 rgba(0, 0, 0, 0.15);
           box-shadow: 0.4rem 0.4rem 0 rgba(0, 0, 0, 0.15);
   background: #148839;
@@ -478,10 +481,31 @@ input[type='submit'] {
   margin-top: 3rem;
   width: auto; }
   @media (min-width: 700px) {
-    input[type='submit'] {
+    input[type='submit'],
+    button[type='submit'] {
       font-size: 2.6rem; } }
-  input[type='submit']:hover {
+  input[type='submit']:hover, input[type='submit']:focus,
+  button[type='submit']:hover,
+  button[type='submit']:focus {
     background-color: #0b732c; }
+
+button[type='reset'] {
+  background: none;
+  border: none;
+  cursor: pointer;
+  -webkit-appearance: none;
+  text-transform: uppercase;
+  font-family: "league_gothicregular", Impact, Helvetica, Arial, sans-serif;
+  font-size: 2.2rem;
+  color: #004152; }
+  @media (min-width: 700px) {
+    button[type='reset'] {
+      font-size: 2.6rem; } }
+  button[type='reset']:hover, button[type='reset']:focus {
+    text-decoration: underline; }
+
+button[type='submit'] + button[type='reset'] {
+  margin-left: 2rem; }
 
 .form-item--checkbox {
   position: relative; }

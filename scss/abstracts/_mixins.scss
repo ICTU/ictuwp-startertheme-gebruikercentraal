@@ -276,6 +276,24 @@
   }
 }
 
+@mixin gc-add-rotated($bg: $white) {
+  position: relative;
+  overflow: hidden;
+
+  &:after {
+    position: absolute;
+    content: " ";
+    display: block;
+    background: $bg;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 6rem;
+    transform: rotate(1.5deg);
+    margin: 0 -3rem -3rem;
+  }
+}
+
 @mixin gc-section-heading() {
   font-size: 3.2rem;
   font-family: $font_secondary;
