@@ -100,6 +100,7 @@
   .block-audio-video {
     display: flex;
     flex-wrap: wrap;
+    padding-bottom: 0;
   }
 
   .mejs-video {
@@ -201,6 +202,8 @@
       margin-top: 1rem;
     }
   }
+
+
 }
 
 //Override
