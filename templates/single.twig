@@ -45,15 +45,17 @@
       {% endif %}
 
       <!-- comment box -->
-      <div class="comments-area">
+      <section>
         <!-- comments -->
-        <div class="comments">
+        <div class="comments-area">
           {% if post.comments %}
-            <h3>{{ __('Comments', 'gctheme') }}</h3>
-            {% for cmt in post.comments %}
-              {% include "comment.twig" with {comment:cmt} %}
-            {% endfor %}
-          {% endif %}
+            <h3 class="comments-title">{{ __('Comments', 'gctheme') }}</h3>
+            <ul class="comment-list">
+              {% for cmt in post.comments %}
+                {% include "comment.twig" with {comment:cmt} %}
+              {% endfor %}
+            </ul>
+            {% endif %}
         </div>
 
         {% if post.comment_status == "closed" %}
@@ -62,7 +64,7 @@
           <!-- comment form -->
           {% include "comment-form.twig" %}
         {% endif %}
-      </div>
+      </section>
     </article>
   </div><!-- /content-wrapper -->
 {% endblock %}
