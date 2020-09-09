@@ -903,7 +903,9 @@ function gc_ho_dequeue_css() {
 	}
 
 	// Add kennisbank CSS if subsite is kennisbank
-	if ( $flavor_select == "KB" ) {
+	$get_theme_option = get_option( 'gc2020_theme_options' );
+	$flavor_select    = $get_theme_option['flavor_select'];
+	if ( $flavor_select == "kb" ) {
 		wp_enqueue_style ('gc-kennisbank-style', get_template_directory_uri().'/flavors/kennisbank/assets/css/gc-kennisbank.css');
 	}
 
