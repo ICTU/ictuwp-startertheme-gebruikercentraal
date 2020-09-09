@@ -8,6 +8,12 @@
     <div class="comment-content">
       {{comment.comment_content|wpautop}}
     </div>
+    <div class="comment-meta commentmetadata">{{comment.date}}
+      <div class="reply">
+        <a rel="nofollow" class="comment-reply-link" href="#" data-commentid="#" data-postid="#" data-belowelement="#" data-respondelement="respond" aria-label="Antwoord Haas Ontwerp">Beantwoorden</a>
+      </div>
+
+    </div>
 
 		<!-- comment form -->
 		{% include "comment-form.twig" %}
