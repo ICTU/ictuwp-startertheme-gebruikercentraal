@@ -10,7 +10,7 @@
       {% endif %}
       <section class="article-content">
         <h1 class="article-h1">{{ post.title }}</h1>
-        <a href="{{ post.link }}">{{ _e('edit') }}</a>
+        <a href="{{ post.link }}">{{ __('edit', 'gctheme') }}</a>
         <p class="blog-author">
           <span>{{ __('by', 'gctheme') }}</span><a href="{{ post.author.path }}"> {{ post.author.name }} </a><span>&bull;</span>
           <time datetime="{{ post.date|date('Y-m-d H:i:s') }}">{{ post.date }}</time>
@@ -49,7 +49,7 @@
         <!-- comments -->
         <div class="comments">
           {% if post.comments %}
-            <h3>{{ __('comments', 'gctheme') }}</h3>
+            <h3>{{ __('Comments', 'gctheme') }}</h3>
             {% for cmt in post.comments %}
               {% include "comment.twig" with {comment:cmt} %}
             {% endfor %}

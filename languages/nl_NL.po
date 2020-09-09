@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Gebruiker Centraal (2020)\n"
-"POT-Creation-Date: 2020-09-09 15:34+0200\n"
-"PO-Revision-Date: 2020-09-09 15:36+0200\n"
+"POT-Creation-Date: 2020-09-09 15:38+0200\n"
+"PO-Revision-Date: 2020-09-09 15:39+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: nl_NL\n"
@@ -1526,10 +1526,8 @@ msgid "by"
 msgstr "geschreven door"
 
 #: templates/single.twig:52
-#, fuzzy
-#| msgid "Comment"
-msgid "comments"
-msgstr "Opmerking"
+msgid "Comments"
+msgstr "Reacties"
 
 #: templates/single.twig:60
 msgid "comments for this post are closed"
@@ -1574,3 +1572,8 @@ msgstr ""
 #. Template Name of the plugin/theme
 msgid "[OD] Template tips-pagina"
 msgstr ""
+
+#, fuzzy
+#~| msgid "Comment"
+#~ msgid "comments"
+#~ msgstr "Opmerking"
