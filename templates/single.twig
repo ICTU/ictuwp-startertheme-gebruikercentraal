@@ -45,7 +45,7 @@
       {% endif %}
 
       <!-- comment box -->
-      <section class="comment-box">
+      <div class="comments-area">
         <!-- comments -->
         <div class="comments">
           {% if post.comments %}
@@ -62,7 +62,7 @@
           <!-- comment form -->
           {% include "comment-form.twig" %}
         {% endif %}
-      </section>
+      </div>
     </article>
   </div><!-- /content-wrapper -->
 {% endblock %}
