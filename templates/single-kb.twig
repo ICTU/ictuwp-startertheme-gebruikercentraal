@@ -18,17 +18,11 @@
         </div>
       </header>
 
-      <section class="article-content">
-        <h1 class="article-h1"></h1>
-        <a href="{{ post.link }}">{{ __('edit', 'gctheme') }}</a>
-        <p class="blog-author">
-          <span>{{ __('by', 'gctheme') }}</span><a href="{{ post.author.path }}"> {{ post.author.name }} </a><span>&bull;</span>
-          <time datetime="{{ post.date|date('Y-m-d H:i:s') }}"></time>
-        </p>
-        <div class="article-body">
+
+        <div class="entry-content wrap">
           {{ post.content }}
         </div>
-      </section>
+     
 
       {% if related %}
         {% include 'sections/section-related.html.twig' with {
