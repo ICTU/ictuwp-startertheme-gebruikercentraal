@@ -49,7 +49,7 @@
         <!-- comments -->
         <div class="comments-area">
           {% if post.comments %}
-            <h3 class="comments-title">{{ __('Comments', 'gctheme') }} {{ post.get_comment_count( ) }}</h3>
+            <h3 class="comments-title">{{ __('Comments', 'gctheme') }} ({{ post.get_comment_count( ) }})</h3>
             <ul class="comment-list">
               {% for cmt in post.comments %}
                 {% include "comment.twig" with {comment:cmt} %}
