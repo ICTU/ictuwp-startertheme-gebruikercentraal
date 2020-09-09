@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 "Project-Id-Version: Gebruiker Centraal (2020)\n"
-"POT-Creation-Date: 2020-09-09 15:01+0200\n"
+"POT-Creation-Date: 2020-09-09 15:06+0200\n"
 "PO-Revision-Date: 2020-06-16 15:48+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -1470,6 +1470,30 @@ msgstr ""
 
 #: templates/comment-form.twig:12
 msgid "Name"
+msgstr ""
+
+#: templates/comment-form.twig:15
+msgid "Website"
+msgstr ""
+
+#: templates/comment-form.twig:19
+msgid "Comment"
+msgstr ""
+
+#: templates/comment-form.twig:20
+msgid "Leave a comment..."
+msgstr ""
+
+#: templates/comment-form.twig:24
+msgid "Send"
+msgstr ""
+
+#: templates/comment-form.twig:25
+msgid "Cancel"
+msgstr ""
+
+#: templates/comment-form.twig:26
+msgid "Your comment will be revised by the site if needed."
 msgstr ""
 
 #: templates/footer.twig:7
