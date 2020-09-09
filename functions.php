@@ -893,8 +893,6 @@ add_action( 'customize_register', 'gc2020_customize_register' );
 add_action( 'wp_enqueue_scripts', 'gc_ho_dequeue_css', 999 );
 
 function gc_ho_dequeue_css() {
-	wp_dequeue_style( 'minerva-kb/css' );
-
 	include_once('wp-admin/includes/plugin.php');
 
 	if(is_plugin_active('ictuwp-plugin-rijksvideo/ictuwp-plugin-rijksvideo.php')) {
