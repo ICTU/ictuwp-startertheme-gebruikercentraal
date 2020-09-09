@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 "Project-Id-Version: Gebruiker Centraal (2020)\n"
-"POT-Creation-Date: 2020-09-09 15:06+0200\n"
+"POT-Creation-Date: 2020-09-09 15:34+0200\n"
 "PO-Revision-Date: 2020-06-16 15:48+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -1464,6 +1464,10 @@ msgctxt "widget field name"
 msgid "Korte beschrijving van de site"
 msgstr ""
 
+#: templates/comment-form.twig:2
+msgid "Add comment"
+msgstr ""
+
 #: templates/comment-form.twig:9
 msgid "Email"
 msgstr ""
@@ -1513,6 +1517,18 @@ msgstr ""
 
 #: templates/single.twig:13
 msgid "edit"
+msgstr ""
+
+#: templates/single.twig:15
+msgid "by"
+msgstr ""
+
+#: templates/single.twig:52
+msgid "comments"
+msgstr ""
+
+#: templates/single.twig:60
+msgid "comments for this post are closed"
 msgstr ""
 
 #. Theme Name of the plugin/theme

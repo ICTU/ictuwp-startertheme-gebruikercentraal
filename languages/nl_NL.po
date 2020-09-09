@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Gebruiker Centraal (2020)\n"
-"POT-Creation-Date: 2020-09-09 15:06+0200\n"
-"PO-Revision-Date: 2020-09-09 15:07+0200\n"
+"POT-Creation-Date: 2020-09-09 15:34+0200\n"
+"PO-Revision-Date: 2020-09-09 15:36+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: nl_NL\n"
@@ -966,7 +966,7 @@ msgstr ""
 
 #: plugin-activatie/class-tgm-plugin-activation.php:2369
 msgid "Recommended"
-msgstr ""
+msgstr "Aanbevolen"
 
 #: plugin-activatie/class-tgm-plugin-activation.php:2385
 msgid "WordPress Repository"
@@ -974,35 +974,35 @@ msgstr ""
 
 #: plugin-activatie/class-tgm-plugin-activation.php:2388
 msgid "External Source"
-msgstr ""
+msgstr "Externe Bron"
 
 #: plugin-activatie/class-tgm-plugin-activation.php:2391
 msgid "Pre-Packaged"
-msgstr ""
+msgstr "Meegeleverd met thema"
 
 #: plugin-activatie/class-tgm-plugin-activation.php:2408
 msgid "Not Installed"
-msgstr ""
+msgstr "Niet geïnstalleerd"
 
 #: plugin-activatie/class-tgm-plugin-activation.php:2412
 msgid "Installed But Not Activated"
-msgstr ""
+msgstr "Geïnstalleerd maar niet geactiveerd"
 
 #: plugin-activatie/class-tgm-plugin-activation.php:2414
 msgid "Active"
-msgstr ""
+msgstr "Actief"
 
 #: plugin-activatie/class-tgm-plugin-activation.php:2420
 msgid "Required Update not Available"
-msgstr ""
+msgstr "Verplichte update niet beschikbaar"
 
 #: plugin-activatie/class-tgm-plugin-activation.php:2423
 msgid "Requires Update"
-msgstr ""
+msgstr "Update Vereist"
 
 #: plugin-activatie/class-tgm-plugin-activation.php:2426
 msgid "Update recommended"
-msgstr ""
+msgstr "Update aanbevolen"
 
 #. translators: 1: install status, 2: update status
 #: plugin-activatie/class-tgm-plugin-activation.php:2435
@@ -1047,19 +1047,19 @@ msgstr[1] ""
 #: plugin-activatie/class-tgm-plugin-activation.php:2575
 msgctxt "as in: \"version nr unknown\""
 msgid "unknown"
-msgstr ""
+msgstr "onbekend"
 
 #: plugin-activatie/class-tgm-plugin-activation.php:2583
 msgid "Installed version:"
-msgstr ""
+msgstr "Geïnstalleerde versie:"
 
 #: plugin-activatie/class-tgm-plugin-activation.php:2591
 msgid "Minimum required version:"
-msgstr ""
+msgstr "Minimaal vereiste versie:"
 
 #: plugin-activatie/class-tgm-plugin-activation.php:2603
 msgid "Available version:"
-msgstr ""
+msgstr "Beschikbare versie:"
 
 #: plugin-activatie/class-tgm-plugin-activation.php:2626
 msgid "No plugins to install, update or activate."
@@ -1464,6 +1464,12 @@ msgctxt "widget field name"
 msgid "Korte beschrijving van de site"
 msgstr ""
 
+#: templates/comment-form.twig:2
+#, fuzzy
+#| msgid "Comment"
+msgid "Add comment"
+msgstr "Opmerking"
+
 #: templates/comment-form.twig:9
 msgid "Email"
 msgstr "Emailadres"
@@ -1478,11 +1484,11 @@ msgstr ""
 
 #: templates/comment-form.twig:19
 msgid "Comment"
-msgstr "Opmerking"
+msgstr "Reactie"
 
 #: templates/comment-form.twig:20
 msgid "Leave a comment..."
-msgstr "Laat een opmerking achter..."
+msgstr "Laat een reactie achter..."
 
 #: templates/comment-form.twig:24
 msgid "Send"
@@ -1494,7 +1500,7 @@ msgstr "Annuleren"
 
 #: templates/comment-form.twig:26
 msgid "Your comment will be revised by the site if needed."
-msgstr "Het kan zijn dat je opmerking eerst beoordeeld moet worden."
+msgstr "Het kan zijn dat je reactie eerst beoordeeld moet worden."
 
 #: templates/footer.twig:7
 msgctxt "Title boven footer widgets"
@@ -1513,7 +1519,21 @@ msgstr ""
 
 #: templates/single.twig:13
 msgid "edit"
-msgstr ""
+msgstr "bewerken"
+
+#: templates/single.twig:15
+msgid "by"
+msgstr "geschreven door"
+
+#: templates/single.twig:52
+#, fuzzy
+#| msgid "Comment"
+msgid "comments"
+msgstr "Opmerking"
+
+#: templates/single.twig:60
+msgid "comments for this post are closed"
+msgstr "reacties voor dit bericht zijn gesloten"
 
 #. Theme Name of the plugin/theme
 msgid "Gebruiker Centraal (2020)"
