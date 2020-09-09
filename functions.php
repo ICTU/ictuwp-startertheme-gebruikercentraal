@@ -903,7 +903,7 @@ function gc_ho_dequeue_css() {
 	}
 
 	// Add kennisbank CSS if subsite is kennisbank
-	if(get_current_blog_id() === 3){
+	if ( $flavor_select == "KB" ) {
 		wp_enqueue_style ('gc-kennisbank-style', get_template_directory_uri().'/flavors/kennisbank/assets/css/gc-kennisbank.css');
 	}
 
