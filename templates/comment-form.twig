@@ -1,5 +1,5 @@
-<div class="comment-form">
-    <h3>{{ __('Add comment', 'gctheme') }}</h3>
+<div class="comment-respond">
+    <h3 id="reply-title" class="comment-reply-title">{{ __('Add comment', 'gctheme') }}</h3>
     <form class="comment-form" method="post" action="{{ site.site_url~'/wp-comments-post.php' }}">
         {% if  user %}
             <input type="hidden" name="email" value="{{ user.email }}">
@@ -9,9 +9,11 @@
             <label>{{ __('Email', 'gctheme') }}<br>
                 <input required name="email" type="email" id="email">
             </label>
-            <label>{{ __('Name', 'gctheme') }}<br>
-                <input required name="author" type="text">
-            </label>
+            <p class="comment-form author">
+              <label>{{ __('Name', 'gctheme') }}<br>
+                  <input required name="author" type="text">
+              </label>
+            </p>
             <label>{{ __('Website', 'gctheme') }}<br>
                 <input name="url" type="url">
             </label>
