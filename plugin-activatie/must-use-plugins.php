@@ -83,19 +83,19 @@ function gctheme_register_required_plugins() {
 				// If set, this callable will be be checked for availability to determine if a plugin is active.
 			],
 
-			array(
+			[
 				'name'             => 'advanced custom fields',
 				'slug'             => 'advanced-custom-fields',
 				'force_activation' => true,
-			);
+			],
 
 
-			array(
+			[
 				'name'             => 'Advanced custom fields pro',
 				'slug'             => 'advanced-custom-fields-pro',
 				'source' => 'https://connect.advancedcustomfields.com/index.php?a=download&p=pro&k=b3JkZXJfaWQ9NDY1Mzd8dHlwZT1kZXZlbG9wZXJ8ZGF0ZT0yMDE0LTEyLTE4IDA2OjAzOjIz',
 				'force_activation' => true,
-			);
+			],
 
 			// This is an example of how to include a plugin from an arbitrary external source in your theme.
 			//array(
