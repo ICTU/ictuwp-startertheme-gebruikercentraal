@@ -83,14 +83,14 @@ function gctheme_register_required_plugins() {
 				// If set, this callable will be be checked for availability to determine if a plugin is active.
 			],
 
-			$plugins[] = array(
+			array(
 				'name'             => 'advanced custom fields',
 				'slug'             => 'advanced-custom-fields',
 				'force_activation' => true,
 			);
 
 
-			$plugins[] = array(
+			array(
 				'name'             => 'Advanced custom fields pro',
 				'slug'             => 'advanced-custom-fields-pro',
 				'source' => 'https://connect.advancedcustomfields.com/index.php?a=download&p=pro&k=b3JkZXJfaWQ9NDY1Mzd8dHlwZT1kZXZlbG9wZXJ8ZGF0ZT0yMDE0LTEyLTE4IDA2OjAzOjIz',
