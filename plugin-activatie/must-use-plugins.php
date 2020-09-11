@@ -58,11 +58,10 @@ function gctheme_register_required_plugins() {
 	$get_theme_option = get_option( 'gc2020_theme_options' );
 	$flavor_select    = $get_theme_option['flavor_select'];
 	if ( $flavor_select == "KB" ) {
-		$plugins = [
+		$plugins[] = array(
 
 			// Load plugins for KB flavour.
-
-			[
+			
 				'name'               => 'Kennisbank plugin',
 				// The plugin name.
 				'slug'               => 'pressapps-knowledge-base',
@@ -81,21 +80,20 @@ function gctheme_register_required_plugins() {
 				// If set, overrides default API URL and points to an external URL.
 				'is_callable'        => '',
 				// If set, this callable will be be checked for availability to determine if a plugin is active.
-			],
+			);
 
-			[
+		$plugins[] = array(
 				'name'             => 'advanced custom fields',
 				'slug'             => 'advanced-custom-fields',
 				'force_activation' => true,
-			],
+		);
 
-
-			[
+		$plugins[] = array(
 				'name'             => 'Advanced custom fields pro',
 				'slug'             => 'advanced-custom-fields-pro',
 				'source' => 'https://connect.advancedcustomfields.com/index.php?a=download&p=pro&k=b3JkZXJfaWQ9NDY1Mzd8dHlwZT1kZXZlbG9wZXJ8ZGF0ZT0yMDE0LTEyLTE4IDA2OjAzOjIz',
 				'force_activation' => true,
-			],
+		);
 
 			// This is an example of how to include a plugin from an arbitrary external source in your theme.
 			//array(
@@ -134,7 +132,7 @@ function gctheme_register_required_plugins() {
 			//	'is_callable' => 'wpseo_init',
 			//),
 
-		];
+
 	} else {
 		// not KB
 		//		$plugins = [];
