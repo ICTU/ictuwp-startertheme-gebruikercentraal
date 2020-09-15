@@ -58,8 +58,8 @@ if ( $flavor_select == "OD" ) {
 	add_action( 'init', array( 'ICTUWP_GC_OD_registerposttypes', 'init' ), 1 );
 }
 
-
-require_once( __DIR__ . '/plugin-activatie/kennisbank.php' );
+// include file for all must-use plugins
+require_once( __DIR__ . '/plugin-activatie/must-use-plugins.php' );
 
 
 //========================================================================================================
@@ -81,7 +81,9 @@ require_once( get_template_directory() . '/gutenberg-blocks/links-block.php' );
 require_once( get_template_directory() . '/gutenberg-blocks/spotlight-block.php' );
 require_once( get_template_directory() . '/gutenberg-blocks/rijksvideo-block.php' );
 require_once( get_template_directory() . '/gutenberg-blocks/teaser-block.php' );
-// het block voor de handleiding is alleen beschikbaar voor pagina's met het template 'template-od-handleiding.php'
+
+// TODO: het block voor de handleiding zou alleen beschikbaar voor pagina's met het template 'template-od-handleiding.php'
+require_once( get_template_directory() . '/gutenberg-blocks/handleiding-block.php' );
 
 /**
  * Load other dependencies such as VAR DUMPER :D
@@ -379,6 +381,12 @@ class GebruikerCentraalTheme extends Timber\Site {
 		 * @link https://developer.wordpress.org/themes/functionality/featured-images-post-thumbnails/
 		 */
 		add_theme_support( 'post-thumbnails' );
+
+		/*
+		 * Enable excerpts for pages.
+		 *
+		 */
+		add_post_type_support( 'page', 'excerpt' );
 
 		/*
 		 * Switch default core markup for search form, comment form, and comments
@@ -878,6 +886,33 @@ function gc2020_customize_register( $wp_customize ) {
 add_action( 'customize_register', 'gc2020_customize_register' );
 
 
+/**
+ *  Dequeue unwanted CSS from plugins
+ */
+
+add_action( 'wp_enqueue_scripts', 'gc_ho_dequeue_css', 999 );
+
+function gc_ho_dequeue_css() {
+	include_once('wp-admin/includes/plugin.php');
+
+	if(is_plugin_active('ictuwp-plugin-rijksvideo/ictuwp-plugin-rijksvideo.php')) {
+		wp_dequeue_script('rhswp_video_collapsible');
+		wp_dequeue_style( 'rhswp-frontend');
+	}
+
+	// Add kennisbank CSS if subsite is kennisbank
+	$get_theme_option = get_option( 'gc2020_theme_options' );
+	$flavor_select    = $get_theme_option['flavor_select'];
+	if ( $flavor_select == "KB" ) {
+		wp_enqueue_style ('gc-kennisbank-style', get_template_directory_uri().'/flavors/kennisbank/assets/css/gc-kennisbank.css');
+	}
+
+}
+
+
+
+
+
 //========================================================================================================
 // ervoor zorgen dat specifieke Optimaal Digitaal-termen op de juiste manier afgebroken kunnen worden
 
@@ -1001,10 +1036,9 @@ add_action( 'admin_menu', 'rename_minervakb', 999 );
 
 function append_block_wrappers( $block_content, $block ) {
 	if ( $block['blockName'] === 'core/paragraph' ) {
-		$content = '<div class="section section--paragraph">';
-		$content .= $block_content;
-		$content .= '</div>';
-
+//		$content = '<div class="section section--paragraph">';
+		$content = $block_content;
+//		$content .= '</div>';
 		return $content;
 
 	} elseif ( $block['blockName'] === 'core/heading' ) {

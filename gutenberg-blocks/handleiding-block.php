@@ -60,7 +60,7 @@ function handleiding_block_get_data() {
 		$return['title']   = $gc_gt_handleiding_title;
 		$return['text']    = $gc_gt_handleiding_text;
 		$return['time']    = $gc_gt_handleiding_time;
-		$return['counter'] = '(xxx)';
+		$return['counter'] = 'Stap X';
 
 	}
 

@@ -11,7 +11,7 @@ function gb_add_rijksvideo_block() {
 		// register a testimonial block.
 		acf_register_block_type( [
 			'name'            => 'gc/rijksvideo',
-			'title'           => _x( 'GC Video', 'Block titel', 'gctheme' ),
+			'title'           => _x( 'GC Rijksvideo', 'Block titel', 'gctheme' ),
 			'description'     => _x( 'Tonen van een video in een apart block', 'Block description', 'gctheme' ),
 			'render_callback' => 'gb_render_rijksvideo_block',
 			'category'        => 'gc-blocks',

@@ -20,6 +20,12 @@
   margin-right: auto;
 }
 
+@mixin ho-make-container($mw: $max-width-content) {
+  max-width: $mw;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 @mixin ho-container-content() {
   max-width: $max-width-inner;
   margin-left: auto;
@@ -267,6 +273,24 @@
     margin: 0 -5rem -5rem;
     top: 15rem;
     transform: rotate(2deg);
+  }
+}
+
+@mixin gc-add-rotated($bg: $white) {
+  position: relative;
+  overflow: hidden;
+
+  &:after {
+    position: absolute;
+    content: " ";
+    display: block;
+    background: $bg;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 6rem;
+    transform: rotate(1.5deg);
+    margin: 0 -3rem -3rem;
   }
 }
 

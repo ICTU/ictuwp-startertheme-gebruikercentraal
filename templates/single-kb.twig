@@ -1,0 +1,75 @@
+{% extends "base.twig" %}
+
+{% block content %}
+
+    <article class="post-type-{{ post.post_type }}" id="post-{{ post.ID }}">
+      <header class="entry-header">
+        <span class="date-badge" itemprop="datePublished" content="{{ post.date|date('d-m-Y') }}">
+          <span class="date-badge__day">{{ post.date|date('d') }}</span>
+          <span class="date-badge__month">{{ post.date|date('M') }}</span>
+          <span class="date-badge__year visually-hidden">{{ post.date|date('y') }}</span>
+        </span>
+        <h1 class="entry-title">{{ post.title }}</h1>
+        <div class="meta-data">
+          <dl class="meta-data__list">
+            <dt class="visually-hidden">Auteur</dt>
+            <dd class="meta-data__item author">{{ post.author.name }}</dd>
+          </dl>
+        </div>
+      </header>
+
+
+        <div class="entry-content wrap">
+          {{ post.content }}
+        </div>
+
+
+      {% if related %}
+        {% include 'sections/section-related.html.twig' with {
+          'title': related.title,
+          'descr': related.desc,
+          'items': related.items
+        } %}
+      {% endif %}
+
+      {% if downloads %}
+        {% include 'sections/section-downloads.html.twig' with {
+          'title': downloads.title,
+          'descr': downloads.desc,
+          'items': downloads.items
+        } %}
+      {% endif %}
+
+      {% if links %}
+        {% include 'sections/section-links.html.twig' with {
+          'section_title': links.title,
+          'section_descr': links.desc,
+          'items': links.items
+        } %}
+      {% endif %}
+
+      <!-- comment box -->
+      <section>
+        <!-- comments -->
+        <div class="comments-area">
+          {% if post.comments %}
+            <h3 class="comments-title">{{ __('Comments', 'gctheme') }} ({{ post.get_comment_count( ) }})</h3>
+            <ul class="comment-list">
+              {% for cmt in post.comments %}
+                {% include "comment.twig" with {comment:cmt} %}
+              {% endfor %}
+            </ul>
+            {% endif %}
+        </div>
+
+        {% if post.comment_status == "closed" %}
+          <p>{{ __('comments for this post are closed', 'gctheme') }}</p>
+        {% else %}
+          <!-- comment form -->
+          {% include "comment-form.twig" %}
+        {% endif %}
+      </section>
+    </article>
+  <!-- /content-wrapper -->
+{% endblock %}
+

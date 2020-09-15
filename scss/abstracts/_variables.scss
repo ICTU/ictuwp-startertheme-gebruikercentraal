@@ -134,13 +134,13 @@ $input-hover-bg:           $white;
 
 
 // Submit
-
 $submit-bg:                $gc-a11y-green;
 $submit-hover-bg:          $gc-a11y-green-darker;
 $submit-color:             $white;
 $button-font:              $font-secondary;
 
-
+// Default color for icons
+$gc-icon-color:            $color-secondary;
 
 // Grid + Widths
 $breakpoints: (
@@ -165,46 +165,8 @@ $gutter-xsmall:           .5rem !default;
 
 @import "vars/btn";
 @import "vars/entry";
+@import "vars/gutenberg";
 @import "vars/stepchart";
 @import "vars/text-block";
-
-
-// Gutenberg color options
-// see editor-color-palette in functions.php
-// ---------------------------------------------
-$gc_gutenberg_colors:
-    ( white, $white ),
-    ( black, $black ),
-    ( gc_a11y-blue, $gc_a11y-blue ),
-    ( gc_blue, $gc_blue ),
-    ( gc_pantybrown_xlight, $gc_pantybrown_xlight ),
-    ( gc_pantybrown, $gc_pantybrown ),
-    ( gc-blue, $gc-blue ),
-    ( gc-cyan, $gc-cyan ),
-    ( gc-cyan, $gc-cyan ),
-    ( gc-dark-blue, $gc-dark-blue ),
-    ( gc-dark-purple, $gc-dark-purple ),
-    ( gc-green, $gc-green ),
-    ( gc-orange, $gc-orange ),
-    ( gc-pantybrown, $gc-pantybrown ),
-    ( gc-pink, $gc-pink ),
-    ( inc_a11y_orange, $inc_a11y_orange ),
-    ( inc_orange, $inc_orange ),
-    ( nlds_purplish, $nlds_purplish ),
-    ( od-orange-darker, $od-orange-darker ),
-    ( od-orange, $od-orange );
-
-
-// Color Options
-// ---------------------------------------------
-@each $name, $color in $gc_gutenberg_colors {
-
-  .has-#{$name}-color {
-    color: $color;
-  }
-
-  .has-#{$name}-background-color {
-    background-color: $color;
-  }
-}
+@import "vars/video";
 

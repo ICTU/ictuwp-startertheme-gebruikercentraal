@@ -31,6 +31,8 @@
   }
 
   @include bp-up(nav) {
+    min-width: 70%;
+
     span {
       display: block;
     }

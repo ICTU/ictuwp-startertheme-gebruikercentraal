@@ -1,0 +1,16 @@
+/*
+ * CSS flavor voor Kennisbank
+ * Author: Tamara, Mark, Paul
+ * Version: 5.0.3
+ *
+ */
+
+@import "../../../scss/abstracts/variables";
+@import "../../../scss/abstracts/mixins";
+@import "../../../scss/abstracts/icons";
+
+
+@import "components/kb-layout";
+@import "components/kb-search";
+@import "components/kb-overview";
+@import "components/kb-single";

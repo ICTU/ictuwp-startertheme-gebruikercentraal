@@ -1,0 +1,16 @@
+/*
+ * Vars for the video
+ */
+
+$video_bg:                  $gc-pantybrown-xlight !default;
+
+// Button
+$video_btn_bg:                   $gc-pantybrown-xlight !default;
+$video_btn_color:                $base_font_color !default;
+$video_btn_icon_color:           $meta-data !default;
+
+//Button active
+$video_btn_active_bg:            $white !default;
+$video_btn_hover_bg:             $video_btn_bg !default;
+$video_btn_active_color:         $base_font_color !default;
+$video_btn_active_icon_color:    $gc_green !default;

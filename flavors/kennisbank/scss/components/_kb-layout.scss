@@ -1,0 +1,61 @@
+// all importants is because minerva has loads of incredibly ugly inline styles.
+
+.page-content {
+  background: $gc-pantybrown-light;
+
+  .content {
+    @include gc-box-shadow();
+  }
+}
+
+.kb-header {
+  @include ho-make-container($max-width-inner);
+  text-align: left;
+  padding: 0 !important;
+
+  .mkb-content-main--search & {
+    margin-bottom: 2em;
+  }
+
+  .mkb-widget,
+  .widget & {
+    padding: 0;
+    margin: 0;
+  }
+
+  .elementor-widget-container & {
+    margin-bottom: 0;
+  }
+}
+
+.kb-search {
+  border-bottom: .2rem solid $border-color;
+  padding-bottom: 2rem;
+  margin-bottom: 2rem;
+
+  @include bp-up(md){
+    padding-bottom: 3rem;
+    margin-bottom: 3rem;
+  }
+}
+
+.kb-search__title {
+  font-size: $base-font-size !important;
+  line-height: $base-line-height !important;
+  color: $base-font-color !important;
+  font-family: $font-primary-bold;
+
+  + form {
+    margin-top: 0;
+  }
+}
+
+.kb-search__tip {
+  color: $meta-data !important;
+}
+
+
+.mkb-section-title {
+  @include gc-section-header;
+  color: $base-font-color !important;
+}

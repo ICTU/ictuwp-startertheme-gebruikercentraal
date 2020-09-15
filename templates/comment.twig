@@ -1,21 +1,20 @@
-<div class="blog-comment {{comment.comment_type}}" id="blog-comment-{{comment.ID}}">
-	<h5 class="comment-author">{{comment.author.name}} says</h5>
-	<div class="comment-content">{{comment.comment_content|wpautop}}</div>
+<li class="comment {{comment.comment_type}}" id="blog-comment-{{comment.ID}}">
 
-	<section class="comment-box">
+	<div class="comment-body">
+    <div class="comment-author vcard">
+      <cite class="fn">{{comment.author.name}}</cite>
+      <span class="says">{{ __('Says:', 'gctheme') }}</span>
+    </div>
+    <div class="comment-content">
+      {{comment.comment_content|wpautop}}
+    </div>
+    <div class="comment-meta commentmetadata">{{comment.date}}
+      <div class="reply">
+        <a rel="nofollow" class="comment-reply-link" href="#" data-commentid="#" data-postid="#" data-belowelement="#" data-respondelement="respond" aria-label="Antwoord Haas Ontwerp">Beantwoorden</a>
+      </div>
+
+    </div>
+
 		
-		<!-- comment form -->
-		{% include "comment-form.twig" %}
-
-		<!-- child comments -->
-		{% if post.comments %}
-			<h4> replies </h4>
-			<div class="comments">
-				{% for cmt in comment.children %}
-					{% include "comment.twig" with {comment:cmt} %}
-				{% endfor %}
-			</div>
-		{% endif %}
-
-	</section>
-</div>
+	</div>
+</li>
