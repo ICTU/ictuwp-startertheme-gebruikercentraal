@@ -11,12 +11,17 @@
 .entry--type-home {
 
   .page__intro {
+    border: 6px solid green;
     background: url('../images/b_home-top.svg') center top -25rem no-repeat;
     background-size: auto 101%;
     position: relative;
     text-align: center;
     max-width: none;
     box-shadow: none;
+
+  .section--video {
+    border: 6px solid black;
+  }
 
     &:before,
     &:after {

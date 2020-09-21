@@ -6546,6 +6546,7 @@ h1 {
             transform: rotate(180deg); } }
 
 .entry--type-home .page__intro {
+  border: 6px solid green;
   background: url("../images/b_home-top.svg") center top -25rem no-repeat;
   background-size: auto 101%;
   position: relative;
@@ -6553,6 +6554,8 @@ h1 {
   max-width: none;
   -webkit-box-shadow: none;
           box-shadow: none; }
+  .entry--type-home .page__intro .section--video {
+    border: 6px solid black; }
   .entry--type-home .page__intro:before, .entry--type-home .page__intro:after {
     position: absolute;
     display: block;
@@ -7044,3 +7047,5 @@ h1 {
   @media (min-width: 1100px) {
     .manual-item__content {
       padding: 4rem 5rem; } }
+
+/*# sourceMappingURL=od-theme.css.map */
