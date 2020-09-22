@@ -55,7 +55,7 @@ function rijksvideo_block_get_data() {
 
 	if ( $selecteer_een_video ):
 
-		$return['video']         = do_shortcode( '[rijksvideo id=' . $selecteer_een_video[0] . ']' );
+		$return['video']         = "\n<!-- START VIDEOBLOCK -->\n" . do_shortcode( '[rijksvideo id=' . $selecteer_een_video[0] . ']' ) . "\n<!-- END VIDEOBLOCK -->\n";
 
 	endif;
 
