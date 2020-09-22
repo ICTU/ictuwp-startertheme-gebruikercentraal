@@ -895,10 +895,24 @@ add_action( 'wp_enqueue_scripts', 'gc_ho_dequeue_css', 999 );
 function gc_ho_dequeue_css() {
 	include_once('wp-admin/includes/plugin.php');
 
+	/*
 	if(is_plugin_active('ictuwp-plugin-rijksvideo/ictuwp-plugin-rijksvideo.php')) {
 		wp_dequeue_script('rhswp_video_collapsible');
 		wp_dequeue_style( 'rhswp-frontend');
 	}
+	*/
+
+	// geen styling van events manager
+	wp_deregister_style( 'events-manager' );
+	wp_dequeue_style( 'events-manager' );
+
+	// of events manager pro
+	wp_deregister_style( 'events-manager-pro' );
+	wp_dequeue_style( 'events-manager' );
+
+	// geen css van newsletterplugin
+	wp_deregister_style( 'newsletter' );
+	wp_dequeue_style( 'newsletter-css' );
 
 	// Add kennisbank CSS if subsite is kennisbank
 	$get_theme_option = get_option( 'gc2020_theme_options' );
