@@ -154,6 +154,8 @@ function gctheme_register_required_plugins() {
 			'slug'     => 'events-manager',
 			'required' => false,
 		);
+		/*
+		 *
 		// And the Pro version for Events Manager plugin
 		$plugins[] = array(
 			'name'   => 'Events Manager Pro',
@@ -167,6 +169,8 @@ function gctheme_register_required_plugins() {
 			'slug'   => 'ictuwp-plugin-rijksvideo',
 			'source' => 'https://github.com/ICTU/ictuwp-plugin-rijksvideo/archive/main.zip',
 		);
+		 */
+
 		// The Rijksvideo plugin requires CMB2 fields (for now: Sept 1, 2020)
 		$plugins[] = array(
 			'name'             => 'cmb2',
