@@ -961,6 +961,18 @@ if ( ! function_exists( 'od_wbvb_custom_post_title' ) ) {
 		$replacement = 'evens&shy;gebeurtenis';
 		$title       = preg_replace( $pattern, $replacement, $title );
 
+		$pattern     = '/gemeenschapp/i';
+		$replacement = 'gemeen&shy;schap&shy;p';
+		$title       = preg_replace( $pattern, $replacement, $title );
+
+		$pattern     = '/kortetermijndoel/i';
+		$replacement = 'kortetermijn&shy;doel';
+		$title       = preg_replace( $pattern, $replacement, $title );
+
+		$pattern     = '/toptakenprincipe/i';
+		$replacement = 'toptaken&shy;principe';
+		$title       = preg_replace( $pattern, $replacement, $title );
+
 		return $title;
 
 	}
