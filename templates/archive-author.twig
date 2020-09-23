@@ -1,5 +1,6 @@
-{# This file demonstrates using most of the index.twig template and modifying
-   just a small part. See `search.twig` for an example of another approach #}
+{#
+display tipgever info or
+#}
 
 {% extends "archive.twig" %}
 
@@ -13,7 +14,6 @@
         <figure class="author__image">
           <img src="{{ author.image }}" class="author-photo photo avatar" alt="{{ author.title }}">
         </figure>
-
       {% endif %}
 
       <div class="author__content">
@@ -35,7 +35,6 @@
           <div class="author__contact-info">
 
             {% for key, link in author.contact %}
-
               {% set url = link %}
 
               {% if key == 'email' %}
@@ -45,7 +44,7 @@
               {% endif %}
 
               <a href="{{ url }}" class="link link--contact link--{{ key }}"
-                 title="E-mail adres van {{author.title}}">{{ link }}</a>
+                 title="E-mail adres van {{ author.title }}">{{ link }}</a>
 
             {% endfor %}
 
@@ -53,22 +52,28 @@
 
         {% endif %}
 
-          {% if author.social %}
+        {% if author.social %}
 
-            <ul class="social-links">
+          <ul class="social-links">
+            {% if author.social.linkedin %}
               <li class="social-links__item">
-                <a href="#" class="link link--social linkedin" title="Linked-In profiel van Gebruiker Centraal Auteur">Linked-In
-                  profiel van Gebruiker Centraal Auteur</a></li>
+                <a href="{{ author.social.linkedin }}" class="link link--social linkedin">{{ author.social.linkedin.linktext }}</a>
+              </li>
+            {% endif %}
+            {% if author.social.twitter %}
               <li class="social-links__item">
-                <a href="#" class="link link--social twitter" title="Twitter van Gebruiker Centraal Auteur">Twitter
+                <a href="{{ author.social.twitter }}" class="link link--social twitter" title="Twitter van Gebruiker Centraal Auteur">Twitter
                   van Gebruiker Centraal Auteur</a></li>
+            {% endif %}
+            {% if author.social.satansboek %}
               <li class="social-links__item">
-                <a href="#" class="link link--social facebook" title="Facebook van Gebruiker Centraal Auteur">Facebook
+                <a href="{{ author.social.satansboek }}" class="link link--social facebook" title="Facebook van Gebruiker Centraal Auteur">Facebook
                   van Gebruiker Centraal Auteur</a></li>
-            </ul>
+            {% endif %}
+          </ul>
 
-          {% endif %}
-        </div>
+        {% endif %}
+      </div>
 
     </section>
 
@@ -86,7 +91,7 @@
     {% endif %}
 
     <div class="grid grid--{{ overview.modifier ? overview.modifier : 'col-3' }}">
-      {% for post in posts %}
+      {% for post in overview.items %}
 
         {% set cat = '' %}
 
@@ -101,8 +106,10 @@
         {% include 'components/'~ template ~'.html.twig' with {
           'title': post.post_title,
           'nr': post.tip_nummer,
-          'category': cat,
-          'url': post.link
+          'category': post.cat,
+          'toptip': post.toptip,
+          'toptiptekst': post.toptiptekst,
+          'url': post.url
         } %}
 
       {% endfor %}
