@@ -163,9 +163,9 @@
     "location": [
         [
             {
-                "param": "post_type",
+                "param": "post_status",
                 "operator": "==",
-                "value": "tips"
+                "value": "request-failed"
             }
         ]
     ],
@@ -177,5 +177,5 @@
     "hide_on_screen": "",
     "active": true,
     "description": "",
-    "modified": 1598387641
+    "modified": 1600860531
 }
