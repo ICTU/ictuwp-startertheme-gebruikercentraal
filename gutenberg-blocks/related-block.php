@@ -85,7 +85,7 @@ function related_block_get_data() {
 
 						if ( $is_toptip ) {
 							$item['toptip']      = true;
-							$item['toptiptekst'] = 'Toptip';
+							$item['toptiptekst'] = _x( 'Toptip', 'Toptiptekst bij tip', 'gctheme' );
 						}
 
 						$taxonomie = get_the_terms( $post->ID, GC_TIPTHEMA );

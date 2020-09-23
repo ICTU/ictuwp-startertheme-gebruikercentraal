@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Gebruiker Centraal (2020)\n"
-"POT-Creation-Date: 2020-09-09 14:57+0200\n"
-"PO-Revision-Date: 2020-09-09 14:57+0200\n"
+"POT-Creation-Date: 2020-09-23 07:40+0200\n"
+"PO-Revision-Date: 2020-09-23 07:40+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: en_GB\n"
@@ -689,12 +689,13 @@ msgctxt "customizer"
 msgid "Kies het kleurenschema"
 msgstr "Select color scheme"
 
-#: functions.php:1025
+#: functions.php:1022
 msgid "GC Kennisbank"
 msgstr ""
 
-#: functions.php:1166 gutenberg-blocks/related-block.php:82
-#: taxonomy-tipgever.php:43 template-alle-tips.php:41
+#: functions.php:1164 gutenberg-blocks/related-block.php:82
+#: taxonomy-speelset.php:79 taxonomy-speelset.php:105 taxonomy-tipgever.php:43
+#: template-alle-tips.php:41
 #, php-format
 msgctxt "Label tip-nummer"
 msgid "Tip %s"
@@ -770,6 +771,12 @@ msgstr ""
 #: gutenberg-blocks/spotlight-block.php:15
 msgctxt "Block description"
 msgid "Tonen van gerelateerde content in een apart block"
+msgstr ""
+
+#: gutenberg-blocks/related-block.php:88 taxonomy-speelset.php:90
+#: taxonomy-speelset.php:116 taxonomy-tipgever.php:54
+msgctxt "Toptiptekst bij tip"
+msgid "Toptip"
 msgstr ""
 
 #: gutenberg-blocks/rijksvideo-block.php:14
@@ -1253,39 +1260,39 @@ msgstr ""
 msgid "Installing Plugin %1$s (%2$d/%3$d)"
 msgstr ""
 
-#: plugin-activatie/must-use-plugins.php:191
+#: plugin-activatie/must-use-plugins.php:205
 msgctxt "Plugins installer"
 msgid "Deze plugins zijn vereist om het thema te laten werken"
 msgstr ""
 
-#: plugin-activatie/must-use-plugins.php:200
+#: plugin-activatie/must-use-plugins.php:214
 msgctxt "Plugins installer"
 msgid "Install Required Plugins"
 msgstr ""
 
-#: plugin-activatie/must-use-plugins.php:201
+#: plugin-activatie/must-use-plugins.php:215
 msgctxt "Plugins installer"
 msgid "Install Plugins"
 msgstr ""
 
-#: plugin-activatie/must-use-plugins.php:203
+#: plugin-activatie/must-use-plugins.php:217
 #, php-format
 msgctxt "Plugins installer"
 msgid "Installing Plugin: %s"
 msgstr ""
 
-#: plugin-activatie/must-use-plugins.php:205
+#: plugin-activatie/must-use-plugins.php:219
 #, php-format
 msgctxt "Plugins installer"
 msgid "Updating Plugin: %s"
 msgstr ""
 
-#: plugin-activatie/must-use-plugins.php:206
+#: plugin-activatie/must-use-plugins.php:220
 msgctxt "Plugins installer"
 msgid "Something went wrong with the plugin API."
 msgstr ""
 
-#: plugin-activatie/must-use-plugins.php:209
+#: plugin-activatie/must-use-plugins.php:223
 #, php-format
 msgctxt "Plugins installer"
 msgid "This theme requires the following plugin: %1$s."
@@ -1293,7 +1300,7 @@ msgid_plural "This theme requires the following plugins: %1$s."
 msgstr[0] ""
 msgstr[1] ""
 
-#: plugin-activatie/must-use-plugins.php:213
+#: plugin-activatie/must-use-plugins.php:227
 #, php-format
 msgctxt "Plugins installer"
 msgid "This theme recommends the following plugin: %1$s."
@@ -1301,7 +1308,7 @@ msgid_plural "This theme recommends the following plugins: %1$s."
 msgstr[0] ""
 msgstr[1] ""
 
-#: plugin-activatie/must-use-plugins.php:217
+#: plugin-activatie/must-use-plugins.php:231
 #, php-format
 msgctxt "Plugins installer"
 msgid ""
@@ -1313,7 +1320,7 @@ msgid_plural ""
 msgstr[0] ""
 msgstr[1] ""
 
-#: plugin-activatie/must-use-plugins.php:221
+#: plugin-activatie/must-use-plugins.php:235
 #, php-format
 msgctxt "Plugins installer"
 msgid "There is an update available for: %1$s."
@@ -1321,7 +1328,7 @@ msgid_plural "There are updates available for the following plugins: %1$s."
 msgstr[0] ""
 msgstr[1] ""
 
-#: plugin-activatie/must-use-plugins.php:225
+#: plugin-activatie/must-use-plugins.php:239
 #, php-format
 msgctxt "Plugins installer"
 msgid "The following required plugin is currently inactive: %1$s."
@@ -1329,7 +1336,7 @@ msgid_plural "The following required plugins are currently inactive: %1$s."
 msgstr[0] ""
 msgstr[1] ""
 
-#: plugin-activatie/must-use-plugins.php:229
+#: plugin-activatie/must-use-plugins.php:243
 #, php-format
 msgctxt "Plugins installer"
 msgid "The following recommended plugin is currently inactive: %1$s."
@@ -1337,49 +1344,49 @@ msgid_plural "The following recommended plugins are currently inactive: %1$s."
 msgstr[0] ""
 msgstr[1] ""
 
-#: plugin-activatie/must-use-plugins.php:232
+#: plugin-activatie/must-use-plugins.php:246
 msgctxt "Plugins installer"
 msgid "Begin installing plugin"
 msgid_plural "Begin installing plugins"
 msgstr[0] ""
 msgstr[1] ""
 
-#: plugin-activatie/must-use-plugins.php:235
+#: plugin-activatie/must-use-plugins.php:249
 msgctxt "Plugins installer"
 msgid "Begin updating plugin"
 msgid_plural "Begin updating plugins"
 msgstr[0] ""
 msgstr[1] ""
 
-#: plugin-activatie/must-use-plugins.php:238
+#: plugin-activatie/must-use-plugins.php:252
 msgctxt "Plugins installer"
 msgid "Begin activating plugin"
 msgid_plural "Begin activating plugins"
 msgstr[0] ""
 msgstr[1] ""
 
-#: plugin-activatie/must-use-plugins.php:240
+#: plugin-activatie/must-use-plugins.php:254
 msgctxt "Plugins installer"
 msgid "Return to Required Plugins Installer"
 msgstr ""
 
-#: plugin-activatie/must-use-plugins.php:241
+#: plugin-activatie/must-use-plugins.php:255
 msgctxt "Plugins installer"
 msgid "Plugin activated successfully."
 msgstr ""
 
-#: plugin-activatie/must-use-plugins.php:242
+#: plugin-activatie/must-use-plugins.php:256
 msgctxt "Plugins installer"
 msgid "The following plugin was activated successfully:"
 msgstr ""
 
-#: plugin-activatie/must-use-plugins.php:244
+#: plugin-activatie/must-use-plugins.php:258
 #, php-format
 msgctxt "Plugins installer"
 msgid "No action taken. Plugin %1$s was already active."
 msgstr ""
 
-#: plugin-activatie/must-use-plugins.php:246
+#: plugin-activatie/must-use-plugins.php:260
 #, php-format
 msgctxt "Plugins installer"
 msgid ""
@@ -1387,25 +1394,25 @@ msgid ""
 "Please update the plugin."
 msgstr ""
 
-#: plugin-activatie/must-use-plugins.php:248
+#: plugin-activatie/must-use-plugins.php:262
 #, php-format
 msgctxt "Plugins installer"
 msgid "All plugins installed and activated successfully. %1$s"
 msgstr ""
 
-#: plugin-activatie/must-use-plugins.php:249
+#: plugin-activatie/must-use-plugins.php:263
 msgctxt "Plugins installer"
 msgid "Dismiss this notice"
 msgstr ""
 
-#: plugin-activatie/must-use-plugins.php:250
+#: plugin-activatie/must-use-plugins.php:264
 msgctxt "Plugins installer"
 msgid ""
 "There are one or more required or recommended plugins to install, update or "
 "activate."
 msgstr ""
 
-#: plugin-activatie/must-use-plugins.php:251
+#: plugin-activatie/must-use-plugins.php:265
 msgctxt "Plugins installer"
 msgid "Please contact the administrator of this site for help."
 msgstr ""
@@ -1524,9 +1531,9 @@ msgid "Overzichtspagina"
 msgstr "Posts"
 
 #. Template Name of the plugin/theme
-msgid "Template sitemap"
+msgid "[OD] Template tips-pagina"
 msgstr ""
 
 #. Template Name of the plugin/theme
-msgid "[OD] Template tips-pagina"
+msgid "Template sitemap"
 msgstr ""
