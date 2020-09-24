@@ -106,6 +106,12 @@
         "file": "/assets/css/gc-theme.css",
         "version": "5.0.8",
         "dependencies": ""
+      },
+      "KB": {
+        "handle": "kb-css",
+        "file": "/flavors/kennisbank/assets/css/gc-kennisbank.css",
+        "version": "5.0.9",
+        "dependencies": ""
       }
     }
   }
