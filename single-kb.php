@@ -13,6 +13,12 @@ $context         = Timber::context();
 $timber_post     = Timber::query_post();
 $context['post'] = $timber_post;
 
+// de publicatiedatum is geen relevante informatie voor een KB-artikel. Daarentegen is
+// de tijd en datum van laatste wijziging wel nuttige informatie. Maar deze extra
+// informatie is niet standaard beschikbaar.
+// Daarom voegen we die hierbij toe, zowel datum als tijd.
+$context['last_changed'] = get_the_modified_time( get_option( 'date_format' ) . ' ' . get_option( 'time_format' ) );
+
 if ( 'ja' === get_field( 'downloads_tonen' ) && get_field( 'download_items' ) ) {
 
 	$context['downloads'] = download_block_get_data();

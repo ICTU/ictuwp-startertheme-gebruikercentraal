@@ -4,16 +4,28 @@
 
     <article class="post-type-{{ post.post_type }}" id="post-{{ post.ID }}">
       <header class="entry-header">
+        <!--
+        Hier wordt de publicatiedatum getoond, maar dat is geen relevante
+        informatie, zeker niet zonder tijd en label erbij. Daarom kan dit voor een
+        KB-artikel weg.
+
         <span class="date-badge" itemprop="datePublished" content="{{ post.date|date('d-m-Y') }}">
           <span class="date-badge__day">{{ post.date|date('d') }}</span>
           <span class="date-badge__month">{{ post.date|date('M') }}</span>
           <span class="date-badge__year visually-hidden">{{ post.date|date('y') }}</span>
         </span>
+        -->
         <h1 class="entry-title">{{ post.title }}</h1>
         <div class="meta-data">
           <dl class="meta-data__list">
             <dt class="visually-hidden">Auteur</dt>
             <dd class="meta-data__item author">{{ post.author.name }}</dd>
+
+            {% if last_changed %}
+              <dt>Laatst gewijzigd op</dt>
+              <dd class="meta-data__item">{{ last_changed }}</dd>
+            {% endif %}
+
           </dl>
         </div>
       </header>
