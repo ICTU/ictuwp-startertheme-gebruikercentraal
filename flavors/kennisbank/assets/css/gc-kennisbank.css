@@ -555,10 +555,6 @@
   display: -ms-flexbox;
   display: flex; }
 
-.section--heading {
-  border-top: 0.2rem solid #D1DFE3;
-  padding-top: 2rem; }
-
 .mkb-back-to-top {
   font-size: 1.4rem;
   margin-left: auto;
@@ -567,6 +563,71 @@
     color: #4c2974;
     display: inline-block;
     margin-left: 1.5rem; }
+
+.mkb-article-extra {
+  border-top: 0.2rem solid #D1DFE3;
+  margin-top: 4rem;
+  margin-bottom: 4rem;
+  padding-top: 4rem;
+  padding-bottom: 2rem;
+  clear: both;
+  float: none;
+  font-size: 80%;
+  text-align: right; }
+
+.mkb-article-extra__like,
+.mkb-article-extra__dislike {
+  border: 1px solid black;
+  background-color: black;
+  color: white;
+  border-radius: 10px;
+  padding: .75rem;
+  margin: .5rem;
+  text-decoration: none; }
+  .mkb-article-extra__like:hover, .mkb-article-extra__like:active, .mkb-article-extra__like:focus,
+  .mkb-article-extra__dislike:hover,
+  .mkb-article-extra__dislike:active,
+  .mkb-article-extra__dislike:focus {
+    background-color: white;
+    text-decoration: underline; }
+    .mkb-article-extra__like:hover .mkb-article-extra__stats-dislikes,
+    .mkb-article-extra__like:hover .mkb-article-extra__stats-likes, .mkb-article-extra__like:active .mkb-article-extra__stats-dislikes,
+    .mkb-article-extra__like:active .mkb-article-extra__stats-likes, .mkb-article-extra__like:focus .mkb-article-extra__stats-dislikes,
+    .mkb-article-extra__like:focus .mkb-article-extra__stats-likes,
+    .mkb-article-extra__dislike:hover .mkb-article-extra__stats-dislikes,
+    .mkb-article-extra__dislike:hover .mkb-article-extra__stats-likes,
+    .mkb-article-extra__dislike:active .mkb-article-extra__stats-dislikes,
+    .mkb-article-extra__dislike:active .mkb-article-extra__stats-likes,
+    .mkb-article-extra__dislike:focus .mkb-article-extra__stats-dislikes,
+    .mkb-article-extra__dislike:focus .mkb-article-extra__stats-likes {
+      border-color: black;
+      text-decoration: none; }
+
+.mkb-article-extra__stats-dislikes,
+.mkb-article-extra__stats-likes {
+  border: 1px solid white;
+  background: white;
+  color: black;
+  padding: .25rem .5rem;
+  border-radius: 50%;
+  margin-left: .5rem; }
+
+.mkb-article-extra__like {
+  background-color: #148839;
+  border-color: #148839; }
+
+.mkb-article-extra__dislike {
+  background-color: #A20E56;
+  border-color: #A20E56; }
+
+@media (min-width: 700px) {
+  .mkb-anchors-list {
+    border-left: 2px solid #D1DFE3;
+    float: right;
+    margin-left: 1rem;
+    padding-left: 1rem;
+    padding-bottom: .25rem;
+    width: 30%; } }
 
 .comment-box {
   margin-left: -2rem;
@@ -639,3 +700,5 @@ button[type='reset'] + p {
   @media (min-width: 700px) {
     button[type='reset'] + p {
       margin-top: 5rem; } }
+
+/*# sourceMappingURL=gc-kennisbank.css.map */
