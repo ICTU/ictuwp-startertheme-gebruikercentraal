@@ -15,15 +15,6 @@
 
     </div>
 
-
+		
 	</div>
-  {% if comment.children %}
-  <ul class="children">
-      {% for child_comment in comment.children %}
-        {% include 'comment-reply.twig' with { comment:child_comment } %}
-      {% endfor %}
-  </ul>
-  {% endif %}
 </li>
-
-
