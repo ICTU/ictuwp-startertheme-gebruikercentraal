@@ -1,0 +1,11 @@
+<li class="comment {{comment.comment_type}}" id="blog-comment-{{comment.ID}}">
+  <div class="comment-author vcard"><cite class="fn">{{comment.author.name}}</cite> {{ __('Says:', 'gctheme') }}</div>
+
+  <div class="comment-content">
+    {{comment.comment_content|wpautop}}
+  </div>
+
+  <div class="comment-meta commentmetadata">{{comment.date}}</div>
+</li>
+
+
