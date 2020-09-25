@@ -110,7 +110,7 @@
       "KB": {
         "handle": "kb-css",
         "file": "/flavors/kennisbank/assets/css/gc-kennisbank.css",
-        "version": "5.0.9",
+        "version": "1.0.a",
         "dependencies": ""
       }
     }

@@ -555,10 +555,6 @@
   display: -ms-flexbox;
   display: flex; }
 
-.section--heading {
-  border-top: 0.2rem solid #D1DFE3;
-  padding-top: 2rem; }
-
 .mkb-back-to-top {
   font-size: 1.4rem;
   margin-left: auto;
@@ -588,9 +584,28 @@
   padding: .75rem;
   margin: .5rem;
   text-decoration: none; }
+  .mkb-article-extra__like:hover, .mkb-article-extra__like:active, .mkb-article-extra__like:focus,
+  .mkb-article-extra__dislike:hover,
+  .mkb-article-extra__dislike:active,
+  .mkb-article-extra__dislike:focus {
+    background-color: white;
+    text-decoration: underline; }
+    .mkb-article-extra__like:hover .mkb-article-extra__stats-dislikes,
+    .mkb-article-extra__like:hover .mkb-article-extra__stats-likes, .mkb-article-extra__like:active .mkb-article-extra__stats-dislikes,
+    .mkb-article-extra__like:active .mkb-article-extra__stats-likes, .mkb-article-extra__like:focus .mkb-article-extra__stats-dislikes,
+    .mkb-article-extra__like:focus .mkb-article-extra__stats-likes,
+    .mkb-article-extra__dislike:hover .mkb-article-extra__stats-dislikes,
+    .mkb-article-extra__dislike:hover .mkb-article-extra__stats-likes,
+    .mkb-article-extra__dislike:active .mkb-article-extra__stats-dislikes,
+    .mkb-article-extra__dislike:active .mkb-article-extra__stats-likes,
+    .mkb-article-extra__dislike:focus .mkb-article-extra__stats-dislikes,
+    .mkb-article-extra__dislike:focus .mkb-article-extra__stats-likes {
+      border-color: black;
+      text-decoration: none; }
 
 .mkb-article-extra__stats-dislikes,
 .mkb-article-extra__stats-likes {
+  border: 1px solid white;
   background: white;
   color: black;
   padding: .25rem .5rem;

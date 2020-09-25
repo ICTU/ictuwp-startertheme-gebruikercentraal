@@ -51,8 +51,11 @@
 }
 
 .section--heading {
-  border-top: .2rem solid $border-color;
-  padding-top: 2rem;
+  // nee liever geen lijntjes over titles
+  // hierdoor breekt te de tekst op in aparte blokken en gaat
+  // m.i. de samenhang verloren
+  //  border-top: .2rem solid $border-color;
+  //  padding-top: 2rem;
 }
 
 .mkb-back-to-top {
@@ -93,9 +96,22 @@
   margin: .5rem;
   text-decoration: none;
 
+  &:hover,
+  &:active,
+  &:focus{
+    background-color: white;
+    text-decoration: underline;
+    .mkb-article-extra__stats-dislikes,
+    .mkb-article-extra__stats-likes {
+      border-color: black;
+      text-decoration: none;
+    }
+
+  }
 }
 .mkb-article-extra__stats-dislikes,
 .mkb-article-extra__stats-likes {
+  border: 1px solid white;
   background: white;
   color: black;
   padding: .25rem .5rem;
