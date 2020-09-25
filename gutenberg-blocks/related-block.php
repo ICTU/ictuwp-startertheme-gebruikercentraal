@@ -146,12 +146,18 @@ function related_block_get_data() {
 
 		$columncounter = '2';
 
-		if ( count( $return['items'] ) < 2 ) {
-			$columncounter = '1';
-		} elseif ( count( $return['items'] ) === 4 ) {
-			$columncounter = '2';
-		} elseif ( count( $return['items'] ) > 2 ) {
-			$columncounter = '3';
+		if ( isset( $return['items'] ) ) {
+			if ( count( $return['items'] ) < 2 ) {
+				$columncounter = '1';
+			} elseif ( count( $return['items'] ) === 4 ) {
+				$columncounter = '2';
+			} elseif ( count( $return['items'] ) > 2 ) {
+				$columncounter = '3';
+			}
+
+			$return['description'] = get_field( 'content_block_description' ) ? get_field( 'content_block_description' ) : '';
+			$return['title']       = get_field( 'content_block_title' ) ? get_field( 'content_block_title' ) : '';
+
 		}
 
 		$return['columncounter'] = $columncounter;
@@ -161,10 +167,6 @@ function related_block_get_data() {
 			$return['modifier'] = get_field( 'content_block_modifier' );
 		}
 
-		if ( $return['items'] ) {
-			$return['description'] = get_field( 'content_block_description' ) ? get_field( 'content_block_description' ) : '';
-			$return['title']       = get_field( 'content_block_title' ) ? get_field( 'content_block_title' ) : '';
-		}
 
 
 	}
