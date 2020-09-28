@@ -896,7 +896,7 @@ add_action( 'customize_register', 'gc2020_customize_register' );
 add_action( 'wp_enqueue_scripts', 'gc_ho_dequeue_css', 999 );
 
 function gc_ho_dequeue_css() {
-	include_once('wp-admin/includes/plugin.php');
+	include_once( 'wp-admin/includes/plugin.php' );
 
 	/*
 	if(is_plugin_active('ictuwp-plugin-rijksvideo/ictuwp-plugin-rijksvideo.php')) {
@@ -923,16 +923,13 @@ function gc_ho_dequeue_css() {
 	$get_theme_option = get_option( 'gc2020_theme_options' );
 	$flavor_select    = $get_theme_option['flavor_select'];
 	if ( $flavor_select == "KB" ) {
-		wp_enqueue_style ('gc-kennisbank-style', get_template_directory_uri().'/flavors/kennisbank/assets/css/gc-kennisbank.css');
+		wp_enqueue_style( 'gc-kennisbank-style', get_template_directory_uri() . '/flavors/kennisbank/assets/css/gc-kennisbank.css' );
 	}
 
  */
 
 
 }
-
-
-
 
 
 //========================================================================================================
@@ -984,6 +981,18 @@ if ( ! function_exists( 'od_wbvb_custom_post_title' ) ) {
 
 		$pattern     = '/evensgebeurtenis/i';
 		$replacement = 'evens&shy;gebeurtenis';
+		$title       = preg_replace( $pattern, $replacement, $title );
+
+		$pattern     = '/gemeenschapp/i';
+		$replacement = 'gemeen&shy;schap&shy;p';
+		$title       = preg_replace( $pattern, $replacement, $title );
+
+		$pattern     = '/kortetermijndoel/i';
+		$replacement = 'kortetermijn&shy;doel';
+		$title       = preg_replace( $pattern, $replacement, $title );
+
+		$pattern     = '/toptakenprincipe/i';
+		$replacement = 'toptaken&shy;principe';
 		$title       = preg_replace( $pattern, $replacement, $title );
 
 		return $title;
@@ -1060,6 +1069,7 @@ function append_block_wrappers( $block_content, $block ) {
 	if ( $block['blockName'] === 'core/paragraph' ) {
 //		$content = '<div class="section section--paragraph">';
 		$content = $block_content;
+
 //		$content .= '</div>';
 		return $content;
 
@@ -1071,7 +1081,7 @@ function append_block_wrappers( $block_content, $block ) {
 		return $content;
 	} elseif ( $block['blockName'] === 'acf/gc-handleiding' ) {
 		global $handleidingcounter;
-		$handleidingcounter++;
+		$handleidingcounter ++;
 		$content = '<li class="manual-item manual-item--item-' . $handleidingcounter . '">';
 		$content .= $block_content;
 		$content .= '</li>';
@@ -1194,10 +1204,22 @@ function my_acf_fields_relationship_result( $text, $post, $field, $post_id ) {
 //========================================================================================================
 
 function tipgever_archive_modify_query( $query ) {
-	if ( ( $query->is_main_query() ) && ( is_tax( 'tipgever' ) ) ) {
-		// geen pagination voor tipgevers overzichten
-		$query->set( 'posts_per_page', - 1 );
+
+	global $query_vars;
+
+	if ( ! is_admin() && $query->is_main_query() ) {
+
+		if ( is_tax( OD_CITAATAUTEUR ) ) {
+			// geen pagination voor tipgevers overzichten
+			$query->set( 'posts_per_page', - 1 );
+
+			return $query;
+
+		}
+
 	}
+
+	return $query;
 }
 
 add_action( 'pre_get_posts', 'tipgever_archive_modify_query' );

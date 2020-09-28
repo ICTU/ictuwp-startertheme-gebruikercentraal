@@ -1,6 +1,6 @@
 {
     "key": "group_5f05d39c95c29",
-    "title": "Speelset: Uitgelichte afbeelding",
+    "title": "Speelset: uitgelichte afbeelding en selectiecriteria",
     "fields": [
         {
             "key": "field_5f05d3affc0d3",
@@ -25,6 +25,92 @@
             "max_height": "",
             "max_size": "",
             "mime_types": ""
+        },
+        {
+            "key": "field_5f6a03b58dc3d",
+            "label": "hoe wil je tips toevoegen aan deze speelset",
+            "name": "speelset_selectiemethode",
+            "type": "radio",
+            "instructions": "Je kunt een losse tip aan een speelset koppelen. Of je kunt ervoor kiezen een speelset automatisch samen te laten stellen. Dat is bijvoorbeeld handig als je toptips als een speelset wil presenteren. Of als je tips uit diverse tipthema's wil presenteren als een speelset.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "default": "Standaard, namelijk je voegt zelf losse tips toe aan deze speelset",
+                "automatic": "Automatisch, door een ingebouwd selectiecriterium"
+            },
+            "allow_null": 0,
+            "other_choice": 0,
+            "default_value": "",
+            "layout": "vertical",
+            "return_format": "value",
+            "save_other_choice": 0
+        },
+        {
+            "key": "field_5f6a03f98dc3e",
+            "label": "Welke automatische selectiemethode wil je gebruiken?",
+            "name": "robot_criteria",
+            "type": "radio",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_5f6a03b58dc3d",
+                        "operator": "==",
+                        "value": "automatic"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "tips_with_star": "Alle toptips (tips met een ster)",
+                "tips_in_thema": "Alle tips uit een bepaald thema, namelijk:"
+            },
+            "allow_null": 0,
+            "other_choice": 0,
+            "default_value": "",
+            "layout": "vertical",
+            "return_format": "value",
+            "save_other_choice": 0
+        },
+        {
+            "key": "field_5f6a04fb242ac",
+            "label": "Tipthema(s)",
+            "name": "select_tipthema",
+            "type": "taxonomy",
+            "instructions": "Kies hier 1 of meer thema's waarvan je de tips in je speelset wil hebben. Let op: ALLE tips worden getoond als onderdeel van deze speelset.",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_5f6a03f98dc3e",
+                        "operator": "==",
+                        "value": "tips_in_thema"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "taxonomy": "tipthema",
+            "field_type": "checkbox",
+            "add_term": 1,
+            "save_terms": 0,
+            "load_terms": 0,
+            "return_format": "id",
+            "multiple": 0,
+            "allow_null": 0
         }
     ],
     "location": [
@@ -42,7 +128,7 @@
     "label_placement": "top",
     "instruction_placement": "label",
     "hide_on_screen": "",
-    "active": 1,
+    "active": true,
     "description": "",
-    "modified": 1594218282
+    "modified": 1600867579
 }

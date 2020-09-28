@@ -14,8 +14,9 @@ $context['post'] = $timber_post;
 
 if ( get_field( 'post_inleiding' ) ) {
 	// ACF veld 'post_inleiding' is gevuld
-	$intro            = get_field( 'post_inleiding' );
-	$context['intro'] = wpautop( $intro );
+	$intro            = wpautop( get_field( 'post_inleiding' ) );
+	$allowedtags      = '<a><br><li><ul><ol>';
+	$context['intro'] = strip_tags( $intro, $allowedtags );
 
 }
 

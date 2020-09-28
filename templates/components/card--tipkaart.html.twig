@@ -1,18 +1,16 @@
+
 <div class="tipkaart tipkaart--{{ category|lower }}">
   <a class="tipkaart__link" href="{{ url }}">
-
-
     {% if toptip %}
       <span class="tipkaart__toptip">{{ toptiptekst }}</span>
     {% endif %}
-
     <span class="tipkaart__nummer">{{ nr }}</span>
     <h3 class="tipkaart__title">{{ title }}</h3>
 
     <div class="tipkaart__categorie">
       <svg class="icon icon--medium icon--tipkaart" focusable="false">
         <use xmlns:xlink="http://www.w3.org/1999/xlink"
-             xlink:href="{{ sprite_od }}#{{ category|lower}}"></use>
+             xlink:href="{{ sprite_od }}#{{ category|lower }}"></use>
       </svg>
       <span class="name">{{ category }}</span>
     </div>
