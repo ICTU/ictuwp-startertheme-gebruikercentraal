@@ -1,5 +1,4 @@
 <?php
-<?php
 /**
  * Project: MinervaKB.
  * Copyright: 2015-2017 @KonstruktStudio
