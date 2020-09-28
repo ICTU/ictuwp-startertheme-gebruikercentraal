@@ -134,11 +134,13 @@ function gctheme_register_required_plugins() {
 			'force_activation' => true,
 		);
 
+		/*
 		$plugins[] = array(
 			'name'             => 'advanced custom fields',
 			'slug'             => 'advanced-custom-fields',
 			'force_activation' => true,
 		);
+		*/
 
 
 		$plugins[] = array(
