@@ -32,6 +32,15 @@
           </ul>
         {% endif %}
 
+        {% if sitemap.speelsets %}
+          <h2>{{ tipspeelsettitle }}</h2>
+          <ul>
+            {% for item in sitemap.speelsets %}
+              <li><a href="{{ item.link }}">{{ item.name }}</a></li>
+            {% endfor %}
+          </ul>
+        {% endif %}
+
         {% if sitemap.tipgevers %}
           <h2>{{ tipgeverstitle }}</h2>
           <ul>
