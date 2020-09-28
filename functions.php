@@ -1175,7 +1175,7 @@ function gc_restrict_gutenberg_blocks( $allowed_blocks ) {
 
 }
 
-add_filter( 'allowed_block_types', 'gc_restrict_gutenberg_blocks' );
+//add_filter( 'allowed_block_types', 'gc_restrict_gutenberg_blocks' );
 
 //========================================================================================================
 
