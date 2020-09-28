@@ -73,6 +73,9 @@ function related_block_get_data() {
 
 					if ( 'tips' == get_post_type( $post ) ) {
 
+						// zorgen dat de titel netjes afgebroken wordt binnen de smalle ruimte van het kaartje
+						$item['title'] = od_wbvb_custom_post_title( get_the_title( $post ) );
+
 						// het is een tip
 						// eerst checken of we al alle themakleuren hebben
 						if ( ! $themakleuren ) {
