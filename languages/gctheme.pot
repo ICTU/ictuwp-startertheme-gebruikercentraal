@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 "Project-Id-Version: Gebruiker Centraal (2020)\n"
-"POT-Creation-Date: 2020-09-25 16:28+0200\n"
+"POT-Creation-Date: 2020-09-26 11:37+0200\n"
 "PO-Revision-Date: 2020-06-16 15:48+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -19,8 +19,6 @@ msgstr ""
 "esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;"
 "_n_noop:1,2;_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
 "X-Poedit-SearchPath-0: .\n"
-"X-Poedit-SearchPath-1: .\n"
-"X-Poedit-SearchPath-2: templates\n"
 "X-Poedit-SearchPathExcluded-0: *.min.js\n"
 "X-Poedit-SearchPathExcluded-1: frontend\n"
 "X-Poedit-SearchPathExcluded-2: tests\n"
@@ -1497,7 +1495,14 @@ msgstr ""
 msgid "Says:"
 msgstr ""
 
-#: templates/comment.twig:13
+#: templates/comment.twig:15
+#, php-format
+msgctxt "comment"
+msgid "React to %s"
+msgstr ""
+
+#: templates/comment.twig:15
+msgctxt "comment"
 msgid "React to this comment"
 msgstr ""
 
@@ -1506,11 +1511,11 @@ msgctxt "Title boven footer widgets"
 msgid "Footer"
 msgstr ""
 
-#: templates/single-kb.twig:68 templates/single.twig:52
+#: templates/single-kb.twig:68
 msgid "Comments"
 msgstr ""
 
-#: templates/single-kb.twig:78 templates/single.twig:62
+#: templates/single-kb.twig:78
 msgid "comments for this post are closed"
 msgstr ""
 
@@ -1530,6 +1535,18 @@ msgstr ""
 
 #: templates/single.twig:15
 msgid "by"
+msgstr ""
+
+#: templates/single.twig:52
+#, php-format
+msgid "One comment"
+msgid_plural "%d comments"
+msgstr[0] ""
+msgstr[1] ""
+
+#: templates/single.twig:62
+msgctxt "comments"
+msgid "comments for this post are closed"
 msgstr ""
 
 #. Theme Name of the plugin/theme
@@ -1565,9 +1582,9 @@ msgid "Overzichtspagina"
 msgstr ""
 
 #. Template Name of the plugin/theme
-msgid "Template sitemap"
+msgid "[OD] Template tips-pagina"
 msgstr ""
 
 #. Template Name of the plugin/theme
-msgid "[OD] Template tips-pagina"
+msgid "Template sitemap"
 msgstr ""

@@ -1,11 +1,20 @@
-<li class="comment {{comment.comment_type}}" id="blog-comment-{{comment.ID}}">
+<li class="comment {{comment.comment_type}}" id="comment-{{comment.ID}}">
   <div class="comment-author vcard"><cite class="fn">{{comment.author.name}}</cite> {{ __('Says:', 'gctheme') }}</div>
 
   <div class="comment-content">
     {{comment.comment_content|wpautop}}
   </div>
 
-  <div class="comment-meta commentmetadata">{{comment.date}}</div>
+  <div class="comment-meta commentmetadata">{{ comment.date }}
+    <div class="reply">
+      <a rel="nofollow" class="comment-reply-link" href="#reply-title" data-commentid="{{ comment.ID }}"
+         data-belowelement="#" data-respondelement="respond"
+         aria-label="{{ _x('React to %s', 'comment', 'gctheme')|format(comment.author.name) }}">{{ _x('React to this comment', 'comment', 'gctheme') }}
+      </a>
+    </div>
+
+  </div>
+
 </li>
 
 

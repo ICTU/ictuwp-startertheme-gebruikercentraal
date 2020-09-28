@@ -1,9 +1,9 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Gebruiker Centraal (2020)\n"
-"POT-Creation-Date: 2020-09-25 16:28+0200\n"
-"PO-Revision-Date: 2020-09-25 16:31+0200\n"
-"Last-Translator: \n"
+"POT-Creation-Date: 2020-09-26 11:37+0200\n"
+"PO-Revision-Date: 2020-09-26 11:40+0200\n"
+"Last-Translator: Paul van Buuren <poedit@wbvb.nl>\n"
 "Language-Team: \n"
 "Language: nl_NL\n"
 "MIME-Version: 1.0\n"
@@ -19,6 +19,7 @@ msgstr ""
 "esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;_n_noop:1,2;"
 "_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
 "X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPath-1: templates\n"
 "X-Poedit-SearchPathExcluded-0: *.min.js\n"
 "X-Poedit-SearchPathExcluded-1: frontend\n"
 "X-Poedit-SearchPathExcluded-2: templates\n"
@@ -1497,20 +1498,27 @@ msgstr "Het kan zijn dat je reactie eerst beoordeeld moet worden."
 msgid "Says:"
 msgstr "Schreef:"
 
-#: templates/comment.twig:13
+#: templates/comment.twig:15
+#, php-format
+msgctxt "comment"
+msgid "React to %s"
+msgstr "Reageer op %s"
+
+#: templates/comment.twig:15
+msgctxt "comment"
 msgid "React to this comment"
-msgstr "Beantwoorden"
+msgstr "Hierop reageren"
 
 #: templates/footer.twig:7
 msgctxt "Title boven footer widgets"
 msgid "Footer"
 msgstr ""
 
-#: templates/single-kb.twig:68 templates/single.twig:52
+#: templates/single-kb.twig:68
 msgid "Comments"
 msgstr "Reacties"
 
-#: templates/single-kb.twig:78 templates/single.twig:62
+#: templates/single-kb.twig:78
 msgid "comments for this post are closed"
 msgstr "reacties voor dit bericht zijn gesloten"
 
@@ -1531,6 +1539,18 @@ msgstr "bewerken"
 #: templates/single.twig:15
 msgid "by"
 msgstr "geschreven door"
+
+#: templates/single.twig:52
+#, php-format
+msgid "One comment"
+msgid_plural "%d comments"
+msgstr[0] "Een reactie"
+msgstr[1] "%d reacties"
+
+#: templates/single.twig:62
+msgctxt "comments"
+msgid "comments for this post are closed"
+msgstr "Je kunt niet meer reageren"
 
 #. Theme Name of the plugin/theme
 msgid "Gebruiker Centraal (2020)"
@@ -1565,17 +1585,18 @@ msgid "Overzichtspagina"
 msgstr ""
 
 #. Template Name of the plugin/theme
-msgid "Template sitemap"
-msgstr ""
-
-#. Template Name of the plugin/theme
 msgid "[OD] Template tips-pagina"
 msgstr ""
 
-#~ msgid "Cancel"
-#~ msgstr "Annuleren"
+#. Template Name of the plugin/theme
+msgid "Template sitemap"
+msgstr ""
 
 #, fuzzy
-#~| msgid "Comment"
-#~ msgid "comments"
-#~ msgstr "Opmerking"
+#~| msgid "Comments"
+#~ msgctxt "comments"
+#~ msgid "Comments"
+#~ msgstr "Reacties"
+
+#~ msgid "Cancel"
+#~ msgstr "Annuleren"

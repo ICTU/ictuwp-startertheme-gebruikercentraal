@@ -48,8 +48,8 @@
       <section>
         <!-- comments -->
         <div class="comments-area">
-          {% if post.comments %}
-            <h3 class="comments-title">{{ __('Comments', 'gctheme') }} ({{ post.get_comment_count( ) }})</h3>
+          {% if post.get_comment_count( ) > 0  %}
+            <h3 class="comments-title">{{ _n('One comment', '%d comments', n)|format(post.get_comment_count( )) }} </h3>
             <ul class="comment-list">
               {% for cmt in post.comments %}
                 {% include "comment.twig" with {comment:cmt} %}
@@ -59,7 +59,7 @@
         </div>
 
         {% if post.comment_status == "closed" %}
-          <p>{{ __('comments for this post are closed', 'gctheme') }}</p>
+          <p>{{ _x('comments for this post are closed', 'comments', 'gctheme') }}</p>
         {% else %}
           <!-- comment form -->
           {% include "comment-form.twig" %}
