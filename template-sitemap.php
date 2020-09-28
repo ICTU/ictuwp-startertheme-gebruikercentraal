@@ -70,6 +70,32 @@ if ( taxonomy_exists( GC_TIPTHEMA ) ) {
 
 }
 
+if ( taxonomy_exists( GC_ODSPEELSET ) ) {
+
+	$args = array(
+		'taxonomy' => GC_ODSPEELSET,
+		'hide_empty' => false,
+		'orderby' => 'name',
+		'order' => 'ASC',
+	);
+
+	$context['tipspeelsettitle']        = _x( "Speelsets", "sitemap titel", 'gctheme' );
+	$terms = get_terms( $args );
+
+	if ( ! empty( $terms ) && ! is_wp_error( $terms ) ) {
+		$count = count( $terms );
+
+		foreach ( $terms as $term ) {
+			$termlink                         = array();
+			$termlink['link']                 = esc_url( get_term_link( $term ) );
+			$termlink['name']                 = $term->name;
+			$context['sitemap']['speelsets'][] = $termlink;
+
+		}
+	}
+}
+
+
 if ( taxonomy_exists( OD_CITAATAUTEUR ) ) {
 
 	$args = array(
