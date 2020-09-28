@@ -1,7 +1,6 @@
 // Author
 
 .author {
-
   .link--contact {
     margin: 1rem 1rem 0 0;
 
@@ -11,7 +10,6 @@
       }
     }
   }
-
 
   .social-links {
     margin: 1rem 0 0;
@@ -65,7 +63,6 @@
       }
     }
   }
-
 
   &--full {
     // On archive pages
@@ -142,6 +139,76 @@
     color: $meta-data;
   }
 }
+
+// As Author Box, displayed on a single page
+.author--box {
+  @include gc-box-shadow;
+  background: $gc_pantybrown_xlight;
+  position: relative;
+  padding: 3rem 2rem 2rem;
+  display: block;
+  font-size: $font-smaller;
+  line-height: 2.6rem;
+  margin-top: 5rem;
+
+  @include bp-up(md) {
+    margin-top: 8rem;
+  }
+
+  &:before {
+    content: " ";
+    position: absolute;
+    width: 3rem;
+    height: 3rem;
+    display: block;
+    background: $gc_pantybrown_xlight;
+    top: 0;
+    left: 6rem;
+    margin-top: -1.5rem;
+    transform: rotate(45deg);
+  }
+
+  .author__picture {
+    background: $white;
+  }
+
+  .author__content {
+    width: 100%;
+    padding: 0;
+  }
+
+  h2,
+  .author__title {
+    font-size: 2.4rem;
+    margin: 0;
+    padding: 0;
+  }
+
+  .meta-data__item {
+    color: $meta-data;
+    font-size: $font_small;
+  }
+
+  hr {
+    border-color: $gc_pantybrown-light;
+    margin: 1.5rem 0;
+  }
+
+  .author__contact-info {
+    font-size: $font_small;
+    margin-top: 2rem;
+  }
+
+  p {
+    margin: 0;
+  }
+
+  @include bp-up(md) {
+    padding: 3rem;
+  }
+}
+
+
 
 // As a card, displayed in overviews
 

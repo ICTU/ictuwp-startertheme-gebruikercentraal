@@ -849,6 +849,56 @@
     line-height: 2.4rem;
     color: #52757e; }
 
+.author--box {
+  -webkit-box-shadow: 0.4rem 0.4rem 0 rgba(0, 0, 0, 0.15);
+          box-shadow: 0.4rem 0.4rem 0 rgba(0, 0, 0, 0.15);
+  background: #f9f6f3;
+  position: relative;
+  padding: 3rem 2rem 2rem;
+  display: block;
+  font-size: 1.6rem;
+  line-height: 2.6rem;
+  margin-top: 5rem; }
+  @media (min-width: 700px) {
+    .author--box {
+      margin-top: 8rem; } }
+  .author--box:before {
+    content: " ";
+    position: absolute;
+    width: 3rem;
+    height: 3rem;
+    display: block;
+    background: #f9f6f3;
+    top: 0;
+    left: 6rem;
+    margin-top: -1.5rem;
+    -webkit-transform: rotate(45deg);
+            transform: rotate(45deg); }
+  .author--box .author__picture {
+    background: #fff; }
+  .author--box .author__content {
+    width: 100%;
+    padding: 0; }
+  .author--box h2,
+  .author--box .author__title {
+    font-size: 2.4rem;
+    margin: 0;
+    padding: 0; }
+  .author--box .meta-data__item {
+    color: #52757e;
+    font-size: 1.4rem; }
+  .author--box hr {
+    border-color: #f2ebe4;
+    margin: 1.5rem 0; }
+  .author--box .author__contact-info {
+    font-size: 1.4rem;
+    margin-top: 2rem; }
+  .author--box p {
+    margin: 0; }
+  @media (min-width: 700px) {
+    .author--box {
+      padding: 3rem; } }
+
 .author--card {
   text-align: center;
   position: relative;
@@ -2735,5 +2785,3 @@ h2, h3, h4, h5 {
     min-height: 5.5rem; }
     .download-box--with-descr .meta-data {
       width: auto; }
-
-/*# sourceMappingURL=editor-styles.css.map */
