@@ -85,9 +85,11 @@ if ( $context['pagetype'] === 'archive_tipthema' ) {
 
 // For tipgevers taxonomy - set modifier for 4col
 
-if ( $taxonomy_name === 'tipgever' ) {
 
-	//dump($archive);
+
+if ( $taxonomy_name === OD_CITAATAUTEUR ) {
+
+		//dump($archive);
 
 	// Get all data from the term
 	$cat    = get_term( $archive->term_id );

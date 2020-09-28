@@ -8,7 +8,7 @@
 
 {% if is_preview %}
   <style type="text/css">
-    #download-{{ block.id }} {
+    #downloadcontainer-{{ block.id }} {
       border: 3px dashed #dadada;
       margin-top: 0;
       overflow: hidden;
@@ -17,7 +17,7 @@
 {% endif %}
 
 {% if is_preview %}
-<div id="download-{{ block.id }}">
+<div id="downloadcontainer-{{ block.id }}">
   {% endif %}
   {% if downloads %}
     {% include 'sections/section-downloads.html.twig' with {

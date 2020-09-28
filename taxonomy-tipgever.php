@@ -43,10 +43,19 @@ foreach ( $posts as $post ) {
 		$items[ $i ]['tip_nummer'] = sprintf( _x( 'Tip %s', 'Label tip-nummer', 'gctheme' ), get_field( 'tip-nummer', $post->ID ) );
 		$items[ $i ]['type']       = $post->type->name;
 		$items[ $i ]['post_type']  = $post->type->name;
-		$items[ $i ]['post_title'] = $post->post_title;
+		$items[ $i ]['post_title'] = od_wbvb_custom_post_title( $post->post_title );
 		$items[ $i ]['url']        = get_permalink( $post );
 		$terms                     = get_the_terms( $post->ID, 'tipthema' );
 		$items[ $i ]['cat']        = $terms[0]->name;
+
+		$is_toptip     = get_post_meta( $post->ID, 'is_toptip', TRUE );
+		if ( $is_toptip ) {
+			$items[ $i ]['toptip']      = TRUE;
+			$items[ $i ]['toptiptekst'] =  _x( 'Toptip', 'Toptiptekst bij tip', 'gctheme' );
+		} else {
+			$items[ $i ]['toptip'] = FALSE;
+		}
+
 	}
 }
 
@@ -82,6 +91,9 @@ $context['author']['image']    = ( $image ? $image['sizes']['medium'] : '' );
 $context['author']['descr']    = ( $cat->description ? $cat->description : '' );
 $context['author']['contact']  = ( $contact ? $contact : '' );
 
+// todo: social media meuk voor een tipgever, ooit.
+//$context['author']['social']['twitter']  = 'paulvanbuuren';
+
 // Set overview
 $fullname = explode( ' ', trim( $archive->name ) );
 
@@ -97,7 +109,7 @@ echo '</pre>';
  */
 
 $templates = array(
-	'archive-' . $taxonomy_name . '.twig',
+	'archive-tip-tax.twig',
 	'archive.twig',
 	'index.twig',
 );

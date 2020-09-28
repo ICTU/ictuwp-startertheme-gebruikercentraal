@@ -1,6 +1,6 @@
 {
     "key": "group_5efa86188abea",
-    "title": "Inleiding voor landingspagina",
+    "title": "00 - Inleiding landingspagina",
     "fields": [
         {
             "key": "field_5efa86304a7fa",
@@ -44,7 +44,7 @@
     "label_placement": "top",
     "instruction_placement": "label",
     "hide_on_screen": "",
-    "active": 1,
+    "active": true,
     "description": "",
-    "modified": 1597256243
+    "modified": 1600159007
 }
