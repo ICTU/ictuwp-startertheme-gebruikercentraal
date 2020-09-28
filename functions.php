@@ -995,6 +995,10 @@ if ( ! function_exists( 'od_wbvb_custom_post_title' ) ) {
 		$replacement = 'toptaken&shy;principe';
 		$title       = preg_replace( $pattern, $replacement, $title );
 
+		$pattern     = '/verwachtingsmanagement/i';
+		$replacement = 'verwachtings&shy;management';
+		$title       = preg_replace( $pattern, $replacement, $title );
+
 		return $title;
 
 	}
