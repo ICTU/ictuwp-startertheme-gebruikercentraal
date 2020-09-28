@@ -3,11 +3,6 @@
 {% block content %}
 
     <article class="entry entry--full entry--type-{{ post.post_type }}" id="post-{{ post.ID }}">
-      {% if post.thumbnail.src %}
-        <div class="article-header-image">
-          <img src="{{ post.thumbnail.src|resize(1200, 300) }}">
-        </div>
-      {% endif %}
         <header class="entry-header">
           <span class="date-badge" itemprop="datePublished" content="{{ post.date|date('d-m-Y') }}">
             <span class="date-badge__day">{{ post.date|date('d') }}</span>
@@ -24,11 +19,19 @@
             </dl>
           </div>
         </header>
-      <section class="article-content">
-        <div class="article-body">
-          {{ post.content }}
+        <div class="entry-content wrap">
+          <div class="entry-body">
+            {{ post.content }}
+          </div>
+          <nav class="pagination">
+            {% if post.prev %}
+              <div class="pagination-previous alignleft"><a href="{{ post.prev.link }}" rel="prev" data-ol-has-click-handler="">{{ post.prev.title }}</a></div>
+            {% endif %}
+            {% if post.next %}
+              <div class="pagination-next alignright"><a href="{{ post.next.link }}" rel="next" data-ol-has-click-handler="">{{ post.next.title }}</a></div>
+            {% endif %}
+          </nav>
         </div>
-      </section>
 
       {% if related %}
         {% include 'sections/section-related.html.twig' with {
