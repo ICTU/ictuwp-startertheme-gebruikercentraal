@@ -62,7 +62,7 @@ if ( $flavor_select == "OD" ) {
 require_once( __DIR__ . '/plugin-activatie/must-use-plugins.php' );
 
 // include file for network media
-require_once( __DIR__ . '/network-media-library/network-media-library.php' );
+//require_once( __DIR__ . '/network-media-library/network-media-library.php' );
 
 
 //========================================================================================================
