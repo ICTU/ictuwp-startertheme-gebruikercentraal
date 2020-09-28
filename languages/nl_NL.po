@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Gebruiker Centraal (2020)\n"
-"POT-Creation-Date: 2020-09-26 11:37+0200\n"
-"PO-Revision-Date: 2020-09-26 11:40+0200\n"
+"POT-Creation-Date: 2020-09-28 13:16+0200\n"
+"PO-Revision-Date: 2020-09-28 13:17+0200\n"
 "Last-Translator: Paul van Buuren <poedit@wbvb.nl>\n"
 "Language-Team: \n"
 "Language: nl_NL\n"
@@ -22,8 +22,7 @@ msgstr ""
 "X-Poedit-SearchPath-1: templates\n"
 "X-Poedit-SearchPathExcluded-0: *.min.js\n"
 "X-Poedit-SearchPathExcluded-1: frontend\n"
-"X-Poedit-SearchPathExcluded-2: templates\n"
-"X-Poedit-SearchPathExcluded-3: tests\n"
+"X-Poedit-SearchPathExcluded-2: tests\n"
 
 #: assets/json.php:101 assets/json.php:103 assets/od.php:91 assets/od.php:93
 msgid "Tips"
@@ -1498,13 +1497,13 @@ msgstr "Het kan zijn dat je reactie eerst beoordeeld moet worden."
 msgid "Says:"
 msgstr "Schreef:"
 
-#: templates/comment.twig:15
+#: templates/comment-reply.twig:12 templates/comment.twig:15
 #, php-format
 msgctxt "comment"
 msgid "React to %s"
 msgstr "Reageer op %s"
 
-#: templates/comment.twig:15
+#: templates/comment-reply.twig:12 templates/comment.twig:15
 msgctxt "comment"
 msgid "React to this comment"
 msgstr "Hierop reageren"
@@ -1532,22 +1531,18 @@ msgctxt "Section title links"
 msgid "Links"
 msgstr ""
 
-#: templates/single.twig:13
-msgid "edit"
-msgstr "bewerken"
+#: templates/single.twig:22
+msgid "author"
+msgstr ""
 
-#: templates/single.twig:15
-msgid "by"
-msgstr "geschreven door"
-
-#: templates/single.twig:52
+#: templates/single.twig:64
 #, php-format
 msgid "One comment"
 msgid_plural "%d comments"
 msgstr[0] "Een reactie"
 msgstr[1] "%d reacties"
 
-#: templates/single.twig:62
+#: templates/single.twig:72
 msgctxt "comments"
 msgid "comments for this post are closed"
 msgstr "Je kunt niet meer reageren"
@@ -1591,6 +1586,12 @@ msgstr ""
 #. Template Name of the plugin/theme
 msgid "Template sitemap"
 msgstr ""
+
+#~ msgid "edit"
+#~ msgstr "bewerken"
+
+#~ msgid "by"
+#~ msgstr "geschreven door"
 
 #, fuzzy
 #~| msgid "Comments"
