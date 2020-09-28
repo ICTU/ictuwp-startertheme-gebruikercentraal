@@ -1066,11 +1066,14 @@ add_action( 'admin_menu', 'rename_minervakb', 999 );
 //========================================================================================================
 
 function append_block_wrappers( $block_content, $block ) {
-	if ( $block['blockName'] === 'core/paragraph' ) {
-//		$content = '<div class="section section--paragraph">';
-		$content = $block_content;
 
-//		$content .= '</div>';
+	$pagetemplate = basename( get_page_template() );
+//	$block_content = '<strong>' . $pagetemplate . ' / ' . $block['blockName']  . '</strong><br>' . $block_content;
+
+	if ( $block['blockName'] === 'core/paragraph' && 'template-landingspagina.php' ===  $pagetemplate ) {
+		$content = '<div class="section section--paragraph">';
+		$content .= $block_content;
+		$content .= '</div>';
 		return $content;
 
 	} elseif ( $block['blockName'] === 'core/heading' ) {

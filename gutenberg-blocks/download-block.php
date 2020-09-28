@@ -108,7 +108,10 @@ function download_block_get_data() {
 				$item['aria_label'] = esc_attr( $aria_label . ' (' . $aria_label_type . $aria_label_size . ')' );
 			}
 
-			$return['items'][] = $item;
+			if ( $item['url'] ) {
+				// een item toevoegen heeft alleen zin als de URL gevuld is.
+				$return['items'][] = $item;
+			}
 
 		endwhile;
 
