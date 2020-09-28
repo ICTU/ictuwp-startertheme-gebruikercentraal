@@ -1070,7 +1070,9 @@ function append_block_wrappers( $block_content, $block ) {
 	$pagetemplate = basename( get_page_template() );
 //	$block_content = '<strong>' . $pagetemplate . ' / ' . $block['blockName']  . '</strong><br>' . $block_content;
 
-	if ( $block['blockName'] === 'core/paragraph' && 'template-landingspagina.php' ===  $pagetemplate ) {
+	if ( ( $block['blockName'] === 'core/paragraph' ||
+	       $block['blockName'] === 'acf/gc-ctalink' ) && 'template-landingspagina.php' === $pagetemplate ) {
+
 		$content = '<div class="section section--paragraph">';
 		$content .= $block_content;
 		$content .= '</div>';
