@@ -8,49 +8,59 @@
         <div class="article-body">
           {{ post.content }}
         </div>
+      </section>
 
-        {% if sitemap.pages %}
+      {% if sitemap.pages %}
+        <section class="section">
           <h2>{{ pagetitle }}</h2>
-        <ul>
-          {{ sitemap.pages }}
-        </ul>
-        {% endif %}
+          <ul>
+            {{ sitemap.pages }}
+          </ul>
+        </section>
+      {% endif %}
 
-        {% if sitemap.posts %}
+      {% if sitemap.posts %}
+        <section class="section">
           <h2>{{ posttitle }}</h2>
           <ul>
-          {{ sitemap.posts }}
+            {{ sitemap.posts }}
           </ul>
-        {% endif %}
+        </section>
+      {% endif %}
 
-        {% if sitemap.tipthema %}
+      {% if sitemap.tipthema %}
+        <section class="section">
           <h2>{{ tipthemastitle }}</h2>
           <ul>
             {% for item in sitemap.tipthema %}
               <li><a href="{{ item.link }}">{{ item.name }}</a></li>
             {% endfor %}
           </ul>
-        {% endif %}
+        </section>
+      {% endif %}
 
-        {% if sitemap.speelsets %}
+      {% if sitemap.speelsets %}
+        <section class="section">
           <h2>{{ tipspeelsettitle }}</h2>
           <ul>
             {% for item in sitemap.speelsets %}
               <li><a href="{{ item.link }}">{{ item.name }}</a></li>
             {% endfor %}
           </ul>
-        {% endif %}
+        </section>
+      {% endif %}
 
-        {% if sitemap.tipgevers %}
+      {% if sitemap.tipgevers %}
+        <section class="section">
           <h2>{{ tipgeverstitle }}</h2>
           <ul>
             {% for item in sitemap.tipgevers %}
               <li><a href="{{ item.link }}">{{ item.name }}</a></li>
             {% endfor %}
           </ul>
-        {% endif %}
+        </section>
+      {% endif %}
 
-      </section>
     </article>
   </div><!-- /content-wrapper -->
 {% endblock %}
