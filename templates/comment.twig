@@ -1,28 +1,31 @@
-<li class="comment {{comment.comment_type}}" id="blog-comment-{{comment.ID}}">
+<li class="comment {{ comment.comment_type }}" id="comment-{{ comment.ID }}">
 
-	<div class="comment-body">
+  <div class="comment-body">
     <div class="comment-author vcard">
-      <cite class="fn">{{comment.author.name}}</cite>
+      <cite class="fn">{{ comment.author.name }}</cite>
       <span class="says">{{ __('Says:', 'gctheme') }}</span>
     </div>
     <div class="comment-content">
-      {{comment.comment_content|wpautop}}
+      {{ comment.comment_content|wpautop }}
     </div>
-    <div class="comment-meta commentmetadata">{{comment.date}}
+    <div class="comment-meta commentmetadata">{{ comment.date }}
       <div class="reply">
-        <a rel="nofollow" class="comment-reply-link" href="#" data-commentid="#" data-postid="#" data-belowelement="#" data-respondelement="respond" aria-label="Antwoord Haas Ontwerp">Beantwoorden</a>
+        <a rel="nofollow" class="comment-reply-link" href="#reply-title" data-commentid="{{ comment.ID }}"
+           data-belowelement="#" data-respondelement="respond"
+           aria-label="{{ _x('React to %s', 'comment', 'gctheme')|format(comment.author.name) }}">{{ _x('React to this comment', 'comment', 'gctheme') }}
+        </a>
       </div>
 
     </div>
 
 
-	</div>
+  </div>
   {% if comment.children %}
-  <ul class="children">
+    <ul class="children">
       {% for child_comment in comment.children %}
         {% include 'comment-reply.twig' with { comment:child_comment } %}
       {% endfor %}
-  </ul>
+    </ul>
   {% endif %}
 </li>
 

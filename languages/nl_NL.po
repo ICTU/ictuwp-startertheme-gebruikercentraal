@@ -1,9 +1,9 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Gebruiker Centraal (2020)\n"
-"POT-Creation-Date: 2020-09-23 07:38+0200\n"
-"PO-Revision-Date: 2020-09-23 07:39+0200\n"
-"Last-Translator: \n"
+"POT-Creation-Date: 2020-09-26 11:37+0200\n"
+"PO-Revision-Date: 2020-09-26 11:40+0200\n"
+"Last-Translator: Paul van Buuren <poedit@wbvb.nl>\n"
 "Language-Team: \n"
 "Language: nl_NL\n"
 "MIME-Version: 1.0\n"
@@ -19,6 +19,7 @@ msgstr ""
 "esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;_n_noop:1,2;"
 "_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
 "X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPath-1: templates\n"
 "X-Poedit-SearchPathExcluded-0: *.min.js\n"
 "X-Poedit-SearchPathExcluded-1: frontend\n"
 "X-Poedit-SearchPathExcluded-2: templates\n"
@@ -36,7 +37,7 @@ msgstr ""
 msgid "Alle tips"
 msgstr ""
 
-#: assets/json.php:105 assets/od.php:95 functions.php:712
+#: assets/json.php:105 assets/od.php:95 functions.php:715
 msgid "Toevoegen"
 msgstr ""
 
@@ -56,7 +57,7 @@ msgstr ""
 msgid "Nieuwe tip"
 msgstr ""
 
-#: assets/json.php:110 assets/od.php:100 functions.php:717
+#: assets/json.php:110 assets/od.php:100 functions.php:720
 msgid "Bekijk"
 msgstr ""
 
@@ -80,7 +81,7 @@ msgstr ""
 msgid "Hier voer je de tips in."
 msgstr ""
 
-#: assets/json.php:127 assets/od.php:117 functions.php:734
+#: assets/json.php:127 assets/od.php:117 functions.php:737
 msgid "post"
 msgstr ""
 
@@ -476,194 +477,193 @@ msgstr ""
 msgid "Geen speelset gevonden in de prullenbak"
 msgstr ""
 
-#: functions.php:172
+#: functions.php:175
 msgctxt "menu location"
 msgid "Menu in header"
 msgstr ""
 
-#: functions.php:173
+#: functions.php:176
 msgctxt "menu location"
 msgid "Menu in footer"
 msgstr ""
 
-#: functions.php:234
+#: functions.php:237
 #, php-format
 msgctxt "Alt-tekst op logo"
 msgid "Logo %s"
 msgstr ""
 
-#: functions.php:242
+#: functions.php:245
 msgctxt "skiplinks"
 msgid "Jump to main content"
 msgstr "Direct naar de belangrijkste inhoud"
 
-#: functions.php:244
+#: functions.php:247
 msgctxt "skiplinks"
 msgid "Jump to main navigation"
 msgstr "Direct naar de hoofdnavigatie"
 
-#: functions.php:273 functions.php:443
+#: functions.php:276 functions.php:446
 msgid "Wit"
 msgstr ""
 
-#: functions.php:278 functions.php:448
+#: functions.php:281 functions.php:451
 msgid "Zwart"
 msgstr ""
 
-#: functions.php:283
+#: functions.php:286
 msgid "GC Groen"
 msgstr ""
 
-#: functions.php:288
+#: functions.php:291
 msgid "GC Dark Blue"
 msgstr ""
 
-#: functions.php:293
+#: functions.php:296
 msgid "GC Pantybrown"
 msgstr ""
 
-#: functions.php:298
+#: functions.php:301
 msgid "GC Dark Purple"
 msgstr ""
 
-#: functions.php:303 functions.php:338
+#: functions.php:306 functions.php:341
 msgid "GC Blue"
 msgstr ""
 
-#: functions.php:308
+#: functions.php:311
 msgid "GC Pink"
 msgstr ""
 
-#: functions.php:313
+#: functions.php:316
 msgid "GC Orange"
 msgstr ""
 
-#: functions.php:318
+#: functions.php:321
 msgid "GC Cyan"
 msgstr ""
 
-#: functions.php:323 functions.php:328
+#: functions.php:326 functions.php:331
 msgid "Inclusie Orange"
 msgstr ""
 
-#: functions.php:333
+#: functions.php:336
 msgid "NLDS Purplish"
 msgstr ""
 
-#: functions.php:343
+#: functions.php:346
 msgid "GC Blue Safe"
 msgstr ""
 
-#: functions.php:348
+#: functions.php:351
 msgid "gc_a11y_green"
 msgstr ""
 
-#: functions.php:353
+#: functions.php:356
 msgid "od_orange"
 msgstr ""
 
-#: functions.php:358
+#: functions.php:361
 msgid "od_orange_darker"
 msgstr ""
 
-#: functions.php:363 functions.php:453
+#: functions.php:366 functions.php:456
 msgid "GC Pantybrown Xtra Light"
 msgstr ""
 
-#: functions.php:482
+#: functions.php:485
 msgid "Larger"
 msgstr "Groter"
 
-#: functions.php:487
+#: functions.php:490
 msgid "Extra large"
 msgstr "Grootst"
 
-#: functions.php:644
+#: functions.php:647
 msgctxt "Widget area"
 msgid "Footer widget left"
 msgstr ""
 
-#: functions.php:653
+#: functions.php:656
 msgctxt "Widget area"
 msgid "Footer widget right"
 msgstr ""
 
-#: functions.php:707
+#: functions.php:710
 msgid "Spotlight-blokken"
 msgstr ""
 
-#: functions.php:708
+#: functions.php:711
 msgid "Spotlight-blok"
 msgstr ""
 
-#: functions.php:709 functions.php:710
+#: functions.php:712 functions.php:713
 msgid "Spotlight"
 msgstr ""
 
-#: functions.php:711
+#: functions.php:714
 msgid "Alle spotlight-blokken"
 msgstr ""
 
-#: functions.php:713
+#: functions.php:716
 msgid "Spotlight-blok toevoegen"
 msgstr ""
 
-#: functions.php:714
+#: functions.php:717
 msgid "Spotlight-blok bewerken"
 msgstr ""
 
-#: functions.php:715
+#: functions.php:718
 msgid "Bewerk spotlight-blok"
 msgstr ""
 
-#: functions.php:716
+#: functions.php:719
 msgid "Nieuwe spotlight-blok"
 msgstr ""
 
-#: functions.php:718
+#: functions.php:721
 msgid "Bekijk spotlight-blok"
 msgstr ""
 
-#: functions.php:719
+#: functions.php:722
 msgid "Spotlight-blokken zoeken"
 msgstr ""
 
-#: functions.php:720
+#: functions.php:723
 msgid "Geen spotlight-blokken gevonden"
 msgstr ""
 
-#: functions.php:721
+#: functions.php:724
 msgid "Geen spotlight-blokken in de prullenbak"
 msgstr ""
 
-#: functions.php:726
+#: functions.php:729
 msgid "Hier voer je spotlight-blokken in."
 msgstr ""
 
-#: functions.php:853
+#: functions.php:856
 msgctxt "customizer"
 msgid "Gebruiker Centraal Instellingen"
 msgstr ""
 
-#: functions.php:854
+#: functions.php:857
 msgctxt "customizer"
 msgid ""
 "Selecteer hier het kleurenschema voor deze site. Je wijzigt hiermee de "
 "styling, logo en sommige functionaliteit van de site."
 msgstr ""
 
-#: functions.php:877
+#: functions.php:880
 msgctxt "customizer"
 msgid "Kies het kleurenschema"
 msgstr ""
 
-#: functions.php:1022
+#: functions.php:1047
 msgid "GC Kennisbank"
 msgstr ""
 
-#: functions.php:1164 gutenberg-blocks/related-block.php:82
-#: taxonomy-speelset.php:79 taxonomy-speelset.php:105 taxonomy-tipgever.php:43
-#: template-alle-tips.php:41
+#: functions.php:1188 gutenberg-blocks/related-block.php:82
+#: taxonomy-tipgever.php:43 template-alle-tips.php:41
 #, php-format
 msgctxt "Label tip-nummer"
 msgid "Tip %s"
@@ -740,12 +740,6 @@ msgstr ""
 msgctxt "Block description"
 msgid "Tonen van gerelateerde content in een apart block"
 msgstr ""
-
-#: gutenberg-blocks/related-block.php:88 taxonomy-speelset.php:90
-#: taxonomy-speelset.php:116 taxonomy-tipgever.php:54
-msgctxt "Toptiptekst bij tip"
-msgid "Toptip"
-msgstr "Toptip"
 
 #: gutenberg-blocks/rijksvideo-block.php:14
 msgctxt "Block titel"
@@ -1232,39 +1226,39 @@ msgstr ""
 msgid "Installing Plugin %1$s (%2$d/%3$d)"
 msgstr ""
 
-#: plugin-activatie/must-use-plugins.php:205
+#: plugin-activatie/must-use-plugins.php:209
 msgctxt "Plugins installer"
 msgid "Deze plugins zijn vereist om het thema te laten werken"
 msgstr "Deze plugins zijn de thema te laten werken"
 
-#: plugin-activatie/must-use-plugins.php:214
+#: plugin-activatie/must-use-plugins.php:218
 msgctxt "Plugins installer"
 msgid "Install Required Plugins"
 msgstr "Installeer vereiste plugins"
 
-#: plugin-activatie/must-use-plugins.php:215
+#: plugin-activatie/must-use-plugins.php:219
 msgctxt "Plugins installer"
 msgid "Install Plugins"
 msgstr "Installeer plugins"
 
-#: plugin-activatie/must-use-plugins.php:217
+#: plugin-activatie/must-use-plugins.php:221
 #, php-format
 msgctxt "Plugins installer"
 msgid "Installing Plugin: %s"
 msgstr "Plugin installeren: %s"
 
-#: plugin-activatie/must-use-plugins.php:219
+#: plugin-activatie/must-use-plugins.php:223
 #, php-format
 msgctxt "Plugins installer"
 msgid "Updating Plugin: %s"
 msgstr "Updaten Plugin: %s"
 
-#: plugin-activatie/must-use-plugins.php:220
+#: plugin-activatie/must-use-plugins.php:224
 msgctxt "Plugins installer"
 msgid "Something went wrong with the plugin API."
 msgstr "Er ging iets mis met de plugin API."
 
-#: plugin-activatie/must-use-plugins.php:223
+#: plugin-activatie/must-use-plugins.php:227
 #, php-format
 msgctxt "Plugins installer"
 msgid "This theme requires the following plugin: %1$s."
@@ -1272,7 +1266,7 @@ msgid_plural "This theme requires the following plugins: %1$s."
 msgstr[0] "Dit thema vereist de volgende plugin: %1$s."
 msgstr[1] "Dit thema vereist de volgende plugin: %1$s."
 
-#: plugin-activatie/must-use-plugins.php:227
+#: plugin-activatie/must-use-plugins.php:231
 #, php-format
 msgctxt "Plugins installer"
 msgid "This theme recommends the following plugin: %1$s."
@@ -1280,7 +1274,7 @@ msgid_plural "This theme recommends the following plugins: %1$s."
 msgstr[0] "Dit thema beveelt de volgende plugin aan: %1$s."
 msgstr[1] "Dit thema beveelt de volgende plugin aan: %1$s."
 
-#: plugin-activatie/must-use-plugins.php:231
+#: plugin-activatie/must-use-plugins.php:235
 #, php-format
 msgctxt "Plugins installer"
 msgid ""
@@ -1296,7 +1290,7 @@ msgstr[1] ""
 "De volgende plugin moet worden bijgewerkt naar de nieuwste versie voor "
 "maximale compatibiliteit met dit thema: %1$s."
 
-#: plugin-activatie/must-use-plugins.php:235
+#: plugin-activatie/must-use-plugins.php:239
 #, php-format
 msgctxt "Plugins installer"
 msgid "There is an update available for: %1$s."
@@ -1304,7 +1298,7 @@ msgid_plural "There are updates available for the following plugins: %1$s."
 msgstr[0] "Er is een update beschikbaar voor: %1$s."
 msgstr[1] "Er is een update beschikbaar voor: %1$s."
 
-#: plugin-activatie/must-use-plugins.php:239
+#: plugin-activatie/must-use-plugins.php:243
 #, php-format
 msgctxt "Plugins installer"
 msgid "The following required plugin is currently inactive: %1$s."
@@ -1312,7 +1306,7 @@ msgid_plural "The following required plugins are currently inactive: %1$s."
 msgstr[0] "De volgende vereiste plugin is momenteel inactief: %1$s."
 msgstr[1] "De volgende vereiste plugins is momenteel inactief: %1$s."
 
-#: plugin-activatie/must-use-plugins.php:243
+#: plugin-activatie/must-use-plugins.php:247
 #, php-format
 msgctxt "Plugins installer"
 msgid "The following recommended plugin is currently inactive: %1$s."
@@ -1320,49 +1314,49 @@ msgid_plural "The following recommended plugins are currently inactive: %1$s."
 msgstr[0] "De volgende aanbevolen plugin is momenteel inactief: %1$s."
 msgstr[1] "De volgende aanbevolen plugins zijn momenteel inactief: %1$s."
 
-#: plugin-activatie/must-use-plugins.php:246
+#: plugin-activatie/must-use-plugins.php:250
 msgctxt "Plugins installer"
 msgid "Begin installing plugin"
 msgid_plural "Begin installing plugins"
 msgstr[0] "Beginnen met het installeren van de plugin"
 msgstr[1] "Beginnen met het installeren van de plugins"
 
-#: plugin-activatie/must-use-plugins.php:249
+#: plugin-activatie/must-use-plugins.php:253
 msgctxt "Plugins installer"
 msgid "Begin updating plugin"
 msgid_plural "Begin updating plugins"
 msgstr[0] "Beginnen met bijwerken van de plugin"
 msgstr[1] "Beginnen met bijwerken van de plugins"
 
-#: plugin-activatie/must-use-plugins.php:252
+#: plugin-activatie/must-use-plugins.php:256
 msgctxt "Plugins installer"
 msgid "Begin activating plugin"
 msgid_plural "Begin activating plugins"
 msgstr[0] "Beginnen met het activeren van de plugin"
 msgstr[1] "Beginnen met het activeren van de plugins"
 
-#: plugin-activatie/must-use-plugins.php:254
+#: plugin-activatie/must-use-plugins.php:258
 msgctxt "Plugins installer"
 msgid "Return to Required Plugins Installer"
 msgstr ""
 
-#: plugin-activatie/must-use-plugins.php:255
+#: plugin-activatie/must-use-plugins.php:259
 msgctxt "Plugins installer"
 msgid "Plugin activated successfully."
 msgstr ""
 
-#: plugin-activatie/must-use-plugins.php:256
+#: plugin-activatie/must-use-plugins.php:260
 msgctxt "Plugins installer"
 msgid "The following plugin was activated successfully:"
 msgstr ""
 
-#: plugin-activatie/must-use-plugins.php:258
+#: plugin-activatie/must-use-plugins.php:262
 #, php-format
 msgctxt "Plugins installer"
 msgid "No action taken. Plugin %1$s was already active."
 msgstr ""
 
-#: plugin-activatie/must-use-plugins.php:260
+#: plugin-activatie/must-use-plugins.php:264
 #, php-format
 msgctxt "Plugins installer"
 msgid ""
@@ -1370,25 +1364,25 @@ msgid ""
 "Please update the plugin."
 msgstr ""
 
-#: plugin-activatie/must-use-plugins.php:262
+#: plugin-activatie/must-use-plugins.php:266
 #, php-format
 msgctxt "Plugins installer"
 msgid "All plugins installed and activated successfully. %1$s"
 msgstr ""
 
-#: plugin-activatie/must-use-plugins.php:263
+#: plugin-activatie/must-use-plugins.php:267
 msgctxt "Plugins installer"
 msgid "Dismiss this notice"
 msgstr ""
 
-#: plugin-activatie/must-use-plugins.php:264
+#: plugin-activatie/must-use-plugins.php:268
 msgctxt "Plugins installer"
 msgid ""
 "There are one or more required or recommended plugins to install, update or "
 "activate."
 msgstr ""
 
-#: plugin-activatie/must-use-plugins.php:265
+#: plugin-activatie/must-use-plugins.php:269
 msgctxt "Plugins installer"
 msgid "Please contact the administrator of this site for help."
 msgstr ""
@@ -1471,6 +1465,93 @@ msgctxt "widget field name"
 msgid "Korte beschrijving van de site"
 msgstr ""
 
+#: templates/comment-form.twig:2
+msgid "Add comment"
+msgstr "Reageer"
+
+#: templates/comment-form.twig:4
+msgid "Comment"
+msgstr "Jouw reactie"
+
+#: templates/comment-form.twig:4
+msgid "Leave a comment..."
+msgstr "Laat een reactie achter..."
+
+#: templates/comment-form.twig:10
+msgid "Name"
+msgstr "Naam"
+
+#: templates/comment-form.twig:11
+msgid "Email"
+msgstr "Emailadres"
+
+#: templates/comment-form.twig:13
+msgid "Send"
+msgstr "Reageer"
+
+#: templates/comment-form.twig:18
+msgid "Your comment will be revised by the site if needed."
+msgstr "Het kan zijn dat je reactie eerst beoordeeld moet worden."
+
+#: templates/comment-kb.twig:6 templates/comment-reply.twig:2
+#: templates/comment.twig:6
+msgid "Says:"
+msgstr "Schreef:"
+
+#: templates/comment.twig:15
+#, php-format
+msgctxt "comment"
+msgid "React to %s"
+msgstr "Reageer op %s"
+
+#: templates/comment.twig:15
+msgctxt "comment"
+msgid "React to this comment"
+msgstr "Hierop reageren"
+
+#: templates/footer.twig:7
+msgctxt "Title boven footer widgets"
+msgid "Footer"
+msgstr ""
+
+#: templates/single-kb.twig:68
+msgid "Comments"
+msgstr "Reacties"
+
+#: templates/single-kb.twig:78
+msgid "comments for this post are closed"
+msgstr "reacties voor dit bericht zijn gesloten"
+
+#: templates/single-tip.twig:28
+msgctxt "Title boven voorbeelden"
+msgid "Voorbeelden"
+msgstr ""
+
+#: templates/single-tip.twig:129
+msgctxt "Section title links"
+msgid "Links"
+msgstr ""
+
+#: templates/single.twig:13
+msgid "edit"
+msgstr "bewerken"
+
+#: templates/single.twig:15
+msgid "by"
+msgstr "geschreven door"
+
+#: templates/single.twig:52
+#, php-format
+msgid "One comment"
+msgid_plural "%d comments"
+msgstr[0] "Een reactie"
+msgstr[1] "%d reacties"
+
+#: templates/single.twig:62
+msgctxt "comments"
+msgid "comments for this post are closed"
+msgstr "Je kunt niet meer reageren"
+
 #. Theme Name of the plugin/theme
 msgid "Gebruiker Centraal (2020)"
 msgstr ""
@@ -1511,43 +1592,11 @@ msgstr ""
 msgid "Template sitemap"
 msgstr ""
 
-#~ msgid "Add comment"
-#~ msgstr "Reactie toevoegen"
-
-#~ msgid "Email"
-#~ msgstr "Emailadres"
-
-#~ msgid "Name"
-#~ msgstr "Naam"
-
-#~ msgid "Comment"
-#~ msgstr "Reactie"
-
-#~ msgid "Leave a comment..."
-#~ msgstr "Laat een reactie achter..."
-
-#~ msgid "Send"
-#~ msgstr "Versturen"
-
-#~ msgid "Cancel"
-#~ msgstr "Annuleren"
-
-#~ msgid "Your comment will be revised by the site if needed."
-#~ msgstr "Het kan zijn dat je reactie eerst beoordeeld moet worden."
-
-#~ msgid "edit"
-#~ msgstr "bewerken"
-
-#~ msgid "by"
-#~ msgstr "geschreven door"
-
+#, fuzzy
+#~| msgid "Comments"
+#~ msgctxt "comments"
 #~ msgid "Comments"
 #~ msgstr "Reacties"
 
-#~ msgid "comments for this post are closed"
-#~ msgstr "reacties voor dit bericht zijn gesloten"
-
-#, fuzzy
-#~| msgid "Comment"
-#~ msgid "comments"
-#~ msgstr "Opmerking"
+#~ msgid "Cancel"
+#~ msgstr "Annuleren"
