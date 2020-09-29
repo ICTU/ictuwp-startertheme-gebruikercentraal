@@ -1,0 +1,55 @@
+{
+    "key": "group_5f7305e1b49be",
+    "title": "Hero-image",
+    "fields": [
+        {
+            "key": "field_5f73061f493c6",
+            "label": "Kies een afbeelding",
+            "name": "hero_image",
+            "type": "image",
+            "instructions": "Dit veld zorgt voor een grote afbeelding bovenin. Het plaatje moet minimaal 1200px breed zijn en bij voorkeur in <em lang=\"en\">landscape<\/em>-formaat.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "array",
+            "preview_size": "medium",
+            "library": "all",
+            "min_width": 1200,
+            "min_height": "",
+            "min_size": "",
+            "max_width": "",
+            "max_height": "",
+            "max_size": "",
+            "mime_types": ""
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "post"
+            }
+        ],
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "page"
+            }
+        ]
+    ],
+    "menu_order": 2,
+    "position": "side",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "modified": 1601374104
+}

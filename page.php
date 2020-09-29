@@ -52,7 +52,8 @@ if ( $spotlightblocks ) {
 
 }
 
-
+// Get the hero image
+$context['hero_image'] = get_hero_image();
 
 Timber::render( [
 	'page-' . $timber_post->post_name . '.twig',
