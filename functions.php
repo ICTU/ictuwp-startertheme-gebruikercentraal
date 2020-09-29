@@ -1260,39 +1260,63 @@ function translate_mime_type( $fullmimetype ) {
 	switch ( strtolower( $fullmimetype ) ) {
 
 		case "png":
-			$return = 'PNG';
+			$return = _x( 'PNG', 'Mime-types', 'gctheme' );
 			break;
 
 		case "jpeg":
-			$return = 'JPG';
+			$return = _x( 'JPG', 'Mime-types', 'gctheme' );
 			break;
 
 		case "jpg":
-			$return = 'JPG';
+			$return = _x( 'JPG', 'Mime-types', 'gctheme' );
+			break;
+
+		case "gif":
+			$return = _x( 'GIF', 'Mime-types', 'gctheme' );
+			break;
+
+		case "mp3":
+			$return = _x( 'MP3', 'Mime-types', 'gctheme' );
+			break;
+
+		case "mp4":
+			$return = _x( 'MOVIE', 'Mime-types', 'gctheme' );
+			break;
+
+		case "mpeg":
+			$return = _x( 'MP3', 'Mime-types', 'gctheme' );
+			break;
+
+		case "pdf":
+			$return = _x( 'PDF', 'Mime-types', 'gctheme' );
 			break;
 
 		case "vnd.openxmlformats-officedocument.wordprocessingml.document":
-			$return = 'Word';
+			$return = _x( 'Word', 'Mime-types', 'gctheme' );
 			break;
 
 		case "msword":
-			$return = 'Word';
+			$return = _x( 'Word', 'Mime-types', 'gctheme' );
+			break;
+
+		case "vnd.ms-powerpoint":
+			$return = _x( 'Powerpoint', 'Mime-types', 'gctheme' );
 			break;
 
 		case "vnd.openxmlformats-officedocument.presentationml.presentation":
-			$return = 'Powerpoint';
+			$return = _x( 'Powerpoint', 'Mime-types', 'gctheme' );
 			break;
 
 		case "vnd.ms-excel":
-			$return = 'Excel';
+			$return = _x( 'Excel', 'Mime-types', 'gctheme' );
 			break;
 
 		case "vnd.openxmlformats-officedocument.spreadsheetml.sheet":
-			$return = 'Excel';
+			$return = _x( 'Excel', 'Mime-types', 'gctheme' );
 			break;
 
 		case "plain":
-			$return = 'TXT';
+			$return = _x( 'TXT', 'Mime-types', 'gctheme' );
 			break;
 
 		default:
