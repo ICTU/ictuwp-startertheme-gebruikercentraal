@@ -1,43 +1,32 @@
-<article class="teaser teaser--{{ post.post_type }} {{ post.thumbnail ? 'l-with-image' : 'l-without-image' }}"
-         id="tease-{{ post.ID }}">
-  <a href="{{ post.link }}" class="teaser__link">
-    {% if post.get_thumbnail %}
-      <figure class="teaser__image">
-        <img src="{{ post.thumbnail.src }}" class="image image--thumbnail"/>
-      </figure>
+<section class="teaser teaser--blog {{ post.get_field('hero_image') ? 'l-with-image' : 'l-without-image' }}" id="tease-{{ post.ID }}">
+  <a class="teaser__link" href="{{post.link}}">
+    {% if post.get_field('hero_image') %}
+    <img src="{{ Image(post.meta('hero_image')).src|resize(200,200) }}" alt="{{ Image(post.meta('hero_image')).alt }}" class="teaser__image">
     {% endif %}
-
     <div class="l-teaser-content">
-
-
       <header class="teaser__header">
-        <h3 class="teaser__title">
-          <span class="arrow-link">
-            <span class="arrow-link__text">{{ post.title }}</span>
-            <span class="arrow-link__icon"></span>
+        <span class="date-badge" itemprop="datePublished" content="{{ post.date|date('d-m-Y') }}">
+          <span class="date-badge__day">{{ post.date|date('d') }}</span>
+          <span class="date-badge__month">{{ post.date|date('M') }}</span>
+          <span class="date-badge__year visually-hidden">{{ post.date|date('y') }}</span>
         </span>
+        <h3 itemprop="name" class="teaser__title">
+          <span class="arrow-link">
+            <span class="arrow-link__text">{{ post.title }}</span><span class="arrow-link__icon"></span>
+          </span>
         </h3>
-
-        {% if not post.author is empty %}
-
-          {% set meta = {
-            '1': {
-              'title': 'Auteur',
-              'descr': post.author
-            }
-          } %}
-
-          {% include 'components/meta-data.html.twig' with {
-            'items': meta
-          } %}
-
-        {% endif %}
+        <div class="meta-data">
+          <dl class="meta-data__list">
+            <dt class="visually-hidden">Auteur</dt>
+            <dd class="meta-data__item auteur">{{ post.author }}</dd>
+          </dl>
+        </div>
       </header>
-
-      {% if post.post_excerpt %}
-        <p class="teaser__description">{{ post.post_excerpt }}</p>
-      {% endif %}
-
+      <div class="teaser__description">
+        {% if post.post_excerpt %}
+          <p class="teaser__description">{{ post.post_excerpt }}</p>
+        {% endif %}
+      </div>
     </div>
   </a>
-</article>
+</section>

@@ -26,7 +26,7 @@
           <section class="author author--box l-with-image" itemprop="author" itemscope="itemscope" itemtype="http://schema.org/Person">
 
             <figure class="author__picture">
-              <img src="http://gc.haas-ontwerp.nl/uploads/doelgroep/doelgroep-1.svg" alt="Auteur">
+              <img src="{{ Image(post.author.meta('author_profile_image')).src }}" alt="Auteur">
             </figure>
 
             <div class="author__content">

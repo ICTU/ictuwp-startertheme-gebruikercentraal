@@ -1,16 +1,19 @@
 {# This file demonstrates using most of the index.twig template and modifying
    just a small part. See `search.twig` for an example of another approach #}
 
-{% extends "index.twig" %}
+{% extends "base.twig" %}
 
 
 {% block content %}
+<article class="entry entry--type-overview entry--full">
+
+  <div class="entry-content">
 
   {% block archive_intro %}
 
     <div class="page__intro">
-      <header class="archive__header">
-        <h1 class="page__title">{{ title }}</h1>
+      <header class="entry-header">
+        <h1 class="entry-title">{{ title }}</h1>
       </header>
 
       {% if descr %}
@@ -26,11 +29,16 @@
   {% block archive_overview %}
     {% if posts and overview is empty %}
 
-      <div class="overview--list">
+    <article class="section section--overview-list l-item-count-3">
+      <div class="l-section-content">
+        <div class="overview overview--list">
+
         {% for post in posts %}
           {% include ['tease-'~post.post_type~'.twig', 'tease.twig'] %}
         {% endfor %}
+        </div>
       </div>
+    </article>
 
     {% elseif overview %}
 
@@ -49,4 +57,7 @@
     {% include 'partial/pagination.twig' with { pagination: posts.pagination({show_all: false, mid_size: 3, end_size: 2}) } %}
 
   {% endblock %}
+
+  </div>
+  </article>
 {% endblock %}
