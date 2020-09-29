@@ -61,9 +61,10 @@ function spotlight_block_get_data() {
 
 	$spotlightblok_toevoegen = get_field( 'spotlightblok_toevoegen' );
 	$spotlight_blokken       = get_field( 'spotlight_blokken' );
-	$return['block_id']      = get_the_id();
 
 	if ( $spotlight_blokken && 'ja' === $spotlightblok_toevoegen ):
+
+		$return['block_id']      = get_the_id();
 
 		foreach ( $spotlight_blokken as $post ):
 
@@ -95,10 +96,6 @@ function spotlight_block_get_data() {
 
 		/* Restore original Post Data */
 		wp_reset_postdata();
-
-
-	else:
-		$return['inhoud'] = "In de instellingen voor dit block, kies: <br>'<em>Ja, voeg spotlightblok toe</em>' en selecteer een of twee blokken";
 
 	endif;
 
