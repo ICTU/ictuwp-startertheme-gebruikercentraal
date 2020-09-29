@@ -15,7 +15,6 @@
     <ul class="item-list">
       {% for item in items %}
 
-        {% if item.url %}
           <li class="item-list__item">
             {% include 'components/download-box.html.twig' with {
               'title': item.title,
@@ -26,8 +25,6 @@
               'meta': item.meta
             } %}
           </li>
-        {% endif %}
-
       {% endfor %}
 
     </ul>

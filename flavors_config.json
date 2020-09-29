@@ -67,7 +67,7 @@
       "css1": {
         "handle": "od-theme",
         "file": "/flavors/optimaaldigitaal/assets/css/od-theme.css",
-        "version": "5.0.8",
+        "version": "5.0.9",
         "dependencies": ""
       }
     },

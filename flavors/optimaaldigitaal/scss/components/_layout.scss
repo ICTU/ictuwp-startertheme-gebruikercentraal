@@ -1,14 +1,18 @@
 
 .breadcrumb {
+  /*
+  hier stond de code voor het wissen van de achtergrondkleur van de breadcrumb
   background: none;
   position: absolute;
   z-index: 6;
   left: 0;
   right: 0;
+   */
 
   .breadcrumb__list {
     @include ho-container;
   }
+
 }
 
 .page-content {
@@ -124,7 +128,7 @@
   background: $gc-pantybrown-light;
 }
 
-.tax-tipgever{
+.tax-tipgever {
   .page-content {
     padding-bottom: 0;
   }
