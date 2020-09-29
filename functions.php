@@ -1250,6 +1250,59 @@ function get_hero_image() {
 
 }
 
+
+//========================================================================================================
+
+function translate_mime_type( $fullmimetype ) {
+
+	$return = '';
+
+	switch ( strtolower( $fullmimetype ) ) {
+
+		case "png":
+			$return = 'PNG';
+			break;
+
+		case "jpeg":
+			$return = 'JPG';
+			break;
+
+		case "jpg":
+			$return = 'JPG';
+			break;
+
+		case "vnd.openxmlformats-officedocument.wordprocessingml.document":
+			$return = 'Word';
+			break;
+
+		case "msword":
+			$return = 'Word';
+			break;
+
+		case "vnd.openxmlformats-officedocument.presentationml.presentation":
+			$return = 'Powerpoint';
+			break;
+
+		case "vnd.ms-excel":
+			$return = 'Excel';
+			break;
+
+		case "vnd.openxmlformats-officedocument.spreadsheetml.sheet":
+			$return = 'Excel';
+			break;
+
+		case "plain":
+			$return = 'TXT';
+			break;
+
+		default:
+			$return = 'document: (' . $fullmimetype . ')';
+			break;
+	}
+	return $return;
+
+}
+
 //========================================================================================================
 
 

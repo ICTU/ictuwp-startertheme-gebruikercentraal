@@ -57,7 +57,7 @@ function download_block_get_data() {
 			$aria_label_size  = '';
 			$aria_label       = sprintf( _x( 'Download %s', 'Lange linktekst voor een download', 'gctheme' ), get_sub_field( 'downloaditem_title' ) );
 			$item['title']    = get_sub_field( 'downloaditem_title' );
-			$item['descr']    = get_sub_field( 'downloaditem_description' );
+			$item['descr']    = ( get_sub_field( 'downloaditem_description' ) ) ? get_sub_field( 'downloaditem_description' ) : '&nbsp;';
 			$item['linktext'] = _x( 'Download', 'Korte linktekst voor een download', 'gctheme' );
 
 			if ( 'extern' === get_sub_field( 'downloaditem_file' ) ) {
@@ -84,12 +84,16 @@ function download_block_get_data() {
 
 					$file = get_sub_field( 'downloaditem_media' );
 
+					if ( ! $item['title'] && $file['title'] ) {
+						$item['title'] = $file['title'];
+					}
+
 					if ( $file['subtype'] ) {
 						$item['meta'][]  = [
 							'title' => 'filetype',
-							'descr' => strtoupper( $file['subtype'] ),
+							'descr' => translate_mime_type( $file['subtype'] ),
 						];
-						$aria_label_type = strtoupper( $file['subtype'] );
+						$aria_label_type = translate_mime_type( $file['subtype'] );
 					}
 
 					if ( $file['filesize'] ) {
