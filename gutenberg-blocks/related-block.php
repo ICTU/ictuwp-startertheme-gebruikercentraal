@@ -110,6 +110,23 @@ function related_block_get_data() {
 							'descr' => get_the_time( get_option( 'date_format' ), $post->ID ),
 						];
 
+
+					} elseif ( 'event' == get_post_type( $post ) ) {
+
+						$event_start_date     = get_post_meta( $post->ID, '_event_start_date', true );
+						$event_start_time     = get_post_meta( $post->ID, '_event_start_time', true );
+						$event_end_date       = get_post_meta( $post->ID, '_event_end_date', true );
+						$event_end_time       = get_post_meta( $post->ID, '_event_end_time', true );
+						$event_end_datetime   = strtotime( $event_end_date . ' ' . $event_end_time );
+						$event_start_datetime = strtotime( $event_start_date . ' ' . $event_start_time );
+
+						if ( $event_start_datetime === $event_end_datetime ) {
+							$item['start_date'] = $event_start_datetime;
+						} elseif ( $event_start_datetime && $event_end_datetime ) {
+							$item['start_date'] = $event_start_datetime;
+							$item['end_date']   = $event_end_datetime;
+						}
+
 					}
 
 					$return['items'][] = $item;
@@ -169,7 +186,6 @@ function related_block_get_data() {
 			// we moeten wel een achtergrondje tonen
 			$return['modifier'] = get_field( 'content_block_modifier' );
 		}
-
 
 
 	}

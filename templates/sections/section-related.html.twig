@@ -73,6 +73,9 @@
             'toptip' : card.toptip,
             'toptiptekst' : card.toptiptekst,
             'url': is_preview ? '#' : card.url,
+            'start_date': ( card.start_date ?? '' ),
+            'end_date': ( card.end_date ?? '' ),
+            'post_date': ( card.post_date ?? '' ),
             'meta': card.meta,
           } %}
 
