@@ -30,43 +30,43 @@
   {{ function('insert_breadcrumb') }}
 
   <div class="page-content" id="maincontent">
-    {% if post.thumbnail.src %}
-    <div class="l-hero">
+{#  {% if post.thumbnail.src %}
+  <div class="l-hero">
 
-      <picture class="image image--hero">
-        <source srcset="{{ post.thumbnail.src|resize(1000) }} 1x" media="(max-width: 800px)" type="image/jpeg">
-        <source srcset="{{ post.thumbnail.src|resize(1600) }} 1.5x" media="(min-width: 800px)" type="image/jpeg">
+    <picture class="image image--hero">
+      <source srcset="{{ post.thumbnail.src|resize(1000) }} 1x" media="(max-width: 800px)" type="image/jpeg">
+      <source srcset="{{ post.thumbnail.src|resize(1600) }} 1.5x" media="(min-width: 800px)" type="image/jpeg">
 
-        <img src="{{ post.thumbnail.src}}" alt="{{ post.thumbnail.alt}}">
-      </picture>
-    </div>
-    {% endif %}
-
-    <main class="content" id="{{ maincontent_id }}">
-      {% block content %}
-        Sorry, no content
-      {% endblock %}
-
-    </main>
-
-
-    {% if spotlight %}
-      {% include 'sections/section-spotlight.html.twig' with {
-        'items': spotlight,
-        'modifier': 'bg-option',
-      } %}
-    {% endif %}
-
-
-    {% block page_bottom %}
-
-    {% endblock %}
+      <img src="{{ post.thumbnail.src}}" alt="{{ post.thumbnail.alt}}">
+    </picture>
   </div>
+  {% endif %} #}
 
-  {% block footer %}
-    {% include 'footer.twig' %}
-    {{ function('wp_footer') }}
+  <main class="content" id="{{ maincontent_id }}">
+    {% block content %}
+      Sorry, no content
+    {% endblock %}
+
+  </main>
+
+
+  {% if spotlight %}
+    {% include 'sections/section-spotlight.html.twig' with {
+      'items': spotlight,
+      'modifier': 'bg-option',
+    } %}
+  {% endif %}
+
+
+  {% block page_bottom %}
+
   {% endblock %}
+</div>
+
+{% block footer %}
+  {% include 'footer.twig' %}
+  {{ function('wp_footer') }}
+{% endblock %}
 </div>
 
 </body>
