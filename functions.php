@@ -917,16 +917,16 @@ function gc_ho_dequeue_css() {
 	wp_deregister_style( 'newsletter' );
 	wp_dequeue_style( 'newsletter-css' );
 
-/*
- *
-	// Add kennisbank CSS if subsite is kennisbank
-	$get_theme_option = get_option( 'gc2020_theme_options' );
-	$flavor_select    = $get_theme_option['flavor_select'];
-	if ( $flavor_select == "KB" ) {
-		wp_enqueue_style( 'gc-kennisbank-style', get_template_directory_uri() . '/flavors/kennisbank/assets/css/gc-kennisbank.css' );
-	}
+	/*
+	 *
+		// Add kennisbank CSS if subsite is kennisbank
+		$get_theme_option = get_option( 'gc2020_theme_options' );
+		$flavor_select    = $get_theme_option['flavor_select'];
+		if ( $flavor_select == "KB" ) {
+			wp_enqueue_style( 'gc-kennisbank-style', get_template_directory_uri() . '/flavors/kennisbank/assets/css/gc-kennisbank.css' );
+		}
 
- */
+	 */
 
 
 }
@@ -1080,6 +1080,7 @@ function append_block_wrappers( $block_content, $block ) {
 		$content = '<div class="section section--paragraph">';
 		$content .= $block_content;
 		$content .= '</div>';
+
 		return $content;
 
 	} elseif ( $block['blockName'] === 'core/heading' ) {
@@ -1234,4 +1235,21 @@ function tipgever_archive_modify_query( $query ) {
 add_action( 'pre_get_posts', 'tipgever_archive_modify_query' );
 
 //========================================================================================================
+
+function get_hero_image() {
+	$return = array();
+
+	if ( get_field( 'hero_image' ) ) {
+		$data           = get_field( 'hero_image' );
+		$return['src']  = $data['url'];
+		$return['alt']  = $data['alt'];
+		$return['mime'] = get_post_mime_type( $data['ID'] );
+	}
+
+	return $return;
+
+}
+
+//========================================================================================================
+
 

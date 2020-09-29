@@ -39,6 +39,9 @@ if ( $spotlightblocks ) {
 
 }
 
+// Get the hero image
+$context['hero_image'] = get_hero_image();
+
 if ( post_password_required( $timber_post->ID ) ) {
 	Timber::render( 'single-password.twig', $context );
 } else {

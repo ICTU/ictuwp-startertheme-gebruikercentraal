@@ -30,17 +30,17 @@
   {{ function('insert_breadcrumb') }}
 
   <div class="page-content" id="maincontent">
-{#  {% if post.thumbnail.src %}
+  {% if hero_image.src %}
   <div class="l-hero">
 
     <picture class="image image--hero">
-      <source srcset="{{ post.thumbnail.src|resize(1000) }} 1x" media="(max-width: 800px)" type="image/jpeg">
-      <source srcset="{{ post.thumbnail.src|resize(1600) }} 1.5x" media="(min-width: 800px)" type="image/jpeg">
+      <source srcset="{{ hero_image.src|resize(1000) }} 1x" media="(max-width: 800px)" type="{{ hero_image.mime }}">
+      <source srcset="{{ hero_image.src|resize(1600) }} 1.5x" media="(min-width: 800px)" type="{{ hero_image.mime }}">
 
-      <img src="{{ post.thumbnail.src}}" alt="{{ post.thumbnail.alt}}">
+      <img src="{{ hero_image.src}}" alt="{{ hero_image.alt}}">
     </picture>
   </div>
-  {% endif %} #}
+  {% endif %}
 
   <main class="content" id="{{ maincontent_id }}">
     {% block content %}
