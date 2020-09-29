@@ -6716,11 +6716,14 @@ h1 {
         height: 16rem; } }
 
 .breadcrumb {
+  /*
+  hier stond de code voor het wissen van de achtergrondkleur van de breadcrumb
   background: none;
   position: absolute;
   z-index: 6;
   left: 0;
-  right: 0; }
+  right: 0;
+   */ }
   .breadcrumb .breadcrumb__list {
     max-width: 1280px;
     margin-left: auto;
@@ -7094,3 +7097,5 @@ h1 {
   @media (min-width: 1100px) {
     .manual-item__content {
       padding: 4rem 5rem; } }
+
+/*# sourceMappingURL=od-theme.css.map */

@@ -1,7 +1,7 @@
 <?php
 // spotlight-block.php
 
-add_action( 'acf/init', 'gb_add_spotlight_block' );
+// add_action( 'acf/init', 'gb_add_spotlight_block' );
 
 function gb_add_spotlight_block() {
 
