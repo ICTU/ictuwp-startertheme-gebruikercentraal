@@ -6,3 +6,5 @@ vendor
 
 #dont commit .map sites
 assets/css/*.map
+.DS_Store
+
