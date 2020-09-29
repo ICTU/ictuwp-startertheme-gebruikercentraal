@@ -89,7 +89,7 @@ function download_block_get_data() {
 							'title' => 'filetype',
 							'descr' => strtoupper( $file['subtype'] ),
 						];
-						$aria_label_type = '"' . strtoupper( $file['subtype'] );
+						$aria_label_type = strtoupper( $file['subtype'] );
 					}
 
 					if ( $file['filesize'] ) {
@@ -99,6 +99,9 @@ function download_block_get_data() {
 						];
 						$aria_label_size = gc_wbvb_get_human_filesize( $file['filesize'] );
 					}
+
+					$item['url'] = $file['url'];
+
 				}
 			}
 
@@ -108,10 +111,8 @@ function download_block_get_data() {
 				$item['aria_label'] = esc_attr( $aria_label . ' (' . $aria_label_type . $aria_label_size . ')' );
 			}
 
-			if ( $item['url'] ) {
-				// een item toevoegen heeft alleen zin als de URL gevuld is.
-				$return['items'][] = $item;
-			}
+			// een item toevoegen heeft alleen zin als de URL gevuld is.
+			$return['items'][] = $item;
 
 		endwhile;
 

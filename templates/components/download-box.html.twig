@@ -1,15 +1,15 @@
 {#
- /** Download box
- * Template for displaying a download
- *
- * Variables:
- * - title: The title of the download
- * - descr: Description
- * - meta: arrat of metadata items (filetype, filesize)
- *
- * SCSS:
- * - components/download-box.scss
- */
+/** Download box
+* Template for displaying a download
+*
+* Variables:
+* - title: The title of the download
+* - descr: Description
+* - meta: arrat of metadata items (filetype, filesize)
+*
+* SCSS:
+* - components/download-box.scss
+*/
 #}
 
 <section class="download-box{{ descr ? ' download-box--with-descr' }}">
@@ -23,5 +23,8 @@
     <p class="download__description">{{ descr|e('wp_kses_post') }}</p>
   {% endif %}
 
-  <a href="{{ url|e('esc_url') }}" class="btn btn--download" download="" aria-label="{{ aria_label|e('esc_html') }}">{{ linktext|e('wp_kses_post') }}</a>
+  {% if url %}
+    <a href="{{ url|e('esc_url') }}" class="btn btn--download" download
+       {% if aria_label %}aria-label="{{ aria_label|e('esc_html') }}"{% endif %}>{{ linktext|e('wp_kses_post') }}</a>
+  {% endif %}
 </section>
