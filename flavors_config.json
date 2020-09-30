@@ -23,20 +23,20 @@
       "Fonts": {
         "handle": "skiplinks",
         "file": "/assets/fonts/fonts.css",
-        "version": "5.0.8",
+        "version": "5.0.9",
         "dependencies": ""
       },
       "Styling": {
         "handle": "gc-theme",
         "file": "/assets/css/gc-theme.css",
-        "version": "5.0.8",
+        "version": "5.0.9",
         "dependencies": ""
       }
     },
     "palette": {
-      "gc_a11y_green": {
+      "gc-accessible-green": {
       },
-      "gc_pantybrown_xlight": {
+      "gc-pantybrown-xlight": {
       },
       "gc-dark-purple": {
       }
@@ -47,9 +47,9 @@
     "shortname": "nlds",
     "site_logo": "/assets/images/logo/gc-nlds-beeldmerk.svg",
     "palette": {
-      "gc_a11y-blue": {
+      "gc-accessible-blue": {
       },
-      "nlds_purplish": {
+      "nlds-purplish": {
       }
     }
   },
@@ -61,7 +61,7 @@
       "Fonts": {
         "handle": "skiplinks",
         "file": "/assets/fonts/fonts.css",
-        "version": "5.0.8",
+        "version": "5.0.9",
         "dependencies": ""
       },
       "css1": {
@@ -72,9 +72,9 @@
       }
     },
     "palette": {
-      "od_orange": {
+      "od-orange": {
       },
-      "gc_a11y_green": {
+      "gc-accessible-green": {
       }
     }
   },
@@ -105,13 +105,13 @@
       "Fonts": {
         "handle": "skiplinks",
         "file": "/assets/fonts/fonts.css",
-        "version": "5.0.8",
+        "version": "5.0.9",
         "dependencies": ""
       },
       "Styling": {
         "handle": "gc-theme",
         "file": "/assets/css/gc-theme.css",
-        "version": "5.0.8",
+        "version": "5.0.9",
         "dependencies": ""
       },
       "KB": {

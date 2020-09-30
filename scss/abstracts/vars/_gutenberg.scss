@@ -1,31 +1,28 @@
-
 // Gutenberg color options
 // see editor-color-palette in functions.php
+// v5.0.9
 // ---------------------------------------------
-$gc_gutenberg_colors:
-                ( white, $white ),
-                ( black, $black ),
-                ( gc_a11y-blue, $gc_a11y-blue ),
-                ( gc_blue, $gc_blue ),
-                ( gc_pantybrown_xlight, $gc_pantybrown_xlight ),
-                ( gc_pantybrown, $gc_pantybrown ),
-                ( gc-blue, $gc-blue ),
-                ( gc-cyan, $gc-cyan ),
-                ( gc-cyan, $gc-cyan ),
-                ( gc-dark-blue, $gc-dark-blue ),
-                ( gc-dark-purple, $gc-dark-purple ),
-                ( gc-green, $gc-green ),
-                ( gc-orange, $gc-orange ),
-                ( gc-pantybrown, $gc-pantybrown ),
-                ( gc-pink, $gc-pink ),
-                ( inc_a11y_orange, $inc_a11y_orange ),
-                ( inc_orange, $inc_orange ),
-                ( nlds_purplish, $nlds_purplish ),
-                ( od-orange-darker, $od-orange-darker ),
-                ( od-orange, $od-orange );
+$gc_gutenberg_colors: (white, $white),
+  (black, $black),
+  (gc-green, $gc-green),
+  (gc-dark-blue, $gc-dark-blue),
+  (gc-pantybrown, $gc-pantybrown),
+  (gc-dark-purple, $gc-dark-purple),
+  (gc-blue, $gc-blue),
+  (gc-pink, $gc-pink),
+  (gc-orange, $gc-orange),
+  (gc-cyan, $gc-cyan),
+  (inc-orange, $inc-orange),
+  (inc-a11y-orange, $inc_a11y_orange),
+  (nlds-purplish, $nlds_purplish),
+  (gc-blue, $gc_blue),
+  (gc-accessible-blue, $gc_a11y-blue),
+  (gc-accessible-green, $gc-a11y-green),
+  (od-orange, $od-orange),
+  (od-orange-darker, $od-orange-darker),
+  (gc-pantybrown-xlight, $gc_pantybrown_xlight);
 
-
-// Color Options
+// Set color options
 // ---------------------------------------------
 @each $name, $color in $gc_gutenberg_colors {
 

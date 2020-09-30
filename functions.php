@@ -8,7 +8,7 @@
  * @since   Timber 0.1
  */
 
-define( 'CHILD_THEME_VERSION', '5.0.8' );
+define( 'CHILD_THEME_VERSION', '5.0.9' );
 define( 'ID_MAINCONTENT', 'maincontent' );
 define( 'ID_MAINNAV', 'mainnav' );
 define( 'ID_ZOEKEN', 'zoeken' );
@@ -292,9 +292,9 @@ class GebruikerCentraalTheme extends Timber\Site {
 				'slug'  => 'gc-dark-blue',
 				'color' => '#004152',
 			),
-			'gc_pantybrown'        => array(
+			'gc-pantybrown'        => array(
 				'name'  => __( 'GC Pantybrown', 'gctheme' ),
-				'slug'  => 'gc_pantybrown',
+				'slug'  => 'gc-pantybrown',
 				'color' => '#e8d8c7',
 			),
 			'gc-dark-purple'       => array(
@@ -324,12 +324,12 @@ class GebruikerCentraalTheme extends Timber\Site {
 			),
 			'inc_orange'           => array(
 				'name'  => __( 'Inclusie Orange', 'gctheme' ),
-				'slug'  => 'nlds-orange',
+				'slug'  => 'inc_orange',
 				'color' => '#D94721',
 			),
 			'inc_a11y_orange'      => array(
 				'name'  => __( 'Inclusie Orange', 'gctheme' ),
-				'slug'  => 'inc-a11y-orange',
+				'slug'  => 'inc-accessible-orange',
 				'color' => '#c73d19',
 			),
 			'nlds_purplish'        => array(
@@ -337,32 +337,32 @@ class GebruikerCentraalTheme extends Timber\Site {
 				'slug'  => 'nlds-purplish',
 				'color' => '#74295f',
 			),
-			'gc_blue'              => array(
+			'gc-blue'              => array(
 				'name'  => __( 'GC Blue', 'gctheme' ),
 				'slug'  => 'gc-blue',
 				'color' => '#0095da',
 			),
-			'gc_a11y-blue'         => array(
+			'gc-accessible-blue'   => array(
 				'name'  => __( 'GC Blue Safe', 'gctheme' ),
-				'slug'  => 'gc-a11y-blue',
+				'slug'  => 'gc-accessible-blue',
 				'color' => '#007BB0',
 			),
-			'gc_a11y_green'        => array(
-				'name'  => __( 'gc_a11y_green', 'gctheme' ),
-				'slug'  => 'gc-a11y-green',
+			'gc-accessible-green'  => array(
+				'name'  => __( 'GC acessible green', 'gctheme' ),
+				'slug'  => 'gc-accessible-green',
 				'color' => '#148839',
 			),
-			'od_orange'            => array(
-				'name'  => __( 'od_orange', 'gctheme' ),
+			'od-orange'            => array(
+				'name'  => __( 'od-orange', 'gctheme' ),
 				'slug'  => 'gc-orange',
 				'color' => '#BA4F0C',
 			),
-			'od_orange_darker'     => array(
-				'name'  => __( 'od_orange_darker', 'gctheme' ),
+			'od-orange-darker'     => array(
+				'name'  => __( 'od-orange-darker', 'gctheme' ),
 				'slug'  => 'gc-orange',
 				'color' => '#983A00',
 			),
-			'gc_pantybrown_xlight' => array(
+			'gc-pantybrown-xlight' => array(
 				'name'  => __( 'GC Pantybrown Xtra Light', 'gctheme' ),
 				'slug'  => 'gc-pantybrown-xlight',
 				'color' => '#f9f6f3',
@@ -452,7 +452,7 @@ class GebruikerCentraalTheme extends Timber\Site {
 				'slug'  => 'black',
 				'color' => '#000',
 			),
-			'gc_pantybrown_xlight' => array(
+			'gc-pantybrown-xlight' => array(
 				'name'  => __( 'GC Pantybrown Xtra Light', 'gctheme' ),
 				'slug'  => 'gc-pantybrown-xlight',
 				'color' => '#f9f6f3',
@@ -1323,6 +1323,7 @@ function translate_mime_type( $fullmimetype ) {
 			$return = 'document: (' . $fullmimetype . ')';
 			break;
 	}
+
 	return $return;
 
 }
