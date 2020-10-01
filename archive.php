@@ -83,13 +83,7 @@ if ( $context['pagetype'] === 'archive_tipthema' ) {
 	$context['posts'] = new Timber\PostQuery();
 }
 
-// For tipgevers taxonomy - set modifier for 4col
-
-
-
 if ( $taxonomy_name === OD_CITAATAUTEUR ) {
-
-		//dump($archive);
 
 	// Get all data from the term
 	$cat    = get_term( $archive->term_id );
@@ -110,7 +104,6 @@ if ( $taxonomy_name === OD_CITAATAUTEUR ) {
 		$contact['email'] = $author['tipgever_mail'][0];
 	}
 
-
 	// Set author vars
 	$context['author']['title']    = $archive->name;
 	$context['author']['function'] = ( $author['tipgever_functietitel'][0] ? $author['tipgever_functietitel'][0] : '' );
@@ -118,13 +111,13 @@ if ( $taxonomy_name === OD_CITAATAUTEUR ) {
 	$context['author']['descr']    = ( $cat->description ? $cat->description : '' );
 	$context['author']['contact']  = ( $contact ? $contact : '' );
 
-
 	// Set overview
 	$fullname = explode( ' ', trim( $archive->name ) );
 
 	// Set 4 column grid for tipgevers. Default is col-3
 	$context['overview']['modifier'] = 'col-4';
 	$context['overview']['title']    = 'Tips van ' . $fullname[0];
+
 }
 
 Timber::render( $templates, $context );
