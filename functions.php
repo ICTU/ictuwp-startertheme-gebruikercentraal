@@ -248,6 +248,7 @@ class GebruikerCentraalTheme extends Timber\Site {
 		$context['searchlabel']             = _x( 'Enter a keyword to search', 'searchform label', 'gctheme' );
 		$context['searchplaceholder']       = _x( 'Search...', 'searchform placeholder', 'gctheme' );
 		$context['searchbuttonlabel']       = _x( 'Search', 'searchform button label', 'gctheme' );
+		$context['searchterm']              = isset( $_GET['s'] ) ? sanitize_text_field( $_GET['s'] ) : '';
 
 		// Additional vars for archives
 		if ( is_archive() ) {
@@ -1337,9 +1338,10 @@ function translate_mime_type( $fullmimetype ) {
 function translate_posttype( $posttype ) {
 	$return = '';
 	if ( $posttype ) {
-		$obj = get_post_type_object( $posttype );
+		$obj    = get_post_type_object( $posttype );
 		$return = $obj->labels->singular_name;
 	}
+
 	return $return;
 }
 

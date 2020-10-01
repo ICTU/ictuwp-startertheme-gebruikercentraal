@@ -2,7 +2,7 @@
 <div class="widget-area header-widget-area">
   <form tabindex="-1" id="zoeken" class="search-form" method="get" action="{{ site.url }}" role="search">
     <label class="search-form-label screen-reader-text" for="searchform-1">{{ searchlabel }}</label><input
-      class="search-form-input" type="search" name="s" id="searchform-1" placeholder="{{ searchplaceholder }}">
+      class="search-form-input" type="search" name="s" id="searchform-1" placeholder="{{ searchplaceholder }}" value="{{ searchterm }}">
     <input class="search-form-submit" type="submit" value="{{ searchbuttonlabel }}">
     <meta content="{{ site.url }}/?s={s}">
   </form>
