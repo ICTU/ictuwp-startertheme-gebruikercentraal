@@ -113,7 +113,7 @@
         </ul>
       {% endif %}
       {% if post.comment_status == "closed" %}
-        <p>{{ _x('comments for this post are closed', 'comments', 'gctheme') }}</p>
+        <p>{{ _x('Comments for this post are closed.', 'comments', 'gctheme') }}</p>
       {% else %}
         <!-- comment form -->
         {% include "comment-form.twig" %}

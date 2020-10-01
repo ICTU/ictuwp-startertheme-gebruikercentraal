@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 "Project-Id-Version: Gebruiker Centraal (2020)\n"
-"POT-Creation-Date: 2020-10-01 10:40+0200\n"
+"POT-Creation-Date: 2020-10-01 15:32+0200\n"
 "PO-Revision-Date: 2020-06-16 15:48+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -842,6 +842,41 @@ msgctxt "Block description"
 msgid "Tekst en plaatje naast elkaar"
 msgstr ""
 
+#: search.php:17
+msgctxt "Search results - title"
+msgid "Please enter a search term"
+msgstr ""
+
+#: search.php:54
+#, php-format
+msgctxt "Search results - results per page"
+msgid "%s to %s"
+msgstr ""
+
+#: search.php:58
+#, php-format
+msgid "%s result for '%s'"
+msgid_plural "%s results for '%s'"
+msgstr[0] ""
+msgstr[1] ""
+
+#: search.php:60
+#, php-format
+msgctxt "Search results"
+msgid "You are on page %s of %s, showing %s."
+msgstr ""
+
+#: search.php:63
+#, php-format
+msgctxt "Search results no results"
+msgid "No result for '%s'"
+msgstr ""
+
+#: search.php:64
+msgctxt "Search results"
+msgid "Sorry. Maybe check your search term and try again."
+msgstr ""
+
 #: single-tips.php:69
 msgctxt "Titel gerelateerde tips"
 msgid "Gerelateerde tips"
@@ -994,6 +1029,26 @@ msgctxt "pagination"
 msgid "Last"
 msgstr ""
 
+#: templates/searchresult-item.twig:13
+msgctxt "Search result item info"
+msgid "Author"
+msgstr ""
+
+#: templates/searchresult-item.twig:17
+msgctxt "Search result item info"
+msgid "Type of page"
+msgstr ""
+
+#: templates/searchresult-item.twig:21
+msgctxt "Search result item info"
+msgid "Publish date"
+msgstr ""
+
+#: templates/searchresult-item.twig:25
+msgctxt "Search result item info"
+msgid "Last changed on"
+msgstr ""
+
 #: templates/single-kb.twig:68
 msgid "Comments"
 msgstr ""
@@ -1025,7 +1080,7 @@ msgstr[1] ""
 
 #: templates/single.twig:116
 msgctxt "comments"
-msgid "comments for this post are closed"
+msgid "Comments for this post are closed."
 msgstr ""
 
 #. Theme Name of the plugin/theme

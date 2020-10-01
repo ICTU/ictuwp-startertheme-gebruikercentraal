@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Gebruiker Centraal (2020)\n"
-"POT-Creation-Date: 2020-10-01 10:36+0200\n"
-"PO-Revision-Date: 2020-10-01 10:38+0200\n"
+"POT-Creation-Date: 2020-10-01 18:04+0200\n"
+"PO-Revision-Date: 2020-10-01 18:04+0200\n"
 "Last-Translator: Paul van Buuren <poedit@wbvb.nl>\n"
 "Language-Team: \n"
 "Language: nl_NL\n"
@@ -1459,6 +1459,47 @@ msgctxt "Plugins installer"
 msgid "Please contact the administrator of this site for help."
 msgstr ""
 
+#: search.php:21
+msgctxt "Search results - title"
+msgid "Please enter a search term"
+msgstr "Geen zoekterm ingevoerd"
+
+#: search.php:74
+#, php-format
+msgctxt "Search results no results"
+msgid "Results for '%s'"
+msgstr "Resultaten voor ‘%s’"
+
+#: search.php:76 search.php:210
+#, php-format
+msgctxt "Search results no results"
+msgid "No result for '%s'"
+msgstr "Niets gevonden voor ‘%s’"
+
+#: search.php:77 search.php:211
+msgctxt "Search results"
+msgid "Sorry. Maybe check your search term and try again."
+msgstr "Helaas. Misschien heb je de zoekterm verkeerd gespeld?"
+
+#: search.php:201
+#, php-format
+msgctxt "Search results - results per page"
+msgid "%s to %s"
+msgstr "%s tot %s"
+
+#: search.php:205
+#, php-format
+msgid "%s result for '%s'"
+msgid_plural "%s results for '%s'"
+msgstr[0] "%s resultaat voor ‘%s’"
+msgstr[1] "%s resultaten voor '%s’"
+
+#: search.php:207
+#, php-format
+msgctxt "Search results"
+msgid "You are on page %s of %s, showing %s."
+msgstr "Je bent op pagina %s van %s met resultaten %s."
+
 #: single-tips.php:69
 msgctxt "Titel gerelateerde tips"
 msgid "Gerelateerde tips"
@@ -1611,13 +1652,33 @@ msgctxt "pagination"
 msgid "Last"
 msgstr "Laatste pagina"
 
+#: templates/searchresult-item.twig:14
+msgctxt "Search result item info"
+msgid "Author"
+msgstr "Auteur"
+
+#: templates/searchresult-item.twig:18
+msgctxt "Search result item info"
+msgid "Type of page"
+msgstr "Contentsoort"
+
+#: templates/searchresult-item.twig:22
+msgctxt "Search result item info"
+msgid "Publish date"
+msgstr "Publicatiedatum"
+
+#: templates/searchresult-item.twig:26
+msgctxt "Search result item info"
+msgid "Last changed on"
+msgstr "Laatst gewijzigd op"
+
 #: templates/single-kb.twig:68
 msgid "Comments"
 msgstr "Reacties"
 
 #: templates/single-kb.twig:78
 msgid "comments for this post are closed"
-msgstr "reacties voor dit bericht zijn gesloten"
+msgstr "Je kunt niet reageren op dit bericht."
 
 #: templates/single-tip.twig:28
 msgctxt "Title boven voorbeelden"
@@ -1642,8 +1703,8 @@ msgstr[1] "%d reacties"
 
 #: templates/single.twig:116
 msgctxt "comments"
-msgid "comments for this post are closed"
-msgstr "Je kunt niet meer reageren"
+msgid "Comments for this post are closed."
+msgstr "Je kunt niet reageren op dit bericht."
 
 #. Theme Name of the plugin/theme
 msgid "Gebruiker Centraal (2020)"
@@ -1684,6 +1745,10 @@ msgstr ""
 #. Template Name of the plugin/theme
 msgid "Template sitemap"
 msgstr ""
+
+#~ msgctxt "comments"
+#~ msgid "comments for this post are closed"
+#~ msgstr "Je kunt niet meer reageren"
 
 #~ msgid "edit"
 #~ msgstr "bewerken"
