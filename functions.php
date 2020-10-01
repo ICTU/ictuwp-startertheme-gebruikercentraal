@@ -1334,3 +1334,15 @@ function translate_mime_type( $fullmimetype ) {
 //========================================================================================================
 
 
+function translate_posttype( $posttype ) {
+	$return = '';
+	if ( $posttype ) {
+		$obj = get_post_type_object( $posttype );
+		$return = $obj->labels->singular_name;
+	}
+	return $return;
+}
+
+//========================================================================================================
+
+
