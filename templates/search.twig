@@ -2,10 +2,23 @@
 {% extends "base.twig" %}
 
 {% block content %}
-  {# see `base.twig:27` for where this block's content will be inserted #}
+
+  <header class="post__header">
+    <h1 class="page__title">{{title }}</h1>
+  </header>
+
   <div class="content-wrapper">
-    {% for post in posts %}
-      {% include ['tease-'~post.post_type~'.twig', 'tease.twig'] %}
+
+    {% if descr %}
+      <p class="search__descr">
+        {{ descr }}
+      </p>
+    {% endif %}
+
+    {{ dump(results) }}
+
+    {% for post in results %}
+      {% include ['searchresult-item-'~post.post_type~'.twig', 'searchresult-item.twig'] %}
     {% endfor %}
 
     {% include 'partial/pagination.twig' with { pagination: posts.pagination({show_all: false, mid_size: 3, end_size: 2}) } %}

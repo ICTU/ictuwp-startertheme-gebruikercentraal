@@ -1,0 +1,38 @@
+<article class="teaser teaser--{{ post.post_type }}" id="tease-{{ post.ID }}">
+  <div class="l-teaser-content teaser__link">
+    <header class="teaser__header">
+      <h2 itemprop="name" class="teaser__title">
+        <a href="{{ post.link }}">
+          <span class="arrow-link">
+            <span class="arrow-link__text">{{ post.title }}</span><span class="arrow-link__icon"></span>
+          </span>
+        </a>
+      </h2>
+      <div class="meta-data">
+        <dl class="meta-data__list">
+          {% if post.author %}
+            <dt class="visually-hidden">{{ _x('Author', 'Search result item info', 'gctheme') }}</dt>
+            <dd class="meta-data__item auteur">{{ post.author }}</dd>
+          {% endif %}
+          {% if post.post_type_display %}
+            <dt class="visually-hidden">{{ _x('Type of page', 'Search result item info', 'gctheme') }}</dt>
+            <dd class="meta-data__item posttype">{{ post.post_type_display }}</dd>
+          {% endif %}
+          {% if post.post_date %}
+            <dt class="visually-hidden">{{ _x('Publish date', 'Search result item info', 'gctheme') }}</dt>
+            <dd class="meta-data__item publishdate">{{ post.post_date }}</dd>
+          {% endif %}
+          {% if post.last_changed %}
+            <dt class="visually-hidden">{{ _x('Last changed on', 'Search result item info', 'gctheme') }}</dt>
+            <dd class="meta-data__item publishdate">{{ post.last_changed }}</dd>
+          {% endif %}
+        </dl>
+      </div>
+    </header>
+    {% if post.post_excerpt %}
+      <div class="teaser__description">
+        <p>{{ post.post_excerpt }}</p>
+      </div>
+    {% endif %}
+  </div>
+</article>
