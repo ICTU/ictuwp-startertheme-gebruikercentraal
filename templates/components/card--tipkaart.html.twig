@@ -1,6 +1,6 @@
 
 <div class="tipkaart tipkaart--{{ category|lower }}">
-  <a class="tipkaart__link" href="{{ url }}">
+  <a class="tipkaart__link" href="{{ url }}" aria-label="{{ nr }} {{ title }} (thema is {{ category }}) {{ toptiptekst }}">
     {% if toptip %}
       <span class="tipkaart__toptip">{{ toptiptekst }}</span>
     {% endif %}
