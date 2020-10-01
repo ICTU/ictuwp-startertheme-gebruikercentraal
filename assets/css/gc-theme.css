@@ -402,6 +402,7 @@ input[type="password"],
 input[type="file"],
 input[type="url"],
 input[type="date"],
+input[type="search"],
 select, textarea {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
@@ -423,6 +424,7 @@ select, textarea {
   input[type="file"]:focus,
   input[type="url"]:focus,
   input[type="date"]:focus,
+  input[type="search"]:focus,
   select:focus, textarea:focus {
     -webkit-box-shadow: 0.4rem 0.4rem 0 rgba(37, 179, 75, 0.2);
             box-shadow: 0.4rem 0.4rem 0 rgba(37, 179, 75, 0.2);
@@ -904,7 +906,10 @@ Gutenberg corrections
     width: 4rem;
     height: auto;
     padding: 0;
-    background: none; }
+    background: none;
+    margin-top: 0;
+    -webkit-box-shadow: none;
+            box-shadow: none; }
 
 @media (max-width: 999px) {
   .page-content {

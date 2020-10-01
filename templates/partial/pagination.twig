@@ -5,27 +5,17 @@
       {# First #}
       {% if posts.pagination.pages|first and posts.pagination.pages|first.current != true %}
         <li class="first btn">
-          <a href="{{ posts.pagination.pages|first.link }}">First</a>
+          <a href="{{ posts.pagination.pages|first.link }}"aria-label="{{ _x('First', 'pagination', 'gctheme') }}">&lt;&lt;</a>
         </li>
       {% else %}
-        {% if 22 == 33 %}
-          <li class="first btn disabled">
-            <button disabled>First</button>
-          </li>
-        {% endif %}
       {% endif %}
 
       {# Previous #}
       {% if posts.pagination.prev %}
         <li class="prev btn">
-          <a href="{{ posts.pagination.prev.link }}">Previous</a>
+          <a href="{{ posts.pagination.prev.link }}"aria-label="{{ _x('Previous', 'pagination', 'gctheme') }}">&lt;</a>
         </li>
       {% else %}
-        {% if 22 == 33 %}
-          <li class="prev btn disabled">
-            <button disabled>Previous</button>
-          </li>
-        {% endif %}
       {% endif %}
 
       {# Pages #}
@@ -44,27 +34,17 @@
       {# Next #}
       {% if posts.pagination.next %}
         <li class="next btn">
-          <a href="{{ posts.pagination.next.link }}">Next</a>
+          <a href="{{ posts.pagination.next.link }}"aria-label="{{ _x('Next', 'pagination', 'gctheme') }}">&gt;</a>
         </li>
       {% else %}
-        {% if 22 == 33 %}
-          <li class="next btn disabled">
-            <button disabled>Next</button>
-          </li>
-        {% endif %}
       {% endif %}
 
       {# Last #}
       {% if posts.pagination.pages|last and posts.pagination.pages|last.current != true %}
         <li class="last btn">
-          <a href="{{ posts.pagination.pages|last.link }}">Last</a>
+          <a href="{{ posts.pagination.pages|last.link }}"aria-label="{{ _x('Last', 'pagination', 'gctheme') }}">&gt;&gt;</a>
         </li>
       {% else %}
-        {% if 22 == 33 %}
-          <li class="last btn disabled">
-            <button disabled>Last</button>
-          </li>
-        {% endif %}
       {% endif %}
 
     </ul>
