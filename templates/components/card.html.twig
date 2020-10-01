@@ -1,3 +1,10 @@
+{% set headerlevelcard = 'h2' %}
+
+{% if headerlevel %}
+  {% set headerlevelcard = headerlevel %}
+{% endif %}
+
+
 {% if type == 'tips' %}
   {% include 'components/card--tipkaart.html.twig' %}
 {% else %}
@@ -11,14 +18,14 @@
       {% if type == 'event' %}
         {% include 'components/date-badge.html.twig' %}
       {% endif %}
-      <h2 class="card__title">
+      <{{ headerlevelcard }} class="card__title">
         <a class="arrow-link" href="{{ url }}">
           <span class="arrow-link__text">
             {{ title }}
           </span>
           <span class="arrow-link__icon"></span>
         </a>
-      </h2>
+      </{{ headerlevelcard }}>
       <p class="card__description">
         {{ descr }}
       </p>
