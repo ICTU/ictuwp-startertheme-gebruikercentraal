@@ -98,6 +98,27 @@ if ( $searchterm ) {
 
 			}
 
+			if ( 'page' !== $posttype && 'SearchWPTermResult' !== get_class( $post ) ) {
+				$card['post_type_display'] = translate_posttype( $posttype );
+				if ( GC_TIP_CPT !== $posttype ) {
+					$card['post_date']         = get_the_date() . ' - ' . $posttype;
+				}
+			}
+			if ( 'post' === $posttype ) {
+				$card['author'] = get_the_author( $postid );
+				$taxonomie      = get_the_terms( $postid, 'category' );
+
+				if ( $taxonomie && ! is_wp_error( $taxonomie ) ) {
+					$categories = array();
+					foreach ( $taxonomie as $term ) {
+						$categories[] = $term->name;
+					}
+				}
+
+				$card['post_type_display'] = implode( ', ', $categories );
+
+			}
+
 			$card['post_type'] = $posttype;
 
 			if ( $card['title'] ) {

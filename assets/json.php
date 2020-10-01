@@ -138,9 +138,9 @@ if ( ! class_exists( 'ICTUWP_GC_OD_registerposttypes' ) ) :
 			// ---------------------------------------------------------------------------------------------------
 
 			$labels = array(
-				"name"                       => __( "Tip-thema's", "ictuwp-plugin-optimaaldigitaal" ),
-				"label"                      => __( "Tip-thema's", "ictuwp-plugin-optimaaldigitaal" ),
-				"menu_name"                  => __( "Tip-thema's", "ictuwp-plugin-optimaaldigitaal" ),
+				"name"                       => __( "Tip-thema", "ictuwp-plugin-optimaaldigitaal" ),
+				"label"                      => __( "Tip-thema", "ictuwp-plugin-optimaaldigitaal" ),
+				"menu_name"                  => __( "Tip-thema", "ictuwp-plugin-optimaaldigitaal" ),
 				"all_items"                  => __( "Alle tip-thema's", "ictuwp-plugin-optimaaldigitaal" ),
 				"edit_item"                  => __( "Bewerk thema", "ictuwp-plugin-optimaaldigitaal" ),
 				"view_item"                  => __( "Bekijk thema", "ictuwp-plugin-optimaaldigitaal" ),
@@ -158,7 +158,7 @@ if ( ! class_exists( 'ICTUWP_GC_OD_registerposttypes' ) ) :
 			$args = array(
 				"labels"            => $labels,
 				"hierarchical"      => true,
-				"label"             => __( "Tip-thema's", "ictuwp-plugin-optimaaldigitaal" ),
+				"label"             => __( "Tip-thema", "ictuwp-plugin-optimaaldigitaal" ),
 				"show_ui"           => true,
 				"query_var"         => true,
 				'show_in_rest'      => true, // Needed for tax to appear in Gutenberg editor.
