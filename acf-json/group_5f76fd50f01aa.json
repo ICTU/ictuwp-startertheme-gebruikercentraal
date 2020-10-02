@@ -1,0 +1,105 @@
+{
+    "key": "group_5f76fd50f01aa",
+    "title": "Auteursinfo (foto en functiebeschrijving) LET OP DEZE OPZET CHECKEN IN MULTISITE",
+    "fields": [
+        {
+            "key": "field_5f76fd74925f4",
+            "label": "Auteursfoto",
+            "name": "auteursfoto",
+            "type": "image",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "array",
+            "preview_size": "medium",
+            "library": "all",
+            "min_width": 0,
+            "min_height": 0,
+            "min_size": 0,
+            "max_width": 0,
+            "max_height": 0,
+            "max_size": 0,
+            "mime_types": ""
+        },
+        {
+            "key": "field_5f76fe33ee411",
+            "label": "Functiebeschrijving",
+            "name": "functiebeschrijving",
+            "type": "text",
+            "instructions": "Deze wordt getoond naast de naam van een actieteamlid. Beperk deze tot twee regels, of tien woorden.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_5f76fe4bee412",
+            "label": "Publiek mailadres",
+            "name": "publiek_mailadres",
+            "type": "text",
+            "instructions": "(optioneel) op dit adres mag deze gebruiker gemaild worden",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_5f76fe67ee413",
+            "label": "Publiek telefoonnumer",
+            "name": "publiek_telefoonnummer",
+            "type": "text",
+            "instructions": "(optioneel) op dit adres mag deze gebruiker gebeld worden",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "user_form",
+                "operator": "==",
+                "value": "all"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "modified": 1601634015
+}
