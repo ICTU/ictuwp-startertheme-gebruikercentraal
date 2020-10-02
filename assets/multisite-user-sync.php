@@ -90,8 +90,8 @@ function my_acf_save_post( $post_id ) {
 	$user_id = str_replace("user_", "", $post_id);
 
 	// Check the new value of a specific field.
-	$hero_image = get_user_meta( $user_id, 'upload_user' , true );
+	$hero_image = get_user_meta( $user_id, 'auteursfoto' , true );
 
-	update_user_meta($user_id,'auteursfoto', wp_get_attachment_url( $hero_image ));
+	update_user_meta($user_id,'auteursfoto_url', wp_get_attachment_url( $hero_image ));
 
 }

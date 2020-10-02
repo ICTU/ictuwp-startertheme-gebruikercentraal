@@ -26,29 +26,27 @@
           <section class="author author--box l-with-image" itemprop="author" itemscope="itemscope" itemtype="http://schema.org/Person">
 
             <figure class="author__picture">
-              <img src="{{ Image(post.author.meta('author_profile_image')).src }}" alt="Auteur">
+              <img src="{{ post.author.meta('auteursfoto_url')|resize(300,300) }}" alt="Profielfoto">
             </figure>
 
             <div class="author__content">
 
               <h2 class="author_title">
                 <a class="arrow-link" href="#">
-                  <span class="arrow-link__text"><span class="visually-hidden">Over</span>Gebruiker Centraal Auteur</span>
+                  <span class="arrow-link__text"><span class="visually-hidden">Over</span>{{ post.author.name }}</span>
                   <span class="arrow-link__icon" aria-hidden="true"></span>
                 </a>
               </h2>
 
-              <span class="meta-data__item">Adviseur online communicatie en analyse</span>
+              <span class="meta-data__item">functie?</span>
 
               <hr>
 
-              <p>Sinds 2006 werkzaam voor ICTU. In diverse projecten gewerkt op gebied van de digitale overheid. Ik onderzoek
-                en adviseer in het gebruiksvriendelijker en toegankelijker maken van websites, het verbeteren van de
-                kwaliteit van de content en de inzet van social media.</p>
+              <p>{{ post.author.meta('functiebeschrijving') }}</p>
 
               <div class="author__contact-info">
-                <a class="link link--contact link--phone" href="tel:0612345678">06 1234567</a>
-                <a class="link link--contact link--email" href="mailto:info@gebruikercentraal.nl">info@gebruikercentraal.nl</a>
+                <a class="link link--contact link--phone" href="tel:{{ post.author.meta('publiek_mailadres') }}">{{ post.author.meta('publiek_mailadres') }}</a>
+                <a class="link link--contact link--email" href="mailto:{{ post.author.meta('publiek_mailadres') }}">{{ post.author.meta('publiek_mailadres') }}</a>
 
                 <ul class="social-links">
 
