@@ -143,8 +143,8 @@
                 "post",
                 "page",
                 "tips",
-              "event",
-              "kb"
+                "event",
+                "kb"
             ],
             "taxonomy": "",
             "filters": [
@@ -226,15 +226,16 @@
             "type": "radio",
             "instructions": "",
             "required": 1,
-          "conditional_logic": [
-            [
-              {
-                "field": "field_5c8fe203a8435",
-                "operator": "==",
-                "value": "ja"
-              }
-            ]
-          ],            "wrapper": {
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_5c8fe203a8435",
+                        "operator": "==",
+                        "value": "ja"
+                    }
+                ]
+            ],
+            "wrapper": {
                 "width": "",
                 "class": "",
                 "id": ""
@@ -257,13 +258,6 @@
                 "param": "post_type",
                 "operator": "==",
                 "value": "post"
-            }
-        ],
-        [
-            {
-                "param": "post_type",
-                "operator": "==",
-                "value": "page"
             }
         ],
         [
@@ -293,6 +287,34 @@
                 "operator": "==",
                 "value": "event-recurring"
             }
+        ],
+        [
+            {
+                "param": "page_template",
+                "operator": "==",
+                "value": "default"
+            }
+        ],
+        [
+            {
+                "param": "page_template",
+                "operator": "==",
+                "value": "template-landingspagina.php"
+            }
+        ],
+        [
+            {
+                "param": "page_template",
+                "operator": "==",
+                "value": "template-overzichtspagina.php"
+            }
+        ],
+        [
+            {
+                "param": "page_template",
+                "operator": "==",
+                "value": "template-od-home.php"
+            }
         ]
     ],
     "menu_order": 0,
@@ -301,7 +323,7 @@
     "label_placement": "top",
     "instruction_placement": "label",
     "hide_on_screen": "",
-    "active": 1,
+    "active": true,
     "description": "",
-    "modified": 1594217055
+    "modified": 1601627628
 }

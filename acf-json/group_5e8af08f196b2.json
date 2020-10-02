@@ -65,16 +65,16 @@
     "location": [
         [
             {
-                "param": "post_type",
+                "param": "page_template",
                 "operator": "==",
-                "value": "page"
+                "value": "default"
             }
         ],
         [
             {
-                "param": "block",
+                "param": "page_template",
                 "operator": "==",
-                "value": "acf\/gc-spotlight"
+                "value": "template-landingspagina.php"
             }
         ],
         [
@@ -82,6 +82,34 @@
                 "param": "post_type",
                 "operator": "==",
                 "value": "post"
+            }
+        ],
+        [
+            {
+                "param": "page_template",
+                "operator": "==",
+                "value": "template-overzichtspagina.php"
+            }
+        ],
+        [
+            {
+                "param": "page_template",
+                "operator": "==",
+                "value": "template-overzicht-tipgevers.php"
+            }
+        ],
+        [
+            {
+                "param": "page_template",
+                "operator": "==",
+                "value": "template-od-home.php"
+            }
+        ],
+        [
+            {
+                "param": "page_template",
+                "operator": "==",
+                "value": "template-od-handleiding.php"
             }
         ]
     ],
@@ -93,5 +121,5 @@
     "hide_on_screen": "",
     "active": true,
     "description": "",
-    "modified": 1599057457
+    "modified": 1601629199
 }
