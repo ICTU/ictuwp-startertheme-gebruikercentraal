@@ -254,9 +254,10 @@ class MinervaKB_Assets {
 
 		// dynamic admin styles
 		ob_start();
-		if ( 22 === 33 ) {
-			// start meuk
+		if ( 22 === 33 ) {// start meuk
+
 			?>
+			<style>
 			#adminmenu li.menu-icon-<?php esc_attr_e( MKB_Options::option( 'article_cpt' ) ); ?> .wp-menu-image img {
 			width: 20px;
 			margin-top: -2px;
@@ -270,6 +271,7 @@ class MinervaKB_Assets {
 			#menu-posts-<?php esc_attr_e( MKB_Options::option( 'article_cpt' ) ); ?> a[href$="minerva-kb-submenu-uninstall"]:hover {
 			color: red;
 			}
+			</style>
 			<?php
 			// einde meuk
 		}
