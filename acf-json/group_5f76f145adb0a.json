@@ -1,0 +1,108 @@
+{
+    "key": "group_5f76f145adb0a",
+    "title": "00 – Instellingen voor overzichtspagina",
+    "fields": [
+        {
+            "key": "field_5f76f1649e360",
+            "label": "Hoe wil je het overzicht samenstellen?",
+            "name": "overzichtspagina_method",
+            "type": "radio",
+            "instructions": "Dit paginatemplate biedt je de mogelijkheid om allerlei soorten content op te sommen. Je kunt deze lijst handmatig samenstellen of je kunt de lijst automatisch laten genereren.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "manual": "Zelf kiezen welke items je toont",
+                "automatic": "Automatisch samenstellen"
+            },
+            "allow_null": 0,
+            "other_choice": 0,
+            "default_value": "manual",
+            "layout": "vertical",
+            "return_format": "value",
+            "save_other_choice": 0
+        },
+        {
+            "key": "field_5f76f4d37a3e3",
+            "label": "Kies de items",
+            "name": "overzichtspagina_content_block_items",
+            "type": "relationship",
+            "instructions": "Kies uit events, berichten, pagina's en tips",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_5f76f1649e360",
+                        "operator": "==",
+                        "value": "manual"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "post_type": "",
+            "taxonomy": "",
+            "filters": [
+                "search",
+                "post_type",
+                "taxonomy"
+            ],
+            "elements": [
+                "featured_image"
+            ],
+            "min": "",
+            "max": "",
+            "return_format": "object"
+        },
+        {
+            "key": "field_5f76f59d54d6f",
+            "label": "Contenttypes",
+            "name": "contenttypes",
+            "type": "radio",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "post": "Blogberichten",
+                "page": "Pagina's",
+                "tips": "Optimaal Digitaal Tips"
+            },
+            "allow_null": 0,
+            "other_choice": 0,
+            "default_value": "",
+            "layout": "vertical",
+            "return_format": "value",
+            "save_other_choice": 0
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "page_template",
+                "operator": "==",
+                "value": "template-overzichtspagina.php"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "modified": 1601928242
+}
