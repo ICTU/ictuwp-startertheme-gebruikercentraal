@@ -702,6 +702,11 @@ class GebruikerCentraalTheme extends Timber\Site {
 					$allowed_templates["template-od-handleiding.php"]      = "[OD] Template Handleiding";
 
 					break;
+				case 'KB':
+					// for Optimaal Digitaal, add tip templates
+					$allowed_templates["template-beeldbieb.php"] = "Beeldbieb";
+
+					break;
 
 				default:
 					break;
