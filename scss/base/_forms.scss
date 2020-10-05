@@ -42,6 +42,15 @@ form label {
   font-family: $font-primary-semi;
 }
 
+form input[type="radio"] {
+  & + label {
+    font-family: $font-primary;
+  }
+  &:checked + label {
+    font-family: $font-primary-semi;
+  }
+}
+
 select {
   background: $input-bg url('../images/select-arrow.svg') right 15px top 50% no-repeat;
   border-radius: 0;

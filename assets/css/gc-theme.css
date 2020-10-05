@@ -434,6 +434,12 @@ select, textarea {
 form label {
   font-family: "montserratsemibold", Helvetica, Arial, sans-serif; }
 
+form input[type="radio"] + label {
+  font-family: "montserratregular", Helvetica, Arial, sans-serif; }
+
+form input[type="radio"]:checked + label {
+  font-family: "montserratsemibold", Helvetica, Arial, sans-serif; }
+
 select {
   background: #fff url("../images/select-arrow.svg") right 15px top 50% no-repeat;
   border-radius: 0;
