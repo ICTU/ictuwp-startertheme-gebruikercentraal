@@ -62,7 +62,9 @@ if ( $flavor_select == "OD" ) {
 require_once( __DIR__ . '/plugin-activatie/must-use-plugins.php' );
 
 // include file for user sync multisite
-if ( is_multisite() ) { require_once( __DIR__ . '/assets/multisite-user-sync.php' ); }
+if ( is_multisite() ) {
+	require_once( __DIR__ . '/assets/multisite-user-sync.php' );
+}
 
 
 // include file for network media
@@ -697,9 +699,9 @@ class GebruikerCentraalTheme extends Timber\Site {
 					// for Optimaal Digitaal, add tip templates
 					$allowed_templates["template-overzicht-tipgevers.php"] = "[OD] Overzicht alle tipgevers";
 					$allowed_templates["template-alle-tips.php"]           = "[OD] Overzicht alle tips";
-					$allowed_templates["template-tips.php"]                = "[OD] Template tips-pagina";
-					$allowed_templates["template-od-home.php"]             = "[OD] Template Home";
-					$allowed_templates["template-od-handleiding.php"]      = "[OD] Template Handleiding";
+//					$allowed_templates["template-tips.php"]                = "[OD] Template tips-pagina";
+					$allowed_templates["template-od-home.php"]        = "[OD] Template Home";
+					$allowed_templates["template-od-handleiding.php"] = "[OD] Template Handleiding";
 
 					break;
 
@@ -1083,8 +1085,9 @@ function append_block_wrappers( $block_content, $block ) {
 //	$block_content = '<strong>' . $pagetemplate . ' / ' . $block['blockName']  . '</strong><br>' . $block_content;
 
 	if ( ( $block['blockName'] === 'core/paragraph' ||
-	       $block['blockName'] === 'acf/gc-ctalink' ) && 'template-landingspagina.php' === $pagetemplate ) {
-
+	       $block['blockName'] === 'acf/gc-ctalink' ) && (
+			('template-landingspagina.php' === $pagetemplate ) ||
+			('template-overzichtspagina.php' === $pagetemplate ) ) ) {
 		$content = '<div class="section section--paragraph">';
 		$content .= $block_content;
 		$content .= '</div>';
@@ -1351,4 +1354,93 @@ function translate_posttype( $posttype ) {
 
 //========================================================================================================
 
+/*
+ * This function uses a post and distills all relevant fields from it to be used in a twig card
+ * @param WP_Post $postitem the post item of any type
+ *
+ * @return array for use with a card
+ *
+ */
+function prepare_card_content( $postitem ) {
+
+	$item          = array();
+	$postid        = $postitem->ID;
+	$item['title'] = get_the_title( $postid );
+	$item['descr'] = get_the_excerpt( $postid );
+	$item['type']  = get_post_type( $postid );
+	$item['url']   = get_the_permalink( $postid );
+	$image         = get_the_post_thumbnail( $postid, 'large', [] );
+	$item['img']   = $image;
+
+	if ( 'tips' == $item['type'] ) {
+
+		// zorgen dat de titel netjes afgebroken wordt binnen de smalle ruimte van het kaartje
+		$item['title'] = od_wbvb_custom_post_title( get_the_title( $postid ) );
+
+		// het is een tip
+		// eerst checken of we al alle themakleuren hebben
+		if ( ! $themakleuren ) {
+			$themakleuren = get_themakleuren();
+		}
+
+		$item['nr']     = sprintf( _x( 'Tip %s', 'Label tip-nummer', 'gctheme' ), get_post_meta( $postid, 'tip-nummer', true ) );
+		$item['toptip'] = false;
+		$is_toptip      = get_post_meta( $postid, 'is_toptip', true );
+
+		if ( $is_toptip ) {
+			$item['toptip']      = true;
+			$item['toptiptekst'] = _x( 'Toptip', 'Toptiptekst bij tip', 'gctheme' );
+		}
+
+		$taxonomie = get_the_terms( $postid, GC_TIPTHEMA );
+
+		if ( isset( $themakleuren[ $taxonomie[0]->term_id ] ) ) {
+			$item['category'] = $themakleuren[ $taxonomie[0]->term_id ];
+		}
+
+	} elseif ( 'post' == $item['type'] ) {
+
+		$item['meta'][] = [
+			'title' => 'author',
+			'descr' => get_the_author_meta( 'display_name', $postitem->post_author ),
+		];
+
+		$item['meta'][] = [
+			'title' => 'date',
+			'descr' => get_the_time( get_option( 'date_format' ), $postid ),
+		];
+
+
+	} elseif ( 'event' == $item['type'] ) {
+
+		$event_start_date     = get_post_meta( $postid, '_event_start_date', true );
+		$event_start_time     = get_post_meta( $postid, '_event_start_time', true );
+		$event_end_date       = get_post_meta( $postid, '_event_end_date', true );
+		$event_end_time       = get_post_meta( $postid, '_event_end_time', true );
+		$event_end_datetime   = strtotime( $event_end_date . ' ' . $event_end_time );
+		$event_start_datetime = strtotime( $event_start_date . ' ' . $event_start_time );
+
+		if ( $event_start_datetime === $event_end_datetime ) {
+			$item['start_date'] = $event_start_datetime;
+		} elseif ( $event_start_datetime && $event_end_datetime ) {
+			$item['start_date'] = $event_start_datetime;
+			$item['end_date']   = $event_end_datetime;
+		}
+	}
+
+	return $item;
+}
+
+//========================================================================================================
+
+add_filter( 'acf/fields/relationship/query/name=overzichtspagina_content_block_items', 'acf_relationshipfield_only_use_published_content', 10, 3 );
+add_filter( 'acf/fields/relationship/query/name=content_block_items', 'acf_relationshipfield_only_use_published_content', 10, 3 );
+
+
+function acf_relationshipfield_only_use_published_content( $options, $field, $post_id ) {
+	$options['post_status'] = array( 'publish' );
+	return $options;
+}
+
+//========================================================================================================
 
