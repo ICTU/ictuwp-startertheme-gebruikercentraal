@@ -1449,3 +1449,23 @@ function acf_relationshipfield_only_use_published_content( $options, $field, $po
 
 //========================================================================================================
 
+/**
+ * Register our sidebars and widgetized areas.
+ *
+ */
+function not_found_page_widgets_init() {
+
+	register_sidebar( array(
+		'name'          =>  _x( 'Widgetruimte op 404 pagina',  '404 widget space', 'gctheme' ),
+		'id'            => 'widgets_404',
+		'before_widget' => '<section id="widgets_404" class="sidebar">',
+		'after_widget'  => '</section>',
+		'before_title'  => '<h2>',
+		'after_title'   => '</h2>',
+	) );
+
+}
+add_action( 'widgets_init', 'not_found_page_widgets_init' );
+
+//========================================================================================================
+
