@@ -1,5 +1,34 @@
 {% extends "base.twig" %}
 
 {% block content %}
-	Sorry, we couldn't find what you're looking for.
+
+  <article class="post post--full error404">
+
+    {% if title_404 %}
+      <header class="post__header">
+        <h1 class="page__title">{{ title_404 }}</h1>
+      </header>
+    {% endif %}
+
+    {% if content_404 or widgets_404 %}
+      <section class="post__content">
+        {% if content_404 %}
+          <div class="post__body">
+            <p>{{ content_404 }}</p>
+
+            {{ content_404_search }}
+
+          </div>
+        {% endif %}
+
+        {% if widgets_404 %}
+          <div class="post__body">
+            {{ widgets_404 }}
+          </div>
+        {% endif %}
+      </section>
+    {% endif %}
+
+  </article>
+
 {% endblock %}
