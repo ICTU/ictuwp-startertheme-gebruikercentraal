@@ -1,6 +1,6 @@
 {
     "key": "group_5efa86188abea",
-    "title": "00 - Inleiding landingspagina",
+    "title": "00 - Inleiding",
     "fields": [
         {
             "key": "field_5efa86304a7fa",
@@ -36,6 +36,13 @@
                 "operator": "==",
                 "value": "template-alle-tips.php"
             }
+        ],
+        [
+            {
+                "param": "page_template",
+                "operator": "==",
+                "value": "template-overzichtspagina.php"
+            }
         ]
     ],
     "menu_order": 0,
@@ -46,5 +53,5 @@
     "hide_on_screen": "",
     "active": true,
     "description": "",
-    "modified": 1600159007
+    "modified": 1601634841
 }
