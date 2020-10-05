@@ -7,10 +7,10 @@
 * Author URI: https://codecanyon.net/user/konstruktstudio/portfolio?ref=KonstruktStudio
 * Text Domain: minerva-kb
 * Domain Path: /languages/
-* Version: 1.6.93
+* Version: 1.6.94
 */
 
-define('MINERVA_KB_VERSION', '1.6.93');
+define('MINERVA_KB_VERSION', '1.6.94');
 define('MINERVA_KB_OPTION_PREFIX', 'mkb_option_');
 define('MINERVA_KB_PLUGIN_FILE', __FILE__ );
 define('MINERVA_KB_PLUGIN_URL', plugin_dir_url( __FILE__ ));

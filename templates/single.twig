@@ -23,47 +23,11 @@
           <div class="entry-body">
             {{ post.content }}
           </div>
-          <section class="author author--box l-with-image" itemprop="author" itemscope="itemscope" itemtype="http://schema.org/Person">
 
-            <figure class="author__picture">
-              <img src="{{ Image(post.author.meta('author_profile_image')).src }}" alt="Auteur">
-            </figure>
+          {% if post.author.meta('auteursfoto_url') is not empty %}
+            {% include 'sections/section-authorbox.html.twig'%}
+          {% endif %}
 
-            <div class="author__content">
-
-              <h2 class="author_title">
-                <a class="arrow-link" href="#">
-                  <span class="arrow-link__text"><span class="visually-hidden">Over</span>Gebruiker Centraal Auteur</span>
-                  <span class="arrow-link__icon" aria-hidden="true"></span>
-                </a>
-              </h2>
-
-              <span class="meta-data__item">Adviseur online communicatie en analyse</span>
-
-              <hr>
-
-              <p>Sinds 2006 werkzaam voor ICTU. In diverse projecten gewerkt op gebied van de digitale overheid. Ik onderzoek
-                en adviseer in het gebruiksvriendelijker en toegankelijker maken van websites, het verbeteren van de
-                kwaliteit van de content en de inzet van social media.</p>
-
-              <div class="author__contact-info">
-                <a class="link link--contact link--phone" href="tel:0612345678">06 1234567</a>
-                <a class="link link--contact link--email" href="mailto:info@gebruikercentraal.nl">info@gebruikercentraal.nl</a>
-
-                <ul class="social-links">
-
-                  <li class="social-links__item">
-                    <a href="http://www.linkedin.com" class="link--social linkedin" title="LinkedIn-profiel van Gebruiker Centraal">
-                      LinkedIn-profiel van Gebruiker Centraal</a></li>
-                  <li class="social-links__item">
-                    <a href="http://www.twitter.com" class="link--social twitter" title="Twitter van Gebruiker Centraal">
-                      Twitter van Gebruiker Centraal</a></li>
-                  <li class="social-links__item">
-                    <a href="http://www.facebook.com" class="link--social facebook" title="Facebook van Gebruiker Centraal">
-                      Facebook van Gebruiker Centraal</a></li>
-                </ul>    </div>
-            </div>
-          </section>
           <nav class="pagination">
             {% if post.prev %}
               <div class="pagination-previous alignleft"><a href="{{ post.prev.link }}" rel="prev" data-ol-has-click-handler="">{{ post.prev.title }}</a></div>

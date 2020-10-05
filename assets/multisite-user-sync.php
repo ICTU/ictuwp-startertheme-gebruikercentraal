@@ -79,3 +79,19 @@ require  plugin_dir_path( __FILE__ ) . '../includes/wmus-network.php';
  * This is a file for sync/unsync functions.
  */
 require  plugin_dir_path( __FILE__ ) . '../includes/wmus-sync-unsync.php';
+
+add_action('acf/save_post', 'my_acf_save_post');
+function my_acf_save_post( $post_id ) {
+
+	// Get newly saved values.
+	$values = get_fields( $post_id );
+
+
+	$user_id = str_replace("user_", "", $post_id);
+
+	// Check the new value of a specific field.
+	$hero_image = get_user_meta( $user_id, 'auteursfoto' , true );
+
+	update_user_meta($user_id,'auteursfoto_url', wp_get_attachment_url( $hero_image ));
+
+}
