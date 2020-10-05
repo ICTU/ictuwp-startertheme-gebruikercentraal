@@ -1,6 +1,6 @@
 <?php
 /**
- * Template Name: Overzichtspagina
+ * Template Name: Overzichtspagina tipgevers
  *
  * @package  WordPress
  * @subpackage  Timber
