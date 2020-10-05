@@ -294,16 +294,23 @@
         ],
         [
             {
-                "param": "post_type",
+                "param": "block",
                 "operator": "==",
-                "value": "page"
+                "value": "acf\/gc-downloads"
             }
         ],
         [
             {
-                "param": "block",
+                "param": "page_template",
                 "operator": "==",
-                "value": "acf\/gc-downloads"
+                "value": "default"
+            }
+        ],
+        [
+            {
+                "param": "page_template",
+                "operator": "==",
+                "value": "template-landingspagina.php"
             }
         ]
     ],
@@ -313,7 +320,7 @@
     "label_placement": "top",
     "instruction_placement": "label",
     "hide_on_screen": "",
-    "active": 1,
+    "active": true,
     "description": "",
-    "modified": 1594215891
+    "modified": 1601627722
 }

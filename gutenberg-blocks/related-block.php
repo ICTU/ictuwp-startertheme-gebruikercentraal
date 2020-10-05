@@ -61,74 +61,7 @@ function related_block_get_data() {
 
 				foreach ( $featured_posts as $post ):
 
-					$item['title'] = get_the_title( $post );
-
-					$item          = array();
-					$item['title'] = get_the_title( $post );
-					$item['descr'] = get_the_excerpt( $post );
-					$item['type']  = get_post_type( $post );
-					$item['url']   = get_the_permalink( $post );
-					$image         = get_the_post_thumbnail( $post->ID, 'large', [] );
-					$item['img']   = $image;
-
-					if ( 'tips' == get_post_type( $post ) ) {
-
-						// zorgen dat de titel netjes afgebroken wordt binnen de smalle ruimte van het kaartje
-						$item['title'] = od_wbvb_custom_post_title( get_the_title( $post ) );
-
-						// het is een tip
-						// eerst checken of we al alle themakleuren hebben
-						if ( ! $themakleuren ) {
-							$themakleuren = get_themakleuren();
-						}
-
-						$item['nr']     = sprintf( _x( 'Tip %s', 'Label tip-nummer', 'gctheme' ), get_post_meta( $post->ID, 'tip-nummer', true ) );
-						$item['toptip'] = false;
-						$is_toptip      = get_post_meta( $post->ID, 'is_toptip', true );
-
-						if ( $is_toptip ) {
-							$item['toptip']      = true;
-							$item['toptiptekst'] = _x( 'Toptip', 'Toptiptekst bij tip', 'gctheme' );
-						}
-
-						$taxonomie = get_the_terms( $post->ID, GC_TIPTHEMA );
-
-						if ( isset( $themakleuren[ $taxonomie[0]->term_id ] ) ) {
-							$item['category'] = $themakleuren[ $taxonomie[0]->term_id ];
-						}
-
-
-					} elseif ( 'post' == get_post_type( $post ) ) {
-
-						$item['meta'][] = [
-							'title' => 'author',
-							'descr' => get_the_author_meta( 'display_name', $post->post_author ),
-						];
-
-						$item['meta'][] = [
-							'title' => 'date',
-							'descr' => get_the_time( get_option( 'date_format' ), $post->ID ),
-						];
-
-
-					} elseif ( 'event' == get_post_type( $post ) ) {
-
-						$event_start_date     = get_post_meta( $post->ID, '_event_start_date', true );
-						$event_start_time     = get_post_meta( $post->ID, '_event_start_time', true );
-						$event_end_date       = get_post_meta( $post->ID, '_event_end_date', true );
-						$event_end_time       = get_post_meta( $post->ID, '_event_end_time', true );
-						$event_end_datetime   = strtotime( $event_end_date . ' ' . $event_end_time );
-						$event_start_datetime = strtotime( $event_start_date . ' ' . $event_start_time );
-
-						if ( $event_start_datetime === $event_end_datetime ) {
-							$item['start_date'] = $event_start_datetime;
-						} elseif ( $event_start_datetime && $event_end_datetime ) {
-							$item['start_date'] = $event_start_datetime;
-							$item['end_date']   = $event_end_datetime;
-						}
-
-					}
-
+					$item              = prepare_card_content( $post );
 					$return['items'][] = $item;
 
 				endforeach;
