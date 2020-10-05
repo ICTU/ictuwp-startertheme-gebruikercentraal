@@ -2,7 +2,7 @@
 /*
  * CSS flavor voor Optimaal Digitaal
  * Author: Tamara, Mark, Paul
- * Version: 5.0.3
+ * Version: 5.0.11
  *
  */
 .has-white-color {
@@ -441,6 +441,12 @@ select, textarea {
     background: #fff; }
 
 form label {
+  font-family: "montserratsemibold", Helvetica, Arial, sans-serif; }
+
+form input[type="radio"] + label {
+  font-family: "montserratregular", Helvetica, Arial, sans-serif; }
+
+form input[type="radio"]:checked + label {
   font-family: "montserratsemibold", Helvetica, Arial, sans-serif; }
 
 select {
@@ -1904,11 +1910,6 @@ h1 {
 .page--type-tipkaart .content {
   padding: 0; }
 
-.page--type-tipkaart .breadcrumb {
-  color: #004152; }
-  .page--type-tipkaart .breadcrumb a {
-    color: #004152; }
-
 .page--type-tipkaart .page-content {
   padding-bottom: 0; }
   .page--type-tipkaart .page-content:after {
@@ -3069,11 +3070,6 @@ h1 {
 
 .page--type-tipkaart .content {
   padding: 0; }
-
-.page--type-tipkaart .breadcrumb {
-  color: #004152; }
-  .page--type-tipkaart .breadcrumb a {
-    color: #004152; }
 
 .page--type-tipkaart .page-content {
   padding-bottom: 0; }
