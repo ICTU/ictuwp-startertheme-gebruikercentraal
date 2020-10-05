@@ -1450,7 +1450,7 @@ function acf_relationshipfield_only_use_published_content( $options, $field, $po
 //========================================================================================================
 
 /**
- * Register our sidebars and widgetized areas.
+ * Register a sidebar (widget space) for the 404 page
  *
  */
 function not_found_page_widgets_init() {
