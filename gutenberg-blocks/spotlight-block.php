@@ -73,7 +73,7 @@ function spotlight_block_get_data() {
 			$item['descr']   = get_the_excerpt( $post );
 			$image           = get_the_post_thumbnail_url( $post->ID, 'large' );
 			$item['img']     = $image;
-			$item['img_alt'] = get_post_meta( get_post_thumbnail_id( $post->ID ), '_wp_attachment_image_alt', true );
+			$item['img_alt'] = ''; // Dit is m.i. ALTIJD een decoratief element zonder informatieve meerwaarde // get_post_meta( get_post_thumbnail_id( $post->ID ), '_wp_attachment_image_alt', true );
 
 			$cta1 = get_field( 'spotlight_cta_1', $post->ID );
 			$cta2 = get_field( 'spotlight_cta_2', $post->ID );
