@@ -1,38 +1,46 @@
 <section class="author author--box l-with-image" itemprop="author" itemscope="itemscope" itemtype="http://schema.org/Person">
 
   <figure class="author__picture">
-    <img src="{{ post.author.meta('auteursfoto_url')|resize(300,300) }}" alt="Profielfoto">
+    <img src="{{ post.author.meta('auteursfoto_url')|resize(300,300) }}" alt="{{ _x('Profile picture', 'authorbox', 'gctheme') }}">
   </figure>
 
   <div class="author__content">
 
     <h2 class="author_title">
       <a class="arrow-link" >
-        <span class="arrow-link__text"><span class="visually-hidden">Over</span>{{ post.author.name }}</span>
+        <span class="arrow-link__text"><span class="visually-hidden">{{ _x('About', 'authorbox', 'gctheme') }}</span>{{ post.author.name }}</span>
       </a>
     </h2>
-
-    <span class="meta-data__item">functie?</span>
-
+    {% if post.author.meta('functiebeschrijving') is not empty %}
+      <span class="meta-data__item">{{ post.author.meta('functiebeschrijving') }}</span>
+    {% endif %}
     <hr>
-
-    <p>{{ post.author.meta('functiebeschrijving') }}</p>
+    {% if post.author.description is not empty %}
+      <p>{{post.author.description}}</p>
+    {% endif %}
 
     <div class="author__contact-info">
-      <a class="link link--contact link--phone" href="tel:{{ post.author.meta('publiek_mailadres') }}">{{ post.author.meta('publiek_mailadres') }}</a>
-      <a class="link link--contact link--email" href="mailto:{{ post.author.meta('publiek_mailadres') }}">{{ post.author.meta('publiek_mailadres') }}</a>
+      {% if post.author.meta('publiek_telefoonnummer') is not empty %}
+        <a class="link link--contact link--phone" href="tel:{{ post.author.meta('publiek_telefoonnummer') }}">{{ post.author.meta('publiek_telefoonnummer') }}</a>
+      {% endif %}
+      {% if post.author.meta('publiek_mailadres') is not empty %}
+        <a class="link link--contact link--email" href="mailto:{{ post.author.meta('publiek_mailadres') }}">{{ post.author.meta('publiek_mailadres') }}</a>
+      {% endif %}
 
       <ul class="social-links">
-
         <li class="social-links__item">
-          <a href="http://www.linkedin.com" class="link--social linkedin" title="LinkedIn-profiel van Gebruiker Centraal">
-            LinkedIn-profiel van Gebruiker Centraal</a></li>
+          {% if post.author.meta('linkedin') is not empty %}
+            <a href="{{ post.author.meta('linkedin') }}" class="link--social linkedin" title="LinkedIn-profiel {{ _x('Of', 'authorbox', 'gctheme') }} {{ post.author.name }}">LinkedIn-profiel {{ _x('Of', 'authorbox', 'gctheme') }} {{ post.author.name }}</a></li>
+          {% endif %}
         <li class="social-links__item">
-          <a href="http://www.twitter.com" class="link--social twitter" title="Twitter van Gebruiker Centraal">
-            Twitter van Gebruiker Centraal</a></li>
+          {% if post.author.meta('twitter') is not empty %}
+            <a href="{{ post.author.meta('twitter') }}" class="link--social twitter" title="Twitter {{ _x('Of', 'authorbox', 'gctheme') }} {{ post.author.name }}">Twitter {{ _x('Of', 'authorbox', 'gctheme') }} {{ post.author.name }}</a></li>
+          {% endif %}
         <li class="social-links__item">
-          <a href="http://www.facebook.com" class="link--social facebook" title="Facebook van Gebruiker Centraal">
-            Facebook van Gebruiker Centraal</a></li>
-      </ul>    </div>
+          {% if post.author.meta('facebook') is not empty %}
+            <a href="{{ post.author.meta('facebook') }}" class="link--social facebook" title="Facebook {{ _x('Of', 'authorbox', 'gctheme') }} {{ post.author.name }}">Facebook {{ _x('Of', 'authorbox', 'gctheme') }} {{ post.author.name }}</a></li>
+        {% endif %}
+      </ul>
+    </div>
   </div>
 </section>
