@@ -37,6 +37,8 @@ if ( $teaserblocks ) {
 
 }
 
+//$imagesize_for_thumbs = 'thumb-cardv3';
+$imagesize_for_thumbs = BLOG_SINGLE_DESKTOP;
 
 // events selecteren
 if ( class_exists( 'EM_Events' ) ) {
@@ -64,7 +66,7 @@ if ( class_exists( 'EM_Events' ) ) {
 			$item                 = array();
 			$item['title']        = $event['event_name'];
 			$item['url']          = get_the_permalink( $event['post_id'] );
-			$image                = get_the_post_thumbnail_url( $event['post_id'], 'large' );
+			$image                = get_the_post_thumbnail_url( $event['post_id'], $imagesize_for_thumbs );
 			$event_start_date     = $event['event_start_date'];
 			$event_start_time     = $event['event_start_time'];
 			$event_end_date       = $event['event_end_date'];
@@ -114,7 +116,10 @@ if ( $relatedtips->have_posts() ) {
 	while ( $relatedtips->have_posts() ) {
 		$relatedtips->the_post();
 		$item  = array();
-		$image = get_the_post_thumbnail_url( $post->ID, 'large' );
+		$image = get_the_post_thumbnail_url( $post->ID, $imagesize_for_thumbs );
+		echo '<pre>';
+		var_dump($image);
+		echo '</pre>';
 
 		if ( ! $image ) {
 			$item['img']     = $defaultimage;
