@@ -86,6 +86,13 @@
           } %}
 
         {% endfor %}
+
+        {% if related.cta.url and related.cta.title %}
+          <p class="l-cta-wrapper">
+            <a class="btn btn--primary" href="{{ related.cta.url }}">{{ related.cta.title }}</a>
+          </p>
+        {% endif %}
+
       </div>
 
     {% else %}

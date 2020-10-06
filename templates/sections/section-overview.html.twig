@@ -71,12 +71,10 @@
         {% endfor %}
       </div>
 
-      {% if cta %}
-
+      {% if cta.url and cta.title %}
         <p class="l-cta-wrapper">
           <a class="btn btn--primary" href="{{ cta.url }}">{{ cta.title }}</a>
         </p>
-
       {% endif %}
 
     {% else %}

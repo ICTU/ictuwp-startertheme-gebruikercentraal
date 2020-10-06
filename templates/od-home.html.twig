@@ -45,12 +45,12 @@
           </div>
 
           {# /page intro #}
-
           {% if related %}
           {% include 'sections/section-overview.html.twig' with {
             'items': related.items,
-            'description': related.desc,
+            'description': related.description,
             'title': related.title,
+            'cta': related.cta,
             'template': 'card--tipkaart',
             'modifier': 'l-layout-4col'
           } %}

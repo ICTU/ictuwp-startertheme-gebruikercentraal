@@ -160,6 +160,29 @@
             "return_format": "object"
         },
         {
+            "key": "field_5f7c6ecea3426",
+            "label": "Extra link onder gerelateerde items",
+            "name": "content_block_items_extra_link",
+            "type": "link",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_5f033a4dfaec8",
+                        "operator": "==",
+                        "value": "posts"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "array"
+        },
+        {
             "key": "field_5f033df83c8e7",
             "label": "Speelsets",
             "name": "content_block_taxonomy_speelsets",
@@ -325,5 +348,5 @@
     "hide_on_screen": "",
     "active": true,
     "description": "",
-    "modified": 1601627628
+    "modified": 1601990443
 }

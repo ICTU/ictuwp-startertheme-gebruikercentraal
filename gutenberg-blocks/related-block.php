@@ -109,7 +109,14 @@ function related_block_get_data() {
 			}
 
 			$return['description'] = get_field( 'content_block_description' ) ? get_field( 'content_block_description' ) : '';
+			$return['descr']       = $return['description'];
 			$return['title']       = get_field( 'content_block_title' ) ? get_field( 'content_block_title' ) : '';
+
+			if ( get_field( 'content_block_items_extra_link' ) ) {
+				$cta                    = get_field( 'content_block_items_extra_link' );
+				$return['cta']['title'] = $cta['title'];
+				$return['cta']['url']   = $cta['url'];
+			}
 
 		}
 
@@ -119,7 +126,6 @@ function related_block_get_data() {
 			// we moeten wel een achtergrondje tonen
 			$return['modifier'] = get_field( 'content_block_modifier' );
 		}
-
 
 	}
 
