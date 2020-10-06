@@ -207,13 +207,6 @@
                 "operator": "==",
                 "value": "template-landingspagina.php"
             }
-        ],
-        [
-            {
-                "param": "page_template",
-                "operator": "==",
-                "value": "template-od-home.php"
-            }
         ]
     ],
     "menu_order": 0,
@@ -224,5 +217,5 @@
     "hide_on_screen": "",
     "active": true,
     "description": "",
-    "modified": 1601629444
+    "modified": 1602009901
 }
