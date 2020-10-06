@@ -50,13 +50,35 @@ if ( class_exists( 'EM_Events' ) ) {
 
 	if ( $events ) {
 
+		if ( get_option( 'dbem_events_page' ) ) {
+
+			// de titel boven dit blok is exact gelijk aan de pagina-titel van de event page
+			$context['actueel']['events']['title']        = get_the_title( get_option( 'dbem_events_page' ) );
+			$context['actueel']['events']['cta']['url']   = get_permalink( get_option( 'dbem_events_page' ) );
+			$context['actueel']['events']['cta']['title'] = get_the_title( get_option( 'dbem_events_page' ) );
+			$context['actueel']['events']['cta']['url']   = get_permalink( get_option( 'dbem_events_page' ) );
+		}
+
+
 		foreach ( $events as $event ):
 			$item                 = array();
-			$startdate            = $event['event_start'];
-			$event_start_datetime = strtotime( $startdate );
-			$item['date']         = date_i18n( 'j M', $event_start_datetime );
 			$item['title']        = $event['event_name'];
+			$item['url']          = get_the_permalink( $event['post_id'] );
 			$image                = get_the_post_thumbnail_url( $event['post_id'], 'large' );
+			$event_start_date     = $event['event_start_date'];
+			$event_start_time     = $event['event_start_time'];
+			$event_end_date       = $event['event_end_date'];
+			$event_end_time       = $event['event_end_time'];
+			$event_end_datetime   = strtotime( $event_end_date . ' ' . $event_end_time );
+			$event_start_datetime = strtotime( $event_start_date . ' ' . $event_start_time );
+
+			if ( $event_start_datetime === $event_end_datetime ) {
+				$item['start_date'] = $event_start_datetime;
+			} elseif ( $event_start_datetime && $event_end_datetime ) {
+				$item['start_date'] = $event_start_datetime;
+				$item['end_date']   = $event_end_datetime;
+			}
+			$item['arialabel']    = sprintf( _x( '%s op %s', 'Arialabel agenda home', 'gctheme' ), $event['event_name'], date_i18n( get_option( 'date_format' ) , $event_start_datetime ) );
 
 			if ( ! $image ) {
 				$item['img']     = $defaultimage;
@@ -69,14 +91,7 @@ if ( class_exists( 'EM_Events' ) ) {
 
 		endforeach;
 
-		if ( get_option( 'dbem_events_page' ) ) {
-			$context['actueel']['events']['cta']['url']   = get_permalink( get_option( 'dbem_events_page' ) );
-			$context['actueel']['events']['cta']['title'] = get_the_title( get_option( 'dbem_events_page' ) );
-			$context['actueel']['events']['cta']['url']   = get_permalink( get_option( 'dbem_events_page' ) );
-		}
-
 	}
-
 
 }
 
@@ -115,7 +130,7 @@ if ( $relatedtips->have_posts() ) {
 	}
 
 	if ( get_option( 'default_category' ) ) {
-		$termid = get_option( 'default_category' );
+		$termid                                      = get_option( 'default_category' );
 		$context['actueel']['blogs']['cta']['url']   = get_category_link( $termid );
 		$context['actueel']['blogs']['cta']['title'] = get_cat_name( $termid );
 	} elseif ( get_option( 'page_for_posts' ) ) {
