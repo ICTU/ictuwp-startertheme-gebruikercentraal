@@ -4,18 +4,21 @@
   'item-count-' ~ items|length,
   modifier ? 'text-block--bg ' ~ modifier ] %}
 
-<div class="section section--text-blocks l-item-count-{{ items|length }}{{ modifier? ' text-block--bg ' ~ modifier }}">
-  <div class="l-section-content">
+{% if items %}
+  <div
+    class="section section--text-blocks l-item-count-{{ items|length }}{{ modifier? ' text-block--bg ' ~ modifier }}">
+    <div class="l-section-content">
 
-    {% for item in items %}
+      {% for item in items %}
 
-      {% include 'components/text-block.html.twig' with {
-        'title' : item.title,
-        'descr' : item.descr,
-        'link_primary' : item.link_primary,
-        'link_secondary': item.link_secondary
-      } %}
+        {% include 'components/text-block.html.twig' with {
+          'title' : item.title,
+          'descr' : item.descr,
+          'link_primary' : item.link_primary,
+          'link_secondary': item.link_secondary
+        } %}
 
-    {% endfor %}
+      {% endfor %}
+    </div>
   </div>
-</div>
+{% endif %}
