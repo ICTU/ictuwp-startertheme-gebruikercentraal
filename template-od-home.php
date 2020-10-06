@@ -69,7 +69,7 @@ if ( class_exists( 'EM_Events' ) ) {
 
 		endforeach;
 
-		if( get_option('dbem_events_page') ) {
+		if ( get_option( 'dbem_events_page' ) ) {
 			$context['actueel']['events']['cta']['url']   = get_permalink( get_option( 'dbem_events_page' ) );
 			$context['actueel']['events']['cta']['title'] = get_the_title( get_option( 'dbem_events_page' ) );
 			$context['actueel']['events']['cta']['url']   = get_permalink( get_option( 'dbem_events_page' ) );
@@ -81,9 +81,9 @@ if ( class_exists( 'EM_Events' ) ) {
 }
 
 // posts selecteren
-$maxnr_posts  = 4;
-if (isset( $context['actueel']['events'] )) {
-	$maxnr_posts  = ( 4 - count( $context['actueel']['events']['items'] ) );
+$maxnr_posts = 4;
+if ( isset( $context['actueel']['events'] ) ) {
+	$maxnr_posts = ( 4 - count( $context['actueel']['events']['items'] ) );
 }
 $args        = array(
 	'post_type'   => 'post',
@@ -91,6 +91,7 @@ $args        = array(
 	'post_status' => 'publish',
 );
 $relatedtips = new WP_Query( $args );
+
 if ( $relatedtips->have_posts() ) {
 
 	$counter = 0;
@@ -113,7 +114,11 @@ if ( $relatedtips->have_posts() ) {
 
 	}
 
-	if ( get_option( 'page_for_posts' ) ) {
+	if ( get_option( 'default_category' ) ) {
+		$termid = get_option( 'default_category' );
+		$context['actueel']['blogs']['cta']['url']   = get_category_link( $termid );
+		$context['actueel']['blogs']['cta']['title'] = get_cat_name( $termid );
+	} elseif ( get_option( 'page_for_posts' ) ) {
 		$context['actueel']['blogs']['cta']['url']   = get_permalink( get_option( 'page_for_posts' ) );
 		$context['actueel']['blogs']['cta']['title'] = get_the_title( get_option( 'page_for_posts' ) );
 	}
@@ -123,7 +128,7 @@ if ( $relatedtips->have_posts() ) {
 }
 
 // VOOR NU GEEN ACTUEEL
-$context['actueel'] = [];
+//$context['actueel'] = [];
 
 Timber::render( [ 'od-home.html.twig', 'page.twig' ], $context );
 
