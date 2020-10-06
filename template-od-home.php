@@ -117,9 +117,6 @@ if ( $relatedtips->have_posts() ) {
 		$relatedtips->the_post();
 		$item  = array();
 		$image = get_the_post_thumbnail_url( $post->ID, $imagesize_for_thumbs );
-		echo '<pre>';
-		var_dump($image);
-		echo '</pre>';
 
 		if ( ! $image ) {
 			$item['img']     = $defaultimage;
@@ -146,9 +143,6 @@ if ( $relatedtips->have_posts() ) {
 	/* Restore original Post Data */
 	wp_reset_postdata();
 }
-
-// VOOR NU GEEN ACTUEEL
-//$context['actueel'] = [];
 
 Timber::render( [ 'od-home.html.twig', 'page.twig' ], $context );
 
