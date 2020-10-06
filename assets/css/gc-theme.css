@@ -2649,11 +2649,13 @@ h1 {
     @media (min-width: 560px) {
       .entry--type-home .page__intro {
         padding-top: 10rem; } }
+    .entry--type-home .page__intro p,
     .entry--type-home .page__intro .entry-header {
       max-width: 760px;
       margin-left: auto;
       margin-right: auto;
-      color: #fff;
+      color: #fff; }
+    .entry--type-home .page__intro .entry-header {
       position: relative;
       z-index: +2; }
       .entry--type-home .page__intro .entry-header h1, .entry--type-home .page__intro .entry-header h2, .entry--type-home .page__intro .entry-header h3, .entry--type-home .page__intro .entry-header h4, .entry--type-home .page__intro .entry-header a {
@@ -2679,6 +2681,8 @@ h1 {
       padding-right: 1.5rem; }
       .entry--type-home .section--text-blocks .l-section-content {
         max-width: calc(1280px + 3rem); }
+    .entry--type-home .section.section--overview .btn {
+      margin-right: auto; }
   .entry--type-home .entry-content > .section:last-child {
     padding-bottom: 5rem; }
     @media (min-width: 1100px) {

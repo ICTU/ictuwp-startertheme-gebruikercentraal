@@ -151,9 +151,12 @@
         padding-top: 10rem;
       }
 
+      p,
       .entry-header {
         @include ho-container-content;
         color: $hp-intro-color;
+      }
+      .entry-header {
         position: relative;
         z-index: +2;
 
@@ -186,6 +189,11 @@
 
         .l-section-content {
           max-width: calc(#{$max-width-container} + #{$gutter});
+        }
+      }
+      &.section--overview {
+        .btn {
+          margin-right: auto;
         }
       }
     }

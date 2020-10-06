@@ -8,7 +8,7 @@
  * @since   Timber 0.1
  */
 
-define( 'CHILD_THEME_VERSION', '5.0.11' );
+define( 'CHILD_THEME_VERSION', '5.0.12' );
 define( 'ID_MAINCONTENT', 'maincontent' );
 define( 'ID_MAINNAV', 'mainnav' );
 define( 'ID_ZOEKEN', 'zoeken' );
@@ -1091,8 +1091,8 @@ function append_block_wrappers( $block_content, $block ) {
 
 	if ( ( $block['blockName'] === 'core/paragraph' ||
 	       $block['blockName'] === 'acf/gc-ctalink' ) && (
-			('template-landingspagina.php' === $pagetemplate ) ||
-			('template-overzichtspagina.php' === $pagetemplate ) ) ) {
+		     ( 'template-landingspagina.php' === $pagetemplate ) ||
+		     ( 'template-overzichtspagina.php' === $pagetemplate ) ) ) {
 		$content = '<div class="section section--paragraph">';
 		$content .= $block_content;
 		$content .= '</div>';
@@ -1376,6 +1376,7 @@ function prepare_card_content( $postitem ) {
 	$item['url']   = get_the_permalink( $postid );
 	$image         = get_the_post_thumbnail( $postid, 'large', [] );
 	$item['img']   = $image;
+	$themakleuren  = array();
 
 	if ( 'tips' == $item['type'] ) {
 
@@ -1444,6 +1445,7 @@ add_filter( 'acf/fields/relationship/query/name=content_block_items', 'acf_relat
 
 function acf_relationshipfield_only_use_published_content( $options, $field, $post_id ) {
 	$options['post_status'] = array( 'publish' );
+
 	return $options;
 }
 
@@ -1456,7 +1458,7 @@ function acf_relationshipfield_only_use_published_content( $options, $field, $po
 function not_found_page_widgets_init() {
 
 	register_sidebar( array(
-		'name'          =>  _x( 'Widgetruimte op 404 pagina',  '404 widget space', 'gctheme' ),
+		'name'          => _x( 'Widgetruimte op 404 pagina', '404 widget space', 'gctheme' ),
 		'id'            => 'widgets_404',
 		'before_widget' => '<section id="widgets_404_%s" class="sidebar %s">',
 		'after_widget'  => '</section>',
@@ -1465,6 +1467,7 @@ function not_found_page_widgets_init() {
 	) );
 
 }
+
 add_action( 'widgets_init', 'not_found_page_widgets_init' );
 
 //========================================================================================================
