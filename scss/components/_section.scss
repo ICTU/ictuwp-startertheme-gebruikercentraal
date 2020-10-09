@@ -164,6 +164,17 @@
   .grid--col-2 {
     @include ho-container-content;
   }
+
+  .l-cta-wrapper {
+    text-align: center;
+    width: 100%;
+    margin-top: 0;
+  }
+    .btn {
+      margin-right: auto;
+    }
+
+
 }
 
 /* Actueel - events & blogs */

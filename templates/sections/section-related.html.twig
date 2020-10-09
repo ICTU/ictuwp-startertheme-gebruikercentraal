@@ -31,9 +31,8 @@
 
 {% set headerlevel = 'h2' %}
 
-
-<section
-  class="section section--related{{ related.columncounter ? ' l-item-count-' ~ related.columncounter : '' }}{{ modifier ? ' section--' ~ modifier }}"{% if id %} id="{{ id }}"{% endif %}>
+  <section
+  class="section {{ related.type_block ? related.type_block : 'section–overview' }}{{ related.columncounter ? ' l-item-count-' ~ related.columncounter : '' }}{{ related.modifier ? ' section--' ~ related.modifier }}"{% if id %} id="{{ id }}"{% endif %}>
 
   {# Wrapper for section intro #}
 

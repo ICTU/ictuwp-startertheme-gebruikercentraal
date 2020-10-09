@@ -49,6 +49,7 @@ function related_block_get_data() {
 
 	global $post;
 	$return = array();
+	$type_block = 'section--related';
 
 	if ( 'ja' === get_field( 'gerelateerde_content_toevoegen' ) ) {
 
@@ -56,6 +57,8 @@ function related_block_get_data() {
 
 			$featured_posts = get_field( 'content_block_items' );
 			$themakleuren   = array();
+
+			$type_block = 'section--overview';
 
 			if ( $featured_posts ):
 
@@ -121,8 +124,10 @@ function related_block_get_data() {
 		}
 
 		$return['columncounter'] = $columncounter;
+		$return['type_block'] = $type_block;
 
-		if ( ! 'none' === get_field( 'content_block_modifier' ) ) {
+
+		if ( 'none' !== get_field( 'content_block_modifier' ) ) {
 			// we moeten wel een achtergrondje tonen
 			$return['modifier'] = get_field( 'content_block_modifier' );
 		}

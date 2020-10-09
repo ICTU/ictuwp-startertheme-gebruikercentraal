@@ -2,11 +2,27 @@
 Gutenberg corrections
  */
 .section--heading {
-  & + .section--paragraph,
+  & + .section--paragraph {
+    margin-top: 0;
+  }
   & + .section--text {
-    margin-top: 1rem;
+    margin-top: 0;
   }
 }
+
+.section--paragraph {
+  p {
+    margin-top: 1rem;
+  }
+  & + .section--heading {
+    margin-top: 5rem;
+  }
+  & + .wp-block-image {
+    margin-top: 4rem;
+    margin-bottom: 4rem;
+  }
+}
+
 .wp-block-image {
 
   & + .section--paragraph,

@@ -2,12 +2,12 @@
 
 {% block content %}
 
-  <article class="entry entry--type-landing entry--full" id="post-{{ post.ID }}">
+  <article class="entry" id="post-{{ post.ID }}">
 
     <div class="page__intro">
 
       <header class="entry-header">
-        <h1 class="entry-title">{{ post.title  }}</h1>
+        <h1 class="entry-title">{{ post.title }}</h1>
 
         {% if intro %}
           <p>{{ intro }}</p>
@@ -16,41 +16,39 @@
 
     </div>
 
-      {% if post.content %}
-        {# default body body #}
+    {% if post.content %}
+      {# default body body #}
 
-        <div class="entry-body">
-          {{ post.content }}
-        </div>
+      <div class="entry-content">
+        {{ post.content }}
+      </div>
 
-        {# end body #}
-      {% endif %}
+      {# end body #}
+    {% endif %}
 
-      {% if related %}
-        {% include 'sections/section-related.html.twig' with {
-          'title': related.title,
-          'descr': related.desc,
-          'items': related.items
-        } %}
-      {% endif %}
+    {% if related %}
+      {% include 'sections/section-related.html.twig' with {
+        'title': related.title,
+        'descr': related.desc,
+        'items': related.items
+      } %}
+    {% endif %}
 
-      {% if downloads %}
-        {% include 'sections/section-downloads.html.twig' with {
-          'title': downloads.title,
-          'descr': downloads.desc,
-          'items': downloads.items
-        } %}
-      {% endif %}
+    {% if downloads %}
+      {% include 'sections/section-downloads.html.twig' with {
+        'title': downloads.title,
+        'descr': downloads.desc,
+        'items': downloads.items
+      } %}
+    {% endif %}
 
-      {% if links %}
-        {% include 'sections/section-links.html.twig' with {
-          'section_title': links.title,
-          'section_descr': links.desc,
-          'items': links.items
-        } %}
-      {% endif %}
-
-
+    {% if links %}
+      {% include 'sections/section-links.html.twig' with {
+        'section_title': links.title,
+        'section_descr': links.desc,
+        'items': links.items
+      } %}
+    {% endif %}
 
 
   </article>
