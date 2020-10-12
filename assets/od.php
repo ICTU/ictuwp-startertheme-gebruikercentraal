@@ -330,7 +330,7 @@ if ( ! class_exists( 'ICTUWP_GC_OD_registerposttypes' ) ) :
 							],
 							'other_choice'      => 0,
 							'save_other_choice' => 0,
-							'default_value'     => 'grotefoto',
+							'default_value'     => 'geenfoto',
 							'layout'            => 'vertical',
 						],
 						[
@@ -2015,6 +2015,32 @@ if ( ! function_exists( 'ICTUWP_OD_change_tip_permalinks ' ) ) {
 	}
 }
 
+//========================================================================================================
+/*
+ * Deze function wijzigt de main query voor de tipgever- en speelset-taxonomieen
+ * van optimaal digitaal.
+ * Door deze wijziging wordt op 1 pagina een overzicht getoond van ALLE kaarten bij een bepaalde
+ * speelset / tipgever, in plaats van maximaal posts_per_page (meestal 10)
+ */
+function od_modify_taxonomy_query( $query ) {
 
+	global $query_vars;
+
+	if ( ! is_admin() && $query->is_main_query() ) {
+
+		if ( ( is_tax( OD_CITAATAUTEUR ) ) || ( is_tax( GC_ODSPEELSET ) ) ) {
+			// geen pagination voor tipgevers of speelset overzichten
+			$query->set( 'posts_per_page', - 1 );
+
+			return $query;
+
+		}
+
+	}
+
+	return $query;
+}
+
+add_action( 'pre_get_posts', 'od_modify_taxonomy_query' );
 
 //========================================================================================================
