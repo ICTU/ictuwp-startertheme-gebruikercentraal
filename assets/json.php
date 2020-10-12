@@ -271,7 +271,7 @@ if ( ! class_exists( 'ICTUWP_GC_OD_registerposttypes' ) ) :
 							),
 							'other_choice'      => 0,
 							'save_other_choice' => 0,
-							'default_value'     => 'grotefoto',
+							'default_value'     => 'geenfoto',
 							'layout'            => 'vertical',
 						),
 						array(
