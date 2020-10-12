@@ -20,6 +20,14 @@ $templates        = array( 'index.twig' );
 if ( is_home() ) {
 	array_unshift( $templates, 'front-page.twig', 'home.twig' );
 }
+
+global $wp_query;
+
+if ( isset( $wp_query ) && (bool) $wp_query->is_posts_page ) {
+	array_unshift( $templates, 'overview-posts.twig', 'index.twig' );
+}
+
+
 Timber::render( $templates, $context );
 
 
