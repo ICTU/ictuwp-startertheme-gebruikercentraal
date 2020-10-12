@@ -32,6 +32,8 @@
 
   {{ function('insert_breadcrumb') }}
 
+ 
+
   <div class="page-content" id="maincontent" tabindex="-1">
     <main class="content">
       {% block content %}
@@ -43,7 +45,7 @@
 
               <div class="page__intro">
                 <header class="entry-header">
-                  <h1 class="entry-title">Blog</h1>
+                  <h1 class="entry-title">{{ post.title }}</h1>
                 </header>
 
                 {% if descr %}
