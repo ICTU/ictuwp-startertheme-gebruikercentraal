@@ -67,7 +67,9 @@
   <!-- comment box -->
 
   <!-- comments -->
-    <div id="comments" class="comments-area">
+
+  {% if post.get_comment_count( ) > 0 or post.comment_status != "closed" %}
+  <div id="comments" class="comments-area">
       {% if post.get_comment_count( ) > 0  %}
         <h3 class="comments-title">{{ _n('One comment', '%d comments', n)|format(post.get_comment_count( )) }} </h3>
         <ul class="comment-list">
@@ -76,16 +78,12 @@
           {% endfor %}
         </ul>
       {% endif %}
-      {% if post.comment_status == "closed" %}
-        <!--
-        // tekst niet meer tonen
-        <p>{{ _x('Comments for this post are closed.', 'comments', 'gctheme') }}</p>
-        -->!
-      {% else %}
+      {% if post.comment_status != "closed" %}
         <!-- comment form -->
         {% include "comment-form.twig" %}
       {% endif %}
     </div>
+  {% endif %}
 
 
 
