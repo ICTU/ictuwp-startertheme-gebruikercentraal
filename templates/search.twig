@@ -15,8 +15,6 @@
       </p>
     {% endif %}
 
-    {{ dump(results) }}
-
     {% for post in results %}
       {% include ['searchresult-item-'~post.post_type~'.twig', 'searchresult-item.twig'] %}
     {% endfor %}
