@@ -1229,29 +1229,6 @@ function my_acf_fields_relationship_result( $text, $post, $field, $post_id ) {
 
 //========================================================================================================
 
-function tipgever_archive_modify_query( $query ) {
-
-	global $query_vars;
-
-	if ( ! is_admin() && $query->is_main_query() ) {
-
-		if ( is_tax( OD_CITAATAUTEUR ) ) {
-			// geen pagination voor tipgevers overzichten
-			$query->set( 'posts_per_page', - 1 );
-
-			return $query;
-
-		}
-
-	}
-
-	return $query;
-}
-
-add_action( 'pre_get_posts', 'tipgever_archive_modify_query' );
-
-//========================================================================================================
-
 function get_hero_image() {
 	$return = array();
 
@@ -1345,7 +1322,6 @@ function translate_mime_type( $fullmimetype ) {
 }
 
 //========================================================================================================
-
 
 function translate_posttype( $posttype ) {
 	$return = '';
