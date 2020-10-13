@@ -57,7 +57,7 @@
   padding: 2rem;
   max-width: 72rem;
 
-  @include bp-up(md) {
+  @include bp-up(sm) {
     padding: 3rem;
   }
 

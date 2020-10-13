@@ -80,7 +80,7 @@ if ( $context['pagetype'] === 'archive_tipthema' ) {
 	$context['overview']['modifier'] = '4col';
 
 } else {
-	$context['posts'] = new Timber\PostQuery();
+	$context['items'] = new Timber\PostQuery();
 }
 
 if ( $taxonomy_name === OD_CITAATAUTEUR ) {
@@ -119,5 +119,6 @@ if ( $taxonomy_name === OD_CITAATAUTEUR ) {
 	$context['overview']['title']    = 'Tips van ' . $fullname[0];
 
 }
+
 
 Timber::render( $templates, $context );

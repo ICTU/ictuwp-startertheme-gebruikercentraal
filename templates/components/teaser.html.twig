@@ -10,7 +10,11 @@
 
     {% if img %}
       <div class="teaser__image">
+        {% if type == 'post' %}
+          <img src="{{ post.thumbnail.src|resize(400, 300) }}" alt="{{ post.thumbnail.alt }}" class="teaser__image">
+        {% else %}
         {{ img }}
+        {% endif %}
       </div>
 
     {% endif %}
