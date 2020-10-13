@@ -1,3 +1,4 @@
+
 <section class="teaser teaser--blog {{ post.get_field('hero_image') ? 'l-with-image' : 'l-without-image' }}" id="tease-{{ post.ID }}">
   <a class="teaser__link" href="{{post.link}}">
     {% if post.get_field('hero_image') %}
@@ -5,10 +6,16 @@
     {% endif %}
     <div class="l-teaser-content">
       <header class="teaser__header">
-        <span class="date-badge" itemprop="datePublished" content="{{ post.date|date('d-m-Y') }}">
-          <span class="date-badge__day">{{ post.date|date('d') }}</span>
-          <span class="date-badge__month">{{ post.date|date('M') }}</span>
-          <span class="date-badge__year visually-hidden">{{ post.date|date('y') }}</span>
+        <span class="date-badge" itemprop="datePublished" content="{{ post_date.date|date('d-m-Y') }}">
+          <span class="date-badge__day">{{ post_date.date|date('d') }}</span>
+          <span class="date-badge__month">{{ post_date.date|date('M') }}</span>
+
+      {% if post.post_date|date('Y') == "now"|date('Y') %}
+        <span class="date-badge__year visually-hidden">{{ post.post_date|date('Y') }}</span>
+      {% else %}
+        <span class="date-badge__year">{{ post.post_date|date('Y') }}</span>
+      {% endif %}
+
         </span>
         <h3 itemprop="name" class="teaser__title">
           <span class="arrow-link">

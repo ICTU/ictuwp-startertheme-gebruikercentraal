@@ -5184,6 +5184,10 @@ h1 {
   font-size: 1.1rem;
   line-height: 1.6rem; }
 
+.date-badge__year {
+  font-family: "league_gothicregular", Impact, Helvetica, Arial, sans-serif;
+  font-size: 1.7rem; }
+
 /*
  * Download box
  * Used in singles and download lists
