@@ -73,9 +73,9 @@
             'title' : post.title,
             'headerlevel' : 'h3',
             'descr' : post.preview,
-            'img' : post.thumbnail,
+            'img' : post.thumbnail.src,
             'type' : post.type,
-            'meta': post.author,
+            'meta': post.meta,
             'category': post.category,
             'post_date': ( post.post_date ?? '' ),
             'url': post.path
