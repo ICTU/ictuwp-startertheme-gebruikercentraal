@@ -55,7 +55,7 @@ $flavor_select    = $get_theme_option['flavor_select'];
 
 if ( $flavor_select == "OD" ) {
 	require_once( __DIR__ . '/assets/od.php' );
-	add_action( 'init', array( 'ICTUWP_GC_OD_registerposttypes', 'init' ), 1 );
+	add_action( 'init', [ 'ICTUWP_GC_OD_registerposttypes', 'init' ], 1 );
 }
 
 // include file for all must-use plugins
@@ -129,7 +129,7 @@ Timber::$dirname = [ 'templates', 'views' ];
  * By default, Timber does NOT autoescape values. Want to enable Twig's
  * autoescape? No prob! Just set this value to true
  */
-Timber::$autoescape = false;
+Timber::$autoescape = FALSE;
 
 
 /**
@@ -146,31 +146,34 @@ class GebruikerCentraalTheme extends Timber\Site {
 	public function __construct() {
 
 		// custom menu locations
-		add_action( 'init', array( $this, 'register_my_menu' ) );
+		add_action( 'init', [ $this, 'register_my_menu' ] );
 
 		// custom menu locations
-		add_action( 'init', array( $this, 'register_spotlight_cpt' ) );
+		add_action( 'init', [ $this, 'register_spotlight_cpt' ] );
 
 
 		// translation support
-		add_action( 'after_setup_theme', array( $this, 'add_translation_support' ) );
+		add_action( 'after_setup_theme', [ $this, 'add_translation_support' ] );
 
 		// theme options
-		add_action( 'after_setup_theme', array( $this, 'theme_supports' ) );
+		add_action( 'after_setup_theme', [ $this, 'theme_supports' ] );
 
 		// CSS setup
-		add_action( 'wp_enqueue_scripts', array( $this, 'gc_wbvb_add_css' ) );
+		add_action( 'wp_enqueue_scripts', [ $this, 'gc_wbvb_add_css' ] );
 
-		add_action( 'timber/context', array( $this, 'add_to_context' ) );
-		add_action( 'timber/twig', array( $this, 'add_to_twig' ) );
+		add_action( 'timber/context', [ $this, 'add_to_context' ] );
+		add_action( 'timber/twig', [ $this, 'add_to_twig' ] );
 
-		add_action( 'init', array( $this, 'register_taxonomies' ) );
+		add_action( 'init', [ $this, 'register_taxonomies' ] );
 
-		add_action( 'widgets_init', array( $this, 'setup_widgets_init' ) );
+		add_action( 'widgets_init', [ $this, 'setup_widgets_init' ] );
 
-		add_action( 'theme_page_templates', array( $this, 'activate_deactivate_page_templates' ) );
+		add_action( 'theme_page_templates', [
+			$this,
+			'activate_deactivate_page_templates',
+		] );
 
-		add_action( 'admin_init', array( $this, 'add_adminstyles' ) );
+		add_action( 'admin_init', [ $this, 'add_adminstyles' ] );
 
 		parent::__construct();
 
@@ -200,7 +203,7 @@ class GebruikerCentraalTheme extends Timber\Site {
 
 		// read configuration json file
 		$configfile    = file_get_contents( trailingslashit( get_stylesheet_directory() ) . FLAVORSCONFIG );
-		$configfile    = json_decode( $configfile, true );
+		$configfile    = json_decode( $configfile, TRUE );
 		$theme_options = get_option( 'gc2020_theme_options' );
 		$flavor        = DEFAULTFLAVOR; // default, tenzij er een smaakje is gekozen
 		if ( isset( $theme_options['flavor_select'] ) ) {
@@ -281,103 +284,103 @@ class GebruikerCentraalTheme extends Timber\Site {
 
 		// these are the only allowed colors for the editor
 		// keys in the flavors_config.json should match the keys here
-		$arr_acceptable_colors = array(
-			'white'                => array(
+		$arr_acceptable_colors = [
+			'white'                => [
 				'name'  => __( 'Wit', 'gctheme' ),
 				'slug'  => 'white',
-				'color' => '#fff'
-			),
-			'black'                => array(
+				'color' => '#fff',
+			],
+			'black'                => [
 				'name'  => __( 'Zwart', 'gctheme' ),
 				'slug'  => 'black',
 				'color' => '#000',
-			),
-			'gc-green'             => array(
+			],
+			'gc-green'             => [
 				'name'  => __( 'GC Groen', 'gctheme' ),
 				'slug'  => 'gc-green',
 				'color' => '#25b34b',
-			),
-			'gc-dark-blue'         => array(
+			],
+			'gc-dark-blue'         => [
 				'name'  => __( 'GC Dark Blue', 'gctheme' ),
 				'slug'  => 'gc-dark-blue',
 				'color' => '#004152',
-			),
-			'gc-pantybrown'        => array(
+			],
+			'gc-pantybrown'        => [
 				'name'  => __( 'GC Pantybrown', 'gctheme' ),
 				'slug'  => 'gc-pantybrown',
 				'color' => '#e8d8c7',
-			),
-			'gc-dark-purple'       => array(
+			],
+			'gc-dark-purple'       => [
 				'name'  => __( 'GC Dark Purple', 'gctheme' ),
 				'slug'  => 'gc-dark-purple',
 				'color' => '#4c2974',
-			),
-			'gc-blue'              => array(
+			],
+			'gc-blue'              => [
 				'name'  => __( 'GC Blue', 'gctheme' ),
 				'slug'  => 'gc-blue',
 				'color' => '#0095da',
-			),
-			'gc-pink'              => array(
+			],
+			'gc-pink'              => [
 				'name'  => __( 'GC Pink', 'gctheme' ),
 				'slug'  => 'gc-pink',
 				'color' => '#c42c76',
-			),
-			'gc-orange'            => array(
+			],
+			'gc-orange'            => [
 				'name'  => __( 'GC Orange', 'gctheme' ),
 				'slug'  => 'gc-orange',
 				'color' => '#f99d1c',
-			),
-			'gc-cyan'              => array(
+			],
+			'gc-cyan'              => [
 				'name'  => __( 'GC Cyan', 'gctheme' ),
 				'slug'  => 'gc-cyan',
 				'color' => '#00b4ac',
-			),
-			'inc_orange'           => array(
+			],
+			'inc_orange'           => [
 				'name'  => __( 'Inclusie Orange', 'gctheme' ),
 				'slug'  => 'inc_orange',
 				'color' => '#D94721',
-			),
-			'inc_a11y_orange'      => array(
+			],
+			'inc_a11y_orange'      => [
 				'name'  => __( 'Inclusie Orange', 'gctheme' ),
 				'slug'  => 'inc-accessible-orange',
 				'color' => '#c73d19',
-			),
-			'nlds_purplish'        => array(
+			],
+			'nlds_purplish'        => [
 				'name'  => __( 'NLDS Purplish', 'gctheme' ),
 				'slug'  => 'nlds-purplish',
 				'color' => '#74295f',
-			),
-			'gc-blue'              => array(
+			],
+			'gc-blue'              => [
 				'name'  => __( 'GC Blue', 'gctheme' ),
 				'slug'  => 'gc-blue',
 				'color' => '#0095da',
-			),
-			'gc-accessible-blue'   => array(
+			],
+			'gc-accessible-blue'   => [
 				'name'  => __( 'GC Blue Safe', 'gctheme' ),
 				'slug'  => 'gc-accessible-blue',
 				'color' => '#007BB0',
-			),
-			'gc-accessible-green'  => array(
+			],
+			'gc-accessible-green'  => [
 				'name'  => __( 'GC acessible green', 'gctheme' ),
 				'slug'  => 'gc-accessible-green',
 				'color' => '#148839',
-			),
-			'od-orange'            => array(
+			],
+			'od-orange'            => [
 				'name'  => __( 'od-orange', 'gctheme' ),
 				'slug'  => 'gc-orange',
 				'color' => '#BA4F0C',
-			),
-			'od-orange-darker'     => array(
+			],
+			'od-orange-darker'     => [
 				'name'  => __( 'od-orange-darker', 'gctheme' ),
 				'slug'  => 'gc-orange',
 				'color' => '#983A00',
-			),
-			'gc-pantybrown-xlight' => array(
+			],
+			'gc-pantybrown-xlight' => [
 				'name'  => __( 'GC Pantybrown Xtra Light', 'gctheme' ),
 				'slug'  => 'gc-pantybrown-xlight',
 				'color' => '#f9f6f3',
-			)
-		);
+			],
+		];
 
 
 		/*
@@ -432,13 +435,13 @@ class GebruikerCentraalTheme extends Timber\Site {
 		// Yoast Breadcrumbs
 		add_theme_support( 'yoast-seo-breadcrumbs' );
 
-		add_image_size( HALFWIDTH, 380, 9999, false );
-		add_image_size( BLOG_SINGLE_MOBILE, 120, 9999, false );
-		add_image_size( BLOG_SINGLE_TABLET, 250, 9999, false );
-		add_image_size( BLOG_SINGLE_DESKTOP, 380, 9999, false );
-		add_image_size( IMG_SIZE_HUGE, IMG_SIZE_HUGE_MIN_WIDTH, 9999, false );
+		add_image_size( HALFWIDTH, 380, 9999, FALSE );
+		add_image_size( BLOG_SINGLE_MOBILE, 120, 9999, FALSE );
+		add_image_size( BLOG_SINGLE_TABLET, 250, 9999, FALSE );
+		add_image_size( BLOG_SINGLE_DESKTOP, 380, 9999, FALSE );
+		add_image_size( IMG_SIZE_HUGE, IMG_SIZE_HUGE_MIN_WIDTH, 9999, FALSE );
 
-		add_image_size( 'thumb-cardv3', 99999, 600, false );    // max  600px hoog, niet croppen
+		add_image_size( 'thumb-cardv3', 99999, 600, FALSE );    // max  600px hoog, niet croppen
 
 		// Enable and load CSS for admin editor
 		add_theme_support( 'editor-styles' );
@@ -449,36 +452,36 @@ class GebruikerCentraalTheme extends Timber\Site {
 		// Disable Custom Colors
 		add_theme_support( 'disable-custom-colors' );
 
-		$colors_editor = array(
+		$colors_editor = [
 			// these colors should always be available
 			// any other should be defined in flavors_config.json
-			'white'                => array(
+			'white'                => [
 				'name'  => __( 'Wit', 'gctheme' ),
 				'slug'  => 'white',
 				'color' => '#fff',
-			),
-			'black'                => array(
+			],
+			'black'                => [
 				'name'  => __( 'Zwart', 'gctheme' ),
 				'slug'  => 'black',
 				'color' => '#000',
-			),
-			'gc-pantybrown-xlight' => array(
+			],
+			'gc-pantybrown-xlight' => [
 				'name'  => __( 'GC Pantybrown Xtra Light', 'gctheme' ),
 				'slug'  => 'gc-pantybrown-xlight',
 				'color' => '#f9f6f3',
-			)
-		);
+			],
+		];
 
 		if ( $this->configuration['palette'] ) {
 			// there are extra colors for the current flavor
 			foreach ( $this->configuration['palette'] as $key => $value ) {
 				if ( isset( $arr_acceptable_colors[ $key ] ) ) {
 					// the color is allowed
-					$colors_editor[ $key ] = array(
+					$colors_editor[ $key ] = [
 						'name'  => $arr_acceptable_colors[ $key ]['name'],
 						'color' => $arr_acceptable_colors[ $key ]['color'],
-						'slug'  => $key
-					);
+						'slug'  => $key,
+					];
 				}
 			}
 		}
@@ -490,18 +493,18 @@ class GebruikerCentraalTheme extends Timber\Site {
 		add_theme_support( 'disable-custom-font-sizes' );
 
 		// forces the dropdown for font sizes to only contain "normal"
-		add_theme_support( 'editor-font-sizes', array(
-			array(
+		add_theme_support( 'editor-font-sizes', [
+			[
 				'name' => __( 'Larger', 'gctheme' ),
 				'size' => 24,
-				'slug' => 'larger'
-			),
-			array(
+				'slug' => 'larger',
+			],
+			[
 				'name' => __( 'Extra large', 'gctheme' ),
 				'size' => 32,
-				'slug' => 'extra-large'
-			)
-		) );
+				'slug' => 'extra-large',
+			],
+		] );
 
 
 	}
@@ -682,12 +685,12 @@ class GebruikerCentraalTheme extends Timber\Site {
 	 */
 	public function activate_deactivate_page_templates( $page_templates ) {
 
-		$allowed_templates = array(
+		$allowed_templates = [
 			"template-landingspagina.php"   => "Landingspagina",
 			"template-overzichtspagina.php" => "Overzichtspagina",
 			"template-sitemap.php"          => "Sitemap",
-			"template-events-overview.php"  => "Events overzicht"
-		);
+			"template-events-overview.php"  => "Events overzicht",
+		];
 
 		// check the flavor
 		$theme_options = get_option( 'gc2020_theme_options' );
@@ -700,7 +703,7 @@ class GebruikerCentraalTheme extends Timber\Site {
 					// for Optimaal Digitaal, add tip templates
 					$allowed_templates["template-overzicht-tipgevers.php"] = "[OD] Overzicht alle tipgevers";
 					$allowed_templates["template-alle-tips.php"]           = "[OD] Overzicht alle tips";
-//					$allowed_templates["template-tips.php"]                = "[OD] Template tips-pagina";
+					//					$allowed_templates["template-tips.php"]                = "[OD] Template tips-pagina";
 					$allowed_templates["template-od-home.php"]        = "[OD] Template Home";
 					$allowed_templates["template-od-handleiding.php"] = "[OD] Template Handleiding";
 
@@ -743,13 +746,13 @@ class GebruikerCentraalTheme extends Timber\Site {
 		$args = [
 			"labels"              => $labels,
 			"description"         => __( "Hier voer je spotlight-blokken in.", 'gctheme' ),
-			"public"              => false,
-			"hierarchical"        => false,
-			"exclude_from_search" => true,
-			"publicly_queryable"  => false,
-			"show_ui"             => true,
-			"show_in_menu"        => true,
-			"show_in_rest"        => true,
+			"public"              => FALSE,
+			"hierarchical"        => FALSE,
+			"exclude_from_search" => TRUE,
+			"publicly_queryable"  => FALSE,
+			"show_ui"             => TRUE,
+			"show_in_menu"        => TRUE,
+			"show_in_rest"        => TRUE,
 			"capability_type"     => __( "post", 'gctheme' ),
 			"supports"            => [
 				"title",
@@ -757,11 +760,11 @@ class GebruikerCentraalTheme extends Timber\Site {
 				"revisions",
 				"thumbnail",
 			],
-			"has_archive"         => false,
-			"can_export"          => true,
-			"delete_with_user"    => false,
-			"map_meta_cap"        => true,
-			"query_var"           => true,
+			"has_archive"         => FALSE,
+			"can_export"          => TRUE,
+			"delete_with_user"    => FALSE,
+			"map_meta_cap"        => TRUE,
+			"query_var"           => TRUE,
 		];
 		register_post_type( GC_SPOTLIGHT_CPT, $args );
 
@@ -799,13 +802,11 @@ function my_body_classes( $classes ) {
 	if ( is_page() ) {
 
 		$template = basename( get_page_template() );
-		if (
-			( 'template-alle-tips.php' === $template ) ||
-			( 'template-overzicht-tipgevers.php' === $template ) ) {
+		if ( ( 'template-alle-tips.php' === $template ) || ( 'template-overzicht-tipgevers.php' === $template ) ) {
 			$classes[] = 'page--type-overview page--overview-archive';
 		}
 		if ( 'template-landingspagina.php' === $template ) {
-			$classes[] = 'page--type-landing page--overview-archive entry--type-landing';
+			$classes[] = 'page--type-landing entry--type-landing';
 		}
 
 	} elseif ( is_singular( GC_TIP_CPT ) ) {
@@ -826,7 +827,8 @@ function my_body_classes( $classes ) {
 			}
 		}
 	} elseif ( is_archive() ) {
-		$classes[] = 'page--type-overview page--overview-archive';
+		dump( is_singular() );
+		//$classes[] = 'page--type-overview page--overview-archive';
 
 		//print_r(get_queried_object()->taxonomy);
 
@@ -848,16 +850,16 @@ function my_body_classes( $classes ) {
 
 add_filter( 'get_the_archive_title', function ( $title ) {
 	if ( is_category() ) {
-		$title = single_cat_title( '', false );
+		$title = single_cat_title( '', FALSE );
 	} elseif ( is_tag() ) {
-		$title = single_tag_title( '', false );
+		$title = single_tag_title( '', FALSE );
 	} elseif ( is_author() ) {
 		$title = '<span class="vcard">' . get_the_author() . '</span>';
 	} elseif ( is_tax() ) { //for custom post types
-//		$title = sprintf( __( '%1$s' ), single_term_title( '', FALSE ) );
-		$title = single_term_title( '', false );
+		//		$title = sprintf( __( '%1$s' ), single_term_title( '', FALSE ) );
+		$title = single_term_title( '', FALSE );
 	} elseif ( is_post_type_archive() ) {
-		$title = post_type_archive_title( '', false );
+		$title = post_type_archive_title( '', FALSE );
 	}
 
 	return $title;
@@ -886,7 +888,7 @@ function gc2020_customize_register( $wp_customize ) {
 
 	// read configuration json file
 	$configfile   = file_get_contents( trailingslashit( get_stylesheet_directory() ) . FLAVORSCONFIG );
-	$flavorsource = json_decode( $configfile, true );
+	$flavorsource = json_decode( $configfile, TRUE );
 	foreach ( $flavorsource as $key => $value ) {
 		$flavors[ strtoupper( $key ) ] = $value['name'];
 	}
@@ -1039,7 +1041,7 @@ function get_themakleuren() {
 	// alle tipthema's langs om de kleuren op te halen
 	$args  = [
 		'taxonomy'   => GC_TIPTHEMA,
-		'hide_empty' => true,
+		'hide_empty' => TRUE,
 		'orderby'    => 'name',
 		'order'      => 'ASC',
 	];
@@ -1078,7 +1080,7 @@ function rename_minervakb() {
 		}
 	}
 
-	return false;
+	return FALSE;
 }
 
 add_action( 'admin_menu', 'rename_minervakb', 999 );
@@ -1088,25 +1090,8 @@ add_action( 'admin_menu', 'rename_minervakb', 999 );
 function append_block_wrappers( $block_content, $block ) {
 
 	$pagetemplate = basename( get_page_template() );
-//	$block_content = '<strong>' . $pagetemplate . ' / ' . $block['blockName']  . '</strong><br>' . $block_content;
 
-	if ( ( $block['blockName'] === 'core/paragraph' ||
-	       $block['blockName'] === 'acf/gc-ctalink' ) && (
-		     ( 'template-landingspagina.php' === $pagetemplate ) ||
-		     ( 'template-overzichtspagina.php' === $pagetemplate ) ) ) {
-		$content = '<div class="section section--paragraph">';
-		$content .= $block_content;
-		$content .= '</div>';
-
-		return $content;
-
-	} elseif ( $block['blockName'] === 'core/heading' ) {
-		$content = '<div class="section section--heading">';
-		$content .= $block_content;
-		$content .= '</div>';
-
-		return $content;
-	} elseif ( $block['blockName'] === 'acf/gc-handleiding' ) {
+	if ( $block['blockName'] == 'acf/gc-handleiding' ) {
 		global $handleidingcounter;
 		$handleidingcounter ++;
 		$content = '<li class="manual-item manual-item--item-' . $handleidingcounter . '">';
@@ -1114,15 +1099,28 @@ function append_block_wrappers( $block_content, $block ) {
 		$content .= '</li>';
 
 		return $content;
-		/*
-	} elseif ( $block['blockName'] ) {
-		$content = '<div style="border-top: 1px solid #dadada;">';
-		$content .= '<p><strong>Block: ' . $block['blockName'] . '</strong></p>';
-		$content .= $block_content;
-		$content .= '</div>';
+	} else {
+		$className = '';
+		switch ( $block['blockName'] ) {
+			case 'acf/gc-ctalink':
+				$className = 'cta';
+				break;
+			case 'core/heading':
+				$className = 'heading';
+				break;
+			case 'core/paragraph':
+			case 'paragraph':
+				$className = 'paragraph';
+				break;
+		}
 
-		return $content;
-		*/
+		if ( ! empty( $className ) ) {
+			$content = '<div class="section section--' . $className . '">';
+			$content .= $block_content;
+			$content .= '</div>';
+
+			return $content;
+		}
 	}
 
 	return $block_content;
@@ -1185,7 +1183,7 @@ function gc_restrict_gutenberg_blocks( $allowed_blocks ) {
 
 
 	*/
-	return array(
+	return [
 		'core/image',
 		'core/heading',
 		'core/table',
@@ -1205,10 +1203,10 @@ function gc_restrict_gutenberg_blocks( $allowed_blocks ) {
 		'acf/gc-links',
 		'acf/gc-related',
 		'acf/gc-rijksvideo',
-		'acf/gc-textimage'
+		'acf/gc-textimage',
 
 
-	);
+	];
 
 }
 
@@ -1231,7 +1229,7 @@ function my_acf_fields_relationship_result( $text, $post, $field, $post_id ) {
 //========================================================================================================
 
 function get_hero_image() {
-	$return = array();
+	$return = [];
 
 	if ( get_field( 'hero_image' ) ) {
 		$data           = get_field( 'hero_image' );
@@ -1285,7 +1283,7 @@ function translate_mime_type( $fullmimetype ) {
 			$return = _x( 'PDF', 'Mime-types', 'gctheme' );
 			break;
 
-		case "vnd.openxmlformats-officedocument.wordprocessingml.document":
+		case "vnd . openxmlformats - officedocument . wordprocessingml . document":
 			$return = _x( 'Word', 'Mime-types', 'gctheme' );
 			break;
 
@@ -1293,19 +1291,19 @@ function translate_mime_type( $fullmimetype ) {
 			$return = _x( 'Word', 'Mime-types', 'gctheme' );
 			break;
 
-		case "vnd.ms-powerpoint":
+		case "vnd . ms - powerpoint":
 			$return = _x( 'Powerpoint', 'Mime-types', 'gctheme' );
 			break;
 
-		case "vnd.openxmlformats-officedocument.presentationml.presentation":
+		case "vnd . openxmlformats - officedocument . presentationml . presentation":
 			$return = _x( 'Powerpoint', 'Mime-types', 'gctheme' );
 			break;
 
-		case "vnd.ms-excel":
+		case "vnd . ms - excel":
 			$return = _x( 'Excel', 'Mime-types', 'gctheme' );
 			break;
 
-		case "vnd.openxmlformats-officedocument.spreadsheetml.sheet":
+		case "vnd . openxmlformats - officedocument . spreadsheetml . sheet":
 			$return = _x( 'Excel', 'Mime-types', 'gctheme' );
 			break;
 
@@ -1346,7 +1344,7 @@ function translate_posttype( $posttype ) {
 function prepare_card_content( $postitem ) {
 
 
-	$item          = array();
+	$item          = [];
 	$postid        = $postitem->ID;
 	$item['title'] = get_the_title( $postid );
 	$item['descr'] = get_the_excerpt( $postid );
@@ -1354,7 +1352,7 @@ function prepare_card_content( $postitem ) {
 	$item['url']   = get_the_permalink( $postid );
 	$image         = get_the_post_thumbnail( $postid, 'large', [] );
 	$item['img']   = $image;
-	$themakleuren  = array();
+	$themakleuren  = [];
 
 	if ( 'tips' == $item['type'] ) {
 
@@ -1367,12 +1365,12 @@ function prepare_card_content( $postitem ) {
 			$themakleuren = get_themakleuren();
 		}
 
-		$item['nr']     = sprintf( _x( 'Tip %s', 'Label tip-nummer', 'gctheme' ), get_post_meta( $postid, 'tip-nummer', true ) );
-		$item['toptip'] = false;
-		$is_toptip      = get_post_meta( $postid, 'is_toptip', true );
+		$item['nr']     = sprintf( _x( 'Tip %s', 'Label tip-nummer', 'gctheme' ), get_post_meta( $postid, 'tip-nummer', TRUE ) );
+		$item['toptip'] = FALSE;
+		$is_toptip      = get_post_meta( $postid, 'is_toptip', TRUE );
 
 		if ( $is_toptip ) {
-			$item['toptip']      = true;
+			$item['toptip']      = TRUE;
 			$item['toptiptekst'] = _x( 'Toptip', 'Toptiptekst bij tip', 'gctheme' );
 		}
 
@@ -1397,36 +1395,34 @@ function prepare_card_content( $postitem ) {
 
 	} elseif ( 'event' == $item['type'] ) {
 
-		$event_start_date     = get_post_meta( $postid, '_event_start_date', true );
-		$event_start_time     = get_post_meta( $postid, '_event_start_time', true );
-		$event_end_date       = get_post_meta( $postid, '_event_end_date', true );
-		$event_end_time       = get_post_meta( $postid, '_event_end_time', true );
+		$event_start_date     = get_post_meta( $postid, '_event_start_date', TRUE );
+		$event_start_time     = get_post_meta( $postid, '_event_start_time', TRUE );
+		$event_end_date       = get_post_meta( $postid, '_event_end_date', TRUE );
+		$event_end_time       = get_post_meta( $postid, '_event_end_time', TRUE );
 		$event_end_datetime   = strtotime( $event_end_date . ' ' . $event_end_time );
 		$event_start_datetime = strtotime( $event_start_date . ' ' . $event_start_time );
 
 		// als start-datum en eindatum op dezelfde dag
 		if ( $event_start_date === $event_end_date ) {
 			// dan start- en eindtijd tonen
-			$eventtimes = sprintf( _x( '%s - %s', 'Meta voor event: label voor start- en eindtijd', 'gctheme' ),
-				date_i18n( get_option( 'time_format' ), $event_start_datetime ),
-				date_i18n( get_option( 'time_format' ), $event_end_datetime )
-			);
+			$eventtimes = sprintf( _x( '%s - %s', 'Meta voor event: label voor start- en eindtijd', 'gctheme' ), date_i18n( get_option( 'time_format' ), $event_start_datetime ), date_i18n( get_option( 'time_format' ), $event_end_datetime ) );
 
 			$item['meta'][] = [
 				'classname' => 'times',
 				'title'     => _x( 'Times', 'Meta voor event: value voor start- en eindtijd', 'gctheme' ),
-				'descr'     => $eventtimes
+				'descr'     => $eventtimes,
 			];
 		}
 
 		if ( 'EM_Event' === get_class( $postitem ) ) {
-			if ( ( $postitem->get_bookings()->get_available_spaces() <= 0 ) && ( $postitem->get_bookings()->tickets->tickets ) ) {
+			if ( ( $postitem->get_bookings()
+			                ->get_available_spaces() <= 0 ) && ( $postitem->get_bookings()->tickets->tickets ) ) {
 				// heeft mogelijkheid tot reserveren, maar alle plekken zijn bezet
 				$item['full']   = _x( 'Fully booked', 'Meta voor event: value voor geen plek meer beschikbaar', 'gctheme' );
 				$item['meta'][] = [
 					'classname' => 'aanmeldingen',
 					'title'     => _x( 'Availability', 'Meta voor event: label voor geen plek meer beschikbaar', 'gctheme' ),
-					'descr'     => _x( 'Fully booked', 'Meta voor event: value voor geen plek meer beschikbaar', 'gctheme' )
+					'descr'     => _x( 'Fully booked', 'Meta voor event: value voor geen plek meer beschikbaar', 'gctheme' ),
 				];
 			}
 
@@ -1437,7 +1433,7 @@ function prepare_card_content( $postitem ) {
 				$item['meta'][] = [
 					'classname' => 'location',
 					'title'     => _x( 'Location', 'Meta voor event: label voor locatie', 'gctheme' ),
-					'descr'     => $lcatie
+					'descr'     => $lcatie,
 				];
 
 			}
@@ -1461,7 +1457,7 @@ add_filter( 'acf/fields/relationship/query/name=content_block_items', 'acf_relat
 
 
 function acf_relationshipfield_only_use_published_content( $options, $field, $post_id ) {
-	$options['post_status'] = array( 'publish' );
+	$options['post_status'] = [ 'publish' ];
 
 	return $options;
 }
@@ -1474,14 +1470,14 @@ function acf_relationshipfield_only_use_published_content( $options, $field, $po
  */
 function not_found_page_widgets_init() {
 
-	register_sidebar( array(
+	register_sidebar( [
 		'name'          => _x( 'Widgetruimte op 404 pagina', '404 widget space', 'gctheme' ),
 		'id'            => 'widgets_404',
-		'before_widget' => '<section id="widgets_404_%s" class="sidebar %s">',
+		'before_widget' => '<section id="widgets_404_ % s" class="sidebar % s">',
 		'after_widget'  => '</section>',
 		'before_title'  => '<h2>',
 		'after_title'   => '</h2>',
-	) );
+	] );
 
 }
 

@@ -9,7 +9,6 @@
 }
 
 .entry--type-home {
-
   .page__intro {
     background: url('../images/b_home-top.svg') center top -25rem no-repeat;
     background-size: auto 101%;
@@ -17,6 +16,7 @@
     text-align: center;
     max-width: none;
     box-shadow: none;
+    padding-bottom: 0;
 
     &:before,
     &:after {
@@ -113,5 +113,15 @@
 
   .section--overview {
     text-align: center;
+  }
+}
+
+// Gutenberg default
+
+.wp-block-image.size-large {
+  @include ho-make-container($max-width-inner);
+
+  + .section--heading {
+    margin-top: 5rem;
   }
 }

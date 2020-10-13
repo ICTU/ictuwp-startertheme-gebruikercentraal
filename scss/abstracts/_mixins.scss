@@ -249,7 +249,12 @@
     @include gc-box-shadow();
     max-width: $max-width-content;
     margin: 0 auto;
+
+    p {
+      padding: 0;
+    }
   }
+
 }
 
 @mixin gc-bg-rotated($bg: $gc-pantybrown-xlight) {

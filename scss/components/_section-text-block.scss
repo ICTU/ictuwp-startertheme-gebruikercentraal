@@ -23,8 +23,6 @@
 
 
 // Text blocks
-
-
 .text-block {
   margin-top: $gutter;
 
@@ -44,6 +42,11 @@
 
     @include bp-up(sm) {
       padding: 3rem;
+    }
+
+    @include bp-up(lg) {
+      padding-left: 4rem;
+      padding-right: 4rem;
     }
   }
 

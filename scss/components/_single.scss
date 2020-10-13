@@ -116,22 +116,10 @@
       }
     }
 
-    .section {
+    .entry-content {
       @include ho-padding;
 
-
-        &:last-child {
-          padding-bottom: 5rem;
-
-          @include bp-up(md) {
-            padding-bottom: 8rem;
-          }
-      }
-    }
-
-    .entry-content {
-      .section--paragraph,
-      .section--heading {
+      > .section:not(.section--overview) {
         max-width: 760px;
         margin-left: auto;
         margin-right: auto;
@@ -141,9 +129,20 @@
         &:first-child {
           margin-top: 0;
         }
+
+        &:last-child {
+          padding-bottom: 5rem;
+
+          @include bp-up(md) {
+            padding-bottom: 8rem;
+          }
+        }
+      }
+
+      .section--overview {
+        @include negate-padding;
       }
     }
-
   }
 
   &--type-home {
@@ -249,6 +248,7 @@
       }
     }
   }
+
 }
 
 

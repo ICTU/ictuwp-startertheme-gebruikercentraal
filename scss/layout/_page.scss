@@ -64,7 +64,7 @@ html {
     padding: 2rem;
   }
 
-  @include bp-up(md){
+  @include bp-up(md) {
     header {
       padding: 3rem 5rem;
       background: $intro-bg;
@@ -80,7 +80,7 @@ html {
   p {
     padding: 2rem;
 
-    @include bp-up(md){
+    @include bp-up(md) {
       padding: 1rem 5rem 0;
     }
   }
@@ -232,25 +232,24 @@ h1 {
   }
 
   &--type-landing {
-    .page-content {
-
-      // Under content, negate default margins / paddings
-      > .section--spotlight {
-        margin-left: -2rem;
-        margin-right: -2rem;
-        margin-bottom: -5rem;
-
-        @include bp-up(md){
-          margin-left: -3rem;
-          margin-right: -3rem;
-          margin-bottom: -8rem;
-        }
-      }
-    }
-
     .content {
       @include gc-box-shadow;
       padding: 0;
     }
+  }
+}
+
+// Spotlight
+// Under content, negate default margins / paddings
+
+.page-content > .section--spotlight {
+  margin-left: -2rem;
+  margin-right: -2rem;
+  margin-bottom: -5rem;
+
+  @include bp-up(md) {
+    margin-left: -3rem;
+    margin-right: -3rem;
+    margin-bottom: -8rem;
   }
 }

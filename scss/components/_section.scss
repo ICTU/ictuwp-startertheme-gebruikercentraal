@@ -161,7 +161,7 @@
     border: none;
   }
 
-  .grid--col-2 {
+  .l-section-content {
     @include ho-container-content;
   }
 
@@ -192,6 +192,9 @@
     margin-top: $gutter;
   }
 
+  img {
+    display: block;
+  }
 
   @include bp-up(md) {
     .l-section-content {

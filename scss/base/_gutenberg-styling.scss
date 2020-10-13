@@ -14,12 +14,34 @@ Gutenberg corrections
   p {
     margin-top: 1rem;
   }
-  & + .section--heading {
-    margin-top: 5rem;
+  + .section--heading {
+    margin-top: 4rem;
   }
-  & + .wp-block-image {
+  + .wp-block-image {
     margin-top: 4rem;
     margin-bottom: 4rem;
+  }
+
+  + .section--cta {
+    margin-top: 0;
+  }
+}
+
+.section--cta {
+  + .section {
+    margin-top: 4rem;
+  }
+
+  + .wp-block-image {
+    margin-top: 3rem;
+
+    @include bp-up(md){
+      margin-top: 6rem;
+    }
+
+    @include bp-up(lg){
+      margin-top: 8rem;
+    }
   }
 }
 

@@ -1,0 +1,9 @@
+.entry--type-home.entry--full {
+  .entry-header {
+    padding-bottom: 0;
+  }
+
+  .page__intro .entry-header + p {
+    margin-top: 0;
+  }
+}

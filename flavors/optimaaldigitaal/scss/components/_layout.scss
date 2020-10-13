@@ -84,7 +84,7 @@
   background: $brand-color;
 }
 
-.page--type-landing .page-content > .section--spotlight {
+.page-content > .section--spotlight {
   &:after {
     display: none;
   }
@@ -136,4 +136,12 @@
 
 .archive__posts {
   @include od-background-option();
+}
+
+.page--overview-archive,
+.page--type-overview {
+  .content {
+    @include gc-box-shadow();
+  }
+
 }
