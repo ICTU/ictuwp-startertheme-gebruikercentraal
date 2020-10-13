@@ -108,6 +108,10 @@ function remove_em_content_filter() {
 
 function do_paginate( $link, $total, $limit, $page = 1, $data = array() ) {
 
+	if ( $total <= $total ) {
+		return;
+	}
+
 	if ( $limit > 0 ) {
 		$pagesToShow      = defined( 'EM_PAGES_TO_SHOW' ) ? EM_PAGES_TO_SHOW : 10;
 		$url_parts        = explode( '?', $link );
