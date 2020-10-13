@@ -827,9 +827,6 @@ function my_body_classes( $classes ) {
 			}
 		}
 	} elseif ( is_archive() ) {
-		dump( is_singular() );
-		//$classes[] = 'page--type-overview page--overview-archive';
-
 		//print_r(get_queried_object()->taxonomy);
 
 		switch ( get_queried_object()->taxonomy ) {
