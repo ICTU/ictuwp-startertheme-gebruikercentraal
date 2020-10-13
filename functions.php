@@ -828,6 +828,7 @@ function my_body_classes( $classes ) {
 		}
 	} elseif ( is_archive() ) {
 		//print_r(get_queried_object()->taxonomy);
+		$classes[] = 'page--type-overview page--overview-archive';
 
 		switch ( get_queried_object()->taxonomy ) {
 			case 'tipthema':

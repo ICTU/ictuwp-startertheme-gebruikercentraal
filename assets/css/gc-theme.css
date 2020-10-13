@@ -1513,6 +1513,10 @@ h1 {
     background: #007BB0;
     border-color: #0095da; }
 
+.archive .content {
+  -webkit-box-shadow: none;
+          box-shadow: none; }
+
 /* Entry types */
 .post .post__header,
 .post .post__body {

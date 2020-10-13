@@ -1522,6 +1522,10 @@ h1 {
     background: #007BB0;
     border-color: #0095da; }
 
+.archive .content {
+  -webkit-box-shadow: none;
+          box-shadow: none; }
+
 /* Entry types */
 .post .post__header,
 .post .post__body {
@@ -6890,11 +6894,6 @@ h1 {
     right: 0;
     bottom: 0;
     top: 16rem; }
-
-.page--overview-archive .content,
-.page--type-overview .content {
-  -webkit-box-shadow: 0.4rem 0.4rem 0 rgba(0, 0, 0, 0.15);
-          box-shadow: 0.4rem 0.4rem 0 rgba(0, 0, 0, 0.15); }
 
 .page--type-manual .page-content {
   background: #BA4F0C;
