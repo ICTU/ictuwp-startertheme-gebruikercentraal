@@ -685,7 +685,8 @@ class GebruikerCentraalTheme extends Timber\Site {
 		$allowed_templates = array(
 			"template-landingspagina.php"   => "Landingspagina",
 			"template-overzichtspagina.php" => "Overzichtspagina",
-			"template-sitemap.php"          => "Sitemap"
+			"template-sitemap.php"          => "Sitemap",
+			"template-events-overview.php"  => "Events overzicht"
 		);
 
 		// check the flavor
@@ -1344,6 +1345,7 @@ function translate_posttype( $posttype ) {
  */
 function prepare_card_content( $postitem ) {
 
+
 	$item          = array();
 	$postid        = $postitem->ID;
 	$item['title'] = get_the_title( $postid );
@@ -1401,6 +1403,45 @@ function prepare_card_content( $postitem ) {
 		$event_end_time       = get_post_meta( $postid, '_event_end_time', true );
 		$event_end_datetime   = strtotime( $event_end_date . ' ' . $event_end_time );
 		$event_start_datetime = strtotime( $event_start_date . ' ' . $event_start_time );
+
+		// als start-datum en eindatum op dezelfde dag
+		if ( $event_start_date === $event_end_date ) {
+			// dan start- en eindtijd tonen
+			$eventtimes = sprintf( _x( '%s - %s', 'Meta voor event: label voor start- en eindtijd', 'gctheme' ),
+				date_i18n( get_option( 'time_format' ), $event_start_datetime ),
+				date_i18n( get_option( 'time_format' ), $event_end_datetime )
+			);
+
+			$item['meta'][] = [
+				'classname' => 'times',
+				'title'     => _x( 'Times', 'Meta voor event: value voor start- en eindtijd', 'gctheme' ),
+				'descr'     => $eventtimes
+			];
+		}
+
+		if ( 'EM_Event' === get_class( $postitem ) ) {
+			if ( ( $postitem->get_bookings()->get_available_spaces() <= 0 ) && ( $postitem->get_bookings()->tickets->tickets ) ) {
+				// heeft mogelijkheid tot reserveren, maar alle plekken zijn bezet
+				$item['full']   = _x( 'Fully booked', 'Meta voor event: value voor geen plek meer beschikbaar', 'gctheme' );
+				$item['meta'][] = [
+					'classname' => 'aanmeldingen',
+					'title'     => _x( 'Availability', 'Meta voor event: label voor geen plek meer beschikbaar', 'gctheme' ),
+					'descr'     => _x( 'Fully booked', 'Meta voor event: value voor geen plek meer beschikbaar', 'gctheme' )
+				];
+			}
+
+			if ( $postitem->location_id ) {
+				// dit ding heeft een locatie
+				$lcatie = $postitem->output( '#_LOCATIONNAME' );
+
+				$item['meta'][] = [
+					'classname' => 'location',
+					'title'     => _x( 'Location', 'Meta voor event: label voor locatie', 'gctheme' ),
+					'descr'     => $lcatie
+				];
+
+			}
+		}
 
 		if ( $event_start_datetime === $event_end_datetime ) {
 			$item['start_date'] = $event_start_datetime;

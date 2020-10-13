@@ -5,7 +5,7 @@
       {# First #}
       {% if posts.pagination.pages|first and posts.pagination.pages|first.current != true %}
         <li class="first btn">
-          <a href="{{ posts.pagination.pages|first.link }}"aria-label="{{ _x('First', 'pagination', 'gctheme') }}">&lt;&lt;</a>
+          <a href="{{ posts.pagination.pages|first.link }}" aria-label="{{ _x('First', 'pagination', 'gctheme') }}">&lt;&lt;</a>
         </li>
       {% else %}
       {% endif %}
@@ -13,7 +13,7 @@
       {# Previous #}
       {% if posts.pagination.prev %}
         <li class="prev btn">
-          <a href="{{ posts.pagination.prev.link }}"aria-label="{{ _x('Previous', 'pagination', 'gctheme') }}">&lt;</a>
+          <a href="{{ posts.pagination.prev.link }}" aria-label="{{ _x('Previous', 'pagination', 'gctheme') }}">&lt;</a>
         </li>
       {% else %}
       {% endif %}
@@ -34,7 +34,7 @@
       {# Next #}
       {% if posts.pagination.next %}
         <li class="next btn">
-          <a href="{{ posts.pagination.next.link }}"aria-label="{{ _x('Next', 'pagination', 'gctheme') }}">&gt;</a>
+          <a href="{{ posts.pagination.next.link }}" aria-label="{{ _x('Next', 'pagination', 'gctheme') }}">&gt;</a>
         </li>
       {% else %}
       {% endif %}
@@ -42,7 +42,7 @@
       {# Last #}
       {% if posts.pagination.pages|last and posts.pagination.pages|last.current != true %}
         <li class="last btn">
-          <a href="{{ posts.pagination.pages|last.link }}"aria-label="{{ _x('Last', 'pagination', 'gctheme') }}">&gt;&gt;</a>
+          <a href="{{ posts.pagination.pages|last.link }}" aria-label="{{ _x('Last', 'pagination', 'gctheme') }}">&gt;&gt;</a>
         </li>
       {% else %}
       {% endif %}

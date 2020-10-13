@@ -1,0 +1,85 @@
+{% block html_head_container %}
+  {% include 'html-header.twig' %}
+  {% block head %}
+  {% endblock %}
+  </head>
+{% endblock %}
+
+<body class="{{ body_class }} page--type-overview page--overview-archive" data-template="base.twig">
+
+
+<div class="site-container">
+
+  <ul id="{{ skiplinks_id }}">
+    <li><a href="#{{ maincontent_id }}">{{ maincontent_id_linktext }}</a></li>
+    {% if menu %}
+      <li><a href="#{{ mainnav_id }}">{{ mainnav_id_linktext }}</a></li>
+    {% endif %}
+  </ul>
+
+  <header class="page-header">
+
+    <div class="l-header-top">
+      {% include "partial/header-branding.twig" %}
+      {% include "header-searchform.twig" %}
+    </div>
+
+    {% include "menu.twig" with {'items': menu.get_items} %}
+
+  </header>
+
+  {{ function('insert_breadcrumb') }}
+
+
+  <div class="page-content" id="maincontent" tabindex="-1">
+    <main class="content">
+
+      <article class="entry entry--type-overview entry--full">
+
+        <div class="entry-content">
+
+          <div class="page__intro">
+            <header class="entry-header">
+              <h1 class="entry-title">{{ post.title }}</h1>
+
+              {% if intro %}
+                <p>{{ intro }}</p>
+              {% endif %}
+            </header>
+
+            {% if post.content %}
+
+              <div class="entry-body">
+                {{ post.content }}
+              </div>
+
+            {% endif %}
+
+          </div>
+
+          {% for month in events.months %}
+            {% include 'sections/section-month-events.twig' with {
+              'title' : month.title,
+              'items' : month.items,
+            } %}
+          {% endfor %}
+
+          {% if events.pagination %}
+            {{ events.pagination }}
+          {% endif %}
+
+        </div>
+      </article>
+
+    </main>
+  </div>
+
+
+  {% block footer %}
+    {% include 'footer.twig' %}
+    {{ function('wp_footer') }}
+  {% endblock %}
+</div>
+
+</body>
+</html>

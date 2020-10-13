@@ -54,7 +54,6 @@
           {% else %}
             {% set nr = item.nr %}
           {% endif %}
-
           {% include 'components/'~ template ~'.html.twig' with {
             'title' : item.title,
             'descr' : item.descr,
@@ -66,6 +65,10 @@
             'category': item.category,
             'toptip': item.toptip,
             'toptiptekst': item.toptiptekst,
+            'start_date': ( item.start_date ?? '' ),
+            'end_date': ( item.end_date ?? '' ),
+            'post_date': ( item.post_date ?? '' ),
+
             'url': item.url
           } %}
         {% endfor %}

@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 "Project-Id-Version: Gebruiker Centraal (2020)\n"
-"POT-Creation-Date: 2020-10-05 23:04+0200\n"
+"POT-Creation-Date: 2020-10-12 22:35+0200\n"
 "PO-Revision-Date: 2020-06-16 15:48+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -50,7 +50,7 @@ msgstr ""
 msgid "Alle tips"
 msgstr ""
 
-#: assets/json.php:105 assets/od.php:95 functions.php:730
+#: assets/json.php:105 assets/od.php:95 functions.php:731
 msgid "Toevoegen"
 msgstr ""
 
@@ -70,7 +70,7 @@ msgstr ""
 msgid "Nieuwe tip"
 msgstr ""
 
-#: assets/json.php:110 assets/od.php:100 functions.php:735
+#: assets/json.php:110 assets/od.php:100 functions.php:736
 msgid "Bekijk"
 msgstr ""
 
@@ -94,7 +94,7 @@ msgstr ""
 msgid "Hier voer je de tips in."
 msgstr ""
 
-#: assets/json.php:127 assets/od.php:117 functions.php:752
+#: assets/json.php:127 assets/od.php:117 functions.php:753
 msgid "post"
 msgstr ""
 
@@ -628,80 +628,80 @@ msgctxt "Widget area"
 msgid "Footer widget right"
 msgstr ""
 
-#: functions.php:725
+#: functions.php:726
 msgid "Spotlight-blokken"
 msgstr ""
 
-#: functions.php:726
+#: functions.php:727
 msgid "Spotlight-blok"
 msgstr ""
 
-#: functions.php:727 functions.php:728
+#: functions.php:728 functions.php:729
 msgid "Spotlight"
 msgstr ""
 
-#: functions.php:729
+#: functions.php:730
 msgid "Alle spotlight-blokken"
 msgstr ""
 
-#: functions.php:731
+#: functions.php:732
 msgid "Spotlight-blok toevoegen"
 msgstr ""
 
-#: functions.php:732
+#: functions.php:733
 msgid "Spotlight-blok bewerken"
 msgstr ""
 
-#: functions.php:733
+#: functions.php:734
 msgid "Bewerk spotlight-blok"
 msgstr ""
 
-#: functions.php:734
+#: functions.php:735
 msgid "Nieuwe spotlight-blok"
 msgstr ""
 
-#: functions.php:736
+#: functions.php:737
 msgid "Bekijk spotlight-blok"
 msgstr ""
 
-#: functions.php:737
+#: functions.php:738
 msgid "Spotlight-blokken zoeken"
 msgstr ""
 
-#: functions.php:738
+#: functions.php:739
 msgid "Geen spotlight-blokken gevonden"
 msgstr ""
 
-#: functions.php:739
+#: functions.php:740
 msgid "Geen spotlight-blokken in de prullenbak"
 msgstr ""
 
-#: functions.php:744
+#: functions.php:745
 msgid "Hier voer je spotlight-blokken in."
 msgstr ""
 
-#: functions.php:871
+#: functions.php:872
 msgctxt "customizer"
 msgid "Gebruiker Centraal Instellingen"
 msgstr ""
 
-#: functions.php:872
+#: functions.php:873
 msgctxt "customizer"
 msgid ""
 "Selecteer hier het kleurenschema voor deze site. Je wijzigt hiermee de "
 "styling, logo en sommige functionaliteit van de site."
 msgstr ""
 
-#: functions.php:895
+#: functions.php:896
 msgctxt "customizer"
 msgid "Kies het kleurenschema"
 msgstr ""
 
-#: functions.php:1075
+#: functions.php:1076
 msgid "GC Kennisbank"
 msgstr ""
 
-#: functions.php:1224 functions.php:1391 taxonomy-speelset.php:80
+#: functions.php:1225 functions.php:1370 taxonomy-speelset.php:80
 #: taxonomy-speelset.php:106 taxonomy-tipgever.php:43
 #: template-alle-tips.php:41
 #, php-format
@@ -709,64 +709,90 @@ msgctxt "Label tip-nummer"
 msgid "Tip %s"
 msgstr ""
 
-#: functions.php:1279
+#: functions.php:1257
 msgctxt "Mime-types"
 msgid "PNG"
 msgstr ""
 
-#: functions.php:1283 functions.php:1287
+#: functions.php:1261 functions.php:1265
 msgctxt "Mime-types"
 msgid "JPG"
 msgstr ""
 
-#: functions.php:1291
+#: functions.php:1269
 msgctxt "Mime-types"
 msgid "GIF"
 msgstr ""
 
-#: functions.php:1295 functions.php:1303
+#: functions.php:1273 functions.php:1281
 msgctxt "Mime-types"
 msgid "MP3"
 msgstr ""
 
-#: functions.php:1299
+#: functions.php:1277
 msgctxt "Mime-types"
 msgid "MOVIE"
 msgstr ""
 
-#: functions.php:1307
+#: functions.php:1285
 msgctxt "Mime-types"
 msgid "PDF"
 msgstr ""
 
-#: functions.php:1311 functions.php:1315
+#: functions.php:1289 functions.php:1293
 msgctxt "Mime-types"
 msgid "Word"
 msgstr ""
 
-#: functions.php:1319 functions.php:1323
+#: functions.php:1297 functions.php:1301
 msgctxt "Mime-types"
 msgid "Powerpoint"
 msgstr ""
 
-#: functions.php:1327 functions.php:1331
+#: functions.php:1305 functions.php:1309
 msgctxt "Mime-types"
 msgid "Excel"
 msgstr ""
 
-#: functions.php:1335
+#: functions.php:1313
 msgctxt "Mime-types"
 msgid "TXT"
 msgstr ""
 
-#: functions.php:1397 taxonomy-speelset.php:91 taxonomy-speelset.php:117
+#: functions.php:1376 taxonomy-speelset.php:91 taxonomy-speelset.php:117
 #: taxonomy-tipgever.php:54
 msgctxt "Toptiptekst bij tip"
 msgid "Toptip"
 msgstr ""
 
-#: functions.php:1459
-msgctxt "Mime-types"
+#: functions.php:1418
+#, php-format
+msgctxt "Meta voor event: label voor start- en eindtijd"
+msgid "%s - %s"
+msgstr ""
+
+#: functions.php:1425
+msgctxt "Meta voor event: value voor start- en eindtijd"
+msgid "Times"
+msgstr ""
+
+#: functions.php:1435
+msgctxt "Meta voor event: label voor geen plek meer beschikbaar"
+msgid "Availability"
+msgstr ""
+
+#: functions.php:1436
+msgctxt "Meta voor event: value voor geen plek meer beschikbaar"
+msgid "Fully booked"
+msgstr ""
+
+#: functions.php:1446
+msgctxt "Meta voor event: label voor locatie"
+msgid "Location"
+msgstr ""
+
+#: functions.php:1485
+msgctxt "404 widget space"
 msgid "Widgetruimte op 404 pagina"
 msgstr ""
 
@@ -1118,6 +1144,33 @@ msgctxt "Titel boven conclusie"
 msgid "Conclusie"
 msgstr ""
 
+#: template-events-overview.php:144 templates/partial/pagination.twig:8
+msgctxt "pagination"
+msgid "First"
+msgstr ""
+
+#: template-events-overview.php:146 template-events-overview.php:148
+#: templates/partial/pagination.twig:16
+msgctxt "pagination"
+msgid "Previous"
+msgstr ""
+
+#: template-events-overview.php:161 templates/partial/pagination.twig:37
+msgctxt "pagination"
+msgid "Next"
+msgstr ""
+
+#: template-events-overview.php:162 templates/partial/pagination.twig:45
+msgctxt "pagination"
+msgid "Last"
+msgstr ""
+
+#: template-od-home.php:83
+#, php-format
+msgctxt "Arialabel agenda home"
+msgid "%s op %s"
+msgstr ""
+
 #: template-sitemap.php:25
 msgctxt "sitemap titel"
 msgid "Pagina's"
@@ -1207,26 +1260,6 @@ msgctxt "Title boven footer widgets"
 msgid "Footer"
 msgstr ""
 
-#: templates/partial/pagination.twig:8
-msgctxt "pagination"
-msgid "First"
-msgstr ""
-
-#: templates/partial/pagination.twig:16
-msgctxt "pagination"
-msgid "Previous"
-msgstr ""
-
-#: templates/partial/pagination.twig:37
-msgctxt "pagination"
-msgid "Next"
-msgstr ""
-
-#: templates/partial/pagination.twig:45
-msgctxt "pagination"
-msgid "Last"
-msgstr ""
-
 #: templates/searchresult-item.twig:14
 msgctxt "Search result item info"
 msgid "Author"
@@ -1245,6 +1278,23 @@ msgstr ""
 #: templates/searchresult-item.twig:26
 msgctxt "Search result item info"
 msgid "Last changed on"
+msgstr ""
+
+#: templates/sections/section-authorbox.html.twig:4
+msgctxt "authorbox"
+msgid "Profile picture"
+msgstr ""
+
+#: templates/sections/section-authorbox.html.twig:11
+msgctxt "authorbox"
+msgid "About"
+msgstr ""
+
+#: templates/sections/section-authorbox.html.twig:33
+#: templates/sections/section-authorbox.html.twig:37
+#: templates/sections/section-authorbox.html.twig:41
+msgctxt "authorbox"
+msgid "Of"
 msgstr ""
 
 #: templates/single-kb.twig:68
@@ -1269,14 +1319,14 @@ msgstr ""
 msgid "Author"
 msgstr ""
 
-#: templates/single.twig:72
+#: templates/single.twig:77
 #, php-format
 msgid "One comment"
 msgid_plural "%d comments"
 msgstr[0] ""
 msgstr[1] ""
 
-#: templates/single.twig:80
+#: templates/single.twig:87
 msgctxt "comments"
 msgid "Comments for this post are closed."
 msgstr ""
@@ -1303,6 +1353,10 @@ msgstr ""
 
 #. Template Name of the plugin/theme
 msgid "Beeldbieb"
+msgstr ""
+
+#. Template Name of the plugin/theme
+msgid "Template Events-overzicht"
 msgstr ""
 
 #. Template Name of the plugin/theme
