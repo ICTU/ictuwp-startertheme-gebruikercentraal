@@ -5771,10 +5771,16 @@ h1 {
       max-width: none; } }
   @media (min-width: 560px) {
     .teaser__image {
-      width: 16rem; } }
+      width: 16rem;
+      -ms-flex-preferred-size: 16rem;
+          flex-basis: 16rem;
+      border: 2px solid red; } }
   @media (min-width: 700px) {
     .teaser__image {
-      width: 20rem; } }
+      width: 20rem;
+      -ms-flex-preferred-size: 20rem;
+          flex-basis: 20rem;
+      border: 2px solid green; } }
 
 .teaser__header .date-badge {
   float: left;
