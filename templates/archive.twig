@@ -72,7 +72,7 @@
           {% include 'components/teaser.html.twig' with {
             'title' : post.title,
             'headerlevel' : 'h3',
-            'descr' : post.preview,
+            'descr' : post.preview.read_more( false ),
             'img' : post.thumbnail,
             'type' : post.type,
             'meta': post.meta,
