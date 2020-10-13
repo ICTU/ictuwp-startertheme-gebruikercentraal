@@ -1383,7 +1383,7 @@ function prepare_card_content( $postitem ) {
 			$item['meta'][] = [
 				'classname' => 'auteur',
 				'title'     => _x( 'Author', 'Meta voor event: value voor auteur', 'gctheme' ),
-				'descr'     => get_the_author_meta( 'display_name', '"' . $postitem->post_author . '"'),
+				'descr'     => get_the_author_meta( 'display_name', $postitem->post_author),
 			];
 		}
 
@@ -1406,6 +1406,7 @@ function prepare_card_content( $postitem ) {
 		if ( $event_start_date === $event_end_date ) {
 			// dan start- en eindtijd tonen
 			$eventtimes = sprintf( _x( '%s - %s', 'Meta voor event: label voor start- en eindtijd', 'gctheme' ), date_i18n( get_option( 'time_format' ), $event_start_datetime ), date_i18n( get_option( 'time_format' ), $event_end_datetime ) );
+
 
 			$item['meta'][] = [
 				'classname' => 'times',
@@ -1446,6 +1447,7 @@ function prepare_card_content( $postitem ) {
 			$item['end_date']   = $event_end_datetime;
 		}
 	}
+
 
 	return $item;
 }
