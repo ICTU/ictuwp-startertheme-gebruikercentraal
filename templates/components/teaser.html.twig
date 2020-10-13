@@ -1,0 +1,52 @@
+<section
+  class="teaser teaser--type-{{ type ? type : 'page' }}{{ modifier ? ' teaser--' ~ modifier }}{{ img ? ' l-with-image' : ' l-without-image' }}">
+  <div class="teaser__link">
+    {% if full %}
+      <span class="label label--full">{{ full }}</span>
+    {% endif %}
+
+    {% if img %}
+      <div class="teaser__image">
+        {{ img }}
+      </div>
+
+    {% endif %}
+
+    {% if img %}<div class="l-teaser-content">{% endif %}
+      <header class="teaser__header">
+        {% if type == 'event' %}
+
+          {% include 'components/date-badge.html.twig' with {
+            'start_date': start_date,
+            'end_date': end_date,
+          } %}
+
+        {% elseif post_date %}
+          {% include 'components/date-badge.html.twig' with {
+            'post_date': post_date,
+            'modifier': '',
+          } %}
+        {% endif %}
+
+        <h2 itemprop="name" class="teaser__title">
+          <a href="{{ url }}">
+          <span class="arrow-link">
+            <span class="arrow-link__text">{{ title }}</span><span class="arrow-link__icon" aria-hidden="true"></span>
+          </span>
+          </a>
+        </h2>
+
+        {% if meta %}
+          {% include 'components/meta-data.html.twig' with {'items': meta} %}
+        {% endif %}
+      </header>
+
+      {% if descr %}
+        <div class="teaser__description">
+          {{ descr }}
+        </div>
+      {% endif %}
+
+      {% if img %}</div>{% endif %}
+  </div>
+</section>
