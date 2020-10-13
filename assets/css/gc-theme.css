@@ -3900,6 +3900,9 @@ h1 {
 .section--downloads .item-list__item {
   padding-right: 0; }
 
+.entry-header + .section {
+  margin-top: 0; }
+
 .section--spotlight {
   padding-left: 2rem;
   padding-right: 2rem;
