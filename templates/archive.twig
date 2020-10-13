@@ -72,13 +72,13 @@
           {% include 'components/teaser.html.twig' with {
             'title' : post.title,
             'headerlevel' : 'h3',
-            'descr' : post.preview.read_more( false ),
-            'img' : post.thumbnail,
+            'descr' : post.descr,
+            'img' : post.img,
             'type' : post.type,
             'meta': post.meta,
             'category': post.category,
             'post_date': ( post.post_date ?? '' ),
-            'url': post.path
+            'url': post.url
           } %}
         {% endfor %}
         </div>

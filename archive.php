@@ -80,7 +80,12 @@ if ( $context['pagetype'] === 'archive_tipthema' ) {
 	$context['overview']['modifier'] = '4col';
 
 } else {
-	$context['items'] = new Timber\PostQuery();
+	foreach ( $posts as $post ) {
+		$context['items'][] = prepare_card_content( $post );
+	}
+
+
+//	$context['items'] = new Timber\PostQuery();
 }
 
 if ( $taxonomy_name === OD_CITAATAUTEUR ) {

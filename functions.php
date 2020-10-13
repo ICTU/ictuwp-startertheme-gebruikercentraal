@@ -8,7 +8,7 @@
  * @since   Timber 0.1
  */
 
-define( 'CHILD_THEME_VERSION', '5.0.13' );
+define( 'CHILD_THEME_VERSION', '5.0.14' );
 define( 'ID_MAINCONTENT', 'maincontent' );
 define( 'ID_MAINNAV', 'mainnav' );
 define( 'ID_ZOEKEN', 'zoeken' );
@@ -129,7 +129,7 @@ Timber::$dirname = [ 'templates', 'views' ];
  * By default, Timber does NOT autoescape values. Want to enable Twig's
  * autoescape? No prob! Just set this value to true
  */
-Timber::$autoescape = FALSE;
+Timber::$autoescape = false;
 
 
 /**
@@ -203,7 +203,7 @@ class GebruikerCentraalTheme extends Timber\Site {
 
 		// read configuration json file
 		$configfile    = file_get_contents( trailingslashit( get_stylesheet_directory() ) . FLAVORSCONFIG );
-		$configfile    = json_decode( $configfile, TRUE );
+		$configfile    = json_decode( $configfile, true );
 		$theme_options = get_option( 'gc2020_theme_options' );
 		$flavor        = DEFAULTFLAVOR; // default, tenzij er een smaakje is gekozen
 		if ( isset( $theme_options['flavor_select'] ) ) {
@@ -435,13 +435,13 @@ class GebruikerCentraalTheme extends Timber\Site {
 		// Yoast Breadcrumbs
 		add_theme_support( 'yoast-seo-breadcrumbs' );
 
-		add_image_size( HALFWIDTH, 380, 9999, FALSE );
-		add_image_size( BLOG_SINGLE_MOBILE, 120, 9999, FALSE );
-		add_image_size( BLOG_SINGLE_TABLET, 250, 9999, FALSE );
-		add_image_size( BLOG_SINGLE_DESKTOP, 380, 9999, FALSE );
-		add_image_size( IMG_SIZE_HUGE, IMG_SIZE_HUGE_MIN_WIDTH, 9999, FALSE );
+		add_image_size( HALFWIDTH, 380, 9999, false );
+		add_image_size( BLOG_SINGLE_MOBILE, 120, 9999, false );
+		add_image_size( BLOG_SINGLE_TABLET, 250, 9999, false );
+		add_image_size( BLOG_SINGLE_DESKTOP, 380, 9999, false );
+		add_image_size( IMG_SIZE_HUGE, IMG_SIZE_HUGE_MIN_WIDTH, 9999, false );
 
-		add_image_size( 'thumb-cardv3', 99999, 600, FALSE );    // max  600px hoog, niet croppen
+		add_image_size( 'thumb-cardv3', 99999, 600, false );    // max  600px hoog, niet croppen
 
 		// Enable and load CSS for admin editor
 		add_theme_support( 'editor-styles' );
@@ -746,13 +746,13 @@ class GebruikerCentraalTheme extends Timber\Site {
 		$args = [
 			"labels"              => $labels,
 			"description"         => __( "Hier voer je spotlight-blokken in.", 'gctheme' ),
-			"public"              => FALSE,
-			"hierarchical"        => FALSE,
-			"exclude_from_search" => TRUE,
-			"publicly_queryable"  => FALSE,
-			"show_ui"             => TRUE,
-			"show_in_menu"        => TRUE,
-			"show_in_rest"        => TRUE,
+			"public"              => false,
+			"hierarchical"        => false,
+			"exclude_from_search" => true,
+			"publicly_queryable"  => false,
+			"show_ui"             => true,
+			"show_in_menu"        => true,
+			"show_in_rest"        => true,
 			"capability_type"     => __( "post", 'gctheme' ),
 			"supports"            => [
 				"title",
@@ -760,11 +760,11 @@ class GebruikerCentraalTheme extends Timber\Site {
 				"revisions",
 				"thumbnail",
 			],
-			"has_archive"         => FALSE,
-			"can_export"          => TRUE,
-			"delete_with_user"    => FALSE,
-			"map_meta_cap"        => TRUE,
-			"query_var"           => TRUE,
+			"has_archive"         => false,
+			"can_export"          => true,
+			"delete_with_user"    => false,
+			"map_meta_cap"        => true,
+			"query_var"           => true,
 		];
 		register_post_type( GC_SPOTLIGHT_CPT, $args );
 
@@ -847,16 +847,16 @@ function my_body_classes( $classes ) {
 
 add_filter( 'get_the_archive_title', function ( $title ) {
 	if ( is_category() ) {
-		$title = single_cat_title( '', FALSE );
+		$title = single_cat_title( '', false );
 	} elseif ( is_tag() ) {
-		$title = single_tag_title( '', FALSE );
+		$title = single_tag_title( '', false );
 	} elseif ( is_author() ) {
 		$title = '<span class="vcard">' . get_the_author() . '</span>';
 	} elseif ( is_tax() ) { //for custom post types
 		//		$title = sprintf( __( '%1$s' ), single_term_title( '', FALSE ) );
-		$title = single_term_title( '', FALSE );
+		$title = single_term_title( '', false );
 	} elseif ( is_post_type_archive() ) {
-		$title = post_type_archive_title( '', FALSE );
+		$title = post_type_archive_title( '', false );
 	}
 
 	return $title;
@@ -885,7 +885,7 @@ function gc2020_customize_register( $wp_customize ) {
 
 	// read configuration json file
 	$configfile   = file_get_contents( trailingslashit( get_stylesheet_directory() ) . FLAVORSCONFIG );
-	$flavorsource = json_decode( $configfile, TRUE );
+	$flavorsource = json_decode( $configfile, true );
 	foreach ( $flavorsource as $key => $value ) {
 		$flavors[ strtoupper( $key ) ] = $value['name'];
 	}
@@ -1038,7 +1038,7 @@ function get_themakleuren() {
 	// alle tipthema's langs om de kleuren op te halen
 	$args  = [
 		'taxonomy'   => GC_TIPTHEMA,
-		'hide_empty' => TRUE,
+		'hide_empty' => true,
 		'orderby'    => 'name',
 		'order'      => 'ASC',
 	];
@@ -1077,7 +1077,7 @@ function rename_minervakb() {
 		}
 	}
 
-	return FALSE;
+	return false;
 }
 
 add_action( 'admin_menu', 'rename_minervakb', 999 );
@@ -1362,12 +1362,12 @@ function prepare_card_content( $postitem ) {
 			$themakleuren = get_themakleuren();
 		}
 
-		$item['nr']     = sprintf( _x( 'Tip %s', 'Label tip-nummer', 'gctheme' ), get_post_meta( $postid, 'tip-nummer', TRUE ) );
-		$item['toptip'] = FALSE;
-		$is_toptip      = get_post_meta( $postid, 'is_toptip', TRUE );
+		$item['nr']     = sprintf( _x( 'Tip %s', 'Label tip-nummer', 'gctheme' ), get_post_meta( $postid, 'tip-nummer', true ) );
+		$item['toptip'] = false;
+		$is_toptip      = get_post_meta( $postid, 'is_toptip', true );
 
 		if ( $is_toptip ) {
-			$item['toptip']      = TRUE;
+			$item['toptip']      = true;
 			$item['toptiptekst'] = _x( 'Toptip', 'Toptiptekst bij tip', 'gctheme' );
 		}
 
@@ -1379,10 +1379,13 @@ function prepare_card_content( $postitem ) {
 
 	} elseif ( 'post' == $item['type'] ) {
 
-		$item['meta'][] = [
-			'title' => 'author',
-			'descr' => get_the_author_meta( 'display_name', $postitem->post_author ),
-		];
+		if ( $postitem->post_author ) {
+			$item['meta'][] = [
+				'classname' => 'auteur',
+				'title'     => _x( 'Author', 'Meta voor event: value voor auteur', 'gctheme' ),
+				'descr'     => get_the_author_meta( 'display_name', '"' . $postitem->post_author . '"'),
+			];
+		}
 
 		$item['meta'][] = [
 			'title' => 'date',
@@ -1392,10 +1395,10 @@ function prepare_card_content( $postitem ) {
 
 	} elseif ( 'event' == $item['type'] ) {
 
-		$event_start_date     = get_post_meta( $postid, '_event_start_date', TRUE );
-		$event_start_time     = get_post_meta( $postid, '_event_start_time', TRUE );
-		$event_end_date       = get_post_meta( $postid, '_event_end_date', TRUE );
-		$event_end_time       = get_post_meta( $postid, '_event_end_time', TRUE );
+		$event_start_date     = get_post_meta( $postid, '_event_start_date', true );
+		$event_start_time     = get_post_meta( $postid, '_event_start_time', true );
+		$event_end_date       = get_post_meta( $postid, '_event_end_date', true );
+		$event_end_time       = get_post_meta( $postid, '_event_end_time', true );
 		$event_end_datetime   = strtotime( $event_end_date . ' ' . $event_end_time );
 		$event_start_datetime = strtotime( $event_start_date . ' ' . $event_start_time );
 
