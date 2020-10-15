@@ -746,9 +746,9 @@ Gutenberg corrections
       .page-footer .footer-col {
         margin-left: 1.5rem;
         margin-right: 1.5rem; }
-      .page-footer .footer-col:first-child {
+      .page-footer .footer-col--1 {
         width: calc(60% - 3rem); }
-      .page-footer .footer-col:nth-child(2) {
+      .page-footer .footer-col--2 {
         width: calc(40% - 3rem); } }
   @media (max-width: 699px) {
     .page-footer .footer-col + .footer-col {
