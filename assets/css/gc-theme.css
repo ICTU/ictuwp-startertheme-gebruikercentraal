@@ -737,9 +737,9 @@ Gutenberg corrections
       .page-footer .footer-col {
         margin-left: 1.5rem;
         margin-right: 1.5rem; }
-      .page-footer .footer-col:first-child {
+      .page-footer .footer-col--1 {
         width: calc(60% - 3rem); }
-      .page-footer .footer-col:nth-child(2) {
+      .page-footer .footer-col--2 {
         width: calc(40% - 3rem); } }
   @media (max-width: 699px) {
     .page-footer .footer-col + .footer-col {
@@ -1541,6 +1541,20 @@ h1 {
   .form-item--filter.is-active label[for='samenwerking'] {
     background: #007BB0;
     border-color: #0095da; }
+
+/*
+  voor de pagina met het overzicht van alle tips
+  (page-template: .page-template-template-alle-tips)
+  de container voor de tipkaarten (dat is div.l-section-content binnen
+  section.section--overview.section--4col ) niet beperken tot 760px, maar
+  oprekken tot max 1280px
+ */
+.page--overview-archive.page-template-template-alle-tips .content {
+  -webkit-box-shadow: none;
+          box-shadow: none; }
+
+.page--overview-archive.page-template-template-alle-tips .section--overview.section--4col .l-section-content {
+  max-width: 1280px; }
 
 /* Entry types */
 .post .post__header,
