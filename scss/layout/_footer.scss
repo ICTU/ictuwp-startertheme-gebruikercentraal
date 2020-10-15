@@ -42,11 +42,11 @@
       margin-right: $gutter / 2;
     }
 
-    .footer-col:first-child {
+    .footer-col--1 {
       width: calc(60% - #{$gutter});
     }
 
-    .footer-col:nth-child(2) {
+    .footer-col--2 {
       width: calc(40% - #{$gutter});
     }
   }
