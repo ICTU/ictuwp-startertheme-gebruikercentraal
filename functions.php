@@ -1280,7 +1280,7 @@ function translate_mime_type( $fullmimetype ) {
 			$return = _x( 'PDF', 'Mime-types', 'gctheme' );
 			break;
 
-		case "vnd . openxmlformats - officedocument . wordprocessingml . document":
+		case "vnd.openxmlformats-officedocument.wordprocessingml.document":
 			$return = _x( 'Word', 'Mime-types', 'gctheme' );
 			break;
 
@@ -1288,19 +1288,19 @@ function translate_mime_type( $fullmimetype ) {
 			$return = _x( 'Word', 'Mime-types', 'gctheme' );
 			break;
 
-		case "vnd . ms - powerpoint":
+		case "vnd.ms - powerpoint":
 			$return = _x( 'Powerpoint', 'Mime-types', 'gctheme' );
 			break;
 
-		case "vnd . openxmlformats - officedocument . presentationml . presentation":
+		case "vnd.openxmlformats-officedocument.presentationml.presentation":
 			$return = _x( 'Powerpoint', 'Mime-types', 'gctheme' );
 			break;
 
-		case "vnd . ms - excel":
+		case "vnd.ms - excel":
 			$return = _x( 'Excel', 'Mime-types', 'gctheme' );
 			break;
 
-		case "vnd . openxmlformats - officedocument . spreadsheetml . sheet":
+		case "vnd.openxmlformats-officedocument.spreadsheetml . sheet":
 			$return = _x( 'Excel', 'Mime-types', 'gctheme' );
 			break;
 
@@ -1383,7 +1383,7 @@ function prepare_card_content( $postitem ) {
 			$item['meta'][] = [
 				'classname' => 'auteur',
 				'title'     => _x( 'Author', 'Meta voor event: value voor auteur', 'gctheme' ),
-				'descr'     => get_the_author_meta( 'display_name', $postitem->post_author),
+				'descr'     => get_the_author_meta( 'display_name', $postitem->post_author ),
 			];
 		}
 
