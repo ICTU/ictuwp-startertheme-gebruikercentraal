@@ -88,17 +88,6 @@ if ( 'post' === $post->post_type ) {
 		];
 	}
 
-
-	if ( count( $EM_Bookings->bookings ) > 0 ) {
-
-		$context['meta'][] = [
-			'classname' => 'registrations',
-			'title'     => _x( 'Aanmeldingen', 'Meta voor event: label voor aanmeldingen', 'gctheme' ),
-			'descr'     => sprintf( _n( '%s attendee', '%s attendees', $confirmedusercounter, 'gctheme' ), count( $EM_Bookings->bookings ) )
-		];
-
-	}
-
 	if ( ( $EM_Event->get_bookings()->get_available_spaces() <= 0 ) && ( $EM_Event->get_bookings()->tickets->tickets ) ) {
 		// heeft mogelijkheid tot reserveren, maar alle plekken zijn bezet
 		$item['full']      = _x( 'Fully booked', 'Meta voor event: value voor geen plek meer beschikbaar', 'gctheme' );
@@ -124,11 +113,16 @@ if ( 'post' === $post->post_type ) {
 			'title'     => _x( 'Location', 'Meta voor event: label voor locatie', 'gctheme' ),
 			'descr'     => $lcatie,
 		];
-
 	}
-	/*
-	 *
-	 */
+
+	if ( count( $EM_Bookings->bookings ) > 0 ) {
+
+		$context['meta'][] = [
+			'classname' => 'registrations',
+			'title'     => _x( 'Aanmeldingen', 'Meta voor event: label voor aanmeldingen', 'gctheme' ),
+			'descr'     => sprintf( _n( '%s attendee', '%s attendees', count( $EM_Bookings->bookings ), 'gctheme' ), count( $EM_Bookings->bookings ) )
+		];
+	}
 
 }
 
