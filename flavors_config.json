@@ -17,6 +17,13 @@
         "version": "",
         "dependencies": "",
         "infooter": ""
+      },
+      "menujs": {
+        "handle": "menu",
+        "file": "/assets/js/components/menu.js",
+        "version": "",
+        "dependencies": "",
+        "infooter": ""
       }
     },
     "cssfiles": {

@@ -10,7 +10,7 @@
 // @desc.   CTA-kleuren, a11y groen, sharing buttons optional, beeldbank CPT code separation.
 // @link    https://github.com/ICTU/gebruiker-centraal-wordpress-theme
 
-
+jQuery(document).ready(function($) {
 var toggleMenu = $('.btn--toggle-menu');
 var regionNav = $('.l-header-nav');
 var mainMenu = $('#mainnav');
@@ -41,7 +41,7 @@ function doNav(width) {
   } else if (width >= bp) {
     // Desktop
     regionNav.attr('aria-hidden', false);
-    $('.main-menu__sublist').attr('aria-hidden', 'true');
+    //$('.main-menu__sublist').attr('aria-hidden', 'true');
 
     // Add class on mouse enter
     $('.main-menu__item--with-sub').on('mouseenter', function () {
@@ -51,7 +51,7 @@ function doNav(width) {
         mainMenu.find('ul[aria-hidden="false"]').attr('aria-hidden', 'true');
 
         // Add attributes to current menu
-        $(this).addClass('open').find('.main-menu__sublist').attr('aria-hidden', 'false');
+        $(this).addClass('open test').find('.main-menu__sublist').attr('aria-hidden', 'false');
         $(this).find('a:first-child').attr('aria-expanded', 'true');
       }
     });
@@ -59,8 +59,8 @@ function doNav(width) {
     // And remove again on mouseleave
     $('.main-menu__item--with-sub').mouseleave(function () {
       // Add attributes to current menu
-      $(this).removeClass('open');
-      $(this).attr('aria-hidden', 'true');
+      $(this).children().removeClass('open test');
+      mainMenu.find('ul[aria-hidden="false"]').delay(5000).attr('aria-hidden', 'true');
       $(this).parent().find('a:first-child').attr('aria-expanded', 'false');
     });
 
@@ -101,6 +101,8 @@ $(window).on('resize', function () {
   var w = $(window).width();
 
   doNav(w);
+});
+
 });
 
 
