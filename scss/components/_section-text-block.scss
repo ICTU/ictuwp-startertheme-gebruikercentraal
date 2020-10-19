@@ -1,9 +1,9 @@
 // Section
 .section--text-blocks {
-  max-width :$max-width-container;
 
   .l-section-content {
-    max-width: none;
+    @include ho-make-container(calc(#{$max-width-container} + #{$gutter}));
+
 
     @include bp-up(sm) {
       display: flex;

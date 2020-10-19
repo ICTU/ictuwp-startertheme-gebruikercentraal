@@ -32,7 +32,7 @@
 
   {{ function('insert_breadcrumb') }}
 
- 
+
 
   <div class="page-content" id="maincontent" tabindex="-1">
     <main class="content">
@@ -48,9 +48,9 @@
                   <h1 class="entry-title">{{ post.title }}</h1>
                 </header>
 
-                {% if descr %}
+                {% if post.content %}
                   <p class="archive__descr">
-                    {{ descr }}
+                    {{ post.content }}
                   </p>
                 {% endif %}
               </div>
@@ -65,8 +65,18 @@
                   <div class="l-section-content">
                     <div class="overview overview--list">
 
-                      {% for post in posts %}
-                        {% include ['tease-'~post.post_type~'.twig', 'tease.twig'] %}
+                      {% for post in items %}
+                        {% include 'components/teaser.html.twig' with {
+                          'title' : post.title,
+                          'headerlevel' : 'h3',
+                          'descr' : post.descr,
+                          'img' : post.img,
+                          'type' : post.type,
+                          'meta': post.meta,
+                          'category': post.category,
+                          'post_date': ( post.post_date ?? '' ),
+                          'url': post.url
+                        } %}
                       {% endfor %}
                     </div>
                   </div>
