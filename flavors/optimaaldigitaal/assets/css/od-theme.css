@@ -410,7 +410,6 @@ input[type="email"],
 input[type="password"],
 input[type="file"],
 input[type="url"],
-input[type="number"],
 input[type="date"],
 input[type="search"],
 select, textarea {
@@ -425,6 +424,7 @@ select, textarea {
   transition: background-color 0.2s ease-in-out, border-color 0.2s ease-in-out;
   border: 0.2rem solid #D1DFE3;
   outline: none;
+  -webkit-appearance: none;
   color: #000;
   border-radius: 0; }
   input[type="text"]:focus,
@@ -432,7 +432,6 @@ select, textarea {
   input[type="password"]:focus,
   input[type="file"]:focus,
   input[type="url"]:focus,
-  input[type="number"]:focus,
   input[type="date"]:focus,
   input[type="search"]:focus,
   select:focus, textarea:focus {
@@ -440,15 +439,6 @@ select, textarea {
             box-shadow: 0.4rem 0.4rem 0 rgba(37, 179, 75, 0.2);
     border-color: #25b34b;
     background: #fff; }
-
-input[type="text"],
-input[type="email"],
-input[type="password"],
-input[type="file"],
-input[type="url"],
-input[type="date"],
-input[type="search"] {
-  -webkit-appearance: none; }
 
 form label {
   font-family: "montserratsemibold", Helvetica, Arial, sans-serif; }
@@ -628,25 +618,6 @@ legend {
   .form-actions {
     padding-left: 30%; } }
 
-/* speciale formulieren */
-/* CF7 - Contactform 7
------------------------------------------------------- */
-.wpcf7-form .form-item .wpcf7-form-control-wrap {
-  /* CF7 wrapt input elementen nog in een extra span */
-  -webkit-box-flex: 1;
-      -ms-flex: 1 0 70%;
-          flex: 1 0 70%; }
-  .wpcf7-form .form-item .wpcf7-form-control-wrap input[type="text"],
-  .wpcf7-form .form-item .wpcf7-form-control-wrap input[type="email"],
-  .wpcf7-form .form-item .wpcf7-form-control-wrap input[type="password"],
-  .wpcf7-form .form-item .wpcf7-form-control-wrap input[type="file"],
-  .wpcf7-form .form-item .wpcf7-form-control-wrap input[type="url"],
-  .wpcf7-form .form-item .wpcf7-form-control-wrap input[type="number"],
-  .wpcf7-form .form-item .wpcf7-form-control-wrap input[type="date"],
-  .wpcf7-form .form-item .wpcf7-form-control-wrap input[type="search"],
-  .wpcf7-form .form-item .wpcf7-form-control-wrap select, .wpcf7-form .form-item .wpcf7-form-control-wrap textarea {
-    width: 100%; }
-
 /*
 Gutenberg corrections
  */
@@ -746,9 +717,9 @@ Gutenberg corrections
       .page-footer .footer-col {
         margin-left: 1.5rem;
         margin-right: 1.5rem; }
-      .page-footer .footer-col--1 {
+      .page-footer .footer-col:first-child {
         width: calc(60% - 3rem); }
-      .page-footer .footer-col--2 {
+      .page-footer .footer-col:nth-child(2) {
         width: calc(40% - 3rem); } }
   @media (max-width: 699px) {
     .page-footer .footer-col + .footer-col {
@@ -1551,19 +1522,9 @@ h1 {
     background: #007BB0;
     border-color: #0095da; }
 
-/*
-  voor de pagina met het overzicht van alle tips
-  (page-template: .page-template-template-alle-tips)
-  de container voor de tipkaarten (dat is div.l-section-content binnen
-  section.section--overview.section--4col ) niet beperken tot 760px, maar
-  oprekken tot max 1280px
- */
-.page--overview-archive.page-template-template-alle-tips .content {
+.archive .content {
   -webkit-box-shadow: none;
           box-shadow: none; }
-
-.page--overview-archive.page-template-template-alle-tips .section--overview.section--4col .l-section-content {
-  max-width: 1280px; }
 
 /* Entry types */
 .post .post__header,
@@ -5814,16 +5775,10 @@ h1 {
       max-width: none; } }
   @media (min-width: 560px) {
     .teaser__image {
-      width: 16rem;
-      -webkit-box-flex: 1;
-          -ms-flex: 1 0 16rem;
-              flex: 1 0 16rem; } }
+      width: 16rem; } }
   @media (min-width: 700px) {
     .teaser__image {
-      width: 20rem;
-      -webkit-box-flex: 1;
-          -ms-flex: 1 0 20rem;
-              flex: 1 0 20rem; } }
+      width: 20rem; } }
 
 .teaser__header .date-badge {
   float: left;
@@ -6939,11 +6894,6 @@ h1 {
     right: 0;
     bottom: 0;
     top: 16rem; }
-
-.page--overview-archive .content,
-.page--type-overview .content {
-  -webkit-box-shadow: 0.4rem 0.4rem 0 rgba(0, 0, 0, 0.15);
-          box-shadow: 0.4rem 0.4rem 0 rgba(0, 0, 0, 0.15); }
 
 .page--type-manual .page-content {
   background: #BA4F0C;

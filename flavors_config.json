@@ -23,13 +23,13 @@
       "Fonts": {
         "handle": "skiplinks",
         "file": "/assets/fonts/fonts.css",
-        "version": "5.0.16",
+        "version": "5.0.13",
         "dependencies": ""
       },
       "Styling": {
         "handle": "gc-theme",
         "file": "/assets/css/gc-theme.css",
-        "version": "5.0.16",
+        "version": "5.0.13",
         "dependencies": ""
       }
     },
@@ -61,13 +61,13 @@
       "Fonts": {
         "handle": "skiplinks",
         "file": "/assets/fonts/fonts.css",
-        "version": "5.0.16",
+        "version": "5.0.13",
         "dependencies": ""
       },
       "css1": {
         "handle": "od-theme",
         "file": "/flavors/optimaaldigitaal/assets/css/od-theme.css",
-        "version": "5.0.16",
+        "version": "5.0.13",
         "dependencies": ""
       }
     },
@@ -105,13 +105,13 @@
       "Fonts": {
         "handle": "skiplinks",
         "file": "/assets/fonts/fonts.css",
-        "version": "5.0.16",
+        "version": "5.0.13",
         "dependencies": ""
       },
       "Styling": {
         "handle": "gc-theme",
         "file": "/assets/css/gc-theme.css",
-        "version": "5.0.16",
+        "version": "5.0.13",
         "dependencies": ""
       },
       "KB": {

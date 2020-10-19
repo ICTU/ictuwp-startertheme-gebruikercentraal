@@ -43,13 +43,6 @@
                 "operator": "==",
                 "value": "template-overzichtspagina.php"
             }
-        ],
-        [
-            {
-                "param": "page_type",
-                "operator": "==",
-                "value": "posts_page"
-            }
         ]
     ],
     "menu_order": 0,
@@ -60,5 +53,5 @@
     "hide_on_screen": "",
     "active": true,
     "description": "",
-    "modified": 1602578741
+    "modified": 1601634841
 }

@@ -215,12 +215,10 @@
 
   @include bp-up(sm) {
     width: 16rem;
-    flex: 1 0 16rem;
   }
 
   @include bp-up(md) {
     width: 20rem;
-    flex: 1 0 20rem;
   }
 }
 

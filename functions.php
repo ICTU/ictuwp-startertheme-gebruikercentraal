@@ -8,7 +8,7 @@
  * @since   Timber 0.1
  */
 
-define( 'CHILD_THEME_VERSION', '5.0.16' );
+define( 'CHILD_THEME_VERSION', '5.0.13' );
 define( 'ID_MAINCONTENT', 'maincontent' );
 define( 'ID_MAINNAV', 'mainnav' );
 define( 'ID_ZOEKEN', 'zoeken' );
@@ -34,13 +34,6 @@ if ( ! defined( 'GC_TIPVRAAG' ) ) {
 }
 if ( ! defined( 'OD_CITAATAUTEUR' ) ) {
 	define( 'OD_CITAATAUTEUR', 'tipgever' );
-}
-
-if ( ! defined( 'GC_TWITTER_URL' ) ) {
-	define( 'GC_TWITTER_URL', 'https://twitter.com/' );
-}
-if ( ! defined( 'GC_TWITTERACCOUNT' ) ) {
-	define( 'GC_TWITTERACCOUNT', 'gebrcentraal' );
 }
 
 
@@ -77,12 +70,6 @@ if ( is_multisite() ) {
 // include file for network media
 //require_once( __DIR__ . '/network-media-library/network-media-library.php' );
 
-
-//========================================================================================================
-/*
- * Extra functionaliteit en filters voor de Events Manager
- */
-require_once( get_template_directory() . '/includes/events-manager-functions.php' );
 
 //========================================================================================================
 
@@ -142,7 +129,7 @@ Timber::$dirname = [ 'templates', 'views' ];
  * By default, Timber does NOT autoescape values. Want to enable Twig's
  * autoescape? No prob! Just set this value to true
  */
-Timber::$autoescape = false;
+Timber::$autoescape = FALSE;
 
 
 /**
@@ -216,7 +203,7 @@ class GebruikerCentraalTheme extends Timber\Site {
 
 		// read configuration json file
 		$configfile    = file_get_contents( trailingslashit( get_stylesheet_directory() ) . FLAVORSCONFIG );
-		$configfile    = json_decode( $configfile, true );
+		$configfile    = json_decode( $configfile, TRUE );
 		$theme_options = get_option( 'gc2020_theme_options' );
 		$flavor        = DEFAULTFLAVOR; // default, tenzij er een smaakje is gekozen
 		if ( isset( $theme_options['flavor_select'] ) ) {
@@ -448,13 +435,13 @@ class GebruikerCentraalTheme extends Timber\Site {
 		// Yoast Breadcrumbs
 		add_theme_support( 'yoast-seo-breadcrumbs' );
 
-		add_image_size( HALFWIDTH, 380, 9999, false );
-		add_image_size( BLOG_SINGLE_MOBILE, 120, 9999, false );
-		add_image_size( BLOG_SINGLE_TABLET, 250, 9999, false );
-		add_image_size( BLOG_SINGLE_DESKTOP, 380, 9999, false );
-		add_image_size( IMG_SIZE_HUGE, IMG_SIZE_HUGE_MIN_WIDTH, 9999, false );
+		add_image_size( HALFWIDTH, 380, 9999, FALSE );
+		add_image_size( BLOG_SINGLE_MOBILE, 120, 9999, FALSE );
+		add_image_size( BLOG_SINGLE_TABLET, 250, 9999, FALSE );
+		add_image_size( BLOG_SINGLE_DESKTOP, 380, 9999, FALSE );
+		add_image_size( IMG_SIZE_HUGE, IMG_SIZE_HUGE_MIN_WIDTH, 9999, FALSE );
 
-		add_image_size( 'thumb-cardv3', 99999, 600, false );    // max  600px hoog, niet croppen
+		add_image_size( 'thumb-cardv3', 99999, 600, FALSE );    // max  600px hoog, niet croppen
 
 		// Enable and load CSS for admin editor
 		add_theme_support( 'editor-styles' );
@@ -759,13 +746,13 @@ class GebruikerCentraalTheme extends Timber\Site {
 		$args = [
 			"labels"              => $labels,
 			"description"         => __( "Hier voer je spotlight-blokken in.", 'gctheme' ),
-			"public"              => false,
-			"hierarchical"        => false,
-			"exclude_from_search" => true,
-			"publicly_queryable"  => false,
-			"show_ui"             => true,
-			"show_in_menu"        => true,
-			"show_in_rest"        => true,
+			"public"              => FALSE,
+			"hierarchical"        => FALSE,
+			"exclude_from_search" => TRUE,
+			"publicly_queryable"  => FALSE,
+			"show_ui"             => TRUE,
+			"show_in_menu"        => TRUE,
+			"show_in_rest"        => TRUE,
 			"capability_type"     => __( "post", 'gctheme' ),
 			"supports"            => [
 				"title",
@@ -773,11 +760,11 @@ class GebruikerCentraalTheme extends Timber\Site {
 				"revisions",
 				"thumbnail",
 			],
-			"has_archive"         => false,
-			"can_export"          => true,
-			"delete_with_user"    => false,
-			"map_meta_cap"        => true,
-			"query_var"           => true,
+			"has_archive"         => FALSE,
+			"can_export"          => TRUE,
+			"delete_with_user"    => FALSE,
+			"map_meta_cap"        => TRUE,
+			"query_var"           => TRUE,
 		];
 		register_post_type( GC_SPOTLIGHT_CPT, $args );
 
@@ -841,6 +828,7 @@ function my_body_classes( $classes ) {
 		}
 	} elseif ( is_archive() ) {
 		//print_r(get_queried_object()->taxonomy);
+		$classes[] = 'page--type-overview page--overview-archive';
 
 		switch ( get_queried_object()->taxonomy ) {
 			case 'tipthema':
@@ -860,16 +848,16 @@ function my_body_classes( $classes ) {
 
 add_filter( 'get_the_archive_title', function ( $title ) {
 	if ( is_category() ) {
-		$title = single_cat_title( '', false );
+		$title = single_cat_title( '', FALSE );
 	} elseif ( is_tag() ) {
-		$title = single_tag_title( '', false );
+		$title = single_tag_title( '', FALSE );
 	} elseif ( is_author() ) {
 		$title = '<span class="vcard">' . get_the_author() . '</span>';
 	} elseif ( is_tax() ) { //for custom post types
 		//		$title = sprintf( __( '%1$s' ), single_term_title( '', FALSE ) );
-		$title = single_term_title( '', false );
+		$title = single_term_title( '', FALSE );
 	} elseif ( is_post_type_archive() ) {
-		$title = post_type_archive_title( '', false );
+		$title = post_type_archive_title( '', FALSE );
 	}
 
 	return $title;
@@ -898,7 +886,7 @@ function gc2020_customize_register( $wp_customize ) {
 
 	// read configuration json file
 	$configfile   = file_get_contents( trailingslashit( get_stylesheet_directory() ) . FLAVORSCONFIG );
-	$flavorsource = json_decode( $configfile, true );
+	$flavorsource = json_decode( $configfile, TRUE );
 	foreach ( $flavorsource as $key => $value ) {
 		$flavors[ strtoupper( $key ) ] = $value['name'];
 	}
@@ -1051,7 +1039,7 @@ function get_themakleuren() {
 	// alle tipthema's langs om de kleuren op te halen
 	$args  = [
 		'taxonomy'   => GC_TIPTHEMA,
-		'hide_empty' => true,
+		'hide_empty' => TRUE,
 		'orderby'    => 'name',
 		'order'      => 'ASC',
 	];
@@ -1090,7 +1078,7 @@ function rename_minervakb() {
 		}
 	}
 
-	return false;
+	return FALSE;
 }
 
 add_action( 'admin_menu', 'rename_minervakb', 999 );
@@ -1293,7 +1281,7 @@ function translate_mime_type( $fullmimetype ) {
 			$return = _x( 'PDF', 'Mime-types', 'gctheme' );
 			break;
 
-		case "vnd.openxmlformats-officedocument.wordprocessingml.document":
+		case "vnd . openxmlformats - officedocument . wordprocessingml . document":
 			$return = _x( 'Word', 'Mime-types', 'gctheme' );
 			break;
 
@@ -1301,19 +1289,19 @@ function translate_mime_type( $fullmimetype ) {
 			$return = _x( 'Word', 'Mime-types', 'gctheme' );
 			break;
 
-		case "vnd.ms - powerpoint":
+		case "vnd . ms - powerpoint":
 			$return = _x( 'Powerpoint', 'Mime-types', 'gctheme' );
 			break;
 
-		case "vnd.openxmlformats-officedocument.presentationml.presentation":
+		case "vnd . openxmlformats - officedocument . presentationml . presentation":
 			$return = _x( 'Powerpoint', 'Mime-types', 'gctheme' );
 			break;
 
-		case "vnd.ms - excel":
+		case "vnd . ms - excel":
 			$return = _x( 'Excel', 'Mime-types', 'gctheme' );
 			break;
 
-		case "vnd.openxmlformats-officedocument.spreadsheetml . sheet":
+		case "vnd . openxmlformats - officedocument . spreadsheetml . sheet":
 			$return = _x( 'Excel', 'Mime-types', 'gctheme' );
 			break;
 
@@ -1375,12 +1363,12 @@ function prepare_card_content( $postitem ) {
 			$themakleuren = get_themakleuren();
 		}
 
-		$item['nr']     = sprintf( _x( 'Tip %s', 'Label tip-nummer', 'gctheme' ), get_post_meta( $postid, 'tip-nummer', true ) );
-		$item['toptip'] = false;
-		$is_toptip      = get_post_meta( $postid, 'is_toptip', true );
+		$item['nr']     = sprintf( _x( 'Tip %s', 'Label tip-nummer', 'gctheme' ), get_post_meta( $postid, 'tip-nummer', TRUE ) );
+		$item['toptip'] = FALSE;
+		$is_toptip      = get_post_meta( $postid, 'is_toptip', TRUE );
 
 		if ( $is_toptip ) {
-			$item['toptip']      = true;
+			$item['toptip']      = TRUE;
 			$item['toptiptekst'] = _x( 'Toptip', 'Toptiptekst bij tip', 'gctheme' );
 		}
 
@@ -1392,13 +1380,10 @@ function prepare_card_content( $postitem ) {
 
 	} elseif ( 'post' == $item['type'] ) {
 
-		if ( $postitem->post_author ) {
-			$item['meta'][] = [
-				'classname' => 'auteur',
-				'title'     => _x( 'Author', 'Meta: value voor auteur', 'gctheme' ),
-				'descr'     => get_the_author_meta( 'display_name', $postitem->post_author ),
-			];
-		}
+		$item['meta'][] = [
+			'title' => 'author',
+			'descr' => get_the_author_meta( 'display_name', $postitem->post_author ),
+		];
 
 		$item['meta'][] = [
 			'title' => 'date',
@@ -1408,10 +1393,10 @@ function prepare_card_content( $postitem ) {
 
 	} elseif ( 'event' == $item['type'] ) {
 
-		$event_start_date     = get_post_meta( $postid, '_event_start_date', true );
-		$event_start_time     = get_post_meta( $postid, '_event_start_time', true );
-		$event_end_date       = get_post_meta( $postid, '_event_end_date', true );
-		$event_end_time       = get_post_meta( $postid, '_event_end_time', true );
+		$event_start_date     = get_post_meta( $postid, '_event_start_date', TRUE );
+		$event_start_time     = get_post_meta( $postid, '_event_start_time', TRUE );
+		$event_end_date       = get_post_meta( $postid, '_event_end_date', TRUE );
+		$event_end_time       = get_post_meta( $postid, '_event_end_time', TRUE );
 		$event_end_datetime   = strtotime( $event_end_date . ' ' . $event_end_time );
 		$event_start_datetime = strtotime( $event_start_date . ' ' . $event_start_time );
 
@@ -1419,7 +1404,6 @@ function prepare_card_content( $postitem ) {
 		if ( $event_start_date === $event_end_date ) {
 			// dan start- en eindtijd tonen
 			$eventtimes = sprintf( _x( '%s - %s', 'Meta voor event: label voor start- en eindtijd', 'gctheme' ), date_i18n( get_option( 'time_format' ), $event_start_datetime ), date_i18n( get_option( 'time_format' ), $event_end_datetime ) );
-
 
 			$item['meta'][] = [
 				'classname' => 'times',
@@ -1460,7 +1444,6 @@ function prepare_card_content( $postitem ) {
 			$item['end_date']   = $event_end_datetime;
 		}
 	}
-
 
 	return $item;
 }

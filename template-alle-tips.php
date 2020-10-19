@@ -16,24 +16,6 @@ $context['tipkaarts'] = [];
 $themakleuren         = get_themakleuren();
 $card                 = [];
 
-/*
-Deze argumenten zouden sorteren op tipnummer:
-
-$args = [
-	// Get post type project
-	'post_type'      => GC_TIP_CPT,
-	// Get all posts
-	'posts_per_page' => - 1,
-	'post_status'    => 'publish',
-	'meta_key'       => 'tip-nummer',
-	'orderby'        => 'meta_value',
-	'order'          => 'DESC'
-];
-
-Maar dat helpt natuurlijk niet, want dit is een textveld, geen nummer.
-Dus de volgorde is dan 1, 10, 11, 2, 20, 21 etc...
-
- */
 
 $args = [
 	// Get post type project
@@ -57,20 +39,6 @@ if ( $the_query->have_posts() ) {
 		$taxonomie     = get_the_terms( $post->ID, GC_TIPTHEMA );
 		$card['title'] = od_wbvb_custom_post_title( get_the_title() );
 		$card['nr']    = sprintf( _x( 'Tip %s', 'Label tip-nummer', 'gctheme' ), get_post_meta( $post->ID, 'tip-nummer', TRUE ) );
-/*
-		We zouden voorloopnullen kunnen gebruiken en dan in een loop even de tipnummers bijwerken:
-
-		$tipnummermetvoorloopnullen = str_pad( intval( get_post_meta( $post->ID, 'tip-nummer', true ) ), 6, "0", STR_PAD_LEFT );
-		update_post_meta( $post->ID, 'tip-nummer', $tipnummermetvoorloopnullen );
-
-Maar dan moeten we dat wel meenemen in de redactieinstructies
-
-en dan moeten we de tipnumemrs converteren naar een integer
-		$card['nr']    = sprintf( _x( 'Tip %s', 'Label tip-nummer', 'gctheme' ), intval( get_post_meta( $post->ID, 'tip-nummer', true ) ) );
-
-
- */
-
 		$card['url']   = get_the_permalink();
 		$is_toptip     = get_post_meta( $post->ID, 'is_toptip', TRUE );
 		if ( $is_toptip ) {

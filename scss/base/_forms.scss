@@ -3,13 +3,11 @@
     transition: all .15s linear;
   }
 }
-
 button {
   font-family: $base-font-family;
   font-size: $base-font-size;
   line-height: $base-font-size;
 }
-
 $input-size: 20px;
 
 input[type="text"],
@@ -17,7 +15,6 @@ input[type="email"],
 input[type="password"],
 input[type="file"],
 input[type="url"],
-input[type="number"],
 input[type="date"],
 input[type="search"],
 select, textarea {
@@ -30,6 +27,7 @@ select, textarea {
   transition: background-color 0.2s ease-in-out, border-color 0.2s ease-in-out;
   border: .2rem solid $input-border;
   outline: none;
+  -webkit-appearance: none;
   color: #000;
   border-radius: 0;
 
@@ -40,18 +38,6 @@ select, textarea {
   }
 }
 
-input[type="text"],
-input[type="email"],
-input[type="password"],
-input[type="file"],
-input[type="url"],
-input[type="date"],
-input[type="search"] {
-  // dit dus bijv. niet voor input[type="number"]
-  -webkit-appearance: none;
-}
-
-
 form label {
   font-family: $font-primary-semi;
 }
@@ -60,7 +46,6 @@ form input[type="radio"] {
   & + label {
     font-family: $font-primary;
   }
-
   &:checked + label {
     font-family: $font-primary-semi;
   }
@@ -85,7 +70,7 @@ textarea {
 
 
 input[type='submit'],
-button[type='submit'] {
+button[type='submit']{
   @include gc-box-shadow();
   background: $submit-bg;
   border: none;
@@ -104,11 +89,11 @@ button[type='submit'] {
   margin-top: 3rem;
   width: auto;
 
-  @include bp-up(md) {
+  @include bp-up(md){
     font-size: $btn-font-size-lg;
   }
 
-  &:hover, &:focus {
+  &:hover, &:focus{
     background-color: $submit-hover-bg;
   }
 }
@@ -123,11 +108,11 @@ button[type='reset'] {
   font-size: $btn-font-size-sm;
   color: $base-font-color;
 
-  @include bp-up(md) {
+  @include bp-up(md){
     font-size: $btn-font-size-lg;
   }
 
-  &:hover, &:focus {
+  &:hover, &:focus{
     text-decoration: underline;
   }
 }
@@ -225,7 +210,7 @@ legend {
     line-height: 2.6rem;
   }
 
-  @include bp-up(md) {
+  @include bp-up(md){
     position: relative;
     display: flex;
     flex-wrap: wrap;
@@ -261,37 +246,7 @@ legend {
 }
 
 .form-actions {
-  @include bp-up(md) {
+  @include bp-up(md){
     padding-left: 30%;
   }
 }
-
-
-/* speciale formulieren */
-
-/* CF7 - Contactform 7
------------------------------------------------------- */
-
-.wpcf7-form {
-
-  .form-item {
-    .wpcf7-form-control-wrap {
-      /* CF7 wrapt input elementen nog in een extra span */
-      flex: 1 0 70%;
-
-      input[type="text"],
-      input[type="email"],
-      input[type="password"],
-      input[type="file"],
-      input[type="url"],
-      input[type="number"],
-      input[type="date"],
-      input[type="search"],
-      select, textarea {
-        width: 100%;
-      }
-    }
-  }
-}
-
-
