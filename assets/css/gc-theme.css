@@ -1542,6 +1542,20 @@ h1 {
     background: #007BB0;
     border-color: #0095da; }
 
+/*
+  voor de pagina met het overzicht van alle tips
+  (page-template: .page-template-template-alle-tips)
+  de container voor de tipkaarten (dat is div.l-section-content binnen
+  section.section--overview.section--4col ) niet beperken tot 760px, maar
+  oprekken tot max 1280px
+ */
+.page--overview-archive.page-template-template-alle-tips .content {
+  -webkit-box-shadow: none;
+          box-shadow: none; }
+
+.page--overview-archive.page-template-template-alle-tips .section--overview.section--4col .l-section-content {
+  max-width: 1280px; }
+
 /* Entry types */
 .post .post__header,
 .post .post__body {

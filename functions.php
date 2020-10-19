@@ -36,6 +36,13 @@ if ( ! defined( 'OD_CITAATAUTEUR' ) ) {
 	define( 'OD_CITAATAUTEUR', 'tipgever' );
 }
 
+if ( ! defined( 'GC_TWITTER_URL' ) ) {
+	define( 'GC_TWITTER_URL', 'https://twitter.com/' );
+}
+if ( ! defined( 'GC_TWITTERACCOUNT' ) ) {
+	define( 'GC_TWITTERACCOUNT', 'gebrcentraal' );
+}
+
 
 // constants for image sizes
 define( 'BLOG_SINGLE_MOBILE', 'blog-single-mobile' );
@@ -70,6 +77,12 @@ if ( is_multisite() ) {
 // include file for network media
 //require_once( __DIR__ . '/network-media-library/network-media-library.php' );
 
+
+//========================================================================================================
+/*
+ * Extra functionaliteit en filters voor de Events Manager
+ */
+require_once( get_template_directory() . '/includes/events-manager-functions.php' );
 
 //========================================================================================================
 
@@ -1280,7 +1293,7 @@ function translate_mime_type( $fullmimetype ) {
 			$return = _x( 'PDF', 'Mime-types', 'gctheme' );
 			break;
 
-		case "vnd . openxmlformats - officedocument . wordprocessingml . document":
+		case "vnd.openxmlformats-officedocument.wordprocessingml.document":
 			$return = _x( 'Word', 'Mime-types', 'gctheme' );
 			break;
 
@@ -1288,19 +1301,19 @@ function translate_mime_type( $fullmimetype ) {
 			$return = _x( 'Word', 'Mime-types', 'gctheme' );
 			break;
 
-		case "vnd . ms - powerpoint":
+		case "vnd.ms - powerpoint":
 			$return = _x( 'Powerpoint', 'Mime-types', 'gctheme' );
 			break;
 
-		case "vnd . openxmlformats - officedocument . presentationml . presentation":
+		case "vnd.openxmlformats-officedocument.presentationml.presentation":
 			$return = _x( 'Powerpoint', 'Mime-types', 'gctheme' );
 			break;
 
-		case "vnd . ms - excel":
+		case "vnd.ms - excel":
 			$return = _x( 'Excel', 'Mime-types', 'gctheme' );
 			break;
 
-		case "vnd . openxmlformats - officedocument . spreadsheetml . sheet":
+		case "vnd.openxmlformats-officedocument.spreadsheetml . sheet":
 			$return = _x( 'Excel', 'Mime-types', 'gctheme' );
 			break;
 
@@ -1382,8 +1395,8 @@ function prepare_card_content( $postitem ) {
 		if ( $postitem->post_author ) {
 			$item['meta'][] = [
 				'classname' => 'auteur',
-				'title'     => _x( 'Author', 'Meta voor event: value voor auteur', 'gctheme' ),
-				'descr'     => get_the_author_meta( 'display_name', $postitem->post_author),
+				'title'     => _x( 'Author', 'Meta: value voor auteur', 'gctheme' ),
+				'descr'     => get_the_author_meta( 'display_name', $postitem->post_author ),
 			];
 		}
 
