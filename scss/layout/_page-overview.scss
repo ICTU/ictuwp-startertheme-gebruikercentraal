@@ -188,6 +188,18 @@
   }
 }
 
-.archive .content {
-  box-shadow: none;
+/*
+  voor de pagina met het overzicht van alle tips
+  (page-template: .page-template-template-alle-tips)
+  de container voor de tipkaarten (dat is div.l-section-content binnen
+  section.section--overview.section--4col ) niet beperken tot 760px, maar
+  oprekken tot max 1280px
+ */
+.page--overview-archive.page-template-template-alle-tips {
+  .content {
+    box-shadow: none;
+  }
+  .section--overview.section--4col .l-section-content {
+    max-width: 1280px;
+  }
 }

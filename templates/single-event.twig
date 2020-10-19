@@ -1,0 +1,67 @@
+{% extends "base.twig" %}
+
+{% block content %}
+
+  <article class="entry entry--full entry--type-{{ post.post_type }}" id="post-{{ post.ID }}">
+    <header class="entry-header">
+
+      {% if type == 'event' %}
+
+        {% include 'components/date-badge.html.twig' with {
+          'start_date': start_date,
+          'end_date': end_date,
+        } %}
+
+      {% elseif post_date %}
+        {% include 'components/date-badge.html.twig' with {
+          'post_date': post_date,
+          'modifier': '',
+        } %}
+      {% endif %}
+
+
+      <h1 class="entry-title">
+        {{ post.title }}
+      </h1>
+      {% if meta %}
+        {% include 'components/meta-data.html.twig' with {'items': meta} %}
+      {% else %}
+        <div class="meta-data">
+          <dl class="meta-data__list">
+            <dt class="visually-hidden">{{ __('Author', 'gctheme') }}</dt>
+            <dd class="meta-data__item author">{{ post.author.name }}</dd>
+          </dl>
+        </div>
+
+      {% endif %}
+
+    </header>
+    <div class="entry-content wrap">
+      <div class="entry-body">
+        {{ post.content }}
+      </div>
+    </div>
+
+  </article>
+
+  {% if post.get_comment_count( ) > 0 or post.comment_status != "closed" %}
+    <div id="comments" class="comments-area">
+      {% if post.get_comment_count( ) > 0 %}
+        <h3 class="comments-title">{{ _n('One comment', '%d comments', n)|format(post.get_comment_count( )) }} </h3>
+        <ul class="comment-list">
+          {% for cmt in post.comments %}
+            {% include "comment.twig" with {comment:cmt} %}
+          {% endfor %}
+        </ul>
+      {% endif %}
+      {% if post.comment_status != "closed" %}
+        <!-- comment form -->
+        {% include "comment-form.twig" %}
+      {% endif %}
+    </div>
+  {% endif %}
+
+
+
+  <!-- /content-wrapper -->
+{% endblock %}
