@@ -1359,6 +1359,7 @@ function prepare_card_content( $postitem ) {
 	$item['title'] = get_the_title( $postid );
 	$item['descr'] = get_the_excerpt( $postid );
 	$item['type']  = get_post_type( $postid );
+	$item['post_date']  = get_the_date( $postid );
 	$item['url']   = get_the_permalink( $postid );
 	$image         = get_the_post_thumbnail( $postid, 'large', [] );
 	$item['img']   = $image;
