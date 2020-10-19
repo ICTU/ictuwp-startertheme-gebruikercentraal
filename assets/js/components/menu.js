@@ -87,6 +87,16 @@ function doNav(width) {
       }
     });
 
+    // Hide submenu when clicking outside of menu
+    $(document).mouseup(function (e) {
+      var menuActiveSub = $('.main-menu__sublist[aria-hidden="false"]');
+
+      // if the target of the click isn't the container nor a descendant of the container
+      if (!menuActiveSub.is(e.target) && menuActiveSub.has(e.target).length === 0) {
+        menuActiveSub.attr('aria-hidden', true);
+      }
+    });
+
   }
 }
 

@@ -56,35 +56,7 @@ html {
 
 
 .page__intro {
-  @include gc-box-shadow();
-  @include ho-container-content;
-  background: $white;
-
-  header {
-    padding: 2rem;
-  }
-
-  @include bp-up(md) {
-    header {
-      padding: 3rem 5rem;
-      background: $intro-bg;
-
-      h1, h2, a {
-        color: $intro-color;
-      }
-    }
-  }
-
-  ul,
-  ol,
-  p {
-    padding: 2rem;
-
-    @include bp-up(md) {
-      padding: 1rem 5rem 0;
-    }
-  }
-
+  @include gc-page-intro();
 
   .page--overview-header-lg & {
     max-width: $max-width-content;
@@ -210,7 +182,6 @@ h1 {
 // Page types
 
 .page {
-
   &--type-event {
     .page-content {
       padding-bottom: 0;
@@ -218,7 +189,6 @@ h1 {
   }
 
   &--type-homepage {
-
     .page-content {
       padding: 0;
       z-index: auto;
@@ -235,6 +205,12 @@ h1 {
     .content {
       @include gc-box-shadow;
       padding: 0;
+    }
+  }
+
+  &-template-default {
+    .content {
+      padding-bottom: 0;
     }
   }
 }

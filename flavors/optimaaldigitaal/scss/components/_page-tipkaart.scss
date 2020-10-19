@@ -84,7 +84,7 @@
     }
 
     @include bp-up(xlg){
-      padding-top: 12rem;
+      padding-top: 14rem;
       background-position: center top -25rem;
 
       &:before {
@@ -125,3 +125,4 @@
     margin-top: 5rem;
   }
 }
+
