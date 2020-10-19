@@ -2028,8 +2028,8 @@ function od_modify_taxonomy_query( $query ) {
 
 	if ( ! is_admin() && $query->is_main_query() ) {
 
-		if ( ( is_tax( OD_CITAATAUTEUR ) ) || ( is_tax( GC_ODSPEELSET ) ) ) {
-			// geen pagination voor tipgevers of speelset overzichten
+		if ( ( is_tax( OD_CITAATAUTEUR ) ) || ( is_tax( GC_ODSPEELSET ) )  || ( is_tax( GC_TIPTHEMA ) ) ) {
+			// geen pagination voor tipgevers of speelset overzichten of tipthema's
 			$query->set( 'posts_per_page', - 1 );
 
 			return $query;
