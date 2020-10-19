@@ -1,9 +1,41 @@
 .entry--type-home.entry--full {
+  max-width: none;
+
   .entry-header {
     padding-bottom: 0;
   }
 
   .page__intro .entry-header + p {
     margin-top: 0;
+  }
+
+  .page__intro {
+    color: $white;
+  }
+
+  .section__title {
+    border: none;
+  }
+
+  .section {
+    @include ho-padding;
+  }
+
+  .entry-content > .section:last-child {
+    padding-bottom: 5rem;
+
+    @include bp-up(lg) {
+      padding-bottom: 8rem;
+    }
+
+    @include bp-up(xlg) {
+      padding-bottom: 12rem;
+    }
+  }
+
+  .section--overview {
+    > div {
+      max-width: $max-width-container;
+    }
   }
 }

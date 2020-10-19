@@ -5,18 +5,22 @@ Gutenberg corrections
   & + .section--paragraph {
     margin-top: 0;
   }
+
   & + .section--text {
     margin-top: 0;
   }
 }
 
 .section--paragraph {
+
   p {
     margin-top: 1rem;
   }
+
   + .section--heading {
     margin-top: 4rem;
   }
+
   + .wp-block-image {
     margin-top: 4rem;
     margin-bottom: 4rem;
@@ -35,18 +39,17 @@ Gutenberg corrections
   + .wp-block-image {
     margin-top: 3rem;
 
-    @include bp-up(md){
+    @include bp-up(md) {
       margin-top: 6rem;
     }
 
-    @include bp-up(lg){
+    @include bp-up(lg) {
       margin-top: 8rem;
     }
   }
 }
 
 .wp-block-image {
-
   & + .section--paragraph,
   & + .section--text {
     margin-top: 0;
@@ -55,7 +58,13 @@ Gutenberg corrections
       margin-top: 0;
     }
   }
+
+  + .section--downloads .section__title {
+    border: none;
+    padding-top: 0;
+  }
 }
+
 .wp-block-column {
   .section {
     padding-left: 0;
@@ -67,9 +76,11 @@ Gutenberg corrections
 .has-extra-large-font-size {
   line-height: 1.5;
 }
+
 .has-larger-font-size {
   font-size: 120%;
 }
+
 .has-extra-large-font-size {
   font-size: 135%;
   font-family: $base-heading-font;

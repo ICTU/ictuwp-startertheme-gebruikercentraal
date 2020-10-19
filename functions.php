@@ -828,6 +828,14 @@ function my_body_classes( $classes ) {
 			$classes[] = 'page--type-landing entry--type-landing';
 		}
 
+		if(get_field('gerelateerde_content_toevoegen')){
+			$classes[] = 'l-with-related';
+		}
+
+		if(get_field('downloads_tonen')){
+			$classes[] = 'l-with-downloads';
+		}
+
 	} elseif ( is_singular( GC_TIP_CPT ) ) {
 
 		$classes[] = 'page page--type-tipkaart';

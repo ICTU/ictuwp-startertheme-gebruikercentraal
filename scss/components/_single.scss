@@ -1,5 +1,4 @@
-.entry {
-
+.post {
   .entry-intro {
     font-family: $font-primary-semi;
 
@@ -10,225 +9,42 @@
   }
 
   &--full {
-    padding-bottom: 5rem;
-
-    @include bp-up(lg) {
-      padding-bottom: 8rem;
-    }
-
     .entry-body,
     .entry-header {
       max-width: $max-width-inner;
       margin: 0 auto;
     }
 
-    .entry-content {
+    .post__body {
       > .section:first-child {
         // Make margin smaller if first section is a text one
-        &.section--text {
-          margin-top: $gutter;
+        &.section--paragraph {
+          margin-top: 2rem;
+        }
+      }
+
+      > .section:last-child {
+        padding-bottom: 4rem;
+
+        @include bp-up(lg) {
+          padding-bottom: 7rem;
         }
       }
     }
-  }
-
-  &--type-page {
 
     .section--bg-option {
       @include ho-padding;
-      margin-left: -1.5rem;
-      margin-right: -1.5rem;
+      @include negate-padding;
+    }
 
-      @include bp-up(sm) {
-        margin-left: -3rem;
-        margin-right: -3rem;
+    .l-with-related & {
+      /// remove margin top for "defailt" related - it's alreadt in the last section
+      .post__content > .section--overview {
+        margin-top: 0;
       }
     }
   }
 
-  &--type-blog,
-  &--type-post,
-  &--type-event {
-    .entry-header {
-      position: relative;
-      padding-left: 2.5rem;
-
-      .date-badge {
-        position: absolute;
-        left: 0;
-        top: 0;
-        margin-left: -3rem;
-      }
-
-      @include bp-up(sm) {
-        .date-badge {
-          margin-left: -5rem;
-        }
-      }
-
-      @include bp-up(lg) {
-        padding-left: 4rem;
-
-        .date-badge {
-          margin-left: -4rem;
-        }
-      }
-    }
-
-    .entry-content {
-      @include bp-up(sm) {
-        margin-top: 3rem;
-      }
-    }
-  }
-
-  &--type-overview {
-    .entry-header {
-      max-width: none;
-    }
-
-    .page__intro {
-      position: relative;
-      z-index: +2;
-    }
-
-    .entry-body {
-      padding-top: 3rem;
-      padding-bottom: 3rem;
-
-      @include bp-up(sm) {
-        padding-bottom: 5rem;
-      }
-    }
-  }
-
-  &--type-landing {
-    @include gc-page-intro();
-    background: none;
-    padding-bottom: 0;
-
-    .page__intro {
-      box-shadow: none;
-      margin-bottom: 5rem;
-
-      @include bp-up(md) {
-        margin-bottom: 8rem;
-      }
-    }
-
-    .entry-content {
-      @include ho-padding;
-
-      > .section:not(.section--overview) {
-        max-width: 760px;
-        margin-left: auto;
-        margin-right: auto;
-        padding-left: 0;
-        padding-right: 0;
-
-        &:first-child {
-          margin-top: 0;
-        }
-
-        &:last-child {
-          padding-bottom: 5rem;
-
-          @include bp-up(md) {
-            padding-bottom: 8rem;
-          }
-        }
-      }
-
-      .section--overview {
-        @include negate-padding;
-      }
-    }
-  }
-
-  &--type-home {
-    max-width: none;
-
-    .page__intro {
-      @include ho-padding;
-      padding-top: 3rem;
-      padding-bottom: 3rem;
-      background: $hp-intro-bg;
-      color: $hp-intro-color;
-
-      h1, h2, h3 {
-        color: $hp-intro-color;
-      }
-
-      @include bp-up(sm) {
-        padding-top: 7rem;
-      }
-
-      @include bp-up(sm) {
-        padding-top: 10rem;
-      }
-
-      p,
-      .entry-header {
-        @include ho-container-content;
-        color: $hp-intro-color;
-      }
-
-      .entry-header {
-        position: relative;
-        z-index: +2;
-
-        h1, h2, h3, h4, a {
-          color: $hp-intro-color;
-        }
-      }
-    }
-
-    .section {
-      @include ho-padding;
-      max-width: none;
-
-      .l-section-top {
-        max-width: $max-width-container;
-      }
-
-      .l-section-content {
-        max-width: calc(#{$max-width-container} + #{$gutter});
-      }
-
-      .section__title {
-        border: none;
-      }
-
-      &--text-blocks {
-        padding-left: 1.5rem;
-        padding-right: 1.5rem;
-
-
-        .l-section-content {
-          max-width: calc(#{$max-width-container} + #{$gutter});
-        }
-      }
-
-    }
-
-    .entry-content > .section:last-child {
-      padding-bottom: 5rem;
-
-      @include bp-up(lg) {
-        padding-bottom: 8rem;
-      }
-    }
-  }
-
-  &--type-overview {
-    @include gc-page-intro();
-    max-width: none;
-
-    .entry-body {
-      padding-left: 2rem;
-      padding-right: 2rem;
-    }
-  }
 
   &.l-with-stepchart {
     .page__intro {
@@ -248,8 +64,8 @@
       }
     }
   }
-
 }
+
 
 
 /*

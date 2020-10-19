@@ -22,6 +22,14 @@
 
       .btn {
         margin: 2rem auto 0;
+
+        @include bp-up(sm){
+          margin-top: 5rem;
+        }
+      }
+
+      .l-section-content {
+        max-width: $max-width-container;
       }
 
       &.section--bg-option {

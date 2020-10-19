@@ -2,6 +2,7 @@
 .breadcrumb {
   /*
   hier stond de code voor het wissen van de achtergrondkleur van de breadcrumb
+  // Nounou, wissen
   background: none;
   position: absolute;
   z-index: 6;
@@ -123,7 +124,6 @@
   background: $gc-a11y-green-dark;
 }
 
-
 .archive {
   background: $gc-pantybrown-light;
 }
@@ -136,12 +136,4 @@
 
 .archive__posts {
   @include od-background-option();
-}
-
-.page--overview-archive,
-.page--type-overview {
-  .content {
-    @include gc-box-shadow();
-  }
-
 }
