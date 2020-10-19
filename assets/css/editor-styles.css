@@ -394,6 +394,17 @@
     margin-top: 0; }
   .section--overview .btn {
     margin-right: auto; }
+  .section--overview.l-item-count-3 {
+    padding-left: 2rem;
+    padding-right: 2rem;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box; }
+    @media (min-width: 560px) {
+      .section--overview.l-item-count-3 {
+        padding-right: 3rem;
+        padding-left: 3rem; } }
+    .section--overview.l-item-count-3 .l-section-content {
+      max-width: calc(960px - 9rem); }
 
 /* Actueel - events & blogs */
 .section--actual .section__title {
@@ -2789,3 +2800,5 @@ h2, h3, h4, h5 {
     min-height: 5.5rem; }
     .download-box--with-descr .meta-data {
       width: auto; }
+
+/*# sourceMappingURL=editor-styles.css.map */
