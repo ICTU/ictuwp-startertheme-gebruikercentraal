@@ -137,3 +137,11 @@
 .archive__posts {
   @include od-background-option();
 }
+
+.page--overview-archive,
+.page--type-overview {
+  .content {
+    @include gc-box-shadow();
+  }
+
+}
