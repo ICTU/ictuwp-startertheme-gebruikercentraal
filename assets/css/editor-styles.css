@@ -348,19 +348,6 @@
   text-align: right;
   margin-top: 3rem; }
 
-.section--text {
-  padding-left: 2rem;
-  padding-right: 2rem;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box; }
-  @media (min-width: 560px) {
-    .section--text {
-      padding-right: 3rem;
-      padding-left: 3rem; } }
-  .section--text .section__title {
-    border: none;
-    padding-top: 0; }
-
 .section--overview {
   max-width: none; }
   .section--overview .l-section-content {
@@ -409,6 +396,9 @@
 /* Actueel - events & blogs */
 .section--actual .section__title {
   border: none; }
+
+.section--actual .l-section-content {
+  max-width: 1280px; }
 
 .section--actual .teaser--small {
   margin-top: 2rem; }
@@ -567,24 +557,24 @@
     .l-item-count-2 .spotlight__image {
       height: 32rem; } }
 
-.section--text-blocks {
-  max-width: 1280px; }
-  .section--text-blocks .l-section-content {
-    max-width: none; }
-    @media (min-width: 560px) {
-      .section--text-blocks .l-section-content {
-        display: -webkit-box;
-        display: -ms-flexbox;
-        display: flex; }
-        .section--text-blocks .l-section-content section {
-          margin-left: 1.5rem;
-          margin-right: 1.5rem;
-          -webkit-box-flex: 1;
-              -ms-flex: 1;
-                  flex: 1; } }
-    @media (min-width: 1100px) {
-      .section--text-blocks .l-section-content {
-        margin: 5rem auto 0; } }
+.section--text-blocks .l-section-content {
+  max-width: calc(1280px + 3rem);
+  margin-left: auto;
+  margin-right: auto; }
+  @media (min-width: 560px) {
+    .section--text-blocks .l-section-content {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex; }
+      .section--text-blocks .l-section-content section {
+        margin-left: 1.5rem;
+        margin-right: 1.5rem;
+        -webkit-box-flex: 1;
+            -ms-flex: 1;
+                flex: 1; } }
+  @media (min-width: 1100px) {
+    .section--text-blocks .l-section-content {
+      margin: 5rem auto 0; } }
 
 .text-block {
   margin-top: 3rem; }
@@ -2806,5 +2796,3 @@ h2, h3, h4, h5 {
     min-height: 5.5rem; }
     .download-box--with-descr .meta-data {
       width: auto; }
-
-/*# sourceMappingURL=editor-styles.css.map */
