@@ -792,11 +792,17 @@ new GebruikerCentraalTheme();
 
 function insert_breadcrumb() {
 
-	// print out Yoast Breadcrumb
+	// return Yoast Breadcrumb
 	if ( function_exists( 'yoast_breadcrumb' ) ) {
-		yoast_breadcrumb( '<div class="breadcrumb"><nav aria-label="Breadcrumb" class="breadcrumb__list">', '</nav></div>' );
+		$html_start = '<div class="breadcrumb"><nav aria-label="Breadcrumb" class="breadcrumb__list">';
+		$html_end   = '</nav></div>';
+		$return     = yoast_breadcrumb( $html_start, $html_end, false );
+		if ( $return !== $html_start . $html_end ) {
+			return $return;
+		} else {
+			return '';
+		}
 	}
-
 }
 
 
