@@ -1869,11 +1869,11 @@ if ( ! function_exists( 'ICTUWP_GC_OD_update_yoast_breadcrumb ' ) ) {
 		$currentitem = null;
 		$optionpage  = null;
 
-		if ( is_home() || is_front_page() ) {
+		if ( is_home() || is_front_page() || is_front_page() ) {
 			// geen breadcrumb op de homepage
 			return [];
-		} elseif ( is_tax( OD_CITAATAUTEUR ) ) {
-			// uit siteopties de pagina ophalen die het overzicht is van alle links
+		} elseif ( ( is_tax( GC_TIPTHEMA ) ) || ( is_tax( GC_ODSPEELSET ) ) || ( is_tax( OD_CITAATAUTEUR ) ) ) {
+			// voor de specifieke OD-taxonomieen ook het overzicht van alle links invoegen
 			$optionpage = get_field( 'od_overzicht_alle_tipgevers', 'option' );
 		} elseif ( is_singular( GC_TIP_CPT ) ) {
 			// uit siteopties de pagina ophalen die het overzicht is van alle links
