@@ -1129,6 +1129,7 @@ function append_block_wrappers( $block_content, $block ) {
 			case 'core/heading':
 				$className = 'heading';
 				break;
+			case 'core/list':
 			case 'core/paragraph':
 			case 'paragraph':
 				$className = 'paragraph';
