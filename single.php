@@ -60,8 +60,8 @@ if ( 'post' === $post->post_type ) {
 	// auteur vermelden
 	$author_archive_link = get_author_posts_url( $timber_post->post_author );
 	$context['meta'][]   = [
-		'classname' => 'auteur',		'title'     => _x( 'Author', 'Meta: value voor auteur', 'gctheme' ),
-
+		'classname' => 'auteur',
+		'title'     => _x( 'Author', 'Meta: value voor auteur', 'gctheme' ),
 		'descr'     => get_the_author_meta( 'display_name', $timber_post->post_author ),
 		'url'       => $author_archive_link,
 	];
@@ -75,29 +75,29 @@ if ( 'post' === $post->post_type ) {
 	}
 	if ( $categories ) {
 		$context['meta'][] = [
-			'title' => _x( 'Category', 'Meta: value voor categorie', 'gctheme' ),
+			'title'     => _x( 'Category', 'Meta: value voor categorie', 'gctheme' ),
 			'classname' => 'category',
-			'descr' => implode( ', ', $categories ),
+			'descr'     => implode( ', ', $categories ),
 		];
 	}
-/*
- * datzelfde truukje zouden we ook kunnen doen voor de tags bij een bericht.
- * maar dat is te veel van het goede
-	$tag_for_post = get_the_terms( get_the_id(), 'post_tag' );
-	$tags         = array();
-	if ( $tag_for_post && ! is_wp_error( $tag_for_post ) ) {
-		foreach ( $tag_for_post as $term ) {
-			$tags[] = '<a href="' . get_term_link( $term ) . '">' . $term->name . '</a>';
+	/*
+	 * datzelfde truukje zouden we ook kunnen doen voor de tags bij een bericht.
+	 * maar dat is te veel van het goede
+		$tag_for_post = get_the_terms( get_the_id(), 'post_tag' );
+		$tags         = array();
+		if ( $tag_for_post && ! is_wp_error( $tag_for_post ) ) {
+			foreach ( $tag_for_post as $term ) {
+				$tags[] = '<a href="' . get_term_link( $term ) . '">' . $term->name . '</a>';
+			}
 		}
-	}
-	if ( $tags ) {
-		$context['meta'][] = [
-			'title' => _x( 'Tag', 'Meta: value voor tag', 'gctheme' ),
-			'classname' => 'tag',
-			'descr' => implode( ', ', $tags ),
-		];
-	}
- */
+		if ( $tags ) {
+			$context['meta'][] = [
+				'title' => _x( 'Tag', 'Meta: value voor tag', 'gctheme' ),
+				'classname' => 'tag',
+				'descr' => implode( ', ', $tags ),
+			];
+		}
+	 */
 
 
 } elseif ( 'event' === $post->post_type ) {
