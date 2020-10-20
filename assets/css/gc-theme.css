@@ -2,7 +2,7 @@
 /*
  * Front-end styles voor GC-theme
  * Author: Tamara, Mark, Paul
- * Version: 5.0.17
+ * Version: 5.0.18
  *
 */
 .has-white-color {
@@ -687,6 +687,12 @@ Gutenberg corrections
 .wp-block-image + .section--downloads .section__title {
   border: none;
   padding-top: 0; }
+
+.wp-block-coblocks-gallery-masonry {
+  max-width: 760px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 2rem; }
 
 .wp-block-column .section {
   padding-left: 0;
@@ -1467,6 +1473,19 @@ h1 {
     max-width: 760px;
     margin-left: auto;
     margin-right: auto; }
+  .archive .page__intro .entry-body,
+  .archive .archive__descr,
+  .page--overview-archive .page__intro .entry-body,
+  .page--overview-archive .archive__descr {
+    padding: 3rem;
+    margin-top: 0; }
+    @media (min-width: 700px) {
+      .archive .page__intro .entry-body,
+      .archive .archive__descr,
+      .page--overview-archive .page__intro .entry-body,
+      .page--overview-archive .archive__descr {
+        padding-left: 5rem;
+        padding-right: 5rem; } }
   .archive .author--full,
   .page--overview-archive .author--full {
     -webkit-box-shadow: 0.4rem 0.4rem 0 rgba(0, 0, 0, 0.15);
@@ -1510,8 +1529,13 @@ h1 {
       .archive .entry-content + .grid,
       .page--overview-archive .entry-content + .grid {
         margin-top: 7rem; } }
+  .archive .grid,
+  .page--overview-archive .grid {
+    max-width: 1280px;
+    margin-left: auto;
+    margin-right: auto; }
 
-.page--overview-archive .page__intro {
+.tax-tipthema .page__intro {
   max-width: 960px; }
 
 .archive__posts {
@@ -1666,6 +1690,10 @@ h1 {
     .post .entry-content > .section:last-child,
     .entry .entry-content > .section:last-child {
       padding-bottom: 8rem; } }
+
+.post .entry-body > .section--paragraph:first-child,
+.entry .entry-body > .section--paragraph:first-child {
+  margin-top: 0; }
 
 .post.l-with-stepchart .page__intro,
 .entry.l-with-stepchart .page__intro {
@@ -1862,621 +1890,154 @@ h1 {
     .comment-form .email {
       padding-left: 1.5rem; } }
 
-.page--type-tipkaart .content {
+.event-bookings {
+  position: relative;
+  z-index: 5;
+  max-width: 760px;
+  margin-left: auto;
+  margin-right: auto;
+  color: #fff;
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+  margin-top: 3rem; }
+  .event-bookings:before {
+    content: " ";
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    background: #005870;
+    z-index: -1;
+    margin-left: -1000rem;
+    margin-right: -1000rem; }
+  .event-bookings h2, .event-bookings h3 {
+    color: #fff; }
+  .event-bookings a {
+    color: #fff; }
+    .event-bookings a:hover, .event-bookings a:focus {
+      color: #D1DFE3; }
+  @media (min-width: 700px) {
+    .event-bookings {
+      margin-top: 8rem;
+      padding-top: 5rem;
+      padding-bottom: 5rem; } }
+  @media (min-width: 1100px) {
+    .event-bookings {
+      padding-bottom: 5rem; } }
+  .event-bookings h2 {
+    margin: 2rem 0 0 0; }
+  .event-bookings .em-booking > h2 {
+    padding: 0;
+    margin: 0; }
+
+.em-booking-form {
+  margin-top: 2rem; }
+  .em-booking-form input:not([type='submit']):not([type='checkbox']):not([type='radio']):focus, .em-booking-form select:focus, .em-booking-form textarea:focus {
+    -webkit-box-shadow: 0.4rem 0.4rem 0 rgba(0, 48, 61, 0.6);
+            box-shadow: 0.4rem 0.4rem 0 rgba(0, 48, 61, 0.6);
+    border-color: #0095da; }
+
+.event-program li {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex; }
+
+@media (min-width: 700px) {
+  .em-booking-form-details {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap; }
+    .em-booking-form-details p {
+      width: 100%; }
+    .em-booking-form-details .input-user-field {
+      width: 50%; }
+      .em-booking-form-details .input-user-field.input-name {
+        padding-right: 1.5rem; }
+      .em-booking-form-details .input-user-field.input-user_email {
+        padding-left: 1.5rem; } }
+
+.booking-message {
+  -webkit-box-shadow: 0.4rem 0.4rem 0 rgba(0, 0, 0, 0.15);
+          box-shadow: 0.4rem 0.4rem 0 rgba(0, 0, 0, 0.15);
+  background: #fff;
+  color: #004152;
+  padding: 1rem 2rem; }
+  .entry-content .booking-message {
+    margin: 2rem 0 0 0; }
+
+.entry-content .event-attendees {
+  margin: 2rem 0 0 0;
   padding: 0; }
 
-.page--type-tipkaart .page-content {
-  padding-bottom: 0; }
-  .page--type-tipkaart .page-content:after {
-    background-color: #e8d8c7;
-    background-image: url("/wp-content/themes/ictuwp-theme-gc2020/flavors/optimaaldigitaal/assets/images/b_page-top-line-panty.svg"); }
-  .page--type-tipkaart .page-content > .section--overview {
-    margin-left: -2rem;
-    margin-right: -2rem;
-    padding-left: 2rem;
-    padding-right: 2rem;
-    -webkit-box-sizing: border-box;
-            box-sizing: border-box;
-    text-align: center; }
-    @media (min-width: 560px) {
-      .page--type-tipkaart .page-content > .section--overview {
-        margin-left: -3rem;
-        margin-right: -3rem; } }
-    @media (min-width: 560px) {
-      .page--type-tipkaart .page-content > .section--overview {
-        padding-right: 3rem;
-        padding-left: 3rem; } }
-    .page--type-tipkaart .page-content > .section--overview .section__title {
-      border: none; }
-    .page--type-tipkaart .page-content > .section--overview .btn {
-      margin: 2rem auto 0; }
-    .page--type-tipkaart .page-content > .section--overview.section--bg-option {
-      background: url("/wp-content/themes/ictuwp-theme-gc2020/flavors/optimaaldigitaal/assets/images/b_section-bg-option.svg") left top 15rem no-repeat;
-      background-size: auto 100%; }
-      @media (min-width: 1600px) {
-        .page--type-tipkaart .page-content > .section--overview.section--bg-option {
-          background-size: 100% auto; } }
-      .page--type-tipkaart .page-content > .section--overview.section--bg-option:before {
-        display: none; }
-
-.tip {
-  /* @gc-tipkaart-full
-   * ({$Color for heading / top}, {$color for "Why block}, $(Research block background}, ${Border color for research blocks}, ${Background for toptips})
-   */ }
-  .tip--full {
-    overflow: hidden; }
-    .tip--full .entry-header {
-      text-align: center;
-      position: relative;
-      padding: 3rem 2rem;
-      color: #fff;
-      z-index: 5; }
-      @media (min-width: 700px) {
-        .tip--full .entry-header {
-          padding: 5rem 5rem 2rem; } }
-      .tip--full .entry-header:after {
-        content: " ";
-        position: absolute;
-        display: block;
-        left: 0;
-        bottom: 0;
-        width: 110%;
-        height: 5rem;
-        -webkit-transform: rotate(2deg);
-                transform: rotate(2deg);
-        margin-bottom: -2rem;
-        z-index: -1; }
-    .tip--full .entry-title {
-      color: #fff;
-      font-family: "montserratbold", Helvetica, Arial, sans-serif;
-      font-size: 2.8rem;
-      line-height: 4rem;
-      max-width: 90%;
-      margin: 2rem auto; }
-      @media (min-width: 560px) {
-        .tip--full .entry-title {
-          font-size: 4rem;
-          line-height: 5.4rem; } }
-      @media (min-width: 1100px) {
-        .tip--full .entry-title {
-          font-size: 5.2rem;
-          line-height: 7rem;
-          margin-top: 4rem; } }
-    .tip--full .tipkaart__categorie {
-      margin-top: 3rem; }
-      @media (min-width: 700px) {
-        .tip--full .tipkaart__categorie {
-          margin-top: 5rem; } }
-    .tip--full .tip__nr {
-      display: -webkit-box;
-      display: -ms-flexbox;
-      display: flex;
-      -webkit-box-align: center;
-          -ms-flex-align: center;
-              align-items: center;
-      -webkit-box-pack: center;
-          -ms-flex-pack: center;
-              justify-content: center;
-      font-family: "league_gothicregular", Impact, Helvetica, Arial, sans-serif;
-      text-transform: uppercase;
-      font-size: 2rem; }
-      .tip--full .tip__nr:before, .tip--full .tip__nr:after {
-        content: " ";
-        height: .2rem;
-        background: #fff;
-        display: inline-block;
-        width: 3rem; }
-      .tip--full .tip__nr:before {
-        margin-right: 2rem; }
-      .tip--full .tip__nr:after {
-        margin-left: 2rem; }
-      @media (min-width: 700px) {
-        .tip--full .tip__nr {
-          font-size: 2.6rem; }
-          .tip--full .tip__nr:before, .tip--full .tip__nr:after {
-            width: 4.5rem; }
-          .tip--full .tip__nr:before {
-            margin-right: 5rem; }
-          .tip--full .tip__nr:after {
-            margin-left: 5rem; } }
-    .tip--full .tipkaart__categorie span {
-      margin-top: .6rem; }
-    .tip--full .icon--tipkaart {
-      height: 6.5rem;
-      width: auto; }
-    @media (max-width: 559px) {
-      .tip--full .icon--tipkaart {
-        height: 6rem;
-        width: 5rem; }
-      .tip--full .tipkaart__categorie .name {
-        font-size: 1.8rem; } }
-    .tip--full .section--links,
-    .tip--full .section--downloads {
-      padding-left: 2rem;
-      padding-right: 2rem;
-      -webkit-box-sizing: border-box;
-              box-sizing: border-box; }
-      @media (min-width: 560px) {
-        .tip--full .section--links,
-        .tip--full .section--downloads {
-          padding-right: 3rem;
-          padding-left: 3rem; } }
-    .tip--full .section--links {
-      padding-bottom: 5rem; }
-      @media (min-width: 1100px) {
-        .tip--full .section--links {
-          padding-bottom: 8rem; } }
-  .tip .entry-body {
-    -webkit-box-sizing: border-box;
-            box-sizing: border-box;
-    max-width: calc(760px + 4rem);
-    padding: 3rem 2rem;
-    margin: 0 auto; }
-    @media (min-width: 560px) {
-      .tip .entry-body {
-        width: 90%; } }
-    @media (min-width: 700px) {
-      .tip .entry-body {
-        padding-top: 6rem; } }
-  .tip--gebruiksgemak .entry-header {
-    background: #4c2974; }
-    .tip--gebruiksgemak .entry-header:after {
-      background: #4c2974; }
-  .tip--gebruiksgemak .tipkaart__toptip:before {
-    background: #2D114E; }
-  .tip--gebruiksgemak .research {
-    background: #4c2974;
-    color: #fff; }
-    .tip--gebruiksgemak .research h2, .tip--gebruiksgemak .research h3, .tip--gebruiksgemak .research a {
-      color: #fff; }
-  .tip--gebruiksgemak .research__why {
-    background: #148839 url("/wp-content/themes/ictuwp-theme-gc2020/flavors/optimaaldigitaal/assets/images/i_brains.svg") top -3rem right -2.5rem no-repeat;
-    position: relative; }
-  .tip--gebruiksgemak .l-why-wrapper:before {
-    background: #4c2974; }
-  .tip--gebruiksgemak .research-block,
-  .tip--gebruiksgemak .research__conclusion {
-    border: 0.1rem solid #9267C3; }
-  .tip--gebruiksgemak .research-block__title {
-    border-bottom: 0.1rem solid #9267C3; }
-  .tip--gebruiksgemak hr {
-    border: none;
-    border-top: 0.1rem solid #9267C3; }
-  .tip--procesaanpak .entry-header {
-    background: #009C95; }
-    .tip--procesaanpak .entry-header:after {
-      background: #009C95; }
-  .tip--procesaanpak .tipkaart__toptip:before {
-    background: #00837E; }
-  .tip--procesaanpak .research {
-    background: #00837E;
-    color: #fff; }
-    .tip--procesaanpak .research h2, .tip--procesaanpak .research h3, .tip--procesaanpak .research a {
-      color: #fff; }
-  .tip--procesaanpak .research__why {
-    background: #004152 url("/wp-content/themes/ictuwp-theme-gc2020/flavors/optimaaldigitaal/assets/images/i_brains.svg") top -3rem right -2.5rem no-repeat;
-    position: relative; }
-  .tip--procesaanpak .l-why-wrapper:before {
-    background: #00837E; }
-  .tip--procesaanpak .research-block,
-  .tip--procesaanpak .research__conclusion {
-    border: 0.1rem solid #00b4ac; }
-  .tip--procesaanpak .research-block__title {
-    border-bottom: 0.1rem solid #00b4ac; }
-  .tip--procesaanpak hr {
-    border: none;
-    border-top: 0.1rem solid #00b4ac; }
-  .tip--commitment .entry-header {
-    background: #148839; }
-    .tip--commitment .entry-header:after {
-      background: #148839; }
-  .tip--commitment .tipkaart__toptip:before {
-    background: #0b732c; }
-  .tip--commitment .research {
-    background: #148839;
-    color: #fff; }
-    .tip--commitment .research h2, .tip--commitment .research h3, .tip--commitment .research a {
-      color: #fff; }
-  .tip--commitment .research__why {
-    background: #004152 url("/wp-content/themes/ictuwp-theme-gc2020/flavors/optimaaldigitaal/assets/images/i_brains.svg") top -3rem right -2.5rem no-repeat;
-    position: relative; }
-  .tip--commitment .l-why-wrapper:before {
-    background: #148839; }
-  .tip--commitment .research-block,
-  .tip--commitment .research__conclusion {
-    border: 0.1rem solid #25b34b; }
-  .tip--commitment .research-block__title {
-    border-bottom: 0.1rem solid #25b34b; }
-  .tip--commitment hr {
-    border: none;
-    border-top: 0.1rem solid #25b34b; }
-  .tip--informatieveiligheid .entry-header {
-    background: #c42c76; }
-    .tip--informatieveiligheid .entry-header:after {
-      background: #c42c76; }
-  .tip--informatieveiligheid .tipkaart__toptip:before {
-    background: #A20E56; }
-  .tip--informatieveiligheid .research {
-    background: #c42c76;
-    color: #fff; }
-    .tip--informatieveiligheid .research h2, .tip--informatieveiligheid .research h3, .tip--informatieveiligheid .research a {
-      color: #fff; }
-  .tip--informatieveiligheid .research__why {
-    background: #004152 url("/wp-content/themes/ictuwp-theme-gc2020/flavors/optimaaldigitaal/assets/images/i_brains.svg") top -3rem right -2.5rem no-repeat;
-    position: relative; }
-  .tip--informatieveiligheid .l-why-wrapper:before {
-    background: #c42c76; }
-  .tip--informatieveiligheid .research-block,
-  .tip--informatieveiligheid .research__conclusion {
-    border: 0.1rem solid #E86CA8; }
-  .tip--informatieveiligheid .research-block__title {
-    border-bottom: 0.1rem solid #E86CA8; }
-  .tip--informatieveiligheid hr {
-    border: none;
-    border-top: 0.1rem solid #E86CA8; }
-  .tip--kanaalsturing .entry-header {
-    background: #D77D00; }
-    .tip--kanaalsturing .entry-header:after {
-      background: #D77D00; }
-  .tip--kanaalsturing .tipkaart__toptip:before {
-    background: #f99d1c; }
-  .tip--kanaalsturing .research {
-    background: #f99d1c;
-    color: #fff; }
-    .tip--kanaalsturing .research h2, .tip--kanaalsturing .research h3, .tip--kanaalsturing .research a {
-      color: #fff; }
-  .tip--kanaalsturing .research__why {
-    background: #004152 url("/wp-content/themes/ictuwp-theme-gc2020/flavors/optimaaldigitaal/assets/images/i_brains.svg") top -3rem right -2.5rem no-repeat;
-    position: relative; }
-  .tip--kanaalsturing .l-why-wrapper:before {
-    background: #f99d1c; }
-  .tip--kanaalsturing .research-block,
-  .tip--kanaalsturing .research__conclusion {
-    border: 0.1rem solid #D77D00; }
-  .tip--kanaalsturing .research-block__title {
-    border-bottom: 0.1rem solid #D77D00; }
-  .tip--kanaalsturing hr {
-    border: none;
-    border-top: 0.1rem solid #D77D00; }
-  .tip--kanaalsturing .research__content {
-    color: #004152; }
-    .tip--kanaalsturing .research__content a, .tip--kanaalsturing .research__content h2, .tip--kanaalsturing .research__content h3 {
-      color: #004152; }
-  .tip--inclusie .entry-header {
-    background: #D94721; }
-    .tip--inclusie .entry-header:after {
-      background: #D94721; }
-  .tip--inclusie .tipkaart__toptip:before {
-    background: #D94721; }
-  .tip--inclusie .research {
-    background: #c73d19;
-    color: #fff; }
-    .tip--inclusie .research h2, .tip--inclusie .research h3, .tip--inclusie .research a {
-      color: #fff; }
-  .tip--inclusie .research__why {
-    background: #004152 url("/wp-content/themes/ictuwp-theme-gc2020/flavors/optimaaldigitaal/assets/images/i_brains.svg") top -3rem right -2.5rem no-repeat;
-    position: relative; }
-  .tip--inclusie .l-why-wrapper:before {
-    background: #c73d19; }
-  .tip--inclusie .research-block,
-  .tip--inclusie .research__conclusion {
-    border: 0.1rem solid #e3694a; }
-  .tip--inclusie .research-block__title {
-    border-bottom: 0.1rem solid #e3694a; }
-  .tip--inclusie hr {
-    border: none;
-    border-top: 0.1rem solid #e3694a; }
-  .tip--samenwerking .entry-header {
-    background: #0095da; }
-    .tip--samenwerking .entry-header:after {
-      background: #0095da; }
-  .tip--samenwerking .tipkaart__toptip:before {
-    background: #007BB0; }
-  .tip--samenwerking .research {
-    background: #007BB0;
-    color: #fff; }
-    .tip--samenwerking .research h2, .tip--samenwerking .research h3, .tip--samenwerking .research a {
-      color: #fff; }
-  .tip--samenwerking .research__why {
-    background: #004152 url("/wp-content/themes/ictuwp-theme-gc2020/flavors/optimaaldigitaal/assets/images/i_brains.svg") top -3rem right -2.5rem no-repeat;
-    position: relative; }
-  .tip--samenwerking .l-why-wrapper:before {
-    background: #007BB0; }
-  .tip--samenwerking .research-block,
-  .tip--samenwerking .research__conclusion {
-    border: 0.1rem solid #0095da; }
-  .tip--samenwerking .research-block__title {
-    border-bottom: 0.1rem solid #0095da; }
-  .tip--samenwerking hr {
-    border: none;
-    border-top: 0.1rem solid #0095da; }
-
-.section--examples {
-  position: relative;
-  overflow: hidden;
-  z-index: 5;
-  padding-bottom: 5rem;
-  padding-left: 2rem;
-  padding-right: 2rem; }
+.attendees-list {
+  margin: 3rem 0 0;
+  padding: 0; }
+  .attendees-list .event-aanmeldingen {
+    display: inline-block;
+    margin-left: 2em;
+    font-size: 1.5rem;
+    font-family: "montserratregular", Helvetica, Arial, sans-serif; }
+    .attendees-list .event-aanmeldingen:before {
+      content: "";
+      font-style: normal;
+      font-weight: normal;
+      font-family: 'icons'; }
+    .attendees-list .event-aanmeldingen:before {
+      float: left;
+      margin-right: 1rem; }
   @media (min-width: 700px) {
-    .section--examples {
-      padding-bottom: 8rem; } }
-  .section--examples:before {
-    position: absolute;
-    content: " ";
-    background: #f9f6f3;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    margin: 0 -5rem -5rem;
-    top: 15rem;
-    -webkit-transform: rotate(2deg);
-            transform: rotate(2deg); }
-  .section--examples:before {
-    bottom: auto;
-    height: 10rem; }
-  .section--examples:after {
-    position: absolute;
-    content: " ";
-    top: 18rem;
-    left: 0;
-    bottom: 0;
-    right: 0;
-    background: #f9f6f3;
-    z-index: -1; }
-  .section--examples h2, .section--examples .example {
-    position: relative; }
-  .section--examples .section__title {
-    max-width: 760px;
-    margin: 0 auto;
-    border: none; }
-    .content .section--examples .section__title {
-      padding-top: 0; }
-  .section--examples + .section--links .section__title {
-    border-top: none;
-    padding-top: 0; }
-
-.example {
-  max-width: 760px;
-  margin: 3rem auto 0; }
-  .example blockquote {
-    margin: 0; }
-  @media (min-width: 560px) {
-    .example {
-      width: 90%; } }
-  @media (min-width: 1100px) {
-    .example + .example {
-      margin-top: 5rem; } }
-  @media (min-width: 1600px) {
-    .example + .example {
+    .attendees-list {
       margin-top: 8rem; } }
 
-.example__content {
-  -webkit-box-shadow: 0.4rem 0.4rem 0 rgba(0, 0, 0, 0.15);
-          box-shadow: 0.4rem 0.4rem 0 rgba(0, 0, 0, 0.15);
-  border: 0.1rem solid #D1DFE3;
-  background: #fff;
-  padding: 2rem; }
-  @media (min-width: 700px) {
-    .example__content {
-      padding: 3rem 5rem 4rem; } }
-
-.example__description {
-  margin-top: 1.6rem; }
-  .example__description p:first-child {
-    margin-top: 0; }
-
-.example__author {
-  position: relative;
-  padding-top: .1rem; }
-  .example__author:before {
-    width: 4rem;
-    height: 4rem;
-    position: absolute;
-    display: block;
-    content: " ";
-    background: url("/wp-content/themes/ictuwp-theme-gc2020/flavors/optimaaldigitaal/assets/images/b_example.svg") top -1px left 0 no-repeat;
-    background-size: 100% auto;
-    left: 1.2rem;
-    top: -2px; }
+.attendees-list__list {
+  margin: 2rem 0 0;
+  padding: 0; }
+  .attendees-list__list > li {
+    margin: 0;
+    padding: 1.3rem 0;
+    list-style: none;
+    position: relative;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    border-top: 1px solid #0F90B2;
+    line-height: 2.6rem;
+    font-size: 1.6rem; }
+    .attendees-list__list > li > span {
+      display: block; }
+    .attendees-list__list > li span[itemtype="http://schema.org/Person"] {
+      margin: 0; }
+    .attendees-list__list > li span[itemprop="attendee"] span {
+      display: block; }
+    .attendees-list__list > li span[itemprop="name"] {
+      font-family: "montserratbold", Helvetica, Arial, sans-serif; }
+    .attendees-list__list > li span.additionalinfo {
+      font-size: 85%; }
+  .attendees-list__list .social-links {
+    margin-left: auto; }
+    .attendees-list__list .social-links li {
+      display: inline-block; }
+    .attendees-list__list .social-links .link--social {
+      border-color: #0F90B2; }
+      .attendees-list__list .social-links .link--social:hover, .attendees-list__list .social-links .link--social:focus {
+        background: #0095da;
+        border-color: #0095da; }
   @media (min-width: 560px) {
-    .example__author {
-      padding-left: 7rem; } }
-  @media (min-width: 1100px) {
-    .example__author {
-      padding-left: 11rem; }
-      .example__author:before {
-        left: 4.5rem;
-        width: 4.5rem;
-        height: 4.5rem; } }
-
-.research {
-  padding-bottom: 5rem; }
-  @media (min-width: 1100px) {
-    .research {
-      padding-bottom: 8rem; } }
-  .research + .section .section__title {
-    border-top: 0;
-    padding-top: 0; }
-  .research--without-why {
-    padding-top: 3rem; }
-    @media (min-width: 700px) {
-      .research--without-why {
-        padding-top: 5rem; } }
-    @media (min-width: 1100px) {
-      .research--without-why {
-        padding-top: 8rem; } }
-  .research--without-descr {
-    background: none !important;
-    padding-bottom: 0; }
-
-.l-why-wrapper {
-  padding-left: 2rem;
-  padding-right: 2rem;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-  position: relative;
-  overflow: hidden;
-  z-index: 5;
-  padding-bottom: 5rem;
-  background: #f9f6f3;
-  position: relative;
-  z-index: auto; }
-  @media (min-width: 560px) {
-    .l-why-wrapper {
-      padding-right: 3rem;
-      padding-left: 3rem; } }
-  @media (min-width: 700px) {
-    .l-why-wrapper {
-      padding-bottom: 8rem; } }
-  .l-why-wrapper:before {
-    position: absolute;
-    content: " ";
-    background: #148839;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    margin: 0 -5rem -5rem;
-    top: 15rem;
-    -webkit-transform: rotate(2deg);
-            transform: rotate(2deg); }
-  .research--without-descr .l-why-wrapper:before {
-    display: none; }
-
-.research__why {
-  -webkit-box-shadow: 0.4rem 0.4rem 0 rgba(0, 0, 0, 0.15);
-          box-shadow: 0.4rem 0.4rem 0 rgba(0, 0, 0, 0.15);
-  margin: 0 auto;
-  max-width: 760px;
-  padding: 3rem;
-  position: relative;
-  z-index: 10; }
-  @media (min-width: 700px) {
-    .research__why {
-      padding: 4rem; } }
-  .research__why h2 {
-    font-size: 3.2rem;
-    font-family: "league_gothicregular", Impact, Helvetica, Arial, sans-serif;
-    line-height: 36px; }
-    @media (min-width: 700px) {
-      .research__why h2 {
-        font-size: 4.2rem;
-        line-height: 44px; } }
-
-.research__content {
-  padding-left: 2rem;
-  padding-right: 2rem;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-  position: relative; }
-  @media (min-width: 560px) {
-    .research__content {
-      padding-right: 3rem;
-      padding-left: 3rem; } }
-  .research__content:before {
-    width: 8rem;
-    height: 8rem;
-    content: " ";
-    position: absolute;
-    display: block;
-    background: url("/wp-content/themes/ictuwp-theme-gc2020/flavors/optimaaldigitaal/assets/images/i_lamp.svg") center center no-repeat;
-    background-size: auto 100%;
-    top: 0;
-    left: 0;
-    margin: -8rem 0 0 -2rem;
-    -webkit-transform: rotate(40deg);
-            transform: rotate(40deg);
-    z-index: 5; }
-    @media (min-width: 700px) {
-      .research__content:before {
-        width: 18rem;
-        height: 18rem;
-        -webkit-transform: rotate(0);
-                transform: rotate(0);
-        margin: -12rem 0 -3rem -5rem; } }
-  .research__content hr {
-    margin: 1.5rem 0; }
-    @media (min-width: 1100px) {
-      .research__content hr {
-        margin: 2.5rem 0; } }
-  .research__content .research__title {
-    font-size: 3.2rem;
-    font-family: "league_gothicregular", Impact, Helvetica, Arial, sans-serif;
-    line-height: 36px; }
-    @media (min-width: 700px) {
-      .research__content .research__title {
-        font-size: 4.2rem;
-        line-height: 44px; } }
-  .research__content .l-inner {
-    max-width: 760px;
-    margin-left: auto;
-    margin-right: auto; }
-
-.l-research-blocks {
-  margin-top: 2rem; }
-  @media (min-width: 560px) {
-    .l-research-blocks {
+    .attendees-list__list {
       display: -webkit-box;
       display: -ms-flexbox;
       display: flex;
-      margin-left: -1.5rem;
-      margin-right: -1.5rem; }
-      .l-research-blocks .research-block {
-        margin-left: 1.5rem;
-        margin-right: 1.5rem;
-        -webkit-box-flex: 1;
-            -ms-flex: 1;
-                flex: 1; } }
+      -ms-flex-wrap: wrap;
+          flex-wrap: wrap; }
+      .attendees-list__list > li {
+        width: calc(50% - 1.5rem); }
+        .attendees-list__list > li:nth-child(odd) {
+          margin-right: 3rem; } }
 
-.research-block {
-  margin-top: 3rem;
-  display: block;
-  padding: 1rem 1.5rem 3rem;
-  text-align: center;
-  font-family: "montserratsemibold", Helvetica, Arial, sans-serif; }
-  .research-block span {
-    display: block; }
-
-.research-block__title {
-  font-size: 1.3rem;
-  line-height: 2rem;
-  padding-bottom: .8rem; }
-
-.research-block__nr {
-  text-transform: lowercase;
-  font-size: 3.8rem;
-  line-height: 5rem;
-  font-family: "montserratbold", Helvetica, Arial, sans-serif;
-  padding-top: 1.5rem; }
-
-.research-block__descr {
-  font-size: 1.5rem;
-  line-height: 2rem; }
-
-.research__conclusion {
-  padding: 2rem 2rem 2rem 7rem;
-  margin-top: 3rem;
-  position: relative; }
-  .research__conclusion:before {
-    content: "";
-    font-style: normal;
-    font-weight: normal;
-    font-family: 'icons'; }
-  .research__conclusion:before {
-    position: absolute;
-    left: 2rem;
-    top: 2rem;
-    font-size: 4rem;
-    line-height: 4rem; }
-  @media (min-width: 700px) {
-    .research__conclusion {
-      padding-left: 10rem; }
-      .research__conclusion:before {
-        left: 3rem;
-        font-size: 5rem;
-        line-height: 6rem; } }
-
-/* Entry types */
 .post .entry-intro {
   font-family: "montserratsemibold", Helvetica, Arial, sans-serif; }
   @media (min-width: 700px) {
@@ -2867,6 +2428,10 @@ h1 {
         .attendees-list__list > li:nth-child(odd) {
           margin-right: 3rem; } }
 
+.page--type-homepage .content {
+  -webkit-box-shadow: none;
+          box-shadow: none; }
+
 .entry--type-home.entry--full {
   max-width: none; }
   .entry--type-home.entry--full .entry-header {
@@ -2881,7 +2446,8 @@ h1 {
     padding-left: 2rem;
     padding-right: 2rem;
     -webkit-box-sizing: border-box;
-            box-sizing: border-box; }
+            box-sizing: border-box;
+    max-width: none; }
     @media (min-width: 560px) {
       .entry--type-home.entry--full .section {
         padding-right: 3rem;
@@ -2904,7 +2470,7 @@ h1 {
   padding-bottom: 0; }
   .page--type-tipkaart .page-content:after {
     background-color: #e8d8c7;
-    background-image: url("../../img/b_page-top-line-panty.svg"); }
+    background-image: url("../../assets/images/b_page-top-line-panty.svg"); }
   .page--type-tipkaart .page-content > .section--overview {
     margin-left: -2rem;
     margin-right: -2rem;
@@ -2931,7 +2497,7 @@ h1 {
     .page--type-tipkaart .page-content > .section--overview .l-section-content {
       max-width: 1280px; }
     .page--type-tipkaart .page-content > .section--overview.section--bg-option {
-      background: url("../../img/b_section-bg-option.svg") left top 15rem no-repeat;
+      background: url("../../assets/images/b_section-bg-option.svg") left top 15rem no-repeat;
       background-size: auto 100%; }
       @media (min-width: 1600px) {
         .page--type-tipkaart .page-content > .section--overview.section--bg-option {
@@ -3057,7 +2623,10 @@ h1 {
         width: 90%; } }
     @media (min-width: 700px) {
       .tip .entry-body {
-        padding-top: 6rem; } }
+        padding-top: 6rem;
+        padding-bottom: 5rem; } }
+    .tip .entry-body > .section--paragraph:first-child {
+      margin-top: 0; }
   .tip--gebruiksgemak .entry-header {
     background: #4c2974; }
     .tip--gebruiksgemak .entry-header:after {
@@ -3070,7 +2639,7 @@ h1 {
     .tip--gebruiksgemak .research h2, .tip--gebruiksgemak .research h3, .tip--gebruiksgemak .research a {
       color: #fff; }
   .tip--gebruiksgemak .research__why {
-    background: #148839 url("../../img/i_brains.svg") top -3rem right -2.5rem no-repeat;
+    background: #148839 url("../../assets/images/i_brains.svg") top -3rem right -2.5rem no-repeat;
     position: relative; }
   .tip--gebruiksgemak .l-why-wrapper:before {
     background: #4c2974; }
@@ -3094,7 +2663,7 @@ h1 {
     .tip--procesaanpak .research h2, .tip--procesaanpak .research h3, .tip--procesaanpak .research a {
       color: #fff; }
   .tip--procesaanpak .research__why {
-    background: #004152 url("../../img/i_brains.svg") top -3rem right -2.5rem no-repeat;
+    background: #004152 url("../../assets/images/i_brains.svg") top -3rem right -2.5rem no-repeat;
     position: relative; }
   .tip--procesaanpak .l-why-wrapper:before {
     background: #00837E; }
@@ -3118,7 +2687,7 @@ h1 {
     .tip--commitment .research h2, .tip--commitment .research h3, .tip--commitment .research a {
       color: #fff; }
   .tip--commitment .research__why {
-    background: #004152 url("../../img/i_brains.svg") top -3rem right -2.5rem no-repeat;
+    background: #004152 url("../../assets/images/i_brains.svg") top -3rem right -2.5rem no-repeat;
     position: relative; }
   .tip--commitment .l-why-wrapper:before {
     background: #148839; }
@@ -3142,7 +2711,7 @@ h1 {
     .tip--informatieveiligheid .research h2, .tip--informatieveiligheid .research h3, .tip--informatieveiligheid .research a {
       color: #fff; }
   .tip--informatieveiligheid .research__why {
-    background: #004152 url("../../img/i_brains.svg") top -3rem right -2.5rem no-repeat;
+    background: #004152 url("../../assets/images/i_brains.svg") top -3rem right -2.5rem no-repeat;
     position: relative; }
   .tip--informatieveiligheid .l-why-wrapper:before {
     background: #c42c76; }
@@ -3166,7 +2735,7 @@ h1 {
     .tip--kanaalsturing .research h2, .tip--kanaalsturing .research h3, .tip--kanaalsturing .research a {
       color: #fff; }
   .tip--kanaalsturing .research__why {
-    background: #004152 url("../../img/i_brains.svg") top -3rem right -2.5rem no-repeat;
+    background: #004152 url("../../assets/images/i_brains.svg") top -3rem right -2.5rem no-repeat;
     position: relative; }
   .tip--kanaalsturing .l-why-wrapper:before {
     background: #f99d1c; }
@@ -3194,7 +2763,7 @@ h1 {
     .tip--inclusie .research h2, .tip--inclusie .research h3, .tip--inclusie .research a {
       color: #fff; }
   .tip--inclusie .research__why {
-    background: #004152 url("../../img/i_brains.svg") top -3rem right -2.5rem no-repeat;
+    background: #004152 url("../../assets/images/i_brains.svg") top -3rem right -2.5rem no-repeat;
     position: relative; }
   .tip--inclusie .l-why-wrapper:before {
     background: #c73d19; }
@@ -3218,7 +2787,7 @@ h1 {
     .tip--samenwerking .research h2, .tip--samenwerking .research h3, .tip--samenwerking .research a {
       color: #fff; }
   .tip--samenwerking .research__why {
-    background: #004152 url("../../img/i_brains.svg") top -3rem right -2.5rem no-repeat;
+    background: #004152 url("../../assets/images/i_brains.svg") top -3rem right -2.5rem no-repeat;
     position: relative; }
   .tip--samenwerking .l-why-wrapper:before {
     background: #007BB0; }
@@ -3252,6 +2821,18 @@ h1 {
     top: 15rem;
     -webkit-transform: rotate(2deg);
             transform: rotate(2deg); }
+  .section--examples:before {
+    height: 24rem; }
+  .section--examples:after {
+    content: " ";
+    position: absolute;
+    display: block;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    top: 24rem;
+    background: #f9f6f3;
+    z-index: -1; }
   .section--examples h2, .section--examples .example {
     position: relative; }
   .section--examples .section__title {
@@ -3280,6 +2861,9 @@ h1 {
   border: 0.1rem solid #D1DFE3;
   background: #fff;
   padding: 2rem; }
+  .example__content blockquote {
+    padding: 0;
+    margin: 0; }
   @media (min-width: 700px) {
     .example__content {
       padding: 3rem 5rem 4rem; } }
@@ -3298,7 +2882,7 @@ h1 {
     position: absolute;
     display: block;
     content: " ";
-    background: url("../../img/b_example.svg") top -1px left 0 no-repeat;
+    background: url("../../assets/images/b_example.svg") top -1px left 0 no-repeat;
     background-size: 100% auto;
     left: 1.2rem;
     top: -2px; }
@@ -3321,6 +2905,11 @@ h1 {
   .research + .section .section__title {
     border-top: 0;
     padding-top: 0; }
+  .research--without-why {
+    padding-top: 5rem; }
+    @media (min-width: 700px) {
+      .research--without-why {
+        padding-top: 8rem; } }
 
 .l-why-wrapper {
   padding-left: 2rem;
@@ -3389,7 +2978,7 @@ h1 {
     content: " ";
     position: absolute;
     display: block;
-    background: url("../../img/i_lamp.svg") center center no-repeat;
+    background: url("../../assets/images/i_lamp.svg") center center no-repeat;
     background-size: auto 100%;
     top: 0;
     left: 0;
@@ -3485,6 +3074,10 @@ h1 {
         left: 3rem;
         font-size: 5rem;
         line-height: 6rem; } }
+
+.page-template-template-landingspagina .page__intro {
+  -webkit-box-shadow: none;
+          box-shadow: none; }
 
 /* Sections */
 .section {

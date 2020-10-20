@@ -1,3 +1,9 @@
+.page--type-homepage {
+  .content {
+    box-shadow: none;
+  }
+}
+
 .entry--type-home.entry--full {
   max-width: none;
 
@@ -19,6 +25,7 @@
 
   .section {
     @include ho-padding;
+    max-width: none;
   }
 
   .entry-content > .section:last-child {

@@ -9,6 +9,7 @@
 }
 
 .entry--type-home {
+
   .page__intro {
     background: url('../images/b_home-top.svg') center top -25rem no-repeat;
     background-size: auto 101%;
@@ -17,6 +18,19 @@
     max-width: none;
     box-shadow: none;
     padding-bottom: 0;
+    padding-top: 5rem;
+
+    @include bp-up(md){
+      padding-top: 8rem;
+    }
+
+    .section {
+      @include ho-make-container($max-width-inner);
+
+      &--video {
+        max-width: 820px;
+      }
+    }
 
     &:before,
     &:after {

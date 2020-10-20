@@ -1,7 +1,7 @@
 /*
  * CSS flavor voor Optimaal Digitaal
  * Author: Tamara, Mark, Paul
- * Version: 5.0.17
+ * Version: 5.0.18
  *
  */
 
@@ -16,11 +16,12 @@
 
 
 // Optimaal Digitaal Flavor
-
 @import "abstracts/mixins";
+
 
 // Components
 @import "components/page-home";
+@import "components/page-tipkaart";
 @import "components/sections";
 @import "components/layout";
 @import "components/manual";

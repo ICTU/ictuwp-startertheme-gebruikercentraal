@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 24.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 43.6 44" style="enable-background:new 0 0 43.6 44;" xml:space="preserve">
+<style type="text/css">
+	.st0{opacity:0.15;}
+	.st1{filter:url(#Adobe_OpacityMaskFilter);}
+	.st2{fill-rule:evenodd;clip-rule:evenodd;fill:#FFFFFF;}
+	.st3{mask:url(#mask-2_2_);}
+	.st4{fill:#D1DFE3;}
+	.st5{filter:url(#Adobe_OpacityMaskFilter_1_);}
+	.st6{mask:url(#mask-2_1_);}
+</style>
+<polygon class="st0" points="11,6.8 43.6,39.4 43.6,6.8 "/>
+<desc>Created with Sketch.</desc>
+<g id="Page-1">
+	<g id="_x30_2c2.-Tipkaart-Detail---Gebruiksgemak" transform="translate(-416.000000, -4207.000000)">
+		<g id="Content_1_" transform="translate(323.000000, 328.000000)">
+			<defs>
+				<filter id="Adobe_OpacityMaskFilter" filterUnits="userSpaceOnUse" x="93" y="3878.4" width="38.8" height="38.8">
+					<feColorMatrix  type="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 1 0"/>
+				</filter>
+			</defs>
+			<mask maskUnits="userSpaceOnUse" x="93" y="3878.4" width="38.8" height="38.8" id="mask-2_2_">
+				<g class="st1">
+					<rect id="path-1_4_" x="-2.4" class="st2" width="953" height="5696"/>
+				</g>
+			</mask>
+			<g id="Voorbeelden" class="st3">
+				<g id="Voorbeeld-4-Copy" transform="translate(50.000000, 912.000000)">
+					<g transform="translate(0.000000, 2547.000000)">
+						<g id="Content">
+							<g id="Rectangle-2">
+								<g>
+									<path class="st2" d="M43,419.4l38.8,38.8l0-38.8H43z"/>
+								</g>
+							</g>
+						</g>
+					</g>
+				</g>
+			</g>
+		</g>
+	</g>
+</g>
+<path class="st4" d="M37.6,0"/>
+<g id="Page-1_1_">
+	<g id="_x30_2c2.-Tipkaart-Detail---Gebruiksgemak_1_" transform="translate(-416.000000, -4207.000000)">
+		<g id="Content_2_" transform="translate(323.000000, 328.000000)">
+			<defs>
+				<filter id="Adobe_OpacityMaskFilter_1_" filterUnits="userSpaceOnUse" x="93" y="3879" width="39.4" height="39.4">
+					<feColorMatrix  type="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 1 0"/>
+				</filter>
+			</defs>
+			<mask maskUnits="userSpaceOnUse" x="93" y="3879" width="39.4" height="39.4" id="mask-2_1_">
+				<g class="st5">
+					<rect id="path-1_1_" x="-2.2" class="st2" width="953" height="5696"/>
+				</g>
+			</mask>
+			<g id="Voorbeelden_1_" class="st6">
+				<g id="Voorbeeld-4-Copy_1_" transform="translate(50.000000, 912.000000)">
+					<g transform="translate(0.000000, 2547.000000)">
+						<g id="Content_3_">
+							<g id="Rectangle-2_1_">
+								<g>
+									<path class="st4" d="M82.4,420v39.4L43,420h1.4l37,37v-37H82.4z"/>
+								</g>
+							</g>
+						</g>
+					</g>
+				</g>
+			</g>
+		</g>
+	</g>
+</g>
+</svg>
