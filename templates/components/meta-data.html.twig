@@ -1,26 +1,34 @@
 {#
- /** Metadata
- * Template for displaying metadata
- *
- * Variables:
- * - items: all metadatada items
- *
- * Per metadata item
- * - title: Title, is visually hidden
- * - descr: The item itself
- * - itemprop: Optional, if the item needs a itemprop
- * - classname: The classname for metadata. Can be used for displaying proper item. Uses lowercase title if empty
- *
- * SCSS:
- * - components/meta-data.scss
- */
+/** Metadata
+* Template for displaying metadata
+*
+* Variables:
+* - items: all metadatada items
+*
+* Per metadata item
+* - title: Title, is visually hidden
+* - descr: The item itself
+* - itemprop (optional): if the item needs a itemprop
+* - classname (optional): The classname for metadata. Can be used for displaying proper item. Uses lowercase title if empty
+* - url (optional): a link if necessary
+*
+* SCSS:
+* - components/meta-data.scss
+*/
 #}
 
 <div class="meta-data">
   <dl class="meta-data__list">
     {% for item in items %}
       <dt class="visually-hidden">{{ item.title }}</dt>
-      <dd class="meta-data__item {{ item.classname ? item.classname : item.title|lower }}"{{ item.itemprop ? ' itemprop="'~ item.itemprop ~'"' }}>{{ item.descr }}</dd>
+      <dd
+        class="meta-data__item {{ item.classname ? item.classname : item.title|lower }}"{{ item.itemprop ? ' itemprop="'~ item.itemprop ~'"' }}>
+        {% if item.url %}
+          <a href="{{ item.url }}">{{ item.descr }}</a>
+        {% else %}
+          {{ item.descr }}
+        {% endif %}
+      </dd>
     {% endfor %}
   </dl>
 </div>

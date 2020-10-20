@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 "Project-Id-Version: Gebruiker Centraal (2020)\n"
-"POT-Creation-Date: 2020-10-16 14:45+0200\n"
+"POT-Creation-Date: 2020-10-20 16:04+0200\n"
 "PO-Revision-Date: 2020-06-16 15:48+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -38,765 +38,735 @@ msgid ""
 "are looking for. Or, you can try finding it by using the search form below."
 msgstr ""
 
-#: assets/json.php:101 assets/json.php:103 assets/od.php:91 assets/od.php:93
+#: archive.php:34
+#, php-format
+msgctxt "Archive title for date: dag"
+msgid "Posts for %s."
+msgstr ""
+
+#: archive.php:36 archive.php:38
+#, php-format
+msgctxt "Archive title for date"
+msgid "Posts for %s."
+msgstr ""
+
+#: assets/json.php:94 assets/json.php:96 assets/od.php:88 assets/od.php:90
 msgid "Tips"
 msgstr ""
 
-#: assets/json.php:102 assets/od.php:92
+#: assets/json.php:95 assets/od.php:89
 msgid "Tip"
 msgstr ""
 
-#: assets/json.php:104 assets/od.php:94
+#: assets/json.php:97 assets/od.php:91
 msgid "Alle tips"
 msgstr ""
 
-#: assets/json.php:105 assets/od.php:95 functions.php:747
+#: assets/json.php:98 assets/od.php:92 functions.php:744
 msgid "Toevoegen"
 msgstr ""
 
-#: assets/json.php:106 assets/od.php:96
+#: assets/json.php:99 assets/od.php:93
 msgid "Tip toevoegen"
 msgstr ""
 
-#: assets/json.php:107 assets/od.php:97
+#: assets/json.php:100 assets/od.php:94
 msgid "Tip bewerken"
 msgstr ""
 
-#: assets/json.php:108 assets/od.php:98
+#: assets/json.php:101 assets/od.php:95
 msgid "Bewerk tip"
 msgstr ""
 
-#: assets/json.php:109 assets/od.php:99
+#: assets/json.php:102 assets/od.php:96
 msgid "Nieuwe tip"
 msgstr ""
 
-#: assets/json.php:110 assets/od.php:100 functions.php:752
+#: assets/json.php:103 assets/od.php:97 functions.php:749
 msgid "Bekijk"
 msgstr ""
 
-#: assets/json.php:111 assets/od.php:101
+#: assets/json.php:104 assets/od.php:98
 msgid "Bekijk tip"
 msgstr ""
 
-#: assets/json.php:112 assets/od.php:102
+#: assets/json.php:105 assets/od.php:99
 msgid "Tips zoeken"
 msgstr ""
 
-#: assets/json.php:113 assets/od.php:103
+#: assets/json.php:106 assets/od.php:100
 msgid "Geen tips gevonden"
 msgstr ""
 
-#: assets/json.php:114 assets/od.php:104
+#: assets/json.php:107 assets/od.php:101
 msgid "Geen tips in de prullenbak"
 msgstr ""
 
-#: assets/json.php:119 assets/od.php:109
+#: assets/json.php:112 assets/od.php:106
 msgid "Hier voer je de tips in."
 msgstr ""
 
-#: assets/json.php:127 assets/od.php:117 functions.php:769
+#: assets/json.php:120 assets/od.php:114 functions.php:766
 msgid "post"
 msgstr ""
 
-#: assets/json.php:141 assets/json.php:142 assets/json.php:143
-#: assets/json.php:161
+#: assets/json.php:134 assets/json.php:135 assets/json.php:136
+#: assets/json.php:154
 msgid "Tip-thema"
 msgstr ""
 
-#: assets/json.php:144 assets/od.php:143
+#: assets/json.php:137 assets/od.php:140
 msgid "Alle tip-thema's"
 msgstr ""
 
-#: assets/json.php:145 assets/od.php:144
+#: assets/json.php:138 assets/od.php:141
 msgid "Bewerk thema"
 msgstr ""
 
-#: assets/json.php:146 assets/od.php:145
+#: assets/json.php:139 assets/od.php:142
 msgid "Bekijk thema"
 msgstr ""
 
-#: assets/json.php:147 assets/od.php:146
+#: assets/json.php:140 assets/od.php:143
 msgid "thema bijwerken"
 msgstr ""
 
-#: assets/json.php:148 assets/od.php:147
+#: assets/json.php:141 assets/od.php:144
 msgid "thema toevoegen"
 msgstr ""
 
-#: assets/json.php:149 assets/od.php:148
+#: assets/json.php:142 assets/od.php:145
 msgid "Nieuwe thema"
 msgstr ""
 
-#: assets/json.php:150 assets/od.php:149
+#: assets/json.php:143 assets/od.php:146
 msgid "Zoek thema"
 msgstr ""
 
-#: assets/json.php:151 assets/od.php:150
+#: assets/json.php:144 assets/od.php:147
 msgid "Meest gebruikte thema's"
 msgstr ""
 
-#: assets/json.php:152 assets/json.php:184 assets/od.php:151
-#: assets/od.php:235
+#: assets/json.php:145 assets/od.php:148
 msgid "Scheid met komma's"
 msgstr ""
 
-#: assets/json.php:153 assets/od.php:152
+#: assets/json.php:146 assets/od.php:149
 msgid "thema toevoegen of verwijderen"
 msgstr ""
 
-#: assets/json.php:154 assets/json.php:186 assets/od.php:153
-#: assets/od.php:237
+#: assets/json.php:147 assets/od.php:150
 msgid "Kies uit de meest gebruikte"
 msgstr ""
 
-#: assets/json.php:155 assets/json.php:187 assets/od.php:154
-#: assets/od.php:238
+#: assets/json.php:148 assets/od.php:151
 msgid "Niet gevonden"
 msgstr ""
 
-#: assets/json.php:173 assets/json.php:174 assets/json.php:175
-#: assets/json.php:193 assets/od.php:224 assets/od.php:225 assets/od.php:226
-#: assets/od.php:244
-msgid "Jouw vraag"
-msgstr ""
-
-#: assets/json.php:176 assets/od.php:227
-msgid "Alle vragen"
-msgstr ""
-
-#: assets/json.php:177 assets/od.php:228
-msgid "Bewerk vraag"
-msgstr ""
-
-#: assets/json.php:178 assets/od.php:229
-msgid "Bekijk vraag"
-msgstr ""
-
-#: assets/json.php:179 assets/od.php:230
-msgid "vraag bijwerken"
-msgstr ""
-
-#: assets/json.php:180 assets/od.php:231
-msgid "vraag toevoegen"
-msgstr ""
-
-#: assets/json.php:181 assets/od.php:232
-msgid "Nieuwe vraag"
-msgstr ""
-
-#: assets/json.php:182 assets/od.php:233
-msgid "Zoek vraag"
-msgstr ""
-
-#: assets/json.php:183 assets/od.php:234
-msgid "Meest gebruikte vragen"
-msgstr ""
-
-#: assets/json.php:185 assets/od.php:236
-msgid "vraag toevoegen of verwijderen"
-msgstr ""
-
-#: assets/json.php:205 assets/json.php:210 assets/json.php:212
-#: assets/json.php:228 assets/json.php:232 assets/od.php:260
-#: assets/od.php:265 assets/od.php:267 assets/od.php:283 assets/od.php:287
+#: assets/json.php:166 assets/json.php:171 assets/json.php:173
+#: assets/json.php:189 assets/json.php:193 assets/od.php:221
+#: assets/od.php:226 assets/od.php:228 assets/od.php:244 assets/od.php:248
 msgid "Tipgevers"
 msgstr ""
 
-#: assets/json.php:206 assets/json.php:211 assets/json.php:465
-#: assets/od.php:261 assets/od.php:266 assets/od.php:524
+#: assets/json.php:167 assets/json.php:172 assets/json.php:426
+#: assets/od.php:222 assets/od.php:227 assets/od.php:485
 msgid "Tipgever"
 msgstr ""
 
-#: assets/json.php:213 assets/od.php:268
+#: assets/json.php:174 assets/od.php:229
 msgid "Alle tipgevers"
 msgstr ""
 
-#: assets/json.php:214 assets/od.php:269
+#: assets/json.php:175 assets/od.php:230
 msgid "Nieuwe tipgever toevoegen"
 msgstr ""
 
-#: assets/json.php:215 assets/od.php:270
+#: assets/json.php:176 assets/od.php:231
 msgid "Voeg nieuwe tipgever toe"
 msgstr ""
 
-#: assets/json.php:216 assets/od.php:271
+#: assets/json.php:177 assets/od.php:232
 msgid "Bewerk tipgever"
 msgstr ""
 
-#: assets/json.php:217 assets/od.php:272
+#: assets/json.php:178 assets/od.php:233
 msgid "Nieuwe tipgever"
 msgstr ""
 
-#: assets/json.php:218 assets/od.php:273
+#: assets/json.php:179 assets/od.php:234
 msgid "Bekijk tipgever"
 msgstr ""
 
-#: assets/json.php:219 assets/od.php:274
+#: assets/json.php:180 assets/od.php:235
 msgid "Zoek tipgever"
 msgstr ""
 
-#: assets/json.php:220 assets/od.php:275
+#: assets/json.php:181 assets/od.php:236
 msgid "Geen tipgever gevonden"
 msgstr ""
 
-#: assets/json.php:221 assets/od.php:276
+#: assets/json.php:182 assets/od.php:237
 msgid "Geen tipgever gevonden in de prullenbak"
 msgstr ""
 
-#: assets/json.php:222 assets/od.php:193 assets/od.php:277
+#: assets/json.php:183 assets/od.php:190 assets/od.php:238
 msgid "Uitgelichte afbeelding"
 msgstr ""
 
-#: assets/json.php:223 assets/od.php:194 assets/od.php:278
+#: assets/json.php:184 assets/od.php:191 assets/od.php:239
 msgid "Overzichten"
 msgstr ""
 
-#: assets/json.php:224 assets/od.php:195 assets/od.php:279
+#: assets/json.php:185 assets/od.php:192 assets/od.php:240
 msgid "Bijbehorende bestanden"
 msgstr ""
 
-#: assets/json.php:252 assets/od.php:311
+#: assets/json.php:213 assets/od.php:272
 msgid ""
 "Extra content: layout-instellingen voor de inleiding, goede voorbeelden, "
 "waarom werkt dit"
 msgstr ""
 
-#: assets/json.php:256 assets/od.php:315
+#: assets/json.php:217 assets/od.php:276
 msgid "Soort inleiding"
 msgstr ""
 
-#: assets/json.php:259 assets/od.php:318
+#: assets/json.php:220 assets/od.php:279
 msgid ""
 "Wil je een inleiding met een grote foto of een aantal opsommingen onder "
 "elkaar?"
 msgstr ""
 
-#: assets/json.php:268 assets/od.php:327
+#: assets/json.php:229 assets/od.php:288
 msgid "Geen foto"
 msgstr ""
 
-#: assets/json.php:269 assets/od.php:328
+#: assets/json.php:230 assets/od.php:289
 msgid "Grote foto naast de tekst"
 msgstr ""
 
-#: assets/json.php:270 assets/od.php:329
+#: assets/json.php:231 assets/od.php:290
 msgid "Lijstje met opsommingen en kleine foto's"
 msgstr ""
 
-#: assets/json.php:279 assets/od.php:338
+#: assets/json.php:240 assets/od.php:299
 msgid "Grote foto"
 msgstr ""
 
-#: assets/json.php:311 assets/od.php:370
+#: assets/json.php:272 assets/od.php:331
 msgid "Lijstjes met kleine foto"
 msgstr ""
 
-#: assets/json.php:334 assets/od.php:393
+#: assets/json.php:295 assets/od.php:354
 msgid "Nieuwe regel"
 msgstr ""
 
-#: assets/json.php:338 assets/od.php:397
+#: assets/json.php:299 assets/od.php:358
 msgid "Bijbehorende foto"
 msgstr ""
 
-#: assets/json.php:362 assets/json.php:422 assets/od.php:421
-#: assets/od.php:481
+#: assets/json.php:323 assets/json.php:383 assets/od.php:382
+#: assets/od.php:442
 msgid "Titel"
 msgstr ""
 
-#: assets/json.php:383 assets/od.php:442
+#: assets/json.php:344 assets/od.php:403
 msgid "Lijstje"
 msgstr ""
 
-#: assets/json.php:386 assets/od.php:445
+#: assets/json.php:347 assets/od.php:406
 msgid "Voer alsjeblieft alleen lijstjes in."
 msgstr ""
 
-#: assets/json.php:403 assets/od.php:462
+#: assets/json.php:364 assets/od.php:423
 msgid "Goed voorbeeld"
 msgstr ""
 
-#: assets/json.php:418 assets/od.php:477
+#: assets/json.php:379 assets/od.php:438
 msgid "Voeg voorbeeld toe"
 msgstr ""
 
-#: assets/json.php:443 assets/od.php:502
+#: assets/json.php:404 assets/od.php:463
 msgid "Tekst"
 msgstr ""
 
-#: assets/json.php:468 assets/od.php:527
+#: assets/json.php:429 assets/od.php:488
 msgid "Selecteer één uit de lijst of voer een nieuwe naam in"
 msgstr ""
 
-#: assets/json.php:489 assets/od.php:548
+#: assets/json.php:450 assets/od.php:509
 msgid "Naam van de tipgever"
 msgstr ""
 
-#: assets/json.php:505 assets/od.php:564
+#: assets/json.php:466 assets/od.php:525
 msgid "Functie van de tipgever"
 msgstr ""
 
-#: assets/json.php:526 assets/od.php:585
+#: assets/json.php:487 assets/od.php:546
 msgid "Afbeelding"
 msgstr ""
 
-#: assets/json.php:553 assets/od.php:612
+#: assets/json.php:514 assets/od.php:573
 msgid "Waarom werkt dit?"
 msgstr ""
 
-#: assets/json.php:575 assets/od.php:634
+#: assets/json.php:536 assets/od.php:595
 msgid "Onderzoek: inleiding"
 msgstr ""
 
-#: assets/json.php:597 assets/od.php:656
+#: assets/json.php:558 assets/od.php:617
 msgid "Vraag 1 - titel"
 msgstr ""
 
-#: assets/json.php:619 assets/od.php:678
+#: assets/json.php:580 assets/od.php:639
 msgid "Vraag 1 - cijfer"
 msgstr ""
 
-#: assets/json.php:643 assets/od.php:702
+#: assets/json.php:604 assets/od.php:663
 msgid "Vraag 1 - antwoord"
 msgstr ""
 
-#: assets/json.php:666 assets/od.php:725
+#: assets/json.php:627 assets/od.php:686
 msgid "Vraag 2 - titel"
 msgstr ""
 
-#: assets/json.php:688 assets/od.php:747
+#: assets/json.php:649 assets/od.php:708
 msgid "Vraag 2 - cijfer"
 msgstr ""
 
-#: assets/json.php:712 assets/od.php:771
+#: assets/json.php:673 assets/od.php:732
 msgid "Vraag 2 - antwoord"
 msgstr ""
 
-#: assets/json.php:735 assets/od.php:794
+#: assets/json.php:696 assets/od.php:755
 msgid "Vraag 3 - titel"
 msgstr ""
 
-#: assets/json.php:757 assets/od.php:816
+#: assets/json.php:718 assets/od.php:777
 msgid "Vraag 3 - cijfer"
 msgstr ""
 
-#: assets/json.php:781 assets/od.php:840
+#: assets/json.php:742 assets/od.php:801
 msgid "Vraag 3 - antwoord"
 msgstr ""
 
-#: assets/json.php:804 assets/od.php:863
+#: assets/json.php:765 assets/od.php:824
 msgid "Onderzoek: conclusie"
 msgstr ""
 
-#: assets/json.php:857 assets/od.php:916
+#: assets/json.php:818 assets/od.php:877
 msgid "Tip-nummer"
 msgstr ""
 
-#: assets/json.php:987 assets/od.php:1046
+#: assets/json.php:948 assets/od.php:1007
 msgid "Nuttige links"
 msgstr ""
 
-#: assets/json.php:990 assets/od.php:1049
+#: assets/json.php:951 assets/od.php:1010
 msgid "Geen linkbeschrijving ingevoerd"
 msgstr ""
 
-#: assets/json.php:1006 assets/od.php:1065
+#: assets/json.php:967 assets/od.php:1026
 msgid "URL"
 msgstr ""
 
-#: assets/json.php:1022 assets/od.php:1081
+#: assets/json.php:983 assets/od.php:1042
 msgid "Link: icoon"
 msgstr ""
 
-#: assets/json.php:1044 assets/od.php:1103
+#: assets/json.php:1005 assets/od.php:1064
 msgid "Link: Titel"
 msgstr ""
 
-#: assets/json.php:1065 assets/od.php:1124
+#: assets/json.php:1026 assets/od.php:1085
 msgid "Link: beschrijving"
 msgstr ""
 
-#: assets/json.php:1086 assets/od.php:1145
+#: assets/json.php:1047 assets/od.php:1106
 msgid "Link: CTA"
 msgstr ""
 
-#: assets/json.php:1107 assets/od.php:1166
+#: assets/json.php:1068 assets/od.php:1127
 msgid "Link: hreflang"
 msgstr ""
 
-#: assets/json.php:1155 assets/od.php:1214
+#: assets/json.php:1116 assets/od.php:1175
 msgid "Functietitel"
 msgstr ""
 
-#: assets/json.php:1175 assets/od.php:1234
+#: assets/json.php:1136 assets/od.php:1195
 msgid "Foto"
 msgstr ""
 
-#: assets/json.php:1200 assets/od.php:1259
+#: assets/json.php:1161 assets/od.php:1220
 msgid "E-mailadres"
 msgstr ""
 
-#: assets/json.php:1219 assets/od.php:1278
+#: assets/json.php:1180 assets/od.php:1239
 msgid "Telefoonnummer"
 msgstr ""
 
-#: assets/json.php:1591 assets/od.php:1650
+#: assets/json.php:1552 assets/od.php:1611
 msgid "Titel op 404-pagina"
 msgstr ""
 
-#: assets/json.php:1612 assets/od.php:1671
+#: assets/json.php:1573 assets/od.php:1632
 msgid "Beschrijving op 404-pagina"
 msgstr ""
 
-#: assets/multisite-user-sync.php:35
+#: assets/multisite-user-sync.php:37
 msgid "Every one minute"
 msgstr ""
 
-#: assets/od.php:140 assets/od.php:141 assets/od.php:142 assets/od.php:160
+#: assets/od.php:137 assets/od.php:138 assets/od.php:139 assets/od.php:157
 msgid "Tip-thema's"
 msgstr ""
 
-#: assets/od.php:176 assets/od.php:181 assets/od.php:183 assets/od.php:199
-#: assets/od.php:203
+#: assets/od.php:173 assets/od.php:178 assets/od.php:180 assets/od.php:196
+#: assets/od.php:200
 msgid "Speelsets"
 msgstr ""
 
-#: assets/od.php:177 assets/od.php:182
+#: assets/od.php:174 assets/od.php:179
 msgid "Speelset"
 msgstr ""
 
-#: assets/od.php:184
+#: assets/od.php:181
 msgid "Alle speelsets"
 msgstr ""
 
-#: assets/od.php:185
+#: assets/od.php:182
 msgid "Nieuwe speelset toevoegen"
 msgstr ""
 
-#: assets/od.php:186
+#: assets/od.php:183
 msgid "Voeg nieuwe speelset toe"
 msgstr ""
 
-#: assets/od.php:187
+#: assets/od.php:184
 msgid "Bewerk speelset"
 msgstr ""
 
-#: assets/od.php:188
+#: assets/od.php:185
 msgid "Nieuwe speelset"
 msgstr ""
 
-#: assets/od.php:189
+#: assets/od.php:186
 msgid "Bekijk speelset"
 msgstr ""
 
-#: assets/od.php:190
+#: assets/od.php:187
 msgid "Zoek speelset"
 msgstr ""
 
-#: assets/od.php:191
+#: assets/od.php:188
 msgid "Geen speelset gevonden"
 msgstr ""
 
-#: assets/od.php:192
+#: assets/od.php:189
 msgid "Geen speelset gevonden in de prullenbak"
 msgstr ""
 
-#: functions.php:197
+#: author.php:20
+#, php-format
+msgctxt "Description author archive"
+msgid "Posts by %s."
+msgstr ""
+
+#: functions.php:194
 msgctxt "menu location"
 msgid "Menu in header"
 msgstr ""
 
-#: functions.php:198
+#: functions.php:195
 msgctxt "menu location"
 msgid "Menu in footer"
 msgstr ""
 
-#: functions.php:259
+#: functions.php:256
 #, php-format
 msgctxt "Alt-tekst op logo"
 msgid "Logo %s"
 msgstr ""
 
-#: functions.php:267
+#: functions.php:264
 msgctxt "skiplinks"
 msgid "Jump to main content"
 msgstr ""
 
-#: functions.php:269
+#: functions.php:266
 msgctxt "skiplinks"
 msgid "Jump to main navigation"
 msgstr ""
 
-#: functions.php:270
+#: functions.php:267
 msgctxt "searchform label"
 msgid "Enter a keyword to search"
 msgstr ""
 
-#: functions.php:271
+#: functions.php:268
 msgctxt "searchform placeholder"
 msgid "Search..."
 msgstr ""
 
-#: functions.php:272
+#: functions.php:269
 msgctxt "searchform button label"
 msgid "Search"
 msgstr ""
 
-#: functions.php:302 functions.php:472
+#: functions.php:299 functions.php:469
 msgid "Wit"
 msgstr ""
 
-#: functions.php:307 functions.php:477
+#: functions.php:304 functions.php:474
 msgid "Zwart"
 msgstr ""
 
-#: functions.php:312
+#: functions.php:309
 msgid "GC Groen"
 msgstr ""
 
-#: functions.php:317
+#: functions.php:314
 msgid "GC Dark Blue"
 msgstr ""
 
-#: functions.php:322
+#: functions.php:319
 msgid "GC Pantybrown"
 msgstr ""
 
-#: functions.php:327
+#: functions.php:324
 msgid "GC Dark Purple"
 msgstr ""
 
-#: functions.php:332 functions.php:367
+#: functions.php:329 functions.php:364
 msgid "GC Blue"
 msgstr ""
 
-#: functions.php:337
+#: functions.php:334
 msgid "GC Pink"
 msgstr ""
 
-#: functions.php:342
+#: functions.php:339
 msgid "GC Orange"
 msgstr ""
 
-#: functions.php:347
+#: functions.php:344
 msgid "GC Cyan"
 msgstr ""
 
-#: functions.php:352 functions.php:357
+#: functions.php:349 functions.php:354
 msgid "Inclusie Orange"
 msgstr ""
 
-#: functions.php:362
+#: functions.php:359
 msgid "NLDS Purplish"
 msgstr ""
 
-#: functions.php:372
+#: functions.php:369
 msgid "GC Blue Safe"
 msgstr ""
 
-#: functions.php:377
+#: functions.php:374
 msgid "GC acessible green"
 msgstr ""
 
-#: functions.php:382
+#: functions.php:379
 msgid "od-orange"
 msgstr ""
 
-#: functions.php:387
+#: functions.php:384
 msgid "od-orange-darker"
 msgstr ""
 
-#: functions.php:392 functions.php:482
+#: functions.php:389 functions.php:479
 msgid "GC Pantybrown Xtra Light"
 msgstr ""
 
-#: functions.php:511
+#: functions.php:508
 msgid "Larger"
 msgstr ""
 
-#: functions.php:516
+#: functions.php:513
 msgid "Extra large"
 msgstr ""
 
-#: functions.php:673
+#: functions.php:670
 msgctxt "Widget area"
 msgid "Footer widget left"
 msgstr ""
 
-#: functions.php:682
+#: functions.php:679
 msgctxt "Widget area"
 msgid "Footer widget right"
 msgstr ""
 
-#: functions.php:742
+#: functions.php:739
 msgid "Spotlight-blokken"
 msgstr ""
 
-#: functions.php:743
+#: functions.php:740
 msgid "Spotlight-blok"
 msgstr ""
 
-#: functions.php:744 functions.php:745
+#: functions.php:741 functions.php:742
 msgid "Spotlight"
 msgstr ""
 
-#: functions.php:746
+#: functions.php:743
 msgid "Alle spotlight-blokken"
 msgstr ""
 
-#: functions.php:748
+#: functions.php:745
 msgid "Spotlight-blok toevoegen"
 msgstr ""
 
-#: functions.php:749
+#: functions.php:746
 msgid "Spotlight-blok bewerken"
 msgstr ""
 
-#: functions.php:750
+#: functions.php:747
 msgid "Bewerk spotlight-blok"
 msgstr ""
 
-#: functions.php:751
+#: functions.php:748
 msgid "Nieuwe spotlight-blok"
 msgstr ""
 
-#: functions.php:753
+#: functions.php:750
 msgid "Bekijk spotlight-blok"
 msgstr ""
 
-#: functions.php:754
+#: functions.php:751
 msgid "Spotlight-blokken zoeken"
 msgstr ""
 
-#: functions.php:755
+#: functions.php:752
 msgid "Geen spotlight-blokken gevonden"
 msgstr ""
 
-#: functions.php:756
+#: functions.php:753
 msgid "Geen spotlight-blokken in de prullenbak"
 msgstr ""
 
-#: functions.php:761
+#: functions.php:758
 msgid "Hier voer je spotlight-blokken in."
 msgstr ""
 
-#: functions.php:884
+#: functions.php:895
 msgctxt "customizer"
 msgid "Gebruiker Centraal Instellingen"
 msgstr ""
 
-#: functions.php:885
+#: functions.php:896
 msgctxt "customizer"
 msgid ""
 "Selecteer hier het kleurenschema voor deze site. Je wijzigt hiermee de "
 "styling, logo en sommige functionaliteit van de site."
 msgstr ""
 
-#: functions.php:908
+#: functions.php:919
 msgctxt "customizer"
 msgid "Kies het kleurenschema"
 msgstr ""
 
-#: functions.php:1088
+#: functions.php:1099
 msgid "GC Kennisbank"
 msgstr ""
 
-#: functions.php:1233 functions.php:1378 taxonomy-speelset.php:80
-#: taxonomy-speelset.php:106 taxonomy-tipgever.php:43
-#: template-alle-tips.php:59
+#: functions.php:1245 functions.php:1393 template-alle-tips.php:59
 #, php-format
 msgctxt "Label tip-nummer"
 msgid "Tip %s"
 msgstr ""
 
-#: functions.php:1265
+#: functions.php:1277
 msgctxt "Mime-types"
 msgid "PNG"
 msgstr ""
 
-#: functions.php:1269 functions.php:1273
+#: functions.php:1281 functions.php:1285
 msgctxt "Mime-types"
 msgid "JPG"
 msgstr ""
 
-#: functions.php:1277
+#: functions.php:1289
 msgctxt "Mime-types"
 msgid "GIF"
 msgstr ""
 
-#: functions.php:1281 functions.php:1289
+#: functions.php:1293 functions.php:1301
 msgctxt "Mime-types"
 msgid "MP3"
 msgstr ""
 
-#: functions.php:1285
+#: functions.php:1297
 msgctxt "Mime-types"
 msgid "MOVIE"
 msgstr ""
 
-#: functions.php:1293
+#: functions.php:1305
 msgctxt "Mime-types"
 msgid "PDF"
 msgstr ""
 
-#: functions.php:1297 functions.php:1301
+#: functions.php:1309 functions.php:1313
 msgctxt "Mime-types"
 msgid "Word"
 msgstr ""
 
-#: functions.php:1305 functions.php:1309
+#: functions.php:1317 functions.php:1321
 msgctxt "Mime-types"
 msgid "Powerpoint"
 msgstr ""
 
-#: functions.php:1313 functions.php:1317
+#: functions.php:1325 functions.php:1329
 msgctxt "Mime-types"
 msgid "Excel"
 msgstr ""
 
-#: functions.php:1321
+#: functions.php:1333
 msgctxt "Mime-types"
 msgid "TXT"
 msgstr ""
 
-#: functions.php:1384 taxonomy-speelset.php:91 taxonomy-speelset.php:117
-#: taxonomy-tipgever.php:54
+#: functions.php:1401
 msgctxt "Toptiptekst bij tip"
 msgid "Toptip"
 msgstr ""
 
-#: functions.php:1398 single.php:52
+#: functions.php:1416 single.php:63
 msgctxt "Meta: value voor auteur"
 msgid "Author"
 msgstr ""
 
-#: functions.php:1421 single.php:80
+#: functions.php:1439 single.php:115
 #, php-format
 msgctxt "Meta voor event: label voor start- en eindtijd"
 msgid "%s - %s"
 msgstr ""
 
-#: functions.php:1426 single.php:85
+#: functions.php:1444 single.php:120
 msgctxt "Meta voor event: value voor start- en eindtijd"
 msgid "Times"
 msgstr ""
 
-#: functions.php:1435 functions.php:1439 single.php:105 single.php:109
+#: functions.php:1453 functions.php:1457 single.php:127 single.php:131
 msgctxt "Meta voor event: value voor geen plek meer beschikbaar"
 msgid "Fully booked"
 msgstr ""
 
-#: functions.php:1438 single.php:108
+#: functions.php:1456 single.php:130
 msgctxt "Meta voor event: label voor geen plek meer beschikbaar"
 msgid "Availability"
 msgstr ""
 
-#: functions.php:1449 single.php:116 single.php:125
+#: functions.php:1467 single.php:138 single.php:147
 msgctxt "Meta voor event: label voor locatie"
 msgid "Location"
 msgstr ""
 
-#: functions.php:1489
+#: functions.php:1507
 msgctxt "404 widget space"
 msgid "Widgetruimte op 404 pagina"
 msgstr ""
@@ -899,7 +869,7 @@ msgctxt "Block description"
 msgid "Tekst en plaatje naast elkaar"
 msgstr ""
 
-#: includes/events-manager-functions.php:93 single.php:98
+#: includes/events-manager-functions.php:93 single.php:157
 #, php-format
 msgid "%s attendee"
 msgid_plural "%s attendees"
@@ -917,11 +887,11 @@ msgstr[1] ""
 msgid "Other attendees"
 msgstr ""
 
-#: includes/events-manager-functions.php:194 single.php:203
+#: includes/events-manager-functions.php:194 single.php:230
 msgid "LinkedIn-profiel"
 msgstr ""
 
-#: includes/events-manager-functions.php:200 single.php:209
+#: includes/events-manager-functions.php:200 single.php:236
 msgid "Twitter-account"
 msgstr ""
 
@@ -1175,14 +1145,29 @@ msgctxt "Titel boven conclusie"
 msgid "Conclusie"
 msgstr ""
 
-#: single.php:97
-msgctxt "Meta voor event: label voor aanmeldingen"
-msgid "Aanmeldingen"
+#: single.php:55
+msgctxt "Meta: value voor publicatiedatum"
+msgid "Publish date"
 msgstr ""
 
-#: single.php:117
+#: single.php:78
+msgctxt "Meta: value voor categorie"
+msgid "Category"
+msgstr ""
+
+#: single.php:93
+msgctxt "Meta: value voor tag"
+msgid "Tag"
+msgstr ""
+
+#: single.php:139
 msgctxt "Meta voor event: label voor online"
 msgid "Online"
+msgstr ""
+
+#: single.php:156
+msgctxt "Meta voor event: label voor aanmeldingen"
+msgid "Aanmeldingen"
 msgstr ""
 
 #: template-events-overview.php:155 templates/partial/pagination.twig:8
@@ -1354,7 +1339,7 @@ msgid "Comments"
 msgstr ""
 
 #: templates/single-kb.twig:78
-msgid "comments for this post are closed"
+msgid "Comments for this post are closed."
 msgstr ""
 
 #: templates/single-tip.twig:28
