@@ -17,6 +17,9 @@ if ( isset( $wp_query->query_vars['author'] ) ) {
 	$author            = new Timber\User( $wp_query->query_vars['author'] );
 	$context['author'] = $author;
 	$context['title']  = $author->name();
+
+	// TODO: dit gedeelte moet via een nette layout gepresenteerd worden;
+	// zie section-authorbox.html.twig
 	if ($context['author']->auteursfoto_url || $context['publiek_telefoonnummer'] || $context['publiek_mailadres'] ) {
 
 		if ($context['author']->functiebeschrijving ) {
