@@ -77,21 +77,8 @@ if ( 'default' !== $methode ) {
 		while ( $the_query->have_posts() ) : $the_query->the_post();
 
 			$i ++;
-			$items[ $i ]['tip_nummer'] = sprintf( _x( 'Tip %s', 'Label tip-nummer', 'gctheme' ), get_field( 'tip-nummer', get_the_id() ) );
-			$items[ $i ]['type']       = get_post_type();
-			$items[ $i ]['post_type']  = get_post_type();
-			$items[ $i ]['post_title'] = od_wbvb_custom_post_title( get_the_title());
-			$items[ $i ]['url']        = get_permalink( get_the_id() );
-			$terms                     = get_the_terms( get_the_id(), 'tipthema' );
-			$items[ $i ]['cat']        = $terms[0]->name;
 
-			$is_toptip = get_post_meta( get_the_id(), 'is_toptip', true );
-			if ( $is_toptip ) {
-				$items[ $i ]['toptip']      = true;
-				$items[ $i ]['toptiptekst'] = _x( 'Toptip', 'Toptiptekst bij tip', 'gctheme' );
-			} else {
-				$items[ $i ]['toptip'] = false;
-			}
+			$items[ $i ] = prepare_card_content( $post );
 
 		endwhile;
 	endif;
@@ -101,24 +88,7 @@ if ( 'default' !== $methode ) {
 
 	foreach ( $poststemp as $post ) {
 		$i ++;
-
-		if ( $post->post_type == 'tips' ) {
-			$items[ $i ]['tip_nummer'] = sprintf( _x( 'Tip %s', 'Label tip-nummer', 'gctheme' ), get_field( 'tip-nummer', $post->ID ) );
-			$items[ $i ]['type']       = $post->post_type;
-			$items[ $i ]['post_type']  = $post->post_type;
-			$items[ $i ]['post_title'] = od_wbvb_custom_post_title( $post->post_title );
-			$items[ $i ]['url']        = get_permalink( $post );
-			$terms                     = get_the_terms( $post->ID, 'tipthema' );
-			$items[ $i ]['cat']        = $terms[0]->name;
-
-			$is_toptip = get_post_meta( $post->ID, 'is_toptip', true );
-			if ( $is_toptip ) {
-				$items[ $i ]['toptip']      = true;
-				$items[ $i ]['toptiptekst'] = _x( 'Toptip', 'Toptiptekst bij tip', 'gctheme' );
-			} else {
-				$items[ $i ]['toptip'] = false;
-			}
-		}
+		$items[ $i ] = prepare_card_content( $post );
 	}
 }
 
@@ -138,7 +108,6 @@ $context['author']['title'] = $archive->name;
 $context['author']['descr'] = ( $cat->description ? $cat->description : '' );
 
 // Set overview
-
 
 
 /*
