@@ -14,6 +14,17 @@
     @include ho-make-container($max-width-inner);
   }
 
+  .page__intro .entry-body,
+  .archive__descr {
+    padding: 3rem;
+    margin-top: 0;
+
+    @include bp-up(md){
+      padding-left: 5rem;
+      padding-right: 5rem;
+    }
+  }
+
   .author--full {
     @include gc-box-shadow();
   }
@@ -66,11 +77,15 @@
     }
   }
 
+  .grid {
+    @include ho-make-container($max-width-container);
+  }
+
 }
 
 // Events
 
-.page--overview-archive {
+.tax-tipthema {
   .page__intro {
     max-width: $max-width-content;
   }

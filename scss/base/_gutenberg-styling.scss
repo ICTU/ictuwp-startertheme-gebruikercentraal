@@ -12,7 +12,6 @@ Gutenberg corrections
 }
 
 .section--paragraph {
-
   p {
     margin-top: 1rem;
   }
@@ -63,6 +62,11 @@ Gutenberg corrections
     border: none;
     padding-top: 0;
   }
+}
+
+.wp-block-coblocks-gallery-masonry {
+  @include ho-make-container($max-width-inner);
+  margin-top: 2rem;
 }
 
 .wp-block-column {
