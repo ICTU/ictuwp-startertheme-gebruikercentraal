@@ -29,9 +29,6 @@ if ( ! defined( 'GC_SPOTLIGHT_CPT' ) ) {
 if ( ! defined( 'GC_TIPTHEMA' ) ) {
 	define( 'GC_TIPTHEMA', 'tipthema' );
 }
-if ( ! defined( 'GC_TIPVRAAG' ) ) {
-	define( 'GC_TIPVRAAG', 'tipvraag' );
-}
 if ( ! defined( 'OD_CITAATAUTEUR' ) ) {
 	define( 'OD_CITAATAUTEUR', 'tipgever' );
 }
@@ -828,11 +825,11 @@ function my_body_classes( $classes ) {
 			$classes[] = 'page--type-landing entry--type-landing';
 		}
 
-		if(get_field('gerelateerde_content_toevoegen')){
+		if ( get_field( 'gerelateerde_content_toevoegen' ) ) {
 			$classes[] = 'l-with-related';
 		}
 
-		if(get_field('downloads_tonen')){
+		if ( get_field( 'downloads_tonen' ) ) {
 			$classes[] = 'l-with-downloads';
 		}
 
@@ -1368,18 +1365,20 @@ function translate_posttype( $posttype ) {
 function prepare_card_content( $postitem ) {
 
 
-	$item          = [];
-	$postid        = $postitem->ID;
-	$item['title'] = get_the_title( $postid );
-	$item['descr'] = get_the_excerpt( $postid );
-	$item['type']  = get_post_type( $postid );
+	$item               = [];
+	$postid             = $postitem->ID;
+	$item['post_title'] = od_wbvb_custom_post_title( get_the_title( $postid ) );
+	$item['title']      = $item['post_title']; // dit is dubbelop en overbodig en meer dan nodig, maar in de twig-files wordt afwisselend 'title' en 'post_title' gebruikt. Dat laatste is de meest correcte vorm
+	$item['descr']      = get_the_excerpt( $postid );
+	$item['post_type']  = get_post_type( $postid );
+	$item['type']       = $item['post_type']; // dit is dubbelop en overbodig en meer dan nodig, maar in de twig-files wordt afwisselend 'type' en 'post_type' gebruikt. Dat laatste is de meest correcte vorm
 	$item['post_date']  = get_the_time( get_option( 'date_format' ), $postid );
-	$item['url']   = get_the_permalink( $postid );
-	$image         = get_the_post_thumbnail( $postid, 'large', [] );
-	$item['img']   = $image;
-	$themakleuren  = [];
+	$item['url']        = get_the_permalink( $postid );
+	$image              = get_the_post_thumbnail( $postid, 'large', [] );
+	$item['img']        = $image;
+	$themakleuren       = [];
 
-	if ( 'tips' == $item['type'] ) {
+	if ( 'tips' == $item['post_type'] ) {
 
 		// zorgen dat de titel netjes afgebroken wordt binnen de smalle ruimte van het kaartje
 		$item['title'] = od_wbvb_custom_post_title( get_the_title( $postid ) );
@@ -1390,7 +1389,9 @@ function prepare_card_content( $postitem ) {
 			$themakleuren = get_themakleuren();
 		}
 
-		$item['nr']     = sprintf( _x( 'Tip %s', 'Label tip-nummer', 'gctheme' ), get_post_meta( $postid, 'tip-nummer', true ) );
+		$item['tip_nummer'] = sprintf( _x( 'Tip %s', 'Label tip-nummer', 'gctheme' ), get_post_meta( $postid, 'tip-nummer', true ) );
+		$item['nr']         = $item['tip_nummer']; // dit is dubbelop en overbodig en meer dan nodig, maar in de twig-files wordt afwisselend 'nr' en 'tip_nummer' gebruikt. Dat laatste is de meest correcte vorm
+
 		$item['toptip'] = false;
 		$is_toptip      = get_post_meta( $postid, 'is_toptip', true );
 
@@ -1404,8 +1405,9 @@ function prepare_card_content( $postitem ) {
 		if ( isset( $themakleuren[ $taxonomie[0]->term_id ] ) ) {
 			$item['category'] = $themakleuren[ $taxonomie[0]->term_id ];
 		}
+		$item['cat']         = $item['category']; // dit is dubbelop en overbodig en meer dan nodig, maar in de twig-files wordt afwisselend 'cat' en 'category' gebruikt. De meest correcte vorm is: 'tipthema'
 
-	} elseif ( 'post' == $item['type'] ) {
+	} elseif ( 'post' == $item['post_type'] ) {
 
 		if ( $postitem->post_author ) {
 			$item['meta'][] = [
@@ -1421,7 +1423,7 @@ function prepare_card_content( $postitem ) {
 		];
 
 
-	} elseif ( 'event' == $item['type'] ) {
+	} elseif ( 'event' == $item['post_type'] ) {
 
 		$event_start_date     = get_post_meta( $postid, '_event_start_date', true );
 		$event_start_time     = get_post_meta( $postid, '_event_start_time', true );

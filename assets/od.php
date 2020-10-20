@@ -18,9 +18,6 @@ if ( ! defined( 'GC_TIP_CPT' ) ) {
 if ( ! defined( 'GC_TIPTHEMA' ) ) {
 	define( 'GC_TIPTHEMA', 'tipthema' );
 }
-if ( ! defined( 'GC_TIPVRAAG' ) ) {
-	define( 'GC_TIPVRAAG', 'tipvraag' );
-}
 if ( ! defined( 'GC_ODSPEELSET' ) ) {
 	define( 'GC_ODSPEELSET', 'speelset' );
 }
@@ -217,42 +214,6 @@ if ( ! class_exists( 'ICTUWP_GC_OD_registerposttypes' ) ) :
 			];
 
 			register_taxonomy( GC_ODSPEELSET, [ GC_TIP_CPT ], $args );
-
-			// ---------------------------------------------------------------------------------------------------
-
-			$labels = [
-				"name"                       => __( "Jouw vraag", 'gctheme' ),
-				"label"                      => __( "Jouw vraag", 'gctheme' ),
-				"menu_name"                  => __( "Jouw vraag", 'gctheme' ),
-				"all_items"                  => __( "Alle vragen", 'gctheme' ),
-				"edit_item"                  => __( "Bewerk vraag", 'gctheme' ),
-				"view_item"                  => __( "Bekijk vraag", 'gctheme' ),
-				"update_item"                => __( "vraag bijwerken", 'gctheme' ),
-				"add_new_item"               => __( "vraag toevoegen", 'gctheme' ),
-				"new_item_name"              => __( "Nieuwe vraag", 'gctheme' ),
-				"search_items"               => __( "Zoek vraag", 'gctheme' ),
-				"popular_items"              => __( "Meest gebruikte vragen", 'gctheme' ),
-				"separate_items_with_commas" => __( "Scheid met komma's", 'gctheme' ),
-				"add_or_remove_items"        => __( "vraag toevoegen of verwijderen", 'gctheme' ),
-				"choose_from_most_used"      => __( "Kies uit de meest gebruikte", 'gctheme' ),
-				"not_found"                  => __( "Niet gevonden", 'gctheme' ),
-			];
-
-			$args = [
-				"labels"            => $labels,
-				"hierarchical"      => true,
-				"label"             => __( "Jouw vraag", 'gctheme' ),
-				"show_ui"           => true,
-				"query_var"         => true,
-				'show_in_rest'      => true,
-				// Needed for tax to appear in Gutenberg editor.
-				"rewrite"           => [
-					'slug'       => GC_TIPVRAAG,
-					'with_front' => true,
-				],
-				"show_admin_column" => false,
-			];
-			register_taxonomy( GC_TIPVRAAG, [ GC_TIP_CPT ], $args );
 
 			//------------------------------------------------------------------------------------------------------
 
@@ -2011,6 +1972,7 @@ if ( ! function_exists( 'ICTUWP_OD_change_tip_permalinks ' ) ) {
 				}
 			}
 		}
+
 		return $value;
 	}
 }
@@ -2028,8 +1990,8 @@ function od_modify_taxonomy_query( $query ) {
 
 	if ( ! is_admin() && $query->is_main_query() ) {
 
-		if ( ( is_tax( OD_CITAATAUTEUR ) ) || ( is_tax( GC_ODSPEELSET ) ) ) {
-			// geen pagination voor tipgevers of speelset overzichten
+		if ( ( is_tax( OD_CITAATAUTEUR ) ) || ( is_tax( GC_ODSPEELSET ) ) || ( is_tax( GC_TIPTHEMA ) ) ) {
+			// geen pagination voor tipgevers of speelset overzichten of tipthema's
 			$query->set( 'posts_per_page', - 1 );
 
 			return $query;

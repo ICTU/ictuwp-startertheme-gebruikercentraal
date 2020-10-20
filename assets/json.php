@@ -27,13 +27,6 @@ if ( ! defined( 'GC_TIP_CPT' ) ) {
 if ( ! defined( 'GC_TIPTHEMA' ) ) {
 	define( 'GC_TIPTHEMA', 'tipthema' );
 }
-if ( ! defined( 'GC_TIPVRAAG' ) ) {
-	define( 'GC_TIPVRAAG', 'tipvraag' );
-}
-// Jouw Organisatie wordt niet meer gebruikt
-//	if ( ! defined( 'GC_TIPORGANISATIE' ) ) {
-//		define( 'GC_TIPORGANISATIE', 'tiporganisatie' );
-//	}
 if ( ! defined( 'OD_CITAATAUTEUR' ) ) {
 	define( 'OD_CITAATAUTEUR', 'tipgever' );
 }
@@ -166,38 +159,6 @@ if ( ! class_exists( 'ICTUWP_GC_OD_registerposttypes' ) ) :
 				"show_admin_column" => false,
 			);
 			register_taxonomy( GC_TIPTHEMA, array( GC_TIP_CPT ), $args );
-
-			//------------------------------------------------------------------------------------------------------
-
-			$labels = array(
-				"name"                       => __( "Jouw vraag", "ictuwp-plugin-optimaaldigitaal" ),
-				"label"                      => __( "Jouw vraag", "ictuwp-plugin-optimaaldigitaal" ),
-				"menu_name"                  => __( "Jouw vraag", "ictuwp-plugin-optimaaldigitaal" ),
-				"all_items"                  => __( "Alle vragen", "ictuwp-plugin-optimaaldigitaal" ),
-				"edit_item"                  => __( "Bewerk vraag", "ictuwp-plugin-optimaaldigitaal" ),
-				"view_item"                  => __( "Bekijk vraag", "ictuwp-plugin-optimaaldigitaal" ),
-				"update_item"                => __( "vraag bijwerken", "ictuwp-plugin-optimaaldigitaal" ),
-				"add_new_item"               => __( "vraag toevoegen", "ictuwp-plugin-optimaaldigitaal" ),
-				"new_item_name"              => __( "Nieuwe vraag", "ictuwp-plugin-optimaaldigitaal" ),
-				"search_items"               => __( "Zoek vraag", "ictuwp-plugin-optimaaldigitaal" ),
-				"popular_items"              => __( "Meest gebruikte vragen", "ictuwp-plugin-optimaaldigitaal" ),
-				"separate_items_with_commas" => __( "Scheid met komma's", "ictuwp-plugin-optimaaldigitaal" ),
-				"add_or_remove_items"        => __( "vraag toevoegen of verwijderen", "ictuwp-plugin-optimaaldigitaal" ),
-				"choose_from_most_used"      => __( "Kies uit de meest gebruikte", "ictuwp-plugin-optimaaldigitaal" ),
-				"not_found"                  => __( "Niet gevonden", "ictuwp-plugin-optimaaldigitaal" ),
-			);
-
-			$args = array(
-				"labels"            => $labels,
-				"hierarchical"      => true,
-				"label"             => __( "Jouw vraag", "ictuwp-plugin-optimaaldigitaal" ),
-				"show_ui"           => true,
-				"query_var"         => true,
-				'show_in_rest'      => true, // Needed for tax to appear in Gutenberg editor.
-				"rewrite"           => array( 'slug' => GC_TIPVRAAG, 'with_front' => true ),
-				"show_admin_column" => false,
-			);
-			register_taxonomy( GC_TIPVRAAG, array( GC_TIP_CPT ), $args );
 
 			//------------------------------------------------------------------------------------------------------
 
