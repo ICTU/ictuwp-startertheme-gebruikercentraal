@@ -9,6 +9,7 @@
  * @since    Timber 0.1
  */
 
+global $posts;
 global $wp_query;
 
 $context          = Timber::context();
