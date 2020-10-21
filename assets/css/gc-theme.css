@@ -2,7 +2,7 @@
 /*
  * Front-end styles voor GC-theme
  * Author: Tamara, Mark, Paul
- * Version: 5.0.18
+ * Version: 5.0.19
  *
 */
 .has-white-color {
@@ -642,6 +642,62 @@ legend {
   .wpcf7-form .form-item .wpcf7-form-control-wrap input[type="search"],
   .wpcf7-form .form-item .wpcf7-form-control-wrap select, .wpcf7-form .form-item .wpcf7-form-control-wrap textarea {
     width: 100%; }
+
+/* Gravity Forms
+------------------------------------------------------ */
+.gform_wrapper {
+  padding-bottom: 4rem;
+  max-width: 760px;
+  margin-left: auto;
+  margin-right: auto; }
+  .gform_wrapper ul, .gform_wrapper ul li, .gform_wrapper ol, .gform_wrapper ol li {
+    list-style: none;
+    margin-left: 0;
+    padding-left: 0; }
+  .gform_wrapper .gfield {
+    margin-top: 2rem; }
+    .gform_wrapper .gfield label {
+      line-height: 2.6rem; }
+    @media (min-width: 700px) {
+      .gform_wrapper .gfield {
+        position: relative;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -ms-flex-wrap: wrap;
+            flex-wrap: wrap;
+        margin-top: 3rem; }
+        .gform_wrapper .gfield label {
+          width: 30%;
+          padding-right: 3rem;
+          text-align: right; }
+        .gform_wrapper .gfield .ginput_container,
+        .gform_wrapper .gfield .form-description {
+          width: 70%;
+          margin-left: auto; }
+          .gform_wrapper .gfield .ginput_container input[type="text"],
+          .gform_wrapper .gfield .ginput_container input[type="email"],
+          .gform_wrapper .gfield .ginput_container input[type="password"],
+          .gform_wrapper .gfield .ginput_container input[type="file"],
+          .gform_wrapper .gfield .ginput_container input[type="url"],
+          .gform_wrapper .gfield .ginput_container input[type="number"],
+          .gform_wrapper .gfield .ginput_container input[type="date"],
+          .gform_wrapper .gfield .ginput_container input[type="search"],
+          .gform_wrapper .gfield .ginput_container select, .gform_wrapper .gfield .ginput_container textarea,
+          .gform_wrapper .gfield .form-description input[type="text"],
+          .gform_wrapper .gfield .form-description input[type="email"],
+          .gform_wrapper .gfield .form-description input[type="password"],
+          .gform_wrapper .gfield .form-description input[type="file"],
+          .gform_wrapper .gfield .form-description input[type="url"],
+          .gform_wrapper .gfield .form-description input[type="number"],
+          .gform_wrapper .gfield .form-description input[type="date"],
+          .gform_wrapper .gfield .form-description input[type="search"],
+          .gform_wrapper .gfield .form-description select,
+          .gform_wrapper .gfield .form-description textarea {
+            width: 100%; } }
+  .gform_wrapper .validation_message,
+  .gform_wrapper .gform_footer {
+    padding-left: 30%; }
 
 /*
 Gutenberg corrections
@@ -6001,3 +6057,5 @@ h1 {
       clip: rect(0 0 0 0);
       clip: rect(0, 0, 0, 0);
       position: absolute; } }
+
+/*# sourceMappingURL=gc-theme.css.map */

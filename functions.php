@@ -8,7 +8,7 @@
  * @since   Timber 0.1
  */
 
-define( 'CHILD_THEME_VERSION', '5.0.18' );
+define( 'CHILD_THEME_VERSION', '5.0.19' );
 define( 'ID_MAINCONTENT', 'maincontent' );
 define( 'ID_MAINNAV', 'mainnav' );
 define( 'ID_ZOEKEN', 'zoeken' );
@@ -1131,6 +1131,7 @@ function append_block_wrappers( $block_content, $block ) {
 				break;
 			case 'core/list':
 			case 'core/paragraph':
+			case 'core/quote':
 			case 'paragraph':
 				$className = 'paragraph';
 				break;
