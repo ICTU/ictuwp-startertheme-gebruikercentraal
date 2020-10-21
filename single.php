@@ -217,10 +217,7 @@ function attendeelist_get_the_bookingpersonname( $theobject ) {
 					$xtra = '<span itemprop="memberOf" class="additionalinfo">' . esc_html( trim( $bookinginfo['organisation'] ) ) . '</span>';
 				}
 
-				if ( $countryinfo['value'] && $countryinfo['value'] != 'none selected' ) {
-					if ( $xtra !== '' ) {
-						$xtra .= ', ';
-					}
+				if ( $countryinfo['value'] && ( $countryinfo['value'] != 'none selected' ) ) {
 					$xtra .= '<span class="additionalinfo" itemprop="nationality">' . esc_html( $countryinfo['value'] ) . '</span>';
 				}
 
