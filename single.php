@@ -46,27 +46,64 @@ $context['type']       = $post->post_type;
 
 if ( 'post' === $post->post_type ) {
 
-	// auteur vermelden
-	$context['meta'][] = [
-		'classname' => 'auteur',
-		'title'     => _x( 'Author', 'Meta: value voor auteur', 'gctheme' ),
-		'descr'     => get_the_author_meta( 'display_name', $timber_post->post_author ),
-	];
-
-	// de 'post_date' wordt gebruikt in de date-badge
+	// de 'post_date' wordt enigszins getoond in de date-badge, zonder jaar
 	// ter discussie staat nog of daar wel of geen jaar getoond moet worden
 	$context['post_date'] = get_the_time( get_option( 'date_format' ), get_the_id() );
 
 	// publicatiedatum voor berichten. Is met name van belang voor oudere berichten
 	$context['meta'][] = [
-		'title' => 'date',
-		'descr' => $context['post_date'],
+		'title'     => _x( 'Publish date', 'Meta: value voor publicatiedatum', 'gctheme' ),
+		'classname' => 'datum',
+		'descr'     => $context['post_date'],
 	];
+
+	// auteur vermelden
+	$author_archive_link = get_author_posts_url( $timber_post->post_author );
+	$context['meta'][]   = [
+		'classname' => 'auteur',
+		'title'     => _x( 'Author', 'Meta: value voor auteur', 'gctheme' ),
+		'descr'     => get_the_author_meta( 'display_name', $timber_post->post_author ),
+		'url'       => $author_archive_link,
+	];
+
+	$cat_for_post = get_the_terms( get_the_id(), 'category' );
+	$categories   = array();
+	if ( $cat_for_post && ! is_wp_error( $cat_for_post ) ) {
+		foreach ( $cat_for_post as $term ) {
+			$categories[] = '<a href="' . get_term_link( $term ) . '">' . $term->name . '</a>';
+		}
+	}
+	if ( $categories ) {
+		$context['meta'][] = [
+			'title'     => _x( 'Category', 'Meta: value voor categorie', 'gctheme' ),
+			'classname' => 'category',
+			'descr'     => implode( ', ', $categories ),
+		];
+	}
+	/*
+	 * datzelfde truukje zouden we ook kunnen doen voor de tags bij een bericht.
+	 * maar dat is te veel van het goede
+		$tag_for_post = get_the_terms( get_the_id(), 'post_tag' );
+		$tags         = array();
+		if ( $tag_for_post && ! is_wp_error( $tag_for_post ) ) {
+			foreach ( $tag_for_post as $term ) {
+				$tags[] = '<a href="' . get_term_link( $term ) . '">' . $term->name . '</a>';
+			}
+		}
+		if ( $tags ) {
+			$context['meta'][] = [
+				'title' => _x( 'Tag', 'Meta: value voor tag', 'gctheme' ),
+				'classname' => 'tag',
+				'descr' => implode( ', ', $tags ),
+			];
+		}
+	 */
+
 
 } elseif ( 'event' === $post->post_type ) {
 
-	$EM_Event              = em_get_event( $post->ID, 'post_id' );
-	$EM_Bookings           = $EM_Event->get_bookings();
+	$EM_Event    = em_get_event( $post->ID, 'post_id' );
+	$EM_Bookings = $EM_Event->get_bookings();
 
 	$event_start_datetime = strtotime( $EM_Event->event_start_date . ' ' . $EM_Event->event_start_time );
 	$event_end_datetime   = strtotime( $EM_Event->event_end_date . ' ' . $EM_Event->event_end_time );

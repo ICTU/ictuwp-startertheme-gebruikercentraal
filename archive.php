@@ -27,24 +27,16 @@ $templates = [
 $context = Timber::context();
 
 
-if ( is_day() ) {
-	$context['title'] = 'Archive: ' . get_the_date( 'D M Y' );
-} elseif ( is_month() ) {
-	$context['title'] = 'Archive: ' . get_the_date( 'M Y' );
-} elseif ( is_year() ) {
-	$context['title'] = 'Archive: ' . get_the_date( 'Y' );
-} elseif ( is_tag() ) {
-	$context['title'] = single_tag_title( '', FALSE );
-} elseif ( is_category() ) {
-	$context['title'] = single_cat_title( '', FALSE );
-	array_unshift( $templates, 'archive-' . get_query_var( 'cat' ) . '.twig' );
-} elseif ( is_post_type_archive() ) {
-	$context['title'] = post_type_archive_title( '', FALSE );
-	array_unshift( $templates, 'archive-' . get_post_type() . '.twig' );
-}
-
 // Set vars
 $context['title'] = get_the_archive_title();
+
+if ( is_day() ) {
+	$context['title']  = sprintf( _x( 'Posts for %s.', 'Archive title for date: dag', 'gctheme' ), get_the_date( get_option('date_format') ) );
+} elseif ( is_month() ) {
+	$context['title']  = sprintf( _x( 'Posts for %s.', 'Archive title for date', 'gctheme' ), get_the_date( 'F Y' ) );
+} elseif ( is_year() ) {
+	$context['title']  = sprintf( _x( 'Posts for %s.', 'Archive title for date', 'gctheme' ), get_the_date( 'Y' ) );
+}
 
 // If term archive
 if ( isset( $context['archive_term'] ) && ! empty( $context['archive_term']['descr'] ) ) {
@@ -83,9 +75,6 @@ if ( $context['pagetype'] === 'archive_tipthema' ) {
 	foreach ( $posts as $post ) {
 		$context['items'][] = prepare_card_content( $post );
 	}
-
-
-//	$context['items'] = new Timber\PostQuery();
 }
 
 if ( $taxonomy_name === OD_CITAATAUTEUR ) {

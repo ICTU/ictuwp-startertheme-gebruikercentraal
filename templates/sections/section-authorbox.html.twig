@@ -7,7 +7,7 @@
   <div class="author__content">
 
     <h2 class="author_title">
-      <a class="arrow-link" >
+      <a class="arrow-link" href="{{ function( 'get_author_posts_url', post.author.ID ) }}">
         <span class="arrow-link__text"><span class="visually-hidden">{{ _x('About', 'authorbox', 'gctheme') }}</span>{{ post.author.name }}</span>
       </a>
     </h2>

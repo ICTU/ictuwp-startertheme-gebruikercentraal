@@ -14,7 +14,6 @@
  * @since   Timber 0.2
  */
 
-
 $archive       = get_queried_object();
 $taxonomy_name = $archive->taxonomy;
 $context       = Timber::context();
@@ -38,6 +37,7 @@ $i = 0;
 foreach ( $posts as $post ) {
 	$i ++;
 	$items[ $i ] = prepare_card_content( $post );
+
 }
 
 $context['overview']['items']    = $items;
@@ -79,14 +79,6 @@ $fullname = explode( ' ', trim( $archive->name ) );
 
 // Set 4 column grid for tipgevers. Default is col-3
 $context['overview']['modifier'] = 'col-4';
-$context['overview']['title']    = 'Tips van ' . $fullname[0];
-
-/*
- *
-echo '<pre>';
-var_dump( $context['overview'] );
-echo '</pre>';
- */
 
 $templates = array(
 	'archive-tip-tax.twig',
