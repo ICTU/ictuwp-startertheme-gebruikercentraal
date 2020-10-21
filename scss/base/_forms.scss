@@ -294,4 +294,61 @@ legend {
   }
 }
 
+/* Gravity Forms
+------------------------------------------------------ */
 
+.gform_wrapper {
+  padding-bottom: 4rem;
+  max-width: $max-width-inner;
+  margin-left: auto;
+  margin-right: auto;
+
+  ul, ul li, ol, ol li {
+    list-style: none;
+    margin-left: 0;
+    padding-left: 0;
+  }
+
+  .gfield {
+    margin-top: 2rem;
+
+    label {
+      line-height: 2.6rem;
+    }
+
+    @include bp-up(md) {
+      position: relative;
+      display: flex;
+      flex-wrap: wrap;
+      margin-top: $gutter;
+
+      label {
+        width: 30%;
+        padding-right: $gutter;
+        text-align: right;
+      }
+
+      .ginput_container,
+      .form-description {
+        width: 70%;
+        margin-left: auto;
+
+        input[type="text"],
+        input[type="email"],
+        input[type="password"],
+        input[type="file"],
+        input[type="url"],
+        input[type="number"],
+        input[type="date"],
+        input[type="search"],
+        select, textarea {
+          width: 100%;
+        }
+      }
+    }
+  }
+  .validation_message,
+  .gform_footer {
+    padding-left: 30%;
+  }
+}
