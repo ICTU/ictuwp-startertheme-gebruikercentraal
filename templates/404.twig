@@ -14,15 +14,17 @@
       <section class="post__content">
         {% if content_404 %}
           <div class="post__body">
-            <p>{{ content_404 }}</p>
-
-            {{ content_404_search }}
-
+            <div class="section section--paragraph">
+              <p>{{ content_404 }}</p>
+            </div>
+            <div class="section section--paragraph">
+              {{ content_404_search }}
+            </div>
           </div>
         {% endif %}
 
         {% if widgets_404 %}
-          <div class="post__body">
+          <div class="post__body section section--paragraph">
             {{ widgets_404 }}
           </div>
         {% endif %}
