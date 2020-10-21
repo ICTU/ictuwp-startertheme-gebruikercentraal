@@ -1872,9 +1872,12 @@ if ( ! function_exists( 'ICTUWP_GC_OD_update_yoast_breadcrumb ' ) ) {
 		if ( is_home() || is_front_page() || is_front_page() ) {
 			// geen breadcrumb op de homepage
 			return [];
-		} elseif ( ( is_tax( GC_TIPTHEMA ) ) || ( is_tax( GC_ODSPEELSET ) ) || ( is_tax( OD_CITAATAUTEUR ) ) ) {
-			// voor de specifieke OD-taxonomieen ook het overzicht van alle links invoegen
+		} elseif ( is_tax( OD_CITAATAUTEUR ) ) {
+			// voor de tipgevers invoegen het overzicht van tipgevers
 			$optionpage = get_field( 'od_overzicht_alle_tipgevers', 'option' );
+		} elseif ( is_tax( GC_TIPTHEMA ) || is_tax( GC_ODSPEELSET ) ) {
+			// voor tipthema's en speelsets het totale tipkaartoverzicht invoegen
+			$optionpage = get_field( 'od_overzicht_alle_tips', 'option' );
 		} elseif ( is_singular( GC_TIP_CPT ) ) {
 			// uit siteopties de pagina ophalen die het overzicht is van alle links
 			$optionpage = get_field( 'od_overzicht_alle_tips', 'option' );
