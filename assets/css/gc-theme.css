@@ -1739,12 +1739,12 @@ h1 {
     .entry .section--overview .l-section-top {
       max-width: 760px; }
 
-.post .entry-content > .section:last-child,
-.entry .entry-content > .section:last-child {
+.post .entry-content > .section:not(.section--downloads):last-child,
+.entry .entry-content > .section:not(.section--downloads):last-child {
   padding-bottom: 5rem; }
   @media (min-width: 1100px) {
-    .post .entry-content > .section:last-child,
-    .entry .entry-content > .section:last-child {
+    .post .entry-content > .section:not(.section--downloads):last-child,
+    .entry .entry-content > .section:not(.section--downloads):last-child {
       padding-bottom: 8rem; } }
 
 .post .entry-body > .section--paragraph:first-child,
