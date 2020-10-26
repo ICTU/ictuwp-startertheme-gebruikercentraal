@@ -276,7 +276,7 @@ function watch() {
 
 
 exports.iconfont = gulp.series(makeFont, prodAll);
-exports.prod = gulp.series(cleanCSS, prod);
+exports.prod = gulp.series(prod);
 exports.styles = styles;
 exports.js = js;
 exports.sprites = makeSprites;

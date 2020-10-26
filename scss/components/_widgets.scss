@@ -1,0 +1,10 @@
+/*
+ * Layout for widgets.
+ * Each widget has a generic layout. Depending on the placement this layout can be altered.
+ */
+
+.widget_nav_menu .menu {
+  @include gc-fancy-list();
+
+  margin-top: 1.8rem;
+}

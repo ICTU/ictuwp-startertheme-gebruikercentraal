@@ -181,7 +181,15 @@ h1 {
 
 // Page types
 
-.page {
+.page,
+body[data-template='base.twig']{ //All pages that use the base twig template
+
+  .page__widgets { // Generic wrapper for widgets
+    border-top: .1rem solid $border-color;
+    margin-top: $gutter;
+    padding-top: $gutter;
+  }
+
   &--type-event {
     .page-content {
       padding-bottom: 0;
@@ -229,3 +237,5 @@ h1 {
     margin-bottom: -8rem;
   }
 }
+
+
