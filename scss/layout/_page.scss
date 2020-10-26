@@ -229,3 +229,34 @@ h1 {
     margin-bottom: -8rem;
   }
 }
+
+
+/* 404 page */
+
+.error404 {
+  .post__content {
+    @include ho-make-container($max-width-inner);
+  }
+
+  .searchform {
+    margin-top: $gutter;
+  }
+
+  .post__body + .post__body {
+    border-top: .1rem solid $border-color;
+    margin-top: $gutter;
+    padding-top: $gutter;
+
+    @include bp-up(sm){
+      display: flex;
+
+      .widget_media_image {
+        padding-right: $gutter / 2;
+      }
+
+      .widget_nav_menu {
+        padding-left: $gutter / 2;
+      }
+    }
+  }
+}

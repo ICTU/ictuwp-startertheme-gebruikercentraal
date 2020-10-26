@@ -1425,6 +1425,29 @@ h1 {
       margin-right: -3rem;
       margin-bottom: -8rem; } }
 
+/* 404 page */
+.error404 .post__content {
+  max-width: 760px;
+  margin-left: auto;
+  margin-right: auto; }
+
+.error404 .searchform {
+  margin-top: 3rem; }
+
+.error404 .post__body + .post__body {
+  border-top: 0.1rem solid #D1DFE3;
+  margin-top: 3rem;
+  padding-top: 3rem; }
+  @media (min-width: 560px) {
+    .error404 .post__body + .post__body {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex; }
+      .error404 .post__body + .post__body .widget_media_image {
+        padding-right: 1.5rem; }
+      .error404 .post__body + .post__body .widget_nav_menu {
+        padding-left: 1.5rem; } }
+
 .archive,
 .page--overview-archive {
   -webkit-box-shadow: 0.4rem 0.4rem 0 rgba(0, 0, 0, 0.15);
