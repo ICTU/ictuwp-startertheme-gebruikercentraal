@@ -1,3 +1,46 @@
+// For both single blog & event {
+
+.entry {
+  &--type-post,
+  &--type-event {
+    @include ho-make-container($max-width-inner);
+
+    .entry-header {
+      position: relative;
+      padding-left: 2.5rem;
+
+      .date-badge {
+        position: absolute;
+        left: 0;
+        top: 0;
+        margin-left: -3rem;
+      }
+
+      @include bp-up(sm) {
+        .date-badge {
+          margin-left: -5rem;
+        }
+      }
+
+      @include bp-up(lg) {
+        padding-left: 4rem;
+
+        .date-badge {
+          margin-left: -4rem;
+        }
+      }
+    }
+
+
+    .entry-content {
+      @include bp-up(sm) {
+        margin-top: 3rem;
+      }
+    }
+  }
+}
+
+
 // ========================================================================
 
 .event-bookings {
@@ -118,7 +161,7 @@
     }
   }
 
-  @include bp-up(md){
+  @include bp-up(md) {
     margin-top: 8rem;
   }
 }

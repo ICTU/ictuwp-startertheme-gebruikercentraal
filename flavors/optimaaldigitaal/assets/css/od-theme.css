@@ -1428,13 +1428,6 @@ h1 {
       margin-right: -3rem;
       margin-bottom: -8rem; } }
 
-/*
-  voor de pagina met het overzicht van alle tips
-  (page-template: .page-template-template-alle-tips)
-  de container voor de tipkaarten (dat is div.l-section-content binnen
-  section.section--overview.section--4col ) niet beperken tot 760px, maar
-  oprekken tot max 1280px
- */
 .archive,
 .page--overview-archive {
   -webkit-box-shadow: 0.4rem 0.4rem 0 rgba(0, 0, 0, 0.15);
@@ -1514,8 +1507,10 @@ h1 {
       .page--overview-archive .entry-content + .grid {
         margin-top: 7rem; } }
 
-.page--overview-archive .page__intro {
-  max-width: 960px; }
+.page-template-template-events-overview .page__intro {
+  max-width: 760px;
+  margin-left: auto;
+  margin-right: auto; }
 
 .archive__posts {
   margin-left: -2rem;
@@ -2721,6 +2716,30 @@ h1 {
       padding-right: 1.5rem; }
     .comment-form .email {
       padding-left: 1.5rem; } }
+
+.entry--type-post, .entry--type-event {
+  max-width: 760px;
+  margin-left: auto;
+  margin-right: auto; }
+  .entry--type-post .entry-header, .entry--type-event .entry-header {
+    position: relative;
+    padding-left: 2.5rem; }
+    .entry--type-post .entry-header .date-badge, .entry--type-event .entry-header .date-badge {
+      position: absolute;
+      left: 0;
+      top: 0;
+      margin-left: -3rem; }
+    @media (min-width: 560px) {
+      .entry--type-post .entry-header .date-badge, .entry--type-event .entry-header .date-badge {
+        margin-left: -5rem; } }
+    @media (min-width: 1100px) {
+      .entry--type-post .entry-header, .entry--type-event .entry-header {
+        padding-left: 4rem; }
+        .entry--type-post .entry-header .date-badge, .entry--type-event .entry-header .date-badge {
+          margin-left: -4rem; } }
+  @media (min-width: 560px) {
+    .entry--type-post .entry-content, .entry--type-event .entry-content {
+      margin-top: 3rem; } }
 
 .event-bookings {
   position: relative;
@@ -4958,7 +4977,8 @@ h1 {
   text-align: center;
   padding: .6rem .8rem;
   display: inline-block;
-  text-transform: lowercase; }
+  text-transform: lowercase;
+  max-width: 26rem; }
   .date-badge span:not(.visually-hidden) {
     display: block; }
   @media (min-width: 560px) {
@@ -6962,3 +6982,5 @@ h1 {
   @media (min-width: 1100px) {
     .manual-item__content {
       padding: 4rem 5rem; } }
+
+/*# sourceMappingURL=od-theme.css.map */

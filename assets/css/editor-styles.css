@@ -1720,7 +1720,8 @@
   text-align: center;
   padding: .6rem .8rem;
   display: inline-block;
-  text-transform: lowercase; }
+  text-transform: lowercase;
+  max-width: 26rem; }
   .date-badge span:not(.visually-hidden) {
     display: block; }
   @media (min-width: 560px) {
