@@ -1436,15 +1436,31 @@ function prepare_card_content( $postitem ) {
 
 		// als start-datum en eindatum op dezelfde dag
 		if ( $event_start_date === $event_end_date ) {
-			// dan start- en eindtijd tonen
-			$eventtimes = sprintf( _x( '%s - %s', 'Meta voor event: label voor start- en eindtijd', 'gctheme' ), date_i18n( get_option( 'time_format' ), $event_start_datetime ), date_i18n( get_option( 'time_format' ), $event_end_datetime ) );
-
 
 			$item['meta'][] = [
-				'classname' => 'times',
-				'title'     => _x( 'Times', 'Meta voor event: value voor start- en eindtijd', 'gctheme' ),
-				'descr'     => $eventtimes,
+				'title'     => _x( 'Event date', 'Meta: value voor evenementdatum', 'gctheme' ),
+				'classname' => 'datum',
+				'descr'     => date_i18n( get_option( 'date_format' ), $event_start_datetime ),
 			];
+
+
+			// dan start- en eindtijd tonen, als die nuttig zijn
+			if ( date_i18n( get_option( 'time_format' ), $event_start_datetime ) !== date_i18n( get_option( 'time_format' ), $event_end_datetime ) ) {
+				$eventtimes = sprintf( _x( '%s - %s', 'Meta voor event: label voor start- en eindtijd', 'gctheme' ), date_i18n( get_option( 'time_format' ), $event_start_datetime ), date_i18n( get_option( 'time_format' ), $event_end_datetime ) );
+				$item['meta'][] = [
+					'classname' => 'times',
+					'title'     => _x( 'Times', 'Meta voor event: value voor start- en eindtijd', 'gctheme' ),
+					'descr'     => $eventtimes,
+				];
+			}
+		} else {
+			$eventdates = sprintf( _x( '%s - %s', 'Meta voor event: label voor start- en eindtijd', 'gctheme' ), date_i18n( get_option( 'date_format' ), $event_start_datetime ), date_i18n( get_option( 'date_format' ), $event_end_datetime ) );
+			$item['meta'][] = [
+				'title'     => _x( 'Event date', 'Meta: value voor evenementdatum', 'gctheme' ),
+				'classname' => 'datum',
+				'descr'     => $eventdates,
+			];
+
 		}
 
 		if ( 'EM_Event' === get_class( $postitem ) ) {
