@@ -176,9 +176,9 @@ function gc_eventmanager_get_extended_bookingpersonname( $theobject ) {
 				}
 
 				if ( $countryinfo['value'] && $countryinfo['value'] != 'none selected' ) {
-					if ( $xtra !== '' ) {
-						$xtra .= ', ';
-					}
+//					if ( $xtra !== '' ) {
+//						$xtra .= ', ';
+//					}
 					$xtra .= '<span class="additionalinfo" itemprop="nationality">' . esc_html( $countryinfo['value'] ) . '</span>';
 				}
 
