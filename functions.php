@@ -1369,7 +1369,7 @@ function prepare_card_content( $postitem ) {
 
 	$item               = [];
 	$postid             = $postitem->ID;
-	$item['post_title'] = 'wahahahahaah ' . od_wbvb_custom_post_title( get_the_title( $postid ) );
+	$item['post_title'] = od_wbvb_custom_post_title( get_the_title( $postid ) );
 	$item['title']      = $item['post_title']; // dit is dubbelop en overbodig en meer dan nodig, maar in de twig-files wordt afwisselend 'title' en 'post_title' gebruikt. Dat laatste is de meest correcte vorm
 	$item['descr']      = get_the_excerpt( $postid );
 	$item['post_type']  = get_post_type( $postid );
