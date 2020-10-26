@@ -1,10 +1,15 @@
+{% if tip_nummer %}
+{% else %}
+  {% set tip_nummer = nr %}
+{% endif %}
+
 
 <div class="tipkaart tipkaart--{{ category|lower }}">
-  <a class="tipkaart__link" href="{{ url }}" aria-label="{{ nr }} {{ title }} (thema is {{ category }}) {{ toptiptekst }}">
+  <a class="tipkaart__link" href="{{ url }}" aria-label="{{ tip_nummer }} {{ title }} (thema is {{ category }}) {{ toptiptekst }}">
     {% if toptip %}
       <span class="tipkaart__toptip">{{ toptiptekst }}</span>
     {% endif %}
-    <span class="tipkaart__nummer">Tip {{ nr }}</span>
+    <span class="tipkaart__nummer">{{ tip_nummer }}</span>
     <h3 class="tipkaart__title">{{ title }}</h3>
 
     <div class="tipkaart__categorie">
