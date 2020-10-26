@@ -2000,7 +2000,7 @@ body[data-template='base.twig']-template-default .content {
         margin-left: -5rem; } }
     @media (min-width: 1100px) {
       .entry--type-post .entry-header, .entry--type-event .entry-header {
-        padding-left: 4rem; }
+        padding-left: 3rem; }
         .entry--type-post .entry-header .date-badge, .entry--type-event .entry-header .date-badge {
           margin-left: -4rem; } }
   @media (min-width: 560px) {
@@ -2016,6 +2016,8 @@ body[data-template='base.twig']-template-default .content {
   color: #fff;
   padding-top: 3rem;
   padding-bottom: 3rem;
+  padding-right: 3rem;
+  padding-left: 3rem;
   margin-top: 3rem; }
   .event-bookings:before {
     content: " ";
@@ -2154,6 +2156,18 @@ body[data-template='base.twig']-template-default .content {
         width: calc(50% - 1.5rem); }
         .attendees-list__list > li:nth-child(odd) {
           margin-right: 3rem; } }
+
+.single-event .content {
+  padding-bottom: 0; }
+  .single-event .content .section--paragraph:last-of-type {
+    padding-bottom: 7rem; }
+  @media (min-width: 1100px) {
+    .single-event .content {
+      padding-bottom: 0; } }
+
+.single-event #comments {
+  padding-right: 3rem;
+  padding-left: 3rem; }
 
 .post .entry-intro {
   font-family: "montserratsemibold", Helvetica, Arial, sans-serif; }
@@ -2414,7 +2428,7 @@ body[data-template='base.twig']-template-default .content {
         margin-left: -5rem; } }
     @media (min-width: 1100px) {
       .entry--type-post .entry-header, .entry--type-event .entry-header {
-        padding-left: 4rem; }
+        padding-left: 3rem; }
         .entry--type-post .entry-header .date-badge, .entry--type-event .entry-header .date-badge {
           margin-left: -4rem; } }
   @media (min-width: 560px) {
@@ -2430,6 +2444,8 @@ body[data-template='base.twig']-template-default .content {
   color: #fff;
   padding-top: 3rem;
   padding-bottom: 3rem;
+  padding-right: 3rem;
+  padding-left: 3rem;
   margin-top: 3rem; }
   .event-bookings:before {
     content: " ";
@@ -2568,6 +2584,18 @@ body[data-template='base.twig']-template-default .content {
         width: calc(50% - 1.5rem); }
         .attendees-list__list > li:nth-child(odd) {
           margin-right: 3rem; } }
+
+.single-event .content {
+  padding-bottom: 0; }
+  .single-event .content .section--paragraph:last-of-type {
+    padding-bottom: 7rem; }
+  @media (min-width: 1100px) {
+    .single-event .content {
+      padding-bottom: 0; } }
+
+.single-event #comments {
+  padding-right: 3rem;
+  padding-left: 3rem; }
 
 .page--type-homepage {
   background: #f2ebe4; }
@@ -6174,3 +6202,5 @@ body[data-template='base.twig']-template-default .content {
       clip: rect(0 0 0 0);
       clip: rect(0, 0, 0, 0);
       position: absolute; } }
+
+/*# sourceMappingURL=gc-theme.css.map */
