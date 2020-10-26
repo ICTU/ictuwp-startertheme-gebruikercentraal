@@ -91,5 +91,10 @@ en dan moeten we de tipnumemrs converteren naar een integer
 /* Restore original Post Data */
 wp_reset_postdata();
 
+// Inleiding
+if ( get_field( 'post_inleiding' ) ) {
+	$intro            = get_field( 'post_inleiding' );
+	$context['intro'] = wpautop( $intro );
+}
 
 Timber::render( [ 'template-alle-tips.twig', 'page.twig' ], $context );
