@@ -13,7 +13,7 @@
     padding: 3rem;
     margin-top: 0;
 
-    @include bp-up(md){
+    @include bp-up(md) {
       padding-left: 5rem;
       padding-right: 5rem;
     }
@@ -66,7 +66,7 @@
   .entry-content + .grid {
     margin-top: 5rem;
 
-    @include bp-up(md){
+    @include bp-up(md) {
       margin-top: 7rem;
     }
   }
@@ -222,3 +222,8 @@
   }
 }
 
+.page-template-template-alle-tips {
+  .grid {
+    margin-bottom: 7rem;
+  }
+}

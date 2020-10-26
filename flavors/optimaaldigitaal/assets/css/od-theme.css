@@ -1703,6 +1703,9 @@ body[data-template='base.twig']-template-default .content {
     background: #007BB0;
     border-color: #0095da; }
 
+.page-template-template-alle-tips .grid {
+  margin-bottom: 7rem; }
+
 /* 404 page */
 .error404[data-template='base.twig'] .page__header,
 .error404[data-template='base.twig'] .page__content {
