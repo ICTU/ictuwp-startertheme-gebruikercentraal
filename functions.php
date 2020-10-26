@@ -1369,12 +1369,12 @@ function prepare_card_content( $postitem ) {
 
 	$item               = [];
 	$postid             = $postitem->ID;
-	$item['post_title'] = od_wbvb_custom_post_title( get_the_title( $postid ) );
+	$item['post_title'] = 'wahahahahaah ' . od_wbvb_custom_post_title( get_the_title( $postid ) );
 	$item['title']      = $item['post_title']; // dit is dubbelop en overbodig en meer dan nodig, maar in de twig-files wordt afwisselend 'title' en 'post_title' gebruikt. Dat laatste is de meest correcte vorm
 	$item['descr']      = get_the_excerpt( $postid );
 	$item['post_type']  = get_post_type( $postid );
 	$item['type']       = $item['post_type']; // dit is dubbelop en overbodig en meer dan nodig, maar in de twig-files wordt afwisselend 'type' en 'post_type' gebruikt. Dat laatste is de meest correcte vorm
-	$item['post_date']  = get_the_time( get_option( 'date_format' ), $postid );
+	$item['post_date']  = get_the_date( 'Y-m-d', $postid );
 	$item['url']        = get_the_permalink( $postid );
 	$image              = get_the_post_thumbnail( $postid, 'large', [] );
 	$item['img']        = $image;

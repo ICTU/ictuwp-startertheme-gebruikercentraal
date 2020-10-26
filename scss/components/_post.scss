@@ -40,7 +40,7 @@
     }
   }
 
-  .entry-content > .section:last-child {
+  .entry-content > .section:not(.section--downloads):last-child {
     padding-bottom: 5rem;
 
     @include bp-up(lg) {
@@ -73,7 +73,6 @@
     }
   }
 }
-
 
 /*
  * Pagination
