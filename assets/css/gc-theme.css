@@ -1707,6 +1707,9 @@ body[data-template='base.twig']-template-default .content {
   margin-left: auto;
   margin-right: auto; }
 
+.error404[data-template='base.twig'] p + form {
+  margin-top: 2rem; }
+
 .error404[data-template='base.twig'] .page__widgets {
   background: url("/wp-content/themes/ictuwp-theme-gc2020/assets/images/avatars/huilende-hipster.svg") center top 30px no-repeat;
   background-size: 160px auto;
@@ -1717,9 +1720,10 @@ body[data-template='base.twig']-template-default .content {
     border-top: 0.1rem solid #D1DFE3; }
   @media (min-width: 700px) {
     .error404[data-template='base.twig'] .page__widgets {
-      padding-top: 0;
+      padding-top: 3rem;
       padding-left: 40%;
-      background-position: left 10% top 30px; } }
+      background-position: left 10% top 30px;
+      min-height: 35rem; } }
   @media (min-width: 1100px) {
     .error404[data-template='base.twig'] .page__widgets {
       background-size: 26% auto; } }

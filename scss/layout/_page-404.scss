@@ -7,6 +7,10 @@
     @include ho-make-container($max-width-inner);
   }
 
+  p + form {
+    margin-top: 2rem;
+  }
+
   .page__widgets {
     background: url('/wp-content/themes/ictuwp-theme-gc2020/assets/images/avatars/huilende-hipster.svg') center top 30px no-repeat;
     background-size: 160px auto;
@@ -18,10 +22,11 @@
       border-top: .1rem solid $border-color;
     }
 
-    @include bp-up(md){
-      padding-top: 0;
+    @include bp-up(md) {
+      padding-top: 3rem;
       padding-left: 40%;
       background-position: left 10% top 30px;
+      min-height: 35rem;
     }
 
     @include bp-up(lg){
