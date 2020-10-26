@@ -1286,7 +1286,7 @@ html {
   padding-right: 2rem;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
-  background: #fff;
+  background: #f2ebe4;
   padding-top: 6rem;
   padding-bottom: 3rem;
   position: relative;
@@ -1457,24 +1457,35 @@ h1 {
     -o-object-fit: cover;
        object-fit: cover; }
 
-.page--type-event .page-content {
+.page .page__widgets,
+body[data-template='base.twig'] .page__widgets {
+  border-top: 0.1rem solid #D1DFE3;
+  margin-top: 3rem;
+  padding-top: 3rem; }
+
+.page--type-event .page-content,
+body[data-template='base.twig']--type-event .page-content {
   padding-bottom: 0; }
 
-.page--type-homepage .page-content {
+.page--type-homepage .page-content,
+body[data-template='base.twig']--type-homepage .page-content {
   padding: 0;
   z-index: auto; }
 
-.page--type-homepage .content {
+.page--type-homepage .content,
+body[data-template='base.twig']--type-homepage .content {
   background: none;
   max-width: none;
   padding: 0; }
 
-.page--type-landing .content {
+.page--type-landing .content,
+body[data-template='base.twig']--type-landing .content {
   -webkit-box-shadow: 0.4rem 0.4rem 0 rgba(0, 0, 0, 0.15);
           box-shadow: 0.4rem 0.4rem 0 rgba(0, 0, 0, 0.15);
   padding: 0; }
 
-.page-template-default .content {
+.page-template-default .content,
+body[data-template='base.twig']-template-default .content {
   padding-bottom: 0; }
 
 .page-content > .section--spotlight {
@@ -1487,13 +1498,6 @@ h1 {
       margin-right: -3rem;
       margin-bottom: -8rem; } }
 
-/*
-  voor de pagina met het overzicht van alle tips
-  (page-template: .page-template-template-alle-tips)
-  de container voor de tipkaarten (dat is div.l-section-content binnen
-  section.section--overview.section--4col ) niet beperken tot 760px, maar
-  oprekken tot max 1280px
- */
 .archive,
 .page--overview-archive {
   -webkit-box-shadow: 0.4rem 0.4rem 0 rgba(0, 0, 0, 0.15);
@@ -1590,6 +1594,11 @@ h1 {
     max-width: 1280px;
     margin-left: auto;
     margin-right: auto; }
+
+.page-template-template-events-overview .page__intro {
+  max-width: 760px;
+  margin-left: auto;
+  margin-right: auto; }
 
 .tax-tipthema .page__intro {
   max-width: 960px; }
@@ -1690,6 +1699,37 @@ h1 {
   .form-item--filter.is-active label[for='samenwerking'] {
     background: #007BB0;
     border-color: #0095da; }
+
+.page-template-template-alle-tips .grid {
+  margin-bottom: 7rem; }
+
+/* 404 page */
+.error404[data-template='base.twig'] .page__header,
+.error404[data-template='base.twig'] .page__content {
+  max-width: 760px;
+  margin-left: auto;
+  margin-right: auto; }
+
+.error404[data-template='base.twig'] p + form {
+  margin-top: 2rem; }
+
+.error404[data-template='base.twig'] .page__widgets {
+  background: url("/wp-content/themes/ictuwp-theme-gc2020/assets/images/avatars/huilende-hipster.svg") center top 30px no-repeat;
+  background-size: 160px auto;
+  padding-top: 30rem; }
+  .error404[data-template='base.twig'] .page__widgets > section + section {
+    padding-top: 2rem;
+    margin-top: 2rem;
+    border-top: 0.1rem solid #D1DFE3; }
+  @media (min-width: 700px) {
+    .error404[data-template='base.twig'] .page__widgets {
+      padding-top: 3rem;
+      padding-left: 40%;
+      background-position: left 10% top 30px;
+      min-height: 35rem; } }
+  @media (min-width: 1100px) {
+    .error404[data-template='base.twig'] .page__widgets {
+      background-size: 26% auto; } }
 
 /* Entry types */
 .post .post__header,
@@ -1946,6 +1986,30 @@ h1 {
     .comment-form .email {
       padding-left: 1.5rem; } }
 
+.entry--type-post, .entry--type-event {
+  max-width: 760px;
+  margin-left: auto;
+  margin-right: auto; }
+  .entry--type-post .entry-header, .entry--type-event .entry-header {
+    position: relative;
+    padding-left: 2.5rem; }
+    .entry--type-post .entry-header .date-badge, .entry--type-event .entry-header .date-badge {
+      position: absolute;
+      left: 0;
+      top: 0;
+      margin-left: -3rem; }
+    @media (min-width: 560px) {
+      .entry--type-post .entry-header .date-badge, .entry--type-event .entry-header .date-badge {
+        margin-left: -5rem; } }
+    @media (min-width: 1100px) {
+      .entry--type-post .entry-header, .entry--type-event .entry-header {
+        padding-left: 3rem; }
+        .entry--type-post .entry-header .date-badge, .entry--type-event .entry-header .date-badge {
+          margin-left: -4rem; } }
+  @media (min-width: 560px) {
+    .entry--type-post .entry-content, .entry--type-event .entry-content {
+      margin-top: 3rem; } }
+
 .event-bookings {
   position: relative;
   z-index: 5;
@@ -1955,6 +2019,8 @@ h1 {
   color: #fff;
   padding-top: 3rem;
   padding-bottom: 3rem;
+  padding-right: 3rem;
+  padding-left: 3rem;
   margin-top: 3rem; }
   .event-bookings:before {
     content: " ";
@@ -2093,6 +2159,18 @@ h1 {
         width: calc(50% - 1.5rem); }
         .attendees-list__list > li:nth-child(odd) {
           margin-right: 3rem; } }
+
+.single-event .content {
+  padding-bottom: 0; }
+  .single-event .content .section--paragraph:last-of-type {
+    padding-bottom: 7rem; }
+  @media (min-width: 1100px) {
+    .single-event .content {
+      padding-bottom: 0; } }
+
+.single-event #comments {
+  padding-right: 3rem;
+  padding-left: 3rem; }
 
 .post .entry-intro {
   font-family: "montserratsemibold", Helvetica, Arial, sans-serif; }
@@ -2336,6 +2414,30 @@ h1 {
     .comment-form .email {
       padding-left: 1.5rem; } }
 
+.entry--type-post, .entry--type-event {
+  max-width: 760px;
+  margin-left: auto;
+  margin-right: auto; }
+  .entry--type-post .entry-header, .entry--type-event .entry-header {
+    position: relative;
+    padding-left: 2.5rem; }
+    .entry--type-post .entry-header .date-badge, .entry--type-event .entry-header .date-badge {
+      position: absolute;
+      left: 0;
+      top: 0;
+      margin-left: -3rem; }
+    @media (min-width: 560px) {
+      .entry--type-post .entry-header .date-badge, .entry--type-event .entry-header .date-badge {
+        margin-left: -5rem; } }
+    @media (min-width: 1100px) {
+      .entry--type-post .entry-header, .entry--type-event .entry-header {
+        padding-left: 3rem; }
+        .entry--type-post .entry-header .date-badge, .entry--type-event .entry-header .date-badge {
+          margin-left: -4rem; } }
+  @media (min-width: 560px) {
+    .entry--type-post .entry-content, .entry--type-event .entry-content {
+      margin-top: 3rem; } }
+
 .event-bookings {
   position: relative;
   z-index: 5;
@@ -2345,6 +2447,8 @@ h1 {
   color: #fff;
   padding-top: 3rem;
   padding-bottom: 3rem;
+  padding-right: 3rem;
+  padding-left: 3rem;
   margin-top: 3rem; }
   .event-bookings:before {
     content: " ";
@@ -2484,9 +2588,28 @@ h1 {
         .attendees-list__list > li:nth-child(odd) {
           margin-right: 3rem; } }
 
-.page--type-homepage .content {
-  -webkit-box-shadow: none;
-          box-shadow: none; }
+.single-event .content {
+  padding-bottom: 0; }
+  .single-event .content .section--paragraph:last-of-type {
+    padding-bottom: 7rem; }
+  @media (min-width: 1100px) {
+    .single-event .content {
+      padding-bottom: 0; } }
+
+.single-event #comments {
+  padding-right: 3rem;
+  padding-left: 3rem; }
+
+.page--type-homepage {
+  background: #f2ebe4; }
+  .page--type-homepage .content {
+    -webkit-box-shadow: none;
+            box-shadow: none;
+    max-width: none;
+    padding: 0;
+    background: none; }
+  .page--type-homepage .page-content {
+    padding: 0; }
 
 .entry--type-home.entry--full {
   max-width: none; }
@@ -4604,7 +4727,8 @@ h1 {
   text-align: center;
   padding: .6rem .8rem;
   display: inline-block;
-  text-transform: lowercase; }
+  text-transform: lowercase;
+  max-width: 26rem; }
   .date-badge span:not(.visually-hidden) {
     display: block; }
   @media (min-width: 560px) {
@@ -5570,6 +5694,30 @@ h1 {
 .site-container.show-overlay .video__video {
   position: relative;
   z-index: 50; }
+
+/*
+ * Layout for widgets.
+ * Each widget has a generic layout. Depending on the placement this layout can be altered.
+ */
+.widget_nav_menu .menu {
+  margin: 0;
+  padding: 0;
+  margin-top: 1.8rem; }
+  .widget_nav_menu .menu li {
+    list-style: none;
+    position: relative;
+    padding-left: 2.5rem; }
+    .widget_nav_menu .menu li:before {
+      content: "";
+      font-style: normal;
+      font-weight: normal;
+      font-family: 'icons'; }
+    .widget_nav_menu .menu li:before {
+      position: absolute;
+      left: 0;
+      top: .1rem;
+      color: #148839;
+      font-size: 1.2rem; }
 
 /* Sites with stepchart */
 .stepchart {
