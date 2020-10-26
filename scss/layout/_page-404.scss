@@ -1,0 +1,31 @@
+/* 404 page */
+
+.error404[data-template='base.twig'] {
+
+  .page__header,
+  .page__content {
+    @include ho-make-container($max-width-inner);
+  }
+
+  .page__widgets {
+    background: url('/wp-content/themes/ictuwp-theme-gc2020/assets/images/avatars/huilende-hipster.svg') center top 30px no-repeat;
+    background-size: 160px auto;
+    padding-top: 30rem;
+
+    > section + section {
+      padding-top: 2rem;
+      margin-top: 2rem;
+      border-top: .1rem solid $border-color;
+    }
+
+    @include bp-up(md){
+      padding-top: 0;
+      padding-left: 40%;
+      background-position: left 10% top 30px;
+    }
+
+    @include bp-up(lg){
+      background-size: 26% auto;
+    }
+  }
+}

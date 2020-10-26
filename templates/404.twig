@@ -2,18 +2,16 @@
 
 {% block content %}
 
-  <article class="post post--full error404">
-
     {% if title_404 %}
-      <header class="post__header">
+      <header class="page__header">
         <h1 class="page__title">{{ title_404 }}</h1>
       </header>
     {% endif %}
 
     {% if content_404 or widgets_404 %}
-      <section class="post__content">
+      <div class="page__content">
         {% if content_404 %}
-          <div class="post__body">
+          <div class="form form--search-404">
             <p>{{ content_404 }}</p>
 
             {{ content_404_search }}
@@ -22,13 +20,11 @@
         {% endif %}
 
         {% if widgets_404 %}
-          <div class="post__body">
+          <div class="page__widgets">
             {{ widgets_404 }}
           </div>
         {% endif %}
-      </section>
+      </div>
     {% endif %}
-
-  </article>
 
 {% endblock %}

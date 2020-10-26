@@ -1395,24 +1395,35 @@ h1 {
     -o-object-fit: cover;
        object-fit: cover; }
 
-.page--type-event .page-content {
+.page .page__widgets,
+body[data-template='base.twig'] .page__widgets {
+  border-top: 0.1rem solid #D1DFE3;
+  margin-top: 3rem;
+  padding-top: 3rem; }
+
+.page--type-event .page-content,
+body[data-template='base.twig']--type-event .page-content {
   padding-bottom: 0; }
 
-.page--type-homepage .page-content {
+.page--type-homepage .page-content,
+body[data-template='base.twig']--type-homepage .page-content {
   padding: 0;
   z-index: auto; }
 
-.page--type-homepage .content {
+.page--type-homepage .content,
+body[data-template='base.twig']--type-homepage .content {
   background: none;
   max-width: none;
   padding: 0; }
 
-.page--type-landing .content {
+.page--type-landing .content,
+body[data-template='base.twig']--type-landing .content {
   -webkit-box-shadow: 0.4rem 0.4rem 0 rgba(0, 0, 0, 0.15);
           box-shadow: 0.4rem 0.4rem 0 rgba(0, 0, 0, 0.15);
   padding: 0; }
 
-.page-template-default .content {
+.page-template-default .content,
+body[data-template='base.twig']-template-default .content {
   padding-bottom: 0; }
 
 .page-content > .section--spotlight {
@@ -1424,29 +1435,6 @@ h1 {
       margin-left: -3rem;
       margin-right: -3rem;
       margin-bottom: -8rem; } }
-
-/* 404 page */
-.error404 .post__content {
-  max-width: 760px;
-  margin-left: auto;
-  margin-right: auto; }
-
-.error404 .searchform {
-  margin-top: 3rem; }
-
-.error404 .post__body + .post__body {
-  border-top: 0.1rem solid #D1DFE3;
-  margin-top: 3rem;
-  padding-top: 3rem; }
-  @media (min-width: 560px) {
-    .error404 .post__body + .post__body {
-      display: -webkit-box;
-      display: -ms-flexbox;
-      display: flex; }
-      .error404 .post__body + .post__body .widget_media_image {
-        padding-right: 1.5rem; }
-      .error404 .post__body + .post__body .widget_nav_menu {
-        padding-left: 1.5rem; } }
 
 .archive,
 .page--overview-archive {
@@ -1628,6 +1616,30 @@ h1 {
   .form-item--filter.is-active label[for='samenwerking'] {
     background: #007BB0;
     border-color: #0095da; }
+
+/* 404 page */
+.error404[data-template='base.twig'] .page__header,
+.error404[data-template='base.twig'] .page__content {
+  max-width: 760px;
+  margin-left: auto;
+  margin-right: auto; }
+
+.error404[data-template='base.twig'] .page__widgets {
+  background: url("/wp-content/themes/ictuwp-theme-gc2020/assets/images/avatars/huilende-hipster.svg") center top 30px no-repeat;
+  background-size: 160px auto;
+  padding-top: 30rem; }
+  .error404[data-template='base.twig'] .page__widgets > section + section {
+    padding-top: 2rem;
+    margin-top: 2rem;
+    border-top: 0.1rem solid #D1DFE3; }
+  @media (min-width: 700px) {
+    .error404[data-template='base.twig'] .page__widgets {
+      padding-top: 0;
+      padding-left: 40%;
+      background-position: left 10% top 30px; } }
+  @media (min-width: 1100px) {
+    .error404[data-template='base.twig'] .page__widgets {
+      background-size: 26% auto; } }
 
 /* Entry types */
 .post .post__header,
@@ -5965,6 +5977,30 @@ h1 {
   position: relative;
   z-index: 50; }
 
+/*
+ * Layout for widgets.
+ * Each widget has a generic layout. Depending on the placement this layout can be altered.
+ */
+.widget_nav_menu .menu {
+  margin: 0;
+  padding: 0;
+  margin-top: 1.8rem; }
+  .widget_nav_menu .menu li {
+    list-style: none;
+    position: relative;
+    padding-left: 2.5rem; }
+    .widget_nav_menu .menu li:before {
+      content: "";
+      font-style: normal;
+      font-weight: normal;
+      font-family: 'icons'; }
+    .widget_nav_menu .menu li:before {
+      position: absolute;
+      left: 0;
+      top: .1rem;
+      color: #148839;
+      font-size: 1.2rem; }
+
 /* Sites with stepchart */
 .stepchart {
   position: relative;
@@ -6451,3 +6487,5 @@ h1 {
       clip: rect(0 0 0 0);
       clip: rect(0, 0, 0, 0);
       position: absolute; } }
+
+/*# sourceMappingURL=gc-theme.css.map */
