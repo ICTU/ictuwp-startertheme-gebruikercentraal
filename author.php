@@ -32,31 +32,31 @@ if ( isset( $wp_query->query_vars['author'] ) ) {
 
 	$socialmedia = array();
 
-	if (isset($author->facebook)) {
+	if (!empty($author->facebook)) {
 		$socialmedia[] = array("name"=>"facebook","link"=>$author->facebook);
 	}
-	if (isset($author->instagram)) {
+	if (!empty($author->instagram)) {
 		$socialmedia[] = array("name"=>"instagram","link"=>$author->instagram);
 	}
-	if (isset($author->linkedin)) {
+	if (!empty($author->linkedin)) {
 		$socialmedia[] = array("name"=>"linkedin","link"=>$author->linkedin);
 	}
-	if (isset($author->myspace)) {
+	if (!empty($author->myspace)) {
 		$socialmedia[] = array("name"=>"myspace","link"=>$author->myspace);
 	}
-	if (isset($author->soundcloud)) {
+	if (!empty($author->soundcloud)) {
 		$socialmedia[] = array("name"=>"soundcloud","link"=>$author->soundcloud);
 	}
-	if (isset($author->tumblr)) {
+	if (!empty($author->tumblr)) {
 		$socialmedia[] = array("name"=>"tumblr","link"=>$author->tumblr);
 	}
-	if (isset($author->twitter)) {
-		$socialmedia[] = array("name"=>"twitter","link"=>$author->twitter);
+	if (!empty($author->twitter)) {
+		$socialmedia[] = array("name"=>"twitter","link"=>"https://twitter.com/".$author->twitter);
 	}
-	if (isset($author->youtube)) {
+	if (!empty($author->youtube)) {
 		$socialmedia[] = array("name"=>"youtube","link"=>$author->youtube);
 	}
-	if (isset($author->wikipedia)) {
+	if (!empty($author->wikipedia)) {
 		$socialmedia[] = array("name"=>"wikipedia","link"=>$author->wikipedia);
 	}
 
