@@ -7,11 +7,7 @@
   <span class="date-badge" itemprop="datePublished" content="{{ day }} {{ month }} {{ year }}">
     <span class="date-badge__day">{{ day }}</span>
     <span class="date-badge__month">{{ month }}</span>
-  {% if year == "now"|date('Y') %}
     <span class="date-badge__year visually-hidden">{{ year }}</span>
-  {% else %}
-    <span class="date-badge__year">{{ year }}</span>
-  {% endif %}
 
   </span>
 
@@ -38,17 +34,11 @@
 
     {% set month = s_month %}
 
-    <span class="date-badge" itemprop="datePublished" content="{{ day }} {{ month }} {{ s_year }}">
-      <span class="date-badge__day">{{ day }}</span>
-      <span class="date-badge__month">{{ month }}</span>
-
-  {% if s_year == "now"|date('Y') %}
+  <span class="date-badge" itemprop="datePublished" content="{{ day }} {{ month }} {{ s_year }}">
+    <span class="date-badge__day">{{ day }}</span>
+    <span class="date-badge__month">{{ month }}</span>
     <span class="date-badge__year visually-hidden">{{ s_year }}</span>
-  {% else %}
-    <span class="date-badge__year">{{ s_year }}</span>
-  {% endif %}
-
-    </span>
+  </span>
 
   {% else %}
     {# start and end date in different month #}
@@ -77,11 +67,7 @@
         content="{{ day }} {{ month }} {{ year }}">
       <span class="date-badge__day">{{ day }}</span>
       <span class="date-badge__month">{{ month }}</span>
-      {% if year == "now"|date('Y') %}
         <span class="date-badge__year visually-hidden">{{ year }}</span>
-      {% else %}
-        <span class="date-badge__year">{{ year }}</span>
-      {% endif %}
     </span>
 
 {% endif %}

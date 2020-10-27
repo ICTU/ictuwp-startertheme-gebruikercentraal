@@ -105,7 +105,7 @@ display tipgever info or
 
         {% include 'components/'~ template ~'.html.twig' with {
           'title': post.post_title,
-          'nr': post.tip_nummer,
+          'tip_nummer': post.tip_nummer,
           'category': post.cat,
           'toptip': post.toptip,
           'toptiptekst': post.toptiptekst,

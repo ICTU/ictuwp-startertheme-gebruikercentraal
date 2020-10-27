@@ -1374,7 +1374,7 @@ function prepare_card_content( $postitem ) {
 	$item['descr']      = get_the_excerpt( $postid );
 	$item['post_type']  = get_post_type( $postid );
 	$item['type']       = $item['post_type']; // dit is dubbelop en overbodig en meer dan nodig, maar in de twig-files wordt afwisselend 'type' en 'post_type' gebruikt. Dat laatste is de meest correcte vorm
-	$item['post_date']  = get_the_time( get_option( 'date_format' ), $postid );
+	$item['post_date']  = get_the_date( 'Y-m-d', $postid );
 	$item['url']        = get_the_permalink( $postid );
 	$image              = get_the_post_thumbnail( $postid, 'large', [] );
 	$item['img']        = $image;
@@ -1392,10 +1392,8 @@ function prepare_card_content( $postitem ) {
 		}
 
 		$item['tip_nummer'] = sprintf( _x( 'Tip %s', 'Label tip-nummer', 'gctheme' ), get_post_meta( $postid, 'tip-nummer', true ) );
-		$item['nr']         = $item['tip_nummer']; // dit is dubbelop en overbodig en meer dan nodig, maar in de twig-files wordt afwisselend 'nr' en 'tip_nummer' gebruikt. Dat laatste is de meest correcte vorm
-
-		$item['toptip'] = false;
-		$is_toptip      = get_post_meta( $postid, 'is_toptip', true );
+		$item['toptip']     = false;
+		$is_toptip          = get_post_meta( $postid, 'is_toptip', true );
 
 		if ( $is_toptip ) {
 			$item['toptip']      = true;
@@ -1407,7 +1405,7 @@ function prepare_card_content( $postitem ) {
 		if ( isset( $themakleuren[ $taxonomie[0]->term_id ] ) ) {
 			$item['category'] = $themakleuren[ $taxonomie[0]->term_id ];
 		}
-		$item['cat']         = $item['category']; // dit is dubbelop en overbodig en meer dan nodig, maar in de twig-files wordt afwisselend 'cat' en 'category' gebruikt. De meest correcte vorm is: 'tipthema'
+		$item['cat'] = $item['category']; // dit is dubbelop en overbodig en meer dan nodig, maar in de twig-files wordt afwisselend 'cat' en 'category' gebruikt. De meest correcte vorm is: 'tipthema'
 
 	} elseif ( 'post' == $item['post_type'] ) {
 
@@ -1436,15 +1434,31 @@ function prepare_card_content( $postitem ) {
 
 		// als start-datum en eindatum op dezelfde dag
 		if ( $event_start_date === $event_end_date ) {
-			// dan start- en eindtijd tonen
-			$eventtimes = sprintf( _x( '%s - %s', 'Meta voor event: label voor start- en eindtijd', 'gctheme' ), date_i18n( get_option( 'time_format' ), $event_start_datetime ), date_i18n( get_option( 'time_format' ), $event_end_datetime ) );
-
 
 			$item['meta'][] = [
-				'classname' => 'times',
-				'title'     => _x( 'Times', 'Meta voor event: value voor start- en eindtijd', 'gctheme' ),
-				'descr'     => $eventtimes,
+				'title'     => _x( 'Event date', 'Meta: value voor evenementdatum', 'gctheme' ),
+				'classname' => 'datum',
+				'descr'     => date_i18n( get_option( 'date_format' ), $event_start_datetime ),
 			];
+
+
+			// dan start- en eindtijd tonen, als die nuttig zijn
+			if ( date_i18n( get_option( 'time_format' ), $event_start_datetime ) !== date_i18n( get_option( 'time_format' ), $event_end_datetime ) ) {
+				$eventtimes     = sprintf( _x( '%s - %s', 'Meta voor event: label voor start- en eindtijd', 'gctheme' ), date_i18n( get_option( 'time_format' ), $event_start_datetime ), date_i18n( get_option( 'time_format' ), $event_end_datetime ) );
+				$item['meta'][] = [
+					'classname' => 'times',
+					'title'     => _x( 'Times', 'Meta voor event: value voor start- en eindtijd', 'gctheme' ),
+					'descr'     => $eventtimes,
+				];
+			}
+		} else {
+			$eventdates     = sprintf( _x( '%s - %s', 'Meta voor event: label voor start- en eindtijd', 'gctheme' ), date_i18n( get_option( 'date_format' ), $event_start_datetime ), date_i18n( get_option( 'date_format' ), $event_end_datetime ) );
+			$item['meta'][] = [
+				'title'     => _x( 'Event date', 'Meta: value voor evenementdatum', 'gctheme' ),
+				'classname' => 'datum',
+				'descr'     => $eventdates,
+			];
+
 		}
 
 		if ( 'EM_Event' === get_class( $postitem ) ) {

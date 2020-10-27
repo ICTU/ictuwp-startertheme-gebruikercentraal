@@ -49,10 +49,10 @@
 
         {% for key, item in items %}
 
-          {% if item.nr is empty and item.category %}
-            {% set nr = key %}
+          {% if item.tip_nummer is empty and item.category %}
+            {% set tip_nummer = key %}
           {% else %}
-            {% set nr = item.nr %}
+            {% set tip_nummer = item.tip_nummer %}
           {% endif %}
           {% include 'components/'~ template ~'.html.twig' with {
             'title' : item.title,
@@ -61,7 +61,7 @@
             'type' : item.type,
             'quote' : item.quote,
             'meta': item.meta,
-            'nr': nr,
+            'tip_nummer': tip_nummer,
             'category': item.category,
             'toptip': item.toptip,
             'toptiptekst': item.toptiptekst,
