@@ -10,13 +10,6 @@
         "version": "",
         "dependencies": "",
         "infooter": ""
-      },
-      "commentjs": {
-        "handle": "comments",
-        "file": "/assets/js/comments.js",
-        "version": "",
-        "dependencies": "",
-        "infooter": ""
       }
     },
     "cssfiles": {

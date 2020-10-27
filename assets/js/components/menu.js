@@ -15,6 +15,8 @@ var toggleMenu = $('.btn--toggle-menu');
 var regionNav = $('.l-header-nav');
 var mainMenu = $('#mainnav');
 
+console.log("Hello world!");
+
 var bp = 1000;
 
 function doNav(width) {
