@@ -42,17 +42,6 @@
       }
     }
   },
-  "NLDESIGN": {
-    "name": "NL Design System",
-    "shortname": "nlds",
-    "site_logo": "/assets/images/logo/gc-nlds-beeldmerk.svg",
-    "palette": {
-      "gc-accessible-blue": {
-      },
-      "nlds-purplish": {
-      }
-    }
-  },
   "OD": {
     "name": "Optimaal Digitaal",
     "shortname": "od",
@@ -78,6 +67,17 @@
       }
     }
   },
+  "NLDESIGN": {
+    "name": "NL Design System",
+    "shortname": "nlds",
+    "site_logo": "/assets/images/logo/gc-nlds-beeldmerk.svg",
+    "palette": {
+      "gc-accessible-blue": {
+      },
+      "nlds-purplish": {
+      }
+    }
+  },
   "RDAM": {
     "name": "Rotterdammer Centraal",
     "shortname": "rdam",
@@ -87,6 +87,11 @@
     "name": "Direct Duidelijk Tour",
     "shortname": "rdam",
     "site_logo": "/assets/images/logo/beeldmerk-dd-tour.svg"
+  },
+  "EXPERTPANEL": {
+    "name": "Expert Panel",
+    "shortname": "expertpanel",
+    "site_logo": "/assets/images/logo/expertpanel-beeldmerk.svg"
   },
   "KB": {
     "name": "Gebruiker Centraal Kennisbank",

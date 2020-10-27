@@ -1,3 +1,48 @@
+// For both single blog & event {
+
+.entry {
+  &--type-post,
+  &--type-event {
+    @include ho-make-container($max-width-inner);
+
+    .entry-header {
+      position: relative;
+      padding-left: 2.5rem;
+
+      .date-badge {
+        position: absolute;
+        left: 0;
+        top: 0;
+        margin-left: -3rem;
+      }
+
+      @include bp-up(sm) {
+        .date-badge {
+          margin-left: -5rem;
+        }
+      }
+
+      @include bp-up(lg) {
+        // gelijktrekken uitlijning
+        padding-left: 3rem;
+
+        .date-badge {
+          margin-left: -4rem;
+        }
+      }
+    }
+
+
+    .entry-content {
+      @include bp-up(sm) {
+        margin-top: 3rem;
+      }
+    }
+  }
+
+}
+
+
 // ========================================================================
 
 .event-bookings {
@@ -6,6 +51,11 @@
   color: $white;
   padding-top: 3rem;
   padding-bottom: 3rem;
+
+  // gelijktrekken uitlijning
+  padding-right: 3rem;
+  padding-left: 3rem;
+
   margin-top: 3rem;
 
   h2, h3 {
@@ -118,7 +168,7 @@
     }
   }
 
-  @include bp-up(md){
+  @include bp-up(md) {
     margin-top: 8rem;
   }
 }
@@ -192,3 +242,30 @@
     }
   }
 }
+
+.single-event {
+  //  voor een single event geen padding onderin, omdat
+  // het reserveringsblock dan een raar witte blok
+  // onder zich krijgt
+
+  .content {
+    padding-bottom: 0;
+
+    .section--paragraph:last-of-type {
+      // hiermee houden we rekeing met events die GEEN reserveringen
+      // en GEEN comments hebben
+      padding-bottom: 7rem;
+    }
+
+    @include bp-up(lg) {
+      padding-bottom: 0;
+    }
+  }
+
+  #comments {
+    // gelijktrekken uitlijning
+    padding-right: 3rem;
+    padding-left: 3rem;
+  }
+}
+

@@ -56,15 +56,7 @@ if ( $context['pagetype'] === 'archive_tipthema' ) {
 	$i = 0;
 	foreach ( $posts as $post ) {
 		$i ++;
-
-		if ( $post->type->name == 'tips' ) {
-			$terms = get_the_terms( $post->ID, 'tipthema' );
-
-			$items[ $i ]['title']    = $post->post_title;
-			$items[ $i ]['nr']       = $post->tip_nummer;
-			$items[ $i ]['category'] = $terms[0]->name;
-			$items[ $i ]['url']      = get_permalink( $post );
-		}
+		$items[ $i ] = prepare_card_content( $post );
 	}
 
 	$context['overview']['items']    = $items;

@@ -1,10 +1,12 @@
 # ignore node dependency directories
-frontend/node_modules
+/frontend/node_modules
 
 # ignore composer generated vendor directory
-vendor
+/vendor
 
 #dont commit .map sites
-assets/css/*.map
+/assets/css/*.map
 .DS_Store
+
+
 

@@ -187,6 +187,7 @@ function baseStyles(done) {
 
 function prod(done) {
   console.log(siteConfig.path + 'scss/*.scss');
+  console.log(siteConfig.dest + 'css');
 
   if(fs.existsSync(siteConfig.path + 'scss')){
     gulp
@@ -207,7 +208,7 @@ function prod(done) {
 function cleanCSS(done){
 
   gulp
-    .src(siteConfig.dest + 'css/**')
+    .src(siteConfig.dest + 'css/*.map')
     .pipe(clean({
       force: true
     }));
@@ -276,7 +277,7 @@ function watch() {
 
 
 exports.iconfont = gulp.series(makeFont, prodAll);
-exports.prod = gulp.series(cleanCSS, prod);
+exports.prod = gulp.series(prod);
 exports.styles = styles;
 exports.js = js;
 exports.sprites = makeSprites;

@@ -117,12 +117,25 @@ if ( 'post' === $post->post_type ) {
 		// dan start- en eindtijd tonen
 		$eventtimes = sprintf( _x( '%s - %s', 'Meta voor event: label voor start- en eindtijd', 'gctheme' ), date_i18n( get_option( 'time_format' ), $event_start_datetime ), date_i18n( get_option( 'time_format' ), $event_end_datetime ) );
 
+		$context['meta'][] = [
+			'title'     => _x( 'Event date', 'Meta: value voor evenementdatum', 'gctheme' ),
+			'classname' => 'datum',
+			'descr'     => date_i18n( get_option( 'date_format' ), $event_start_datetime ),
+		];
 
 		$context['meta'][] = [
 			'classname' => 'times',
 			'title'     => _x( 'Times', 'Meta voor event: value voor start- en eindtijd', 'gctheme' ),
 			'descr'     => $eventtimes,
 		];
+	} else {
+		$eventdates = sprintf( _x( '%s - %s', 'Meta voor event: label voor start- en eindtijd', 'gctheme' ), date_i18n( get_option( 'date_format' ), $event_start_datetime ), date_i18n( get_option( 'date_format' ), $event_end_datetime ) );
+		$context['meta'][] = [
+			'title'     => _x( 'Event date', 'Meta: value voor evenementdatum', 'gctheme' ),
+			'classname' => 'datum',
+			'descr'     => $eventdates,
+		];
+
 	}
 
 	if ( ( $EM_Event->get_bookings()->get_available_spaces() <= 0 ) && ( $EM_Event->get_bookings()->tickets->tickets ) ) {
@@ -217,10 +230,7 @@ function attendeelist_get_the_bookingpersonname( $theobject ) {
 					$xtra = '<span itemprop="memberOf" class="additionalinfo">' . esc_html( trim( $bookinginfo['organisation'] ) ) . '</span>';
 				}
 
-				if ( $countryinfo['value'] && $countryinfo['value'] != 'none selected' ) {
-					if ( $xtra !== '' ) {
-						$xtra .= ', ';
-					}
+				if ( $countryinfo['value'] && ( $countryinfo['value'] != 'none selected' ) ) {
 					$xtra .= '<span class="additionalinfo" itemprop="nationality">' . esc_html( $countryinfo['value'] ) . '</span>';
 				}
 

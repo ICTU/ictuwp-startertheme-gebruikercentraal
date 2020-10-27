@@ -53,10 +53,6 @@ if ( $the_query->have_posts() ) {
 	while ( $the_query->have_posts() ) {
 
 		$the_query->the_post();
-		$card          = [];
-		$taxonomie     = get_the_terms( $post->ID, GC_TIPTHEMA );
-		$card['title'] = od_wbvb_custom_post_title( get_the_title() );
-		$card['nr']    = sprintf( _x( 'Tip %s', 'Label tip-nummer', 'gctheme' ), get_post_meta( $post->ID, 'tip-nummer', TRUE ) );
 /*
 		We zouden voorloopnullen kunnen gebruiken en dan in een loop even de tipnummers bijwerken:
 
@@ -71,19 +67,8 @@ en dan moeten we de tipnumemrs converteren naar een integer
 
  */
 
-		$card['url']   = get_the_permalink();
-		$is_toptip     = get_post_meta( $post->ID, 'is_toptip', TRUE );
-		if ( $is_toptip ) {
-			$card['toptip']      = TRUE;
-			$card['toptiptekst'] = 'Toptip';
-		} else {
-			$card['toptip'] = FALSE;
-		}
-		if ( isset( $themakleuren[ $taxonomie[0]->term_id ] ) ) {
-			$card['category'] = $themakleuren[ $taxonomie[0]->term_id ];
-		}
-
-		$context['tipkaarts'][] = $card;
+		$i ++;
+		$context['tipkaarts'][] = prepare_card_content( $post );
 
 	}
 
@@ -91,5 +76,10 @@ en dan moeten we de tipnumemrs converteren naar een integer
 /* Restore original Post Data */
 wp_reset_postdata();
 
+// Inleiding
+if ( get_field( 'post_inleiding' ) ) {
+	$intro            = get_field( 'post_inleiding' );
+	$context['intro'] = wpautop( $intro );
+}
 
 Timber::render( [ 'template-alle-tips.twig', 'page.twig' ], $context );

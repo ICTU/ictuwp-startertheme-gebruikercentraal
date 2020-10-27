@@ -1,10 +1,4 @@
-/*
-  voor de pagina met het overzicht van alle tips
-  (page-template: .page-template-template-alle-tips)
-  de container voor de tipkaarten (dat is div.l-section-content binnen
-  section.section--overview.section--4col ) niet beperken tot 760px, maar
-  oprekken tot max 1280px
- */
+
 .archive,
 .page--overview-archive {
   @include gc-page-intro();
@@ -19,7 +13,7 @@
     padding: 3rem;
     margin-top: 0;
 
-    @include bp-up(md){
+    @include bp-up(md) {
       padding-left: 5rem;
       padding-right: 5rem;
     }
@@ -72,7 +66,7 @@
   .entry-content + .grid {
     margin-top: 5rem;
 
-    @include bp-up(md){
+    @include bp-up(md) {
       margin-top: 7rem;
     }
   }
@@ -82,6 +76,13 @@
   }
 
 }
+
+.page-template-template-events-overview {
+  .page__intro {
+    @include ho-make-container($max-width-inner);
+  }
+}
+
 
 // Events
 
@@ -221,3 +222,8 @@
   }
 }
 
+.page-template-template-alle-tips {
+  .grid {
+    margin-bottom: 7rem;
+  }
+}
