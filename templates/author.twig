@@ -34,14 +34,20 @@
 
   {{ function('insert_breadcrumb') }}
 
-  {{ dump(author) }}
+  
   <div class="page-content" id="maincontent" tabindex="-1">
     <main class="content">
       {% block archive_intro %}
-      <section class="author author--full l-with-image" itemprop="author" itemtype="http://schema.org/Person">
+        {% set styles = [
+          'author',
+          'author--full',
+          author.auteursfoto_url ? 'l-with-image' : 'l-no-image'
+
+        ] %}
+      <section class="{{ styles|join(' ') }}" itemprop="author" itemtype="http://schema.org/Person">
         {% if author.auteursfoto_url %}
         <figure class="author__image">
-          <img src="{{author.auteursfoto_url}}" class="author-photo photo avatar" alt="Gebruiker Centraal Auteur">
+          <img src="{{author.auteursfoto_url}}" class="author-photo photo avatar" alt="{{author.display_name}}">
         </figure>
         {% endif %}
         <div class="author__content">
@@ -50,71 +56,68 @@
             {% if author.functiebeschrijving %}
             <div class="meta-data">
               <dl class="meta-data__list">
-                <dt class="visually-hidden">Functie</dt>
+                <dt class="visually-hidden">{{ __('Job function', 'gctheme') }}</dt>
                 <dd class="meta-data__item functie">{{author.functiebeschrijving}}</dd>
               </dl>
             </div>
             {% endif %}
           </div>
           <div class="author__contact-info">
-            <a href="tel:123456789" class="link link--contact link--phone" title="Phone number van " itemprop="phone">06-12345678</a>
-            <a href="mailto:info@gebruikercentraal.nl" class="link link--contact link--email" title="E-mail adres van Mariska Woudenberg" itemprop="email">info@gebruikercentraal.nl</a>
-
+            {% if author.publiek_telefoonnummer %}
+            <a href="tel:{{author.publiek_telefoonnummer}}" class="link link--contact link--phone" title="{{ __('Phone number: ', 'gctheme') }} {{author.display_name}}" itemprop="phone">{{author.publiek_telefoonnummer}}</a>
+            {% endif %}
+            {% if author.publiek_mailadres %}
+            <a href="{{author.publiek_mailadres}}" class="link link--contact link--email" title="{{ __('Email adres: ', 'gctheme') }} {{author.display_name}}" itemprop="email">{{author.publiek_mailadres}}</a>
+            {% endif %}
             <ul class="social-links">
-              <li class="social-links__item">
-                <a href="#" class="link link--social linkedin" title="Linked-In profiel van ">Linked-In
-                  profiel van </a></li>
-              <li class="social-links__item">
-                <a href="#" class="link link--social twitter" title="Twitter van ">Twitter
-                  van </a></li>
-              <li class="social-links__item">
-                <a href="#" class="link link--social facebook" title="Facebook van ">Facebook
-                  van </a></li>
+              {% for channel in socialmediachannels %}
+                {% include 'components/social-links__author.twig' with {
+                  'name' : channel.name,
+                  'link' : channel.link,
+                  'author' : author.display_name,
+                  } %}
+
+              {% endfor %}
             </ul>
           </div>
         </div>
       </section>
       {% endblock %}
-      <section class="section section--overview section--bg-option">
-        <div class="l-section-top">
-          {% if descr %}
-          <h2 class="section__title">
-              {{ descr }}
-          </h2>
-          {% endif %}
-        </div>
-        <div class="l-section-content">
 
+        {% block archive_overview %}
 
-          <div class="grid grid--col-2">
-            {% for post in items %}
-              {% include 'components/card--type-blog.html.twig' with {
-                'title' : post.title,
-                'headerlevel' : 'h3',
-                'descr' : post.descr,
-                'img' : post.img,
-                'type' : post.type,
-                'meta': post.meta,
-                'category': post.category,
-                'post_date': ( post.post_date ?? '' ),
-                'url': post.url
-              } %}
-            {% endfor %}
+          <section class="section section--overview-list l-item-count-3">
+            <div class="l-section-content">
+              <div class="l-section-top">
+                {% if descr %}
+                  <h2 class="section__title">
+                    {{ descr }}
+                  </h2>
+                {% endif %}
+              </div>
+              <div class="overview overview--list">
+                {% for post in items %}
+                  {% include 'components/teaser.html.twig' with {
+                    'title' : post.title,
+                    'headerlevel' : 'h3',
+                    'descr' : post.descr,
+                    'img' : post.img,
+                    'type' : post.type,
+                    'meta': post.meta,
+                    'category': post.category,
+                    'post_date': ( post.post_date ?? '' ),
+                    'url': post.url
+                  } %}
+                {% endfor %}
 
-
-
-
-
-
-
-
-
+              </div>
+            </div>
+          </section>
+        {% endblock %}
 
 
 
 
-        </div>
-      </section>
 
 
       {% block content %}
@@ -125,15 +128,7 @@
 
 
 
-            {% block archive_overview %}
-        <article class="section section--overview-list l-item-count-3">
-          <div class="l-section-content">
-            <div class="overview overview--list">
 
-            </div>
-          </div>
-        </article>
-            {% endblock %}
 
             {% block pagination %}
 
