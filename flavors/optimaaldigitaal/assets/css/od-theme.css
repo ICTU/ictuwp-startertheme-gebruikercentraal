@@ -226,10 +226,9 @@ img {
   height: auto; }
 
 *[aria-hidden=true] {
-  display: none; }
+  border: 10px solid red !important; }
 
-.visually-hidden,
-.visuallyhidden {
+*[aria-expanded=false] {
   margin: -1px;
   padding: 0;
   width: 1px;
