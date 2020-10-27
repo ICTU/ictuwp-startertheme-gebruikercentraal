@@ -19,11 +19,51 @@ if ( isset( $wp_query->query_vars['author'] ) ) {
 	$context['author'] = $author;
 	$context['title']  = $author->name();
 
+	$author_id = $author->facebook;
+
+
+
 	// TODO: dit gedeelte moet via een nette layout gepresenteerd worden;
 	// zie section-authorbox.html.twig
 
-		$context['descr']  = sprintf( _x( 'Posts by %s.', 'Description author archive', 'gctheme' ), $author->name() );
+	$context['descr']  = sprintf( _x( 'Posts by %s.', 'Description author archive', 'gctheme' ), $author->name() );
 
+	$author_id = $author->ID;
+
+	$socialmedia = array();
+
+	if (isset($author->facebook)) {
+		$socialmedia[] = array("name"=>"facebook","link"=>$author->facebook);
+	}
+	if (isset($author->instagram)) {
+		$socialmedia[] = array("name"=>"instagram","link"=>$author->instagram);
+	}
+	if (isset($author->linkedin)) {
+		$socialmedia[] = array("name"=>"linkedin","link"=>$author->linkedin);
+	}
+	if (isset($author->myspace)) {
+		$socialmedia[] = array("name"=>"myspace","link"=>$author->myspace);
+	}
+	if (isset($author->soundcloud)) {
+		$socialmedia[] = array("name"=>"soundcloud","link"=>$author->soundcloud);
+	}
+	if (isset($author->tumblr)) {
+		$socialmedia[] = array("name"=>"tumblr","link"=>$author->tumblr);
+	}
+	if (isset($author->twitter)) {
+		$socialmedia[] = array("name"=>"twitter","link"=>$author->twitter);
+	}
+	if (isset($author->youtube)) {
+		$socialmedia[] = array("name"=>"youtube","link"=>$author->youtube);
+	}
+	if (isset($author->wikipedia)) {
+		$socialmedia[] = array("name"=>"wikipedia","link"=>$author->wikipedia);
+	}
+
+
+
+
+	$context['socialmediachannels'] = $socialmedia;
 
 }
 
