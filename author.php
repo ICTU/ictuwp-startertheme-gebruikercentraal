@@ -21,21 +21,9 @@ if ( isset( $wp_query->query_vars['author'] ) ) {
 
 	// TODO: dit gedeelte moet via een nette layout gepresenteerd worden;
 	// zie section-authorbox.html.twig
-	if ($context['author']->auteursfoto_url || $context['publiek_telefoonnummer'] || $context['publiek_mailadres'] ) {
 
-		if ($context['author']->functiebeschrijving ) {
-			$context['descr']  .= sprintf( _x( '%s', 'Author archive functiebeschrijving', 'gctheme' ), $context['author']->functiebeschrijving ) . '<br>';
-		}
-		if ($context['author']->publiek_telefoonnummer ) {
-			$context['descr']  .= sprintf( _x( '<a href="%s">%s</a>', 'Author archive phone', 'gctheme' ), $context['author']->publiek_telefoonnummer, $context['author']->publiek_telefoonnummer ) . '<br>';
-		}
-		if ($context['author']->publiek_mailadres ) {
-			$context['descr']  .= sprintf( _x( '<a href="%s">%s</a>', 'Author archive mail', 'gctheme' ), $context['author']->publiek_mailadres, $context['author']->publiek_mailadres ) . '<br>';
-		}
-
-	} else {
 		$context['descr']  = sprintf( _x( 'Posts by %s.', 'Description author archive', 'gctheme' ), $author->name() );
-	}
+
 
 }
 
@@ -45,6 +33,7 @@ foreach ( $posts as $post ) {
 
 
 $templates = [
+	'author.twig',
 	'archive.twig',
 	'index.twig',
 ];
