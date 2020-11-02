@@ -9,6 +9,7 @@
     margin-top: $gutter;
   }
 
+  .wp-block-image,
   .section {
     @include ho-padding;
     @include ho-make-container(calc(#{$max-width-inner} + #{$gutter}));
