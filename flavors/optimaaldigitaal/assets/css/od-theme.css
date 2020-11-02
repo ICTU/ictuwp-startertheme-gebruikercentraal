@@ -132,8 +132,8 @@
 
 @font-face {
   font-family: "icons";
-  src: url("/wp-content/themes/ictuwp-theme-gc2020/assets/fonts/iconfont/gc-iconfont-9syv7s.eot");
-  src: url("/wp-content/themes/ictuwp-theme-gc2020/assets/fonts/iconfont/gc-iconfont-9syv7s.eot?#iefix") format("eot"), url("/wp-content/themes/ictuwp-theme-gc2020/assets/fonts/iconfont/gc-iconfont-9syv7s.woff") format("woff"), url("/wp-content/themes/ictuwp-theme-gc2020/assets/fonts/iconfont/gc-iconfont-9syv7s.ttf") format("truetype"), url("/wp-content/themes/ictuwp-theme-gc2020/assets/fonts/iconfont/gc-iconfont-9syv7s.svg#icons") format("svg");
+  src: url("/wp-content/themes/ictuwp-theme-gc2020/assets/fonts/iconfont/gc-iconfont-dzsua.eot");
+  src: url("/wp-content/themes/ictuwp-theme-gc2020/assets/fonts/iconfont/gc-iconfont-dzsua.eot?#iefix") format("eot"), url("/wp-content/themes/ictuwp-theme-gc2020/assets/fonts/iconfont/gc-iconfont-dzsua.woff") format("woff"), url("/wp-content/themes/ictuwp-theme-gc2020/assets/fonts/iconfont/gc-iconfont-dzsua.ttf") format("truetype"), url("/wp-content/themes/ictuwp-theme-gc2020/assets/fonts/iconfont/gc-iconfont-dzsua.svg#icons") format("svg");
   font-weight: normal;
   font-style: normal; }
 
@@ -990,7 +990,7 @@ Gutenberg corrections
 .search-form {
   position: relative; }
   .search-form:after {
-    content: "";
+    content: "";
     font-style: normal;
     font-weight: normal;
     font-family: 'icons'; }
@@ -4195,7 +4195,7 @@ body[data-template='base.twig']-template-default .content {
     position: relative;
     margin-right: 1.5rem; }
     .btn--toggle-menu .btn--icon:before {
-      content: "";
+      content: "";
       font-style: normal;
       font-weight: normal;
       font-family: 'icons'; }
@@ -4861,12 +4861,12 @@ body[data-template='base.twig']-template-default .content {
     transition: transform .2s;
     transition: transform .2s, -webkit-transform .2s; }
   .link--social.linkedin:before {
-    content: "";
+    content: "";
     font-style: normal;
     font-weight: normal;
     font-family: 'icons'; }
   .link--social.twitter:before {
-    content: "";
+    content: "";
     font-style: normal;
     font-weight: normal;
     font-family: 'icons'; }
@@ -4875,13 +4875,43 @@ body[data-template='base.twig']-template-default .content {
     font-style: normal;
     font-weight: normal;
     font-family: 'icons'; }
+  .link--social.instagram:before {
+    content: "";
+    font-style: normal;
+    font-weight: normal;
+    font-family: 'icons'; }
+  .link--social.tumblr:before {
+    content: "";
+    font-style: normal;
+    font-weight: normal;
+    font-family: 'icons'; }
+  .link--social.soundcloud:before {
+    content: "";
+    font-style: normal;
+    font-weight: normal;
+    font-family: 'icons'; }
+  .link--social.myspace:before {
+    content: "";
+    font-style: normal;
+    font-weight: normal;
+    font-family: 'icons'; }
+  .link--social.youtube:before {
+    content: "";
+    font-style: normal;
+    font-weight: normal;
+    font-family: 'icons'; }
+  .link--social.wikipedia:before {
+    content: "";
+    font-style: normal;
+    font-weight: normal;
+    font-family: 'icons'; }
   .link--social.slack:before {
-    content: "";
+    content: "";
     font-style: normal;
     font-weight: normal;
     font-family: 'icons'; }
   .link--social.website:before {
-    content: "";
+    content: "";
     font-style: normal;
     font-weight: normal;
     font-family: 'icons'; }
@@ -4910,13 +4940,13 @@ body[data-template='base.twig']-template-default .content {
     margin-left: 2rem; }
 
 .link--phone:before {
-  content: "";
+  content: "";
   font-style: normal;
   font-weight: normal;
   font-family: 'icons'; }
 
 .link--email:before {
-  content: "";
+  content: "";
   font-style: normal;
   font-weight: normal;
   font-family: 'icons'; }
@@ -4972,7 +5002,7 @@ body[data-template='base.twig']-template-default .content {
 .link--external {
   display: inline-block; }
   .link--external:after {
-    content: "";
+    content: "";
     font-style: normal;
     font-weight: normal;
     font-family: 'icons'; }
@@ -5104,12 +5134,12 @@ body[data-template='base.twig']-template-default .content {
       font-weight: normal;
       font-family: 'icons'; }
     .meta-data dd.auteur:before, .meta-data dd.author:before {
-      content: "";
+      content: "";
       font-style: normal;
       font-weight: normal;
       font-family: 'icons'; }
     .meta-data dd.locatie:before, .meta-data dd.location:before {
-      content: "";
+      content: "";
       font-style: normal;
       font-weight: normal;
       font-family: 'icons'; }
@@ -5144,7 +5174,7 @@ body[data-template='base.twig']-template-default .content {
     font-weight: normal;
     font-family: 'icons'; }
   .meta-data__item.location:before {
-    content: "";
+    content: "";
     font-style: normal;
     font-weight: normal;
     font-family: 'icons'; }
@@ -5545,7 +5575,7 @@ body[data-template='base.twig']-template-default .content {
   font-size: 4rem;
   padding-left: .5rem; }
   .play:before {
-    content: "";
+    content: "";
     font-style: normal;
     font-weight: normal;
     font-family: 'icons'; }
@@ -5602,7 +5632,7 @@ body[data-template='base.twig']-template-default .content {
     font-size: 1.4rem;
     font-family: "montserratsemibold", Helvetica, Arial, sans-serif; }
     .video__video .collapsetoggle button:before {
-      content: "";
+      content: "";
       font-style: normal;
       font-weight: normal;
       font-family: 'icons'; }
@@ -6784,5 +6814,3 @@ body[data-template='base.twig']-template-default .content {
   @media (min-width: 1100px) {
     .manual-item__content {
       padding: 4rem 5rem; } }
-
-/*# sourceMappingURL=od-theme.css.map */
