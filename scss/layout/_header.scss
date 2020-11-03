@@ -376,3 +376,15 @@
     display: none;
   }
 }
+
+.l-header-mobile-nav {
+  .btn__text {
+    @include visually-hidden;
+  }
+
+  i {
+    position: absolute;
+    left: 0;
+    top: 0;
+  }
+}

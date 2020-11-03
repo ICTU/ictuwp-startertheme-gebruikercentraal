@@ -1202,6 +1202,21 @@ Gutenberg corrections
     .main-menu__open-sub {
       display: none; } }
 
+.l-header-mobile-nav .btn__text {
+  margin: -1px;
+  padding: 0;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  clip: rect(0, 0, 0, 0);
+  position: absolute; }
+
+.l-header-mobile-nav i {
+  position: absolute;
+  left: 0;
+  top: 0; }
+
 .grid > div,
 .grid > section {
   margin-top: 3rem; }
@@ -1361,6 +1376,8 @@ html {
         padding-bottom: 3rem; }
 
 .content {
+  -webkit-box-shadow: 0.4rem 0.4rem 0 rgba(0, 0, 0, 0.15);
+          box-shadow: 0.4rem 0.4rem 0 rgba(0, 0, 0, 0.15);
   position: relative;
   background: #fff;
   max-width: 960px;
@@ -6174,3 +6191,5 @@ body[data-template='base.twig']-template-default .content {
       clip: rect(0 0 0 0);
       clip: rect(0, 0, 0, 0);
       position: absolute; } }
+
+/*# sourceMappingURL=gc-theme.css.map */
