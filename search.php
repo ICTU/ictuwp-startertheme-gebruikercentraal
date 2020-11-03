@@ -135,6 +135,7 @@ if ( $searchterm ) {
 		// pindakaas enzo
 
 		if ( $wp_query->have_posts() ) {
+			$counter = 0;
 
 			$number_results = $wp_query->found_posts;
 

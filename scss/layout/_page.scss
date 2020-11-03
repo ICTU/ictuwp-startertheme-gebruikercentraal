@@ -73,6 +73,7 @@ html {
 }
 
 .content {
+  @include gc-box-shadow();
   position: relative;
   background: $white;
   max-width: $max-width-content;
