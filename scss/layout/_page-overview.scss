@@ -65,10 +65,16 @@
 
   .entry-content + .grid {
     margin-top: 5rem;
+    padding-bottom: 5rem;
 
     @include bp-up(md) {
       margin-top: 7rem;
     }
+
+    @include bp-up(lg) {
+      padding-bottom: 7rem;
+    }
+
   }
 
   .grid {
@@ -223,7 +229,15 @@
 }
 
 .page-template-template-alle-tips {
+
   .grid {
-    margin-bottom: 7rem;
+    padding-bottom: 5rem;
+
+    @include bp-up(lg) {
+      padding-bottom: 7rem;
+    }
+
   }
+
 }
+
