@@ -267,7 +267,7 @@ function watch() {
   if (siteConfig.shortname === 'gc_base') {
     console.log("Extra folder in de gaten houden, want " + siteConfig.shortname + ': ' + siteConfig.path + 'scss/');
     // Watch flavor from siteconfog
-    gulp.watch('../scss/**/*.scss', gulp.series(baseStyles));
+    gulp.watch('../scss/**/*.scss', gulp.series(styles));
   } else {
     gulp.watch(siteConfig.path + 'scss/**/*.scss', styles);
     gulp.watch('../scss/**/*.scss', gulp.series(baseStyles, styles));
