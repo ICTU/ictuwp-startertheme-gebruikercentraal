@@ -227,3 +227,21 @@
     margin-bottom: 7rem;
   }
 }
+
+
+// Search results
+
+.search {
+  .content-wrapper,
+  .content header {
+    @include ho-make-container($max-width-inner);
+  }
+
+  .overview--list {
+    margin-top: 3rem;
+
+    @include bp-up(md){
+      margin-top: 5rem;
+    }
+  }
+}
