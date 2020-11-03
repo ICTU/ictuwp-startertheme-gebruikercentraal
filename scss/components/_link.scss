@@ -43,6 +43,30 @@
       @include icon(before, facebook);
     }
 
+    &.instagram {
+      @include icon(before, instagram);
+    }
+
+    &.tumblr {
+      @include icon(before, tumblr);
+    }
+
+    &.soundcloud {
+      @include icon(before, soundcloud);
+    }
+
+    &.myspace {
+      @include icon(before, myspace);
+    }
+
+    &.youtube {
+      @include icon(before, youtube);
+    }
+
+    &.wikipedia {
+      @include icon(before, wikipedia);
+    }
+
     &.slack {
       @include icon(before, slack);
     }

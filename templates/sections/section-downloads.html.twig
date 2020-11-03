@@ -1,8 +1,18 @@
+{#
+// default: als er geen titel is, dan krijgen de subitems een h2
+#}
+
+{% set headerlevel = 'h2' %}
+
 <section class="section section--downloads"{% if id %} id="{{ id }}"{% endif %}>
   {% if title or section_descr %}
     <div class="l-section-top">
       {% if title %}
         <h2 class="section__title">{{ title }}</h2>
+        {#
+        // er is wel een titel, dus krijgen de subitems straks een h3
+        #}
+        {% set headerlevel = 'h3' %}
       {% endif %}
 
       {% if descr %}
@@ -20,6 +30,7 @@
             {% include 'components/download-box.html.twig' with {
               'title': item.title,
               'descr': item.descr,
+              'headerlevel': headerlevel,
               'linktext': item.linktext,
               'url': item.url,
               'aria_label': item.aria_label,

@@ -12,8 +12,15 @@
 */
 #}
 
+{% set headerlevelcard = 'h2' %}
+
+{% if headerlevel %}
+  {% set headerlevelcard = headerlevel %}
+{% endif %}
+
+
 <div class="download-box{{ descr ? ' download-box--with-descr' }}">
-  <h3>{{ title }}</h3>
+  <{{ headerlevelcard }}>{{ title }}</{{ headerlevelcard }}>
 
   {% if meta %}
     {% include 'components/meta-data.html.twig' with {'items': meta } %}

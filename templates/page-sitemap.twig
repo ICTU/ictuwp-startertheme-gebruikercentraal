@@ -1,14 +1,18 @@
 {% extends "base.twig" %}
 
 {% block content %}
-  <div class="content-wrapper">
-    <article class="post-type-{{ post.post_type }}" id="post-{{ post.ID }}">
-      <section class="article-content">
-        <h1 class="article-h1">{{ post.title }}</h1>
-        <div class="article-body">
-          {{ post.content }}
-        </div>
-      </section>
+
+  <article class="post post--full post--type-{{ post.post_type }}" id="post-{{ post.ID }}">
+
+
+    <header class="post__header">
+      <h1 class="page__title">{{ post.title }}</h1>
+    </header>
+
+    <section class="post__content">
+      <div class="post__body">
+        {{ post.content }}
+      </div>
 
       {% if sitemap.pages %}
         <section class="section">
@@ -60,7 +64,8 @@
           </ul>
         </section>
       {% endif %}
+    </section>
+  </article>
 
-    </article>
-  </div><!-- /content-wrapper -->
+
 {% endblock %}

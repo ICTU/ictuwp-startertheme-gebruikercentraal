@@ -23,7 +23,8 @@
       }
 
       @include bp-up(lg) {
-        padding-left: 4rem;
+        // gelijktrekken uitlijning
+        padding-left: 3rem;
 
         .date-badge {
           margin-left: -4rem;
@@ -38,6 +39,7 @@
       }
     }
   }
+
 }
 
 
@@ -49,6 +51,11 @@
   color: $white;
   padding-top: 3rem;
   padding-bottom: 3rem;
+
+  // gelijktrekken uitlijning
+  padding-right: 3rem;
+  padding-left: 3rem;
+
   margin-top: 3rem;
 
   h2, h3 {
@@ -235,3 +242,30 @@
     }
   }
 }
+
+.single-event {
+  //  voor een single event geen padding onderin, omdat
+  // het reserveringsblock dan een raar witte blok
+  // onder zich krijgt
+
+  .content {
+    padding-bottom: 0;
+
+    .section--paragraph:last-of-type {
+      // hiermee houden we rekeing met events die GEEN reserveringen
+      // en GEEN comments hebben
+      padding-bottom: 7rem;
+    }
+
+    @include bp-up(lg) {
+      padding-bottom: 0;
+    }
+  }
+
+  #comments {
+    // gelijktrekken uitlijning
+    padding-right: 3rem;
+    padding-left: 3rem;
+  }
+}
+

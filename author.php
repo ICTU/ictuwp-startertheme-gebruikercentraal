@@ -19,23 +19,51 @@ if ( isset( $wp_query->query_vars['author'] ) ) {
 	$context['author'] = $author;
 	$context['title']  = $author->name();
 
+	$author_id = $author->facebook;
+
+
+
 	// TODO: dit gedeelte moet via een nette layout gepresenteerd worden;
 	// zie section-authorbox.html.twig
-	if ($context['author']->auteursfoto_url || $context['publiek_telefoonnummer'] || $context['publiek_mailadres'] ) {
 
-		if ($context['author']->functiebeschrijving ) {
-			$context['descr']  .= sprintf( _x( '%s', 'Author archive functiebeschrijving', 'gctheme' ), $context['author']->functiebeschrijving ) . '<br>';
-		}
-		if ($context['author']->publiek_telefoonnummer ) {
-			$context['descr']  .= sprintf( _x( '<a href="%s">%s</a>', 'Author archive phone', 'gctheme' ), $context['author']->publiek_telefoonnummer, $context['author']->publiek_telefoonnummer ) . '<br>';
-		}
-		if ($context['author']->publiek_mailadres ) {
-			$context['descr']  .= sprintf( _x( '<a href="%s">%s</a>', 'Author archive mail', 'gctheme' ), $context['author']->publiek_mailadres, $context['author']->publiek_mailadres ) . '<br>';
-		}
+	$context['descr']  = sprintf( _x( 'Posts by %s.', 'Description author archive', 'gctheme' ), $author->name() );
 
-	} else {
-		$context['descr']  = sprintf( _x( 'Posts by %s.', 'Description author archive', 'gctheme' ), $author->name() );
+	$author_id = $author->ID;
+
+	$socialmedia = array();
+
+	if (!empty($author->facebook)) {
+		$socialmedia[] = array("name"=>"facebook","link"=>$author->facebook);
 	}
+	if (!empty($author->instagram)) {
+		$socialmedia[] = array("name"=>"instagram","link"=>$author->instagram);
+	}
+	if (!empty($author->linkedin)) {
+		$socialmedia[] = array("name"=>"linkedin","link"=>$author->linkedin);
+	}
+	if (!empty($author->myspace)) {
+		$socialmedia[] = array("name"=>"myspace","link"=>$author->myspace);
+	}
+	if (!empty($author->soundcloud)) {
+		$socialmedia[] = array("name"=>"soundcloud","link"=>$author->soundcloud);
+	}
+	if (!empty($author->tumblr)) {
+		$socialmedia[] = array("name"=>"tumblr","link"=>$author->tumblr);
+	}
+	if (!empty($author->twitter)) {
+		$socialmedia[] = array("name"=>"twitter","link"=>"https://twitter.com/".$author->twitter);
+	}
+	if (!empty($author->youtube)) {
+		$socialmedia[] = array("name"=>"youtube","link"=>$author->youtube);
+	}
+	if (!empty($author->wikipedia)) {
+		$socialmedia[] = array("name"=>"wikipedia","link"=>$author->wikipedia);
+	}
+
+
+
+
+	$context['socialmediachannels'] = $socialmedia;
 
 }
 
@@ -45,6 +73,7 @@ foreach ( $posts as $post ) {
 
 
 $templates = [
+	'author.twig',
 	'archive.twig',
 	'index.twig',
 ];
