@@ -38,7 +38,7 @@
     }
 
     .l-with-related & {
-      /// remove margin top for "defailt" related - it's alreadt in the last section
+      // remove margin top for "default" related - it's already in the last section
       .post__content > .section--overview {
         margin-top: 0;
       }
@@ -75,7 +75,7 @@
   @include gc-pagination;
 
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
 
   // pagination is a list
   &, li {
@@ -90,7 +90,6 @@
   }
 
   width: 100%;
-
 
   a {
     border-color: $border_color;
