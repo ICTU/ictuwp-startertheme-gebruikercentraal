@@ -2493,6 +2493,8 @@
           width: 1rem; } }
 
 .overview--list {
+  margin: 0;
+  padding: 0;
   max-width: 1280px;
   margin-left: auto;
   margin-right: auto; }
@@ -2503,6 +2505,13 @@
     max-width: 760px;
     margin-left: auto;
     margin-right: auto; }
+  .overview--list .overview__item + .overview__item {
+    border-top: 0.1rem solid #D1DFE3;
+    margin-top: 2rem;
+    padding-top: 2rem; }
+
+.overview__item {
+  list-style: none; }
 
 .video {
   max-width: 760px;
@@ -2827,5 +2836,3 @@ h2, h3, h4, h5 {
     min-height: 5.5rem; }
     .download-box--with-descr .meta-data {
       width: auto; }
-
-/*# sourceMappingURL=editor-styles.css.map */
