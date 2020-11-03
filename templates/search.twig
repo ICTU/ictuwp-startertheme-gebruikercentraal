@@ -15,9 +15,11 @@
       </p>
     {% endif %}
 
-    {% for post in results %}
-      {% include ['searchresult-item-'~post.post_type~'.twig', 'searchresult-item.twig'] %}
-    {% endfor %}
+    <ol class="overview overview--list overview--search-results">
+      {% for post in results %}
+        <li class="overview__item">{% include ['searchresult-item-'~post.post_type~'.twig', 'searchresult-item.twig'] %}</li>
+      {% endfor %}
+    </ol>
 
     {% include 'partial/pagination.twig' with { pagination: posts.pagination({show_all: false, mid_size: 3, end_size: 2}) } %}
   </div>
