@@ -133,7 +133,6 @@
 // Gutenberg default
 
 .wp-block-image.size-large {
-  @include ho-make-container($max-width-inner);
 
   + .section--heading {
     margin-top: 5rem;
