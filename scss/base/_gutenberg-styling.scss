@@ -11,6 +11,23 @@ Gutenberg corrections
   }
 }
 
+// Toegevoegd als apart item, in plaats van een list in
+// .section--paragraph
+// hiermee kunnen we een list makkelijker omhoog trekken tegen
+// een paragraph aan.
+.section--list {
+  margin-top: 1rem;
+
+  ul, ol {
+    margin-top: 0;
+  }
+
+  + .section--heading {
+    margin-top: 4rem;
+  }
+
+}
+
 .section--paragraph {
   p {
     margin-top: 1rem;
@@ -20,6 +37,14 @@ Gutenberg corrections
     margin-top: 4rem;
   }
 
+  + .section--paragraph {
+    margin-top: 4rem;
+  }
+
+  + .section--list {
+    margin-top: 2rem;
+  }
+
   + .wp-block-image {
     margin-top: 4rem;
     margin-bottom: 4rem;
@@ -27,6 +52,12 @@ Gutenberg corrections
 
   + .section--cta {
     margin-top: 0;
+  }
+}
+
+.section--heading {
+  + .section--list {
+    margin-top: 2rem;
   }
 }
 
