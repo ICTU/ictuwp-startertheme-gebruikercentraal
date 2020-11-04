@@ -100,6 +100,15 @@ body:not(.page--type-homepage) {
       padding-bottom: 7rem;
     }
   }
+
+  // extra uitzondering op de regel: een downloadblock
+  article section.section.section--downloads:not(:first-child):not(.section--bg-option):last-child {
+    // een download block heeft van zichzelf al aardig wat ruimte.
+    padding-bottom: 3rem;
+    @include bp-up(lg) {
+      padding-bottom: 3rem;
+    }
+  }
 }
 
 
