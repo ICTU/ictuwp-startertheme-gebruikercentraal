@@ -132,8 +132,8 @@
 
 @font-face {
   font-family: "icons";
-  src: url("/wp-content/themes/ictuwp-theme-gc2020/assets/fonts/iconfont/gc-iconfont-2m704.eot");
-  src: url("/wp-content/themes/ictuwp-theme-gc2020/assets/fonts/iconfont/gc-iconfont-2m704.eot?#iefix") format("eot"), url("/wp-content/themes/ictuwp-theme-gc2020/assets/fonts/iconfont/gc-iconfont-2m704.woff") format("woff"), url("/wp-content/themes/ictuwp-theme-gc2020/assets/fonts/iconfont/gc-iconfont-2m704.ttf") format("truetype"), url("/wp-content/themes/ictuwp-theme-gc2020/assets/fonts/iconfont/gc-iconfont-2m704.svg#icons") format("svg");
+  src: url("/wp-content/themes/ictuwp-theme-gc2020/assets/fonts/iconfont/gc-iconfont-dzsua.eot");
+  src: url("/wp-content/themes/ictuwp-theme-gc2020/assets/fonts/iconfont/gc-iconfont-dzsua.eot?#iefix") format("eot"), url("/wp-content/themes/ictuwp-theme-gc2020/assets/fonts/iconfont/gc-iconfont-dzsua.woff") format("woff"), url("/wp-content/themes/ictuwp-theme-gc2020/assets/fonts/iconfont/gc-iconfont-dzsua.ttf") format("truetype"), url("/wp-content/themes/ictuwp-theme-gc2020/assets/fonts/iconfont/gc-iconfont-dzsua.svg#icons") format("svg");
   font-weight: normal;
   font-style: normal; }
 
@@ -227,16 +227,6 @@ img {
 
 *[aria-hidden=true] {
   display: none; }
-
-LALALALALA[aria-expanded=false] {
-  margin: -1px;
-  padding: 0;
-  width: 1px;
-  height: 1px;
-  overflow: hidden;
-  clip: rect(0 0 0 0);
-  clip: rect(0, 0, 0, 0);
-  position: absolute; }
 
 .visually-hidden,
 .visuallyhidden {
@@ -638,18 +628,6 @@ legend {
     padding-left: 30%; } }
 
 /* speciale formulieren */
-.wpcf7-form,
-.gform_wrapper {
-  padding-bottom: 4rem;
-  max-width: 760px;
-  margin-left: auto;
-  margin-right: auto;
-  float: none;
-  clear: both;
-  border-top: 0.2rem solid #D1DFE3;
-  margin-top: 2rem;
-  padding-top: 2rem; }
-
 /* CF7 - Contactform 7
 ------------------------------------------------------ */
 .wpcf7-form .form-item .wpcf7-form-control-wrap {
@@ -670,56 +648,61 @@ legend {
 
 /* Gravity Forms
 ------------------------------------------------------ */
-.gform_wrapper ul, .gform_wrapper ul li, .gform_wrapper ol, .gform_wrapper ol li {
-  list-style: none;
-  margin-left: 0;
-  padding-left: 0; }
-
-.gform_wrapper .gfield {
-  margin-top: 2rem; }
-  .gform_wrapper .gfield label {
-    line-height: 2.6rem; }
-  @media (min-width: 700px) {
-    .gform_wrapper .gfield {
-      position: relative;
-      display: -webkit-box;
-      display: -ms-flexbox;
-      display: flex;
-      -ms-flex-wrap: wrap;
-          flex-wrap: wrap;
-      margin-top: 3rem; }
-      .gform_wrapper .gfield label {
-        width: 30%;
-        padding-right: 3rem;
-        text-align: right; }
-      .gform_wrapper .gfield .ginput_container,
-      .gform_wrapper .gfield .form-description {
-        width: 70%;
-        margin-left: auto; }
-        .gform_wrapper .gfield .ginput_container input[type="text"],
-        .gform_wrapper .gfield .ginput_container input[type="email"],
-        .gform_wrapper .gfield .ginput_container input[type="password"],
-        .gform_wrapper .gfield .ginput_container input[type="file"],
-        .gform_wrapper .gfield .ginput_container input[type="url"],
-        .gform_wrapper .gfield .ginput_container input[type="number"],
-        .gform_wrapper .gfield .ginput_container input[type="date"],
-        .gform_wrapper .gfield .ginput_container input[type="search"],
-        .gform_wrapper .gfield .ginput_container select, .gform_wrapper .gfield .ginput_container textarea,
-        .gform_wrapper .gfield .form-description input[type="text"],
-        .gform_wrapper .gfield .form-description input[type="email"],
-        .gform_wrapper .gfield .form-description input[type="password"],
-        .gform_wrapper .gfield .form-description input[type="file"],
-        .gform_wrapper .gfield .form-description input[type="url"],
-        .gform_wrapper .gfield .form-description input[type="number"],
-        .gform_wrapper .gfield .form-description input[type="date"],
-        .gform_wrapper .gfield .form-description input[type="search"],
-        .gform_wrapper .gfield .form-description select,
-        .gform_wrapper .gfield .form-description textarea {
-          width: 100%; } }
-
-.gform_wrapper .validation_message,
-.gform_wrapper .gform_footer {
-  padding-left: 30%; }
+.gform_wrapper {
+  padding-bottom: 4rem;
+  max-width: 760px;
+  margin-left: auto;
+  margin-right: auto;
+  float: none;
+  clear: both; }
+  .gform_wrapper ul, .gform_wrapper ul li, .gform_wrapper ol, .gform_wrapper ol li {
+    list-style: none;
+    margin-left: 0;
+    padding-left: 0; }
+  .gform_wrapper .gfield {
+    margin-top: 2rem; }
+    .gform_wrapper .gfield label {
+      line-height: 2.6rem; }
+    @media (min-width: 700px) {
+      .gform_wrapper .gfield {
+        position: relative;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -ms-flex-wrap: wrap;
+            flex-wrap: wrap;
+        margin-top: 3rem; }
+        .gform_wrapper .gfield label {
+          width: 30%;
+          padding-right: 3rem;
+          text-align: right; }
+        .gform_wrapper .gfield .ginput_container,
+        .gform_wrapper .gfield .form-description {
+          width: 70%;
+          margin-left: auto; }
+          .gform_wrapper .gfield .ginput_container input[type="text"],
+          .gform_wrapper .gfield .ginput_container input[type="email"],
+          .gform_wrapper .gfield .ginput_container input[type="password"],
+          .gform_wrapper .gfield .ginput_container input[type="file"],
+          .gform_wrapper .gfield .ginput_container input[type="url"],
+          .gform_wrapper .gfield .ginput_container input[type="number"],
+          .gform_wrapper .gfield .ginput_container input[type="date"],
+          .gform_wrapper .gfield .ginput_container input[type="search"],
+          .gform_wrapper .gfield .ginput_container select, .gform_wrapper .gfield .ginput_container textarea,
+          .gform_wrapper .gfield .form-description input[type="text"],
+          .gform_wrapper .gfield .form-description input[type="email"],
+          .gform_wrapper .gfield .form-description input[type="password"],
+          .gform_wrapper .gfield .form-description input[type="file"],
+          .gform_wrapper .gfield .form-description input[type="url"],
+          .gform_wrapper .gfield .form-description input[type="number"],
+          .gform_wrapper .gfield .form-description input[type="date"],
+          .gform_wrapper .gfield .form-description input[type="search"],
+          .gform_wrapper .gfield .form-description select,
+          .gform_wrapper .gfield .form-description textarea {
+            width: 100%; } }
+  .gform_wrapper .validation_message,
+  .gform_wrapper .gform_footer {
+    padding-left: 30%; }
 
 /*
 Gutenberg corrections
@@ -730,24 +713,11 @@ Gutenberg corrections
 .section--heading + .section--text {
   margin-top: 0; }
 
-.section--list {
-  margin-top: 1rem; }
-  .section--list ul, .section--list ol {
-    margin-top: 0; }
-  .section--list + .section--heading {
-    margin-top: 4rem; }
-
 .section--paragraph p {
   margin-top: 1rem; }
 
 .section--paragraph + .section--heading {
   margin-top: 4rem; }
-
-.section--paragraph + .section--paragraph {
-  margin-top: 4rem; }
-
-.section--paragraph + .section--list {
-  margin-top: 2rem; }
 
 .section--paragraph + .wp-block-image {
   margin-top: 4rem;
@@ -755,9 +725,6 @@ Gutenberg corrections
 
 .section--paragraph + .section--cta {
   margin-top: 0; }
-
-.section--heading + .section--list {
-  margin-top: 2rem; }
 
 .section--cta + .section {
   margin-top: 4rem; }
@@ -1420,25 +1387,15 @@ html {
   background: #fff;
   max-width: 960px;
   margin: 0 auto;
-  padding-top: 3rem; }
+  padding-top: 3rem;
+  padding-bottom: 5rem; }
   @media (min-width: 700px) {
     .content {
       padding-top: 5rem; } }
   @media (min-width: 1100px) {
     .content {
-      padding-top: 7rem; } }
-
-body:not(.page--type-homepage) article section.section:not(:first-child):not(.section--bg-option):last-child {
-  padding-bottom: 5rem; }
-  @media (min-width: 1100px) {
-    body:not(.page--type-homepage) article section.section:not(:first-child):not(.section--bg-option):last-child {
+      padding-top: 7rem;
       padding-bottom: 7rem; } }
-
-body:not(.page--type-homepage) article section.section.section--downloads:not(:first-child):not(.section--bg-option):last-child {
-  padding-bottom: 3rem; }
-  @media (min-width: 1100px) {
-    body:not(.page--type-homepage) article section.section.section--downloads:not(:first-child):not(.section--bg-option):last-child {
-      padding-bottom: 3rem; } }
 
 h1 {
   font-family: "league_gothicregular", Impact, Helvetica, Arial, sans-serif;
@@ -1563,9 +1520,6 @@ body[data-template='base.twig']-template-default .content {
       margin-right: -3rem;
       margin-bottom: -8rem; } }
 
-body:not(.single-event) .entry-content.wrap:last-child {
-  padding-bottom: 7rem; }
-
 .archive,
 .page--overview-archive {
   -webkit-box-shadow: 0.4rem 0.4rem 0 rgba(0, 0, 0, 0.15);
@@ -1652,16 +1606,11 @@ body:not(.single-event) .entry-content.wrap:last-child {
       padding-bottom: 5rem; }
   .archive .entry-content + .grid,
   .page--overview-archive .entry-content + .grid {
-    margin-top: 5rem;
-    padding-bottom: 5rem; }
+    margin-top: 5rem; }
     @media (min-width: 700px) {
       .archive .entry-content + .grid,
       .page--overview-archive .entry-content + .grid {
         margin-top: 7rem; } }
-    @media (min-width: 1100px) {
-      .archive .entry-content + .grid,
-      .page--overview-archive .entry-content + .grid {
-        padding-bottom: 7rem; } }
   .archive .grid,
   .page--overview-archive .grid {
     max-width: 1280px;
@@ -1774,10 +1723,7 @@ body:not(.single-event) .entry-content.wrap:last-child {
     border-color: #0095da; }
 
 .page-template-template-alle-tips .grid {
-  padding-bottom: 5rem; }
-  @media (min-width: 1100px) {
-    .page-template-template-alle-tips .grid {
-      padding-bottom: 7rem; } }
+  margin-bottom: 7rem; }
 
 .search .content-wrapper,
 .search .content header {
@@ -2339,9 +2285,9 @@ body:not(.single-event) .entry-content.wrap:last-child {
   margin-top: 3rem;
   border: none;
   display: flex;
-  -webkit-box-pack: start;
-      -ms-flex-pack: start;
-          justify-content: flex-start;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   width: 100%; }
   @media (min-width: 1100px) {
     .pagination {
@@ -6486,8 +6432,12 @@ body:not(.single-event) .entry-content.wrap:last-child {
 .entry--type-home .section--overview {
   text-align: center; }
 
-.wp-block-image.size-large + .section--heading {
-  margin-top: 5rem; }
+.wp-block-image.size-large {
+  max-width: 760px;
+  margin-left: auto;
+  margin-right: auto; }
+  .wp-block-image.size-large + .section--heading {
+    margin-top: 5rem; }
 
 .page--type-tipkaart .page-content > .section--overview.section--bg-option {
   background-image: url("../../assets/images/b_section-bg-option.svg"); }
