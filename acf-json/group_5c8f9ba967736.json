@@ -118,7 +118,7 @@
             "label": "Gerelateerde items",
             "name": "content_block_items",
             "type": "relationship",
-            "instructions": "Kies uit events, berichten, pagina's en tips. Minimaal 1, maximaal 4.",
+            "instructions": "Kies uit events, berichten, pagina's en tips. Minimaal 1. Je kunt filteren op contenttype (tip, pagina, etc.) of op een taxonomie.",
             "required": 0,
             "conditional_logic": [
                 [
@@ -347,5 +347,5 @@
     "hide_on_screen": "",
     "active": true,
     "description": "",
-    "modified": 1604412359
+    "modified": 1604570446
 }
