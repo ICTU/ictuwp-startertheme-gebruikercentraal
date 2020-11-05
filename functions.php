@@ -49,7 +49,7 @@ define( 'HALFWIDTH', 'halfwidth' );
 define( 'IMG_SIZE_HUGE', 'feature-huge' );
 define( 'IMG_SIZE_HUGE_MIN_WIDTH', 1200 );
 define( 'IMAGESIZE_16x9', 'image-16x9' );
-define( 'IMAGESIZE_HERO_IMAGGE', 'hero-image' );
+define( 'IMAGESIZE_HERO_IMAGE', 'hero-image' );
 
 //========================================================================================================
 
@@ -465,11 +465,12 @@ class GebruikerCentraalTheme extends Timber\Site {
 		$docrop      = true;
 		add_image_size( IMAGESIZE_16x9, $base_width, $base_height, $docrop );
 
-
+		// Grootte voor de hero-image. Dit is een apart image, via een ACF-veld.
+		// idealiter is dit image 2200px breed minimaal en 350px hoog.
 		$heroimage_width  = 2200;
 		$heroimage_height = 350;
-		$docrop      = true;
-		add_image_size( IMAGESIZE_HERO_IMAGGE, $heroimage_width, $heroimage_height, $docrop );
+		$docrop           = true;
+		add_image_size( IMAGESIZE_HERO_IMAGE, $heroimage_width, $heroimage_height, $docrop );
 
 		add_image_size( 'thumb-cardv3', 99999, 600, false );    // max  600px hoog, niet croppen
 
@@ -1556,9 +1557,9 @@ add_action( 'widgets_init', 'not_found_page_widgets_init' );
 
 //========================================================================================================
 
-add_filter('manage_upload_columns', 'size_column_register');
+add_filter( 'manage_upload_columns', 'size_column_register' );
 
-function size_column_register($columns) {
+function size_column_register( $columns ) {
 
 	$columns['dimensions'] = 'Dimensions';
 
@@ -1567,15 +1568,17 @@ function size_column_register($columns) {
 
 //========================================================================================================
 
-add_action('manage_media_custom_column', 'size_column_display', 10, 2);
+add_action( 'manage_media_custom_column', 'size_column_display', 10, 2 );
 
-function size_column_display($column_name, $post_id) {
+function size_column_display( $column_name, $post_id ) {
 
-	if( 'dimensions' != $column_name || !wp_attachment_is_image($post_id)) return;
+	if ( 'dimensions' != $column_name || ! wp_attachment_is_image( $post_id ) ) {
+		return;
+	}
 
-	list($url, $width, $height) = wp_get_attachment_image_src($post_id, 'full');
+	list( $url, $width, $height ) = wp_get_attachment_image_src( $post_id, 'full' );
 
-	echo esc_html("{$width}&times;{$height}");
+	echo esc_html( "{$width}&times;{$height}" );
 }
 
 //========================================================================================================
