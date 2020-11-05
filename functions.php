@@ -48,6 +48,8 @@ define( 'BLOG_SINGLE_DESKTOP', 'blog-single-desktop' );
 define( 'HALFWIDTH', 'halfwidth' );
 define( 'IMG_SIZE_HUGE', 'feature-huge' );
 define( 'IMG_SIZE_HUGE_MIN_WIDTH', 1200 );
+define( 'IMAGESIZE_16x9', 'image-16x9' );
+define( 'IMAGESIZE_HERO_IMAGGE', 'hero-image' );
 
 //========================================================================================================
 
@@ -450,6 +452,24 @@ class GebruikerCentraalTheme extends Timber\Site {
 		add_image_size( BLOG_SINGLE_TABLET, 250, 9999, false );
 		add_image_size( BLOG_SINGLE_DESKTOP, 380, 9999, false );
 		add_image_size( IMG_SIZE_HUGE, IMG_SIZE_HUGE_MIN_WIDTH, 9999, false );
+
+		// add_image_size heeft de volgende parameters:
+		// add_image_size( string $name, int $width, int $height, bool|array $crop = false )
+		// Het volgende gaat uit van plaatjes die minstens 800x breed zijn en die we in dit formaat
+		// willen bijsnijden, MET croppen.
+		// Plaatjes die kleiner zijn dan $base_width worden dus NIET netjes op maat gesneden
+		// TODO: moeten we een minimale breedte hebben voor featured images?
+		// (plugin: https://wordpress.org/plugins/minimum-featured-image-size/)
+		$base_width  = 800;
+		$base_height = ( ( $base_width / 16 ) * 9 );
+		$docrop      = true;
+		add_image_size( IMAGESIZE_16x9, $base_width, $base_height, $docrop );
+
+
+		$heroimage_width  = 2200;
+		$heroimage_height = 350;
+		$docrop      = true;
+		add_image_size( IMAGESIZE_HERO_IMAGGE, $heroimage_width, $heroimage_height, $docrop );
 
 		add_image_size( 'thumb-cardv3', 99999, 600, false );    // max  600px hoog, niet croppen
 
@@ -1533,6 +1553,30 @@ function not_found_page_widgets_init() {
 }
 
 add_action( 'widgets_init', 'not_found_page_widgets_init' );
+
+//========================================================================================================
+
+add_filter('manage_upload_columns', 'size_column_register');
+
+function size_column_register($columns) {
+
+	$columns['dimensions'] = 'Dimensions';
+
+	return $columns;
+}
+
+//========================================================================================================
+
+add_action('manage_media_custom_column', 'size_column_display', 10, 2);
+
+function size_column_display($column_name, $post_id) {
+
+	if( 'dimensions' != $column_name || !wp_attachment_is_image($post_id)) return;
+
+	list($url, $width, $height) = wp_get_attachment_image_src($post_id, 'full');
+
+	echo esc_html("{$width}&times;{$height}");
+}
 
 //========================================================================================================
 
