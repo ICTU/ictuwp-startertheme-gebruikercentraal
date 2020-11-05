@@ -98,10 +98,10 @@ if ( class_exists( 'EM_Events' ) ) {
 }
 
 // posts selecteren
-$maxnr_posts = 4;
-if ( isset( $context['actueel']['events'] ) ) {
-	$maxnr_posts = ( 4 - count( $context['actueel']['events']['items'] ) );
-}
+$maxnr_posts = 2;
+//	if ( isset( $context['actueel']['events'] ) ) {
+//		$maxnr_posts = ( 4 - count( $context['actueel']['events']['items'] ) );
+//	}
 $args        = array(
 	'post_type'   => 'post',
 	'numberposts' => $maxnr_posts,
