@@ -38,7 +38,8 @@ if ( $teaserblocks ) {
 }
 
 //$imagesize_for_thumbs = 'thumb-cardv3';
-$imagesize_for_thumbs = BLOG_SINGLE_DESKTOP;
+//$imagesize_for_thumbs = BLOG_SINGLE_DESKTOP;
+$imagesize_for_thumbs = IMAGESIZE_16x9;
 
 // events selecteren
 if ( class_exists( 'EM_Events' ) ) {
