@@ -6,112 +6,96 @@
 // @package gebruiker-centraal
 // @author  Tamara de Haas, Paul van Buuren
 // @license GPL-2.0+
-// @version 3.15.9
+// @version 5.0.20.q
 // @desc.   CTA-kleuren, a11y groen, sharing buttons optional, beeldbank CPT code separation.
 // @link    https://github.com/ICTU/gebruiker-centraal-wordpress-theme
 
 
-var toggleMenu = $('.btn--toggle-menu');
-var regionNav = $('.l-header-nav');
-var mainMenu = $('#mainnav');
+console.log("Mark, wat zit je haar leuk: 5.0.20.q");
 
-var bp = 1000;
 
-function doNav(width) {
+const totalMenuElement = document.getElementById('menu-primary');
+const menuItems = document.querySelectorAll('li.main-menu__item--with-sub');
 
-  if (width < bp) {
+Array.prototype.forEach.call(menuItems, function (el, i) {
+  var thisListItem = el;
+  var anchorInListItem = el.querySelector('a');
+  var appendButtonAfterAnchor = '<button class="main-menu__open-sub"><span><span class="visuallyhidden">Submenu voor “' + anchorInListItem.text + '”</span></span></button>';
+  anchorInListItem.insertAdjacentHTML('afterend', appendButtonAfterAnchor);
 
-    // Mobile
-    regionNav.attr('aria-hidden', true);
+  thisListItem.addEventListener("pointerenter", function (event) {
+    hoverListItem(this);
+  });
+  thisListItem.addEventListener("pointerleave", function (event) {
+    hoverListItem(this);
+  });
+  el.querySelector('button').addEventListener("click", function (event) {
+    if (!this.parentNode.classList.contains('open')) {
+      // heeft GEEN class open, dus status is niet open; nieuwe status wordt: alles openen
+      this.parentNode.classList.add('open');
+      this.parentNode.querySelector('a').setAttribute('aria-expanded', "true");
+      this.parentNode.querySelector('button').setAttribute('aria-expanded', "true");
+      this.parentNode.querySelector('ul.main-menu__sublist').classList.remove('visuallyhidden');
+      this.parentNode.querySelector('ul.main-menu__sublist').setAttribute('aria-expanded', "true");
+    } else {
+      // heeft wel class open, dus status is open; nieuwe status wordt: alles sluiten
+      this.parentNode.classList.remove('open');
+      this.parentNode.querySelector('a').setAttribute('aria-expanded', "false");
+      this.parentNode.querySelector('button').setAttribute('aria-expanded', "false");
+      this.parentNode.querySelector('ul.main-menu__sublist').classList.add('visuallyhidden');
+      this.parentNode.querySelector('ul.main-menu__sublist').setAttribute('aria-expanded', "false");
+    }
+    event.preventDefault();
+  });
+});
 
-    // Show al sublists
-    $('.main-menu__sublist').attr('aria-hidden', 'false');
 
-    toggleMenu.on('click', function () {
-      $(this).toggleClass('active');
-      $('body').toggleClass('show-menu');
 
-      if (regionNav.attr('aria-hidden') === 'true') {
-        regionNav.attr('aria-hidden', 'false');
-      } else if (regionNav.attr('aria-hidden') === 'false') {
-        regionNav.attr('aria-hidden', 'true');
-      }
-    });
+function hoverListItem(theObject) {
 
-  } else if (width >= bp) {
-    // Desktop
-    regionNav.attr('aria-hidden', false);
-    $('.main-menu__sublist').attr('aria-hidden', 'true');
+  if (!theObject.classList.contains('open')) {
+    // heeft GEEN class open, dus status is niet open; nieuwe status wordt: alles openen
+    theObject.classList.add('open');
+    theObject.querySelector('a').setAttribute('aria-expanded', "true");
+//    theObject.querySelector('a').style.cssText = 'border: 2px dashed green';
+    theObject.querySelector('button').setAttribute('aria-expanded', "true");
+    theObject.querySelector('ul.main-menu__sublist').classList.remove('visuallyhidden');
+    theObject.querySelector('ul.main-menu__sublist').setAttribute('aria-expanded', "true");
+  } else {
+    // heeft wel class open, dus status is open; nieuwe status wordt: alles sluiten
+    theObject.classList.remove('open');
+    theObject.querySelector('a').setAttribute('aria-expanded', "false");
+    theObject.querySelector('button').setAttribute('aria-expanded', "false");
+    theObject.querySelector('ul.main-menu__sublist').classList.add('visuallyhidden');
+    theObject.querySelector('ul.main-menu__sublist').setAttribute('aria-expanded', "false");
+  }
 
-    // Add class on mouse enter
-    $('.main-menu__item--with-sub').on('mouseenter', function () {
-      if (!($(this).hasClass('open'))) {
-        // Unset other active if there
-        mainMenu.find('.open').removeClass('open');
-        mainMenu.find('ul[aria-hidden="false"]').attr('aria-hidden', 'true');
+}
 
-        // Add attributes to current menu
-        $(this).addClass('open').find('.main-menu__sublist').attr('aria-hidden', 'false');
-        $(this).find('a:first-child').attr('aria-expanded', 'true');
-      }
-    });
+function closeMenuItems() {
+  var listitems = document.querySelectorAll(".menu-item-has-children");
+  [].forEach.call(listitems, function (el) {
+    el.classList.remove("open");
+  });
+}
 
-    // And remove again on mouseleave
-    $('.main-menu__item--with-sub').mouseleave(function () {
-      // Add attributes to current menu
-      $(this).removeClass('open');
-      $(this).attr('aria-hidden', 'true');
-      $(this).parent().find('a:first-child').attr('aria-expanded', 'false');
-    });
-
-    // Add toggle behaviour on click
-    $('.main-menu__open-sub').on('click', function () {
-      var menuItem = $(this).parent();
-      var currentActive = mainMenu.find('.open');
-
-      if (!(menuItem.hasClass('open'))) {
-        //Submenu is closed, has to open
-        if (currentActive.length) {
-          //If there is another item open remove it
-          currentActive.removeClass('open').find('.main-menu__sublist').attr('aria-hidden', true);
-          currentActive.find('button').attr('aria-expanded', false);
-        }
-
-        $(this).attr('aria-expanded', true).find('span').text('Open ' + menuItem.find('a:first span').text());
-        menuItem.addClass('open').find('.main-menu__sublist').attr('aria-hidden', false);
-
-      } else if (menuItem.hasClass('open')) {
-        // Submenu is open, has to close
-        $(this).attr('aria-expanded', false).find('span').text('Sluit ' + menuItem.find('a:first span').text());
-        menuItem.removeClass('open').find('.main-menu__sublist').attr('aria-hidden', true);
-      }
-    });
-
-    // Hide submenu when clicking outside of menu
-    $(document).mouseup(function (e) {
-      var menuActiveSub = $('.main-menu__sublist[aria-hidden="false"]');
-
-      // if the target of the click isn't the container nor a descendant of the container
-      if (!menuActiveSub.is(e.target) && menuActiveSub.has(e.target).length === 0) {
-        menuActiveSub.attr('aria-hidden', true);
-      }
-    });
-
+function istotalMenuElementMenu(event) {
+  if (totalMenuElement !== event.target && !totalMenuElement.contains(event.target)) {
+    closeMenuItems();
   }
 }
 
+document.onkeydown = function (evt) {
+  evt = evt || window.event;
+  if (evt.keyCode == 27) {
+    // close with ESC
+    closeMenuItems();
+  }
+};
+document.addEventListener('click', istotalMenuElementMenu);
 
-$(window).on('load', function () {
-  var w = $(window).width();
 
-  doNav(w);
-});
-
-$(window).on('resize', function () {
-  var w = $(window).width();
-
-  doNav(w);
-});
+// =========================================================================================================
 
 
 // =========================================================================================================

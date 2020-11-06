@@ -100,17 +100,24 @@ img {
 }
 
 *[aria-hidden=true]{
-  display: none; // het hartinfarct toch maar even voorkomen
   // ho ho, wageffe!
   // aria-hidden zou je alleen moeten gebruiken voor elementen die je wel
   // wil tonen aan ziende gebruikers, maar niet aan gebruikers met bijv.
   // een screenreader
-//  border: 10px solid red !important; // het hartinfarct toch maar even voorkomen
+  border: 10px solid red !important; // BOE! SCHRIK!
 }
 
-LALALALALA[aria-expanded=false]{
-  @include visually-hidden;
+ul[aria-expanded="false"]{
+  // de links in een ingeklapt lijstje moeten onzichtbaar zijn,
+  // zodat je er bijv. ook niet via de tabtoets bij kunt
+  display: none;
 }
+ul[aria-expanded="true"]{
+  // de links in een uitgeklapt lijstje moeten bereikbaar
+  // zijn als je met de tabtoets door de links wandelt
+  display: block;
+}
+
 
 
 .visually-hidden,
