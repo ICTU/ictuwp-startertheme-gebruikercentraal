@@ -69,4 +69,3 @@ jQuery(document).on('mouseup', function (e) {
 
 });
 
-window.alert('stepchart.js: 5.0.21.2');

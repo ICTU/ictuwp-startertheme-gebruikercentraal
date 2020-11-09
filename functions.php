@@ -8,7 +8,7 @@
  * @since   Timber 0.1
  */
 
-define( 'CHILD_THEME_VERSION', '5.0.21.2' );
+define( 'CHILD_THEME_VERSION', '5.0.21.3' );
 define( 'ID_MAINCONTENT', 'maincontent' );
 define( 'ID_MAINNAV', 'mainnav' );
 define( 'ID_ZOEKEN', 'zoeken' );

@@ -57,5 +57,4 @@ jQuery(document).on('mouseup', function (e) {
     }
   }
 );
-window.alert('video.js: 5.0.21.2');
 

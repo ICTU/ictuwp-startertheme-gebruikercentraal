@@ -4,38 +4,10 @@
     "shortname": "gc",
     "site_logo": "/assets/images/logo/gc-logo.svg",
     "jsfiles": {
-      "menu-js": {
-        "handle": "menu-js",
-        "file": "/assets/js/components/menu.js",
-        "version": "5.0.21.2",
-        "dependencies": "",
-        "infooter": ""
-      },
-      "comments-js": {
-        "handle": "comments-js",
-        "file": "/assets/js/components/comments.js",
-        "version": "5.0.21.2",
-        "dependencies": "",
-        "infooter": ""
-      },
-      "video-js": {
-        "handle": "video-js",
-        "file": "/assets/js/components/video.js",
-        "version": "5.0.21.2",
-        "dependencies": "",
-        "infooter": ""
-      },
-      "stepchart-js": {
-        "handle": "stepchart-js",
-        "file": "/assets/js/components/stepchart.js",
-        "version": "5.0.21.2",
-        "dependencies": "",
-        "infooter": ""
-      },
-      "filters-js": {
-        "handle": "filters-js",
-        "file": "/assets/js/components/filters.js",
-        "version": "5.0.21.2",
+      "js1": {
+        "handle": "main-min",
+        "file": "/assets/js/main-min.js",
+        "version": "5.0.21.3",
         "dependencies": "",
         "infooter": ""
       }
@@ -44,13 +16,13 @@
       "Fonts": {
         "handle": "skiplinks",
         "file": "/assets/fonts/fonts.css",
-        "version": "5.0.21.2",
+        "version": "5.0.21.3",
         "dependencies": ""
       },
       "Styling": {
         "handle": "gc-theme",
         "file": "/assets/css/gc-theme.css",
-        "version": "5.0.21.2",
+        "version": "5.0.21.3",
         "dependencies": ""
       }
     },
@@ -71,13 +43,13 @@
       "Fonts": {
         "handle": "skiplinks",
         "file": "/assets/fonts/fonts.css",
-        "version": "5.0.21.2",
+        "version": "5.0.21.3",
         "dependencies": ""
       },
       "css1": {
         "handle": "od-theme",
         "file": "/flavors/optimaaldigitaal/assets/css/od-theme.css",
-        "version": "5.0.21.2",
+        "version": "5.0.21.3",
         "dependencies": ""
       }
     },
@@ -131,13 +103,13 @@
       "Fonts": {
         "handle": "skiplinks",
         "file": "/assets/fonts/fonts.css",
-        "version": "5.0.21.2",
+        "version": "5.0.21.3",
         "dependencies": ""
       },
       "Styling": {
         "handle": "gc-theme",
         "file": "/assets/css/gc-theme.css",
-        "version": "5.0.21.2",
+        "version": "5.0.21.3",
         "dependencies": ""
       },
       "KB": {
