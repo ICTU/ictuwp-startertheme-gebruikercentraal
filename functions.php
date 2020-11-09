@@ -977,20 +977,19 @@ function gc_ho_dequeue_css() {
 	wp_deregister_style( 'newsletter' );
 	wp_dequeue_style( 'newsletter-css' );
 
-	/*
-	 *
-		// Add kennisbank CSS if subsite is kennisbank
-		$get_theme_option = get_option( 'gc2020_theme_options' );
-		$flavor_select    = $get_theme_option['flavor_select'];
-		if ( $flavor_select == "KB" ) {
-			wp_enqueue_style( 'gc-kennisbank-style', get_template_directory_uri() . '/flavors/kennisbank/assets/css/gc-kennisbank.css' );
-		}
-
-	 */
-
 
 }
 
+//========================================================================================================
+
+function gc_ho_remove_unnecessary_scripts() {
+
+	// coblocks zorgt voor foutmeldingen in IE11 (je verwacht het niet....)
+	// en we hebben het volgens mij niet echt nodig.
+	wp_dequeue_script( 'coblocks-animation' );
+
+}
+add_action( 'wp_footer', 'gc_ho_remove_unnecessary_scripts' );
 
 //========================================================================================================
 // ervoor zorgen dat specifieke Optimaal Digitaal-termen op de juiste manier afgebroken kunnen worden
