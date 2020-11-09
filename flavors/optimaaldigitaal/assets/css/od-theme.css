@@ -2,7 +2,7 @@
 /*
  * CSS flavor voor Optimaal Digitaal
  * Author: Tamara, Mark, Paul
- * Version: 5.0.20.aa
+ * Version: 5.0.20
  *
  */
 .has-white-color {
@@ -6977,3 +6977,5 @@ body:not(.single-event) .entry-content.wrap:last-child {
   @media (min-width: 1100px) {
     .manual-item__content {
       padding: 4rem 5rem; } }
+
+/*# sourceMappingURL=od-theme.css.map */
