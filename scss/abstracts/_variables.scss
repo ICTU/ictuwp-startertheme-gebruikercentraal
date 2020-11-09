@@ -132,6 +132,9 @@ $input-focus-bg:           $white;
 
 $input-hover-bg:           $white;
 
+$form-error-color:        $gc-dark-blue; // deze kleur kan
+$form-error-background:   $grey-x-light;
+$form-error-border-color: $gc-pink-darker;
 
 // Submit
 $submit-bg:                $gc-a11y-green;
