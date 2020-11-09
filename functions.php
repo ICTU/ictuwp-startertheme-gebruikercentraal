@@ -977,6 +977,10 @@ function gc_ho_dequeue_css() {
 	wp_deregister_style( 'newsletter' );
 	wp_dequeue_style( 'newsletter-css' );
 
+	// geen css van newsletterplugin
+	wp_deregister_style( 'contact-form-7' );
+	wp_dequeue_style( 'contact-form-7-css' );
+
 	/*
 	 *
 		// Add kennisbank CSS if subsite is kennisbank
