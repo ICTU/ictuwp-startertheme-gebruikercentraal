@@ -21,7 +21,7 @@
           <a href="{{ item.link }}"{{ targetattr }}{{ haspopup }}><span>{{ item.title }}</span></a>
 
           {% if item.children %}
-            <ul class="main-menu__sublist visuallyhidden" aria-expanded="false">
+            <ul class="main-menu__sublist" aria-expanded="false">
               {% for child in item.children %}
                 <li class="main-menu__item main-menu__item--sub">
                   <a href="{{ child.link }}">{{ child.title }}</a>
