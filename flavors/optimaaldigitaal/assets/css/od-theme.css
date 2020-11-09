@@ -225,19 +225,6 @@ img {
   max-width: 100%;
   height: auto; }
 
-*[aria-hidden=true] {
-  display: none; }
-
-LALALALALA[aria-expanded=false] {
-  margin: -1px;
-  padding: 0;
-  width: 1px;
-  height: 1px;
-  overflow: hidden;
-  clip: rect(0 0 0 0);
-  clip: rect(0, 0, 0, 0);
-  position: absolute; }
-
 .visually-hidden,
 .visuallyhidden {
   margin: -1px;
@@ -7000,5 +6987,48 @@ body:not(.single-event) .entry-content.wrap:last-child {
   @media (min-width: 1100px) {
     .manual-item__content {
       padding: 4rem 5rem; } }
+
+/* Browser hacks for stooopit browsers */
+/*
+browser exceptions
+ */
+/* fallback voor styling in IE11 */
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+  main {
+    display: block; }
+  .page-content:before,
+  .page-content:after {
+    height: 25rem;
+    display: block; }
+  .page-content:before {
+    background: none; }
+  .page--type-manual .page-content:before,
+  .page--type-manual .page-content:after {
+    display: none; }
+  .page--type-manual .manual-item__header:before {
+    min-height: 60px;
+    line-height: 60px;
+    margin-top: -2rem; }
+  /* fallback voor styling van het menu in IE11 */
+  .main-menu__item--with-sub {
+    background: transparent url("/wp-content/themes/ictuwp-theme-gc2020/assets/images/arrow-white-down.svg") right center no-repeat;
+    padding-right: 1.5rem; }
+  .main-menu__item--with-sub:hover ul[aria-expanded="false"] {
+    display: block;
+    left: 0; }
+  header {
+    padding-top: 2rem;
+    display: block; }
+  .l-header-top {
+    display: block; }
+  .header-widget-area,
+  .branding {
+    overflow: hidden;
+    float: left; }
+  .branding {
+    width: 70%; }
+  .header-widget-area {
+    padding-top: 1rem;
+    width: 30%; } }
 
 /*# sourceMappingURL=od-theme.css.map */
