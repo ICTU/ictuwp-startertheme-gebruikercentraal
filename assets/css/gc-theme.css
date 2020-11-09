@@ -2110,29 +2110,32 @@ body:not(.single-event) .entry-content.wrap:last-child {
     .comment-form .email {
       padding-left: 1.5rem; } }
 
-.entry--type-post, .entry--type-event {
+.entry--type-event, .entry--type-post {
   max-width: 760px;
   margin-left: auto;
   margin-right: auto; }
-  .entry--type-post .entry-header, .entry--type-event .entry-header {
+  .entry--type-event .entry-header, .entry--type-post .entry-header {
     position: relative;
     padding-left: 2.5rem; }
-    .entry--type-post .entry-header .date-badge, .entry--type-event .entry-header .date-badge {
+    .entry--type-event .entry-header .date-badge, .entry--type-post .entry-header .date-badge {
       position: absolute;
       left: 0;
       top: 0;
       margin-left: -3rem; }
     @media (min-width: 560px) {
-      .entry--type-post .entry-header .date-badge, .entry--type-event .entry-header .date-badge {
+      .entry--type-event .entry-header .date-badge, .entry--type-post .entry-header .date-badge {
         margin-left: -5rem; } }
     @media (min-width: 1100px) {
-      .entry--type-post .entry-header, .entry--type-event .entry-header {
+      .entry--type-event .entry-header, .entry--type-post .entry-header {
         padding-left: 3rem; }
-        .entry--type-post .entry-header .date-badge, .entry--type-event .entry-header .date-badge {
+        .entry--type-event .entry-header .date-badge, .entry--type-post .entry-header .date-badge {
           margin-left: -4rem; } }
   @media (min-width: 560px) {
-    .entry--type-post .entry-content, .entry--type-event .entry-content {
+    .entry--type-event .entry-content, .entry--type-post .entry-content {
       margin-top: 3rem; } }
+
+.event-template-default .content {
+  overflow: hidden; }
 
 .event-bookings {
   position: relative;
@@ -2538,29 +2541,32 @@ body:not(.single-event) .entry-content.wrap:last-child {
     .comment-form .email {
       padding-left: 1.5rem; } }
 
-.entry--type-post, .entry--type-event {
+.entry--type-event, .entry--type-post {
   max-width: 760px;
   margin-left: auto;
   margin-right: auto; }
-  .entry--type-post .entry-header, .entry--type-event .entry-header {
+  .entry--type-event .entry-header, .entry--type-post .entry-header {
     position: relative;
     padding-left: 2.5rem; }
-    .entry--type-post .entry-header .date-badge, .entry--type-event .entry-header .date-badge {
+    .entry--type-event .entry-header .date-badge, .entry--type-post .entry-header .date-badge {
       position: absolute;
       left: 0;
       top: 0;
       margin-left: -3rem; }
     @media (min-width: 560px) {
-      .entry--type-post .entry-header .date-badge, .entry--type-event .entry-header .date-badge {
+      .entry--type-event .entry-header .date-badge, .entry--type-post .entry-header .date-badge {
         margin-left: -5rem; } }
     @media (min-width: 1100px) {
-      .entry--type-post .entry-header, .entry--type-event .entry-header {
+      .entry--type-event .entry-header, .entry--type-post .entry-header {
         padding-left: 3rem; }
-        .entry--type-post .entry-header .date-badge, .entry--type-event .entry-header .date-badge {
+        .entry--type-event .entry-header .date-badge, .entry--type-post .entry-header .date-badge {
           margin-left: -4rem; } }
   @media (min-width: 560px) {
-    .entry--type-post .entry-content, .entry--type-event .entry-content {
+    .entry--type-event .entry-content, .entry--type-post .entry-content {
       margin-top: 3rem; } }
+
+.event-template-default .content {
+  overflow: hidden; }
 
 .event-bookings {
   position: relative;
@@ -6371,5 +6377,3 @@ body:not(.single-event) .entry-content.wrap:last-child {
       clip: rect(0 0 0 0);
       clip: rect(0, 0, 0, 0);
       position: absolute; } }
-
-/*# sourceMappingURL=gc-theme.css.map */

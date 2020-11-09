@@ -1,8 +1,8 @@
 // For both single blog & event {
 
 .entry {
-  &--type-post,
-  &--type-event {
+  &--type-event,
+  &--type-post {
     @include ho-make-container($max-width-inner);
 
     .entry-header {
@@ -39,11 +39,14 @@
       }
     }
   }
+}
 
+.event-template-default .content {
+  overflow: hidden;
 }
 
 
-// ========================================================================
+  // ========================================================================
 
 .event-bookings {
   @include backstretch($gc_blue_darker);
@@ -51,6 +54,8 @@
   color: $white;
   padding-top: 3rem;
   padding-bottom: 3rem;
+
+
 
   // gelijktrekken uitlijning
   padding-right: 3rem;
