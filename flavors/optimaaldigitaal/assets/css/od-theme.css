@@ -6588,6 +6588,11 @@ body:not(.single-event) .entry-content.wrap:last-child {
     background: transparent url("../images/b_section-bg-option-after.svg") left bottom -0.1rem repeat-x;
     z-index: 0;
     display: block; }
+  @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+    .page-content:before {
+      background: none;
+      z-index: 0;
+      display: block; } }
   .page-content:after {
     content: " ";
     display: block;

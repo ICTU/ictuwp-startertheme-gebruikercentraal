@@ -30,6 +30,14 @@
     display: block;
   }
 
+  @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+    &:before {
+      background: none;
+      z-index: 0;
+      display: block;
+    }
+  }
+
   &:after {
     content: " ";
     display: block;

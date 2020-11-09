@@ -953,17 +953,6 @@ add_action( 'customize_register', 'gc2020_customize_register' );
  *  Dequeue unwanted CSS from plugins
  */
 
-add_action('wp_head', 'IE_fix_script');
-
-function IE_fix_script(){
-	?>
-	<script>window.MSInputMethodContext && document.documentMode && document.write('<script src="https://cdn.jsdelivr.net/gh/nuxodin/ie11CustomProperties@4.1.0/ie11CustomProperties.min.js"><\x2fscript>');</script>
-	<?php
-
-}
-
-add_action( 'wp_enqueue_scripts', 'gc_ho_dequeue_css', 999 );
-
 function gc_ho_dequeue_css() {
 	include_once( 'wp-admin/includes/plugin.php' );
 
