@@ -6586,7 +6586,6 @@ body:not(.single-event) .entry-content.wrap:last-child {
     display: block; }
   .page-content:before {
     background: transparent url("../images/b_section-bg-option-after.svg") left bottom -0.1rem repeat-x;
-    background-size: 100% 136px;
     z-index: 0;
     display: block; }
   .page-content:after {
