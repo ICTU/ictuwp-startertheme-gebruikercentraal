@@ -2,7 +2,7 @@
 /*
  * CSS flavor voor Optimaal Digitaal
  * Author: Tamara, Mark, Paul
- * Version: 5.0.20
+ * Version: 5.0.20.aa
  *
  */
 .has-white-color {
@@ -226,17 +226,18 @@ img {
   height: auto; }
 
 *[aria-hidden=true] {
+  border: 10px solid red !important; }
+  *[aria-hidden=true]:before {
+    content: 'Aria-hidden is niet de goede manier om dingen visueel te verbergen';
+    display: block;
+    background: red;
+    color: white; }
+
+ul[aria-expanded="false"] {
   display: none; }
 
-LALALALALA[aria-expanded=false] {
-  margin: -1px;
-  padding: 0;
-  width: 1px;
-  height: 1px;
-  overflow: hidden;
-  clip: rect(0 0 0 0);
-  clip: rect(0, 0, 0, 0);
-  position: absolute; }
+ul[aria-expanded="true"] {
+  display: block; }
 
 .visually-hidden,
 .visuallyhidden {
@@ -1202,7 +1203,13 @@ Gutenberg corrections
       .main-menu > ul {
         display: -webkit-box;
         display: -ms-flexbox;
-        display: flex; }
+        display: flex;
+        -webkit-box-orient: horizontal;
+        -webkit-box-direction: normal;
+            -ms-flex-direction: row;
+                flex-direction: row;
+        -ms-flex-wrap: wrap;
+            flex-wrap: wrap; }
         .main-menu > ul > li {
           position: relative; }
           .main-menu > ul > li > a {
@@ -1245,6 +1252,9 @@ Gutenberg corrections
   color: transparent;
   background: transparent url("/wp-content/themes/ictuwp-theme-gc2020/assets/images/arrow-white-down.svg") center center no-repeat;
   border: none; }
+  .main-menu__open-sub.open-list {
+    -webkit-transform: rotate(180deg);
+            transform: rotate(180deg); }
   @media (max-width: 999px) {
     .main-menu__open-sub {
       display: none; } }
@@ -1263,6 +1273,21 @@ Gutenberg corrections
   position: absolute;
   left: 0;
   top: 0; }
+
+/* groter dan 1280px, kleiner dan 1000px */
+@media (min-width: 1000px) and (max-width: 1280px) {
+  .main-menu__item--with-sub:last-of-type > .main-menu__sublist {
+    left: auto;
+    right: 0; } }
+
+/* fallback voor styling van het menu in IE11 */
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+  .main-menu__item--with-sub {
+    background: transparent url("/wp-content/themes/ictuwp-theme-gc2020/assets/images/arrow-white-down.svg") right center no-repeat;
+    padding-right: 1.5rem; }
+  .main-menu__item--with-sub:hover ul[aria-expanded="false"] {
+    display: block;
+    left: 0; } }
 
 .grid > div,
 .grid > section {
