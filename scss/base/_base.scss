@@ -10,6 +10,8 @@ html {
   box-sizing: border-box;
 }
 
+main { display: block; }
+
 body {
   overflow-x: hidden;
   font-size: $base-font-size;
@@ -87,10 +89,17 @@ ul li pre {
 
 main {
   @include ho-padding;
+  display: block;
 
   .layout-ds & {
     padding: 0;
   }
+}
+
+main {
+
+  display: block;
+
 }
 
 img {

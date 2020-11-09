@@ -21,11 +21,14 @@
   &:before,
   &:after {
     height: 18rem;
+    display: block;
   }
 
   &:before {
     background: transparent url('../images/b_section-bg-option-after.svg') left bottom -.1rem repeat-x;
+    background-size: 100% 136px;
     z-index: 0;
+    display: block;
   }
 
   &:after {

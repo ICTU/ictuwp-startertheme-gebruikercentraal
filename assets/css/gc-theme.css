@@ -145,6 +145,9 @@ html {
   -webkit-box-sizing: border-box;
           box-sizing: border-box; }
 
+main {
+  display: block; }
+
 body {
   overflow-x: hidden;
   font-size: 1.8rem;
@@ -209,13 +212,17 @@ main {
   padding-left: 2rem;
   padding-right: 2rem;
   -webkit-box-sizing: border-box;
-          box-sizing: border-box; }
+          box-sizing: border-box;
+  display: block; }
   @media (min-width: 560px) {
     main {
       padding-right: 3rem;
       padding-left: 3rem; } }
   .layout-ds main {
     padding: 0; }
+
+main {
+  display: block; }
 
 img {
   display: inline-block;
@@ -6377,3 +6384,5 @@ body:not(.single-event) .entry-content.wrap:last-child {
       clip: rect(0 0 0 0);
       clip: rect(0, 0, 0, 0);
       position: absolute; } }
+
+/*# sourceMappingURL=gc-theme.css.map */
