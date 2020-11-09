@@ -310,7 +310,7 @@
     }
   }
 
-  // DEsktop
+  // Desktop
 
   @include bp-up(nav) {
     width: 100%;
@@ -319,6 +319,8 @@
 
     > ul {
       display: flex;
+      flex-direction: row;
+      flex-wrap: wrap; // om te voorkomen dat alle menu items tegen elkaar aan geduwd worden en dus de open-buttons ONDER de anchors komen.
 
       > li {
         position: relative;
@@ -372,6 +374,10 @@
   background: transparent url('/wp-content/themes/ictuwp-theme-gc2020/assets/images/arrow-white-down.svg') center center no-repeat;
   border: none;
 
+  &.open-list {
+    transform: rotate(180deg);
+  }
+
   @include bp-down(nav) {
     display: none;
   }
@@ -386,5 +392,37 @@
     position: absolute;
     left: 0;
     top: 0;
+  }
+}
+
+
+/* groter dan 1280px, kleiner dan 1000px */
+@media (min-width: map-get($breakpoints, 'nav')) and (max-width: $max-width-container) {
+
+  // als er te weinig ruimte is aan de rechterkant voor het menu om rechts
+  // uit te klappen, dan moeten we links uitklappen voor het laatste item
+  .main-menu__item--with-sub {
+    &:last-of-type {
+      & > .main-menu__sublist {
+        left: auto;
+        right: 0;
+      }
+    }
+  }
+}
+
+
+/* fallback voor styling van het menu in IE11 */
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+  .main-menu__item--with-sub {
+    background: transparent url('/wp-content/themes/ictuwp-theme-gc2020/assets/images/arrow-white-down.svg') right center no-repeat;
+    padding-right: 1.5rem;
+  }
+  .main-menu__item--with-sub:hover {
+    ul[aria-expanded="false"] {
+      // voor IE11 gaan we geen moeite doen, qua javascript
+      display: block;
+      left: 0;
+    }
   }
 }
