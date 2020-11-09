@@ -7,11 +7,11 @@
 // @author  Tamara de Haas
 //
 
-  var filterLabel = $('.form-item--filter label');
+  var filterLabel = jQuery('.form-item--filter label');
 
   filterLabel.click(function () {
 
-    var formItem = $(this).parent();
+    var formItem = jQuery(this).parent();
 
     if (formItem.find('input:checked').length) {
       formItem.removeClass('is-active');

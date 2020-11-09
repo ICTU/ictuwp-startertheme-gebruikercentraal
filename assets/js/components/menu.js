@@ -11,9 +11,9 @@
 // @link    https://github.com/ICTU/gebruiker-centraal-wordpress-theme
 
 
-var toggleMenu = $('.btn--toggle-menu');
-var regionNav = $('.l-header-nav');
-var mainMenu = $('#mainnav');
+var toggleMenu = jQuery('.btn--toggle-menu');
+var regionNav = jQuery('.l-header-nav');
+var mainMenu = jQuery('#mainnav');
 
 var bp = 1000;
 
@@ -25,11 +25,11 @@ function doNav(width) {
     regionNav.attr('aria-hidden', true);
 
     // Show al sublists
-    $('.main-menu__sublist').attr('aria-hidden', 'false');
+    jQuery('.main-menu__sublist').attr('aria-hidden', 'false');
 
     toggleMenu.on('click', function () {
-      $(this).toggleClass('active');
-      $('body').toggleClass('show-menu');
+      jQuery(this).toggleClass('active');
+      jQuery('body').toggleClass('show-menu');
 
       if (regionNav.attr('aria-hidden') === 'true') {
         regionNav.attr('aria-hidden', 'false');
@@ -41,32 +41,32 @@ function doNav(width) {
   } else if (width >= bp) {
     // Desktop
     regionNav.attr('aria-hidden', false);
-    $('.main-menu__sublist').attr('aria-hidden', 'true');
+    jQuery('.main-menu__sublist').attr('aria-hidden', 'true');
 
     // Add class on mouse enter
-    $('.main-menu__item--with-sub').on('mouseenter', function () {
-      if (!($(this).hasClass('open'))) {
+    jQuery('.main-menu__item--with-sub').on('mouseenter', function () {
+      if (!(jQuery(this).hasClass('open'))) {
         // Unset other active if there
         mainMenu.find('.open').removeClass('open');
         mainMenu.find('ul[aria-hidden="false"]').attr('aria-hidden', 'true');
 
         // Add attributes to current menu
-        $(this).addClass('open').find('.main-menu__sublist').attr('aria-hidden', 'false');
-        $(this).find('a:first-child').attr('aria-expanded', 'true');
+        jQuery(this).addClass('open').find('.main-menu__sublist').attr('aria-hidden', 'false');
+        jQuery(this).find('a:first-child').attr('aria-expanded', 'true');
       }
     });
 
     // And remove again on mouseleave
-    $('.main-menu__item--with-sub').mouseleave(function () {
+    jQuery('.main-menu__item--with-sub').mouseleave(function () {
       // Add attributes to current menu
-      $(this).removeClass('open');
-      $(this).attr('aria-hidden', 'true');
-      $(this).parent().find('a:first-child').attr('aria-expanded', 'false');
+      jQuery(this).removeClass('open');
+      jQuery(this).attr('aria-hidden', 'true');
+      jQuery(this).parent().find('a:first-child').attr('aria-expanded', 'false');
     });
 
     // Add toggle behaviour on click
-    $('.main-menu__open-sub').on('click', function () {
-      var menuItem = $(this).parent();
+    jQuery('.main-menu__open-sub').on('click', function () {
+      var menuItem = jQuery(this).parent();
       var currentActive = mainMenu.find('.open');
 
       if (!(menuItem.hasClass('open'))) {
@@ -77,19 +77,19 @@ function doNav(width) {
           currentActive.find('button').attr('aria-expanded', false);
         }
 
-        $(this).attr('aria-expanded', true).find('span').text('Open ' + menuItem.find('a:first span').text());
+        jQuery(this).attr('aria-expanded', true).find('span').text('Open ' + menuItem.find('a:first span').text());
         menuItem.addClass('open').find('.main-menu__sublist').attr('aria-hidden', false);
 
       } else if (menuItem.hasClass('open')) {
         // Submenu is open, has to close
-        $(this).attr('aria-expanded', false).find('span').text('Sluit ' + menuItem.find('a:first span').text());
+        jQuery(this).attr('aria-expanded', false).find('span').text('Sluit ' + menuItem.find('a:first span').text());
         menuItem.removeClass('open').find('.main-menu__sublist').attr('aria-hidden', true);
       }
     });
 
     // Hide submenu when clicking outside of menu
-    $(document).mouseup(function (e) {
-      var menuActiveSub = $('.main-menu__sublist[aria-hidden="false"]');
+    jQuery(document).mouseup(function (e) {
+      var menuActiveSub = jQuery('.main-menu__sublist[aria-hidden="false"]');
 
       // if the target of the click isn't the container nor a descendant of the container
       if (!menuActiveSub.is(e.target) && menuActiveSub.has(e.target).length === 0) {
@@ -101,14 +101,14 @@ function doNav(width) {
 }
 
 
-$(window).on('load', function () {
-  var w = $(window).width();
+jQuery(window).on('load', function () {
+  var w = jQuery(window).width();
 
   doNav(w);
 });
 
-$(window).on('resize', function () {
-  var w = $(window).width();
+jQuery(window).on('resize', function () {
+  var w = jQuery(window).width();
 
   doNav(w);
 });
