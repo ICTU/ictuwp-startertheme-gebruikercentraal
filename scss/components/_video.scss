@@ -1,8 +1,67 @@
 .video {
-  max-width: $max-width-inner;
   margin: 5rem auto;
 
+  @include bp-down(md) {
+    max-width: 100%;
+    margin-top: 8rem;
+    .video__video {
+      .mejs-container {
+        width: 100% !important;
+        max-width: 100% !important;
+        max-height: 250px;
+        margin-left: auto;
+        margin-right: auto;
+
+
+        .mejs-poster {
+          height: auto;
+          max-width: 100% !important;
+          max-height: 250px;
+          background-position: top center;
+        }
+
+        .mejs-mediaelement {
+          overflow: hidden;
+          width: 100%;
+          height: auto;
+          max-height: 250px;
+          video {
+            max-height: 250px;
+            width: 100% !important;
+            margin-top: auto;
+            margin-bottom: auto;
+          }
+        }
+
+      }
+      .mejs-overlay {
+        max-width: 100% !important;
+        max-height: 300px;
+
+        .mejs-overlay-button {
+          height: 60px;
+          width: 60px;
+          margin: -30px 0 0 -30px;
+          background-size: cover;
+          background-position: center top;
+          &:hover,
+          &:focus,
+          &:active {
+            background-position: center bottom;
+          }
+        }
+
+      }
+
+
+      .mejs-mediaelement {
+        left: 0;
+        right: 0;
+      }
+    }
+  }
   @include bp-up(lg) {
+    max-width: $max-width-inner;
     margin-top: 8rem;
   }
 }
@@ -158,7 +217,7 @@
     width: 100%;
     padding: 2rem;
 
-    @include bp-up(md){
+    @include bp-up(md) {
       padding: 3rem 4rem;
     }
 
@@ -215,6 +274,7 @@
 
 
 // overlay
+/*
 
 .site-container {
   &:before {
@@ -247,3 +307,4 @@
     }
   }
 }
+ */

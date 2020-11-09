@@ -2,7 +2,7 @@
 /*
  * CSS flavor voor Optimaal Digitaal
  * Author: Tamara, Mark, Paul
- * Version: 5.0.21
+ * Version: 5.0.21.1
  *
  */
 .has-white-color {
@@ -5651,10 +5651,49 @@ body:not(.single-event) .entry-content.wrap:last-child {
   list-style: none; }
 
 .video {
-  max-width: 760px;
   margin: 5rem auto; }
+  @media (max-width: 699px) {
+    .video {
+      max-width: 100%;
+      margin-top: 8rem; }
+      .video .video__video .mejs-container {
+        width: 100% !important;
+        max-width: 100% !important;
+        max-height: 250px;
+        margin-left: auto;
+        margin-right: auto; }
+        .video .video__video .mejs-container .mejs-poster {
+          height: auto;
+          max-width: 100% !important;
+          max-height: 250px;
+          background-position: top center; }
+        .video .video__video .mejs-container .mejs-mediaelement {
+          overflow: hidden;
+          width: 100%;
+          height: auto;
+          max-height: 250px; }
+          .video .video__video .mejs-container .mejs-mediaelement video {
+            max-height: 250px;
+            width: 100% !important;
+            margin-top: auto;
+            margin-bottom: auto; }
+      .video .video__video .mejs-overlay {
+        max-width: 100% !important;
+        max-height: 300px; }
+        .video .video__video .mejs-overlay .mejs-overlay-button {
+          height: 60px;
+          width: 60px;
+          margin: -30px 0 0 -30px;
+          background-size: cover;
+          background-position: center top; }
+          .video .video__video .mejs-overlay .mejs-overlay-button:hover, .video .video__video .mejs-overlay .mejs-overlay-button:focus, .video .video__video .mejs-overlay .mejs-overlay-button:active {
+            background-position: center bottom; }
+      .video .video__video .mejs-mediaelement {
+        left: 0;
+        right: 0; } }
   @media (min-width: 1100px) {
     .video {
+      max-width: 760px;
       margin-top: 8rem; } }
 
 .video__video {
@@ -5838,32 +5877,40 @@ body:not(.single-event) .entry-content.wrap:last-child {
 .video__video .mejs-container .mejs-controls {
   background: #f9f6f3; }
 
-.site-container:before {
-  content: " ";
-  display: block;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 0;
-  height: 0;
-  opacity: 0;
-  background: rgba(0, 48, 61, 0.6);
-  z-index: 0;
-  -webkit-transition: opacity .5s;
-  transition: opacity .5s;
-  -webkit-transition-delay: .1s;
-          transition-delay: .1s; }
+/*
 
-.site-container.show-overlay:before {
-  width: 100vw;
-  height: 100vh;
-  z-index: 6;
-  opacity: 1; }
+.site-container {
+  &:before {
+    content: " ";
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 0;
+    opacity: 0;
+    background: rgba($gc_darkest-blue, 0.6);
+    z-index: 0;
+    transition: opacity .5s;
+    transition-delay: .1s;
+  }
 
-.site-container.show-overlay .video__video {
-  position: relative;
-  z-index: 50; }
+  &.show-overlay {
 
+    &:before {
+      width: 100vw;
+      height: 100vh;
+      z-index: 6;
+      opacity: 1;
+    }
+
+    .video__video {
+      position: relative;
+      z-index: 50;
+    }
+  }
+}
+ */
 /*
  * Layout for widgets.
  * Each widget has a generic layout. Depending on the placement this layout can be altered.
