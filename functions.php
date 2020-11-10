@@ -9,6 +9,7 @@
  */
 
 define( 'CHILD_THEME_VERSION', '5.0.28' );
+define( 'CHILD_THEME_VERSION_DESCR', 'Diverse kleine accessibility fixes.' );
 define( 'ID_MAINCONTENT', 'maincontent' );
 define( 'ID_MAINNAV', 'mainnav' );
 define( 'ID_ZOEKEN', 'zoeken' );
