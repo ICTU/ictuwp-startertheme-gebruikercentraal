@@ -1,15 +1,15 @@
-(function($) {
+(function(jQuery) {
 
-  $(document).ready(function() {
-    $('.comment-reply-link').click(function () {
+  jQuery(document).ready(function() {
+    jQuery('.comment-reply-link').click(function () {
       // noteren op welke reactie we reageren
-      $('input[name="comment_parent"]').val($(this).data("commentid"));
+      jQuery('input[name="comment_parent"]').val(jQuery(this).data("commentid"));
       // we veranderen de titel boven het reactieformulier
-      $('#reply-title').text( $(this).attr("aria-label") );
+      jQuery('#reply-title').text( jQuery(this).attr("aria-label") );
       // effe de animatie uitzetten
       /*
-      $('html, body').animate({
-        scrollTop: $(".comment-form").offset().top
+      jQuery('html, body').animate({
+        scrollTop: jQuery(".comment-form").offset().top
       }, 2000);
        */
     });

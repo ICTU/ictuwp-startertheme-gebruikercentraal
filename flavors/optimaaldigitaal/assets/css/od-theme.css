@@ -2,7 +2,7 @@
 /*
  * CSS flavor voor Optimaal Digitaal
  * Author: Tamara, Mark, Paul
- * Version: 5.0.22.temp
+ * Version: 5.0.22
  *
  */
 .has-white-color {
@@ -1869,31 +1869,37 @@ body:not(.single-event) .entry-content.wrap:last-child {
       margin-top: 5rem; } }
 
 /* 404 page */
-.error404[data-template='base.twig'] .page__header,
-.error404[data-template='base.twig'] .page__content {
+.error404 .page__header,
+.error404 .page__content {
   max-width: 760px;
   margin-left: auto;
   margin-right: auto; }
 
-.error404[data-template='base.twig'] p + form {
+.error404 .content {
+  padding-bottom: 5rem; }
+  @media (min-width: 1100px) {
+    .error404 .content {
+      padding-bottom: 7rem; } }
+
+.error404 p + form {
   margin-top: 2rem; }
 
-.error404[data-template='base.twig'] .page__widgets {
+.error404 .page__widgets {
   background: url("/wp-content/themes/ictuwp-theme-gc2020/assets/images/avatars/huilende-hipster.svg") center top 30px no-repeat;
   background-size: 160px auto;
   padding-top: 30rem; }
-  .error404[data-template='base.twig'] .page__widgets > section + section {
+  .error404 .page__widgets > section + section {
     padding-top: 2rem;
     margin-top: 2rem;
     border-top: 0.1rem solid #D1DFE3; }
   @media (min-width: 700px) {
-    .error404[data-template='base.twig'] .page__widgets {
+    .error404 .page__widgets {
       padding-top: 3rem;
       padding-left: 40%;
       background-position: left 10% top 30px;
       min-height: 35rem; } }
   @media (min-width: 1100px) {
-    .error404[data-template='base.twig'] .page__widgets {
+    .error404 .page__widgets {
       background-size: 26% auto; } }
 
 /* Entry types */
@@ -2419,9 +2425,10 @@ body:not(.single-event) .entry-content.wrap:last-child {
   margin-top: 3rem;
   border: none;
   display: flex;
-  -webkit-box-pack: start;
-      -ms-flex-pack: start;
-          justify-content: flex-start;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding-bottom: 5rem;
   width: 100%; }
   @media (min-width: 1100px) {
     .pagination {
@@ -2482,6 +2489,9 @@ body:not(.single-event) .entry-content.wrap:last-child {
       right: .6rem; }
     .pagination .pagination-next a:hover, .pagination .pagination-next a:focus, .pagination .pagination-next a:active {
       padding-right: 3.9rem; }
+  @media (min-width: 1100px) {
+    .pagination {
+      padding-bottom: 7rem; } }
   .pagination, .pagination li {
     list-style: none;
     margin-left: 0;
@@ -5383,6 +5393,12 @@ body:not(.single-event) .entry-content.wrap:last-child {
 .search-result .arrow-link__icon {
   margin-right: 0; }
 
+.search-no-results .content {
+  padding-bottom: 5rem; }
+  @media (min-width: 1100px) {
+    .search-no-results .content {
+      padding-bottom: 7rem; } }
+
 .social-links {
   margin: 0;
   padding: 0; }
@@ -5713,10 +5729,49 @@ body:not(.single-event) .entry-content.wrap:last-child {
   list-style: none; }
 
 .video {
-  max-width: 760px;
   margin: 5rem auto; }
+  @media (max-width: 699px) {
+    .video {
+      max-width: 100%;
+      margin-top: 8rem; }
+      .video .video__video .mejs-container {
+        width: 100% !important;
+        max-width: 100% !important;
+        max-height: 250px;
+        margin-left: auto;
+        margin-right: auto; }
+        .video .video__video .mejs-container .mejs-poster {
+          height: auto;
+          max-width: 100% !important;
+          max-height: 250px;
+          background-position: top center; }
+        .video .video__video .mejs-container .mejs-mediaelement {
+          overflow: hidden;
+          width: 100%;
+          height: auto;
+          max-height: 250px; }
+          .video .video__video .mejs-container .mejs-mediaelement video {
+            max-height: 250px;
+            width: 100% !important;
+            margin-top: auto;
+            margin-bottom: auto; }
+      .video .video__video .mejs-overlay {
+        max-width: 100% !important;
+        max-height: 300px; }
+        .video .video__video .mejs-overlay .mejs-overlay-button {
+          height: 60px;
+          width: 60px;
+          margin: -30px 0 0 -30px;
+          background-size: cover;
+          background-position: center top; }
+          .video .video__video .mejs-overlay .mejs-overlay-button:hover, .video .video__video .mejs-overlay .mejs-overlay-button:focus, .video .video__video .mejs-overlay .mejs-overlay-button:active {
+            background-position: center bottom; }
+      .video .video__video .mejs-mediaelement {
+        left: 0;
+        right: 0; } }
   @media (min-width: 1100px) {
     .video {
+      max-width: 760px;
       margin-top: 8rem; } }
 
 .video__video {
@@ -5900,32 +5955,40 @@ body:not(.single-event) .entry-content.wrap:last-child {
 .video__video .mejs-container .mejs-controls {
   background: #f9f6f3; }
 
-.site-container:before {
-  content: " ";
-  display: block;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 0;
-  height: 0;
-  opacity: 0;
-  background: rgba(0, 48, 61, 0.6);
-  z-index: 0;
-  -webkit-transition: opacity .5s;
-  transition: opacity .5s;
-  -webkit-transition-delay: .1s;
-          transition-delay: .1s; }
+/*
 
-.site-container.show-overlay:before {
-  width: 100vw;
-  height: 100vh;
-  z-index: 6;
-  opacity: 1; }
+.site-container {
+  &:before {
+    content: " ";
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 0;
+    opacity: 0;
+    background: rgba($gc_darkest-blue, 0.6);
+    z-index: 0;
+    transition: opacity .5s;
+    transition-delay: .1s;
+  }
 
-.site-container.show-overlay .video__video {
-  position: relative;
-  z-index: 50; }
+  &.show-overlay {
 
+    &:before {
+      width: 100vw;
+      height: 100vh;
+      z-index: 6;
+      opacity: 1;
+    }
+
+    .video__video {
+      position: relative;
+      z-index: 50;
+    }
+  }
+}
+ */
 /*
  * Layout for widgets.
  * Each widget has a generic layout. Depending on the placement this layout can be altered.
