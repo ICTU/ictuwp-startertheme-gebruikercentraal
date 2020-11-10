@@ -50,7 +50,7 @@ zie: https://trello.com/c/Xmmyu8ho/363-styling-van-hover-over-links
 suggesties welkom
 */
 .entry-content {
-  a:not(.btn) {
+  a:not(.btn):not(.tipkaart__link):not(.arrow-link) {
     &:hover,
     &:focus {
       color: $color-primary;

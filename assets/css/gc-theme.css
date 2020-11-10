@@ -2,7 +2,7 @@
 /*
  * Front-end styles voor GC-theme
  * Author: Tamara, Mark, Paul
- * Version: 5.0.26
+ * Version: 5.0.27
  *
 */
 .has-white-color {
@@ -178,7 +178,7 @@ enkele uitzonderingen voor hover over links en het weghalen van de underline
 zie: https://trello.com/c/Xmmyu8ho/363-styling-van-hover-over-links
 suggesties welkom
 */
-.entry-content a:not(.btn):hover, .entry-content a:not(.btn):focus {
+.entry-content a:not(.btn):not(.tipkaart__link):not(.arrow-link):hover, .entry-content a:not(.btn):not(.tipkaart__link):not(.arrow-link):focus {
   color: #148839;
   text-decoration: underline; }
 
