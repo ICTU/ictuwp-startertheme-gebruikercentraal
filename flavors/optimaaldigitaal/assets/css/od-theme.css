@@ -2,7 +2,7 @@
 /*
  * CSS flavor voor Optimaal Digitaal
  * Author: Tamara, Mark, Paul
- * Version: 5.0.25
+ * Version: 5.0.26
  *
  */
 .has-white-color {
@@ -181,7 +181,7 @@ enkele uitzonderingen voor hover over links en het weghalen van de underline
 zie: https://trello.com/c/Xmmyu8ho/363-styling-van-hover-over-links
 suggesties welkom
 */
-.entry-content a:hover, .entry-content a:focus {
+.entry-content a:not(.btn):hover, .entry-content a:not(.btn):focus {
   color: #BA4F0C;
   text-decoration: underline; }
 
@@ -189,7 +189,7 @@ suggesties welkom
   color: #004152;
   text-decoration: underline; }
 
-.page-footer a:hover, .page-footer a:focus {
+.page-footer a:not(.btn):hover, .page-footer a:not(.btn):focus {
   color: #e8d8c7;
   text-decoration: underline; }
 

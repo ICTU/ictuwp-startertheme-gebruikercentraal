@@ -50,7 +50,7 @@ zie: https://trello.com/c/Xmmyu8ho/363-styling-van-hover-over-links
 suggesties welkom
 */
 .entry-content {
-  a {
+  a:not(.btn) {
     &:hover,
     &:focus {
       color: $color-primary;
@@ -71,7 +71,7 @@ suggesties welkom
 .page-footer {
   // links in de pagefooter zijn wit op donkerblauw, om
   // leesbaarheid te behouden een lichte kleur.
-  a {
+  a:not(.btn) {
     &:hover,
     &:focus {
       color: $gc-pantybrown;

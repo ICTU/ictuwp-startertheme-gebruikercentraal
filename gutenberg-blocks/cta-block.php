@@ -63,7 +63,7 @@ function cta_block_get_data() {
 	global $post;
 
 	$return           = [];
-	$cssclasses       = 'btn--primary';
+	$cssclasses_link1 = 'btn btn--primary';
 	$link             = get_field( 'gc_gb_ctalink' );
 	$gc_gb_ctaclasses = get_field( 'gc_gb_ctaclasses' );
 
@@ -71,31 +71,30 @@ function cta_block_get_data() {
 	$gc_gb_ctaclasses2 = get_field( 'gc_gb_ctaclasses2' );
 
 	if ( $gc_gb_ctaclasses ) {
-		$cssclasses = $gc_gb_ctaclasses;
+		$cssclasses_link1 = $gc_gb_ctaclasses;
 	}
 	if ( $gc_gb_ctaclasses2 ) {
-		$cssclasses2 = $gc_gb_ctaclasses2;
+		$cssclasses_link2 = $gc_gb_ctaclasses2;
 	}
 
 	if ( $link ):
-		$link_target           = $link['target'] ? $link['target'] : '_self';
-//		$return['link']        = '<a class="btn ' . $cssclasses . '" href="' . esc_url( $link['url'] ) . '" target="' . esc_attr( $link_target ) . '">' . esc_html( $link['title'] ) . '</a>';
-		$return['links'][]     = array(
+		$link_target = $link['target'] ? $link['target'] : '_self';
+//		$return['link']        = '<a class="btn ' . $cssclasses_link1 . '" href="' . esc_url( $link['url'] ) . '" target="' . esc_attr( $link_target ) . '">' . esc_html( $link['title'] ) . '</a>';
+		$return['links'][] = array(
 			'url'   => esc_url( $link['url'] ),
-			'class' => $cssclasses,
+			'class' => 'btn ' . $cssclasses_link1,
 			'title' => esc_html( $link['title'] ),
 		);
 		if ( $link2 ):
-			$return['links'][]     = array(
+			$return['links'][] = array(
 				'url'   => esc_url( $link2['url'] ),
-				'class' => $cssclasses2,
+				'class' => 'btn ' . $cssclasses_link2,
 				'title' => esc_html( $link2['title'] ),
 			);
 		endif;
 	else:
 		$return['linkpreview'] = 'Maak een link aan via "Selecteer een link"';
 	endif;
-
 
 
 	return $return;
