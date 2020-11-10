@@ -1,14 +1,17 @@
-<section class="author author--box l-with-image" itemprop="author" itemscope="itemscope" itemtype="http://schema.org/Person">
+<section class="author author--box l-with-image" itemprop="author" itemscope="itemscope"
+         itemtype="http://schema.org/Person">
 
   <figure class="author__picture">
-    <img src="{{ post.author.meta('auteursfoto_url')|resize(300,300) }}" alt="{{ _x('Profile picture', 'authorbox', 'gctheme') }}">
+    <img src="{{ post.author.meta('auteursfoto_url')|resize(300,300) }}"
+         alt="{{ _x('Profile picture', 'authorbox', 'gctheme') }}">
   </figure>
 
   <div class="author__content">
 
     <h2 class="author_title">
       <a class="arrow-link" href="{{ function( 'get_author_posts_url', post.author.ID ) }}">
-        <span class="arrow-link__text"><span class="visually-hidden">{{ _x('About', 'authorbox', 'gctheme') }}</span>{{ post.author.name }}</span>
+        <span class="arrow-link__text"><span
+            class="visually-hidden">{{ _x('About', 'authorbox', 'gctheme') }}</span>{{ post.author.name }}</span>
       </a>
     </h2>
     {% if post.author.meta('functiebeschrijving') is not empty %}
@@ -16,29 +19,40 @@
     {% endif %}
     <hr>
     {% if post.author.description is not empty %}
-      <p>{{post.author.description}}</p>
+      <p>{{ post.author.description }}</p>
     {% endif %}
 
     <div class="author__contact-info">
       {% if post.author.meta('publiek_telefoonnummer') is not empty %}
-        <a class="link link--contact link--phone" href="tel:{{ post.author.meta('publiek_telefoonnummer') }}">{{ post.author.meta('publiek_telefoonnummer') }}</a>
+        <a class="link link--contact link--phone"
+           href="tel:{{ post.author.meta('publiek_telefoonnummer') }}">{{ post.author.meta('publiek_telefoonnummer') }}</a>
       {% endif %}
       {% if post.author.meta('publiek_mailadres') is not empty %}
-        <a class="link link--contact link--email" href="mailto:{{ post.author.meta('publiek_mailadres') }}">{{ post.author.meta('publiek_mailadres') }}</a>
+        <a class="link link--contact link--email"
+           href="mailto:{{ post.author.meta('publiek_mailadres') }}">{{ post.author.meta('publiek_mailadres') }}</a>
       {% endif %}
 
       <ul class="social-links">
-        <li class="social-links__item">
-          {% if post.author.meta('linkedin') is not empty %}
-            <a href="{{ post.author.meta('linkedin') }}" class="link--social linkedin" title="LinkedIn-profiel {{ _x('Of', 'authorbox', 'gctheme') }} {{ post.author.name }}">LinkedIn-profiel {{ _x('Of', 'authorbox', 'gctheme') }} {{ post.author.name }}</a></li>
-          {% endif %}
-        <li class="social-links__item">
-          {% if post.author.meta('twitter') is not empty %}
-            <a href="{{ post.author.meta('twitter') }}" class="link--social twitter" title="Twitter {{ _x('Of', 'authorbox', 'gctheme') }} {{ post.author.name }}">Twitter {{ _x('Of', 'authorbox', 'gctheme') }} {{ post.author.name }}</a></li>
-          {% endif %}
-        <li class="social-links__item">
-          {% if post.author.meta('facebook') is not empty %}
-            <a href="{{ post.author.meta('facebook') }}" class="link--social facebook" title="Facebook {{ _x('Of', 'authorbox', 'gctheme') }} {{ post.author.name }}">Facebook {{ _x('Of', 'authorbox', 'gctheme') }} {{ post.author.name }}</a></li>
+        {% if post.author.meta('linkedin') is not empty %}
+          <li class="social-links__item">
+            <a href="{{ post.author.meta('linkedin') }}" class="link--social linkedin">
+              {{ __('LinkedIn profile of %s', 'gctheme')|format(post.author.name) }}
+            </a>
+          </li>
+        {% endif %}
+        {% if post.author.meta('twitter') is not empty %}
+          <li class="social-links__item">
+            <a href="{{ post.author.meta('twitter') }}" class="link--social twitter">
+              {{ __('Twitter account of %s', 'gctheme')|format(post.author.name) }}
+            </a>
+          </li>
+        {% endif %}
+        {% if post.author.meta('facebook') is not empty %}
+          <li class="social-links__item">
+            <a href="{{ post.author.meta('facebook') }}" class="link--social facebook">
+              {{ __('Facebook profile of %s', 'gctheme')|format(post.author.name) }}
+            </a>
+          </li>
         {% endif %}
       </ul>
     </div>
