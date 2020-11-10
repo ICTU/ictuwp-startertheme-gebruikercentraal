@@ -5978,8 +5978,7 @@ body:not(.single-event) .entry-content.wrap:last-child {
 
 .section.section--video.show-overlay .video {
   z-index: 50;
-  position: relative;
-  border-top: 10px solid black; }
+  position: relative; }
 
 /*
  * Layout for widgets.
