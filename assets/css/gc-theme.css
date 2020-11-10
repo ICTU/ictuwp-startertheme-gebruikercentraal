@@ -2,7 +2,7 @@
 /*
  * Front-end styles voor GC-theme
  * Author: Tamara, Mark, Paul
- * Version: 5.0.27
+ * Version: 5.0.28
  *
 */
 .has-white-color {
@@ -178,9 +178,11 @@ enkele uitzonderingen voor hover over links en het weghalen van de underline
 zie: https://trello.com/c/Xmmyu8ho/363-styling-van-hover-over-links
 suggesties welkom
 */
-.entry-content a:not(.btn):not(.tipkaart__link):not(.arrow-link):hover, .entry-content a:not(.btn):not(.tipkaart__link):not(.arrow-link):focus {
-  color: #148839;
+.entry-content a:not(.tipkaart__link):hover, .entry-content a:not(.tipkaart__link):focus {
   text-decoration: underline; }
+
+.entry-content a:not(.tipkaart__link):not(.btn):not(.arrow-link):not(.link--arrow):hover, .entry-content a:not(.tipkaart__link):not(.btn):not(.arrow-link):not(.link--arrow):focus {
+  color: #148839; }
 
 .meta-data__list a:hover, .meta-data__list a:focus {
   color: #004152;
@@ -712,11 +714,11 @@ legend {
     float: right;
     margin: 0 .5rem; }
   .wpcf7 .validation_error,
-  .wpcf7 .wpcf7-response-output,
+  .wpcf7 .wpcf7-response-output[style],
   .gform_wrapper .validation_error,
-  .gform_wrapper .wpcf7-response-output {
+  .gform_wrapper .wpcf7-response-output[style] {
     color: #004152;
-    border: 2px solid #A20E56;
+    border: 1px solid #A20E56;
     padding: .25rem .75rem; }
   .wpcf7 .validation_message,
   .wpcf7 .wpcf7-not-valid-tip[aria-hidden="true"],
@@ -724,7 +726,7 @@ legend {
   .gform_wrapper .wpcf7-not-valid-tip[aria-hidden="true"] {
     color: #004152;
     background-color: #F7F7F7;
-    border: 2px solid #A20E56;
+    border: 1px solid #A20E56;
     border-top-style: none;
     display: block;
     width: 100%;
@@ -737,7 +739,7 @@ legend {
   .gform_wrapper input.wpcf7-not-valid,
   .gform_wrapper textarea[aria-invalid="true"],
   .gform_wrapper textarea.wpcf7-not-valid {
-    border: 2px solid #A20E56; }
+    border-color: #A20E56; }
 
 /* CF7 - Contactform 7
 ------------------------------------------------------ */
