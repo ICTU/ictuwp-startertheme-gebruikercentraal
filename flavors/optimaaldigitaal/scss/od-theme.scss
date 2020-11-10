@@ -26,3 +26,5 @@
 @import "components/layout";
 @import "components/manual";
 
+/* Browser hacks for stooopit browsers */
+@import "../../../scss/abstracts/browser-exceptions";

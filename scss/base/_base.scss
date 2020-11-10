@@ -107,8 +107,16 @@ img {
   // wil je iets verbergen voor ziende gebruikers, gebruik dan .visuallyhidden, of
   // de mixin @include visually-hidden;
 }
-*[data-menu-hidden=true]{
+
+ul[aria-expanded="false"]{
+  // de links in een ingeklapt lijstje moeten onzichtbaar zijn,
+  // zodat je er bijv. ook niet via de tabtoets bij kunt
   display: none;
+}
+ul[aria-expanded="true"]{
+  // de links in een uitgeklapt lijstje moeten bereikbaar
+  // zijn als je met de tabtoets door de links wandelt
+  display: block;
 }
 
 .visually-hidden,

@@ -1,5 +1,5 @@
 {% if menu %}
-  <div class="l-header-nav" data-menu-hidden="false">
+  <div class="l-header-nav">
     <nav id="{{ mainnav_id }}" class="main-menu" role="navigation">
       <ul id="mainnav" class="main-menu__list">
         {% for item in items %}
@@ -10,21 +10,18 @@
             {% set targetattr = ' target="' ~ item.target ~ '"' %}
           {% endif %}
 
+          {% set haspopup = '' %}
+
           {% if item.children %}
-            <li class="main-menu__item main-menu__item--with-sub" data-menu-hidden="true">
+            {% set haspopup = ' aria-haspopup="true"' %}
+            <li class="main-menu__item main-menu__item--with-sub">
           {% else %}
             <li class="main-menu__item">
           {% endif %}
-          <a href="{{ item.link }}"{{ targetattr }}><span>{{ item.title }}</span></a>
+          <a href="{{ item.link }}"{{ targetattr }}{{ haspopup }}><span>{{ item.title }}</span></a>
 
           {% if item.children %}
-            <!-- TODO tekxt aanpassen button -->
-            <button class="main-menu__open-sub">TEXT</button>
-          {% endif %}
-
-
-          {% if item.children %}
-            <ul class="main-menu__sublist">
+            <ul class="main-menu__sublist" aria-expanded="false">
               {% for child in item.children %}
                 <li class="main-menu__item main-menu__item--sub">
                   <a href="{{ child.link }}">{{ child.title }}</a>
