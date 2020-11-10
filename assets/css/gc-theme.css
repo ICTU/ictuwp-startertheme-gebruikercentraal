@@ -173,6 +173,24 @@ a {
     color: #004152;
     text-decoration: none; }
 
+/* -------------------------------------------------------------------------
+enkele uitzonderingen voor hover over links en het weghalen van de underline
+zie: https://trello.com/c/Xmmyu8ho/363-styling-van-hover-over-links
+suggesties welkom
+*/
+.entry-content a:hover, .entry-content a:focus {
+  color: #148839;
+  text-decoration: underline; }
+
+.meta-data__list a:hover, .meta-data__list a:focus {
+  color: #004152;
+  text-decoration: underline; }
+
+.page-footer a:hover, .page-footer a:focus {
+  color: #e8d8c7;
+  text-decoration: underline; }
+
+/* ------------------------------------------------------------------------- */
 h1, h2, h3, h4, h5, h6 {
   font-family: "montserratbold", Helvetica, Arial, sans-serif;
   color: #004152;

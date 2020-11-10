@@ -44,6 +44,43 @@ a {
   }
 }
 
+/* -------------------------------------------------------------------------
+enkele uitzonderingen voor hover over links en het weghalen van de underline
+zie: https://trello.com/c/Xmmyu8ho/363-styling-van-hover-over-links
+suggesties welkom
+*/
+.entry-content {
+  a {
+    &:hover,
+    &:focus {
+      color: $color-primary;
+      text-decoration: underline;
+    }
+  }
+}
+.meta-data__list {
+  // grijze kleur, donkderder maken bij hover
+  a {
+    &:hover,
+    &:focus {
+      color: $gc-dark-blue;
+      text-decoration: underline;
+    }
+  }
+}
+.page-footer {
+  // links in de pagefooter zijn wit op donkerblauw, om
+  // leesbaarheid te behouden een lichte kleur.
+  a {
+    &:hover,
+    &:focus {
+      color: $gc-pantybrown;
+      text-decoration: underline;
+    }
+  }
+}
+/* ------------------------------------------------------------------------- */
+
 h1, h2, h3, h4, h5, h6 {
   font-family: $base-heading-font;
   color: $base-heading-color;
