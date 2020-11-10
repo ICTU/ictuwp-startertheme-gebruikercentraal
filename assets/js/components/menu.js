@@ -6,8 +6,7 @@
 // @package gebruiker-centraal
 // @author  Tamara de Haas, Paul van Buuren
 // @license GPL-2.0+
-// @version 5.0.22
-// @desc.   CTA-kleuren, a11y groen, sharing buttons optional, beeldbank CPT code separation.
+// @version 5.0.23
 // @link    https://github.com/ICTU/gebruiker-centraal-wordpress-theme
 
 const breakpointmenu = 1000; // op 1000px toggle tussen desktop / mobiel, zie ook 'nav': 1000px
@@ -145,8 +144,6 @@ function doNav(width) {
     Array.prototype.forEach.call(menuItems, function (el, i) {
       var thisListItem = el;
 
-      console.log('desktop, loopieloopie: ' + width );
-
       var currentSubmenus = thisListItem.querySelector('.main-menu__sublist');
       var anchorInListItem = el.querySelector('a');
       var appendButtonAfterAnchor = '<button class="main-menu__open-sub"><span><span class="visuallyhidden">Submenu voor “' + anchorInListItem.text + '”</span></span></button>';
@@ -209,6 +206,5 @@ else {
   });
 
 }
-
 
 // =========================================================================================================

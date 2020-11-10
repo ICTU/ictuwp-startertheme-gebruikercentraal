@@ -205,7 +205,7 @@
   }
 
   @include bp-down(sm) {
-    width: 100%;
+//    width: 100%;
   }
 
   @include bp-up(nav) {
