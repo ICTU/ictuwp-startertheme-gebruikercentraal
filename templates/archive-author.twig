@@ -86,7 +86,10 @@ display tipgever info or
 
   <div class="archive__posts">
 
+    {% set headerlevelcard = 'h2' %}
+
     {% if overview.title %}
+      {% set headerlevelcard = 'h3' %}
       <h2 class="section__title">{{ overview.title }}</h2>
     {% endif %}
 
@@ -109,6 +112,7 @@ display tipgever info or
           'category': post.cat,
           'toptip': post.toptip,
           'toptiptekst': post.toptiptekst,
+          'headerlevel': headerlevelcard,
           'url': post.url
         } %}
 

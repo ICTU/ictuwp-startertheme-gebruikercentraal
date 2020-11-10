@@ -6,7 +6,7 @@
 // @package gebruiker-centraal
 // @author  Tamara de Haas
 // @desc.   Kleuren in vars/_video.scss
-// @version 5.0.23
+// @version 5.0.24
 
 const videoBtn = jQuery('.collapsetoggle button');
 const siteContainer = jQuery('.section--video');

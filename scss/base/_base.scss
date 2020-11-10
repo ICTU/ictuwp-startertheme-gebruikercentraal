@@ -131,3 +131,40 @@ form {
 cite {
   font-style: normal;
 }
+
+
+
+/* TESTMEUK!!!
+
+h1, h2, h3, h4 {
+  &:before {
+    content: ' ';
+    display: inline-block;
+    float: left;
+    padding: 0 .5rem;
+    background: red;
+    color: white;
+  }
+}
+h1 {
+  &:before {
+    content: 'h1';
+  }
+}
+h2 {
+  &:before {
+    content: 'h2';
+  }
+}
+h3 {
+  &:before {
+    content: 'h3';
+  }
+}
+h4 {
+  &:before {
+    content: 'h4';
+  }
+}
+
+*/
