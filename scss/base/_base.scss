@@ -107,6 +107,9 @@ img {
   // wil je iets verbergen voor ziende gebruikers, gebruik dan .visuallyhidden, of
   // de mixin @include visually-hidden;
 }
+*[data-menu-hidden=true]{
+  display: none;
+}
 
 .visually-hidden,
 .visuallyhidden {

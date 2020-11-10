@@ -22,36 +22,36 @@ function doNav(width) {
   if (width < bp) {
 
     // Mobile
-    regionNav.attr('aria-hidden', true);
+    regionNav.attr('data-menu-hidden', true);
 
     // Show al sublists
-    jQuery('.main-menu__sublist').attr('aria-hidden', 'false');
+    jQuery('.main-menu__sublist').attr('data-menu-hidden', 'false');
 
     toggleMenu.on('click', function () {
       jQuery(this).toggleClass('active');
       jQuery('body').toggleClass('show-menu');
 
-      if (regionNav.attr('aria-hidden') === 'true') {
-        regionNav.attr('aria-hidden', 'false');
-      } else if (regionNav.attr('aria-hidden') === 'false') {
-        regionNav.attr('aria-hidden', 'true');
+      if (regionNav.attr('data-menu-hidden') === 'true') {
+        regionNav.attr('data-menu-hidden', 'false');
+      } else if (regionNav.attr('data-menu-hidden') === 'false') {
+        regionNav.attr('data-menu-hidden', 'true');
       }
     });
 
   } else if (width >= bp) {
     // Desktop
-    regionNav.attr('aria-hidden', false);
-    jQuery('.main-menu__sublist').attr('aria-hidden', 'true');
+    regionNav.attr('data-menu-hidden', false);
+    jQuery('.main-menu__sublist').attr('data-menu-hidden', 'true');
 
     // Add class on mouse enter
     jQuery('.main-menu__item--with-sub').on('mouseenter', function () {
       if (!(jQuery(this).hasClass('open'))) {
         // Unset other active if there
         mainMenu.find('.open').removeClass('open');
-        mainMenu.find('ul[aria-hidden="false"]').attr('aria-hidden', 'true');
+        mainMenu.find('ul[data-menu-hidden="false"]').attr('data-menu-hidden', 'true');
 
         // Add attributes to current menu
-        jQuery(this).addClass('open').find('.main-menu__sublist').attr('aria-hidden', 'false');
+        jQuery(this).addClass('open').find('.main-menu__sublist').attr('data-menu-hidden', 'false');
         jQuery(this).find('a:first-child').attr('aria-expanded', 'true');
       }
     });
@@ -60,7 +60,7 @@ function doNav(width) {
     jQuery('.main-menu__item--with-sub').mouseleave(function () {
       // Add attributes to current menu
       jQuery(this).removeClass('open');
-      jQuery(this).attr('aria-hidden', 'true');
+      jQuery(this).attr('data-menu-hidden', 'true');
       jQuery(this).parent().find('a:first-child').attr('aria-expanded', 'false');
     });
 
@@ -73,27 +73,27 @@ function doNav(width) {
         //Submenu is closed, has to open
         if (currentActive.length) {
           //If there is another item open remove it
-          currentActive.removeClass('open').find('.main-menu__sublist').attr('aria-hidden', true);
+          currentActive.removeClass('open').find('.main-menu__sublist').attr('data-menu-hidden', true);
           currentActive.find('button').attr('aria-expanded', false);
         }
 
         jQuery(this).attr('aria-expanded', true).find('span').text('Open ' + menuItem.find('a:first span').text());
-        menuItem.addClass('open').find('.main-menu__sublist').attr('aria-hidden', false);
+        menuItem.addClass('open').find('.main-menu__sublist').attr('data-menu-hidden', false);
 
       } else if (menuItem.hasClass('open')) {
         // Submenu is open, has to close
         jQuery(this).attr('aria-expanded', false).find('span').text('Sluit ' + menuItem.find('a:first span').text());
-        menuItem.removeClass('open').find('.main-menu__sublist').attr('aria-hidden', true);
+        menuItem.removeClass('open').find('.main-menu__sublist').attr('data-menu-hidden', true);
       }
     });
 
     // Hide submenu when clicking outside of menu
     jQuery(document).mouseup(function (e) {
-      var menuActiveSub = jQuery('.main-menu__sublist[aria-hidden="false"]');
+      var menuActiveSub = jQuery('.main-menu__sublist[data-menu-hidden="false"]');
 
       // if the target of the click isn't the container nor a descendant of the container
       if (!menuActiveSub.is(e.target) && menuActiveSub.has(e.target).length === 0) {
-        menuActiveSub.attr('aria-hidden', true);
+        menuActiveSub.attr('data-menu-hidden', true);
       }
     });
 
@@ -103,13 +103,11 @@ function doNav(width) {
 
 jQuery(window).on('load', function () {
   var w = jQuery(window).width();
-
   doNav(w);
 });
 
 jQuery(window).on('resize', function () {
   var w = jQuery(window).width();
-
   doNav(w);
 });
 

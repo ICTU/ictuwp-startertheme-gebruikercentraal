@@ -2,7 +2,7 @@
 /*
  * Front-end styles voor GC-theme
  * Author: Tamara, Mark, Paul
- * Version: 5.0.22
+ * Version: 5.0.22.temp
  *
 */
 .has-white-color {
@@ -221,6 +221,9 @@ img {
   display: inline-block;
   max-width: 100%;
   height: auto; }
+
+*[data-menu-hidden=true] {
+  display: none; }
 
 .visually-hidden,
 .visuallyhidden {
