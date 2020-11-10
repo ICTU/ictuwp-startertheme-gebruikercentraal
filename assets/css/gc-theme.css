@@ -2,7 +2,7 @@
 /*
  * Front-end styles voor GC-theme
  * Author: Tamara, Mark, Paul
- * Version: 5.0.22
+ * Version: 5.0.23
  *
 */
 .has-white-color {
@@ -1155,10 +1155,6 @@ Gutenberg corrections
     width: 80%;
     background: #004152;
     overflow-y: auto; } }
-
-@media (max-width: 559px) {
-  .l-header-nav {
-    width: 100%; } }
 
 @media (min-width: 1000px) {
   .l-header-nav {
@@ -5952,40 +5948,36 @@ body:not(.single-event) .entry-content.wrap:last-child {
 .video__video .mejs-container .mejs-controls {
   background: #f9f6f3; }
 
-/*
+.section.section--video:before {
+  content: " ";
+  display: block;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 0;
+  opacity: 0;
+  background: rgba(0, 48, 61, 0.6);
+  z-index: 0;
+  -webkit-transition: opacity .5s;
+  transition: opacity .5s;
+  -webkit-transition-delay: .1s;
+          transition-delay: .1s; }
 
-.site-container {
-  &:before {
-    content: " ";
-    display: block;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 0;
-    height: 0;
-    opacity: 0;
-    background: rgba($gc_darkest-blue, 0.6);
-    z-index: 0;
-    transition: opacity .5s;
-    transition-delay: .1s;
-  }
+.section.section--video.show-overlay:before {
+  width: 100vw;
+  height: 100vh;
+  z-index: 6;
+  opacity: 1; }
 
-  &.show-overlay {
+.section.section--video.show-overlay .page-header {
+  position: initial; }
 
-    &:before {
-      width: 100vw;
-      height: 100vh;
-      z-index: 6;
-      opacity: 1;
-    }
+.section.section--video.show-overlay .video {
+  z-index: 50;
+  position: relative;
+  border-top: 10px solid black; }
 
-    .video__video {
-      position: relative;
-      z-index: 50;
-    }
-  }
-}
- */
 /*
  * Layout for widgets.
  * Each widget has a generic layout. Depending on the placement this layout can be altered.
