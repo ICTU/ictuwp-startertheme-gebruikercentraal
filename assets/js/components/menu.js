@@ -6,7 +6,7 @@
 // @package gebruiker-centraal
 // @author  Tamara de Haas, Paul van Buuren
 // @license GPL-2.0+
-// @version 5.0.20
+// @version 5.0.22.temp
 // @desc.   CTA-kleuren, a11y groen, sharing buttons optional, beeldbank CPT code separation.
 // @link    https://github.com/ICTU/gebruiker-centraal-wordpress-theme
 
@@ -207,7 +207,6 @@ else {
     var windowwidth = window.innerWidth;
     doNav(windowwidth);
   });
-
 
 }
 

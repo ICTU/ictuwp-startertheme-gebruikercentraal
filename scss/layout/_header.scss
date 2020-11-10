@@ -394,8 +394,6 @@
     top: 0;
   }
 }
-
-
 /* groter dan 1280px, kleiner dan 1000px */
 @media (min-width: map-get($breakpoints, 'nav')) and (max-width: $max-width-container) {
 
@@ -407,22 +405,6 @@
         left: auto;
         right: 0;
       }
-    }
-  }
-}
-
-
-/* fallback voor styling van het menu in IE11 */
-@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
-  .main-menu__item--with-sub {
-    background: transparent url('/wp-content/themes/ictuwp-theme-gc2020/assets/images/arrow-white-down.svg') right center no-repeat;
-    padding-right: 1.5rem;
-  }
-  .main-menu__item--with-sub:hover {
-    ul[aria-expanded="false"] {
-      // voor IE11 gaan we geen moeite doen, qua javascript
-      display: block;
-      left: 0;
     }
   }
 }

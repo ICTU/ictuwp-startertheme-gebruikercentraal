@@ -101,16 +101,11 @@ img {
 
 *[aria-hidden=true]{
   // ho ho, wageffe!
-  // aria-hidden zou je alleen moeten gebruiken voor elementen die je wel
+  // aria-hidden zou je alleen moeten gebruiken voor elementen die je wél
   // wil tonen aan ziende gebruikers, maar niet aan gebruikers met bijv.
   // een screenreader
-  border: 10px solid red !important; // BOE! SCHRIK!
-  &:before {
-    content: 'Aria-hidden is niet de goede manier om dingen visueel te verbergen';
-    display: block;
-    background: red;
-    color: white;
-  }
+  // wil je iets verbergen voor ziende gebruikers, gebruik dan .visuallyhidden, of
+  // de mixin @include visually-hidden;
 }
 
 ul[aria-expanded="false"]{
@@ -124,15 +119,9 @@ ul[aria-expanded="true"]{
   display: block;
 }
 
-
-
 .visually-hidden,
 .visuallyhidden {
   @include visually-hidden;
-}
-
-.visually-hidden,
-.visuallyhidden {
 }
 
 form {
