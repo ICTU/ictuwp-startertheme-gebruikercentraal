@@ -1,10 +1,19 @@
 /* 404 page */
 
-.error404[data-template='base.twig'] {
+.error404 {
 
   .page__header,
   .page__content {
     @include ho-make-container($max-width-inner);
+  }
+
+  .content {
+    padding-bottom: 5rem;
+
+    @include bp-up(lg) {
+      padding-bottom: 7rem;
+    }
+
   }
 
   p + form {
@@ -34,3 +43,4 @@
     }
   }
 }
+

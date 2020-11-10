@@ -7,7 +7,7 @@
       "js1": {
         "handle": "main-min",
         "file": "/assets/js/main-min.js",
-        "version": "",
+        "version": "5.0.22.temp",
         "dependencies": "",
         "infooter": ""
       }

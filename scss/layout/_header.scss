@@ -394,6 +394,7 @@
     top: 0;
   }
 }
+
 /* groter dan 1280px, kleiner dan 1000px */
 @media (min-width: map-get($breakpoints, 'nav')) and (max-width: $max-width-container) {
 
