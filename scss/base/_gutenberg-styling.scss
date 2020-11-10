@@ -149,3 +149,10 @@ Gutenberg corrections
   }
 
 }
+
+
+.section--heading {
+  &:first-child {
+    margin-top: 4rem;
+  }
+}
