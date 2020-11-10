@@ -19,7 +19,7 @@ body {
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
 
-  @include bp-down(md){
+  @include bp-down(md) {
     font-size: 1.6rem;
     line-height: 2.6rem;
   }
@@ -50,14 +50,21 @@ zie: https://trello.com/c/Xmmyu8ho/363-styling-van-hover-over-links
 suggesties welkom
 */
 .entry-content {
-  a {
+  a:not(.tipkaart__link) {
     &:hover,
     &:focus {
-      color: $color-primary;
       text-decoration: underline;
+    }
+
+    &:not(.btn):not(.arrow-link):not(.link--arrow) {
+      &:hover,
+      &:focus {
+        color: $color-primary;
+      }
     }
   }
 }
+
 .meta-data__list {
   // grijze kleur, donkderder maken bij hover
   a {
@@ -68,10 +75,11 @@ suggesties welkom
     }
   }
 }
+
 .page-footer {
   // links in de pagefooter zijn wit op donkerblauw, om
   // leesbaarheid te behouden een lichte kleur.
-  a {
+  a:not(.btn) {
     &:hover,
     &:focus {
       color: $gc-pantybrown;
@@ -79,6 +87,7 @@ suggesties welkom
     }
   }
 }
+
 /* ------------------------------------------------------------------------- */
 
 h1, h2, h3, h4, h5, h6 {
@@ -136,7 +145,7 @@ img {
   height: auto;
 }
 
-*[aria-hidden=true]{
+*[aria-hidden=true] {
   // ho ho, wageffe!
   // aria-hidden zou je alleen moeten gebruiken voor elementen die je wél
   // wil tonen aan ziende gebruikers, maar niet aan gebruikers met bijv.
@@ -145,12 +154,13 @@ img {
   // de mixin @include visually-hidden;
 }
 
-ul[aria-expanded="false"]{
+ul[aria-expanded="false"] {
   // de links in een ingeklapt lijstje moeten onzichtbaar zijn,
   // zodat je er bijv. ook niet via de tabtoets bij kunt
   display: none;
 }
-ul[aria-expanded="true"]{
+
+ul[aria-expanded="true"] {
   // de links in een uitgeklapt lijstje moeten bereikbaar
   // zijn als je met de tabtoets door de links wandelt
   display: block;
@@ -168,7 +178,6 @@ form {
 cite {
   font-style: normal;
 }
-
 
 
 /* TESTMEUK!!!
