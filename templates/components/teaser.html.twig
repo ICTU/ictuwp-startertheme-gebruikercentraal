@@ -9,10 +9,11 @@
   <div class="teaser__link">
 
     {% if img %}
+    <a href="{{ url }}" aria-hidden="true">
       <div class="teaser__image">
         {{ img }}
       </div>
-
+    </a>
     {% endif %}
 
     {% if img %}<div class="l-teaser-content">{% endif %}
