@@ -100,26 +100,17 @@ img {
 }
 
 *[aria-hidden=true]{
-  display: none; // het hartinfarct toch maar even voorkomen
   // ho ho, wageffe!
-  // aria-hidden zou je alleen moeten gebruiken voor elementen die je wel
+  // aria-hidden zou je alleen moeten gebruiken voor elementen die je wél
   // wil tonen aan ziende gebruikers, maar niet aan gebruikers met bijv.
   // een screenreader
-//  border: 10px solid red !important; // het hartinfarct toch maar even voorkomen
-}
-
-LALALALALA[aria-expanded=false]{
-  @include visually-hidden;
-}
-
-
-.visually-hidden,
-.visuallyhidden {
-  @include visually-hidden;
+  // wil je iets verbergen voor ziende gebruikers, gebruik dan .visuallyhidden, of
+  // de mixin @include visually-hidden;
 }
 
 .visually-hidden,
 .visuallyhidden {
+  @include visually-hidden;
 }
 
 form {
