@@ -1,5 +1,5 @@
 {% if menu %}
-  <div class="l-header-nav" aria-hidden="false">
+  <div class="l-header-nav" data-menu-hidden="false">
     <nav id="{{ mainnav_id }}" class="main-menu" role="navigation">
       <ul id="mainnav" class="main-menu__list">
         {% for item in items %}
@@ -11,7 +11,7 @@
           {% endif %}
 
           {% if item.children %}
-            <li class="main-menu__item main-menu__item--with-sub" aria-hidden="true">
+            <li class="main-menu__item main-menu__item--with-sub" data-menu-hidden="true">
           {% else %}
             <li class="main-menu__item">
           {% endif %}

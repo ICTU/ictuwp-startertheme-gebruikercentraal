@@ -4,7 +4,7 @@
 {% block content %}
 
   <header class="post__header">
-    <h1 class="page__title">{{title }}</h1>
+    <h1 class="page__title">{{ title }}</h1>
   </header>
 
   <div class="content-wrapper">
@@ -15,11 +15,14 @@
       </p>
     {% endif %}
 
-    <ol class="overview overview--list overview--search-results">
-      {% for post in results %}
-        <li class="overview__item">{% include ['searchresult-item-'~post.post_type~'.twig', 'searchresult-item.twig'] %}</li>
-      {% endfor %}
-    </ol>
+    {% if results %}
+      <ol class="overview overview--list overview--search-results">
+        {% for post in results %}
+          <li
+            class="overview__item">{% include ['searchresult-item-'~post.post_type~'.twig', 'searchresult-item.twig'] %}</li>
+        {% endfor %}
+      </ol>
+    {% endif %}
 
     {% include 'partial/pagination.twig' with { pagination: posts.pagination({show_all: false, mid_size: 3, end_size: 2}) } %}
   </div>

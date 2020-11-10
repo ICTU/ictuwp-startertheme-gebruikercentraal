@@ -1,3 +1,15 @@
 .search-result .arrow-link__icon {
   margin-right: 0;
 }
+
+.search-no-results {
+  // voor zoekresultaatpagina zonder resultaten
+  .content {
+    padding-bottom: 5rem;
+
+    @include bp-up(lg) {
+      padding-bottom: 7rem;
+    }
+  }
+
+}

@@ -81,7 +81,6 @@ select {
 
 textarea {
   min-height: 16rem;
-  display: block;
 }
 
 
@@ -268,14 +267,8 @@ legend {
 }
 
 
-/* speciale formulieren
------------------------------------------------------- */
-
-.screen-reader-response {
-  @include visually-hidden;
-}
-
-.wpcf7,
+/* speciale formulieren */
+.wpcf7-form,
 .gform_wrapper {
   padding-bottom: 4rem;
   max-width: $max-width-inner;
@@ -285,44 +278,7 @@ legend {
   clear: both;
   border-top: .2rem solid $border-color;
   margin-top: 2rem;
-
-  .gfield_required,
-  .required {
-    // de asterisk die een verplicht veld markeert
-    color: $form-error-color;
-    font-size: 110%;
-    display: inline-block;
-    float: right;
-    margin: 0 .5rem;
-  }
-
-  .validation_error,
-  .wpcf7-response-output {
-    // het blok bovenaan een formulier dat vertelt wat er mis is gegaan
-    color: $form-error-color;
-    border: 2px solid $form-error-border-color;
-    padding: .25rem .75rem;
-  }
-
-  .validation_message,
-  .wpcf7-not-valid-tip[aria-hidden="true"] {
-    color: $form-error-color;
-    background-color: $form-error-background;
-    border: 2px solid $form-error-border-color;
-    border-top-style: none;
-    display: block;
-    width: 100%;
-    font-size: 80%;
-    padding: .25rem .75rem;
-  }
-
-  input,
-  textarea {
-    &[aria-invalid="true"],
-    &.wpcf7-not-valid {
-      border: 2px solid $form-error-border-color;
-    }
-  }
+  padding-top: 2rem;
 
 }
 
@@ -354,7 +310,6 @@ legend {
 ------------------------------------------------------ */
 
 .gform_wrapper {
-  padding-top: 2rem;
 
   ul, ul li, ol, ol li {
     list-style: none;
@@ -400,11 +355,7 @@ legend {
       }
     }
   }
-
-  .validation_message {
-    margin-left: 30%;
-  }
-
+  .validation_message,
   .gform_footer {
     padding-left: 30%;
   }
