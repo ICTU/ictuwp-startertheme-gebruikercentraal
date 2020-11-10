@@ -7,7 +7,7 @@
       "js1": {
         "handle": "main-min",
         "file": "/assets/js/main-min.js",
-        "version": "5.0.21.3",
+        "version": "5.0.22",
         "dependencies": "",
         "infooter": ""
       }
@@ -16,13 +16,13 @@
       "Fonts": {
         "handle": "skiplinks",
         "file": "/assets/fonts/fonts.css",
-        "version": "5.0.21.3",
+        "version": "5.0.22",
         "dependencies": ""
       },
       "Styling": {
         "handle": "gc-theme",
         "file": "/assets/css/gc-theme.css",
-        "version": "5.0.21.3",
+        "version": "5.0.22",
         "dependencies": ""
       }
     },
@@ -43,13 +43,13 @@
       "Fonts": {
         "handle": "skiplinks",
         "file": "/assets/fonts/fonts.css",
-        "version": "5.0.21.3",
+        "version": "5.0.22",
         "dependencies": ""
       },
       "css1": {
         "handle": "od-theme",
         "file": "/flavors/optimaaldigitaal/assets/css/od-theme.css",
-        "version": "5.0.21.3",
+        "version": "5.0.22",
         "dependencies": ""
       }
     },
@@ -103,13 +103,13 @@
       "Fonts": {
         "handle": "skiplinks",
         "file": "/assets/fonts/fonts.css",
-        "version": "5.0.21.3",
+        "version": "5.0.22",
         "dependencies": ""
       },
       "Styling": {
         "handle": "gc-theme",
         "file": "/assets/css/gc-theme.css",
-        "version": "5.0.21.3",
+        "version": "5.0.22",
         "dependencies": ""
       },
       "KB": {

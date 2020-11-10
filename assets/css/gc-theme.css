@@ -2,7 +2,7 @@
 /*
  * Front-end styles voor GC-theme
  * Author: Tamara, Mark, Paul
- * Version: 5.0.21.3
+ * Version: 5.0.22
  *
 */
 .has-white-color {
@@ -221,19 +221,6 @@ img {
   display: inline-block;
   max-width: 100%;
   height: auto; }
-
-*[aria-hidden=true] {
-  display: none; }
-
-LALALALALA[aria-expanded=false] {
-  margin: -1px;
-  padding: 0;
-  width: 1px;
-  height: 1px;
-  overflow: hidden;
-  clip: rect(0 0 0 0);
-  clip: rect(0, 0, 0, 0);
-  position: absolute; }
 
 .visually-hidden,
 .visuallyhidden {
@@ -1810,31 +1797,37 @@ body:not(.single-event) .entry-content.wrap:last-child {
       margin-top: 5rem; } }
 
 /* 404 page */
-.error404[data-template='base.twig'] .page__header,
-.error404[data-template='base.twig'] .page__content {
+.error404 .page__header,
+.error404 .page__content {
   max-width: 760px;
   margin-left: auto;
   margin-right: auto; }
 
-.error404[data-template='base.twig'] p + form {
+.error404 .content {
+  padding-bottom: 5rem; }
+  @media (min-width: 1100px) {
+    .error404 .content {
+      padding-bottom: 7rem; } }
+
+.error404 p + form {
   margin-top: 2rem; }
 
-.error404[data-template='base.twig'] .page__widgets {
+.error404 .page__widgets {
   background: url("/wp-content/themes/ictuwp-theme-gc2020/assets/images/avatars/huilende-hipster.svg") center top 30px no-repeat;
   background-size: 160px auto;
   padding-top: 30rem; }
-  .error404[data-template='base.twig'] .page__widgets > section + section {
+  .error404 .page__widgets > section + section {
     padding-top: 2rem;
     margin-top: 2rem;
     border-top: 0.1rem solid #D1DFE3; }
   @media (min-width: 700px) {
-    .error404[data-template='base.twig'] .page__widgets {
+    .error404 .page__widgets {
       padding-top: 3rem;
       padding-left: 40%;
       background-position: left 10% top 30px;
       min-height: 35rem; } }
   @media (min-width: 1100px) {
-    .error404[data-template='base.twig'] .page__widgets {
+    .error404 .page__widgets {
       background-size: 26% auto; } }
 
 /* Entry types */
@@ -2110,29 +2103,32 @@ body:not(.single-event) .entry-content.wrap:last-child {
     .comment-form .email {
       padding-left: 1.5rem; } }
 
-.entry--type-post, .entry--type-event {
+.entry--type-event, .entry--type-post {
   max-width: 760px;
   margin-left: auto;
   margin-right: auto; }
-  .entry--type-post .entry-header, .entry--type-event .entry-header {
+  .entry--type-event .entry-header, .entry--type-post .entry-header {
     position: relative;
     padding-left: 2.5rem; }
-    .entry--type-post .entry-header .date-badge, .entry--type-event .entry-header .date-badge {
+    .entry--type-event .entry-header .date-badge, .entry--type-post .entry-header .date-badge {
       position: absolute;
       left: 0;
       top: 0;
       margin-left: -3rem; }
     @media (min-width: 560px) {
-      .entry--type-post .entry-header .date-badge, .entry--type-event .entry-header .date-badge {
+      .entry--type-event .entry-header .date-badge, .entry--type-post .entry-header .date-badge {
         margin-left: -5rem; } }
     @media (min-width: 1100px) {
-      .entry--type-post .entry-header, .entry--type-event .entry-header {
+      .entry--type-event .entry-header, .entry--type-post .entry-header {
         padding-left: 3rem; }
-        .entry--type-post .entry-header .date-badge, .entry--type-event .entry-header .date-badge {
+        .entry--type-event .entry-header .date-badge, .entry--type-post .entry-header .date-badge {
           margin-left: -4rem; } }
   @media (min-width: 560px) {
-    .entry--type-post .entry-content, .entry--type-event .entry-content {
+    .entry--type-event .entry-content, .entry--type-post .entry-content {
       margin-top: 3rem; } }
+
+.event-template-default .content {
+  overflow: hidden; }
 
 .event-bookings {
   position: relative;
@@ -2357,9 +2353,10 @@ body:not(.single-event) .entry-content.wrap:last-child {
   margin-top: 3rem;
   border: none;
   display: flex;
-  -webkit-box-pack: start;
-      -ms-flex-pack: start;
-          justify-content: flex-start;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding-bottom: 5rem;
   width: 100%; }
   @media (min-width: 1100px) {
     .pagination {
@@ -2420,6 +2417,9 @@ body:not(.single-event) .entry-content.wrap:last-child {
       right: .6rem; }
     .pagination .pagination-next a:hover, .pagination .pagination-next a:focus, .pagination .pagination-next a:active {
       padding-right: 3.9rem; }
+  @media (min-width: 1100px) {
+    .pagination {
+      padding-bottom: 7rem; } }
   .pagination, .pagination li {
     list-style: none;
     margin-left: 0;
@@ -2538,29 +2538,32 @@ body:not(.single-event) .entry-content.wrap:last-child {
     .comment-form .email {
       padding-left: 1.5rem; } }
 
-.entry--type-post, .entry--type-event {
+.entry--type-event, .entry--type-post {
   max-width: 760px;
   margin-left: auto;
   margin-right: auto; }
-  .entry--type-post .entry-header, .entry--type-event .entry-header {
+  .entry--type-event .entry-header, .entry--type-post .entry-header {
     position: relative;
     padding-left: 2.5rem; }
-    .entry--type-post .entry-header .date-badge, .entry--type-event .entry-header .date-badge {
+    .entry--type-event .entry-header .date-badge, .entry--type-post .entry-header .date-badge {
       position: absolute;
       left: 0;
       top: 0;
       margin-left: -3rem; }
     @media (min-width: 560px) {
-      .entry--type-post .entry-header .date-badge, .entry--type-event .entry-header .date-badge {
+      .entry--type-event .entry-header .date-badge, .entry--type-post .entry-header .date-badge {
         margin-left: -5rem; } }
     @media (min-width: 1100px) {
-      .entry--type-post .entry-header, .entry--type-event .entry-header {
+      .entry--type-event .entry-header, .entry--type-post .entry-header {
         padding-left: 3rem; }
-        .entry--type-post .entry-header .date-badge, .entry--type-event .entry-header .date-badge {
+        .entry--type-event .entry-header .date-badge, .entry--type-post .entry-header .date-badge {
           margin-left: -4rem; } }
   @media (min-width: 560px) {
-    .entry--type-post .entry-content, .entry--type-event .entry-content {
+    .entry--type-event .entry-content, .entry--type-post .entry-content {
       margin-top: 3rem; } }
+
+.event-template-default .content {
+  overflow: hidden; }
 
 .event-bookings {
   position: relative;
@@ -5317,6 +5320,12 @@ body:not(.single-event) .entry-content.wrap:last-child {
 
 .search-result .arrow-link__icon {
   margin-right: 0; }
+
+.search-no-results .content {
+  padding-bottom: 5rem; }
+  @media (min-width: 1100px) {
+    .search-no-results .content {
+      padding-bottom: 7rem; } }
 
 .social-links {
   margin: 0;

@@ -75,7 +75,12 @@
   @include gc-pagination;
 
   display: flex;
-  justify-content: flex-start;
+  justify-content: center; // beter dan flex-start, zie bijv. https://gcadmin.test-ictu-gc.nl/gebruikercentraal/category/blog/
+  padding-bottom: 5rem;
+
+  @include bp-up(lg) {
+    padding-bottom: 7rem;
+  }
 
   // pagination is a list
   &, li {
