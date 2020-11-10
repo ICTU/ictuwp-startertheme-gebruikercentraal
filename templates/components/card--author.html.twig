@@ -2,6 +2,13 @@
   {% set title = '?' %}
 {% endif %}
 
+{% set headerlevelcard = 'h2' %}
+
+{% if headerlevel %}
+  {% set headerlevelcard = headerlevel %}
+{% endif %}
+
+
 {% set styles = [
   'author',
   'author--card',
@@ -12,18 +19,20 @@
 <div class="{{ styles|join(' ') }}">
   <div class="card__image">
     {% if img is not empty %}
-      <img src="{{ img }}" alt="{{ img_alt }}" class="image image--doelgroep">
+      <a href="{{ url }}" aria-hidden="true">
+        <img src="{{ img }}" alt="{{ img_alt }}" class="image image--doelgroep">
+      </a>
     {% endif %}
   </div>
   <div class="author__content">
     {% if type == 'event' %}
       {% include 'components/date-badge.html.twig' %}
     {% endif %}
-    <h3 class="author__title">
-      <a href="{{ url }}">{{ title }}</a>
-    </h3>
+    <{{ headerlevelcard }} class="author__title">
+    <a href="{{ url }}">{{ title }}</a>
+  </{{ headerlevelcard }}>
 
-    <span class="author__function">{{ function }}</span>
+  <span class="author__function">{{ function }}</span>
 
-  </div>
+</div>
 </div>

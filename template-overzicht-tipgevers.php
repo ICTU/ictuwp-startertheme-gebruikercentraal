@@ -10,8 +10,8 @@
 
 $context = Timber::context();
 
-$timber_post          = new Timber\Post();
-$context['post']      = $timber_post;
+$timber_post     = new Timber\Post();
+$context['post'] = $timber_post;
 if ( get_field( 'overzichtspagina_inleiding' ) ) {
 	// ACF veld 'post_inleiding' is gevuld
 	$intro            = get_field( 'overzichtspagina_inleiding' );
@@ -48,7 +48,8 @@ function tipgevers_get_data() {
 			$item['function'] = wp_strip_all_tags( get_field( 'tipgever_functietitel', $term ) );
 			$image            = get_field( 'tipgever_foto', $term );
 			$item['url']      = get_term_link( $term );
-			$item['img_alt']  = "";
+			$item['img_alt']  = sprintf( _x( 'Link to tips from %s', 'Arialabel image-link', 'gctheme' ), $item['title'] );
+
 			if ( $image ):
 				$size        = 'thumbnail';
 				$item['img'] = $image['sizes'][ $size ];

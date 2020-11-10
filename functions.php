@@ -8,7 +8,7 @@
  * @since   Timber 0.1
  */
 
-define( 'CHILD_THEME_VERSION', '5.0.23' );
+define( 'CHILD_THEME_VERSION', '5.0.25' );
 define( 'ID_MAINCONTENT', 'maincontent' );
 define( 'ID_MAINNAV', 'mainnav' );
 define( 'ID_ZOEKEN', 'zoeken' );
@@ -1404,6 +1404,7 @@ function prepare_card_content( $postitem ) {
 	$item['url']        = get_the_permalink( $postid );
 	$image              = get_the_post_thumbnail( $postid, 'large', [] );
 	$item['img']        = $image;
+	$item['img_alt']    = $image;
 	$themakleuren       = [];
 
 	if ( 'tips' == $item['post_type'] ) {

@@ -3,6 +3,9 @@
 {% endif %}
 
 
+{% set headerlevelcard = 'h2' %}
+
+
 {% set sectionClasses = [
 'section',
 'section--overview',
@@ -18,6 +21,7 @@
     <div class="l-section-top">
 
       {% if title %}
+        {% set headerlevelcard = 'h3' %}
         <h2 class="section__title">
           {{ title }}
         </h2>
@@ -68,7 +72,7 @@
             'start_date': ( item.start_date ?? '' ),
             'end_date': ( item.end_date ?? '' ),
             'post_date': ( item.post_date ?? '' ),
-
+            'headerlevel': headerlevelcard,
             'url': item.url
           } %}
         {% endfor %}

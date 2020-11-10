@@ -6,7 +6,7 @@
 // @package gebruiker-centraal
 // @author  Tamara de Haas, Paul van Buuren
 // @license GPL-2.0+
-// @version 5.0.23
+// @version 5.0.24
 // @link    https://github.com/ICTU/gebruiker-centraal-wordpress-theme
 
 const breakpointmenu = 1000; // op 1000px toggle tussen desktop / mobiel, zie ook 'nav': 1000px

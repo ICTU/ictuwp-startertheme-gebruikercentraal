@@ -1,3 +1,9 @@
+{% set headerlevelcard = 'h2' %}
+
+{% if headerlevel %}
+  {% set headerlevelcard = headerlevel %}
+{% endif %}
+
 <section class="teaser teaser--blog {{ post.get_field('hero_image') ? 'l-with-image' : 'l-without-image' }}" id="tease-{{ post.ID }}">
   <a class="teaser__link" href="{{post.link}}">
     {% if post.get_field('hero_image') %}
@@ -10,11 +16,11 @@
           <span class="date-badge__month">{{ post.date|date('M') }}</span>
           <span class="date-badge__year visually-hidden">{{ post.date|date('y') }}</span>
         </span>
-        <h3 itemprop="name" class="teaser__title">
+        <{{ headerlevelcard }} itemprop="name" class="teaser__title">
           <span class="arrow-link">
             <span class="arrow-link__text">{{ post.title }}</span><span class="arrow-link__icon" aria-hidden="true"></span>
           </span>
-        </h3>
+        </{{ headerlevelcard }}>
         <div class="meta-data">
           <dl class="meta-data__list">
             <dt class="visually-hidden">Auteur</dt>

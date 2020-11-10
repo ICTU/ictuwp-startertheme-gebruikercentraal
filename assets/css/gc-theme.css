@@ -2,7 +2,7 @@
 /*
  * Front-end styles voor GC-theme
  * Author: Tamara, Mark, Paul
- * Version: 5.0.23
+ * Version: 5.0.25
  *
 */
 .has-white-color {
@@ -263,6 +263,40 @@ form {
 cite {
   font-style: normal; }
 
+/* TESTMEUK!!!
+
+h1, h2, h3, h4 {
+  &:before {
+    content: ' ';
+    display: inline-block;
+    float: left;
+    padding: 0 .5rem;
+    background: red;
+    color: white;
+  }
+}
+h1 {
+  &:before {
+    content: 'h1';
+  }
+}
+h2 {
+  &:before {
+    content: 'h2';
+  }
+}
+h3 {
+  &:before {
+    content: 'h3';
+  }
+}
+h4 {
+  &:before {
+    content: 'h4';
+  }
+}
+
+*/
 .text--large {
   font-size: 2.4rem;
   line-height: 3.8rem;
@@ -867,6 +901,9 @@ Gutenberg corrections
     padding-right: 0; }
   .wp-block-media-text.has-media-on-the-right .wp-block-media-text__content .section--paragraph {
     padding-left: 0; }
+
+.section--heading:first-child {
+  margin-top: 4rem; }
 
 .l-page-footer-wrapper {
   padding-left: 2rem;
