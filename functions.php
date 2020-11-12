@@ -8,7 +8,8 @@
  * @since   Timber 0.1
  */
 
-define( 'CHILD_THEME_VERSION', '5.0.28' );
+define( 'CHILD_THEME_VERSION', '5.0.29' );
+define( 'CHILD_THEME_VERSION_DESCR', 'Laatste style-fixes voor livegang op 12 nov.' );
 define( 'ID_MAINCONTENT', 'maincontent' );
 define( 'ID_MAINNAV', 'mainnav' );
 define( 'ID_ZOEKEN', 'zoeken' );
@@ -1135,6 +1136,12 @@ function append_block_wrappers( $block_content, $block ) {
 
 	$pagetemplate = basename( get_page_template() );
 
+	$tag = 'div';
+
+	if ( 'template-od-handleiding.php' === $pagetemplate ) {
+		$tag = 'li';
+	}
+
 	if ( $block['blockName'] == 'acf/gc-handleiding' ) {
 		global $handleidingcounter;
 		$handleidingcounter ++;
@@ -1164,9 +1171,9 @@ function append_block_wrappers( $block_content, $block ) {
 		}
 
 		if ( ! empty( $className ) ) {
-			$content = '<div class="section section--' . $className . '">';
+			$content = '<'. $tag . ' class="section section--' . $className . '">';
 			$content .= $block_content;
-			$content .= '</div>';
+			$content .= '</'. $tag . '>';
 
 			return $content;
 		}
