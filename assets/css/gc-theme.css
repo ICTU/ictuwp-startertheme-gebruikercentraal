@@ -2,7 +2,7 @@
 /*
  * Front-end styles voor GC-theme
  * Author: Tamara, Mark, Paul
- * Version: 5.0.29
+ * Version: 5.0.30
  *
 */
 .has-white-color {
@@ -960,7 +960,7 @@ Gutenberg corrections
 
 .gc-site-footer-widget {
   min-height: 12rem;
-  background: url("../images/logo/gc-logo.svg") left top no-repeat;
+  background: url("/wp-content/themes/ictuwp-theme-gc2020/assets/images/logo/gc-logo.svg") left top no-repeat;
   background-size: 12rem auto;
   padding-left: 14rem; }
 
