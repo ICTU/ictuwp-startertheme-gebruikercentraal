@@ -2,7 +2,7 @@
 /*
  * CSS flavor voor Optimaal Digitaal
  * Author: Tamara, Mark, Paul
- * Version: 5.0.28
+ * Version: 5.0.29
  *
  */
 .has-white-color {
@@ -6840,7 +6840,8 @@ body:not(.single-event) .entry-content.wrap:last-child {
 
 .page--type-manual .page-content {
   background: #BA4F0C;
-  padding: 0; }
+  padding: 0;
+  overflow: hidden; }
   .page--type-manual .page-content:before {
     height: 16rem;
     background: #983A00 url("../images/b_manual-after.svg") left bottom -1px repeat-x; }
@@ -6863,6 +6864,15 @@ body:not(.single-event) .entry-content.wrap:last-child {
     display: none; }
   .page--type-manual .section--spotlight .spotlight {
     margin-top: 0; }
+
+.page--type-manual .entry--type-home.entry--full .section--paragraph {
+  color: #fff;
+  max-width: 760px;
+  list-style: none !important;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 2rem;
+  padding-right: 2rem; }
 
 .manual__intro {
   color: #fff;
