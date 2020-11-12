@@ -8,8 +8,8 @@
  * @since   Timber 0.1
  */
 
-define( 'CHILD_THEME_VERSION', '5.0.29' );
-define( 'CHILD_THEME_VERSION_DESCR', 'Laatste style-fixes voor livegang op 12 nov.' );
+define( 'CHILD_THEME_VERSION', '5.0.30' );
+define( 'CHILD_THEME_VERSION_DESCR', 'In footer-widget alleen het logo van GC tonen met 3 poppetjes; niet meer het logo van de flavor waarnaar je zit te kijken.' );
 define( 'ID_MAINCONTENT', 'maincontent' );
 define( 'ID_MAINNAV', 'mainnav' );
 define( 'ID_ZOEKEN', 'zoeken' );
@@ -669,12 +669,15 @@ class GebruikerCentraalTheme extends Timber\Site {
 					top: 0;
 				}';
 
+			/*
+			 *
 			if ( $this->configuration['site_logo'] ) {
 				$custom_css .= "
 				 .gc-site-footer-widget {
 					background-image: url('" . get_stylesheet_directory_uri() . $this->configuration['site_logo'] . "');
 				}";
 			}
+			 */
 
 
 			wp_add_inline_style( $skiplinkshandle, $custom_css );
