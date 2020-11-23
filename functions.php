@@ -8,8 +8,8 @@
  * @since   Timber 0.1
  */
 
-define( 'CHILD_THEME_VERSION', '5.0.30' );
-define( 'CHILD_THEME_VERSION_DESCR', 'In footer-widget alleen het logo van GC tonen met 3 poppetjes; niet meer het logo van de flavor waarnaar je zit te kijken.' );
+define( 'CHILD_THEME_VERSION', '5.0.31' );
+define( 'CHILD_THEME_VERSION_DESCR', 'Op handleidingpagina voorkomen dat spotlightblokken tegen elkaar gedrukt worden.' );
 define( 'ID_MAINCONTENT', 'maincontent' );
 define( 'ID_MAINNAV', 'mainnav' );
 define( 'ID_ZOEKEN', 'zoeken' );
