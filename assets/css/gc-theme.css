@@ -2,7 +2,7 @@
 /*
  * Front-end styles voor GC-theme
  * Author: Tamara, Mark, Paul
- * Version: 5.0.31
+ * Version: 5.0.32
  *
 */
 .has-white-color {
@@ -1363,12 +1363,6 @@ Gutenberg corrections
   position: absolute;
   left: 0;
   top: 0; }
-
-/* groter dan 1280px, kleiner dan 1000px */
-@media (min-width: 1000px) and (max-width: 1280px) {
-  .main-menu__item--with-sub:last-of-type > .main-menu__sublist {
-    left: auto;
-    right: 0; } }
 
 .grid > div,
 .grid > section {

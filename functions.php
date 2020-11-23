@@ -8,8 +8,8 @@
  * @since   Timber 0.1
  */
 
-define( 'CHILD_THEME_VERSION', '5.0.31' );
-define( 'CHILD_THEME_VERSION_DESCR', 'Op handleidingpagina voorkomen dat spotlightblokken tegen elkaar gedrukt worden.' );
+define( 'CHILD_THEME_VERSION', '5.0.32' );
+define( 'CHILD_THEME_VERSION_DESCR', 'Laatste menu-item NIET rechts uitlijnen, want dit breekt raar af op ipad-schermen van 1024px breed.' );
 define( 'ID_MAINCONTENT', 'maincontent' );
 define( 'ID_MAINNAV', 'mainnav' );
 define( 'ID_ZOEKEN', 'zoeken' );
