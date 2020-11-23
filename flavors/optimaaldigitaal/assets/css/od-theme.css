@@ -6862,8 +6862,6 @@ body:not(.single-event) .entry-content.wrap:last-child {
     background-image: url("../images/b_section-bg-option--blue.svg"); }
   .page--type-manual .section--spotlight:after {
     display: none; }
-  .page--type-manual .section--spotlight .spotlight {
-    margin-top: 0; }
 
 .page--type-manual .entry--type-home.entry--full .section--paragraph {
   color: #fff;
