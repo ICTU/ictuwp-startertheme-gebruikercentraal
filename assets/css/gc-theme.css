@@ -4937,8 +4937,54 @@ body:not(.single-event) .entry-content.wrap:last-child {
   -webkit-transition: background .2s, border-color .2s;
   transition: background .2s, border-color .2s;
   line-height: 2.6rem;
-  font-family: "montserratsemibold", Helvetica, Arial, sans-serif;
+  font-family: "montserratsemibold", Helvetica, Arial, sans-serif; }
+  .form-item--filter:before {
+    content: " ";
+    display: inline-block;
+    width: 2rem;
+    height: 2rem;
+    border: 0.2rem solid #D1DFE3;
+    margin-right: 1.5rem;
+    -webkit-transition: border-color 0.2s;
+    transition: border-color 0.2s; }
+
+.form-item--filter.active {
+  background: #148839;
   color: #fff; }
+  .form-item--filter.active.cat--informatieveiligheid {
+    background: #A20E56; }
+  .form-item--filter.active.cat--samenwerking {
+    background: #007BB0; }
+  .form-item--filter.active.cat--commitment {
+    background: #148839; }
+  .form-item--filter.active.cat--procesaanpak {
+    background: #00b4ac; }
+  .form-item--filter.active.cat--gebruiksgemak {
+    background: #2D114E; }
+  .form-item--filter.active.cat--kanaalsturing {
+    background: #f99d1c; }
+  .form-item--filter.active.cat--inclusie {
+    background: #c73d19; }
+  .form-item--filter.active:before {
+    border-color: #117230;
+    -webkit-box-shadow: 0.3rem 0.3rem 0 rgba(37, 179, 75, 0.3);
+    box-shadow: 0.3rem 0.3rem 0 rgba(37, 179, 75, 0.3);
+    background: #fff url(/wp-content/themes/ictuwp-theme-gc2020/assets/images/icons/check.svg) center center no-repeat;
+    background-size: 1.2rem auto; }
+    .form-item--filter.active:before.cat--informatieveiligheid {
+      border-color: #8b0c4a; }
+    .form-item--filter.active:before.cat--samenwerking {
+      border-color: #006997; }
+    .form-item--filter.active:before.cat--commitment {
+      border-color: #117230; }
+    .form-item--filter.active:before.cat--procesaanpak {
+      border-color: #009b94; }
+    .form-item--filter.active:before.cat--gebruiksgemak {
+      border-color: #210c39; }
+    .form-item--filter.active:before.cat--kanaalsturing {
+      border-color: #f59206; }
+    .form-item--filter.active:before.cat--inclusie {
+      border-color: #b03616; }
 
 .tipkaart__nummer {
   font-family: "league_gothicregular", Impact, Helvetica, Arial, sans-serif;
@@ -6600,5 +6646,3 @@ browser exceptions
   .header-widget-area {
     padding-top: 1rem;
     width: 30%; } }
-
-/*# sourceMappingURL=gc-theme.css.map */
