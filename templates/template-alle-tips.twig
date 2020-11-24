@@ -22,18 +22,13 @@
       </div>
     </div>
 
-    {% if filters %}
-      <div class="l-filter-wrapper">
-        <p>Filter werkt nog niet</p>
-        <form id="tp-filters" class="form form--filters">
-          {% for item in filters %}
-            <div class="form-item form-item--checkbox form-item--filter">
-              <input type="checkbox" id="{{ item.class }}">
-              <label for="{{ item.class }}">{{ item.name }}</label>
-            </div>
-          {% endfor %}
-        </form>
-      </div>
+
+
+    {% if tipkaartsterms %}
+
+    <div class="form form--filters"><div id="buttons"></div></div>
+
+
     {% endif %}
 
     {% if tipkaarts %}

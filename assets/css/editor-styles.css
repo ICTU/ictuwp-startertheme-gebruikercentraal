@@ -1569,6 +1569,13 @@
     .tipkaart--gebruiksgemak > a:hover, .tipkaart--gebruiksgemak > a:focus, .tipkaart--gebruiksgemak > a:active {
       background: #402261;
       border-color: #2D114E; }
+  .tipkaart--gebruiksgemak {
+    background: #4c2974; }
+    .tipkaart--gebruiksgemak:before {
+      background: #2D114E; }
+    .tipkaart--gebruiksgemak > a:hover, .tipkaart--gebruiksgemak > a:focus, .tipkaart--gebruiksgemak > a:active {
+      background: #402261;
+      border-color: #2D114E; }
   .tipkaart--informatieveiligheid {
     background: #c42c76; }
     .tipkaart--informatieveiligheid:before {
@@ -1656,6 +1663,8 @@
       background: #A20E56; }
     .tipkaart--samenwerking .tipkaart__toptip:before {
       background: #007BB0; }
+    .tipkaart--commitment .tipkaart__toptip:before {
+      background: #148839; }
     .tipkaart--procesaanpak .tipkaart__toptip:before {
       background: #00b4ac; }
     .tipkaart--gebruiksgemak .tipkaart__toptip:before {
@@ -1670,6 +1679,16 @@
     top: 0;
     right: 0;
     background: url("/wp-content/themes/ictuwp-theme-gc2020/assets/images/ico-star.svg") center center no-repeat; }
+
+.form-item--filter {
+  margin: 1.4rem .7rem 0;
+  border: 0.2rem solid #e8d8c7;
+  padding: .7rem 1.8rem .5rem 1rem;
+  -webkit-transition: background .2s, border-color .2s;
+  transition: background .2s, border-color .2s;
+  line-height: 2.6rem;
+  font-family: "montserratsemibold", Helvetica, Arial, sans-serif;
+  color: #fff; }
 
 .tipkaart__nummer {
   font-family: "league_gothicregular", Impact, Helvetica, Arial, sans-serif;

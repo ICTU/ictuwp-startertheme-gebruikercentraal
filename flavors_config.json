@@ -10,13 +10,6 @@
         "version": "5.0.32",
         "dependencies": "",
         "infooter": ""
-      },
-      "videojs": {
-        "handle": "videojs",
-        "file": "/assets/js/polyfills/video.js",
-        "version": "5.0.32",
-        "dependencies": "",
-        "infooter": ""
       }
     },
     "cssfiles": {
