@@ -10,14 +10,14 @@
   {% set year = start_date|date('Y') %}
 {% endif %}
 
+{% set fullDate = {{ day }} {{ month }} {{ year }} %}
 
 {% if currentYear != year %}
   {% set show_year = 'true' %}
 {% endif %}
 
-
 <time class="date-badge{{ show_year ? ' date-badge--with-year' }}" itemprop="datePublished"
-      content="{{ day }} {{ month }} {{ year }}" datetime="{{ day }} {{ month }} {{ year }}">
+      content=""{{ fullDate }}" datetime="{{ fullDate }}">
   <span class="date-badge__day">{{ day }}</span>
   <span class="date-badge__month">{{ month }}</span>
   <span class="date-badge__year{{ show_year is empty ? ' visually-hidden' }}">{{ year }}</span>
