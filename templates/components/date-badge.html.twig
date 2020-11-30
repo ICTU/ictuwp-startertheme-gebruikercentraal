@@ -3,22 +3,24 @@
 {% if post_date %}
   {% set day = post_date|date('d') %}
   {% set month = post_date|date('M') %}
+  {% set month_full = post_date|date('F') %}
   {% set year = post_date|date('Y') %}
 {% elseif start_date %}
   {% set day = start_date|date('d') %}
   {% set month = start_date|date('M') %}
+  {% set month_full = start_date|date('F') %}
   {% set year = start_date|date('Y') %}
 {% endif %}
 
-{% set fullDate = {{ day }} {{ month }} {{ year }} %}
+{% set fullDate = day ~' '~ month_full ~ ' ' ~ year %}
 
 {% if currentYear != year %}
   {% set show_year = 'true' %}
 {% endif %}
 
 <time class="date-badge{{ show_year ? ' date-badge--with-year' }}" itemprop="datePublished"
-      content=""{{ fullDate }}" datetime="{{ fullDate }}">
-  <span class="date-badge__day">{{ day }}</span>
-  <span class="date-badge__month">{{ month }}</span>
-  <span class="date-badge__year{{ show_year is empty ? ' visually-hidden' }}">{{ year }}</span>
+      content="{{ fullDate }}" datetime="{{ fullDate }}">
+<span class="date-badge__day">{{ day }}</span>
+<span class="date-badge__month">{{ month }}</span>
+<span class="date-badge__year{{ show_year is empty ? ' visually-hidden' }}">{{ year }}</span>
 </time>
