@@ -224,6 +224,10 @@
 }
 
 @mixin gc-page-intro($bg: $intro-bg, $color: $intro-color) {
+  @include gc-box-shadow();
+  background: $white;
+  max-width: $max-width-content;
+  margin: 0 auto;
 
   .entry-header {
     background: $bg;
@@ -242,13 +246,12 @@
     a {
       color: $color;
     }
-  }
 
-  .page__intro {
-    background: $white;
-    @include gc-box-shadow();
-    max-width: $max-width-content;
-    margin: 0 auto;
+    p {
+      color: $color;
+      padding-left: 0;
+      padding-right: 0;
+    }
   }
 }
 

@@ -5,26 +5,81 @@ Gutenberg corrections
   & + .section--paragraph {
     margin-top: 0;
   }
+
   & + .section--text {
     margin-top: 0;
   }
+}
+
+// Toegevoegd als apart item, in plaats van een list in
+// .section--paragraph
+// hiermee kunnen we een list makkelijker omhoog trekken tegen
+// een paragraph aan.
+.section--list {
+  margin-top: 1rem;
+
+  ul, ol {
+    margin-top: 0;
+  }
+
+  + .section--heading {
+    margin-top: 4rem;
+  }
+
 }
 
 .section--paragraph {
   p {
     margin-top: 1rem;
   }
-  & + .section--heading {
-    margin-top: 5rem;
+
+  + .section--heading {
+    margin-top: 4rem;
   }
-  & + .wp-block-image {
+
+  + .section--paragraph {
+    margin-top: 4rem;
+  }
+
+  + .section--list {
+    margin-top: 2rem;
+  }
+
+  + .wp-block-image {
     margin-top: 4rem;
     margin-bottom: 4rem;
+  }
+
+  + .section--cta {
+    margin-top: 0;
+  }
+}
+
+.section--heading {
+  + .section--list {
+    margin-top: 2rem;
+  }
+}
+
+.section--cta {
+  + .section {
+    margin-top: 4rem;
+  }
+
+  + .wp-block-image {
+    margin-top: 3rem;
+
+    @include bp-up(md) {
+      margin-top: 6rem;
+    }
+
+    @include bp-up(lg) {
+      margin-top: 8rem;
+    }
   }
 }
 
 .wp-block-image {
-
   & + .section--paragraph,
   & + .section--text {
     margin-top: 0;
@@ -33,7 +88,18 @@ Gutenberg corrections
       margin-top: 0;
     }
   }
+
+  + .section--downloads .section__title {
+    border: none;
+    padding-top: 0;
+  }
 }
+
+.wp-block-coblocks-gallery-masonry {
+  @include ho-make-container($max-width-inner);
+  margin-top: 2rem;
+}
+
 .wp-block-column {
   .section {
     padding-left: 0;
@@ -45,11 +111,48 @@ Gutenberg corrections
 .has-extra-large-font-size {
   line-height: 1.5;
 }
+
 .has-larger-font-size {
   font-size: 120%;
 }
+
 .has-extra-large-font-size {
   font-size: 135%;
   font-family: $base-heading-font;
 }
 
+// zo'n block met tekst links en plaatje rechts of andersom
+// is een .wp-block-media-text
+.wp-block-media-text {
+  margin-bottom: 4rem;
+  .wp-block-media-text__content {
+    padding: 0;
+
+    .section--paragraph {
+
+    }
+  }
+
+  &.has-media-on-the-left {
+    .wp-block-media-text__content {
+      .section--paragraph {
+        padding-right: 0;
+      }
+    }
+  }
+  &.has-media-on-the-right {
+    .wp-block-media-text__content {
+      .section--paragraph {
+        padding-left: 0;
+      }
+    }
+  }
+
+}
+
+
+.section--heading {
+  &:first-child {
+    margin-top: 4rem;
+  }
+}

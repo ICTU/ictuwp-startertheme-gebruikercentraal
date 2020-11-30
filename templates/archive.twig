@@ -33,17 +33,19 @@
       <div class="l-section-content">
         <div class="overview overview--list">
 
-        {% for post in posts %}
-          {% include 'components/teaser.html.twig' with {
-          'title': post.title,
-          'type': post.type,
-          'img': post.img,
-            'post_date': ( post.post_date ?? '' ),
-          'descr': post.post_excerpt,
-          'meta': post.meta,
-          'url': post.url
-          } %}
+        {% for post in items %}
 
+          {% include 'components/teaser.html.twig' with {
+            'title' : post.title,
+            'headerlevel' : 'h2',
+            'descr' : post.descr,
+            'img' : post.img,
+            'type' : post.type,
+            'meta': post.meta,
+            'category': post.category,
+            'post_date': ( post.post_date ?? '' ),
+            'url': post.url
+          } %}
         {% endfor %}
         </div>
       </div>

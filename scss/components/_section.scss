@@ -87,6 +87,10 @@
   }
 }
 
+// Types
+
+
+
 .section--related {
   &.l-item-count-1,
   &.l-item-count-2 {
@@ -115,17 +119,6 @@
   margin-top: $gutter;
 }
 
-
-// TExts
-
-.section--text {
-  @include ho-padding;
-
-  .section__title {
-    border: none;
-    padding-top: 0;
-  }
-}
 
 // Overviews
 
@@ -161,7 +154,7 @@
     border: none;
   }
 
-  .grid--col-2 {
+  .l-section-content {
     @include ho-container-content;
   }
 
@@ -174,7 +167,12 @@
       margin-right: auto;
     }
 
-
+  &.l-item-count-3 {
+    @include ho-padding;
+    .l-section-content {
+      max-width: calc(#{$max-width-content} - #{$gutter * 3});
+    }
+  }
 }
 
 /* Actueel - events & blogs */
@@ -182,6 +180,10 @@
 .section--actual {
   .section__title {
     border: none;
+  }
+
+  .l-section-content {
+    max-width: $max-width-container;
   }
 
   .teaser--small {
@@ -192,6 +194,9 @@
     margin-top: $gutter;
   }
 
+  img {
+    display: block;
+  }
 
   @include bp-up(md) {
     .l-section-content {
@@ -255,4 +260,8 @@
   .item-list__item {
     padding-right: 0;
   }
+}
+
+.entry-header + .section {
+  margin-top: 0;
 }

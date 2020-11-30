@@ -38,7 +38,8 @@ if ( $teaserblocks ) {
 }
 
 //$imagesize_for_thumbs = 'thumb-cardv3';
-$imagesize_for_thumbs = BLOG_SINGLE_DESKTOP;
+//$imagesize_for_thumbs = BLOG_SINGLE_DESKTOP;
+$imagesize_for_thumbs = IMAGESIZE_16x9;
 
 // events selecteren
 if ( class_exists( 'EM_Events' ) ) {
@@ -80,15 +81,15 @@ if ( class_exists( 'EM_Events' ) ) {
 				$item['start_date'] = $event_start_datetime;
 				$item['end_date']   = $event_end_datetime;
 			}
-			$item['arialabel']    = sprintf( _x( '%s op %s', 'Arialabel agenda home', 'gctheme' ), $event['event_name'], date_i18n( get_option( 'date_format' ) , $event_start_datetime ) );
+			$item['arialabel'] = sprintf( _x( '%s op %s', 'Arialabel agenda home', 'gctheme' ), $event['event_name'], date_i18n( get_option( 'date_format' ), $event_start_datetime ) );
 
 			if ( ! $image ) {
-				$item['img']     = $defaultimage;
-				$item['img_alt'] = '';
+				$item['img'] = $defaultimage;
 			} else {
-				$item['img']     = $image;
-				$item['img_alt'] = get_post_meta( get_post_thumbnail_id( $post->ID ), '_wp_attachment_image_alt', true );
+				$item['img'] = $image;
 			}
+			$item['img_alt'] = sprintf( _x( 'Link to %s', 'Arialabel image-link', 'gctheme' ), $item['title'] );
+
 			$context['actueel']['events']['items'][] = $item;
 
 		endforeach;
@@ -98,10 +99,10 @@ if ( class_exists( 'EM_Events' ) ) {
 }
 
 // posts selecteren
-$maxnr_posts = 4;
-if ( isset( $context['actueel']['events'] ) ) {
-	$maxnr_posts = ( 4 - count( $context['actueel']['events']['items'] ) );
-}
+$maxnr_posts = 2;
+//	if ( isset( $context['actueel']['events'] ) ) {
+//		$maxnr_posts = ( 4 - count( $context['actueel']['events']['items'] ) );
+//	}
 $args        = array(
 	'post_type'   => 'post',
 	'numberposts' => $maxnr_posts,
@@ -115,18 +116,18 @@ if ( $relatedtips->have_posts() ) {
 
 	while ( $relatedtips->have_posts() ) {
 		$relatedtips->the_post();
-		$item  = array();
-		$image = get_the_post_thumbnail_url( $post->ID, $imagesize_for_thumbs );
+		$item          = array();
+		$item['title'] = $post->post_title;
+		$item['url']   = get_the_permalink( $post );
+		$image         = get_the_post_thumbnail_url( $post->ID, $imagesize_for_thumbs );
 
 		if ( ! $image ) {
-			$item['img']     = $defaultimage;
-			$item['img_alt'] = '';
+			$item['img'] = $defaultimage;
 		} else {
-			$item['img']     = $image;
-			$item['img_alt'] = get_post_meta( get_post_thumbnail_id( $post->ID ), '_wp_attachment_image_alt', true );
+			$item['img'] = $image;
 		}
-		$item['title']                          = $post->post_title;
-		$item['url']                            = get_the_permalink( $post );
+		$item['img_alt'] = sprintf( _x( 'Link to %s', 'Arialabel image-link', 'gctheme' ), $item['title'] );
+
 		$context['actueel']['blogs']['items'][] = $item;
 
 	}

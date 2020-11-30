@@ -8,7 +8,8 @@
  * @since   Timber 0.1
  */
 
-define( 'CHILD_THEME_VERSION', '5.0.13' );
+define( 'CHILD_THEME_VERSION', '5.0.32' );
+define( 'CHILD_THEME_VERSION_DESCR', 'Laatste menu-item NIET rechts uitlijnen, want dit breekt raar af op ipad-schermen van 1024px breed.' );
 define( 'ID_MAINCONTENT', 'maincontent' );
 define( 'ID_MAINNAV', 'mainnav' );
 define( 'ID_ZOEKEN', 'zoeken' );
@@ -29,11 +30,15 @@ if ( ! defined( 'GC_SPOTLIGHT_CPT' ) ) {
 if ( ! defined( 'GC_TIPTHEMA' ) ) {
 	define( 'GC_TIPTHEMA', 'tipthema' );
 }
-if ( ! defined( 'GC_TIPVRAAG' ) ) {
-	define( 'GC_TIPVRAAG', 'tipvraag' );
-}
 if ( ! defined( 'OD_CITAATAUTEUR' ) ) {
 	define( 'OD_CITAATAUTEUR', 'tipgever' );
+}
+
+if ( ! defined( 'GC_TWITTER_URL' ) ) {
+	define( 'GC_TWITTER_URL', 'https://twitter.com/' );
+}
+if ( ! defined( 'GC_TWITTERACCOUNT' ) ) {
+	define( 'GC_TWITTERACCOUNT', 'gebrcentraal' );
 }
 
 
@@ -44,6 +49,8 @@ define( 'BLOG_SINGLE_DESKTOP', 'blog-single-desktop' );
 define( 'HALFWIDTH', 'halfwidth' );
 define( 'IMG_SIZE_HUGE', 'feature-huge' );
 define( 'IMG_SIZE_HUGE_MIN_WIDTH', 1200 );
+define( 'IMAGESIZE_16x9', 'image-16x9' );
+define( 'IMAGESIZE_HERO_IMAGE', 'hero-image' );
 
 //========================================================================================================
 
@@ -55,7 +62,7 @@ $flavor_select    = $get_theme_option['flavor_select'];
 
 if ( $flavor_select == "OD" ) {
 	require_once( __DIR__ . '/assets/od.php' );
-	add_action( 'init', array( 'ICTUWP_GC_OD_registerposttypes', 'init' ), 1 );
+	add_action( 'init', [ 'ICTUWP_GC_OD_registerposttypes', 'init' ], 1 );
 }
 
 // include file for all must-use plugins
@@ -70,6 +77,12 @@ if ( is_multisite() ) {
 // include file for network media
 //require_once( __DIR__ . '/network-media-library/network-media-library.php' );
 
+
+//========================================================================================================
+/*
+ * Extra functionaliteit en filters voor de Events Manager
+ */
+require_once( get_template_directory() . '/includes/events-manager-functions.php' );
 
 //========================================================================================================
 
@@ -146,31 +159,34 @@ class GebruikerCentraalTheme extends Timber\Site {
 	public function __construct() {
 
 		// custom menu locations
-		add_action( 'init', array( $this, 'register_my_menu' ) );
+		add_action( 'init', [ $this, 'register_my_menu' ] );
 
 		// custom menu locations
-		add_action( 'init', array( $this, 'register_spotlight_cpt' ) );
+		add_action( 'init', [ $this, 'register_spotlight_cpt' ] );
 
 
 		// translation support
-		add_action( 'after_setup_theme', array( $this, 'add_translation_support' ) );
+		add_action( 'after_setup_theme', [ $this, 'add_translation_support' ] );
 
 		// theme options
-		add_action( 'after_setup_theme', array( $this, 'theme_supports' ) );
+		add_action( 'after_setup_theme', [ $this, 'theme_supports' ] );
 
 		// CSS setup
-		add_action( 'wp_enqueue_scripts', array( $this, 'gc_wbvb_add_css' ) );
+		add_action( 'wp_enqueue_scripts', [ $this, 'gc_wbvb_add_css' ] );
 
-		add_action( 'timber/context', array( $this, 'add_to_context' ) );
-		add_action( 'timber/twig', array( $this, 'add_to_twig' ) );
+		add_action( 'timber/context', [ $this, 'add_to_context' ] );
+		add_action( 'timber/twig', [ $this, 'add_to_twig' ] );
 
-		add_action( 'init', array( $this, 'register_taxonomies' ) );
+		add_action( 'init', [ $this, 'register_taxonomies' ] );
 
-		add_action( 'widgets_init', array( $this, 'setup_widgets_init' ) );
+		add_action( 'widgets_init', [ $this, 'setup_widgets_init' ] );
 
-		add_action( 'theme_page_templates', array( $this, 'activate_deactivate_page_templates' ) );
+		add_action( 'theme_page_templates', [
+			$this,
+			'activate_deactivate_page_templates',
+		] );
 
-		add_action( 'admin_init', array( $this, 'add_adminstyles' ) );
+		add_action( 'admin_init', [ $this, 'add_adminstyles' ] );
 
 		parent::__construct();
 
@@ -281,103 +297,103 @@ class GebruikerCentraalTheme extends Timber\Site {
 
 		// these are the only allowed colors for the editor
 		// keys in the flavors_config.json should match the keys here
-		$arr_acceptable_colors = array(
-			'white'                => array(
+		$arr_acceptable_colors = [
+			'white'                => [
 				'name'  => __( 'Wit', 'gctheme' ),
 				'slug'  => 'white',
-				'color' => '#fff'
-			),
-			'black'                => array(
+				'color' => '#fff',
+			],
+			'black'                => [
 				'name'  => __( 'Zwart', 'gctheme' ),
 				'slug'  => 'black',
 				'color' => '#000',
-			),
-			'gc-green'             => array(
+			],
+			'gc-green'             => [
 				'name'  => __( 'GC Groen', 'gctheme' ),
 				'slug'  => 'gc-green',
 				'color' => '#25b34b',
-			),
-			'gc-dark-blue'         => array(
+			],
+			'gc-dark-blue'         => [
 				'name'  => __( 'GC Dark Blue', 'gctheme' ),
 				'slug'  => 'gc-dark-blue',
 				'color' => '#004152',
-			),
-			'gc-pantybrown'        => array(
+			],
+			'gc-pantybrown'        => [
 				'name'  => __( 'GC Pantybrown', 'gctheme' ),
 				'slug'  => 'gc-pantybrown',
 				'color' => '#e8d8c7',
-			),
-			'gc-dark-purple'       => array(
+			],
+			'gc-dark-purple'       => [
 				'name'  => __( 'GC Dark Purple', 'gctheme' ),
 				'slug'  => 'gc-dark-purple',
 				'color' => '#4c2974',
-			),
-			'gc-blue'              => array(
+			],
+			'gc-blue'              => [
 				'name'  => __( 'GC Blue', 'gctheme' ),
 				'slug'  => 'gc-blue',
 				'color' => '#0095da',
-			),
-			'gc-pink'              => array(
+			],
+			'gc-pink'              => [
 				'name'  => __( 'GC Pink', 'gctheme' ),
 				'slug'  => 'gc-pink',
 				'color' => '#c42c76',
-			),
-			'gc-orange'            => array(
+			],
+			'gc-orange'            => [
 				'name'  => __( 'GC Orange', 'gctheme' ),
 				'slug'  => 'gc-orange',
 				'color' => '#f99d1c',
-			),
-			'gc-cyan'              => array(
+			],
+			'gc-cyan'              => [
 				'name'  => __( 'GC Cyan', 'gctheme' ),
 				'slug'  => 'gc-cyan',
 				'color' => '#00b4ac',
-			),
-			'inc_orange'           => array(
+			],
+			'inc_orange'           => [
 				'name'  => __( 'Inclusie Orange', 'gctheme' ),
 				'slug'  => 'inc_orange',
 				'color' => '#D94721',
-			),
-			'inc_a11y_orange'      => array(
+			],
+			'inc_a11y_orange'      => [
 				'name'  => __( 'Inclusie Orange', 'gctheme' ),
 				'slug'  => 'inc-accessible-orange',
 				'color' => '#c73d19',
-			),
-			'nlds_purplish'        => array(
+			],
+			'nlds_purplish'        => [
 				'name'  => __( 'NLDS Purplish', 'gctheme' ),
 				'slug'  => 'nlds-purplish',
 				'color' => '#74295f',
-			),
-			'gc-blue'              => array(
+			],
+			'gc-blue'              => [
 				'name'  => __( 'GC Blue', 'gctheme' ),
 				'slug'  => 'gc-blue',
 				'color' => '#0095da',
-			),
-			'gc-accessible-blue'   => array(
+			],
+			'gc-accessible-blue'   => [
 				'name'  => __( 'GC Blue Safe', 'gctheme' ),
 				'slug'  => 'gc-accessible-blue',
 				'color' => '#007BB0',
-			),
-			'gc-accessible-green'  => array(
+			],
+			'gc-accessible-green'  => [
 				'name'  => __( 'GC acessible green', 'gctheme' ),
 				'slug'  => 'gc-accessible-green',
 				'color' => '#148839',
-			),
-			'od-orange'            => array(
+			],
+			'od-orange'            => [
 				'name'  => __( 'od-orange', 'gctheme' ),
 				'slug'  => 'gc-orange',
 				'color' => '#BA4F0C',
-			),
-			'od-orange-darker'     => array(
+			],
+			'od-orange-darker'     => [
 				'name'  => __( 'od-orange-darker', 'gctheme' ),
 				'slug'  => 'gc-orange',
 				'color' => '#983A00',
-			),
-			'gc-pantybrown-xlight' => array(
+			],
+			'gc-pantybrown-xlight' => [
 				'name'  => __( 'GC Pantybrown Xtra Light', 'gctheme' ),
 				'slug'  => 'gc-pantybrown-xlight',
 				'color' => '#f9f6f3',
-			)
-		);
+			],
+		];
 
 
 		/*
@@ -438,6 +454,25 @@ class GebruikerCentraalTheme extends Timber\Site {
 		add_image_size( BLOG_SINGLE_DESKTOP, 380, 9999, false );
 		add_image_size( IMG_SIZE_HUGE, IMG_SIZE_HUGE_MIN_WIDTH, 9999, false );
 
+		// add_image_size heeft de volgende parameters:
+		// add_image_size( string $name, int $width, int $height, bool|array $crop = false )
+		// Het volgende gaat uit van plaatjes die minstens 800x breed zijn en die we in dit formaat
+		// willen bijsnijden, MET croppen.
+		// Plaatjes die kleiner zijn dan $base_width worden dus NIET netjes op maat gesneden
+		// TODO: moeten we een minimale breedte hebben voor featured images?
+		// (plugin: https://wordpress.org/plugins/minimum-featured-image-size/)
+		$base_width  = 800;
+		$base_height = ( ( $base_width / 16 ) * 9 );
+		$docrop      = true;
+		add_image_size( IMAGESIZE_16x9, $base_width, $base_height, $docrop );
+
+		// Grootte voor de hero-image. Dit is een apart image, via een ACF-veld.
+		// idealiter is dit image 2200px breed minimaal en 350px hoog.
+		$heroimage_width  = 2200;
+		$heroimage_height = 350;
+		$docrop           = true;
+		add_image_size( IMAGESIZE_HERO_IMAGE, $heroimage_width, $heroimage_height, $docrop );
+
 		add_image_size( 'thumb-cardv3', 99999, 600, false );    // max  600px hoog, niet croppen
 
 		// Enable and load CSS for admin editor
@@ -449,36 +484,36 @@ class GebruikerCentraalTheme extends Timber\Site {
 		// Disable Custom Colors
 		add_theme_support( 'disable-custom-colors' );
 
-		$colors_editor = array(
+		$colors_editor = [
 			// these colors should always be available
 			// any other should be defined in flavors_config.json
-			'white'                => array(
+			'white'                => [
 				'name'  => __( 'Wit', 'gctheme' ),
 				'slug'  => 'white',
 				'color' => '#fff',
-			),
-			'black'                => array(
+			],
+			'black'                => [
 				'name'  => __( 'Zwart', 'gctheme' ),
 				'slug'  => 'black',
 				'color' => '#000',
-			),
-			'gc-pantybrown-xlight' => array(
+			],
+			'gc-pantybrown-xlight' => [
 				'name'  => __( 'GC Pantybrown Xtra Light', 'gctheme' ),
 				'slug'  => 'gc-pantybrown-xlight',
 				'color' => '#f9f6f3',
-			)
-		);
+			],
+		];
 
 		if ( $this->configuration['palette'] ) {
 			// there are extra colors for the current flavor
 			foreach ( $this->configuration['palette'] as $key => $value ) {
 				if ( isset( $arr_acceptable_colors[ $key ] ) ) {
 					// the color is allowed
-					$colors_editor[ $key ] = array(
+					$colors_editor[ $key ] = [
 						'name'  => $arr_acceptable_colors[ $key ]['name'],
 						'color' => $arr_acceptable_colors[ $key ]['color'],
-						'slug'  => $key
-					);
+						'slug'  => $key,
+					];
 				}
 			}
 		}
@@ -490,18 +525,18 @@ class GebruikerCentraalTheme extends Timber\Site {
 		add_theme_support( 'disable-custom-font-sizes' );
 
 		// forces the dropdown for font sizes to only contain "normal"
-		add_theme_support( 'editor-font-sizes', array(
-			array(
+		add_theme_support( 'editor-font-sizes', [
+			[
 				'name' => __( 'Larger', 'gctheme' ),
 				'size' => 24,
-				'slug' => 'larger'
-			),
-			array(
+				'slug' => 'larger',
+			],
+			[
 				'name' => __( 'Extra large', 'gctheme' ),
 				'size' => 32,
-				'slug' => 'extra-large'
-			)
-		) );
+				'slug' => 'extra-large',
+			],
+		] );
 
 
 	}
@@ -634,12 +669,15 @@ class GebruikerCentraalTheme extends Timber\Site {
 					top: 0;
 				}';
 
+			/*
+			 *
 			if ( $this->configuration['site_logo'] ) {
 				$custom_css .= "
 				 .gc-site-footer-widget {
 					background-image: url('" . get_stylesheet_directory_uri() . $this->configuration['site_logo'] . "');
 				}";
 			}
+			 */
 
 
 			wp_add_inline_style( $skiplinkshandle, $custom_css );
@@ -682,12 +720,12 @@ class GebruikerCentraalTheme extends Timber\Site {
 	 */
 	public function activate_deactivate_page_templates( $page_templates ) {
 
-		$allowed_templates = array(
+		$allowed_templates = [
 			"template-landingspagina.php"   => "Landingspagina",
 			"template-overzichtspagina.php" => "Overzichtspagina",
 			"template-sitemap.php"          => "Sitemap",
-			"template-events-overview.php"  => "Events overzicht"
-		);
+			"template-events-overview.php"  => "Events overzicht",
+		];
 
 		// check the flavor
 		$theme_options = get_option( 'gc2020_theme_options' );
@@ -700,7 +738,7 @@ class GebruikerCentraalTheme extends Timber\Site {
 					// for Optimaal Digitaal, add tip templates
 					$allowed_templates["template-overzicht-tipgevers.php"] = "[OD] Overzicht alle tipgevers";
 					$allowed_templates["template-alle-tips.php"]           = "[OD] Overzicht alle tips";
-//					$allowed_templates["template-tips.php"]                = "[OD] Template tips-pagina";
+					//					$allowed_templates["template-tips.php"]                = "[OD] Template tips-pagina";
 					$allowed_templates["template-od-home.php"]        = "[OD] Template Home";
 					$allowed_templates["template-od-handleiding.php"] = "[OD] Template Handleiding";
 
@@ -776,11 +814,17 @@ new GebruikerCentraalTheme();
 
 function insert_breadcrumb() {
 
-	// print out Yoast Breadcrumb
+	// return Yoast Breadcrumb
 	if ( function_exists( 'yoast_breadcrumb' ) ) {
-		yoast_breadcrumb( '<div class="breadcrumb"><nav aria-label="Breadcrumb" class="breadcrumb__list">', '</nav></div>' );
+		$html_start = '<div class="breadcrumb"><nav aria-label="Breadcrumb" class="breadcrumb__list">';
+		$html_end   = '</nav></div>';
+		$return     = yoast_breadcrumb( $html_start, $html_end, false );
+		if ( $return !== $html_start . $html_end ) {
+			return $return;
+		} else {
+			return '';
+		}
 	}
-
 }
 
 
@@ -799,13 +843,19 @@ function my_body_classes( $classes ) {
 	if ( is_page() ) {
 
 		$template = basename( get_page_template() );
-		if (
-			( 'template-alle-tips.php' === $template ) ||
-			( 'template-overzicht-tipgevers.php' === $template ) ) {
+		if ( ( 'template-alle-tips.php' === $template ) || ( 'template-overzicht-tipgevers.php' === $template ) ) {
 			$classes[] = 'page--type-overview page--overview-archive';
 		}
 		if ( 'template-landingspagina.php' === $template ) {
-			$classes[] = 'page--type-landing page--overview-archive entry--type-landing';
+			$classes[] = 'page--type-landing entry--type-landing';
+		}
+
+		if ( get_field( 'gerelateerde_content_toevoegen' ) ) {
+			$classes[] = 'l-with-related';
+		}
+
+		if ( get_field( 'downloads_tonen' ) ) {
+			$classes[] = 'l-with-downloads';
 		}
 
 	} elseif ( is_singular( GC_TIP_CPT ) ) {
@@ -826,8 +876,6 @@ function my_body_classes( $classes ) {
 			}
 		}
 	} elseif ( is_archive() ) {
-		$classes[] = 'page--type-overview page--overview-archive';
-
 		//print_r(get_queried_object()->taxonomy);
 
 		switch ( get_queried_object()->taxonomy ) {
@@ -847,6 +895,7 @@ function my_body_classes( $classes ) {
  */
 
 add_filter( 'get_the_archive_title', function ( $title ) {
+
 	if ( is_category() ) {
 		$title = single_cat_title( '', false );
 	} elseif ( is_tag() ) {
@@ -854,7 +903,6 @@ add_filter( 'get_the_archive_title', function ( $title ) {
 	} elseif ( is_author() ) {
 		$title = '<span class="vcard">' . get_the_author() . '</span>';
 	} elseif ( is_tax() ) { //for custom post types
-//		$title = sprintf( __( '%1$s' ), single_term_title( '', FALSE ) );
 		$title = single_term_title( '', false );
 	} elseif ( is_post_type_archive() ) {
 		$title = post_type_archive_title( '', false );
@@ -933,20 +981,22 @@ function gc_ho_dequeue_css() {
 	wp_deregister_style( 'newsletter' );
 	wp_dequeue_style( 'newsletter-css' );
 
-	/*
-	 *
-		// Add kennisbank CSS if subsite is kennisbank
-		$get_theme_option = get_option( 'gc2020_theme_options' );
-		$flavor_select    = $get_theme_option['flavor_select'];
-		if ( $flavor_select == "KB" ) {
-			wp_enqueue_style( 'gc-kennisbank-style', get_template_directory_uri() . '/flavors/kennisbank/assets/css/gc-kennisbank.css' );
-		}
-
-	 */
-
+	// geen css van newsletterplugin
+	wp_deregister_style( 'contact-form-7' );
+	wp_dequeue_style( 'contact-form-7-css' );
 
 }
 
+//========================================================================================================
+
+function gc_ho_remove_unnecessary_scripts() {
+
+	// coblocks zorgt voor foutmeldingen in IE11 (je verwacht het niet....)
+	// en we hebben het volgens mij niet echt nodig.
+	wp_dequeue_script( 'coblocks-animation' );
+
+}
+add_action( 'wp_footer', 'gc_ho_remove_unnecessary_scripts' );
 
 //========================================================================================================
 // ervoor zorgen dat specifieke Optimaal Digitaal-termen op de juiste manier afgebroken kunnen worden
@@ -1088,25 +1138,14 @@ add_action( 'admin_menu', 'rename_minervakb', 999 );
 function append_block_wrappers( $block_content, $block ) {
 
 	$pagetemplate = basename( get_page_template() );
-//	$block_content = '<strong>' . $pagetemplate . ' / ' . $block['blockName']  . '</strong><br>' . $block_content;
 
-	if ( ( $block['blockName'] === 'core/paragraph' ||
-	       $block['blockName'] === 'acf/gc-ctalink' ) && (
-		     ( 'template-landingspagina.php' === $pagetemplate ) ||
-		     ( 'template-overzichtspagina.php' === $pagetemplate ) ) ) {
-		$content = '<div class="section section--paragraph">';
-		$content .= $block_content;
-		$content .= '</div>';
+	$tag = 'div';
 
-		return $content;
+	if ( 'template-od-handleiding.php' === $pagetemplate ) {
+		$tag = 'li';
+	}
 
-	} elseif ( $block['blockName'] === 'core/heading' ) {
-		$content = '<div class="section section--heading">';
-		$content .= $block_content;
-		$content .= '</div>';
-
-		return $content;
-	} elseif ( $block['blockName'] === 'acf/gc-handleiding' ) {
+	if ( $block['blockName'] == 'acf/gc-handleiding' ) {
 		global $handleidingcounter;
 		$handleidingcounter ++;
 		$content = '<li class="manual-item manual-item--item-' . $handleidingcounter . '">';
@@ -1114,15 +1153,33 @@ function append_block_wrappers( $block_content, $block ) {
 		$content .= '</li>';
 
 		return $content;
-		/*
-	} elseif ( $block['blockName'] ) {
-		$content = '<div style="border-top: 1px solid #dadada;">';
-		$content .= '<p><strong>Block: ' . $block['blockName'] . '</strong></p>';
-		$content .= $block_content;
-		$content .= '</div>';
+	} else {
+		$className = '';
+		switch ( $block['blockName'] ) {
+			case 'acf/gc-ctalink':
+				$className = 'cta';
+				break;
+			case 'core/heading':
+				$className = 'heading';
+				break;
+			case 'core/list':
+				$className = 'list';
+				break;
+			case 'core/media-text':
+			case 'core/paragraph':
+			case 'core/quote':
+			case 'paragraph':
+				$className = 'paragraph';
+				break;
+		}
 
-		return $content;
-		*/
+		if ( ! empty( $className ) ) {
+			$content = '<'. $tag . ' class="section section--' . $className . '">';
+			$content .= $block_content;
+			$content .= '</'. $tag . '>';
+
+			return $content;
+		}
 	}
 
 	return $block_content;
@@ -1185,7 +1242,7 @@ function gc_restrict_gutenberg_blocks( $allowed_blocks ) {
 
 
 	*/
-	return array(
+	return [
 		'core/image',
 		'core/heading',
 		'core/table',
@@ -1205,10 +1262,10 @@ function gc_restrict_gutenberg_blocks( $allowed_blocks ) {
 		'acf/gc-links',
 		'acf/gc-related',
 		'acf/gc-rijksvideo',
-		'acf/gc-textimage'
+		'acf/gc-textimage',
 
 
-	);
+	];
 
 }
 
@@ -1231,7 +1288,7 @@ function my_acf_fields_relationship_result( $text, $post, $field, $post_id ) {
 //========================================================================================================
 
 function get_hero_image() {
-	$return = array();
+	$return = [];
 
 	if ( get_field( 'hero_image' ) ) {
 		$data           = get_field( 'hero_image' );
@@ -1293,7 +1350,7 @@ function translate_mime_type( $fullmimetype ) {
 			$return = _x( 'Word', 'Mime-types', 'gctheme' );
 			break;
 
-		case "vnd.ms-powerpoint":
+		case "vnd.ms - powerpoint":
 			$return = _x( 'Powerpoint', 'Mime-types', 'gctheme' );
 			break;
 
@@ -1301,11 +1358,11 @@ function translate_mime_type( $fullmimetype ) {
 			$return = _x( 'Powerpoint', 'Mime-types', 'gctheme' );
 			break;
 
-		case "vnd.ms-excel":
+		case "vnd.ms - excel":
 			$return = _x( 'Excel', 'Mime-types', 'gctheme' );
 			break;
 
-		case "vnd.openxmlformats-officedocument.spreadsheetml.sheet":
+		case "vnd.openxmlformats-officedocument.spreadsheetml . sheet":
 			$return = _x( 'Excel', 'Mime-types', 'gctheme' );
 			break;
 
@@ -1346,17 +1403,21 @@ function translate_posttype( $posttype ) {
 function prepare_card_content( $postitem ) {
 
 
-	$item          = array();
-	$postid        = $postitem->ID;
-	$item['title'] = get_the_title( $postid );
-	$item['descr'] = get_the_excerpt( $postid );
-	$item['type']  = get_post_type( $postid );
-	$item['url']   = get_the_permalink( $postid );
-	$image         = get_the_post_thumbnail( $postid, 'large', [] );
-	$item['img']   = $image;
-	$themakleuren  = array();
+	$item               = [];
+	$postid             = $postitem->ID;
+	$item['post_title'] = od_wbvb_custom_post_title( get_the_title( $postid ) );
+	$item['title']      = $item['post_title']; // dit is dubbelop en overbodig en meer dan nodig, maar in de twig-files wordt afwisselend 'title' en 'post_title' gebruikt. Dat laatste is de meest correcte vorm
+	$item['descr']      = get_the_excerpt( $postid );
+	$item['post_type']  = get_post_type( $postid );
+	$item['type']       = $item['post_type']; // dit is dubbelop en overbodig en meer dan nodig, maar in de twig-files wordt afwisselend 'type' en 'post_type' gebruikt. Dat laatste is de meest correcte vorm
+	$item['post_date']  = get_the_date( 'Y-m-d', $postid );
+	$item['url']        = get_the_permalink( $postid );
+	$image              = get_the_post_thumbnail( $postid, 'large', [] );
+	$item['img']        = $image;
+	$item['img_alt']    = $image;
+	$themakleuren       = [];
 
-	if ( 'tips' == $item['type'] ) {
+	if ( 'tips' == $item['post_type'] ) {
 
 		// zorgen dat de titel netjes afgebroken wordt binnen de smalle ruimte van het kaartje
 		$item['title'] = od_wbvb_custom_post_title( get_the_title( $postid ) );
@@ -1367,9 +1428,9 @@ function prepare_card_content( $postitem ) {
 			$themakleuren = get_themakleuren();
 		}
 
-		$item['nr']     = sprintf( _x( 'Tip %s', 'Label tip-nummer', 'gctheme' ), get_post_meta( $postid, 'tip-nummer', true ) );
-		$item['toptip'] = false;
-		$is_toptip      = get_post_meta( $postid, 'is_toptip', true );
+		$item['tip_nummer'] = sprintf( _x( 'Tip %s', 'Label tip-nummer', 'gctheme' ), get_post_meta( $postid, 'tip-nummer', true ) );
+		$item['toptip']     = false;
+		$is_toptip          = get_post_meta( $postid, 'is_toptip', true );
 
 		if ( $is_toptip ) {
 			$item['toptip']      = true;
@@ -1381,13 +1442,17 @@ function prepare_card_content( $postitem ) {
 		if ( isset( $themakleuren[ $taxonomie[0]->term_id ] ) ) {
 			$item['category'] = $themakleuren[ $taxonomie[0]->term_id ];
 		}
+		$item['cat'] = $item['category']; // dit is dubbelop en overbodig en meer dan nodig, maar in de twig-files wordt afwisselend 'cat' en 'category' gebruikt. De meest correcte vorm is: 'tipthema'
 
-	} elseif ( 'post' == $item['type'] ) {
+	} elseif ( 'post' == $item['post_type'] ) {
 
-		$item['meta'][] = [
-			'title' => 'author',
-			'descr' => get_the_author_meta( 'display_name', $postitem->post_author ),
-		];
+		if ( $postitem->post_author ) {
+			$item['meta'][] = [
+				'classname' => 'auteur',
+				'title'     => _x( 'Author', 'Meta: value voor auteur', 'gctheme' ),
+				'descr'     => get_the_author_meta( 'display_name', $postitem->post_author ),
+			];
+		}
 
 		$item['meta'][] = [
 			'title' => 'date',
@@ -1395,7 +1460,7 @@ function prepare_card_content( $postitem ) {
 		];
 
 
-	} elseif ( 'event' == $item['type'] ) {
+	} elseif ( 'event' == $item['post_type'] ) {
 
 		$event_start_date     = get_post_meta( $postid, '_event_start_date', true );
 		$event_start_time     = get_post_meta( $postid, '_event_start_time', true );
@@ -1406,27 +1471,42 @@ function prepare_card_content( $postitem ) {
 
 		// als start-datum en eindatum op dezelfde dag
 		if ( $event_start_date === $event_end_date ) {
-			// dan start- en eindtijd tonen
-			$eventtimes = sprintf( _x( '%s - %s', 'Meta voor event: label voor start- en eindtijd', 'gctheme' ),
-				date_i18n( get_option( 'time_format' ), $event_start_datetime ),
-				date_i18n( get_option( 'time_format' ), $event_end_datetime )
-			);
 
 			$item['meta'][] = [
-				'classname' => 'times',
-				'title'     => _x( 'Times', 'Meta voor event: value voor start- en eindtijd', 'gctheme' ),
-				'descr'     => $eventtimes
+				'title'     => _x( 'Event date', 'Meta: value voor evenementdatum', 'gctheme' ),
+				'classname' => 'datum',
+				'descr'     => date_i18n( get_option( 'date_format' ), $event_start_datetime ),
 			];
+
+
+			// dan start- en eindtijd tonen, als die nuttig zijn
+			if ( date_i18n( get_option( 'time_format' ), $event_start_datetime ) !== date_i18n( get_option( 'time_format' ), $event_end_datetime ) ) {
+				$eventtimes     = sprintf( _x( '%s - %s', 'Meta voor event: label voor start- en eindtijd', 'gctheme' ), date_i18n( get_option( 'time_format' ), $event_start_datetime ), date_i18n( get_option( 'time_format' ), $event_end_datetime ) );
+				$item['meta'][] = [
+					'classname' => 'times',
+					'title'     => _x( 'Times', 'Meta voor event: value voor start- en eindtijd', 'gctheme' ),
+					'descr'     => $eventtimes,
+				];
+			}
+		} else {
+			$eventdates     = sprintf( _x( '%s - %s', 'Meta voor event: label voor start- en eindtijd', 'gctheme' ), date_i18n( get_option( 'date_format' ), $event_start_datetime ), date_i18n( get_option( 'date_format' ), $event_end_datetime ) );
+			$item['meta'][] = [
+				'title'     => _x( 'Event date', 'Meta: value voor evenementdatum', 'gctheme' ),
+				'classname' => 'datum',
+				'descr'     => $eventdates,
+			];
+
 		}
 
 		if ( 'EM_Event' === get_class( $postitem ) ) {
-			if ( ( $postitem->get_bookings()->get_available_spaces() <= 0 ) && ( $postitem->get_bookings()->tickets->tickets ) ) {
+			if ( ( $postitem->get_bookings()
+			                ->get_available_spaces() <= 0 ) && ( $postitem->get_bookings()->tickets->tickets ) ) {
 				// heeft mogelijkheid tot reserveren, maar alle plekken zijn bezet
 				$item['full']   = _x( 'Fully booked', 'Meta voor event: value voor geen plek meer beschikbaar', 'gctheme' );
 				$item['meta'][] = [
 					'classname' => 'aanmeldingen',
 					'title'     => _x( 'Availability', 'Meta voor event: label voor geen plek meer beschikbaar', 'gctheme' ),
-					'descr'     => _x( 'Fully booked', 'Meta voor event: value voor geen plek meer beschikbaar', 'gctheme' )
+					'descr'     => _x( 'Fully booked', 'Meta voor event: value voor geen plek meer beschikbaar', 'gctheme' ),
 				];
 			}
 
@@ -1437,7 +1517,7 @@ function prepare_card_content( $postitem ) {
 				$item['meta'][] = [
 					'classname' => 'location',
 					'title'     => _x( 'Location', 'Meta voor event: label voor locatie', 'gctheme' ),
-					'descr'     => $lcatie
+					'descr'     => $lcatie,
 				];
 
 			}
@@ -1451,6 +1531,7 @@ function prepare_card_content( $postitem ) {
 		}
 	}
 
+
 	return $item;
 }
 
@@ -1461,7 +1542,7 @@ add_filter( 'acf/fields/relationship/query/name=content_block_items', 'acf_relat
 
 
 function acf_relationshipfield_only_use_published_content( $options, $field, $post_id ) {
-	$options['post_status'] = array( 'publish' );
+	$options['post_status'] = [ 'publish' ];
 
 	return $options;
 }
@@ -1474,18 +1555,44 @@ function acf_relationshipfield_only_use_published_content( $options, $field, $po
  */
 function not_found_page_widgets_init() {
 
-	register_sidebar( array(
+	register_sidebar( [
 		'name'          => _x( 'Widgetruimte op 404 pagina', '404 widget space', 'gctheme' ),
 		'id'            => 'widgets_404',
-		'before_widget' => '<section id="widgets_404_%s" class="sidebar %s">',
+		'before_widget' => '<section id="widgets_404_ % s" class="sidebar % s">',
 		'after_widget'  => '</section>',
 		'before_title'  => '<h2>',
 		'after_title'   => '</h2>',
-	) );
+	] );
 
 }
 
 add_action( 'widgets_init', 'not_found_page_widgets_init' );
+
+//========================================================================================================
+
+add_filter( 'manage_upload_columns', 'size_column_register' );
+
+function size_column_register( $columns ) {
+
+	$columns['dimensions'] = 'Dimensions';
+
+	return $columns;
+}
+
+//========================================================================================================
+
+add_action( 'manage_media_custom_column', 'size_column_display', 10, 2 );
+
+function size_column_display( $column_name, $post_id ) {
+
+	if ( 'dimensions' != $column_name || ! wp_attachment_is_image( $post_id ) ) {
+		return;
+	}
+
+	list( $url, $width, $height ) = wp_get_attachment_image_src( $post_id, 'full' );
+
+	echo esc_html( "{$width}&times;{$height}" );
+}
 
 //========================================================================================================
 

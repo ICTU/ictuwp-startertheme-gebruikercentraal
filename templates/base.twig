@@ -21,6 +21,8 @@
     <div class="l-header-top">
       {% include "partial/header-branding.twig" %}
       {% include "header-searchform.twig" %}
+      {% include "partial/header-mobile-button.twig" %}
+
     </div>
 
     {% include "menu.twig" with {'items': menu.get_items} %}
@@ -29,14 +31,14 @@
 
   {{ function('insert_breadcrumb') }}
 
-  <div class="page-content" id="maincontent">
+  <div class="page-content">
   {% if hero_image.src %}
   <div class="l-hero">
 
     <picture class="image image--hero">
       <source srcset="{{ hero_image.src|resize(1000) }} 1x" media="(max-width: 800px)" type="{{ hero_image.mime }}">
       <source srcset="{{ hero_image.src|resize(1600) }} 1.5x" media="(min-width: 800px)" type="{{ hero_image.mime }}">
-
+      <source srcset="{{ hero_image.src}} 1x" media="(min-width: 1200px)" type="{{ hero_image.mime }}">
       <img src="{{ hero_image.src}}" alt="{{ hero_image.alt}}">
     </picture>
   </div>

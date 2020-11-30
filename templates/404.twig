@@ -2,33 +2,29 @@
 
 {% block content %}
 
-  <article class="post post--full error404">
+  {% if title_404 %}
+    <header class="page__header">
+      <h1 class="page__title">{{ title_404 }}</h1>
+    </header>
+  {% endif %}
 
-    {% if title_404 %}
-      <header class="post__header">
-        <h1 class="page__title">{{ title_404 }}</h1>
-      </header>
-    {% endif %}
+  {% if content_404 or widgets_404 %}
+    <div class="page__content">
+      {% if content_404 %}
+        <div class="form form--search-404">
+          <p>{{ content_404 }}</p>
 
-    {% if content_404 or widgets_404 %}
-      <section class="post__content">
-        {% if content_404 %}
-          <div class="post__body">
-            <p>{{ content_404 }}</p>
+          {{ content_404_search }}
 
-            {{ content_404_search }}
+        </div>
+      {% endif %}
 
-          </div>
-        {% endif %}
-
-        {% if widgets_404 %}
-          <div class="post__body">
-            {{ widgets_404 }}
-          </div>
-        {% endif %}
-      </section>
-    {% endif %}
-
-  </article>
+      {% if widgets_404 %}
+        <div class="page__widgets">
+          {{ widgets_404 }}
+        </div>
+      {% endif %}
+    </div>
+  {% endif %}
 
 {% endblock %}

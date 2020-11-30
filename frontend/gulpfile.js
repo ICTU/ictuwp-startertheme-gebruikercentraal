@@ -187,8 +187,9 @@ function baseStyles(done) {
 
 function prod(done) {
   console.log(siteConfig.path + 'scss/*.scss');
+  console.log(siteConfig.dest + 'css');
 
-  if(fs.existsSync(siteConfig.path + 'scss')){
+  if (fs.existsSync(siteConfig.path + 'scss')) {
     gulp
       .src(siteConfig.path + 'scss/*.scss')
       .pipe(sass().on('error', sass.logError))
@@ -204,10 +205,10 @@ function prod(done) {
 }
 
 
-function cleanCSS(done){
+function cleanCSS(done) {
 
   gulp
-    .src(siteConfig.dest + 'css/**')
+    .src(siteConfig.dest + 'css/*.map')
     .pipe(clean({
       force: true
     }));
@@ -259,23 +260,24 @@ function watch() {
     proxy: siteConfig.proxy
   });
 
+  gulp.watch('../assets/js/components/*.js', js);
+  gulp.watch('../assets/images/icons/*.svg', gulp.series(makeFont, styles));
+
   // Watch basetheme + flavor
-  if (!(siteConfig.shortname === 'gc_base')) {
+  if (siteConfig.shortname === 'gc_base') {
     console.log("Extra folder in de gaten houden, want " + siteConfig.shortname + ': ' + siteConfig.path + 'scss/');
+    // Watch flavor from siteconfog
+    gulp.watch('../scss/**/*.scss', gulp.series(styles));
+  } else {
+    gulp.watch(siteConfig.path + 'scss/**/*.scss', styles);
     gulp.watch('../scss/**/*.scss', gulp.series(baseStyles, styles));
   }
-
-  // Watch flavor from siteconfog
-  gulp.watch(siteConfig.path + 'scss/**/*.scss', styles);
-  gulp.watch('../assets/js/components/*.js', js);
-
-  gulp.watch('../assets/images/icons/*.svg', gulp.series(makeFont, styles));
 
 }
 
 
 exports.iconfont = gulp.series(makeFont, prodAll);
-exports.prod = gulp.series(cleanCSS, prod);
+exports.prod = gulp.series(prod);
 exports.styles = styles;
 exports.js = js;
 exports.sprites = makeSprites;

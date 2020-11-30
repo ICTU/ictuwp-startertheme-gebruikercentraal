@@ -3,7 +3,6 @@ html {
   margin: 0;
   padding: 0;
   width: 100%;
-  height: 100%;
   font-size: 62.5%;
 }
 
@@ -20,7 +19,7 @@ body {
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
 
-  @include bp-down(md){
+  @include bp-down(md) {
     font-size: 1.6rem;
     line-height: 2.6rem;
   }
@@ -44,6 +43,52 @@ a {
     text-decoration: none;
   }
 }
+
+/* -------------------------------------------------------------------------
+enkele uitzonderingen voor hover over links en het weghalen van de underline
+zie: https://trello.com/c/Xmmyu8ho/363-styling-van-hover-over-links
+suggesties welkom
+*/
+.entry-content {
+  a:not(.tipkaart__link) {
+    &:hover,
+    &:focus {
+      text-decoration: underline;
+    }
+
+    &:not(.btn):not(.arrow-link):not(.link--arrow) {
+      &:hover,
+      &:focus {
+        color: $color-primary;
+      }
+    }
+  }
+}
+
+.meta-data__list {
+  // grijze kleur, donkderder maken bij hover
+  a {
+    &:hover,
+    &:focus {
+      color: $gc-dark-blue;
+      text-decoration: underline;
+    }
+  }
+}
+
+.page-footer {
+  // links in de pagefooter zijn wit op donkerblauw, om
+  // leesbaarheid te behouden een lichte kleur.
+  a:not(.btn) {
+    &:hover,
+    &:focus {
+      color: $gc-pantybrown;
+      text-decoration: underline;
+    }
+  }
+}
+
+/* ------------------------------------------------------------------------- */
 
 h1, h2, h3, h4, h5, h6 {
   font-family: $base-heading-font;
@@ -100,8 +145,25 @@ img {
   height: auto;
 }
 
-*[aria-hidden=true]{
+*[aria-hidden=true] {
+  // ho ho, wageffe!
+  // aria-hidden zou je alleen moeten gebruiken voor elementen die je wél
+  // wil tonen aan ziende gebruikers, maar niet aan gebruikers met bijv.
+  // een screenreader
+  // wil je iets verbergen voor ziende gebruikers, gebruik dan .visuallyhidden, of
+  // de mixin @include visually-hidden;
+}
+
+ul[aria-expanded="false"] {
+  // de links in een ingeklapt lijstje moeten onzichtbaar zijn,
+  // zodat je er bijv. ook niet via de tabtoets bij kunt
   display: none;
+}
+
+ul[aria-expanded="true"] {
+  // de links in een uitgeklapt lijstje moeten bereikbaar
+  // zijn als je met de tabtoets door de links wandelt
+  display: block;
 }
 
 .visually-hidden,
@@ -116,3 +178,39 @@ form {
 cite {
   font-style: normal;
 }
+
+
+/* TESTMEUK!!!
+
+h1, h2, h3, h4 {
+  &:before {
+    content: ' ';
+    display: inline-block;
+    float: left;
+    padding: 0 .5rem;
+    background: red;
+    color: white;
+  }
+}
+h1 {
+  &:before {
+    content: 'h1';
+  }
+}
+h2 {
+  &:before {
+    content: 'h2';
+  }
+}
+h3 {
+  &:before {
+    content: 'h3';
+  }
+}
+h4 {
+  &:before {
+    content: 'h4';
+  }
+}
+
+*/

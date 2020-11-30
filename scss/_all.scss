@@ -22,15 +22,16 @@
 
 @import "layout/page";
 @import "layout/page-overview";
+@import "layout/page-404";
 
 /* Entry types */
 @import "components/post";
-@import "components/post-tipkaart";
-//@import "components/single-event";
-/* Entry types */
+@import "components/single-event";
 @import "components/single";
 @import "components/single-event";
+@import "components/single-home";
 @import "components/single-tipkaart";
+@import "components/single-landing";
 
 
 /* Sections */
@@ -39,6 +40,7 @@
 @import "components/section-text-block";
 @import "components/section-images";
 @import "components/text-image";
+
 
 /* Components */
 @import "components/author";
@@ -49,11 +51,13 @@
 @import "components/download-box";
 @import "components/link";
 @import "components/meta-data";
+@import "components/search-result";
 @import "components/social";
 @import "components/teaser";
 @import "components/list";
 @import "components/overview";
 @import "components/video";
+@import "components/widgets";
 
 
 /* Sites with stepchart */

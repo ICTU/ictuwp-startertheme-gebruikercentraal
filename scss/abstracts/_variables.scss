@@ -40,23 +40,23 @@ $gc-pink-lighter:           #E86CA8;
 $gc-orange:					#f99d1c;
 $gc-a11y-orange-lg:			#D77D00;
 
-$gc-cyan:					        #00b4ac;
-$gc-a11y-cyan-lg:			    #009C95; // Ok for large texts
-$gc-a11y-cyan:            #00837E;
+$gc-cyan:					#00b4ac;
+$gc-a11y-cyan-lg:		    #009C95; // Ok for large texts
+$gc-a11y-cyan:              #00837E;
 
 // Optimaal Digitaal
-$od-orange:               #BA4F0C;
-$od-orange-darker:        #983A00;
+$od-orange:                 #BA4F0C;
+$od-orange-darker:          #983A00;
 
 // Inclusie
-$inc-orange:              #D94721;
-$inc-a11y-orange:         #c73d19;
+$inc-orange:                #D94721;
+$inc-a11y-orange:           #c73d19;
 
 // NLDS
 $nlds-purplish:             #74295f;
 
 // Grays
-$grey-x-light:               #F7F7F7;
+$grey-x-light:              #F7F7F7;
 
 
 // Voor definities alleen betaande kleuren gebruiken
@@ -124,20 +124,25 @@ $base-h4-size:              22px !default;
 $base-h4-line-height:       28px !default;
 
 // Forms
-$input-bg:                 $white;
-$input-border:             $border-color;
+$input-bg:                  $white;
+$input-border:              $border-color;
 
-$input-focus:              $gc-green;
-$input-focus-bg:           $white;
+$input-focus:               $gc-green;
+$input-focus-bg:            $white;
 
-$input-hover-bg:           $white;
+$input-error:               $inc-a11y-orange !default;
+
+$form-error-color:          $white !default; // deze kleur kan
+$form-error-background:     $inc-a11y-orange !default; // Komt het dichtst bij rood
+$form-error-border-color:   $inc-a11y-orange !default;
+$form-error-descr:          $inc-a11y-orange !default;
 
 
 // Submit
-$submit-bg:                $gc-a11y-green;
-$submit-hover-bg:          $gc-a11y-green-darker;
-$submit-color:             $white;
-$button-font:              $font-secondary;
+$submit-bg:                 $gc-a11y-green;
+$submit-hover-bg:           $gc-a11y-green-darker;
+$submit-color:              $white;
+$button-font:               $font-secondary;
 
 // Default color for icons
 $gc-icon-color:            $color-secondary;

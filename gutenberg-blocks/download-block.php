@@ -121,7 +121,7 @@ function download_block_get_data() {
 		endwhile;
 
 		if ( $return['items'] ) {
-			$return['title'] = get_field( 'downloads_title' ) ? get_field( 'downloads_title' ) : _x( 'Downloads', 'Titel boven downloads', 'gctheme' );
+			$return['title'] = get_field( 'downloads_title' );
 			$return['desc']  = get_field( 'downloads_description' );
 		}
 

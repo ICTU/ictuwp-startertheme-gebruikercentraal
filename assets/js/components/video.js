@@ -6,18 +6,19 @@
 // @package gebruiker-centraal
 // @author  Tamara de Haas
 // @desc.   Kleuren in vars/_video.scss
+// @version 5.0.24
 
-
-const videoBtn = $('.collapsetoggle button');
-const siteContainer = $('.site-container');
+const videoBtn = jQuery('.collapsetoggle button');
+const siteContainer = jQuery('.section--video');
 
 videoBtn.on('click', function () {
-  const target = $(this).parent().next();
+  const target = jQuery(this).parent().next(); // het element NA de button, dit moet dus <div class="collapsible"> zijn
 
-  if ($(this).attr('aria-expanded') === 'true') {
+  if (jQuery(this).attr('aria-expanded') === 'true') {
     // find another active if there
-    const active = $('.collapsetoggle button[aria-expanded="true"]');
-    const expanded = $('.collapsible');
+    console.log('ding is uitgeklapt')
+    const active = jQuery('.collapsetoggle button[aria-expanded="true"]');
+    const expanded = jQuery('.collapsible');
 
     if (active) {
       active.attr('aria-expanded', 'false');
@@ -25,14 +26,16 @@ videoBtn.on('click', function () {
     }
 
     //set active
-    $(this).attr('aria-expanded', 'true');
+    jQuery(this).attr('aria-expanded', 'true');
     target.removeAttr('hidden');
 
     if (!siteContainer.hasClass('show-overlay')) {
       siteContainer.addClass('show-overlay');
     }
   } else {
-    $(this).attr('aria-expanded', 'false');
+    console.log('ding NIET uitgeklapt')
+
+    jQuery(this).attr('aria-expanded', 'false');
     target.attr('hidden', 'hidden');
 
     siteContainer.removeClass('show-overlay');
@@ -41,12 +44,12 @@ videoBtn.on('click', function () {
 
 
 // Remove show if click outside container
-$(document).on('mouseup', function (e) {
+jQuery(document).on('mouseup', function (e) {
 
     if (siteContainer.hasClass('show-overlay')) {
-      const video = $('.video__video');
-      const active = $('.collapsetoggle button[aria-expanded="true"]');
-      const expanded = $('.collapsible');
+      const video = jQuery('.video__video');
+      const active = jQuery('.collapsetoggle button[aria-expanded="true"]');
+      const expanded = jQuery('.collapsible');
 
       // if the target of the click isn't the container nor a descendant of the container
       if (!video.is(e.target) && video.has(e.target).length === 0) {
@@ -57,3 +60,7 @@ $(document).on('mouseup', function (e) {
     }
   }
 );
+
+
+// TODO: zorgen dat focus van tab binnen het siteContainer (.section--video) blijft
+// TODO: bij smallere schermen gaat het afhandelen van clickevents nog niet goed

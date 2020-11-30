@@ -1,15 +1,19 @@
+
+{% if headerlevel %}
+{% else %}
+  {% set headerlevel = 'h2' %}
+{% endif %}
+
 <section
   class="teaser teaser--type-{{ type ? type : 'page' }}{{ modifier ? ' teaser--' ~ modifier }}{{ img ? ' l-with-image' : ' l-without-image' }}">
   <div class="teaser__link">
-    {% if full %}
-      <span class="label label--full">{{ full }}</span>
-    {% endif %}
 
     {% if img %}
+    <a href="{{ url }}" aria-hidden="true">
       <div class="teaser__image">
         {{ img }}
       </div>
-
+    </a>
     {% endif %}
 
     {% if img %}<div class="l-teaser-content">{% endif %}
@@ -28,15 +32,19 @@
           } %}
         {% endif %}
 
-        <h2 itemprop="name" class="teaser__title">
+        <{{ headerlevel }} itemprop="name" class="teaser__title">
           <a href="{{ url }}">
           <span class="arrow-link">
             <span class="arrow-link__text">{{ title }}</span><span class="arrow-link__icon" aria-hidden="true"></span>
           </span>
           </a>
-        </h2>
+        </{{ headerlevel }}>
 
-        {% if meta %}
+      {% if full %}
+        <span class="label label--full">{{ full }}</span>
+      {% endif %}
+
+      {% if meta %}
           {% include 'components/meta-data.html.twig' with {'items': meta} %}
         {% endif %}
       </header>

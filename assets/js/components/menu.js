@@ -6,102 +6,205 @@
 // @package gebruiker-centraal
 // @author  Tamara de Haas, Paul van Buuren
 // @license GPL-2.0+
-// @version 3.15.9
-// @desc.   CTA-kleuren, a11y groen, sharing buttons optional, beeldbank CPT code separation.
+// @version 5.0.24
 // @link    https://github.com/ICTU/gebruiker-centraal-wordpress-theme
 
+const breakpointmenu = 1000; // op 1000px toggle tussen desktop / mobiel, zie ook 'nav': 1000px
+const totalMenuElement = document.getElementById("menu-primary");
+const menuItems = document.querySelectorAll("li.main-menu__item--with-sub");
+const toggleMenu = document.querySelectorAll(".btn--toggle-menu");
+const divMenuContainer = document.querySelectorAll(".l-header-nav");
+const mainMenu = document.getElementById("mainnav");
+const body = document.getElementsByTagName("body");
 
-var toggleMenu = $('.btn--toggle-menu');
-var regionNav = $('.l-header-nav');
-var mainMenu = $('#mainnav');
+function hoverListItem(theObject, dinges) {
 
-var bp = 1000;
+  if (theObject.classList.contains('open')) {
+    // heeft wel class open, dus status is open; nieuwe status wordt: alles sluiten
+    theObject.classList.remove('open');
+    theObject.querySelector('a').setAttribute('aria-expanded', "false");
+    if (typeof theObject.querySelector('button') != 'undefined') {
+      theObject.querySelector('button').setAttribute('aria-expanded', "false");
+    }
+    theObject.querySelector('ul.main-menu__sublist').classList.add('visuallyhidden');
+    theObject.querySelector('ul.main-menu__sublist').setAttribute('aria-expanded', "false");
+  } else {
+    // heeft GEEN class open, dus status is niet open; nieuwe status wordt: alles openen
+    theObject.classList.add('open');
+    theObject.querySelector('a').setAttribute('aria-expanded', "true");
+    if (typeof theObject.querySelector('button') != 'undefined') {
+      theObject.querySelector('button').setAttribute('aria-expanded', "true");
+    }
+    theObject.querySelector('ul.main-menu__sublist').classList.remove('visuallyhidden');
+    theObject.querySelector('ul.main-menu__sublist').setAttribute('aria-expanded', "true");
+  }
+
+}
+
+function openMenuItems() {
+
+  // alle items openen en eventuele andere classes voor elk list-item verwijderen
+  Array.prototype.forEach.call(menuItems, function (el, i) {
+
+    el.classList.add("open");
+    var sublist = el.querySelector("ul.main-menu__sublist");
+    if (sublist) {
+      sublist.classList.remove("visuallyhidden");
+      sublist.setAttribute('aria-expanded', "true");
+    }
+
+    el.removeEventListener("pointerenter", function (event) {
+      hoverListItem(this, 'over');
+    });
+    el.removeEventListener("pointerleave", function (event) {
+      hoverListItem(this, 'out');
+    });
+
+  });
+
+}
+
+function closeMenuItems() {
+
+  var width = window.innerWidth;
+  var listitems = document.querySelectorAll(".menu-item-has-children");
+
+  Array.prototype.forEach.call(menuItems, function (el, i) {
+    el.classList.remove("open");
+    el.querySelector('a').setAttribute('aria-expanded', "false");
+
+    if (width > breakpointmenu) {
+
+      var buttonExists = el.querySelector('button');
+
+      if (buttonExists && typeof buttonExists != 'undefined') {
+        buttonExists.setAttribute('aria-expanded', "false");
+        buttonExists.classList.remove('open-list');
+      }
+      el.querySelector('ul.main-menu__sublist').classList.add('visuallyhidden');
+    }
+
+  });
+}
+
+function istotalMenuElementMenu(event) {
+  if (totalMenuElement !== event.target && !totalMenuElement.contains(event.target)) {
+    closeMenuItems();
+  }
+}
+
+document.onkeydown = function (evt) {
+  evt = evt || window.event;
+  if (evt.keyCode == 27) {
+    // close with ESC
+    closeMenuItems();
+  }
+};
+document.addEventListener('click', istotalMenuElementMenu);
+
+// =========================================================================================================
+
+
+function cleanUpMenu() {
+  // verwijder eventueel al aanwezige menu-knoppen van een vorige keer (window resize bby)
+  document.querySelectorAll('button.main-menu__open-sub').forEach(function (thisElement) {
+    thisElement.remove();
+  })
+
+}
+
+// =========================================================================================================
+
 
 function doNav(width) {
 
-  if (width < bp) {
 
-    // Mobile
-    regionNav.attr('aria-hidden', true);
+  // Zorgen dat alle eventuele toegevoegde buttons weer weggehaald worden
+  cleanUpMenu();
 
-    // Show al sublists
-    $('.main-menu__sublist').attr('aria-hidden', 'false');
+  if (width < breakpointmenu) {
 
-    toggleMenu.on('click', function () {
-      $(this).toggleClass('active');
-      $('body').toggleClass('show-menu');
+    // classes en attributen weghalen die ervoro zorgen dat submenu-items verborgen worden
+    openMenuItems();
 
-      if (regionNav.attr('aria-hidden') === 'true') {
-        regionNav.attr('aria-hidden', 'false');
-      } else if (regionNav.attr('aria-hidden') === 'false') {
-        regionNav.attr('aria-hidden', 'true');
+    toggleMenu[0].addEventListener("click", function (event) {
+      if (this.classList.contains('active')) {
+        this.classList.remove('active');
+        body[0].classList.remove('show-menu');
+      } else {
+        this.classList.add('active');
+        body[0].classList.add('show-menu');
       }
     });
 
-  } else if (width >= bp) {
+  } else {
     // Desktop
-    regionNav.attr('aria-hidden', false);
-    $('.main-menu__sublist').attr('aria-hidden', 'true');
 
-    // Add class on mouse enter
-    $('.main-menu__item--with-sub').on('mouseenter', function () {
-      if (!($(this).hasClass('open'))) {
-        // Unset other active if there
-        mainMenu.find('.open').removeClass('open');
-        mainMenu.find('ul[aria-hidden="false"]').attr('aria-hidden', 'true');
 
-        // Add attributes to current menu
-        $(this).addClass('open').find('.main-menu__sublist').attr('aria-hidden', 'false');
-        $(this).find('a:first-child').attr('aria-expanded', 'true');
-      }
-    });
+    Array.prototype.forEach.call(menuItems, function (el, i) {
+      var thisListItem = el;
 
-    // And remove again on mouseleave
-    $('.main-menu__item--with-sub').mouseleave(function () {
-      // Add attributes to current menu
-      $(this).removeClass('open');
-      $(this).attr('aria-hidden', 'true');
-      $(this).parent().find('a:first-child').attr('aria-expanded', 'false');
-    });
+      var currentSubmenus = thisListItem.querySelector('.main-menu__sublist');
+      var anchorInListItem = el.querySelector('a');
+      var appendButtonAfterAnchor = '<button class="main-menu__open-sub"><span><span class="visuallyhidden">Submenu voor “' + anchorInListItem.text + '”</span></span></button>';
+      anchorInListItem.insertAdjacentHTML('afterend', appendButtonAfterAnchor);
 
-    // Add toggle behaviour on click
-    $('.main-menu__open-sub').on('click', function () {
-      var menuItem = $(this).parent();
-      var currentActive = mainMenu.find('.open');
+      // verberg het submenu in dit listitem
+      currentSubmenus.classList.add('visuallyhidden');
 
-      if (!(menuItem.hasClass('open'))) {
-        //Submenu is closed, has to open
-        if (currentActive.length) {
-          //If there is another item open remove it
-          currentActive.removeClass('open').find('.main-menu__sublist').attr('aria-hidden', true);
-          currentActive.find('button').attr('aria-expanded', false);
+      thisListItem.addEventListener("pointerenter", function (event) {
+        hoverListItem(this, 'over');
+      });
+      thisListItem.addEventListener("pointerleave", function (event) {
+        hoverListItem(this, 'out');
+      });
+      el.querySelector('button').addEventListener("click", function (event) {
+
+        if (this.parentNode.classList.contains('open')) {
+          // heeft wel class open, dus status is open; nieuwe status wordt: alles sluiten
+          this.parentNode.classList.remove('open');
+          this.parentNode.querySelector('a').setAttribute('aria-expanded', "false");
+          this.parentNode.querySelector('button').setAttribute('aria-expanded', "false");
+          this.parentNode.querySelector('button').classList.remove('open-list');
+          this.parentNode.querySelector('ul.main-menu__sublist').classList.add('visuallyhidden');
+          this.parentNode.querySelector('ul.main-menu__sublist').setAttribute('aria-expanded', "false");
+        } else {
+          // heeft GEEN class open, dus status is niet open; nieuwe status wordt: alles openen
+          this.parentNode.classList.add('open');
+          this.parentNode.querySelector('a').setAttribute('aria-expanded', "true");
+          this.parentNode.querySelector('button').setAttribute('aria-expanded', "true");
+          this.parentNode.querySelector('button').classList.add('open-list');
+          this.parentNode.querySelector('ul.main-menu__sublist').classList.remove('visuallyhidden');
+          this.parentNode.querySelector('ul.main-menu__sublist').setAttribute('aria-expanded', "true");
         }
+        event.preventDefault();
+      });
 
-        $(this).attr('aria-expanded', true).find('span').text('Open ' + menuItem.find('a:first span').text());
-        menuItem.addClass('open').find('.main-menu__sublist').attr('aria-hidden', false);
 
-      } else if (menuItem.hasClass('open')) {
-        // Submenu is open, has to close
-        $(this).attr('aria-expanded', false).find('span').text('Sluit ' + menuItem.find('a:first span').text());
-        menuItem.removeClass('open').find('.main-menu__sublist').attr('aria-hidden', true);
-      }
     });
+
 
   }
 }
 
 
-$(window).on('load', function () {
-  var w = $(window).width();
+var isIE11 = !!window.MSInputMethodContext && !!document.documentMode;
 
-  doNav(w);
-});
+if ( isIE11 ) {
+  // lalala, niks leuks voor IE11
+}
+else {
 
-$(window).on('resize', function () {
-  var w = $(window).width();
+  window.addEventListener('load', function () {
+    var windowwidth = window.innerWidth;
+    doNav(windowwidth);
+  });
 
-  doNav(w);
-});
+  window.addEventListener('resize', function () {
+    var windowwidth = window.innerWidth;
+    doNav(windowwidth);
+  });
 
+}
 
 // =========================================================================================================

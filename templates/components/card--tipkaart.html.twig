@@ -1,11 +1,22 @@
+{% if tip_nummer %}
+{% else %}
+  {% set tip_nummer = nr %}
+{% endif %}
+
+{% set headerlevelcard = 'h2' %}
+
+{% if headerlevel %}
+  {% set headerlevelcard = headerlevel %}
+{% endif %}
+
 
 <div class="tipkaart tipkaart--{{ category|lower }}">
-  <a class="tipkaart__link" href="{{ url }}" aria-label="{{ nr }} {{ title }} (thema is {{ category }}) {{ toptiptekst }}">
+  <a class="tipkaart__link" href="{{ url }}" aria-label="{{ tip_nummer }} {{ title }} (thema is {{ category }}) {{ toptiptekst }}">
     {% if toptip %}
       <span class="tipkaart__toptip">{{ toptiptekst }}</span>
     {% endif %}
-    <span class="tipkaart__nummer">{{ nr }}</span>
-    <h3 class="tipkaart__title">{{ title }}</h3>
+    <span class="tipkaart__nummer">{{ tip_nummer }}</span>
+    <{{ headerlevelcard }} class="tipkaart__title">{{ title }}</{{ headerlevelcard }}>
 
     <div class="tipkaart__categorie">
       <svg class="icon icon--medium icon--tipkaart" focusable="false">

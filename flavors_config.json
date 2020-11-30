@@ -7,14 +7,14 @@
       "js1": {
         "handle": "main-min",
         "file": "/assets/js/main-min.js",
-        "version": "",
+        "version": "5.0.32",
         "dependencies": "",
         "infooter": ""
       },
-      "commentjs": {
-        "handle": "comments",
-        "file": "/assets/js/comments.js",
-        "version": "",
+      "videojs": {
+        "handle": "videojs",
+        "file": "/assets/js/polyfills/video.js",
+        "version": "5.0.32",
         "dependencies": "",
         "infooter": ""
       }
@@ -23,13 +23,13 @@
       "Fonts": {
         "handle": "skiplinks",
         "file": "/assets/fonts/fonts.css",
-        "version": "5.0.13",
+        "version": "5.0.32",
         "dependencies": ""
       },
       "Styling": {
         "handle": "gc-theme",
         "file": "/assets/css/gc-theme.css",
-        "version": "5.0.13",
+        "version": "5.0.32",
         "dependencies": ""
       }
     },
@@ -39,6 +39,31 @@
       "gc-pantybrown-xlight": {
       },
       "gc-dark-purple": {
+      }
+    }
+  },
+  "OD": {
+    "name": "Optimaal Digitaal",
+    "shortname": "od",
+    "site_logo": "/assets/images/logo/od.svg",
+    "cssfiles": {
+      "Fonts": {
+        "handle": "skiplinks",
+        "file": "/assets/fonts/fonts.css",
+        "version": "5.0.32",
+        "dependencies": ""
+      },
+      "css1": {
+        "handle": "od-theme",
+        "file": "/flavors/optimaaldigitaal/assets/css/od-theme.css",
+        "version": "5.0.32",
+        "dependencies": ""
+      }
+    },
+    "palette": {
+      "od-orange": {
+      },
+      "gc-accessible-green": {
       }
     }
   },
@@ -53,31 +78,6 @@
       }
     }
   },
-  "OD": {
-    "name": "Optimaal Digitaal",
-    "shortname": "od",
-    "site_logo": "/assets/images/logo/od.svg",
-    "cssfiles": {
-      "Fonts": {
-        "handle": "skiplinks",
-        "file": "/assets/fonts/fonts.css",
-        "version": "5.0.13",
-        "dependencies": ""
-      },
-      "css1": {
-        "handle": "od-theme",
-        "file": "/flavors/optimaaldigitaal/assets/css/od-theme.css",
-        "version": "5.0.13",
-        "dependencies": ""
-      }
-    },
-    "palette": {
-      "od-orange": {
-      },
-      "gc-accessible-green": {
-      }
-    }
-  },
   "RDAM": {
     "name": "Rotterdammer Centraal",
     "shortname": "rdam",
@@ -87,6 +87,11 @@
     "name": "Direct Duidelijk Tour",
     "shortname": "rdam",
     "site_logo": "/assets/images/logo/beeldmerk-dd-tour.svg"
+  },
+  "EXPERTPANEL": {
+    "name": "Expert Panel",
+    "shortname": "expertpanel",
+    "site_logo": "/assets/images/logo/expertpanel-beeldmerk.svg"
   },
   "KB": {
     "name": "Gebruiker Centraal Kennisbank",
@@ -105,13 +110,13 @@
       "Fonts": {
         "handle": "skiplinks",
         "file": "/assets/fonts/fonts.css",
-        "version": "5.0.13",
+        "version": "5.0.32",
         "dependencies": ""
       },
       "Styling": {
         "handle": "gc-theme",
         "file": "/assets/css/gc-theme.css",
-        "version": "5.0.13",
+        "version": "5.0.32",
         "dependencies": ""
       },
       "KB": {

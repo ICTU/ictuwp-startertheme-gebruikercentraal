@@ -2,7 +2,6 @@
 
 {% block content %}
 
-
     <article class="entry entry--full entry--type-{{ post.post_type }}" id="post-{{ post.ID }}">
         <header class="entry-header">
           <span class="date-badge" itemprop="datePublished" content="{{ post.post_date|date('d-m-Y') }}">
@@ -16,15 +15,37 @@
       {% endif %}
 
           </span>
+
+          {% if type == 'event' %}
+
+            {% include 'components/date-badge.html.twig' with {
+              'start_date': start_date,
+              'end_date': end_date,
+            } %}
+
+          {% elseif post_date %}
+            {% include 'components/date-badge.html.twig' with {
+              'post_date': post_date,
+              'modifier': '',
+            } %}
+          {% endif %}
+
+
           <h1 class="entry-title">
             {{ post.title }}
           </h1>
-          <div class="meta-data">
-            <dl class="meta-data__list">
-              <dt class="visually-hidden">{{ __('Author', 'gctheme') }}</dt>
-            <dd class="meta-data__item author">{{ post.author.name }}</dd>
-            </dl>
-          </div>
+          {% if meta %}
+            {% include 'components/meta-data.html.twig' with {'items': meta} %}
+          {% else %}
+            <div class="meta-data">
+              <dl class="meta-data__list">
+                <dt class="visually-hidden">{{ __('Author', 'gctheme') }}</dt>
+                <dd class="meta-data__item author">{{ post.author.name }}</dd>
+              </dl>
+            </div>
+
+          {% endif %}
+
         </header>
         <div class="entry-content wrap">
           <div class="entry-body">

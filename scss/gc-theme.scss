@@ -1,4 +1,14 @@
+/*
+ * Front-end styles voor GC-theme
+ * Author: Tamara, Mark, Paul
+ * Version: 5.0.32
+ *
+*/
+
 @import "abstracts/variables";
 
 @import "all";
 
+
+/* Browser hacks for stooopit browsers */
+@import "abstracts/browser-exceptions";

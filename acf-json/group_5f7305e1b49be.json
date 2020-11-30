@@ -7,7 +7,7 @@
             "label": "Kies een afbeelding",
             "name": "hero_image",
             "type": "image",
-            "instructions": "Dit veld zorgt voor een grote afbeelding bovenin. Het plaatje moet minimaal 1200px breed zijn en bij voorkeur in <em lang=\"en\">landscape<\/em>-formaat.",
+            "instructions": "Dit veld zorgt voor een grote afbeelding bovenin. Het plaatje moet minimaal 1600px breed zijn, maar liever 2200px breed of breder.",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -18,7 +18,7 @@
             "return_format": "array",
             "preview_size": "medium",
             "library": "all",
-            "min_width": 1200,
+            "min_width": 1600,
             "min_height": "",
             "min_size": "",
             "max_width": "",

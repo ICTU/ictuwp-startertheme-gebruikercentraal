@@ -15,18 +15,21 @@
 
           <div class="teaser teaser--event teaser--small">
             <div class="teaser__image">
-              <img src="{{ event.img }}" alt="{{ event.img_alt }}"/>
+              <a href="{{ event.url }}" aria-hidden="true">
+                <img src="{{ event.img }}" alt="{{ event.img_alt }}"/>
 
-              {% include 'components/date-badge.html.twig' with {
-                'start_date': ( event.start_date ?? '' ),
-                'end_date': ( event.end_date ?? '' ),
-                'post_date': ( event.post_date ?? '' ),
-                'modifier': 'date-badge--small'
-              } %}
+                {% include 'components/date-badge.html.twig' with {
+                  'start_date': ( event.start_date ?? '' ),
+                  'end_date': ( event.end_date ?? '' ),
+                  'post_date': ( event.post_date ?? '' ),
+                  'modifier': 'date-badge--small'
+                } %}
+              </a>
 
             </div>
             <h3 class="teaser__title">
-              <a href="{{ event.url }}" class="link link--arrow" aria-label="{{ event.arialabel }}">{{ event.title }}</a>
+              <a href="{{ event.url }}" class="link link--arrow"
+                 aria-label="{{ event.arialabel }}">{{ event.title }}</a>
             </h3>
           </div>
 
@@ -48,7 +51,9 @@
         {% for blog in items.blogs.items %}
           <div class="teaser teaser--event teaser--small">
             <div class="teaser__image">
-              <img src="{{ blog.img }}" alt="{{ blog.img_alt }}"/>
+              <a href="{{ blog.url }}" aria-hidden="true">
+                <img src="{{ blog.img }}" alt="{{ blog.img_alt }}"/>
+              </a>
             </div>
 
             <h3 class="teaser__title">

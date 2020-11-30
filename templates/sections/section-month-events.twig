@@ -12,7 +12,7 @@
   <div class="l-section-content">
 
     {% if title %}
-    <h3 class="overview__group-title">{{ title }}</h3>
+    <h2 class="overview__group-title">{{ title }}</h2>
     <div class="overview__item-wrapper">
 
       {% if items %}
@@ -22,12 +22,13 @@
 
           {% include 'components/teaser.html.twig' with {
             'title' : item.title,
+            'headerlevel' : 'h3',
             'descr' : item.descr,
             'img' : item.img,
             'type' : item.type,
             'quote' : item.quote,
             'meta': item.meta,
-            'nr': nr,
+            'tip_nummer': tip_nummer,
             'category': item.category,
             'toptip': item.toptip,
             'toptiptekst': item.toptiptekst,

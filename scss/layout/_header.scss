@@ -205,7 +205,7 @@
   }
 
   @include bp-down(sm) {
-    width: 100%;
+//    width: 100%;
   }
 
   @include bp-up(nav) {
@@ -310,7 +310,7 @@
     }
   }
 
-  // DEsktop
+  // Desktop
 
   @include bp-up(nav) {
     width: 100%;
@@ -319,6 +319,8 @@
 
     > ul {
       display: flex;
+      flex-direction: row;
+      flex-wrap: wrap; // om te voorkomen dat alle menu items tegen elkaar aan geduwd worden en dus de open-buttons ONDER de anchors komen.
 
       > li {
         position: relative;
@@ -372,7 +374,23 @@
   background: transparent url('/wp-content/themes/ictuwp-theme-gc2020/assets/images/arrow-white-down.svg') center center no-repeat;
   border: none;
 
+  &.open-list {
+    transform: rotate(180deg);
+  }
+
   @include bp-down(nav) {
     display: none;
+  }
+}
+
+.l-header-mobile-nav {
+  .btn__text {
+    @include visually-hidden;
+  }
+
+  i {
+    position: absolute;
+    left: 0;
+    top: 0;
   }
 }

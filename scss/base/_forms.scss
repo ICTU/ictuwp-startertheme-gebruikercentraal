@@ -3,20 +3,16 @@
     transition: all .15s linear;
   }
 }
+
 button {
   font-family: $base-font-family;
   font-size: $base-font-size;
   line-height: $base-font-size;
 }
+
 $input-size: 20px;
 
-input[type="text"],
-input[type="email"],
-input[type="password"],
-input[type="file"],
-input[type="url"],
-input[type="date"],
-input[type="search"],
+input:not([type="radio"]):not([type="checkbox"]):not([type="submit"]),
 select, textarea {
   box-sizing: border-box;
   background: $input-bg;
@@ -27,7 +23,6 @@ select, textarea {
   transition: background-color 0.2s ease-in-out, border-color 0.2s ease-in-out;
   border: .2rem solid $input-border;
   outline: none;
-  -webkit-appearance: none;
   color: #000;
   border-radius: 0;
 
@@ -36,7 +31,30 @@ select, textarea {
     border-color: $input-focus;
     background: $input-focus-bg;
   }
+
+  // Error
+  &[aria-invalid="true"]{
+    @include gc-box-shadow($inc-a11y-orange, 0.2);
+    border-color: $inc-a11y-orange;
+
+    &:focus {
+      border-color: $gc-orange;
+      @include gc-box-shadow($gc-orange, 0.2);
+    }
+  }
 }
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="file"],
+input[type="url"],
+input[type="date"],
+input[type="search"] {
+  // dit dus bijv. niet voor input[type="number"]
+  -webkit-appearance: none;
+}
+
 
 form label {
   font-family: $font-primary-semi;
@@ -46,6 +64,7 @@ form input[type="radio"] {
   & + label {
     font-family: $font-primary;
   }
+
   &:checked + label {
     font-family: $font-primary-semi;
   }
@@ -66,11 +85,12 @@ select {
 
 textarea {
   min-height: 16rem;
+  display: block;
 }
 
 
 input[type='submit'],
-button[type='submit']{
+button[type='submit'] {
   @include gc-box-shadow();
   background: $submit-bg;
   border: none;
@@ -89,11 +109,11 @@ button[type='submit']{
   margin-top: 3rem;
   width: auto;
 
-  @include bp-up(md){
+  @include bp-up(md) {
     font-size: $btn-font-size-lg;
   }
 
-  &:hover, &:focus{
+  &:hover, &:focus {
     background-color: $submit-hover-bg;
   }
 }
@@ -108,11 +128,11 @@ button[type='reset'] {
   font-size: $btn-font-size-sm;
   color: $base-font-color;
 
-  @include bp-up(md){
+  @include bp-up(md) {
     font-size: $btn-font-size-lg;
   }
 
-  &:hover, &:focus{
+  &:hover, &:focus {
     text-decoration: underline;
   }
 }
@@ -210,7 +230,7 @@ legend {
     line-height: 2.6rem;
   }
 
-  @include bp-up(md){
+  @include bp-up(md) {
     position: relative;
     display: flex;
     flex-wrap: wrap;
@@ -246,7 +266,165 @@ legend {
 }
 
 .form-actions {
-  @include bp-up(md){
+  @include bp-up(md) {
     padding-left: 30%;
   }
 }
+
+
+/* speciale formulieren
+------------------------------------------------------ */
+
+.screen-reader-response {
+  @include visually-hidden;
+}
+
+
+.wpcf7,
+.gform_wrapper {
+  padding-bottom: 4rem;
+  max-width: $max-width-inner;
+  margin-left: auto;
+  margin-right: auto;
+  float: none;
+  clear: both;
+  border-top: .2rem solid $border-color;
+  margin-top: 2rem;
+
+  .gfield_required,
+  .required {
+    // de asterisk die een verplicht veld markeert
+    color: $form-error-color;
+    font-size: 110%;
+    display: inline-block;
+    float: right;
+    margin: 0 .5rem;
+  }
+
+  .validation_error,
+  .wpcf7-response-output[style] {
+    // het blok bovenaan een formulier dat vertelt wat er mis is gegaan
+    @include icon(before, cross);
+    background: $form-error-background;
+    color: $form-error-color;
+    padding: 1.5rem 2rem;
+    position: relative;
+    padding-left: 4.5rem;
+    line-height: 2.6rem;
+
+    &:before {
+      position: absolute;
+      left: 1.5rem;
+    }
+  }
+
+  .validation_message,
+  .wpcf7-not-valid-tip[aria-hidden="true"] {
+    border-top-style: none;
+    display: block;
+    width: 100%;
+    font-size: $font-small;
+    font-family: $font-primary-semi;
+    color: $form-error-descr;
+    margin-top: .6rem;
+  }
+
+}
+
+/* CF7 - Contactform 7
+------------------------------------------------------ */
+
+.wpcf7-form-control-wrap {
+  /* CF7 wrapt input elementen nog in een extra span */
+  flex: 1 0 70%;
+
+  textarea {
+    width: 100%;
+  }
+}
+
+
+/*
+
+.wpcf7-form {
+.form-item {
+.wpcf7-form-control-wrap {
+/* CF7 wrapt input elementen nog in een extra span
+flex: 1 0 70%;
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="file"],
+input[type="url"],
+input[type="number"],
+input[type="date"],
+input[type="search"],
+select, textarea {
+  width: 100%;
+}
+}
+}
+}*/
+
+/* Gravity Forms
+------------------------------------------------------ */
+
+/*
+.gform_wrapper {
+  padding-top: 2rem;
+
+  ul, ul li, ol, ol li {
+    list-style: none;
+    margin-left: 0;
+    padding-left: 0;
+  }
+
+  .gfield {
+    margin-top: 2rem;
+
+    label {
+      line-height: 2.6rem;
+    }
+
+    @include bp-up(md) {
+      position: relative;
+      display: flex;
+      flex-wrap: wrap;
+      margin-top: $gutter;
+
+      label {
+        width: 30%;
+        padding-right: $gutter;
+        text-align: right;
+      }
+
+      .ginput_container,
+      .form-description {
+        width: 70%;
+        margin-left: auto;
+
+        input[type="text"],
+        input[type="email"],
+        input[type="password"],
+        input[type="file"],
+        input[type="url"],
+        input[type="number"],
+        input[type="date"],
+        input[type="search"],
+        select, textarea {
+          width: 100%;
+        }
+      }
+    }
+  }
+
+  .validation_message {
+    margin-left: 30%;
+  }
+
+  .gform_footer {
+    padding-left: 30%;
+  }
+}
+*/

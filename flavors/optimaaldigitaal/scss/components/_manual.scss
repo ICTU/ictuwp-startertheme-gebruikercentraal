@@ -2,6 +2,7 @@
   .page-content {
     background: $od-orange;
     padding: 0;
+    overflow: hidden;
 
     &:before {
       height: 16rem;
@@ -33,10 +34,16 @@
     &:after {
       display: none;
     }
+  }
 
-    .spotlight {
-      margin-top: 0;
-    }
+  .entry--type-home.entry--full .section--paragraph {
+    color: $white;
+    max-width: $max-width-inner;
+    list-style: none !important;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 2rem;
+    padding-right: 2rem;
   }
 }
 
@@ -255,12 +262,12 @@
       margin-bottom: -12rem;
       z-index: -1;
 
-      @include bp-up(md){
+      @include bp-up(md) {
         @include square(25rem);
         margin-right: -18rem;
       }
 
-      @include bp-up(lg){
+      @include bp-up(lg) {
         height: 32rem;
         margin-right: -36rem;
       }

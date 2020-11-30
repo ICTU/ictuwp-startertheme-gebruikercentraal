@@ -1,5 +1,7 @@
 .overview {
   &--list {
+    margin: 0;
+    padding: 0;
     @include ho-container;
 
     .l-section-content {
@@ -12,6 +14,15 @@
       margin-left: auto;
       margin-right: auto;
     }
+
+    .overview__item + .overview__item {
+      border-top: .1rem solid $border-color;
+      margin-top: 2rem;
+      padding-top: 2rem;
+    }
   }
 }
 
+.overview__item {
+  list-style: none;
+}

@@ -1,70 +1,113 @@
-.page {
-  &--type-overview {
-    .content {
-      padding: 0;
-      background: none;
-    }
 
-    .entry-content,
-    .content {
-      max-width: none;
-    }
+.archive,
+.page--overview-archive {
+  @include gc-page-intro();
+  max-width: none;
 
-    .page-content {
-      background: $gc-pantybrown-light;
-    }
+  .page__intro {
+    @include ho-make-container($max-width-inner);
+  }
 
-    .section--spotlight {
-      margin: 5rem -2rem -3rem;
+  .page__intro .entry-body,
+  .archive__descr {
+    padding: 3rem;
+    margin-top: 0;
 
-      @include bp-up(md){
-        margin-left: -3rem;
-        margin-right: -3rem;
-        margin-bottom: -8rem;
-      }
-    }
-
-    .grid {
-      max-width: calc(#{$max-width-container} + #{$gutter});
-      margin: $gutter auto 0;
-
-      @include bp-up(md){
-        margin-top: 8rem;
-      }
+    @include bp-up(md) {
+      padding-left: 5rem;
+      padding-right: 5rem;
     }
   }
 
+  .author--full {
+    @include gc-box-shadow();
+  }
 
-  &--overview-archive {
-    .entry--type-overview {
-      .page__intro {
-        @include ho-container-content;
-        position: relative;
-        z-index: 10;
-      }
+  .page-content {
+    padding-bottom: 0;
+  }
 
-      .entry-body {
-        padding-bottom: 3rem;
+  .content {
+    box-shadow: none;
+    background: none;
+    max-width: none;
+    padding: 0;
+  }
 
-        @include bp-up(lg) {
-          padding-left: 5rem;
-          padding-right: 5rem;
-        }
-      }
+  .entry {
+    max-width: none;
+  }
+
+  .section--overview.section--4col .l-section-content {
+    max-width: $max-width-container;
+  }
+
+  .entry-body {
+    padding-left: 2rem;
+    padding-right: 2rem;
+
+    > .section--paragraph:first-child {
+      margin-top: 0;
     }
+  }
+
+  > p {
+    margin: 2rem auto 0;
+
+    &:first-child {
+      padding-top: 5rem;
+    }
+
+    &:last-child {
+      padding-bottom: 5rem;
+    }
+  }
+
+  .entry-content + .grid {
+    margin-top: 5rem;
+    padding-bottom: 5rem;
+
+    @include bp-up(md) {
+      margin-top: 7rem;
+    }
+
+    @include bp-up(lg) {
+      padding-bottom: 7rem;
+    }
+
+  }
+
+  .grid {
+    @include ho-make-container($max-width-container);
+  }
+
+}
+
+.page-template-template-events-overview {
+  .page__intro {
+    @include ho-make-container($max-width-inner);
+  }
+}
+
+
+// Events
+
+.tax-tipthema {
+  .page__intro {
+    max-width: $max-width-content;
   }
 }
 
 .archive__posts {
+  @include negate-padding;
   padding-bottom: 5rem;
-  max-width: none;
   margin-top: 3rem;
 
-  @include bp-up(md){
+  @include bp-up(md) {
     padding-bottom: 8rem;
   }
 
-  @include bp-up(lg){
+  @include bp-up(lg) {
     padding-bottom: 12rem;
     margin-top: 5rem;
   }
@@ -73,26 +116,23 @@
     margin-left: -2rem;
     margin-right: -2rem;
 
-    @include bp-up(md){
+    @include bp-up(md) {
       margin-left: -3rem;
       margin-right: -3rem;
     }
   }
 
   .grid {
-    @include ho-container;
-    max-width: calc(#{$max-width-container} + #{$gutter});
-    margin-top: 1rem;
+    padding-left: $gutter / 2;
+    padding-right: $gutter / 2;
+    @include ho-make-container($max-width-container);
   }
 
   .section__title {
     text-align: center;
     border: none;
   }
-
-
 }
-
 
 .overview__item-wrapper {
   .teaser {
@@ -121,7 +161,7 @@
   max-width: $max-width-content;
   margin: 3rem auto 0;
 
-  @include bp-up(md){
+  @include bp-up(md) {
     margin-top: 5rem;
   }
 }
@@ -188,3 +228,50 @@
   }
 }
 
+.page-template-template-alle-tips {
+
+  .grid {
+    padding-bottom: 5rem;
+
+    @include bp-up(lg) {
+      padding-bottom: 7rem;
+    }
+
+  }
+
+}
+
+// Search results
+
+.search {
+  .content-wrapper,
+  .content header {
+    @include ho-make-container($max-width-inner);
+  }
+
+  .overview--list {
+    margin-top: 3rem;
+
+    @include bp-up(md){
+      margin-top: 5rem;
+    }
+  }
+}
+
+
+// Search results
+
+.search {
+  .content-wrapper,
+  .content header {
+    @include ho-make-container($max-width-inner);
+  }
+
+  .overview--list {
+    margin-top: 3rem;
+
+    @include bp-up(md){
+      margin-top: 5rem;
+    }
+  }
+}
