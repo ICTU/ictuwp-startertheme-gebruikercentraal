@@ -4,17 +4,6 @@
 
     <article class="entry entry--full entry--type-{{ post.post_type }}" id="post-{{ post.ID }}">
         <header class="entry-header">
-          <span class="date-badge" itemprop="datePublished" content="{{ post.post_date|date('d-m-Y') }}">
-            <span class="date-badge__day">{{ post.post_date|date('d') }}</span>
-            <span class="date-badge__month">{{ post.post_date|date('M') }}</span>
-
-      {% if post.post_date|date('Y') == "now"|date('Y') %}
-        <span class="date-badge__year visually-hidden">{{ post.post_date|date('Y') }}</span>
-      {% else %}
-        <span class="date-badge__year">{{ post.post_date|date('Y') }}</span>
-      {% endif %}
-
-          </span>
 
           {% if type == 'event' %}
 
