@@ -1,78 +1,26 @@
-{% if start_date and end_date is empty %}
+{% set currentYear = "now"|date("Y") %}
 
+{% if post_date %}
+  {% set day = post_date|date('d') %}
+  {% set month = post_date|date('M') %}
+  {% set month_full = post_date|date('F') %}
+  {% set year = post_date|date('Y') %}
+{% elseif start_date %}
   {% set day = start_date|date('d') %}
   {% set month = start_date|date('M') %}
+  {% set month_full = start_date|date('F') %}
   {% set year = start_date|date('Y') %}
-
-  <span class="date-badge" itemprop="datePublished" content="{{ day }} {{ month }} {{ year }}">
-    <span class="date-badge__day">{{ day }}</span>
-    <span class="date-badge__month">{{ month }}</span>
-    <span class="date-badge__year visually-hidden">{{ year }}</span>
-
-  </span>
-
-{% elseif start_date and end_date %}
-
-  {# start date #}
-  {% set s_day = start_date|date('d') %}
-  {% set s_month = start_date|date('M') %}
-  {% set s_year = start_date|date('Y') %}
-
-  {# end date #}
-  {% set e_day = end_date|date('d') %}
-  {% set e_month = end_date|date('M') %}
-  {% set e_year = end_date|date('Y') %}
-
-  {% if s_month == e_month %}
-    {# start and end date in same month #}
-
-    {% if s_day == e_day %}
-      {% set day = s_day %}
-    {% else %}
-      {% set day = s_day ~ ' - ' ~ e_day %}
-    {% endif %}
-
-    {% set month = s_month %}
-
-  <span class="date-badge" itemprop="datePublished" content="{{ day }} {{ month }} {{ s_year }}">
-    <span class="date-badge__day">{{ day }}</span>
-    <span class="date-badge__month">{{ month }}</span>
-    <span class="date-badge__year visually-hidden">{{ s_year }}</span>
-  </span>
-
-  {% else %}
-    {# start and end date in different month #}
-
-    <span class="date-badge date-badge--multiple" itemprop="datePublished" content="{{ day }} {{ month }} {{ year }}">
-      <span class="date-badge__from"><span class="day">{{ s_day }}</span> {{ s_month }}</span>
-      <span class="date-badge__till"><span class="day">{{ e_day }}</span> {{ e_month }}</span>
-    </span>
-
-  {% endif %}
-
-
-{% elseif start_date is empty %}
-
-  {% if post_date %}
-    {% set day = post_date|date('d') %}
-    {% set month = post_date|date('M') %}
-    {% set year = post_date|date('Y') %}
-  {% else %}
-    {% set day = "now"|date('d') %}
-    {% set month = "now"|date('M') %}
-    {% set year = "now"|date('Y') %}
-  {% endif %}
-
-  <span class="date-badge{{ modifier? ' ' ~ modifier }}" itemprop="datePublished"
-        content="{{ day }} {{ month }} {{ year }}">
-      <span class="date-badge__day">{{ day }}</span>
-      <span class="date-badge__month">{{ month }}</span>
-        <span class="date-badge__year visually-hidden">{{ year }}</span>
-    </span>
-
 {% endif %}
 
+{% set fullDate = day ~' '~ month_full ~ ' ' ~ year %}
 
+{% if currentYear != year %}
+  {% set show_year = 'true' %}
+{% endif %}
 
-
-
+<time class="date-badge{{ show_year ? ' date-badge--with-year' }}" itemprop="datePublished"
+      content="{{ fullDate }}" datetime="{{ fullDate }}">
+<span class="date-badge__day">{{ day }}</span>
+<span class="date-badge__month">{{ month }}</span>
+<span class="date-badge__year{{ show_year is empty ? ' visually-hidden' }}">{{ year }}</span>
+</time>

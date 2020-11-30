@@ -5032,6 +5032,18 @@ body:not(.single-event) .entry-content.wrap:last-child {
         margin: -1rem -1rem -1rem 0;
         width: 62%;
         z-index: -1; }
+  .date-badge--with-year {
+    padding-top: 1rem;
+    padding-bottom: 1rem; }
+    .date-badge--with-year span:not(.visually-hidden):not(.date-badge__year) {
+      display: inline-block;
+      font-size: 2.4rem;
+      line-height: 2.4rem;
+      font-family: "league_gothicregular", Impact, Helvetica, Arial, sans-serif; }
+    .date-badge--with-year span.date-badge__year {
+      font-family: "montserratsemibold", Helvetica, Arial, sans-serif;
+      font-size: 1.1rem;
+      line-height: 1.4rem; }
 
 .date-badge__day {
   font-family: "league_gothicregular", Impact, Helvetica, Arial, sans-serif;
@@ -5044,6 +5056,10 @@ body:not(.single-event) .entry-content.wrap:last-child {
   font-family: "montserratsemibold", Helvetica, Arial, sans-serif;
   font-size: 1.1rem;
   line-height: 1.6rem; }
+
+.date-badge__year {
+  font-family: "league_gothicregular", Impact, Helvetica, Arial, sans-serif;
+  font-size: 1.7rem; }
 
 /*
  * Download box
