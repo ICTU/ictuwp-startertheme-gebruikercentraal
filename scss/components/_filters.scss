@@ -11,15 +11,16 @@
   padding: 0.7rem 1rem 0.5rem;
   -webkit-transition: background 0.2s, border-color 0.2s;
   transition: background 0.2s, border-color 0.2s;
-  font-weight: normal;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  font-family: $font-primary-semi;
+
   &:before{
     content: " ";
     display: inline-block;
-    width: 2rem;
-    height: 2rem;
+    width: 2.4rem;
+    height: 2.4rem;
     border-color: #004152;
     border-width: 0.1rem;
     margin-right: 1.5rem;
@@ -39,8 +40,8 @@
   &:before {
     content: " ";
     display: inline-block;
-    width: 2rem;
-    height: 2rem;
+    width: 2.4rem;
+    height: 2.4rem;
     border: 0.1rem solid $gc-darkest-blue;
     margin-right: 1.5rem;
     -webkit-transition: border-color 0.2s;

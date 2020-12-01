@@ -5106,15 +5106,15 @@ body:not(.single-event) .entry-content.wrap:last-child {
   padding: 0.7rem 1rem 0.5rem;
   -webkit-transition: background 0.2s, border-color 0.2s;
   transition: background 0.2s, border-color 0.2s;
-  font-weight: normal;
   display: -webkit-box;
   display: -ms-flexbox;
-  display: flex; }
+  display: flex;
+  font-family: "montserratsemibold", Helvetica, Arial, sans-serif; }
   .filter label:before {
     content: " ";
     display: inline-block;
-    width: 2rem;
-    height: 2rem;
+    width: 2.4rem;
+    height: 2.4rem;
     border-color: #004152;
     border-width: 0.1rem;
     margin-right: 1.5rem;
@@ -5127,8 +5127,8 @@ body:not(.single-event) .entry-content.wrap:last-child {
 .item--filter label:before {
   content: " ";
   display: inline-block;
-  width: 2rem;
-  height: 2rem;
+  width: 2.4rem;
+  height: 2.4rem;
   border: 0.1rem solid #00303d;
   margin-right: 1.5rem;
   -webkit-transition: border-color 0.2s;
@@ -5213,44 +5213,6 @@ body:not(.single-event) .entry-content.wrap:last-child {
   overflow: hidden;
   padding: 0;
   position: absolute; }
-
-.form-item--filter.filter-active {
-  background: #148839;
-  color: #fff; }
-  .form-item--filter.filter-active.cat--informatieveiligheid {
-    background: #A20E56; }
-  .form-item--filter.filter-active.cat--samenwerking {
-    background: #007BB0; }
-  .form-item--filter.filter-active.cat--commitment {
-    background: #148839; }
-  .form-item--filter.filter-active.cat--procesaanpak {
-    background: #00b4ac; }
-  .form-item--filter.filter-active.cat--gebruiksgemak {
-    background: #2D114E; }
-  .form-item--filter.filter-active.cat--kanaalsturing {
-    background: #f99d1c; }
-  .form-item--filter.filter-active.cat--inclusie {
-    background: #c73d19; }
-  .form-item--filter.filter-active:before {
-    border-color: #117230;
-    -webkit-box-shadow: 0.3rem 0.3rem 0 rgba(37, 179, 75, 0.3);
-    box-shadow: 0.3rem 0.3rem 0 rgba(37, 179, 75, 0.3);
-    background: #fff url(/wp-content/themes/ictuwp-theme-gc2020/assets/images/icons/check.svg) center center no-repeat;
-    background-size: 1.2rem auto; }
-    .form-item--filter.filter-active:before.cat--informatieveiligheid {
-      border-color: #8b0c4a; }
-    .form-item--filter.filter-active:before.cat--samenwerking {
-      border-color: #006997; }
-    .form-item--filter.filter-active:before.cat--commitment {
-      border-color: #117230; }
-    .form-item--filter.filter-active:before.cat--procesaanpak {
-      border-color: #009b94; }
-    .form-item--filter.filter-active:before.cat--gebruiksgemak {
-      border-color: #210c39; }
-    .form-item--filter.filter-active:before.cat--kanaalsturing {
-      border-color: #f59206; }
-    .form-item--filter.filter-active:before.cat--inclusie {
-      border-color: #b03616; }
 
 .link--linklist {
   font-family: "montserratbold", Helvetica, Arial, sans-serif;
