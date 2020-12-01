@@ -305,7 +305,7 @@ legend {
     color: $form-error-descr;
     font-size: 110%;
     display: inline-block;
-    float: right;
+    //float: right; dit zorgt ervoor dat op mobile de asteriksen rechts uitlijnen
     margin-left: .6rem;
   }
 

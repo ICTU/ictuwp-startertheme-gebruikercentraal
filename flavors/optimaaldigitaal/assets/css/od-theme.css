@@ -722,7 +722,6 @@ legend {
     color: #c73d19;
     font-size: 110%;
     display: inline-block;
-    float: right;
     margin-left: .6rem; }
   .wpcf7 .validation_error,
   .wpcf7 .wpcf7-response-output[style],
@@ -2416,11 +2415,16 @@ body:not(.single-event) .entry-content.wrap:last-child {
 .post--full .post__body > .section:first-child.section--paragraph {
   margin-top: 2rem; }
 
-.post--full .post__body > .section:last-child {
+.post--full .post__body > .section:first-child:last-child {
   padding-bottom: 4rem; }
   @media (min-width: 1100px) {
-    .post--full .post__body > .section:last-child {
+    .post--full .post__body > .section:first-child:last-child {
       padding-bottom: 7rem; } }
+
+@media (max-width: 699px) {
+  .post--full .post__body > .section--paragraph {
+    padding-left: 0;
+    padding-right: 0; } }
 
 .post--full .section--bg-option {
   padding-left: 2rem;
