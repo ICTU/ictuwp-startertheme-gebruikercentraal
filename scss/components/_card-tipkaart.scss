@@ -213,101 +213,19 @@
   }
 }
 
-.form-item--filter {
-    margin: 1.4rem .7rem 0;
-    border: 0.2rem solid #e8d8c7;
-    padding: .7rem 1.8rem .5rem 1rem;
-    -webkit-transition: background .2s, border-color .2s;
-    transition: background .2s, border-color .2s;
-    line-height: 2.6rem;
-    font-family: "montserratsemibold", Helvetica, Arial, sans-serif;
 
 
-    &:before{
-        content: " ";
-    display: inline-block;
-    width: 2rem;
-    height: 2rem;
-    border: 0.2rem solid #D1DFE3;
-    margin-right: 1.5rem;
-    -webkit-transition: border-color 0.2s;
-    transition: border-color 0.2s;
+.filter--cards {
+
+  .workItem {
+    display: none;
   }
 
-
-
+  .show-workItem {
+    display: block;
+    transition: all .35s ease;
+  }
 }
-
-.form-item--filter.active{
-
-     background: $gc_a11y_green;
-     color: $white;
-
-    &.cat--informatieveiligheid  {
-      background: $gc_pink_darker;
-    }
-
-    &.cat--samenwerking  {
-      background: $gc_a11y_blue;
-    }
-
-    &.cat--commitment  {
-      background: $gc_a11y_green;
-    }
-
-    &.cat--procesaanpak  {
-      background: $gc_cyan;
-    }
-
-    &.cat--gebruiksgemak  {
-      background: $gc_dark_purple_darker;
-    }
-
-    &.cat--kanaalsturing {
-      background: $gc_orange;
-    }
-
-    &.cat--inclusie  {
-      background: $inc_a11y_orange;
-    }
-
-    &:before{
-        border-color: darken($gc_a11y_green,5%);
-    -webkit-box-shadow: 0.3rem 0.3rem 0 rgba(37, 179, 75, 0.3);
-    box-shadow: 0.3rem 0.3rem 0 rgba(37, 179, 75, 0.3);
-    background: #fff url(/wp-content/themes/ictuwp-theme-gc2020/assets/images/icons/check.svg) center center no-repeat;
-    background-size: 1.2rem auto;
-    &.cat--informatieveiligheid  {
-     border-color: darken($gc_pink_darker,5%);
-    }
-
-    &.cat--samenwerking  {
-      border-color: darken($gc_a11y_blue,5%);
-    }
-
-    &.cat--commitment  {
-      border-color: darken($gc_a11y_green,5%);
-    }
-
-    &.cat--procesaanpak  {
-      border-color: darken($gc_cyan,5%);
-    }
-
-    &.cat--gebruiksgemak  {
-      border-color: darken($gc_dark_purple_darker,5%);
-    }
-
-    &.cat--kanaalsturing {
-      border-color: darken($gc_orange,5%);
-    }
-
-    &.cat--inclusie  {
-      border-color: darken($inc_a11y_orange,5%);
-    }
-    }
-
-
-  }
 
 
 

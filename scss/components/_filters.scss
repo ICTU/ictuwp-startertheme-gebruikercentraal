@@ -1,0 +1,155 @@
+.filter{
+  @include ho-make-container($max-width-container);
+  margin-top: 4rem;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.filter label {
+  border: 0.2rem solid #e8d8c7;
+  padding: 0.7rem 1rem 0.5rem;
+  -webkit-transition: background 0.2s, border-color 0.2s;
+  transition: background 0.2s, border-color 0.2s;
+  font-weight: normal;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  &:before{
+    content: " ";
+    display: inline-block;
+    width: 2rem;
+    height: 2rem;
+    border-color: #004152;
+    border-width: 0.1rem;
+    margin-right: 1.5rem;
+    -webkit-transition: border-color 0.2s;
+    transition: border-color 0.2s;
+  }
+
+
+}
+.item--filter{
+  margin: 1.4rem 0.7rem 0;
+}
+
+
+
+.item--filter label {
+  &:before {
+    content: " ";
+    display: inline-block;
+    width: 2rem;
+    height: 2rem;
+    border: 0.1rem solid $gc-darkest-blue;
+    margin-right: 1.5rem;
+    -webkit-transition: border-color 0.2s;
+    transition: border-color 0.2s;
+  }
+  &:hover{
+    border-color: $gc_a11y_green;
+  }
+}
+
+.item--filter.commitment label{
+  &:hover {
+    border-color: $gc_a11y_green;
+  }
+}
+.item--filter.informatieveiligheid label{
+  &:hover {
+    border-color: $gc_pink_darker;
+  }
+}
+.item--filter.samenwerking label{
+  &:hover {
+    border-color: $gc_a11y_blue;
+  }
+}
+.item--filter.procesaanpak label{
+  &:hover {
+    border-color: $gc_cyan;
+  }
+}
+.item--filter.gebruiksgemak label{
+  &:hover {
+    border-color: $gc_dark_purple_darker;
+  }
+}
+.item--filter.kanaalsturing label{
+  &:hover {
+    border-color: $gc_orange;
+  }
+}
+.item--filter.inclusie label:hover{
+  &:hover {
+    border-color: $inc_a11y_orange;
+  }
+}
+
+.item--filter.filter-active label:before {
+  border-color: #fff;
+  background: #fff url(/wp-content/themes/ictuwp-theme-gc2020/assets/images/icons/check.svg) center center no-repeat;
+  background-size: 1.2rem auto;
+}
+
+.item--filter.filter-active {
+  background: $gc_a11y_green;
+  color: $white;
+  &:before{
+    border-color: darken($gc_a11y_green,5%);
+  }
+}
+.item--filter.commitment.filter-active {
+   background: $gc_a11y_green;
+   &:before{
+     border-color: darken($gc_a11y_green,5%);
+   }
+}
+.item--filter.informatieveiligheid.filter-active {
+  background: $gc_pink_darker;
+  &:before{
+    border-color: darken($gc_pink_darker,5%);
+  }
+}
+.item--filter.samenwerking.filter-active {
+  background: $gc_a11y_blue;
+  &:before{
+    border-color: darken($gc_a11y_blue,5%);
+  }
+}
+.item--filter.procesaanpak.filter-active {
+  background: $gc_cyan;
+  &:before{
+    border-color: darken($gc_cyan,5%);
+  }
+}
+.item--filter.gebruiksgemak.filter-active {
+  background: $gc_dark_purple_darker;
+  &:before{
+    border-color: darken($gc_dark_purple_darker,5%);
+  }
+}
+.item--filter.kanaalsturing.filter-active {
+  background: $gc_orange;
+  &:before{
+    border-color: darken($gc_orange,5%);
+  }
+}
+.item--filter.inclusie.filter-active {
+  background: $inc_a11y_orange;
+  &:before{
+    border-color: darken($inc_a11y_orange,5%);
+  }
+}
+
+.filter button {
+  border: 0;
+  clip: rect(1px, 1px, 1px, 1px);
+  height: 1px;
+  width: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+}

@@ -22,54 +22,65 @@
   });
 
 // =========================================================================================================
-jQuery(document).ready(function() {
-(function() {
-  
-  var $imgs = $('.section .grid .tipkaart');
-  var $buttons = $('#buttons');
-  var tagged = {};
-  
-  $imgs.each(function(){
-    var img = this;
-    var tags = $(this).data('tags');
-    
-    if (tags) {
-      tags.split(',').forEach(function(tagName) {
-        if (tagged[tagName] == null) {
-          tagged[tagName] = []; 
-        }
-        tagged[tagName].push(img);
-      });
-    }
-  });
-// Buttons, ents, filters below...
-$('<button/>', {
-  text: 'Alle tipkaarten',
-  class: 'active form-item--filter',
-  click: function() {
-    $(this)
-      .addClass('active')
-      .siblings()
-      .removeClass('active');
-    $imgs.show();
-  }
-}).appendTo($buttons);
 
-$.each(tagged, function(tagName) {
-  $('<button/>', {
-    text: tagName + ' (' + tagged[tagName].length + ')',
-    class: 'form-item--filter ' + 'cat--' + tagName,
-    click: function () {
-      $(this)
-      .addClass('active')
-      .siblings()
-      .removeClass('active');
-     $imgs
-      .hide()
-      .filter(tagged[tagName])
-      .show();
+
+$(document).ready(function(){
+
+  var $filters = $('.form-item--filter'); // find the filters
+  var $works = $('.workItem'); // find the portfolio items
+  var showAll = $('.showAll'); // identify the "show all" button
+
+  var cFilter, cFilterData; // declare a variable to store the filter and one for the data to filter by
+  var filtersActive = []; // an array to store the active filters
+
+  $filters.click(function(){ // if filters are clicked
+    cFilter = $(this);
+    cFilterData = cFilter.attr('data-filter'); // read filter value
+
+    highlightFilter();
+    applyFilter();
+  });
+
+  function highlightFilter () {
+    var filterClass = 'filter-active';
+    if (cFilter.parent().hasClass(filterClass)) {
+      cFilter.parent().removeClass(filterClass);
+      removeActiveFilter(cFilterData);
+    } else if (cFilter.hasClass('showAll')) {
+      $filters.parent().removeClass(filterClass);
+      filtersActive = []; // clear the array
+      cFilter.parent().addClass(filterClass);
+    } else {
+      showAll.parent().removeClass(filterClass);
+      cFilter.parent().addClass(filterClass);
+      filtersActive.push(cFilterData);
     }
-  }).appendTo($buttons);
-});  
-}());  
+  }
+
+  function applyFilter() {
+    // go through all portfolio items and hide/show as necessary
+    $works.each(function(){
+      var i;
+      var classes = $(this).attr('class').split(' ');
+      if (cFilter.hasClass('showAll') || filtersActive.length == 0) { // makes sure we catch the array when its empty and revert to the default of showing all items
+        $works.addClass('show-workItem'); //show them all
+      } else {
+        $(this).removeClass('show-workItem');
+        for (i = 0; i < classes.length; i++) {
+          if (filtersActive.indexOf(classes[i]) > -1) {
+            $(this).addClass('show-workItem');
+          }
+        }
+      }
+    });
+  }
+
+  // remove deselected filters from the ActiveFilter array
+  function removeActiveFilter(item) {
+    var index = filtersActive.indexOf(item);
+    if (index > -1) {
+      filtersActive.splice(index, 1);
+    }
+  }
+
 });
