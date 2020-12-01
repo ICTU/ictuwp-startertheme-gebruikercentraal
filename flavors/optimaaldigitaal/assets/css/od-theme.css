@@ -642,12 +642,15 @@ legend {
     clear: both;
     padding-top: 2rem; }
 
-.form-item {
+.form-item,
+.gfield {
   margin-top: 2rem; }
-  .form-item label {
+  .form-item label,
+  .gfield label {
     line-height: 2.6rem; }
   @media (min-width: 700px) {
-    .form-item {
+    .form-item,
+    .gfield {
       position: relative;
       display: -webkit-box;
       display: -ms-flexbox;
@@ -655,15 +658,24 @@ legend {
       -ms-flex-wrap: wrap;
           flex-wrap: wrap;
       margin-top: 3rem; }
-      .form-item label {
+      .form-item label,
+      .gfield label {
         width: 30%;
         padding-right: 3rem;
         text-align: right; }
       .form-item input,
       .form-item textarea,
-      .form-item .form-description {
+      .form-item .form-description,
+      .form-item .ginput_container,
+      .gfield input,
+      .gfield textarea,
+      .gfield .form-description,
+      .gfield .ginput_container {
         width: 70%;
-        margin-left: auto; } }
+        margin-left: auto; }
+      .form-item .ginput_container textarea,
+      .gfield .ginput_container textarea {
+        width: 100%; } }
 
 .form-description {
   font-size: 1.4rem;
@@ -707,11 +719,10 @@ legend {
   .wpcf7 .required,
   .gform_wrapper .gfield_required,
   .gform_wrapper .required {
-    color: #fff;
+    color: #c73d19;
     font-size: 110%;
     display: inline-block;
-    float: right;
-    margin: 0 .5rem; }
+    margin-left: .6rem; }
   .wpcf7 .validation_error,
   .wpcf7 .wpcf7-response-output[style],
   .gform_wrapper .validation_error,
@@ -721,7 +732,8 @@ legend {
     padding: 1.5rem 2rem;
     position: relative;
     padding-left: 4.5rem;
-    line-height: 2.6rem; }
+    line-height: 2.6rem;
+    margin-top: 2rem; }
     .wpcf7 .validation_error:before,
     .wpcf7 .wpcf7-response-output[style]:before,
     .gform_wrapper .validation_error:before,
@@ -758,88 +770,25 @@ legend {
   .wpcf7-form-control-wrap textarea {
     width: 100%; }
 
-/*
+/* Specific styling gravity forms */
+.gform_heading {
+  padding-top: 2rem; }
 
-.wpcf7-form {
-.form-item {
-.wpcf7-form-control-wrap {
-/* CF7 wrapt input elementen nog in een extra span
-flex: 1 0 70%;
+.gform_description {
+  display: block;
+  margin-top: 1.6rem; }
 
-input[type="text"],
-input[type="email"],
-input[type="password"],
-input[type="file"],
-input[type="url"],
-input[type="number"],
-input[type="date"],
-input[type="search"],
-select, textarea {
-  width: 100%;
-}
-}
-}
-}*/
-/* Gravity Forms
------------------------------------------------------- */
-/*
-.gform_wrapper {
-  padding-top: 2rem;
+.gform_fields {
+  margin: 0;
+  padding: 0; }
+  .gform_fields li {
+    list-style: none; }
 
-  ul, ul li, ol, ol li {
-    list-style: none;
-    margin-left: 0;
-    padding-left: 0;
-  }
-
-  .gfield {
-    margin-top: 2rem;
-
-    label {
-      line-height: 2.6rem;
-    }
-
-    @include bp-up(md) {
-      position: relative;
-      display: flex;
-      flex-wrap: wrap;
-      margin-top: $gutter;
-
-      label {
-        width: 30%;
-        padding-right: $gutter;
-        text-align: right;
-      }
-
-      .ginput_container,
-      .form-description {
-        width: 70%;
-        margin-left: auto;
-
-        input[type="text"],
-        input[type="email"],
-        input[type="password"],
-        input[type="file"],
-        input[type="url"],
-        input[type="number"],
-        input[type="date"],
-        input[type="search"],
-        select, textarea {
-          width: 100%;
-        }
-      }
-    }
-  }
-
-  .validation_message {
-    margin-left: 30%;
-  }
-
+@media (min-width: 700px) {
+  .gfield_description,
   .gform_footer {
-    padding-left: 30%;
-  }
-}
-*/
+    margin-left: 30%; } }
+
 /*
 Gutenberg corrections
  */
@@ -2466,11 +2415,16 @@ body:not(.single-event) .entry-content.wrap:last-child {
 .post--full .post__body > .section:first-child.section--paragraph {
   margin-top: 2rem; }
 
-.post--full .post__body > .section:last-child {
+.post--full .post__body > .section:first-child:last-child {
   padding-bottom: 4rem; }
   @media (min-width: 1100px) {
-    .post--full .post__body > .section:last-child {
+    .post--full .post__body > .section:first-child:last-child {
       padding-bottom: 7rem; } }
+
+@media (max-width: 699px) {
+  .post--full .post__body > .section--paragraph {
+    padding-left: 0;
+    padding-right: 0; } }
 
 .post--full .section--bg-option {
   padding-left: 2rem;
