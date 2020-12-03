@@ -1758,6 +1758,18 @@
         margin: -1rem -1rem -1rem 0;
         width: 62%;
         z-index: -1; }
+  .date-badge--with-year {
+    padding-top: 1rem;
+    padding-bottom: 1rem; }
+    .date-badge--with-year span:not(.visually-hidden):not(.date-badge__year) {
+      display: inline-block;
+      font-size: 2.4rem;
+      line-height: 2.4rem;
+      font-family: "league_gothicregular", Impact, Helvetica, Arial, sans-serif; }
+    .date-badge--with-year span.date-badge__year {
+      font-family: "montserratsemibold", Helvetica, Arial, sans-serif;
+      font-size: 1.1rem;
+      line-height: 1.4rem; }
 
 .date-badge__day {
   font-family: "league_gothicregular", Impact, Helvetica, Arial, sans-serif;
@@ -1770,6 +1782,10 @@
   font-family: "montserratsemibold", Helvetica, Arial, sans-serif;
   font-size: 1.1rem;
   line-height: 1.6rem; }
+
+.date-badge__year {
+  font-family: "league_gothicregular", Impact, Helvetica, Arial, sans-serif;
+  font-size: 1.7rem; }
 
 /*
  * Download box
@@ -2081,63 +2097,58 @@
   .meta-data dl,
   .meta-data dd {
     margin: 0;
-    padding: 0; }
-  .meta-data dl {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex; }
+    padding: 0;
+    display: inline-block; }
   .meta-data dt {
     margin-right: .8rem; }
     .meta-data dt:after {
       content: ": "; }
-  .meta-data dd {
-    display: block; }
-    .meta-data dd:after {
-      content: " ";
-      background: #D1DFE3;
-      width: .4rem;
-      height: .4rem;
-      margin: 1.1rem 1rem 0;
-      display: inline-block;
-      float: right; }
-    .meta-data dd:before {
-      display: inline-block;
-      color: #25b34b;
-      margin-right: 1rem;
-      font-size: 1.6rem;
-      float: left; }
-    .meta-data dd:last-child:after {
-      display: none; }
-    .meta-data dd.datum:before {
-      content: "";
-      font-style: normal;
-      font-weight: normal;
-      font-family: 'icons'; }
-    .meta-data dd.price:before {
-      content: "";
-      font-style: normal;
-      font-weight: normal;
-      font-family: 'icons'; }
-    .meta-data dd.tijdstip:before, .meta-data dd.time:before {
-      content: "";
-      font-style: normal;
-      font-weight: normal;
-      font-family: 'icons'; }
-    .meta-data dd.auteur:before, .meta-data dd.author:before {
-      content: "";
-      font-style: normal;
-      font-weight: normal;
-      font-family: 'icons'; }
-    .meta-data dd.locatie:before, .meta-data dd.location:before {
-      content: "";
-      font-style: normal;
-      font-weight: normal;
-      font-family: 'icons'; }
-    .meta-data dd.registrations:before {
-      content: "";
-      font-style: normal;
-      font-weight: normal;
-      font-family: 'icons'; }
+  .meta-data dd:after {
+    content: " ";
+    background: #D1DFE3;
+    width: .4rem;
+    height: .4rem;
+    margin: 1.1rem 1rem 0 1.3rem;
+    display: inline-block;
+    float: right; }
+  .meta-data dd:before {
+    display: inline-block;
+    color: #25b34b;
+    margin-right: 1rem;
+    font-size: 1.6rem;
+    float: left; }
+  .meta-data dd:last-child:after {
+    display: none; }
+  .meta-data dd.datum:before {
+    content: "";
+    font-style: normal;
+    font-weight: normal;
+    font-family: 'icons'; }
+  .meta-data dd.price:before {
+    content: "";
+    font-style: normal;
+    font-weight: normal;
+    font-family: 'icons'; }
+  .meta-data dd.tijdstip:before, .meta-data dd.time:before {
+    content: "";
+    font-style: normal;
+    font-weight: normal;
+    font-family: 'icons'; }
+  .meta-data dd.auteur:before, .meta-data dd.author:before {
+    content: "";
+    font-style: normal;
+    font-weight: normal;
+    font-family: 'icons'; }
+  .meta-data dd.locatie:before, .meta-data dd.location:before {
+    content: "";
+    font-style: normal;
+    font-weight: normal;
+    font-family: 'icons'; }
+  .meta-data dd.registrations:before {
+    content: "";
+    font-style: normal;
+    font-weight: normal;
+    font-family: 'icons'; }
 
 .meta-data__item {
   display: inline-block; }
@@ -2878,5 +2889,3 @@ h2, h3, h4, h5 {
     min-height: 5.5rem; }
     .download-box--with-descr .meta-data {
       width: auto; }
-
-/*# sourceMappingURL=editor-styles.css.map */

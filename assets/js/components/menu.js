@@ -6,7 +6,7 @@
 // @package gebruiker-centraal
 // @author  Tamara de Haas, Paul van Buuren
 // @license GPL-2.0+
-// @version 5.0.24
+// @version 5.0.32
 // @link    https://github.com/ICTU/gebruiker-centraal-wordpress-theme
 
 const breakpointmenu = 1000; // op 1000px toggle tussen desktop / mobiel, zie ook 'nav': 1000px
@@ -19,9 +19,13 @@ const body = document.getElementsByTagName("body");
 
 function hoverListItem(theObject, dinges) {
 
+  theObject.querySelector('button').classList.remove('default');
+
   if (theObject.classList.contains('open')) {
-    // heeft wel class open, dus status is open; nieuwe status wordt: alles sluiten
+    // dit list-item heeft class: .open, dus status is open; nieuwe status wordt: alles sluiten
     theObject.classList.remove('open');
+    theObject.classList.add('closed'); // expliciete class, want klik en mouse-events lopen door elkaar
+
     theObject.querySelector('a').setAttribute('aria-expanded', "false");
     if (typeof theObject.querySelector('button') != 'undefined') {
       theObject.querySelector('button').setAttribute('aria-expanded', "false");
@@ -29,8 +33,10 @@ function hoverListItem(theObject, dinges) {
     theObject.querySelector('ul.main-menu__sublist').classList.add('visuallyhidden');
     theObject.querySelector('ul.main-menu__sublist').setAttribute('aria-expanded', "false");
   } else {
-    // heeft GEEN class open, dus status is niet open; nieuwe status wordt: alles openen
+    // heeft GEEN class: .open, dus status is niet open; nieuwe status wordt: alles openen
     theObject.classList.add('open');
+    theObject.classList.remove('closed');
+
     theObject.querySelector('a').setAttribute('aria-expanded', "true");
     if (typeof theObject.querySelector('button') != 'undefined') {
       theObject.querySelector('button').setAttribute('aria-expanded', "true");
@@ -53,10 +59,10 @@ function openMenuItems() {
       sublist.setAttribute('aria-expanded', "true");
     }
 
-    el.removeEventListener("pointerenter", function (event) {
+    el.removeEventListener("mouseenter", function (event) {
       hoverListItem(this, 'over');
     });
-    el.removeEventListener("pointerleave", function (event) {
+    el.removeEventListener("mouseleave", function (event) {
       hoverListItem(this, 'out');
     });
 
@@ -146,21 +152,34 @@ function doNav(width) {
 
       var currentSubmenus = thisListItem.querySelector('.main-menu__sublist');
       var anchorInListItem = el.querySelector('a');
-      var appendButtonAfterAnchor = '<button class="main-menu__open-sub"><span><span class="visuallyhidden">Submenu voor “' + anchorInListItem.text + '”</span></span></button>';
+      var appendButtonAfterAnchor = '<button class="main-menu__open-sub default"><span><span class="visuallyhidden">Submenu voor “' + anchorInListItem.text + '”</span></span></button>';
       anchorInListItem.insertAdjacentHTML('afterend', appendButtonAfterAnchor);
 
       // verberg het submenu in dit listitem
       currentSubmenus.classList.add('visuallyhidden');
 
-      thisListItem.addEventListener("pointerenter", function (event) {
-        hoverListItem(this, 'over');
-      });
-      thisListItem.addEventListener("pointerleave", function (event) {
-        hoverListItem(this, 'out');
-      });
       el.querySelector('button').addEventListener("click", function (event) {
 
-        if (this.parentNode.classList.contains('open')) {
+        this.classList.remove('default');
+
+        // klikken kan:
+        // - met toetsenbord, zonder hoveracties (bijv. als je alleen met toetsenbord navigeert)
+        // - met muis, dus met hoveracties. In dat geval:
+        //      - kan het list-item al open zijn
+        //      - kan het list-item al gesloten zijn zijn
+
+        var subList = this.parentNode.querySelector('ul.main-menu__sublist');
+        var varExpanded = subList.getAttribute('aria-expanded');
+        var isVisible = true;
+        var isExpanded = false;
+        if ( subList.classList.contains('visuallyhidden') ) {
+          isVisible = false;
+        }
+        if ( varExpanded.toString() !== 'false' ) {
+          isExpanded = true;
+        }
+
+        if ( isExpanded && isVisible ) {
           // heeft wel class open, dus status is open; nieuwe status wordt: alles sluiten
           this.parentNode.classList.remove('open');
           this.parentNode.querySelector('a').setAttribute('aria-expanded', "false");
@@ -178,6 +197,12 @@ function doNav(width) {
           this.parentNode.querySelector('ul.main-menu__sublist').setAttribute('aria-expanded', "true");
         }
         event.preventDefault();
+      });
+      thisListItem.addEventListener("mouseenter", function (event) {
+        hoverListItem(this, 'over');
+      });
+      thisListItem.addEventListener("mouseleave", function (event) {
+        hoverListItem(this, 'out');
       });
 
 

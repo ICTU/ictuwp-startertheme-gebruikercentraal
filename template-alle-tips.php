@@ -11,7 +11,7 @@
 $context              = Timber::context();
 $timber_post          = Timber::query_post();
 $context['post']      = $timber_post;
-$context['filters']   = [];
+$context['filters']   = []; // zet in deze array de tipthema's met naam en class
 $context['tipkaarts'] = [];
 $themakleuren         = get_themakleuren();
 $card                 = [];

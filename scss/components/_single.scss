@@ -16,18 +16,28 @@
     }
 
     .post__body {
-      > .section:first-child {
-        // Make margin smaller if first section is a text one
-        &.section--paragraph {
-          margin-top: 2rem;
+      > .section {
+
+        &:first-child {
+          // Make margin smaller if first section is a text one
+          &.section--paragraph {
+            margin-top: 2rem;
+          }
+
+          &:last-child {
+            padding-bottom: 4rem;
+
+            @include bp-up(lg) {
+              padding-bottom: 7rem;
+            }
+          }
         }
-      }
 
-      > .section:last-child {
-        padding-bottom: 4rem;
-
-        @include bp-up(lg) {
-          padding-bottom: 7rem;
+        &--paragraph {
+          @include bp-down(md){
+            padding-left: 0;
+            padding-right: 0;
+          }
         }
       }
     }

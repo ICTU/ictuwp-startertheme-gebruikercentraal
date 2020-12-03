@@ -1,9 +1,3 @@
-{% set headerlevelcard = 'h2' %}
-
-{% if headerlevel %}
-  {% set headerlevelcard = headerlevel %}
-{% endif %}
-
 <section class="teaser teaser--blog {{ post.get_field('hero_image') ? 'l-with-image' : 'l-without-image' }}" id="tease-{{ post.ID }}">
   <a class="teaser__link" href="{{post.link}}">
     {% if post.get_field('hero_image') %}
