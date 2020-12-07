@@ -1,0 +1,62 @@
+
+.section--list-interlocked {
+  max-width: $max-width-inner;
+  margin: 0 auto;
+}
+
+.blocklist__list {
+  margin: 5rem 0 0 0;
+  padding: 0;
+
+  @include bp-between(sm, md) {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: $gutter;
+  }
+
+  @include bp-up(md) {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: $gutter;
+  }
+}
+
+.blocklist__item {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+
+  h3, h4 {
+    font-size: $base-font-size;
+    line-height: 2.4rem;
+  }
+
+  img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  @include bp-down(sm) {
+    margin-top: $gutter;
+  }
+
+  @include bp-between(sm, md) {
+    &--image {
+      grid-column: span 2;
+    }
+  }
+
+  @include bp-up(md) {
+    &--image {
+      grid-row: span 2;
+      grid-column: span 2;
+    }
+  }
+}
+
+
+.blocklist__sublist {
+  @include gc-fancy-list();
+  margin-top: 1.6rem;
+}

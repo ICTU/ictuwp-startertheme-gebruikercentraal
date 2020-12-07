@@ -6097,6 +6097,66 @@ body:not(.single-event) .entry-content.wrap:last-child {
       color: #148839;
       font-size: 1.2rem; }
 
+.section--list-interlocked {
+  max-width: 760px;
+  margin: 0 auto; }
+
+.blocklist__list {
+  margin: 5rem 0 0 0;
+  padding: 0; }
+  @media (min-width: 560px) and (max-width: 699px) {
+    .blocklist__list {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      grid-gap: 3rem; } }
+  @media (min-width: 700px) {
+    .blocklist__list {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-gap: 3rem; } }
+
+.blocklist__item {
+  list-style: none;
+  padding: 0;
+  margin: 0; }
+  .blocklist__item h3, .blocklist__item h4 {
+    font-size: 1.8rem;
+    line-height: 2.4rem; }
+  .blocklist__item img {
+    width: 100%;
+    height: auto;
+    display: block; }
+  @media (max-width: 559px) {
+    .blocklist__item {
+      margin-top: 3rem; } }
+  @media (min-width: 560px) and (max-width: 699px) {
+    .blocklist__item--image {
+      grid-column: span 2; } }
+  @media (min-width: 700px) {
+    .blocklist__item--image {
+      grid-row: span 2;
+      grid-column: span 2; } }
+
+.blocklist__sublist {
+  margin: 0;
+  padding: 0;
+  margin-top: 1.6rem; }
+  .blocklist__sublist li {
+    list-style: none;
+    position: relative;
+    padding-left: 2.5rem; }
+    .blocklist__sublist li:before {
+      content: "";
+      font-style: normal;
+      font-weight: normal;
+      font-family: 'icons'; }
+    .blocklist__sublist li:before {
+      position: absolute;
+      left: 0;
+      top: .1rem;
+      color: #148839;
+      font-size: 1.2rem; }
+
 /* Sites with stepchart */
 .stepchart {
   position: relative;
