@@ -5140,26 +5140,58 @@ body:not(.single-event) .entry-content.wrap:last-child {
 .item--filter label:hover {
   border-color: #148839; }
 
+.item--filter label:focus {
+  border-color: #148839;
+  text-decoration: underline; }
+
 .item--filter.commitment label:hover {
   border-color: #148839; }
+
+.item--filter.commitment label:focus {
+  border-color: #148839;
+  text-decoration: underline; }
 
 .item--filter.informatieveiligheid label:hover {
   border-color: #A20E56; }
 
+.item--filter.informatieveiligheid label:focus {
+  border-color: #A20E56;
+  text-decoration: underline; }
+
 .item--filter.samenwerking label:hover {
   border-color: #007BB0; }
+
+.item--filter.samenwerking label:focus {
+  border-color: #007BB0;
+  text-decoration: underline; }
 
 .item--filter.procesaanpak label:hover {
   border-color: #00b4ac; }
 
+.item--filter.procesaanpak label:focus {
+  border-color: #00b4ac;
+  text-decoration: underline; }
+
 .item--filter.gebruiksgemak label:hover {
   border-color: #2D114E; }
+
+.item--filter.gebruiksgemak label:focus {
+  border-color: #2D114E;
+  text-decoration: underline; }
 
 .item--filter.kanaalsturing label:hover {
   border-color: #f99d1c; }
 
+.item--filter.kanaalsturing label:focus {
+  border-color: #f99d1c;
+  text-decoration: underline; }
+
 .item--filter.inclusie label:hover:hover {
   border-color: #c73d19; }
+
+.item--filter.inclusie label:hover:focus {
+  border-color: #c73d19;
+  text-decoration: underline; }
 
 .item--filter.filter-active label:before {
   border-color: #fff;
@@ -5207,7 +5239,7 @@ body:not(.single-event) .entry-content.wrap:last-child {
   .item--filter.inclusie.filter-active:before {
     border-color: #b03616; }
 
-.filter button {
+.item--filter input {
   border: 0;
   clip: rect(1px, 1px, 1px, 1px);
   height: 1px;
@@ -7308,3 +7340,5 @@ browser exceptions
   .header-widget-area {
     padding-top: 1rem;
     width: 30%; } }
+
+/*# sourceMappingURL=od-theme.css.map */

@@ -50,41 +50,73 @@
   &:hover{
     border-color: $gc_a11y_green;
   }
+  &:focus{
+    border-color: $gc_a11y_green;
+    text-decoration: underline;
+  }
 }
 
 .item--filter.commitment label{
   &:hover {
     border-color: $gc_a11y_green;
   }
+  &:focus {
+    border-color: $gc_a11y_green;
+    text-decoration: underline;
+  }
 }
 .item--filter.informatieveiligheid label{
   &:hover {
     border-color: $gc_pink_darker;
+  }
+  &:focus {
+    border-color: $gc_pink_darker;
+    text-decoration: underline;
   }
 }
 .item--filter.samenwerking label{
   &:hover {
     border-color: $gc_a11y_blue;
   }
+  &:focus {
+    border-color: $gc_a11y_blue;
+    text-decoration: underline;
+  }
 }
 .item--filter.procesaanpak label{
   &:hover {
     border-color: $gc_cyan;
+  }
+  &:focus {
+    border-color: $gc_cyan;
+    text-decoration: underline;
   }
 }
 .item--filter.gebruiksgemak label{
   &:hover {
     border-color: $gc_dark_purple_darker;
   }
+  &:focus {
+    border-color: $gc_dark_purple_darker;
+    text-decoration: underline;
+  }
 }
 .item--filter.kanaalsturing label{
   &:hover {
     border-color: $gc_orange;
   }
+  &:focus {
+    border-color: $gc_orange;
+    text-decoration: underline;
+  }
 }
-.item--filter.inclusie label:hover{
+.item--filter.inclusie label{
   &:hover {
     border-color: $inc_a11y_orange;
+  }
+  &:focus {
+    border-color: $inc_a11y_orange;
+    text-decoration: underline;
   }
 }
 
@@ -144,7 +176,7 @@
   }
 }
 
-.filter button {
+.item--filter input {
   border: 0;
   clip: rect(1px, 1px, 1px, 1px);
   height: 1px;
