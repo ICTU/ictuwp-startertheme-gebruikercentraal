@@ -729,7 +729,6 @@ class GebruikerCentraalTheme extends Timber\Site {
 					// for Optimaal Digitaal, add tip templates
 					$allowed_templates["template-overzicht-tipgevers.php"] = "[OD] Overzicht alle tipgevers";
 					$allowed_templates["template-alle-tips.php"]           = "[OD] Overzicht alle tips";
-					$allowed_templates["template-od-spelleiders.php"]      = "[OD] Overzicht spelleiders";
 					$allowed_templates["template-od-home.php"]             = "[OD] Template Home";
 					$allowed_templates["template-od-handleiding.php"]      = "[OD] Template Handleiding";
 					break;
