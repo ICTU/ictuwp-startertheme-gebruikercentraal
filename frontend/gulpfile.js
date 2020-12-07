@@ -260,17 +260,17 @@ function watch() {
     proxy: siteConfig.proxy
   });
 
-  gulp.watch('../assets/js/components/*.js', js);
-  gulp.watch('../assets/images/icons/*.svg', gulp.series(makeFont, styles));
+  gulp.watch('../assets/js/components/*.js',{ usePolling: true }, js);
+  gulp.watch('../assets/images/icons/*.svg',{ usePolling: true }, gulp.series(makeFont, styles));
 
   // Watch basetheme + flavor
   if (siteConfig.shortname === 'gc_base') {
     console.log("Extra folder in de gaten houden, want " + siteConfig.shortname + ': ' + siteConfig.path + 'scss/');
     // Watch flavor from siteconfog
-    gulp.watch('../scss/**/*.scss', gulp.series(styles));
+    gulp.watch('../scss/**/*.scss',{ usePolling: true }, gulp.series(styles));
   } else {
-    gulp.watch(siteConfig.path + 'scss/**/*.scss', styles);
-    gulp.watch('../scss/**/*.scss', gulp.series(baseStyles, styles));
+    gulp.watch(siteConfig.path + 'scss/**/*.scss',{ usePolling: true }, styles);
+    gulp.watch('../scss/**/*.scss',{ usePolling: true }, gulp.series(baseStyles, styles));
   }
 
 }
