@@ -5144,6 +5144,12 @@ body:not(.single-event) .entry-content.wrap:last-child {
   border-color: #148839;
   text-decoration: underline; }
 
+.item--filter input:focus + label {
+  border-color: #148839; }
+
+.item--filter.informatieveiligheid input:focus + label {
+  border-color: #A20E56; }
+
 .item--filter.commitment label:hover {
   border-color: #148839; }
 
@@ -5186,10 +5192,10 @@ body:not(.single-event) .entry-content.wrap:last-child {
   border-color: #f99d1c;
   text-decoration: underline; }
 
-.item--filter.inclusie label:hover:hover {
+.item--filter.inclusie label:hover {
   border-color: #c73d19; }
 
-.item--filter.inclusie label:hover:focus {
+.item--filter.inclusie label:focus {
   border-color: #c73d19;
   text-decoration: underline; }
 
@@ -7340,5 +7346,3 @@ browser exceptions
   .header-widget-area {
     padding-top: 1rem;
     width: 30%; } }
-
-/*# sourceMappingURL=od-theme.css.map */

@@ -1,4 +1,4 @@
-.filter{
+.filter {
   @include ho-make-container($max-width-container);
   margin-top: 4rem;
   display: flex;
@@ -16,7 +16,7 @@
   display: flex;
   font-family: $font-primary-semi;
 
-  &:before{
+  &:before {
     content: " ";
     display: inline-block;
     width: 2.4rem;
@@ -30,90 +30,116 @@
 
 
 }
-.item--filter{
+
+.item--filter {
   margin: 1.4rem 0.7rem 0;
 }
 
 
+.item--filter {
+  label {
+    &:before {
+      content: " ";
+      display: inline-block;
+      width: 2.4rem;
+      height: 2.4rem;
+      border: 0.1rem solid $gc-darkest-blue;
+      margin-right: 1.5rem;
+      -webkit-transition: border-color 0.2s;
+      transition: border-color 0.2s;
+    }
 
-.item--filter label {
-  &:before {
-    content: " ";
-    display: inline-block;
-    width: 2.4rem;
-    height: 2.4rem;
-    border: 0.1rem solid $gc-darkest-blue;
-    margin-right: 1.5rem;
-    -webkit-transition: border-color 0.2s;
-    transition: border-color 0.2s;
+    &:hover {
+      border-color: $gc_a11y_green;
+    }
+
+    &:focus {
+      border-color: $gc_a11y_green;
+      text-decoration: underline;
+    }
   }
-  &:hover{
-    border-color: $gc_a11y_green;
+
+  input:focus + label {
+    border-color: $gc-a11y-green;
   }
-  &:focus{
-    border-color: $gc_a11y_green;
-    text-decoration: underline;
+
+  // zo kan je het iets korter schrijven
+  &.informatieveiligheid input:focus + label {
+    border-color: $gc_pink_darker;
   }
 }
 
-.item--filter.commitment label{
+.item--filter.commitment label {
   &:hover {
     border-color: $gc_a11y_green;
   }
+
   &:focus {
     border-color: $gc_a11y_green;
     text-decoration: underline;
   }
 }
-.item--filter.informatieveiligheid label{
+
+.item--filter.informatieveiligheid label {
   &:hover {
     border-color: $gc_pink_darker;
   }
+
   &:focus {
     border-color: $gc_pink_darker;
     text-decoration: underline;
   }
 }
-.item--filter.samenwerking label{
+
+.item--filter.samenwerking label {
   &:hover {
     border-color: $gc_a11y_blue;
   }
+
   &:focus {
     border-color: $gc_a11y_blue;
     text-decoration: underline;
   }
 }
-.item--filter.procesaanpak label{
+
+.item--filter.procesaanpak label {
   &:hover {
     border-color: $gc_cyan;
   }
+
   &:focus {
     border-color: $gc_cyan;
     text-decoration: underline;
   }
 }
-.item--filter.gebruiksgemak label{
+
+.item--filter.gebruiksgemak label {
   &:hover {
     border-color: $gc_dark_purple_darker;
   }
+
   &:focus {
     border-color: $gc_dark_purple_darker;
     text-decoration: underline;
   }
 }
-.item--filter.kanaalsturing label{
+
+.item--filter.kanaalsturing label {
   &:hover {
     border-color: $gc_orange;
   }
+
   &:focus {
     border-color: $gc_orange;
     text-decoration: underline;
   }
 }
-.item--filter.inclusie label{
+
+.item--filter.inclusie label {
   &:hover {
     border-color: $inc_a11y_orange;
   }
+
   &:focus {
     border-color: $inc_a11y_orange;
     text-decoration: underline;
@@ -129,50 +155,65 @@
 .item--filter.filter-active {
   background: $gc_a11y_green;
   color: $white;
-  &:before{
-    border-color: darken($gc_a11y_green,5%);
+
+  &:before {
+    border-color: darken($gc_a11y_green, 5%);
   }
 }
+
 .item--filter.commitment.filter-active {
-   background: $gc_a11y_green;
-   &:before{
-     border-color: darken($gc_a11y_green,5%);
-   }
+  background: $gc_a11y_green;
+
+  &:before {
+    border-color: darken($gc_a11y_green, 5%);
+  }
 }
+
 .item--filter.informatieveiligheid.filter-active {
   background: $gc_pink_darker;
-  &:before{
-    border-color: darken($gc_pink_darker,5%);
+
+  &:before {
+    border-color: darken($gc_pink_darker, 5%);
   }
 }
+
 .item--filter.samenwerking.filter-active {
   background: $gc_a11y_blue;
-  &:before{
-    border-color: darken($gc_a11y_blue,5%);
+
+  &:before {
+    border-color: darken($gc_a11y_blue, 5%);
   }
 }
+
 .item--filter.procesaanpak.filter-active {
   background: $gc_cyan;
-  &:before{
-    border-color: darken($gc_cyan,5%);
+
+  &:before {
+    border-color: darken($gc_cyan, 5%);
   }
 }
+
 .item--filter.gebruiksgemak.filter-active {
   background: $gc_dark_purple_darker;
-  &:before{
-    border-color: darken($gc_dark_purple_darker,5%);
+
+  &:before {
+    border-color: darken($gc_dark_purple_darker, 5%);
   }
 }
+
 .item--filter.kanaalsturing.filter-active {
   background: $gc_orange;
-  &:before{
-    border-color: darken($gc_orange,5%);
+
+  &:before {
+    border-color: darken($gc_orange, 5%);
   }
 }
+
 .item--filter.inclusie.filter-active {
   background: $inc_a11y_orange;
-  &:before{
-    border-color: darken($inc_a11y_orange,5%);
+
+  &:before {
+    border-color: darken($inc_a11y_orange, 5%);
   }
 }
 
