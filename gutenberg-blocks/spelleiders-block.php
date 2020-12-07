@@ -49,19 +49,49 @@ function gb_render_spelleiders_block( $block, $content = '', $is_preview = false
 function spelleiders_block_get_data() {
 
 	global $post;
+	$imagesize_for_thumbs = IMAGESIZE_16x9;
 
-	$return                  = [];
-	$gc_gt_spelleiders_title = get_field( 'gc_gt_spelleiders_organisatie' );
-	$gc_gt_spelleiders_list                    = get_field( 'gc_gt_spelleiders_list' );
+	$return                  = array();
+	$gc_gt_spelleiders_list  = get_field( 'gc_gt_spelleiders_blokken' );
+	$gc_gt_spelleiders_titel = get_field( 'gc_gt_spelleiders_titel' );
+
+
 	if ( $gc_gt_spelleiders_list ) {
 
-		$return['title']   = $gc_gt_spelleiders_title;
-		$return['items']   = array();
+		$return = array();
+		if ( $gc_gt_spelleiders_titel ) {
+			$return['blocktitel'] = $gc_gt_spelleiders_titel;
+		}
 
-		foreach ( $gc_gt_spelleiders_list as $spelleider ) {
-			$spelleidernaam = $spelleider['gc_gt_spelleiders_spelleidernaam'];
-			if ( $spelleidernaam ) {
-				$return['items'][] = $spelleidernaam;
+		foreach ( $gc_gt_spelleiders_list as $block ) {
+
+			$item     = array();
+			$typeblok = $block['gc_gt_spelleiders_typeblok'];
+
+			if ( 'gc_gt_spelleiders_typeblok_foto' === $typeblok ) {
+				// een foto tonen
+				$image             = $block['gc_gt_spelleiders_foto'];
+				$item['image']     = $image['sizes'][ $imagesize_for_thumbs ];
+				$item['image_alt'] = $image['alt'];
+
+			} else {
+				// we gaan een lijstje met namen opstellen
+				$namen = $block['gc_gt_spelleiders_list'];
+
+				if ( $namen ):
+					// er zitten namen in de lijst
+					$item['title'] = $block['gc_gt_spelleiders_organisatie'];
+
+					foreach ( $namen as $naam ) {
+						$item['namen'][] = $naam['gc_gt_spelleiders_spelleidernaam'];
+					}
+
+				endif;
+			}
+
+
+			if ( $item ) {
+				$return['items'][] = $item;
 			}
 		}
 	}

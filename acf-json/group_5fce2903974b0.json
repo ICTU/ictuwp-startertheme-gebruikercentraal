@@ -3,28 +3,28 @@
     "title": "GC Spelleiders-block",
     "fields": [
         {
-            "key": "field_5fce2903ac51e",
-            "label": "Organisatienaam",
-            "name": "gc_gt_spelleiders_organisatie",
+            "key": "field_5fce7f66e6cb0",
+            "label": "Titel",
+            "name": "gc_gt_spelleiders_titel",
             "type": "text",
             "instructions": "",
-            "required": 1,
+            "required": 0,
             "conditional_logic": 0,
             "wrapper": {
                 "width": "",
                 "class": "",
                 "id": ""
             },
-            "default_value": "",
+            "default_value": "Overzicht spelleiders",
             "placeholder": "",
             "prepend": "",
             "append": "",
             "maxlength": ""
         },
         {
-            "key": "field_5fce2a49a24c9",
-            "label": "Lijst met spelleiders",
-            "name": "gc_gt_spelleiders_list",
+            "key": "field_5fce5a8410ef1",
+            "label": "Voeg hier de blokken met organisatienamen en spelleiders toe",
+            "name": "gc_gt_spelleiders_blokken",
             "type": "repeater",
             "instructions": "",
             "required": 0,
@@ -34,20 +34,52 @@
                 "class": "",
                 "id": ""
             },
-            "collapsed": "",
-            "min": 1,
+            "collapsed": "field_5fce5b0df6c20",
+            "min": 0,
             "max": 0,
-            "layout": "table",
-            "button_label": "Spelleider toevoegen",
+            "layout": "block",
+            "button_label": "Nieuw blok toevoegen",
             "sub_fields": [
                 {
-                    "key": "field_5fce2a66a24ca",
-                    "label": "Naam van spelleider",
-                    "name": "gc_gt_spelleiders_spelleidernaam",
-                    "type": "text",
+                    "key": "field_5fce5aa6f6c1f",
+                    "label": "Namen of foto?",
+                    "name": "gc_gt_spelleiders_typeblok",
+                    "type": "radio",
                     "instructions": "",
                     "required": 1,
                     "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "choices": {
+                        "gc_gt_spelleiders_typeblok_namen": "Blok met namen",
+                        "gc_gt_spelleiders_typeblok_foto": "Blok met foto"
+                    },
+                    "allow_null": 0,
+                    "other_choice": 0,
+                    "default_value": "gc_gt_spelleiders_typeblok_namen",
+                    "layout": "vertical",
+                    "return_format": "value",
+                    "save_other_choice": 0
+                },
+                {
+                    "key": "field_5fce5b0df6c20",
+                    "label": "Organisatie",
+                    "name": "gc_gt_spelleiders_organisatie",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 1,
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_5fce5aa6f6c1f",
+                                "operator": "==",
+                                "value": "gc_gt_spelleiders_typeblok_namen"
+                            }
+                        ]
+                    ],
                     "wrapper": {
                         "width": "",
                         "class": "",
@@ -58,6 +90,86 @@
                     "prepend": "",
                     "append": "",
                     "maxlength": ""
+                },
+                {
+                    "key": "field_5fce5bd0db564",
+                    "label": "Namen",
+                    "name": "gc_gt_spelleiders_list",
+                    "type": "repeater",
+                    "instructions": "",
+                    "required": 1,
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_5fce5aa6f6c1f",
+                                "operator": "==",
+                                "value": "gc_gt_spelleiders_typeblok_namen"
+                            }
+                        ]
+                    ],
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "collapsed": "field_5fce5c07db565",
+                    "min": 1,
+                    "max": 0,
+                    "layout": "table",
+                    "button_label": "Naam toevoegen",
+                    "sub_fields": [
+                        {
+                            "key": "field_5fce5c07db565",
+                            "label": "Naam",
+                            "name": "gc_gt_spelleiders_spelleidernaam",
+                            "type": "text",
+                            "instructions": "",
+                            "required": 1,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": "",
+                            "maxlength": ""
+                        }
+                    ]
+                },
+                {
+                    "key": "field_5fce5d50cfd8a",
+                    "label": "Foto",
+                    "name": "gc_gt_spelleiders_foto",
+                    "type": "image",
+                    "instructions": "Voeg een foto toe met als verhoudingen 16:9 (breedte:hoogte)",
+                    "required": 1,
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_5fce5aa6f6c1f",
+                                "operator": "==",
+                                "value": "gc_gt_spelleiders_typeblok_foto"
+                            }
+                        ]
+                    ],
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "return_format": "array",
+                    "preview_size": "medium",
+                    "library": "all",
+                    "min_width": "",
+                    "min_height": "",
+                    "min_size": "",
+                    "max_width": "",
+                    "max_height": "",
+                    "max_size": "",
+                    "mime_types": ""
                 }
             ]
         }
@@ -79,5 +191,5 @@
     "hide_on_screen": "",
     "active": true,
     "description": "",
-    "modified": 1607346992
+    "modified": 1607368890
 }

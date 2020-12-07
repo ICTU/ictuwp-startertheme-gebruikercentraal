@@ -6122,7 +6122,7 @@ body:not(.single-event) .entry-content.wrap:last-child {
   list-style: none;
   padding: 0;
   margin: 0; }
-  .blocklist__item h3, .blocklist__item h4 {
+  .blocklist__item h2, .blocklist__item h3, .blocklist__item h4 {
     font-size: 1.8rem;
     line-height: 2.4rem; }
   .blocklist__item img {
