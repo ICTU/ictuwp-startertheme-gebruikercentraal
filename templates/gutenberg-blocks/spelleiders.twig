@@ -1,0 +1,57 @@
+{#
+/**
+ * Block Name: GC Gutenberg block for text and image
+ *
+ * Gutenberg block voor het tonen van Call To Action (CTA)
+ */
+#}
+
+{% if is_preview %}
+  <style type="text/css">
+    #cta-{{ block.id }} {
+      margin-top: 0;
+      overflow: hidden;
+      border: 3px dashed #dadada;
+    }
+
+    #cta-{{ block.id }} h2 {
+      font-size: 1.5rem;
+      margin: 0;
+      padding-top: .5rem;
+      padding-bottom: .5rem;
+    }
+
+    #cta-{{ block.id }} .manual-item__content .manual-item__content {
+      border: 3px solid red;
+    }
+
+    #cta-{{ block.id }} .manual-item__content .manual-item__content:before {
+      content: 'Dubbel block, check je tekst en probeer opnieuw';
+      display: block;
+      color: white;
+      background: black;
+      padding: .5rem;
+    }
+
+  </style>
+{% endif %}
+
+{% if is_preview %}
+
+{% else %}
+
+{% endif %}
+
+<div style="border: 2px solid red; paddding: 1rem;">
+  {% if spelleiders.title %}
+    <h2>{{ spelleiders.title }}</h2>
+  {% endif %}
+  {% if spelleiders.items %}
+    <ul>
+      {% for item in spelleiders.items %}
+        <li>{{ item }}</li>
+      {% endfor %}
+    </ul>
+  {% endif %}
+
+</div>

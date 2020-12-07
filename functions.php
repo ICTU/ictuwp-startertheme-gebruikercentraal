@@ -104,6 +104,8 @@ require_once( get_template_directory() . '/gutenberg-blocks/teaser-block.php' );
 
 // TODO: het block voor de handleiding zou alleen beschikbaar voor pagina's met het template 'template-od-handleiding.php'
 require_once( get_template_directory() . '/gutenberg-blocks/handleiding-block.php' );
+require_once( get_template_directory() . '/gutenberg-blocks/spelleiders-block.php' );
+
 
 /**
  * Load other dependencies such as VAR DUMPER :D
@@ -727,15 +729,14 @@ class GebruikerCentraalTheme extends Timber\Site {
 					// for Optimaal Digitaal, add tip templates
 					$allowed_templates["template-overzicht-tipgevers.php"] = "[OD] Overzicht alle tipgevers";
 					$allowed_templates["template-alle-tips.php"]           = "[OD] Overzicht alle tips";
-					//					$allowed_templates["template-tips.php"]                = "[OD] Template tips-pagina";
-					$allowed_templates["template-od-home.php"]        = "[OD] Template Home";
-					$allowed_templates["template-od-handleiding.php"] = "[OD] Template Handleiding";
-
+					$allowed_templates["template-od-spelleiders.php"]      = "[OD] Overzicht spelleiders";
+					$allowed_templates["template-od-home.php"]             = "[OD] Template Home";
+					$allowed_templates["template-od-handleiding.php"]      = "[OD] Template Handleiding";
 					break;
-				case 'KB':
-					// for Optimaal Digitaal, add tip templates
-					$allowed_templates["template-beeldbieb.php"] = "Beeldbieb";
 
+				case 'KB':
+					//
+					$allowed_templates["template-beeldbieb.php"] = "Beeldbieb";
 					break;
 
 				default:

@@ -1,0 +1,83 @@
+{
+    "key": "group_5fce2903974b0",
+    "title": "GC Spelleiders-block",
+    "fields": [
+        {
+            "key": "field_5fce2903ac51e",
+            "label": "Organisatienaam",
+            "name": "gc_gt_spelleiders_organisatie",
+            "type": "text",
+            "instructions": "",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_5fce2a49a24c9",
+            "label": "Lijst met spelleiders",
+            "name": "gc_gt_spelleiders_list",
+            "type": "repeater",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "collapsed": "",
+            "min": 1,
+            "max": 0,
+            "layout": "table",
+            "button_label": "Spelleider toevoegen",
+            "sub_fields": [
+                {
+                    "key": "field_5fce2a66a24ca",
+                    "label": "Naam van spelleider",
+                    "name": "gc_gt_spelleiders_spelleidernaam",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 1,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "maxlength": ""
+                }
+            ]
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "block",
+                "operator": "==",
+                "value": "acf\/gc-spelleiders"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "modified": 1607346992
+}
