@@ -33,7 +33,7 @@ select, textarea {
   }
 
   // Error
-  &[aria-invalid="true"]{
+  &[aria-invalid="true"] {
     @include gc-box-shadow($inc-a11y-orange, 0.2);
     border-color: $inc-a11y-orange;
 
@@ -223,7 +223,8 @@ legend {
   }
 }
 
-.form-item {
+.form-item,
+.gfield {
   margin-top: 2rem;
 
   label {
@@ -244,9 +245,16 @@ legend {
 
     input,
     textarea,
-    .form-description {
+    .form-description,
+    .ginput_container {
       width: 70%;
       margin-left: auto;
+    }
+
+    // If textarea is in container of some sorts
+    // make it fullwidth
+    .ginput_container textarea {
+      width: 100%;
     }
   }
 }
@@ -294,11 +302,11 @@ legend {
   .gfield_required,
   .required {
     // de asterisk die een verplicht veld markeert
-    color: $form-error-color;
+    color: $form-error-descr;
     font-size: 110%;
     display: inline-block;
-    float: right;
-    margin: 0 .5rem;
+    //float: right; dit zorgt ervoor dat op mobile de asteriksen rechts uitlijnen
+    margin-left: .6rem;
   }
 
   .validation_error,
@@ -311,6 +319,7 @@ legend {
     position: relative;
     padding-left: 4.5rem;
     line-height: 2.6rem;
+    margin-top: 2rem;
 
     &:before {
       position: absolute;
@@ -344,87 +353,29 @@ legend {
 }
 
 
-/*
+/* Specific styling gravity forms */
 
-.wpcf7-form {
-.form-item {
-.wpcf7-form-control-wrap {
-/* CF7 wrapt input elementen nog in een extra span
-flex: 1 0 70%;
-
-input[type="text"],
-input[type="email"],
-input[type="password"],
-input[type="file"],
-input[type="url"],
-input[type="number"],
-input[type="date"],
-input[type="search"],
-select, textarea {
-  width: 100%;
-}
-}
-}
-}*/
-
-/* Gravity Forms
------------------------------------------------------- */
-
-/*
-.gform_wrapper {
+.gform_heading {
   padding-top: 2rem;
+}
 
-  ul, ul li, ol, ol li {
+.gform_description {
+  display: block;
+  margin-top: 1.6rem;
+}
+
+.gform_fields {
+  margin: 0;
+  padding: 0;
+
+  li {
     list-style: none;
-    margin-left: 0;
-    padding-left: 0;
   }
+}
 
-  .gfield {
-    margin-top: 2rem;
-
-    label {
-      line-height: 2.6rem;
-    }
-
-    @include bp-up(md) {
-      position: relative;
-      display: flex;
-      flex-wrap: wrap;
-      margin-top: $gutter;
-
-      label {
-        width: 30%;
-        padding-right: $gutter;
-        text-align: right;
-      }
-
-      .ginput_container,
-      .form-description {
-        width: 70%;
-        margin-left: auto;
-
-        input[type="text"],
-        input[type="email"],
-        input[type="password"],
-        input[type="file"],
-        input[type="url"],
-        input[type="number"],
-        input[type="date"],
-        input[type="search"],
-        select, textarea {
-          width: 100%;
-        }
-      }
-    }
-  }
-
-  .validation_message {
+.gfield_description,
+.gform_footer {
+  @include bp-up(md) {
     margin-left: 30%;
   }
-
-  .gform_footer {
-    padding-left: 30%;
-  }
 }
-*/

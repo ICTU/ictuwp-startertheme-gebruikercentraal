@@ -2097,63 +2097,58 @@
   .meta-data dl,
   .meta-data dd {
     margin: 0;
-    padding: 0; }
-  .meta-data dl {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex; }
+    padding: 0;
+    display: inline-block; }
   .meta-data dt {
     margin-right: .8rem; }
     .meta-data dt:after {
       content: ": "; }
-  .meta-data dd {
-    display: block; }
-    .meta-data dd:after {
-      content: " ";
-      background: #D1DFE3;
-      width: .4rem;
-      height: .4rem;
-      margin: 1.1rem 1rem 0;
-      display: inline-block;
-      float: right; }
-    .meta-data dd:before {
-      display: inline-block;
-      color: #25b34b;
-      margin-right: 1rem;
-      font-size: 1.6rem;
-      float: left; }
-    .meta-data dd:last-child:after {
-      display: none; }
-    .meta-data dd.datum:before {
-      content: "";
-      font-style: normal;
-      font-weight: normal;
-      font-family: 'icons'; }
-    .meta-data dd.price:before {
-      content: "";
-      font-style: normal;
-      font-weight: normal;
-      font-family: 'icons'; }
-    .meta-data dd.tijdstip:before, .meta-data dd.time:before {
-      content: "";
-      font-style: normal;
-      font-weight: normal;
-      font-family: 'icons'; }
-    .meta-data dd.auteur:before, .meta-data dd.author:before {
-      content: "";
-      font-style: normal;
-      font-weight: normal;
-      font-family: 'icons'; }
-    .meta-data dd.locatie:before, .meta-data dd.location:before {
-      content: "";
-      font-style: normal;
-      font-weight: normal;
-      font-family: 'icons'; }
-    .meta-data dd.registrations:before {
-      content: "";
-      font-style: normal;
-      font-weight: normal;
-      font-family: 'icons'; }
+  .meta-data dd:after {
+    content: " ";
+    background: #D1DFE3;
+    width: .4rem;
+    height: .4rem;
+    margin: 1.1rem 1rem 0 1.3rem;
+    display: inline-block;
+    float: right; }
+  .meta-data dd:before {
+    display: inline-block;
+    color: #25b34b;
+    margin-right: 1rem;
+    font-size: 1.6rem;
+    float: left; }
+  .meta-data dd:last-child:after {
+    display: none; }
+  .meta-data dd.datum:before {
+    content: "";
+    font-style: normal;
+    font-weight: normal;
+    font-family: 'icons'; }
+  .meta-data dd.price:before {
+    content: "";
+    font-style: normal;
+    font-weight: normal;
+    font-family: 'icons'; }
+  .meta-data dd.tijdstip:before, .meta-data dd.time:before {
+    content: "";
+    font-style: normal;
+    font-weight: normal;
+    font-family: 'icons'; }
+  .meta-data dd.auteur:before, .meta-data dd.author:before {
+    content: "";
+    font-style: normal;
+    font-weight: normal;
+    font-family: 'icons'; }
+  .meta-data dd.locatie:before, .meta-data dd.location:before {
+    content: "";
+    font-style: normal;
+    font-weight: normal;
+    font-family: 'icons'; }
+  .meta-data dd.registrations:before {
+    content: "";
+    font-style: normal;
+    font-weight: normal;
+    font-family: 'icons'; }
 
 .meta-data__item {
   display: inline-block; }
@@ -2894,5 +2889,3 @@ h2, h3, h4, h5 {
     min-height: 5.5rem; }
     .download-box--with-descr .meta-data {
       width: auto; }
-
-/*# sourceMappingURL=editor-styles.css.map */

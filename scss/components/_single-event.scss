@@ -14,11 +14,34 @@
         left: 0;
         top: 0;
         margin-left: -3rem;
+
       }
 
       @include bp-up(sm) {
         .date-badge {
           margin-left: -5rem;
+        }
+      }
+
+      @include bp-down(lg) {
+        // Alles onder elkaar op mobiel anders past 't niet
+        .date-badge--with-year {
+          padding-top: 1.6rem;
+
+          span:not(.visually-hidden):not(.date-badge__year) {
+            display: block;
+          }
+
+          .date-badge {
+            &__day {
+              font-size: 3.2rem;
+            }
+
+            &__day,
+            &__month {
+              line-height: 2.2rem;
+            }
+          }
         }
       }
 
@@ -28,6 +51,10 @@
 
         .date-badge {
           margin-left: -4rem;
+
+          &--with-year {
+            margin-left: -6rem;
+          }
         }
       }
     }
