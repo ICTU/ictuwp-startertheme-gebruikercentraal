@@ -33,6 +33,12 @@ $(document).ready(function(){
   var cFilter, cFilterData; // declare a variable to store the filter and one for the data to filter by
   var filtersActive = []; // an array to store the active filters
 
+  $filters.keypress(function(e){
+    if((e.keyCode ? e.keyCode : e.which) == 13){
+      $(this).trigger('click');
+    }
+  });
+
   $filters.click(function(){ // if filters are clicked
     cFilter = $(this);
     cFilterData = cFilter.attr('data-filter'); // read filter value

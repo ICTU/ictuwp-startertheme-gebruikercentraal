@@ -66,84 +66,61 @@
   // zo kan je het iets korter schrijven
   &.informatieveiligheid input:focus + label {
     border-color: $gc_pink_darker;
-  }
-}
-
-.item--filter.commitment label {
-  &:hover {
-    border-color: $gc_a11y_green;
-  }
-
-  &:focus {
-    border-color: $gc_a11y_green;
     text-decoration: underline;
   }
-}
-
-.item--filter.informatieveiligheid label {
-  &:hover {
-    border-color: $gc_pink_darker;
-  }
-
-  &:focus {
+  &.informatieveiligheid input:hover + label {
     border-color: $gc_pink_darker;
     text-decoration: underline;
   }
-}
-
-.item--filter.samenwerking label {
-  &:hover {
-    border-color: $gc_a11y_blue;
+  &.commitment input:focus + label {
+    border-color: $gc_a11y_green;
+    text-decoration: underline;
   }
-
-  &:focus {
+  &.commitment input:hover + label {
+    border-color: $gc_a11y_green;
+    text-decoration: underline;
+  }
+  &.samenwerking input:focus + label {
     border-color: $gc_a11y_blue;
     text-decoration: underline;
   }
-}
-
-.item--filter.procesaanpak label {
-  &:hover {
-    border-color: $gc_cyan;
+  &.samenwerking input:hover + label {
+    border-color: $gc_a11y_blue;
+    text-decoration: underline;
   }
-
-  &:focus {
+  &.procesaanpak input:focus + label {
     border-color: $gc_cyan;
     text-decoration: underline;
   }
-}
-
-.item--filter.gebruiksgemak label {
-  &:hover {
-    border-color: $gc_dark_purple_darker;
+  &.procesaanpak input:hover + label {
+    border-color: $gc_cyan;
+    text-decoration: underline;
   }
-
-  &:focus {
+  &.gebruiksgemak input:focus + label {
     border-color: $gc_dark_purple_darker;
     text-decoration: underline;
   }
-}
-
-.item--filter.kanaalsturing label {
-  &:hover {
-    border-color: $gc_orange;
+  &.gebruiksgemak input:hover + label {
+    border-color: $gc_dark_purple_darker;
+    text-decoration: underline;
   }
-
-  &:focus {
+  &.kanaalsturing input:focus + label {
     border-color: $gc_orange;
     text-decoration: underline;
   }
-}
-
-.item--filter.inclusie label {
-  &:hover {
-    border-color: $inc_a11y_orange;
+  &.kanaalsturing input:hover + label {
+    border-color: $gc_orange;
+    text-decoration: underline;
   }
-
-  &:focus {
+  &.inclusie input:focus + label {
     border-color: $inc_a11y_orange;
     text-decoration: underline;
   }
+  &.inclusie input:hover + label {
+    border-color:$inc_a11y_orange;
+    text-decoration: underline;
+  }
+
 }
 
 .item--filter.filter-active label:before {

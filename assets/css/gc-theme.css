@@ -5145,54 +5145,58 @@ body:not(.single-event) .entry-content.wrap:last-child {
   border-color: #148839; }
 
 .item--filter.informatieveiligheid input:focus + label {
-  border-color: #A20E56; }
-
-.item--filter.commitment label:hover {
-  border-color: #148839; }
-
-.item--filter.commitment label:focus {
-  border-color: #148839;
-  text-decoration: underline; }
-
-.item--filter.informatieveiligheid label:hover {
-  border-color: #A20E56; }
-
-.item--filter.informatieveiligheid label:focus {
   border-color: #A20E56;
   text-decoration: underline; }
 
-.item--filter.samenwerking label:hover {
-  border-color: #007BB0; }
+.item--filter.informatieveiligheid input:hover + label {
+  border-color: #A20E56;
+  text-decoration: underline; }
 
-.item--filter.samenwerking label:focus {
+.item--filter.commitment input:focus + label {
+  border-color: #148839;
+  text-decoration: underline; }
+
+.item--filter.commitment input:hover + label {
+  border-color: #148839;
+  text-decoration: underline; }
+
+.item--filter.samenwerking input:focus + label {
   border-color: #007BB0;
   text-decoration: underline; }
 
-.item--filter.procesaanpak label:hover {
-  border-color: #00b4ac; }
+.item--filter.samenwerking input:hover + label {
+  border-color: #007BB0;
+  text-decoration: underline; }
 
-.item--filter.procesaanpak label:focus {
+.item--filter.procesaanpak input:focus + label {
   border-color: #00b4ac;
   text-decoration: underline; }
 
-.item--filter.gebruiksgemak label:hover {
-  border-color: #2D114E; }
+.item--filter.procesaanpak input:hover + label {
+  border-color: #00b4ac;
+  text-decoration: underline; }
 
-.item--filter.gebruiksgemak label:focus {
+.item--filter.gebruiksgemak input:focus + label {
   border-color: #2D114E;
   text-decoration: underline; }
 
-.item--filter.kanaalsturing label:hover {
-  border-color: #f99d1c; }
+.item--filter.gebruiksgemak input:hover + label {
+  border-color: #2D114E;
+  text-decoration: underline; }
 
-.item--filter.kanaalsturing label:focus {
+.item--filter.kanaalsturing input:focus + label {
   border-color: #f99d1c;
   text-decoration: underline; }
 
-.item--filter.inclusie label:hover {
-  border-color: #c73d19; }
+.item--filter.kanaalsturing input:hover + label {
+  border-color: #f99d1c;
+  text-decoration: underline; }
 
-.item--filter.inclusie label:focus {
+.item--filter.inclusie input:focus + label {
+  border-color: #c73d19;
+  text-decoration: underline; }
+
+.item--filter.inclusie input:hover + label {
   border-color: #c73d19;
   text-decoration: underline; }
 
