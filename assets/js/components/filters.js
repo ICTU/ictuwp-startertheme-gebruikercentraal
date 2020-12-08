@@ -107,7 +107,7 @@ $(document).ready(function(){
     if (indexCat > -1) {
       filtersActiveCat.splice(indexCat, 1);
       if (filtersActiveCat.length === 0) {
-        $('#cartcount').html("Geen filter geselecteerd");
+        $("#category--cards").text(filtersActiveCat.join(", "));
       }
       else{
       $("#category--cards").text(filtersActiveCat.join(", "));
