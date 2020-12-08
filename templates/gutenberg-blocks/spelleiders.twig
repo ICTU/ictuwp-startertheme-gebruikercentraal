@@ -1,0 +1,61 @@
+{#
+/**
+ * Block Name: Spelleiderlijst
+ */
+#}
+
+{% set headerlevel = 'h2' %}
+
+{% if is_preview %}
+  <style type="text/css">
+    #spelleiders-{{ block.id }} {
+      margin-top: 0;
+      overflow: hidden;
+      border: 3px dashed #dadada;
+    }
+  </style>
+{% endif %}
+
+<div class="section section--heading">
+  {% if spelleiders.blocktitel %}
+    {% set headerlevel = 'h3' %}
+    <h2>{{ spelleiders.blocktitel }}</h2>
+  {% else %}
+    <h2 class="visuallyhidden">Overzicht spelleiders</h2>
+  {% endif %}
+</div>
+
+<div class="section section--list-interlocked" id="spelleiders-{{ block.id }}">
+
+  {% if spelleiders.items %}
+    <div class="blocklist">
+      <ul class="blocklist__list">
+        {% for item in spelleiders.items %}
+          {% set blocklist_classes = [
+            'blocklist__item',
+            item.image ? 'blocklist__item--image'
+          ] %}
+        <li class="{{ blocklist_classes|join(' ') }}">
+          {% if item.image %}
+            <figure class="blocklist__image">
+              <img src="{{ item.image }}" alt="{{ item.image_alt }}" class="image image--blocklist-item">
+            </figure>
+          {% else %}
+            <{{ headerlevel }} class="blocklist__title">{{ item.title }}</{{ headerlevel }}>
+            {% if item.namen %}
+              <ul class="blocklist__sublist">
+                {% for subitem in item.namen %}
+                  <li class="blocklist__subitem">{{ subitem }}</li>
+                {% endfor %}
+              </ul>
+            {% endif %}
+          {% endif %}
+          </li>
+        {% endfor %}
+      </ul>
+    </div>
+  {% else %}
+    <p>Voeg namen en foto's toe</p>
+  {% endif %}
+
+</div>

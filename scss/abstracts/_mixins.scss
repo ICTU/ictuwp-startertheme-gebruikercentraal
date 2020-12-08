@@ -404,3 +404,23 @@
     margin-top: 2rem;
   }
 }
+
+
+@mixin bp-between($start, $end) {
+
+  // If the key exists in the map
+  @if map-has-key($breakpoints, $start) and map-has-key($breakpoints, $end)  {
+    $bpstart: map-get($breakpoints, $start);
+    $bpend: map-get($breakpoints, $end) - 1px;
+
+    // Prints a media query based on the value
+    @media (min-width: $bpstart) and (max-width: $bpend) {
+      @content;
+    }
+  }
+    // If the key doesn't exist in the map
+  @else {
+    @warn "Unfortunately, no value could be retrieved from `#{$start}` or `#{$end}`. "
+        + "Available breakpoints are: #{map-keys($breakpoints)}.";
+  }
+}
