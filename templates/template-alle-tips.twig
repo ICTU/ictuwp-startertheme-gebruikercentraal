@@ -22,40 +22,41 @@
       </div>
     </div>
 
+    {% if tipkaarts %}
+      {% if tipkaartsterms %}
+        <div class="filter">
+          <div class="wrapper filter">
+            <div class="item--filter filter-active">
+              <input type="checkbox" data-count="{{ tipkaarts|length }}" data-categorie="{{ __('All', 'gctheme') }}" class="form-item--filter showAll filter-active" data-filter="all" id="allitems"></input>
+              <label for="allitems">Alle tipkaarten</label>
+            </div>
+            {% for item in tipkaartsterms %}
+            <div class="item--filter {{ item.name|lower }}">
+              <input type="checkbox" class="form-item--filter card-filter {{ item.name }}" data-categorie="{{ item.name }}" data-count="{{ item.count }}" data-filter="tipkaart--{{ item.name|lower }}" id="{{ item.name|lower }}"></input>
+              <label for="{{ item.name|lower }}">{{ item.name }} ({{ item.count }})</label>
+            </div>
 
-
-    {% if tipkaartsterms %}
-  <div class="filter">
-    <div class="wrapper filter">
-      <div class="item--filter filter-active">
-        <input type="checkbox" class="form-item--filter showAll filter-active" data-filter="all" id="allitems"></input>
-        <label for="allitems">Alle tipkaarten</label>
-      </div>
-      {% for item in tipkaartsterms %}
-      <div class="item--filter {{ item.name|lower }}">
-        <input type="checkbox" class="form-item--filter card-filter {{ item.name }}" data-filter="tipkaart--{{ item.name|lower }}" id="{{ item.name|lower }}"></input>
-        <label for="{{ item.name|lower }}">{{ item.name }} ({{ item.count }})</label>
-      </div>
-
-    {% endfor %}
-    </div>
-  </div>
-
-
+          {% endfor %}
+          </div>
+        </div>
+      {% endif %}
     {% endif %}
 
     {% if tipkaarts %}
+
       {% include 'sections/section-overview.html.twig' with {
         'items': tipkaarts,
         'title': '',
         'template': 'card--tipkaart',
         'modifier': '4col',
         'extra_class': 'filter--cards',
+        'filter' : true,
       } %}
     {% endif %}
     {% if tipgevers %}
 
       <div class="grid grid--col-3 grid--gutter-wide">
+
         {% for item in tipgevers.items %}
           {% include 'components/card--author.html.twig' with {
             'type': 'author',

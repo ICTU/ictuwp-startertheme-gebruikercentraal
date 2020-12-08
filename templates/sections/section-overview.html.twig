@@ -49,8 +49,17 @@
     {% endif %}
 
     {% if items %}
+      {% if filter == true %}
+        <div class="filter--show--counter" id="cartcount">
+          <p id="nofilter" aria-hidden="true"> {{ __('No filter selected', 'gctheme') }}</p>
+          <p id="count--cards" aria-hidden="false">{{ items|length }}</p>
+          <p> {{ __(' cards selected in the category: ', 'gctheme') }}</p>
+          <p id="category--cards" aria-hidden="false"> {{ __('All', 'gctheme') }}</p>
+        </div>
+      {% endif %}
 
       <div class="grid {{ extra_class }}">
+
 
         {% for key, item in items %}
 
