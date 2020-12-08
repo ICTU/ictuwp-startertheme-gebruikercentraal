@@ -598,7 +598,8 @@ class GebruikerCentraalTheme extends Timber\Site {
 					$versie = $value['version'];
 				}
 
-				wp_enqueue_script( $value['handle'], get_stylesheet_directory_uri() . $value['file'], $dependencies, $versie, $value['infooter'] );
+				wp_enqueue_script( $value['handle'], get_stylesheet_directory_uri() . $value['file'], $dependencies, $versie, $value['infooter'],array( 'wp-i18n' ) );
+				wp_set_script_translations( $value['handle'], 'gctheme' );
 			}
 		}
 

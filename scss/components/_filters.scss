@@ -208,3 +208,14 @@
 .filter--show--counter p {
   display: inline;
 }
+
+.filter--cards {
+
+  .work-item {
+    display: none;
+  }
+  .show-work-item {
+    display: block;
+    transition: all .35s ease;
+  }
+}

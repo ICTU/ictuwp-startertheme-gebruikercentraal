@@ -51,10 +51,10 @@
     {% if items %}
       {% if filter == true %}
         <div class="filter--show--counter" id="cartcount">
-          <p id="nofilter" aria-hidden="true"> {{ __('No filter selected', 'gctheme') }}</p>
           <p id="count--cards" aria-hidden="false">{{ items|length }}</p>
-          <p> {{ __(' cards selected in the category: ', 'gctheme') }}</p>
-          <p id="category--cards" aria-hidden="false"> {{ __('All', 'gctheme') }}</p>
+          <p> {{ __(' cards selected in ', 'gctheme') }}</p>
+          <p id="category--category"> {{ __('all categories.', 'gctheme') }}</p>
+          <p id="category--cards" aria-hidden="false"></p>
         </div>
       {% endif %}
 

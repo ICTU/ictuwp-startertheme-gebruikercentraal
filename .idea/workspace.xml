@@ -1,7 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b934b414-7ef9-4bf9-893a-63ff625f41de" name="Default Changelist" comment="" />
+    <list default="true" id="b934b414-7ef9-4bf9-893a-63ff625f41de" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/css/editor-styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/assets/css/editor-styles.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/css/gc-theme.css" beforeDir="false" afterPath="$PROJECT_DIR$/assets/css/gc-theme.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/js/components/filters.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/components/filters.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/js/main-min.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/main-min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/flavors/optimaaldigitaal/assets/css/od-theme.css" beforeDir="false" afterPath="$PROJECT_DIR$/flavors/optimaaldigitaal/assets/css/od-theme.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/flavors/optimaaldigitaal/assets/css/od-theme.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/flavors/optimaaldigitaal/assets/css/od-theme.css.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/functions.php" beforeDir="false" afterPath="$PROJECT_DIR$/functions.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scss/components/_card-tipkaart.scss" beforeDir="false" afterPath="$PROJECT_DIR$/scss/components/_card-tipkaart.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scss/components/_filters.scss" beforeDir="false" afterPath="$PROJECT_DIR$/scss/components/_filters.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/components/card--tipkaart.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/components/card--tipkaart.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/sections/section-overview.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/sections/section-overview.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/template-alle-tips.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/template-alle-tips.twig" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -9,9 +23,7 @@
   </component>
   <component name="ComposerSettings" doNotAsk="true" synchronizationState="SYNCHRONIZE">
     <pharConfigPath>$PROJECT_DIR$/composer.json</pharConfigPath>
-    <execution>
-      <executable />
-    </execution>
+    <execution />
   </component>
   <component name="FavoritesManager">
     <favorites_list name="ictuwp-theme-gc2020" />
@@ -24,15 +36,16 @@
     <option name="autoscrollToSource" value="true" />
     <option name="compactDirectories" value="true" />
     <option name="hideEmptyMiddlePackages" value="true" />
-    <option name="showExcludedFiles" value="true" />
     <option name="showLibraryContents" value="true" />
     <option name="showMembers" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="js.buildTools.gulp.gulp_package_dir" value="$PROJECT_DIR$/frontend/node_modules/gulp" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/scss/components" />
+    <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -49,6 +62,7 @@
       </list>
     </recent_temporary>
   </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="StructuralSearchPlugin">
     <searchConfiguration name="user defined" created="1607349591111" text="WPSEO_Utils::get_title_separator" recursive="true" caseInsensitive="true" type="PHP" scope_type="PROJECT" scope_descriptor="" history="1">
       <constraint name="__context__" within="" contains="" />
@@ -72,11 +86,12 @@
       <workItem from="1606813997398" duration="14011000" />
       <workItem from="1607337558590" duration="1335000" />
       <workItem from="1607415040179" duration="7810000" />
+      <workItem from="1607438505800" duration="7044000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="1" />
+    <option name="version" value="3" />
   </component>
   <component name="WindowStateProjectService">
     <state x="610" y="430" key="#WordPress" timestamp="1606734633109">

@@ -1680,14 +1680,6 @@
     right: 0;
     background: url("/wp-content/themes/ictuwp-theme-gc2020/assets/images/ico-star.svg") center center no-repeat; }
 
-.filter--cards .workItem {
-  display: none; }
-
-.filter--cards .show-workItem {
-  display: block;
-  -webkit-transition: all .35s ease;
-  transition: all .35s ease; }
-
 .tipkaart__nummer {
   font-family: "league_gothicregular", Impact, Helvetica, Arial, sans-serif;
   text-transform: uppercase;
