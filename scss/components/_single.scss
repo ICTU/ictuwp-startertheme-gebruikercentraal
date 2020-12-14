@@ -23,21 +23,21 @@
           &.section--paragraph {
             margin-top: 2rem;
           }
-
-          &:last-child {
-            padding-bottom: 4rem;
-
-            @include bp-up(lg) {
-              padding-bottom: 7rem;
-            }
-          }
         }
 
-        &--paragraph {
-          @include bp-down(md){
-            padding-left: 0;
-            padding-right: 0;
+        &:last-child {
+          padding-bottom: 4rem;
+
+          @include bp-up(lg) {
+            padding-bottom: 7rem;
           }
+        }
+      }
+
+      &--paragraph {
+        @include bp-down(md) {
+          padding-left: 0;
+          padding-right: 0;
         }
       }
     }

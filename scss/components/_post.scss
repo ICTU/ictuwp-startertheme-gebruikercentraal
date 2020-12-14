@@ -14,7 +14,7 @@
     @include ho-padding;
     @include ho-make-container(calc(#{$max-width-inner} + #{$gutter}));
 
-    @include bp-up(md){
+    @include bp-up(md) {
       max-width: calc(#{$max-width-inner} + #{$gutter * 2})
     }
 
@@ -30,15 +30,6 @@
     .section__title {
       border-top: .2rem solid $border-color;
     }
-
-    &--overview {
-      max-width: none;
-
-      .l-section-content,
-      .l-section-top {
-        max-width: $max-width-inner;
-      }
-    }
   }
 
   .entry-content > .section:not(.section--downloads):last-child {
@@ -52,6 +43,31 @@
   .entry-body {
     > .section--paragraph:first-child {
       margin-top: 0;
+    }
+  }
+
+  &--type-overview {
+    max-width: none;
+
+    .l-section-content,
+    .l-section-top {
+      max-width: $max-width-inner;
+    }
+
+    .page__intro .section--paragraph {
+      padding: 2rem 3rem;
+
+      @include bp-up(md){
+        padding: 3rem 5rem;
+      }
+
+      p:first-child {
+        margin-top: 0;
+      }
+
+      + .section--paragraph {
+        padding-top: 0;
+      }
     }
   }
 
