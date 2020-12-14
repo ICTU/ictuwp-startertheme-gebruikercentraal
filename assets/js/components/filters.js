@@ -65,6 +65,7 @@ $(document).ready(function(){
       filtersActiveCount = [];
       cFilter.parent().addClass(filterClass);
       $("#category--category").text(__( 'all categories.', 'gctheme' ));
+      $("#category--cards").text("");
     } else {
       showall.parent().removeClass(filterClass);
       cFilter.parent().addClass(filterClass);
@@ -75,6 +76,7 @@ $(document).ready(function(){
       $("#category--cards").text(filtersActiveCat.join(", "));
       sum = 0;
       $.each(filtersActiveCount,function(){sum+=parseFloat(this) || 0;});
+      $("#category--category").text(_n( 'Category:', 'Categories:', filtersActiveCat.length, 'gctheme' ));
       $("#count--cards").text(sum);
     }
   }

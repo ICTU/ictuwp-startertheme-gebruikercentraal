@@ -2,19 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b934b414-7ef9-4bf9-893a-63ff625f41de" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/css/editor-styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/assets/css/editor-styles.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/css/gc-theme.css" beforeDir="false" afterPath="$PROJECT_DIR$/assets/css/gc-theme.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/assets/js/components/filters.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/components/filters.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/assets/js/main-min.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/main-min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/flavors/optimaaldigitaal/assets/css/od-theme.css" beforeDir="false" afterPath="$PROJECT_DIR$/flavors/optimaaldigitaal/assets/css/od-theme.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/flavors/optimaaldigitaal/assets/css/od-theme.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/flavors/optimaaldigitaal/assets/css/od-theme.css.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/functions.php" beforeDir="false" afterPath="$PROJECT_DIR$/functions.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scss/components/_card-tipkaart.scss" beforeDir="false" afterPath="$PROJECT_DIR$/scss/components/_card-tipkaart.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scss/components/_filters.scss" beforeDir="false" afterPath="$PROJECT_DIR$/scss/components/_filters.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/components/card--tipkaart.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/components/card--tipkaart.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/sections/section-overview.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/sections/section-overview.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/template-alle-tips.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/template-alle-tips.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -86,7 +77,8 @@
       <workItem from="1606813997398" duration="14011000" />
       <workItem from="1607337558590" duration="1335000" />
       <workItem from="1607415040179" duration="7810000" />
-      <workItem from="1607438505800" duration="7044000" />
+      <workItem from="1607438505800" duration="7185000" />
+      <workItem from="1607942408539" duration="990000" />
     </task>
     <servers />
   </component>
