@@ -1978,20 +1978,6 @@ body:not(.single-event) .entry-content.wrap:last-child {
   .entry .wp-block-image .section__title,
   .entry .section .section__title {
     border-top: 0.2rem solid #D1DFE3; }
-  .post .wp-block-image--overview,
-  .post .section--overview,
-  .entry .wp-block-image--overview,
-  .entry .section--overview {
-    max-width: none; }
-    .post .wp-block-image--overview .l-section-content,
-    .post .wp-block-image--overview .l-section-top,
-    .post .section--overview .l-section-content,
-    .post .section--overview .l-section-top,
-    .entry .wp-block-image--overview .l-section-content,
-    .entry .wp-block-image--overview .l-section-top,
-    .entry .section--overview .l-section-content,
-    .entry .section--overview .l-section-top {
-      max-width: 760px; }
 
 .post .entry-content > .section:not(.section--downloads):last-child,
 .entry .entry-content > .section:not(.section--downloads):last-child {
@@ -2004,6 +1990,28 @@ body:not(.single-event) .entry-content.wrap:last-child {
 .post .entry-body > .section--paragraph:first-child,
 .entry .entry-body > .section--paragraph:first-child {
   margin-top: 0; }
+
+.post--type-overview,
+.entry--type-overview {
+  max-width: none; }
+  .post--type-overview .l-section-content,
+  .post--type-overview .l-section-top,
+  .entry--type-overview .l-section-content,
+  .entry--type-overview .l-section-top {
+    max-width: 760px; }
+  .post--type-overview .page__intro .section--paragraph,
+  .entry--type-overview .page__intro .section--paragraph {
+    padding: 2rem 3rem; }
+    @media (min-width: 700px) {
+      .post--type-overview .page__intro .section--paragraph,
+      .entry--type-overview .page__intro .section--paragraph {
+        padding: 3rem 5rem; } }
+    .post--type-overview .page__intro .section--paragraph p:first-child,
+    .entry--type-overview .page__intro .section--paragraph p:first-child {
+      margin-top: 0; }
+    .post--type-overview .page__intro .section--paragraph + .section--paragraph,
+    .entry--type-overview .page__intro .section--paragraph + .section--paragraph {
+      padding-top: 0; }
 
 .post.l-with-stepchart .page__intro,
 .entry.l-with-stepchart .page__intro {
@@ -2415,14 +2423,14 @@ body:not(.single-event) .entry-content.wrap:last-child {
 .post--full .post__body > .section:first-child.section--paragraph {
   margin-top: 2rem; }
 
-.post--full .post__body > .section:first-child:last-child {
+.post--full .post__body > .section:last-child {
   padding-bottom: 4rem; }
   @media (min-width: 1100px) {
-    .post--full .post__body > .section:first-child:last-child {
+    .post--full .post__body > .section:last-child {
       padding-bottom: 7rem; } }
 
 @media (max-width: 699px) {
-  .post--full .post__body > .section--paragraph {
+  .post--full .post__body--paragraph {
     padding-left: 0;
     padding-right: 0; } }
 
