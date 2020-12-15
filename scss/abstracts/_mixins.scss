@@ -100,6 +100,14 @@
   box-shadow: .4rem .4rem 0 rgba($color, $trans);
 }
 
+@mixin gc-last-padding(){
+  padding-bottom: 4rem;
+
+  @include bp-up(lg) {
+    padding-bottom: 7rem;
+  }
+}
+
 
 @mixin gc-pagination() {
   display: flex;

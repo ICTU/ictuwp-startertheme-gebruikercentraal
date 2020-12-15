@@ -107,6 +107,39 @@ Gutenberg corrections
   }
 }
 
+.wp-block-quote {
+  border-left: 0.6rem solid $color-primary;
+  padding: .5rem 0 .5rem 2rem;
+  margin: 0;
+  font-size: 2.2rem;
+  line-height: 3.6rem;
+
+  p {
+    margin-top: 0;
+  }
+
+  cite {
+    font-size: $font-small;
+    color: $meta-data;
+    font-family: $font-primary-semi;
+    margin-top: 2rem;
+    display: block;
+  }
+
+  @include bp-up(md){
+    padding-left: 3rem;
+  }
+
+  @include bp-up(lg){
+    padding-left: 4rem;
+  }
+
+  @include bp-down(sm){
+    border-left: 0;
+    padding-left: 0;
+  }
+}
+
 .has-larger-font-size,
 .has-extra-large-font-size {
   line-height: 1.5;
