@@ -64,8 +64,8 @@ $(document).ready(function(){
       filtersActiveCat = [];// clear the array
       filtersActiveCount = [];
       cFilter.parent().addClass(filterClass);
-      $("#category--category").text(__( 'all categories.', 'gctheme' ));
-      $("#category--cards").text("");
+      $("#cards--text").text(' Tipkaarten geselecteerd in alle thema\'s.');
+      $("#cards--cats").text("");
     } else {
       showall.parent().removeClass(filterClass);
       cFilter.parent().addClass(filterClass);
@@ -73,11 +73,12 @@ $(document).ready(function(){
       filtersActiveCat.push(cFiltercat);
       filtersActiveCount.push(cFilterCount);
       console.log(filtersActiveCat);
-      $("#category--cards").text(filtersActiveCat.join(", "));
+      $("#cards--cats").text(filtersActiveCat.join(", "));
       sum = 0;
       $.each(filtersActiveCount,function(){sum+=parseFloat(this) || 0;});
+      $("#cards--text").text(_n( ' Tipkaarten geselecteerd in het thema: ', ' Tipkaarten geselecteerd in de thema\'s: ', filtersActiveCat.length, 'gctheme' ));
       $("#category--category").text(_n( 'Category:', 'Categories:', filtersActiveCat.length, 'gctheme' ));
-      $("#count--cards").text(sum);
+      $("#cards--count").text(sum);
     }
   }
 
@@ -89,7 +90,7 @@ $(document).ready(function(){
       if (cFilter.hasClass('show-all') || filtersActive.length == 0) { // makes sure we catch the array when its empty and revert to the default of showing all items
         $works.addClass('show-work-item'); //show them all
         $("#category--cards").text();
-        $("#count--cards").text(cFilterCount);
+        $("#cards--count").text(cFilterCount);
       } else {
         $(this).removeClass('show-work-item');
         for (i = 0; i < classes.length; i++) {
@@ -122,7 +123,7 @@ $(document).ready(function(){
     if (indexCat > -1) {
       filtersActiveCat.splice(indexCat, 1);
 
-      $("#category--cards").text(filtersActiveCat.join(", "));
+      $("#cards--cats").text(filtersActiveCat.join(", "));
       $("#category--category").text(_n( 'the category: ', 'the categories: ', filtersActiveCat.length, 'gctheme' ));
 
 
@@ -132,7 +133,7 @@ $(document).ready(function(){
       filtersActiveCount.splice(indexCount, 1);
       sum = 0;
       $.each(filtersActiveCount,function(){sum+=parseFloat(this) || 0;});
-      $("#count--cards").text(sum);
+      $("#cards--count").text(sum);
     }
   }
 

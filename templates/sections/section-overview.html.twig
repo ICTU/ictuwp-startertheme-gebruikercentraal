@@ -51,10 +51,7 @@
     {% if items %}
       {% if filter == true %}
         <div class="filter--show--counter" id="cartcount">
-          <p id="count--cards" aria-hidden="false">{{ items|length }}</p>
-          <p> {{ __(' cards selected in ', 'gctheme') }}</p>
-          <p id="category--category"> {{ __('all categories.', 'gctheme') }}</p>
-          <p id="category--cards" aria-hidden="false"></p>
+          <p id="text--cat--filter"><span id="cards--count">{{ items|length }}</span><span id="cards--text"> Tipkaarten geselecteerd in alle thema's.</span><span id="cards--cats"></span> </p>
         </div>
       {% endif %}
 
