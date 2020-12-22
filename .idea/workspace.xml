@@ -2,10 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b934b414-7ef9-4bf9-893a-63ff625f41de" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/css/editor-styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/assets/css/editor-styles.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/css/gc-theme.css" beforeDir="false" afterPath="$PROJECT_DIR$/assets/css/gc-theme.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/assets/js/components/filters.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/components/filters.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/assets/js/main-min.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/main-min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/flavors/optimaaldigitaal/assets/css/od-theme.css" beforeDir="false" afterPath="$PROJECT_DIR$/flavors/optimaaldigitaal/assets/css/od-theme.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/flavors/optimaaldigitaal/assets/css/od-theme.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/flavors/optimaaldigitaal/assets/css/od-theme.css.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/functions.php" beforeDir="false" afterPath="$PROJECT_DIR$/functions.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scss/base/_base.scss" beforeDir="false" afterPath="$PROJECT_DIR$/scss/base/_base.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/sections/section-overview.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/sections/section-overview.html.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -14,12 +20,7 @@
   </component>
   <component name="ComposerSettings" doNotAsk="true" synchronizationState="SYNCHRONIZE">
     <pharConfigPath>$PROJECT_DIR$/composer.json</pharConfigPath>
-    <execution>
-      <executable />
-    </execution>
-  </component>
-  <component name="FavoritesManager">
-    <favorites_list name="ictuwp-theme-gc2020" />
+    <execution />
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -55,7 +56,7 @@
       </list>
     </recent_temporary>
   </component>
-  <component name="SpellCheckerSettings" BundledDictionaries="0" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" Dictionaries="0" CorrectionsLimit="5" DefaultDictionary="application-level" UseSingleDictionary="true" />
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="false" />
   <component name="StructuralSearchPlugin">
     <searchConfiguration name="user defined" created="1607349591111" text="WPSEO_Utils::get_title_separator" recursive="true" caseInsensitive="true" type="PHP" scope_type="PROJECT" scope_descriptor="" history="1">
       <constraint name="__context__" within="" contains="" />
@@ -120,6 +121,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="656" y="344" key="com.intellij.ide.util.TipDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1607415093083" />
+    <state x="2427" y="186" width="623" height="490" key="find.popup" timestamp="1608633717086">
+      <screen x="1440" y="-277" width="2560" height="1417" />
+    </state>
+    <state x="2427" y="186" width="623" height="490" key="find.popup/0.23.1440.877/1440.-277.2560.1417@1440.-277.2560.1417" timestamp="1608633717086" />
     <state x="616" y="240" key="run.anything.popup" timestamp="1606734895421">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

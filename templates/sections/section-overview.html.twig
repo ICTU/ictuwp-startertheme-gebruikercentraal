@@ -51,7 +51,7 @@
     {% if items %}
       {% if filter == true %}
         <div class="filter--show--counter" id="cartcount">
-          <p id="text--cat--filter"><span id="cards--count">{{ items|length }}</span><span id="cards--text"> Tipkaarten geselecteerd in alle thema's.</span><span id="cards--cats"></span> </p>
+          <p id="text--cat--filter" aria-live="polite"><span id="cards--count">{{ items|length }}</span><span id="cards--text"> tipkaarten geselecteerd in alle thema's.</span><span id="cards--cats"></span> </p>
         </div>
       {% endif %}
 

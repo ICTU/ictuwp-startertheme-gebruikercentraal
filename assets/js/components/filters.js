@@ -55,6 +55,8 @@ $(document).ready(function(){
 
   function highlightFilter () {
     var filterClass = 'filter-active';
+    var textstring = '';
+
     if (cFilter.parent().hasClass(filterClass)) {
       cFilter.parent().removeClass(filterClass);
       removeActiveFilter(cFilterData,cFiltercat,cFilterCount);
@@ -64,7 +66,8 @@ $(document).ready(function(){
       filtersActiveCat = [];// clear the array
       filtersActiveCount = [];
       cFilter.parent().addClass(filterClass);
-      $("#cards--text").text(' Tipkaarten geselecteerd in alle thema\'s.');
+      textstring = ' tipkaarten geselecteerd in alle thema\'s.';
+      $("#cards--text").text(textstring);
       $("#cards--cats").text("");
     } else {
       showall.parent().removeClass(filterClass);
@@ -73,12 +76,16 @@ $(document).ready(function(){
       filtersActiveCat.push(cFiltercat);
       filtersActiveCount.push(cFilterCount);
       console.log(filtersActiveCat);
-      $("#cards--cats").text(filtersActiveCat.join(", "));
+
+
+      $("#cards--cats").text('');
+      $("#cards--count").text('');
+
       sum = 0;
       $.each(filtersActiveCount,function(){sum+=parseFloat(this) || 0;});
-      $("#cards--text").text(_n( ' Tipkaarten geselecteerd in het thema: ', ' Tipkaarten geselecteerd in de thema\'s: ', filtersActiveCat.length, 'gctheme' ));
-      $("#category--category").text(_n( 'Category:', 'Categories:', filtersActiveCat.length, 'gctheme' ));
-      $("#cards--count").text(sum);
+      textstring = sum + _n( ' tipkaarten geselecteerd in het thema: ', ' tipkaarten geselecteerd in de thema\'s: ', filtersActiveCat.length, 'gctheme' );
+      textstring += filtersActiveCat.join(", ").toLowerCase();
+      $("#cards--text").text( textstring );
     }
   }
 
@@ -89,7 +96,6 @@ $(document).ready(function(){
       var classes = $(this).attr('class').split(' ');
       if (cFilter.hasClass('show-all') || filtersActive.length == 0) { // makes sure we catch the array when its empty and revert to the default of showing all items
         $works.addClass('show-work-item'); //show them all
-        $("#category--cards").text();
         $("#cards--count").text(cFilterCount);
       } else {
         $(this).removeClass('show-work-item');
@@ -110,8 +116,6 @@ $(document).ready(function(){
 
     console.log(filtersActive.length);
 
-
-
     if (index > -1) {
       filtersActive.splice(index, 1);
 
@@ -124,9 +128,6 @@ $(document).ready(function(){
       filtersActiveCat.splice(indexCat, 1);
 
       $("#cards--cats").text(filtersActiveCat.join(", "));
-      $("#category--category").text(_n( 'the category: ', 'the categories: ', filtersActiveCat.length, 'gctheme' ));
-
-
 
     }
     if (indexCount > -1) {
