@@ -75,6 +75,10 @@
       @include ho-padding;
       @include negate-padding;
     }
+
+    &--overview.l-item-count-3 {
+      max-width: none;
+    }
   }
 
   > div:last-child {
@@ -89,19 +93,19 @@
 .entry > .section,
 .post__content > .section {
   @include ho-padding;
+
   &:last-child {
     @include gc-last-padding;
 
     &.section--overview {
-      @include bp-up(lg){
+      @include bp-up(lg) {
         padding-bottom: 10rem;
       }
     }
   }
 }
 
-// Exceptions for .post sections outside of post bodt
-
+// Exceptions for .post sections outside of post body
 .post__content > .section {
   &--bg-option {
     @include negate-padding;
@@ -116,7 +120,6 @@
     margin-top: 0;
   }
 }
-
 
 .wp-block-image {
   @include ho-make-container($max-width-inner);
@@ -137,6 +140,12 @@
       }
     }
   }
+
+  &--type-post .entry-content {
+    // Remove double padding - post also gets padding from main
+    padding-left: 0;
+    padding-right: 0;
+  }
 }
 
 /*
@@ -145,44 +154,6 @@
 
 .pagination {
   @include gc-pagination;
-
-  display: flex;
-  justify-content: center; // beter dan flex-start, zie bijv. https://gcadmin.test-ictu-gc.nl/gebruikercentraal/category/blog/
-  padding-bottom: 5rem;
-
-  @include bp-up(lg) {
-    padding-bottom: 7rem;
-  }
-
-  // pagination is a list
-  &, li {
-    list-style: none;
-    margin-left: 0;
-    padding-left: 0;
-  }
-
-  li {
-    margin: .25rem;
-    padding: .25rem;
-  }
-
-  width: 100%;
-
-  a {
-    border-color: $border_color;
-  }
-
-  > div:not(.pagination) {
-    width: 50%;
-  }
-
-  .pagination-previous {
-    padding-right: $gutter / 2;
-  }
-
-  .pagination-next {
-    padding-left: $gutter / 2;
-  }
 }
 
 /*

@@ -89,12 +89,6 @@ html {
   }
 }
 
-body:not(.page--type-homepage) {
-  // dus niet de homepage
-  // geen page component, dus niet hier. Styling zoveel mogelijk op componentniveau, alleen uitzonderingen op paginatype.
-}
-
-
 h1 {
   font-family: $font-secondary;
   font-size: 4rem;
@@ -243,7 +237,7 @@ body[data-template='base.twig'] { //All pages that use the base twig template
   }
 }
 
-
+/*
 body:not(.single-event) {
   // extra padding onderop toevoegen aan de .entry-content;
   // alleen niet voor single events, maar dus wel voor
@@ -253,6 +247,7 @@ body:not(.single-event) {
   .entry-content.wrap:last-child {
     // zorg dat entry-content padding heeft onderin als er verder daarna
     // geen blokken volgen
+    // gaat niet samen met de comments, valt onder entry, niet onder page
     padding-bottom: 7rem;
   }
-}
+}*/

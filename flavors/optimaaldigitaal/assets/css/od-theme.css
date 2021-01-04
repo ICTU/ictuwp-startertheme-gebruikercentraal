@@ -1666,9 +1666,20 @@ body[data-template='base.twig']-template-default .content {
       margin-right: -3rem;
       margin-bottom: -8rem; } }
 
-body:not(.single-event) .entry-content.wrap:last-child {
-  padding-bottom: 7rem; }
-
+/*
+body:not(.single-event) {
+  // extra padding onderop toevoegen aan de .entry-content;
+  // alleen niet voor single events, maar dus wel voor
+  // (bijvoorbeeld) pagina's en blogberichten.
+  // single events kunnen een donkerblauwe balk met
+  // reserveringsopties en aanwezigenlijst hebben.
+  .entry-content.wrap:last-child {
+    // zorg dat entry-content padding heeft onderin als er verder daarna
+    // geen blokken volgen
+    // gaat niet samen met de comments, valt onder entry, niet onder page
+    padding-bottom: 7rem;
+  }
+}*/
 .archive,
 .page--overview-archive {
   -webkit-box-shadow: 0.4rem 0.4rem 0 rgba(0, 0, 0, 0.15);
@@ -2018,6 +2029,9 @@ body:not(.single-event) .entry-content.wrap:last-child {
         .entry-content > .section--bg-option {
           margin-left: -3rem;
           margin-right: -3rem; } }
+    .post__body > .section--overview.l-item-count-3,
+    .entry-content > .section--overview.l-item-count-3 {
+      max-width: none; }
   .post__body > div:last-child.wp-block-coblocks-gallery-masonry,
   .entry-content > div:last-child.wp-block-coblocks-gallery-masonry {
     padding-bottom: 4rem; }
@@ -2083,6 +2097,10 @@ body:not(.single-event) .entry-content.wrap:last-child {
       padding-left: 5rem;
       padding-right: 5rem; } }
 
+.entry--type-post .entry-content {
+  padding-left: 0;
+  padding-right: 0; }
+
 /*
  * Pagination
  */
@@ -2091,60 +2109,50 @@ body:not(.single-event) .entry-content.wrap:last-child {
   display: -ms-flexbox;
   display: flex;
   margin-top: 3rem;
-  border: none;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  padding-bottom: 5rem;
-  width: 100%; }
+  border: none; }
   @media (min-width: 1100px) {
     .pagination {
-      margin-top: 3rem; } }
+      margin-top: 5rem; } }
   .pagination a, .pagination span.current {
     display: inline-block;
-    padding: .5rem 1rem;
+    padding: .8rem 1rem;
     text-decoration: none;
     position: relative;
     -webkit-transition: padding .2s, background-color .2s;
     transition: padding .2s, background-color .2s;
     line-height: 2.6rem;
-    border: .1rem solid transparent; }
+    border: 0.1rem solid #D1DFE3; }
   .pagination a {
     font-family: "montserratbold", Helvetica, Arial, sans-serif; }
     .pagination a:hover, .pagination a:focus, .pagination a:active {
       background: #fff;
       border-color: #004152;
       text-decoration: underline;
-      color: #004152;
-      border-color: #52757e; }
+      color: #004152; }
   .pagination span.current {
     border: 0.1rem solid #52757e;
     padding: .5rem 1rem; }
   .pagination .alignright {
     margin-left: auto; }
-  .pagination .pagination-previous a:before {
-    content: "";
-    font-style: normal;
-    font-weight: normal;
-    font-family: 'icons'; }
-  .pagination .pagination-next a:after {
-    content: "";
-    font-style: normal;
-    font-weight: normal;
-    font-family: 'icons'; }
   .pagination .pagination-previous a:before,
   .pagination .pagination-next a:after {
     width: 2rem;
     height: 2rem;
     position: absolute;
     display: block;
-    top: 1rem;
+    top: 50%;
+    margin-top: -.9rem;
     font-size: 1.4rem;
     color: #004152;
     line-height: 2rem; }
   .pagination .pagination-previous a {
+    padding-right: 1.5rem;
     padding-left: 3.8rem; }
+    .pagination .pagination-previous a:before {
+      content: "";
+      font-style: normal;
+      font-weight: normal;
+      font-family: 'icons'; }
     .pagination .pagination-previous a:before {
       left: .6rem;
       -webkit-transform: rotate(180deg);
@@ -2152,29 +2160,17 @@ body:not(.single-event) .entry-content.wrap:last-child {
     .pagination .pagination-previous a:hover, .pagination .pagination-previous a:focus, .pagination .pagination-previous a:active {
       padding-left: 3.9rem; }
   .pagination .pagination-next a {
+    padding-left: 1.5rem;
     padding-right: 3.8rem; }
+    .pagination .pagination-next a:after {
+      content: "";
+      font-style: normal;
+      font-weight: normal;
+      font-family: 'icons'; }
     .pagination .pagination-next a:after {
       right: .6rem; }
     .pagination .pagination-next a:hover, .pagination .pagination-next a:focus, .pagination .pagination-next a:active {
       padding-right: 3.9rem; }
-  @media (min-width: 1100px) {
-    .pagination {
-      padding-bottom: 7rem; } }
-  .pagination, .pagination li {
-    list-style: none;
-    margin-left: 0;
-    padding-left: 0; }
-  .pagination li {
-    margin: .25rem;
-    padding: .25rem; }
-  .pagination a {
-    border-color: #D1DFE3; }
-  .pagination > div:not(.pagination) {
-    width: 50%; }
-  .pagination .pagination-previous {
-    padding-right: 1.5rem; }
-  .pagination .pagination-next {
-    padding-left: 1.5rem; }
 
 /*
  * Comments
@@ -3136,6 +3132,12 @@ body:not(.single-event) .entry-content.wrap:last-child {
   -webkit-box-shadow: none;
           box-shadow: none; }
 
+.entry--type-landing .entry-content > .section:first-child.section--heading, .entry--type-landing .entry-content > .section:first-child.section--paragraph {
+  margin-top: 4rem; }
+  @media (min-width: 700px) {
+    .entry--type-landing .entry-content > .section:first-child.section--heading, .entry--type-landing .entry-content > .section:first-child.section--paragraph {
+      margin-top: 7rem; } }
+
 /* Sections */
 .section {
   margin-top: 3rem; }
@@ -3266,17 +3268,8 @@ body:not(.single-event) .entry-content.wrap:last-child {
     margin-top: 0; }
   .section--overview .btn {
     margin-right: auto; }
-  .section--overview.l-item-count-3 {
-    padding-left: 2rem;
-    padding-right: 2rem;
-    -webkit-box-sizing: border-box;
-            box-sizing: border-box; }
-    @media (min-width: 560px) {
-      .section--overview.l-item-count-3 {
-        padding-right: 3rem;
-        padding-left: 3rem; } }
-    .section--overview.l-item-count-3 .l-section-content {
-      max-width: calc(960px - 9rem); }
+  .section--overview.l-item-count-3 .l-section-content {
+    max-width: calc(960px - 9rem); }
 
 /* Actueel - events & blogs */
 .section--actual .section__title {
@@ -6376,6 +6369,10 @@ body:not(.single-event) .entry-content.wrap:last-child {
 
 .entry--type-home .section--overview {
   text-align: center; }
+
+.entry--type-home .entry-content {
+  padding-left: 0;
+  padding-right: 0; }
 
 .wp-block-image.size-large + .section--heading {
   margin-top: 5rem; }
