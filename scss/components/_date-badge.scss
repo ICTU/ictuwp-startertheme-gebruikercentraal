@@ -49,7 +49,28 @@
         margin: -1rem -1rem -1rem 0;
         width: 62%;
         z-index: -1;
+      }
+    }
+  }
 
+  // with year
+
+  &--with-year {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+
+    span {
+      &:not(.visually-hidden):not(.date-badge__year) {
+        display: inline-block;
+        font-size: 2.4rem;
+        line-height: 2.4rem;
+        font-family: $font-secondary;
+      }
+
+      &.date-badge__year {
+        font-family: $font-primary-semi;
+        font-size: 1.1rem;
+        line-height: 1.4rem;
       }
     }
   }
@@ -68,4 +89,9 @@
   font-family: $font-primary-semi;
   font-size: 1.1rem;
   line-height: 1.6rem;
+}
+
+.date-badge__year {
+  font-family: $font-secondary;
+  font-size: 1.7rem;
 }

@@ -325,6 +325,17 @@
       > li {
         position: relative;
 
+        &.main-menu__item:last-of-type {
+            // als het laatste list-item
+            &.main-menu__item--with-sub {
+              // een listitem met een submenu is,
+              // zorg dan dat dit item minimaal 26rem breed is, zodat er voldoende ruimte is om de items in het
+              // submenu te zien, zonder dat deze onder een rand van een scherm verstopt raken
+              min-width: 13rem; // dit is de ene helft van de lengte van de <ul.main-menu__sublist>
+              margin-right: 13rem; // en dit de andere helft. Samen dus 23rem
+          }
+        }
+
         > a {
           padding: 2rem;
           font-family: $font-primary-semi;
@@ -338,6 +349,13 @@
           > a {
             padding-right: .5rem;
           }
+
+          ul[aria-expanded=true] {
+            z-index: 999;
+            border-left: 1px solid #004152;
+            border-right: 1px solid #004152;
+          }
+
         }
 
         ul {
@@ -366,17 +384,14 @@
 }
 
 .main-menu__open-sub {
-  width: 4rem;
-  height: 4.2rem;
+  width: 4rem; // dit zou 44px (i.e. 4.4rem) moeten zijn, wegens SC 2.5.5
+  height: 4.4rem; // net groot genoeg voor 44px wegens SC 2.5.5
   overflow: hidden;
   margin-left: auto;
   color: transparent;
   background: transparent url('/wp-content/themes/ictuwp-theme-gc2020/assets/images/arrow-white-down.svg') center center no-repeat;
   border: none;
-
-  &.open-list {
-    transform: rotate(180deg);
-  }
+  z-index: 10;
 
   @include bp-down(nav) {
     display: none;

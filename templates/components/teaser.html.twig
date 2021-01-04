@@ -1,22 +1,26 @@
+{% set headerlevel = headerlevel ? headerlevel : 'h2' %}
 
-{% if headerlevel %}
-{% else %}
-  {% set headerlevel = 'h2' %}
-{% endif %}
+{% set teaserClasses = [
+  'teaser',
+  type ? 'teaser--type-' ~ type : 'teaser-type--page',
+  modifier ? ' teaser--' ~ modifier : '',
+  img ? ' l-with-image' : ' l-without-image'
+] %}
 
 <section
-  class="teaser teaser--type-{{ type ? type : 'page' }}{{ modifier ? ' teaser--' ~ modifier }}{{ img ? ' l-with-image' : ' l-without-image' }}">
+    class="teaser teaser--type-{{ type ? type : 'page' }}{{ modifier ? ' teaser--'~ modifier }}{{ img ? ' l-with-image' : ' l-without-image' }}">
   <div class="teaser__link">
 
     {% if img %}
-    <a href="{{ url }}" aria-hidden="true">
-      <div class="teaser__image">
-        {{ img }}
-      </div>
-    </a>
+      <a href="{{ url }}" aria-hidden="true">
+        <div class="teaser__image">
+          {{ img }}
+        </div>
+      </a>
     {% endif %}
 
-    {% if img %}<div class="l-teaser-content">{% endif %}
+    {% if img %}
+    <div class="l-teaser-content">{% endif %}
       <header class="teaser__header">
         {% if type == 'event' %}
 
@@ -33,20 +37,20 @@
         {% endif %}
 
         <{{ headerlevel }} itemprop="name" class="teaser__title">
-          <a href="{{ url }}">
+        <a href="{{ url }}">
           <span class="arrow-link">
             <span class="arrow-link__text">{{ title }}</span><span class="arrow-link__icon" aria-hidden="true"></span>
           </span>
-          </a>
-        </{{ headerlevel }}>
+        </a>
+      </{{ headerlevel }}>
 
       {% if full %}
         <span class="label label--full">{{ full }}</span>
       {% endif %}
 
       {% if meta %}
-          {% include 'components/meta-data.html.twig' with {'items': meta} %}
-        {% endif %}
+        {% include 'components/meta-data.html.twig' with {'items': meta} %}
+      {% endif %}
       </header>
 
       {% if descr %}

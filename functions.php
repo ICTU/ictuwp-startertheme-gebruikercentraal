@@ -8,8 +8,6 @@
  * @since   Timber 0.1
  */
 
-define( 'CHILD_THEME_VERSION', '5.0.32' );
-define( 'CHILD_THEME_VERSION_DESCR', 'Laatste menu-item NIET rechts uitlijnen, want dit breekt raar af op ipad-schermen van 1024px breed.' );
 define( 'ID_MAINCONTENT', 'maincontent' );
 define( 'ID_MAINNAV', 'mainnav' );
 define( 'ID_ZOEKEN', 'zoeken' );
@@ -106,6 +104,8 @@ require_once( get_template_directory() . '/gutenberg-blocks/teaser-block.php' );
 
 // TODO: het block voor de handleiding zou alleen beschikbaar voor pagina's met het template 'template-od-handleiding.php'
 require_once( get_template_directory() . '/gutenberg-blocks/handleiding-block.php' );
+require_once( get_template_directory() . '/gutenberg-blocks/spelleiders-block.php' );
+
 
 /**
  * Load other dependencies such as VAR DUMPER :D
@@ -546,11 +546,8 @@ class GebruikerCentraalTheme extends Timber\Site {
 	 */
 	public function add_adminstyles() {
 
-		// Load CSS for admin editor
-		$cachebuster = '?v=' . CHILD_THEME_VERSION;
-		if ( WP_DEBUG ) {
-			$cachebuster = '?v=' . filemtime( dirname( __FILE__ ) . '/assets/fonts/editor-fonts.css' );
-		}
+		$cachebuster = '?v=' . filemtime( dirname( __FILE__ ) . '/assets/fonts/editor-fonts.css' );
+
 		add_editor_style( get_stylesheet_directory_uri() . '/assets/fonts/editor-fonts.css' . $cachebuster );
 		add_editor_style( get_stylesheet_directory_uri() . '/assets/css/editor-styles.css' . $cachebuster );
 		/*
@@ -582,24 +579,17 @@ class GebruikerCentraalTheme extends Timber\Site {
 
 	public function gc_wbvb_add_css() {
 
-		$versie = CHILD_THEME_VERSION;
-
-		if ( WP_DEBUG ) {
-			$versie = strtotime( "now" );
-		}
-
 		if ( is_array( $this->configuration['jsfiles'] ) ) {
 
 			foreach ( $this->configuration['jsfiles'] as $key => $value ) {
 
+				// alleen de laatste versie is goed genoeg, dus
+				// versienummer is gelijk aan laatst-gewijzigd datum
+				$file         = get_stylesheet_directory() . $value['file'];
+				$versie       = filemtime( $file );
 				$dependencies = $value['dependencies'];
 
-				if ( $value['version'] ) {
-					$versie = $value['version'];
-				}
-
-				wp_enqueue_script( $value['handle'], get_stylesheet_directory_uri() . $value['file'], $dependencies, $versie, $value['infooter'],array( 'wp-i18n' ) );
-				wp_set_script_translations( $value['handle'], 'gctheme' );
+				wp_enqueue_script( $value['handle'], get_stylesheet_directory_uri() . $value['file'], $dependencies, $versie, $value['infooter'] );
 			}
 		}
 
@@ -609,11 +599,11 @@ class GebruikerCentraalTheme extends Timber\Site {
 
 			foreach ( $this->configuration['cssfiles'] as $key => $value ) {
 
+				// alleen de laatste versie is goed genoeg, dus
+				// versienummer is gelijk aan laatst-gewijzigd datum
+				$file         = get_stylesheet_directory() . $value['file'];
+				$versie       = filemtime( $file );
 				$dependencies = $value['dependencies'];
-
-				if ( $value['version'] ) {
-					$versie = $value['version'];
-				}
 
 				wp_enqueue_style( $value['handle'], get_stylesheet_directory_uri() . $value['file'], $dependencies, $versie, 'all' );
 				$skiplinkshandle = $value['handle'];
@@ -739,15 +729,11 @@ class GebruikerCentraalTheme extends Timber\Site {
 					// for Optimaal Digitaal, add tip templates
 					$allowed_templates["template-overzicht-tipgevers.php"] = "[OD] Overzicht alle tipgevers";
 					$allowed_templates["template-alle-tips.php"]           = "[OD] Overzicht alle tips";
-					//					$allowed_templates["template-tips.php"]                = "[OD] Template tips-pagina";
-					$allowed_templates["template-od-home.php"]        = "[OD] Template Home";
-					$allowed_templates["template-od-handleiding.php"] = "[OD] Template Handleiding";
-
+					$allowed_templates["template-od-home.php"]             = "[OD] Template Home";
+					$allowed_templates["template-od-handleiding.php"]      = "[OD] Template Handleiding";
 					break;
 				case 'KB':
-					// for Optimaal Digitaal, add tip templates
 					$allowed_templates["template-beeldbieb.php"] = "Beeldbieb";
-
 					break;
 
 				default:
@@ -997,6 +983,7 @@ function gc_ho_remove_unnecessary_scripts() {
 	wp_dequeue_script( 'coblocks-animation' );
 
 }
+
 add_action( 'wp_footer', 'gc_ho_remove_unnecessary_scripts' );
 
 //========================================================================================================
@@ -1175,9 +1162,9 @@ function append_block_wrappers( $block_content, $block ) {
 		}
 
 		if ( ! empty( $className ) ) {
-			$content = '<'. $tag . ' class="section section--' . $className . '">';
+			$content = '<' . $tag . ' class="section section--' . $className . '">';
 			$content .= $block_content;
-			$content .= '</'. $tag . '>';
+			$content .= '</' . $tag . '>';
 
 			return $content;
 		}

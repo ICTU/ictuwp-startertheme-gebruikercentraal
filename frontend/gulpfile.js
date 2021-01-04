@@ -189,7 +189,7 @@ function prod(done) {
   console.log(siteConfig.path + 'scss/*.scss');
   console.log(siteConfig.dest + 'css');
 
-  if(fs.existsSync(siteConfig.path + 'scss')){
+  if (fs.existsSync(siteConfig.path + 'scss')) {
     gulp
       .src(siteConfig.path + 'scss/*.scss')
       .pipe(sass().on('error', sass.logError))
@@ -205,7 +205,7 @@ function prod(done) {
 }
 
 
-function cleanCSS(done){
+function cleanCSS(done) {
 
   gulp
     .src(siteConfig.dest + 'css/*.map')
