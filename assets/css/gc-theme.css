@@ -5270,7 +5270,13 @@ body:not(.single-event) .entry-content.wrap:last-child {
   position: absolute; }
 
 .filter--show--counter p {
-  display: inline; }
+  margin-left: -2rem;
+  margin-right: -2rem;
+  text-align: center; }
+  @media (min-width: 560px) {
+    .filter--show--counter p {
+      margin-left: -3rem;
+      margin-right: -3rem; } }
 
 .filter--cards .work-item {
   display: none; }

@@ -27,14 +27,11 @@
     -webkit-transition: border-color 0.2s;
     transition: border-color 0.2s;
   }
-
-
 }
 
 .item--filter {
   margin: 1.4rem 0.7rem 0;
 }
-
 
 .item--filter {
   label {
@@ -206,7 +203,8 @@
 }
 
 .filter--show--counter p {
-  display: inline;
+  @include negate-padding;
+  text-align: center;
 }
 
 .filter--cards {
@@ -219,3 +217,5 @@
     transition: all .35s ease;
   }
 }
+
+
