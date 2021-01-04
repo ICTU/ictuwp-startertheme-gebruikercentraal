@@ -100,6 +100,14 @@
   box-shadow: .4rem .4rem 0 rgba($color, $trans);
 }
 
+@mixin gc-last-padding(){
+  padding-bottom: 4rem;
+
+  @include bp-up(lg) {
+    padding-bottom: 7rem;
+  }
+}
+
 
 @mixin gc-pagination() {
   display: flex;
@@ -107,18 +115,18 @@
   border: none;
 
   @include bp-up(lg) {
-    margin-top: 3rem;
+    margin-top: 5rem;
   }
 
   a, span.current {
     //@include gc-box-shadow();
     display: inline-block;
-    padding: .5rem 1rem;
+    padding: .8rem 1rem;
     text-decoration: none;
     position: relative;
     transition: padding .2s, background-color .2s;
     line-height: 2.6rem;
-    border: .1rem solid transparent;
+    border: .1rem solid $border-color;
   }
 
   a {
@@ -131,9 +139,9 @@
       border-color: $gc-dark-blue;
       text-decoration: underline;
       color: $base_font_color;
-      border-color: $gc_greyblue;
     }
   }
+
   span.current {
     border: .1rem solid $gc_greyblue;
     padding: .5rem 1rem;
@@ -143,25 +151,21 @@
     margin-left: auto;
   }
 
-  .pagination-previous a {
-    @include icon(before, arrow);
-  }
-  .pagination-next a {
-    @include icon(after, arrow);
-  }
-
   .pagination-previous a:before,
   .pagination-next a:after {
     @include square(2rem);
     position: absolute;
     display: block;
-    top: 1rem;
+    top: 50%;
+    margin-top: -.9rem;
     font-size: 1.4rem;
     color: $gc-dark-blue;
     line-height: 2rem;
   }
 
   .pagination-previous a {
+    @include icon(before, arrow);
+    padding-right: 1.5rem;
     padding-left: 3.8rem;
 
     &:before {
@@ -173,8 +177,9 @@
       padding-left: 3.9rem;
     }
   }
-
   .pagination-next a {
+    @include icon(after, arrow);
+    padding-left: 1.5rem;
     padding-right: 3.8rem;
 
     &:after {
@@ -185,7 +190,6 @@
       padding-right: 3.9rem;
     }
   }
-
 }
 
 

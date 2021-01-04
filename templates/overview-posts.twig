@@ -1,134 +1,20 @@
-{# This file demonstrates using most of the index.twig template and modifying
-   just a small part. See `search.twig` for an example of another approach #}
+{% extends 'archive.twig' %}
 
-{% block html_head_container %}
-  {% include 'html-header.twig' %}
-  {% block head %}
-  {% endblock %}
-  </head>
+{% block body_tag %}
+<body class="{{ body_class }}page--overview-archive">
 {% endblock %}
 
-<body class="page page--type-overview page--overview-archive">
 
-<div class="site-container">
+{% block archive_intro %}
 
-  <ul id="{{ skiplinks_id }}">
-    <li><a href="#{{ maincontent_id }}">{{ maincontent_id_linktext }}</a></li>
-    {% if menu %}
-      <li><a href="#{{ mainnav_id }}">{{ mainnav_id_linktext }}</a></li>
-    {% endif %}
-  </ul>
-
-  <header class="page-header">
-
-    <div class="l-header-top">
-      {% include "partial/header-branding.twig" %}
-      {% include "header-searchform.twig" %}
-      {% include "partial/header-mobile-button.twig" %}
-    </div>
-
-    {% include "menu.twig" with {'items': menu.get_items} %}
-
+<div class="page__intro">
+  <header class="entry-header">
+    <h1 class="entry-title">{{ post.title }}</h1>
   </header>
 
-  {{ function('insert_breadcrumb') }}
-
-
-
-  <div class="page-content" id="maincontent" tabindex="-1">
-    <main class="content">
-      {% block content %}
-        <article class="entry entry--type-overview entry--full">
-
-          <div class="entry-content">
-
-            {% block archive_intro %}
-
-              <div class="page__intro">
-                <header class="entry-header">
-                  <h1 class="entry-title">{{ post.title }}</h1>
-                </header>
-
-                {% if post.content %}
-                  <p class="archive__descr">
-                    {{ post.content }}
-                  </p>
-                {% endif %}
-              </div>
-
-            {% endblock %}
-
-
-            {% block archive_overview %}
-              {% if posts and overview is empty %}
-
-                <article class="section section--overview-list l-item-count-3">
-                  <div class="l-section-content">
-                    <div class="overview overview--list">
-
-                      {% for post in items %}
-                        {% include 'components/teaser.html.twig' with {
-                          'title' : post.title,
-                          'headerlevel' : 'h2',
-                          'descr' : post.descr,
-                          'img' : post.img,
-                          'type' : post.type,
-                          'meta': post.meta,
-                          'category': post.category,
-                          'post_date': ( post.post_date ?? '' ),
-                          'url': post.url
-                        } %}
-                      {% endfor %}
-                    </div>
-                  </div>
-                </article>
-
-              {% elseif overview %}
-
-                {% include 'sections/section-overview.html.twig' with {
-                  'title': overview.title,
-                  'items': overview.items,
-                  'template' : overview.template ? overview.template : 'card',
-                  'modifier' : overview.modifier ? overview.modifier
-                } %}
-              {% endif %}
-
-            {% endblock %}
-
-            {% block pagination %}
-
-              {% include 'partial/pagination.twig' with { pagination: posts.pagination({show_all: false, mid_size: 3, end_size: 2}) } %}
-
-            {% endblock %}
-
-          </div>
-        </article>
-      {% endblock %}
-
-    </main>
-
-
-    {% if spotlight %}
-      {% include 'sections/section-spotlight.html.twig' with {
-        'items': spotlight,
-        'modifier': 'bg-option',
-      } %}
-    {% endif %}
-
-
-    {% block page_bottom %}
-
-    {% endblock %}
-  </div>
-
-  {% block footer %}
-    {% include 'footer.twig' %}
-    {{ function('wp_footer') }}
-  {% endblock %}
+  {% if post.content %}
+    {{ post.content }}
+  {% endif %}
 </div>
 
-</body>
-</html>
-
-
-
+{% endblock %}

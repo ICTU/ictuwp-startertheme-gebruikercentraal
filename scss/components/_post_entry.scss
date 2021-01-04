@@ -9,42 +9,9 @@
   }
 
   &--full {
-    .entry-body,
-    .entry-header {
-      max-width: $max-width-inner;
-      margin: 0 auto;
-    }
-
-    .post__body {
-      > .section {
-
-        &:first-child {
-          // Make margin smaller if first section is a text one
-          &.section--paragraph {
-            margin-top: 2rem;
-          }
-
-          &:last-child {
-            padding-bottom: 4rem;
-
-            @include bp-up(lg) {
-              padding-bottom: 7rem;
-            }
-          }
-        }
-
-        &--paragraph {
-          @include bp-down(md){
-            padding-left: 0;
-            padding-right: 0;
-          }
-        }
-      }
-    }
-
-    .section--bg-option {
-      @include ho-padding;
-      @include negate-padding;
+    .post__header,
+    .post__body > .section {
+      @include ho-make-container($max-width-inner);
     }
 
     .l-with-related & {
@@ -54,7 +21,6 @@
       }
     }
   }
-
 
   &.l-with-stepchart {
     .page__intro {
@@ -76,6 +42,111 @@
   }
 }
 
+// sections for either .post or .entry
+.post__body,
+.entry-content {
+  @include ho-padding;
+
+  > .section {
+    @include ho-make-container($max-width-inner);
+
+    &:first-child {
+      // Make margin smaller if first section is a text one
+      &.section--paragraph {
+        margin-top: 2rem;
+      }
+    }
+
+    &:last-child {
+      @include gc-last-padding;
+    }
+
+
+    &--paragraph {
+      @include bp-down(md) {
+        padding-left: 0;
+        padding-right: 0;
+      }
+    }
+
+
+    &--bg-option {
+      max-width: none;
+      @include ho-padding;
+      @include negate-padding;
+    }
+
+    &--overview.l-item-count-3 {
+      max-width: none;
+    }
+  }
+
+  > div:last-child {
+    // Not a section, can also be last
+    &.wp-block-coblocks-gallery-masonry {
+      @include gc-last-padding;
+    }
+  }
+}
+
+// Sections buiten gutenberg / post body
+.entry > .section,
+.post__content > .section {
+  @include ho-padding;
+
+  &:last-child {
+    @include gc-last-padding;
+
+    &.section--overview {
+      @include bp-up(lg) {
+        padding-bottom: 10rem;
+      }
+    }
+  }
+}
+
+// Exceptions for .post sections outside of post body
+.post__content > .section {
+  &--bg-option {
+    @include negate-padding;
+    @include ho-padding;
+  }
+}
+
+.entry-content,
+.post__body {
+  + .section {
+    // no margin top - the last child of the sections inside of body already get padding on the last child.
+    margin-top: 0;
+  }
+}
+
+.wp-block-image {
+  @include ho-make-container($max-width-inner);
+}
+
+.entry {
+  &--type-overview {
+    .page__intro .section--paragraph {
+      padding: 3rem;
+
+      p:first-child {
+        margin-top: 0;
+      }
+
+      @include bp-up(md) {
+        padding-left: 5rem;
+        padding-right: 5rem;
+      }
+    }
+  }
+
+  &--type-post .entry-content {
+    // Remove double padding - post also gets padding from main
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
 
 /*
  * Pagination
@@ -83,44 +154,6 @@
 
 .pagination {
   @include gc-pagination;
-
-  display: flex;
-  justify-content: center; // beter dan flex-start, zie bijv. https://gcadmin.test-ictu-gc.nl/gebruikercentraal/category/blog/
-  padding-bottom: 5rem;
-
-  @include bp-up(lg) {
-    padding-bottom: 7rem;
-  }
-
-  // pagination is a list
-  &, li {
-    list-style: none;
-    margin-left: 0;
-    padding-left: 0;
-  }
-
-  li {
-    margin: .25rem;
-    padding: .25rem;
-  }
-
-  width: 100%;
-
-  a {
-    border-color: $border_color;
-  }
-
-  > div:not(.pagination) {
-    width: 50%;
-  }
-
-  .pagination-previous {
-    padding-right: $gutter / 2;
-  }
-
-  .pagination-next {
-    padding-left: $gutter / 2;
-  }
 }
 
 /*

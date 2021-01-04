@@ -253,7 +253,7 @@ function prodAll(done) {
 function watch() {
 
   console.log("Watch: " + siteConfig.path + 'scss/**/*.scss');
-  console.log("Watch: ../theme/scss/**/*.scss");
+  console.log("Watch: ../scss/**/*.scss");
   console.log("Name: " + siteConfig.name);
 
   browserSync.init({
