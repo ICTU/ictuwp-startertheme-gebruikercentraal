@@ -168,7 +168,6 @@
     }
 
   &.l-item-count-3 {
-    @include ho-padding;
     .l-section-content {
       max-width: calc(#{$max-width-content} - #{$gutter * 3});
     }

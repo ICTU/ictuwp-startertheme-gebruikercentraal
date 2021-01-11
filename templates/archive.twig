@@ -5,70 +5,70 @@
 
 
 {% block content %}
-<article class="entry entry--type-overview entry--full">
+  <article class="entry entry--type-overview entry--full">
 
-  <div class="entry-content">
+    <div class="entry-content">
 
-  {% block archive_intro %}
+      {% block archive_intro %}
 
-    <div class="page__intro">
-      <header class="entry-header">
-        <h1 class="entry-title">{{ title }}</h1>
-      </header>
+        <div class="page__intro">
+          <header class="entry-header">
+            <h1 class="entry-title">{{ title }}</h1>
+          </header>
 
-      {% if descr %}
-        <p class="archive__descr">
-          {{ descr }}
-        </p>
-      {% endif %}
-    </div>
-
-  {% endblock %}
-
-
-  {% block archive_overview %}
-    {% if posts and overview is empty %}
-
-    <article class="section section--overview-list l-item-count-3">
-      <div class="l-section-content">
-        <div class="overview overview--list">
-
-        {% for post in items %}
-
-          {% include 'components/teaser.html.twig' with {
-            'title' : post.title,
-            'headerlevel' : 'h2',
-            'descr' : post.descr,
-            'img' : post.img,
-            'type' : post.type,
-            'meta': post.meta,
-            'category': post.category,
-            'post_date': ( post.post_date ?? '' ),
-            'url': post.url
-          } %}
-        {% endfor %}
+          {% if descr %}
+            <p class="archive__descr">
+              {{ descr }}
+            </p>
+          {% endif %}
         </div>
-      </div>
-    </article>
 
-    {% elseif overview %}
+      {% endblock %}
 
-      {% include 'sections/section-overview.html.twig' with {
-        'title': overview.title,
-        'items': overview.items,
-        'template' : overview.template ? overview.template : 'card',
-        'modifier' : overview.modifier ? overview.modifier
-      } %}
-    {% endif %}
 
-  {% endblock %}
+      {% block archive_overview %}
+        {% if posts and overview is empty %}
 
-  {% block pagination %}
+          <article class="section section--overview-list">
+            <div class="l-section-content">
+              <div class="overview overview--list">
 
-    {% include 'partial/pagination.twig' with { pagination: posts.pagination({show_all: false, mid_size: 3, end_size: 2}) } %}
+                {% for post in items %}
 
-  {% endblock %}
+                  {% include 'components/teaser.html.twig' with {
+                    'title' : post.title,
+                    'headerlevel' : 'h2',
+                    'descr' : post.descr,
+                    'img' : post.img,
+                    'type' : post.type,
+                    'meta': post.meta,
+                    'category': post.category,
+                    'post_date': ( post.post_date ?? '' ),
+                    'url': post.url
+                  } %}
+                {% endfor %}
+              </div>
+            </div>
+          </article>
 
-  </div>
+        {% elseif overview %}
+
+          {% include 'sections/section-overview.html.twig' with {
+            'title': overview.title,
+            'items': overview.items,
+            'template' : overview.template ? overview.template : 'card',
+            'modifier' : overview.modifier ? overview.modifier
+          } %}
+        {% endif %}
+
+      {% endblock %}
+
+      {% block pagination %}
+
+        {% include 'partial/pagination.twig' with { pagination: posts.pagination({show_all: false, mid_size: 3, end_size: 2}) } %}
+
+      {% endblock %}
+
+    </div>
   </article>
 {% endblock %}

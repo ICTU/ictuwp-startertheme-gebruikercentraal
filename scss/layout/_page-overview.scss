@@ -74,13 +74,11 @@
     @include bp-up(lg) {
       padding-bottom: 7rem;
     }
-
   }
 
   .grid {
     @include ho-make-container($max-width-container);
   }
-
 }
 
 .page-template-template-events-overview {
@@ -236,9 +234,7 @@
     @include bp-up(lg) {
       padding-bottom: 7rem;
     }
-
   }
-
 }
 
 // Search results

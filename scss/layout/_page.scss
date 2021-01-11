@@ -89,29 +89,6 @@ html {
   }
 }
 
-body:not(.page--type-homepage) {
-  // dus niet de homepage
-  article section.section:not(:first-child):not(.section--bg-option):last-child {
-    // de laatste sectie, maar alleen als het niet de enige
-    // section is en als 'ie niet een achtergrondkleurtje heeft
-    padding-bottom: 5rem;
-
-    @include bp-up(lg) {
-      padding-bottom: 7rem;
-    }
-  }
-
-  // extra uitzondering op de regel: een downloadblock
-  article section.section.section--downloads:not(:first-child):not(.section--bg-option):last-child {
-    // een download block heeft van zichzelf al aardig wat ruimte.
-    padding-bottom: 3rem;
-    @include bp-up(lg) {
-      padding-bottom: 3rem;
-    }
-  }
-}
-
-
 h1 {
   font-family: $font-secondary;
   font-size: 4rem;
@@ -260,7 +237,7 @@ body[data-template='base.twig'] { //All pages that use the base twig template
   }
 }
 
-
+/*
 body:not(.single-event) {
   // extra padding onderop toevoegen aan de .entry-content;
   // alleen niet voor single events, maar dus wel voor
@@ -270,6 +247,7 @@ body:not(.single-event) {
   .entry-content.wrap:last-child {
     // zorg dat entry-content padding heeft onderin als er verder daarna
     // geen blokken volgen
+    // gaat niet samen met de comments, valt onder entry, niet onder page
     padding-bottom: 7rem;
   }
-}
+}*/
