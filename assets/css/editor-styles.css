@@ -1560,6 +1560,13 @@
     .tipkaart--gebruiksgemak > a:hover, .tipkaart--gebruiksgemak > a:focus, .tipkaart--gebruiksgemak > a:active {
       background: #402261;
       border-color: #2D114E; }
+  .tipkaart--gebruiksgemak {
+    background: #4c2974; }
+    .tipkaart--gebruiksgemak:before {
+      background: #2D114E; }
+    .tipkaart--gebruiksgemak > a:hover, .tipkaart--gebruiksgemak > a:focus, .tipkaart--gebruiksgemak > a:active {
+      background: #402261;
+      border-color: #2D114E; }
   .tipkaart--informatieveiligheid {
     background: #c42c76; }
     .tipkaart--informatieveiligheid:before {
@@ -1647,6 +1654,8 @@
       background: #A20E56; }
     .tipkaart--samenwerking .tipkaart__toptip:before {
       background: #007BB0; }
+    .tipkaart--commitment .tipkaart__toptip:before {
+      background: #148839; }
     .tipkaart--procesaanpak .tipkaart__toptip:before {
       background: #00b4ac; }
     .tipkaart--gebruiksgemak .tipkaart__toptip:before {

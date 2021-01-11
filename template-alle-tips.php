@@ -16,6 +16,7 @@ $context['tipkaarts'] = [];
 $themakleuren         = get_themakleuren();
 $card                 = [];
 
+
 /*
 Deze argumenten zouden sorteren op tipnummer:
 
@@ -67,7 +68,7 @@ en dan moeten we de tipnumemrs converteren naar een integer
 
  */
 
-		$i ++;
+		
 		$context['tipkaarts'][] = prepare_card_content( $post );
 
 	}
@@ -75,6 +76,18 @@ en dan moeten we de tipnumemrs converteren naar een integer
 }
 /* Restore original Post Data */
 wp_reset_postdata();
+
+
+$terms = get_terms( array(
+    'taxonomy' => 'tipthema',
+    'hide_empty' => false,
+) );
+
+$context['tipkaartsterms'] = get_terms(array(
+    'taxonomy' => 'tipthema',
+    'hide_empty' => false,
+) );
+
 
 // Inleiding
 if ( get_field( 'post_inleiding' ) ) {

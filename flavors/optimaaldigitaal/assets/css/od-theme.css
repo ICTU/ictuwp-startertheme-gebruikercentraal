@@ -4447,6 +4447,13 @@ body:not(.single-event) {
     .tipkaart--gebruiksgemak > a:hover, .tipkaart--gebruiksgemak > a:focus, .tipkaart--gebruiksgemak > a:active {
       background: #402261;
       border-color: #2D114E; }
+  .tipkaart--gebruiksgemak {
+    background: #4c2974; }
+    .tipkaart--gebruiksgemak:before {
+      background: #2D114E; }
+    .tipkaart--gebruiksgemak > a:hover, .tipkaart--gebruiksgemak > a:focus, .tipkaart--gebruiksgemak > a:active {
+      background: #402261;
+      border-color: #2D114E; }
   .tipkaart--informatieveiligheid {
     background: #c42c76; }
     .tipkaart--informatieveiligheid:before {
@@ -4534,6 +4541,8 @@ body:not(.single-event) {
       background: #A20E56; }
     .tipkaart--samenwerking .tipkaart__toptip:before {
       background: #007BB0; }
+    .tipkaart--commitment .tipkaart__toptip:before {
+      background: #148839; }
     .tipkaart--procesaanpak .tipkaart__toptip:before {
       background: #00b4ac; }
     .tipkaart--gebruiksgemak .tipkaart__toptip:before {
@@ -4713,6 +4722,192 @@ body:not(.single-event) {
         right: 0;
         top: 4.5rem;
         width: 15rem; } }
+
+.filter {
+  max-width: 1280px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 4rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap; }
+
+.filter label {
+  border: 0.2rem solid #e8d8c7;
+  padding: 0.7rem 1rem 0.5rem;
+  -webkit-transition: background 0.2s, border-color 0.2s;
+  transition: background 0.2s, border-color 0.2s;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  font-family: "montserratsemibold", Helvetica, Arial, sans-serif; }
+  .filter label:before {
+    content: " ";
+    display: inline-block;
+    width: 2.4rem;
+    height: 2.4rem;
+    border-color: #004152;
+    border-width: 0.1rem;
+    margin-right: 1.5rem;
+    -webkit-transition: border-color 0.2s;
+    transition: border-color 0.2s; }
+
+.item--filter {
+  margin: 1.4rem 0.7rem 0; }
+
+.item--filter label:before {
+  content: " ";
+  display: inline-block;
+  width: 2.4rem;
+  height: 2.4rem;
+  border: 0.1rem solid #00303d;
+  margin-right: 1.5rem;
+  -webkit-transition: border-color 0.2s;
+  transition: border-color 0.2s; }
+
+.item--filter label:hover {
+  border-color: #148839; }
+
+.item--filter label:focus {
+  border-color: #148839;
+  text-decoration: underline; }
+
+.item--filter input:focus + label {
+  border-color: #148839; }
+
+.item--filter.informatieveiligheid input:focus + label {
+  border-color: #A20E56;
+  text-decoration: underline; }
+
+.item--filter.informatieveiligheid input:hover + label {
+  border-color: #A20E56;
+  text-decoration: underline; }
+
+.item--filter.commitment input:focus + label {
+  border-color: #148839;
+  text-decoration: underline; }
+
+.item--filter.commitment input:hover + label {
+  border-color: #148839;
+  text-decoration: underline; }
+
+.item--filter.samenwerking input:focus + label {
+  border-color: #007BB0;
+  text-decoration: underline; }
+
+.item--filter.samenwerking input:hover + label {
+  border-color: #007BB0;
+  text-decoration: underline; }
+
+.item--filter.procesaanpak input:focus + label {
+  border-color: #00b4ac;
+  text-decoration: underline; }
+
+.item--filter.procesaanpak input:hover + label {
+  border-color: #00b4ac;
+  text-decoration: underline; }
+
+.item--filter.gebruiksgemak input:focus + label {
+  border-color: #2D114E;
+  text-decoration: underline; }
+
+.item--filter.gebruiksgemak input:hover + label {
+  border-color: #2D114E;
+  text-decoration: underline; }
+
+.item--filter.kanaalsturing input:focus + label {
+  border-color: #f99d1c;
+  text-decoration: underline; }
+
+.item--filter.kanaalsturing input:hover + label {
+  border-color: #f99d1c;
+  text-decoration: underline; }
+
+.item--filter.inclusie input:focus + label {
+  border-color: #c73d19;
+  text-decoration: underline; }
+
+.item--filter.inclusie input:hover + label {
+  border-color: #c73d19;
+  text-decoration: underline; }
+
+.item--filter.filter-active label:before {
+  border-color: #fff;
+  background: #fff url(/wp-content/themes/ictuwp-theme-gc2020/assets/images/icons/check.svg) center center no-repeat;
+  background-size: 1.2rem auto; }
+
+.item--filter.filter-active {
+  background: #148839;
+  color: #fff; }
+  .item--filter.filter-active:before {
+    border-color: #117230; }
+
+.item--filter.commitment.filter-active {
+  background: #148839; }
+  .item--filter.commitment.filter-active:before {
+    border-color: #117230; }
+
+.item--filter.informatieveiligheid.filter-active {
+  background: #A20E56; }
+  .item--filter.informatieveiligheid.filter-active:before {
+    border-color: #8b0c4a; }
+
+.item--filter.samenwerking.filter-active {
+  background: #007BB0; }
+  .item--filter.samenwerking.filter-active:before {
+    border-color: #006997; }
+
+.item--filter.procesaanpak.filter-active {
+  background: #00b4ac; }
+  .item--filter.procesaanpak.filter-active:before {
+    border-color: #009b94; }
+
+.item--filter.gebruiksgemak.filter-active {
+  background: #2D114E; }
+  .item--filter.gebruiksgemak.filter-active:before {
+    border-color: #210c39; }
+
+.item--filter.kanaalsturing.filter-active {
+  background: #f99d1c; }
+  .item--filter.kanaalsturing.filter-active:before {
+    border-color: #f59206; }
+
+.item--filter.inclusie.filter-active {
+  background: #c73d19; }
+  .item--filter.inclusie.filter-active:before {
+    border-color: #b03616; }
+
+.item--filter input {
+  border: 0;
+  clip: rect(1px, 1px, 1px, 1px);
+  height: 1px;
+  width: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute; }
+
+.filter--show--counter p {
+  margin-left: -2rem;
+  margin-right: -2rem;
+  text-align: center; }
+  @media (min-width: 560px) {
+    .filter--show--counter p {
+      margin-left: -3rem;
+      margin-right: -3rem; } }
+
+.filter--cards .work-item {
+  display: none; }
+
+.filter--cards .show-work-item {
+  display: block;
+  -webkit-transition: all .35s ease;
+  transition: all .35s ease; }
 
 .link--linklist {
   font-family: "montserratbold", Helvetica, Arial, sans-serif;

@@ -22,31 +22,41 @@
       </div>
     </div>
 
-    {% if filters %}
-      <div class="l-filter-wrapper">
-        <p>Filter werkt nog niet</p>
-        <form id="tp-filters" class="form form--filters">
-          {% for item in filters %}
-            <div class="form-item form-item--checkbox form-item--filter">
-              <input type="checkbox" id="{{ item.class }}">
-              <label for="{{ item.class }}">{{ item.name }}</label>
+    {% if tipkaarts %}
+      {% if tipkaartsterms %}
+        <div class="filter">
+          <div class="wrapper filter">
+            <div class="item--filter filter-active">
+              <input type="checkbox" data-count="{{ tipkaarts|length }}" data-categorie="{{ __('All', 'gctheme') }}" class="form-item--filter show-all filter-active" data-filter="all" id="allitems"></input>
+              <label for="allitems">Alle tipkaarten</label>
             </div>
+            {% for item in tipkaartsterms %}
+            <div class="item--filter {{ item.name|lower }}">
+              <input type="checkbox" class="form-item--filter card-filter {{ item.name }}" data-categorie="{{ item.name }}" data-count="{{ item.count }}" data-filter="tipkaart--{{ item.name|lower }}" id="{{ item.name|lower }}"></input>
+              <label for="{{ item.name|lower }}">{{ item.name }} ({{ item.count }})</label>
+            </div>
+
           {% endfor %}
-        </form>
-      </div>
+          </div>
+        </div>
+      {% endif %}
     {% endif %}
 
     {% if tipkaarts %}
+
       {% include 'sections/section-overview.html.twig' with {
         'items': tipkaarts,
         'title': '',
         'template': 'card--tipkaart',
-        'modifier': '4col'
+        'modifier': '4col',
+        'extra_class': 'filter--cards',
+        'filter' : true,
       } %}
     {% endif %}
     {% if tipgevers %}
 
       <div class="grid grid--col-3 grid--gutter-wide">
+
         {% for item in tipgevers.items %}
           {% include 'components/card--author.html.twig' with {
             'type': 'author',
