@@ -29,11 +29,11 @@
   }
 }
 
-.item--filter {
-  margin: 1.4rem 0.7rem 0;
-}
 
 .item--filter {
+
+  margin: 1.4rem 0.7rem 0;
+
   label {
     &:before {
       content: " ";
@@ -65,75 +65,95 @@
     border-color: $gc_pink_darker;
     text-decoration: underline;
   }
+
   &.informatieveiligheid input:hover + label {
     border-color: $gc_pink_darker;
     text-decoration: underline;
   }
+
   &.commitment input:focus + label {
     border-color: $gc_a11y_green;
     text-decoration: underline;
   }
+
   &.commitment input:hover + label {
     border-color: $gc_a11y_green;
     text-decoration: underline;
   }
+
   &.samenwerking input:focus + label {
     border-color: $gc_a11y_blue;
     text-decoration: underline;
   }
+
   &.samenwerking input:hover + label {
     border-color: $gc_a11y_blue;
     text-decoration: underline;
   }
+
   &.procesaanpak input:focus + label {
     border-color: $gc_cyan;
     text-decoration: underline;
   }
+
   &.procesaanpak input:hover + label {
     border-color: $gc_cyan;
     text-decoration: underline;
   }
+
   &.gebruiksgemak input:focus + label {
     border-color: $gc_dark_purple_darker;
     text-decoration: underline;
   }
+
   &.gebruiksgemak input:hover + label {
     border-color: $gc_dark_purple_darker;
     text-decoration: underline;
   }
+
   &.kanaalsturing input:focus + label {
     border-color: $gc_orange;
     text-decoration: underline;
   }
+
   &.kanaalsturing input:hover + label {
     border-color: $gc_orange;
     text-decoration: underline;
   }
+
   &.inclusie input:focus + label {
     border-color: $inc_a11y_orange;
     text-decoration: underline;
   }
+
   &.inclusie input:hover + label {
-    border-color:$inc_a11y_orange;
+    border-color: $inc_a11y_orange;
     text-decoration: underline;
   }
 
-}
 
-.item--filter.filter-active label:before {
-  border-color: #fff;
-  background: #fff url(/wp-content/themes/ictuwp-theme-gc2020/assets/images/icons/check.svg) center center no-repeat;
-  background-size: 1.2rem auto;
-}
+  &.filter-active {
+    background: $gc_a11y_green;
+    color: $white;
 
-.item--filter.filter-active {
-  background: $gc_a11y_green;
-  color: $white;
+    &:before {
+      border-color: darken($gc_a11y_green, 5%);
+    }
 
-  &:before {
-    border-color: darken($gc_a11y_green, 5%);
+    &.filter-active label {
+      @include icon(before, check);
+
+      &:before {
+        border-color: #fff;
+        line-height: 1.4;
+        text-align: center;
+        color: #000;
+        background-color: #fff;
+      }
+    }
   }
 }
+
 
 .item--filter.commitment.filter-active {
   background: $gc_a11y_green;
@@ -160,10 +180,10 @@
 }
 
 .item--filter.procesaanpak.filter-active {
-  background: $gc_cyan;
+  background: $gc-a11y-cyan-lg;
 
   &:before {
-    border-color: darken($gc_cyan, 5%);
+    border-color: darken($gc-a11y-cyan-lg, 5%);
   }
 }
 
@@ -176,10 +196,10 @@
 }
 
 .item--filter.kanaalsturing.filter-active {
-  background: $gc_orange;
+  background: $gc_a11y_orange_lg;
 
   &:before {
-    border-color: darken($gc_orange, 5%);
+    border-color: darken($gc_a11y_orange_lg, 5%);
   }
 }
 
@@ -192,14 +212,7 @@
 }
 
 .item--filter input {
-  border: 0;
-  clip: rect(1px, 1px, 1px, 1px);
-  height: 1px;
-  width: 1px;
-  margin: -1px;
-  overflow: hidden;
-  padding: 0;
-  position: absolute;
+  @include visually-hidden();
 }
 
 .filter--show--counter p {
@@ -212,6 +225,7 @@
   .work-item {
     display: none;
   }
+
   .show-work-item {
     display: block;
     transition: all .35s ease;

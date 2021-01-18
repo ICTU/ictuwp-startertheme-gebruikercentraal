@@ -4759,93 +4759,80 @@ body:not(.single-event) {
 
 .item--filter {
   margin: 1.4rem 0.7rem 0; }
-
-.item--filter label:before {
-  content: " ";
-  display: inline-block;
-  width: 2.4rem;
-  height: 2.4rem;
-  border: 0.1rem solid #00303d;
-  margin-right: 1.5rem;
-  -webkit-transition: border-color 0.2s;
-  transition: border-color 0.2s; }
-
-.item--filter label:hover {
-  border-color: #148839; }
-
-.item--filter label:focus {
-  border-color: #148839;
-  text-decoration: underline; }
-
-.item--filter input:focus + label {
-  border-color: #148839; }
-
-.item--filter.informatieveiligheid input:focus + label {
-  border-color: #A20E56;
-  text-decoration: underline; }
-
-.item--filter.informatieveiligheid input:hover + label {
-  border-color: #A20E56;
-  text-decoration: underline; }
-
-.item--filter.commitment input:focus + label {
-  border-color: #148839;
-  text-decoration: underline; }
-
-.item--filter.commitment input:hover + label {
-  border-color: #148839;
-  text-decoration: underline; }
-
-.item--filter.samenwerking input:focus + label {
-  border-color: #007BB0;
-  text-decoration: underline; }
-
-.item--filter.samenwerking input:hover + label {
-  border-color: #007BB0;
-  text-decoration: underline; }
-
-.item--filter.procesaanpak input:focus + label {
-  border-color: #00b4ac;
-  text-decoration: underline; }
-
-.item--filter.procesaanpak input:hover + label {
-  border-color: #00b4ac;
-  text-decoration: underline; }
-
-.item--filter.gebruiksgemak input:focus + label {
-  border-color: #2D114E;
-  text-decoration: underline; }
-
-.item--filter.gebruiksgemak input:hover + label {
-  border-color: #2D114E;
-  text-decoration: underline; }
-
-.item--filter.kanaalsturing input:focus + label {
-  border-color: #f99d1c;
-  text-decoration: underline; }
-
-.item--filter.kanaalsturing input:hover + label {
-  border-color: #f99d1c;
-  text-decoration: underline; }
-
-.item--filter.inclusie input:focus + label {
-  border-color: #c73d19;
-  text-decoration: underline; }
-
-.item--filter.inclusie input:hover + label {
-  border-color: #c73d19;
-  text-decoration: underline; }
-
-.item--filter.filter-active label:before {
-  border-color: #fff;
-  background: #fff url(/wp-content/themes/ictuwp-theme-gc2020/assets/images/icons/check.svg) center center no-repeat;
-  background-size: 1.2rem auto; }
-
-.item--filter.filter-active {
-  background: #148839;
-  color: #fff; }
-  .item--filter.filter-active:before {
-    border-color: #117230; }
+  .item--filter label:before {
+    content: " ";
+    display: inline-block;
+    width: 2.4rem;
+    height: 2.4rem;
+    border: 0.1rem solid #00303d;
+    margin-right: 1.5rem;
+    -webkit-transition: border-color 0.2s;
+    transition: border-color 0.2s; }
+  .item--filter label:hover {
+    border-color: #148839; }
+  .item--filter label:focus {
+    border-color: #148839;
+    text-decoration: underline; }
+  .item--filter input:focus + label {
+    border-color: #148839; }
+  .item--filter.informatieveiligheid input:focus + label {
+    border-color: #A20E56;
+    text-decoration: underline; }
+  .item--filter.informatieveiligheid input:hover + label {
+    border-color: #A20E56;
+    text-decoration: underline; }
+  .item--filter.commitment input:focus + label {
+    border-color: #148839;
+    text-decoration: underline; }
+  .item--filter.commitment input:hover + label {
+    border-color: #148839;
+    text-decoration: underline; }
+  .item--filter.samenwerking input:focus + label {
+    border-color: #007BB0;
+    text-decoration: underline; }
+  .item--filter.samenwerking input:hover + label {
+    border-color: #007BB0;
+    text-decoration: underline; }
+  .item--filter.procesaanpak input:focus + label {
+    border-color: #00b4ac;
+    text-decoration: underline; }
+  .item--filter.procesaanpak input:hover + label {
+    border-color: #00b4ac;
+    text-decoration: underline; }
+  .item--filter.gebruiksgemak input:focus + label {
+    border-color: #2D114E;
+    text-decoration: underline; }
+  .item--filter.gebruiksgemak input:hover + label {
+    border-color: #2D114E;
+    text-decoration: underline; }
+  .item--filter.kanaalsturing input:focus + label {
+    border-color: #f99d1c;
+    text-decoration: underline; }
+  .item--filter.kanaalsturing input:hover + label {
+    border-color: #f99d1c;
+    text-decoration: underline; }
+  .item--filter.inclusie input:focus + label {
+    border-color: #c73d19;
+    text-decoration: underline; }
+  .item--filter.inclusie input:hover + label {
+    border-color: #c73d19;
+    text-decoration: underline; }
+  .item--filter.filter-active {
+    background: #148839;
+    color: #fff; }
+    .item--filter.filter-active:before {
+      border-color: #117230; }
+    .item--filter.filter-active.filter-active label:before {
+      content: "";
+      font-style: normal;
+      font-weight: normal;
+      font-family: 'icons'; }
+    .item--filter.filter-active.filter-active label:before {
+      border-color: #fff;
+      line-height: 1.4;
+      text-align: center;
+      color: #000;
+      background-color: #fff; }
 
 .item--filter.commitment.filter-active {
   background: #148839; }
@@ -4863,9 +4850,9 @@ body:not(.single-event) {
     border-color: #006997; }
 
 .item--filter.procesaanpak.filter-active {
-  background: #00b4ac; }
+  background: #009C95; }
   .item--filter.procesaanpak.filter-active:before {
-    border-color: #009b94; }
+    border-color: #00837d; }
 
 .item--filter.gebruiksgemak.filter-active {
   background: #2D114E; }
@@ -4873,9 +4860,9 @@ body:not(.single-event) {
     border-color: #210c39; }
 
 .item--filter.kanaalsturing.filter-active {
-  background: #f99d1c; }
+  background: #D77D00; }
   .item--filter.kanaalsturing.filter-active:before {
-    border-color: #f59206; }
+    border-color: #be6e00; }
 
 .item--filter.inclusie.filter-active {
   background: #c73d19; }
@@ -4883,13 +4870,13 @@ body:not(.single-event) {
     border-color: #b03616; }
 
 .item--filter input {
-  border: 0;
-  clip: rect(1px, 1px, 1px, 1px);
-  height: 1px;
-  width: 1px;
   margin: -1px;
-  overflow: hidden;
   padding: 0;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  clip: rect(0, 0, 0, 0);
   position: absolute; }
 
 .filter--show--counter p {
@@ -7059,3 +7046,5 @@ browser exceptions
   .header-widget-area {
     padding-top: 1rem;
     width: 30%; } }
+
+/*# sourceMappingURL=od-theme.css.map */
