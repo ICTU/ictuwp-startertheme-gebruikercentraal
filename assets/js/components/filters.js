@@ -67,6 +67,7 @@ $(document).ready(function(){
       filtersActiveCount = [];
       cFilter.parent().addClass(filterClass);
       textstring = ' tipkaarten geselecteerd in alle thema\'s.';
+
       $("#cards--text").text(textstring);
       $("#cards--cats").text("");
     } else {
@@ -75,7 +76,7 @@ $(document).ready(function(){
       filtersActive.push(cFilterData);
       filtersActiveCat.push(cFiltercat);
       filtersActiveCount.push(cFilterCount);
-      console.log(filtersActiveCat);
+//      console.log(filtersActiveCat);
 
 
       $("#cards--cats").text('');
@@ -83,9 +84,13 @@ $(document).ready(function(){
 
       sum = 0;
       $.each(filtersActiveCount,function(){sum+=parseFloat(this) || 0;});
-      textstring = sum + _n( ' tipkaarten geselecteerd in het thema: ', ' tipkaarten geselecteerd in de thema\'s: ', filtersActiveCat.length, 'gctheme' );
-      textstring += filtersActiveCat.join(", ").toLowerCase();
+//      textstring = sum + _n( ' tipkaarten geselecteerd in het thema: ', ' tipkaarten geselecteerd in de thema\'s: ', filtersActiveCat.length, 'gctheme' );
+      textstring = _n( ' tipkaarten geselecteerd in het thema: ', ' tipkaarten geselecteerd in de thema\'s: ', filtersActiveCat.length, 'gctheme' );
+      textstring2 = filtersActiveCat.join(", ").toLowerCase();
+      $("#cards--count").text(sum);
       $("#cards--text").text( textstring );
+      $("#cards--cats").text( textstring2 );
+
     }
   }
 
@@ -114,20 +119,17 @@ $(document).ready(function(){
     var indexCat = filtersActiveCat.indexOf(cat);
     var indexCount = filtersActiveCount.indexOf(count);
 
-    console.log(filtersActive.length);
-
     if (index > -1) {
       filtersActive.splice(index, 1);
 
       if (filtersActive.length === 0) {
-        console.log('empty');
         $(".show-all").trigger("click");
       }
     }
     if (indexCat > -1) {
       filtersActiveCat.splice(indexCat, 1);
-
-      $("#cards--cats").text(filtersActiveCat.join(", "));
+      textstring2 = filtersActiveCat.join(", ").toLowerCase();
+      $("#cards--cats").text( textstring2 );
 
     }
     if (indexCount > -1) {
