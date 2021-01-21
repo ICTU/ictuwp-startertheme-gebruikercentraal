@@ -1587,18 +1587,21 @@ h1 {
 
 .l-hero {
   margin: -6rem -2rem -4rem;
-  height: 14rem; }
+  height: 18rem; }
   @media (min-width: 560px) {
     .l-hero {
       margin-left: -3rem;
       margin-right: -3rem;
       margin-top: -9rem;
+      height: 18rem; } }
+  @media (min-width: 700px) {
+    .l-hero {
       height: 30rem; } }
   @media (min-width: 1100px) {
     .l-hero {
       margin-top: -12rem;
-      margin-bottom: -7rem;
-      height: 34rem; } }
+      margin-bottom: -25rem;
+      height: 50rem; } }
   .l-hero picture {
     display: block;
     width: 100%;
@@ -6657,3 +6660,5 @@ browser exceptions
   .header-widget-area {
     padding-top: 1rem;
     width: 30%; } }
+
+/*# sourceMappingURL=gc-theme.css.map */

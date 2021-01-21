@@ -1590,18 +1590,21 @@ h1 {
 
 .l-hero {
   margin: -6rem -2rem -4rem;
-  height: 14rem; }
+  height: 18rem; }
   @media (min-width: 560px) {
     .l-hero {
       margin-left: -3rem;
       margin-right: -3rem;
       margin-top: -9rem;
+      height: 18rem; } }
+  @media (min-width: 700px) {
+    .l-hero {
       height: 30rem; } }
   @media (min-width: 1100px) {
     .l-hero {
       margin-top: -12rem;
-      margin-bottom: -7rem;
-      height: 34rem; } }
+      margin-bottom: -25rem;
+      height: 50rem; } }
   .l-hero picture {
     display: block;
     width: 100%;
@@ -6827,12 +6830,16 @@ body:not(.single-event) .entry-content.wrap:last-child {
     background: #BA4F0C url("../images/b_page-top-line.svg") top left repeat-x; }
   @media (min-width: 700px) {
     .page-content:before, .page-content:after {
-      height: 28rem; } }
+      height: 28rem; }
+    .page-content.page-content--with-hero:before, .page-content.page-content--with-hero:after {
+      height: 30rem; } }
   @media (min-width: 1100px) {
     .page-content {
       padding-top: 16rem; }
       .page-content:before, .page-content:after {
-        height: 35rem; } }
+        height: 35rem; }
+      .page-content.page-content--with-hero:before, .page-content.page-content--with-hero:after {
+        height: 50rem; } }
 
 @media (min-width: 1100px) {
   .l-hero {
@@ -7240,3 +7247,5 @@ browser exceptions
   .header-widget-area {
     padding-top: 1rem;
     width: 30%; } }
+
+/*# sourceMappingURL=od-theme.css.map */
