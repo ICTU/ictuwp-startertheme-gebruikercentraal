@@ -732,9 +732,7 @@ class GebruikerCentraalTheme extends Timber\Site {
 					$allowed_templates["template-od-home.php"]             = "[OD] Template Home";
 					$allowed_templates["template-od-handleiding.php"]      = "[OD] Template Handleiding";
 					break;
-
 				case 'KB':
-					//
 					$allowed_templates["template-beeldbieb.php"] = "Beeldbieb";
 					break;
 

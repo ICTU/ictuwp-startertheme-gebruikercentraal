@@ -1860,18 +1860,21 @@ endif;
  * filter for breadcrumb
  */
 
-if ( ! function_exists( 'ICTUWP_GC_OD_update_yoast_breadcrumb ' ) ) {
+if ( ! function_exists( 'ictuwp_gc_filter_yoast_breadcrumb ' ) ) {
 
-	add_filter( 'wpseo_breadcrumb_links', 'ICTUWP_GC_OD_update_yoast_breadcrumb' );
+	add_filter( 'wpseo_breadcrumb_links', 'ictuwp_gc_filter_yoast_breadcrumb' );
 
-	function ICTUWP_GC_OD_update_yoast_breadcrumb( $links ) {
+	function ictuwp_gc_filter_yoast_breadcrumb( $links ) {
 		global $post;
 		$currentitem = null;
 		$optionpage  = null;
 
-		if ( is_home() || is_front_page() || is_front_page() ) {
+		if ( is_front_page() ) {
 			// geen breadcrumb op de homepage
 			return [];
+		} elseif ( is_home() ) {
+			// dit is de blogpagina
+			return $links;
 		} elseif ( is_tax( OD_CITAATAUTEUR ) ) {
 			// voor de tipgevers invoegen het overzicht van tipgevers
 			$optionpage = get_field( 'od_overzicht_alle_tipgevers', 'option' );

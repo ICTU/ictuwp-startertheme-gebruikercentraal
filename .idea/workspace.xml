@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="b934b414-7ef9-4bf9-893a-63ff625f41de" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/json.php" beforeDir="false" afterPath="$PROJECT_DIR$/assets/json.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/od.php" beforeDir="false" afterPath="$PROJECT_DIR$/assets/od.php" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ComposerSettings" doNotAsk="true" synchronizationState="SYNCHRONIZE">
+    <pharConfigPath>$PROJECT_DIR$/composer.json</pharConfigPath>
+    <execution />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="1kh3bRFmtbZK4GRJFUryjAnz2oo" />
+  <component name="ProjectViewState">
+    <option name="autoscrollToSource" value="true" />
+    <option name="compactDirectories" value="true" />
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+    <option name="showMembers" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="js.buildTools.gulp.gulp_package_dir" value="$PROJECT_DIR$/frontend/node_modules/gulp" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/scss/components" />
+    <property name="vue.rearranger.settings.migration" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\gc_accept_local\gc-local\~\vagrant-local\www\gebruikercentraal\public_html\wp-content\themes\ictuwp-theme-gc2020\scss\components" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="gulpfile.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/frontend/gulpfile.js" working-dir="$PROJECT_DIR$/frontend">
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Node.js.gulpfile.js" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="StructuralSearchPlugin">
+    <searchConfiguration name="user defined" created="1607349591111" text="WPSEO_Utils::get_title_separator" recursive="true" caseInsensitive="true" type="PHP" scope_type="PROJECT" scope_descriptor="" history="1">
+      <constraint name="__context__" within="" contains="" />
+    </searchConfiguration>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="b934b414-7ef9-4bf9-893a-63ff625f41de" name="Default Changelist" comment="" />
+      <created>1606139066242</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1606139066242</updated>
+      <workItem from="1606139067769" duration="9291000" />
+      <workItem from="1606205929799" duration="17746000" />
+      <workItem from="1606734514778" duration="28000" />
+      <workItem from="1606734543878" duration="48000" />
+      <workItem from="1606734593182" duration="11573000" />
+      <workItem from="1606813997398" duration="14011000" />
+      <workItem from="1607337558590" duration="1335000" />
+      <workItem from="1607415040179" duration="7810000" />
+      <workItem from="1607438505800" duration="7185000" />
+      <workItem from="1607942408539" duration="990000" />
+      <workItem from="1610469686362" duration="575000" />
+      <workItem from="1610706111613" duration="6119000" />
+      <workItem from="1611010097737" duration="2671000" />
+      <workItem from="1611234019708" duration="3087000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="610" y="430" key="#WordPress" timestamp="1606734633109">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="610" y="430" key="#WordPress/0.0.1920.1040@0.0.1920.1040" timestamp="1606734633109" />
+    <state x="576" y="575" width="943" height="345" key="#com.intellij.structuralsearch.plugin.ui.StructuralSearchDialog" timestamp="1607349591096">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="576" y="575" width="943" height="345" key="#com.intellij.structuralsearch.plugin.ui.StructuralSearchDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1607349591096" />
+    <state x="740" y="275" key="FileChooserDialogImpl" timestamp="1606734620131">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="740" y="275" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1606734620131" />
+    <state width="1877" height="282" key="GridCell.Tab.0.bottom" timestamp="1606753842410">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="282" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1606753842410" />
+    <state width="1877" height="282" key="GridCell.Tab.0.center" timestamp="1606753842410">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="282" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1606753842410" />
+    <state width="1877" height="282" key="GridCell.Tab.0.left" timestamp="1606753842410">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="282" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1606753842410" />
+    <state width="1877" height="282" key="GridCell.Tab.0.right" timestamp="1606753842410">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="282" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1606753842410" />
+    <state x="656" y="344" key="com.intellij.ide.util.TipDialog" timestamp="1607415093083">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="656" y="344" key="com.intellij.ide.util.TipDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1607415093083" />
+    <state x="2058" y="124" width="1158" height="776" key="find.popup" timestamp="1611237719255">
+      <screen x="1440" y="-277" width="2560" height="1417" />
+    </state>
+    <state x="2058" y="124" width="1158" height="776" key="find.popup/0.23.1440.877/1440.-277.2560.1417@0.23.1440.877" timestamp="1611237719255" />
+    <state x="2427" y="186" width="623" height="490" key="find.popup/0.23.1440.877/1440.-277.2560.1417@1440.-277.2560.1417" timestamp="1608633717086" />
+    <state x="616" y="240" key="run.anything.popup" timestamp="1606734895421">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="616" y="240" key="run.anything.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1606734895421" />
+  </component>
+  <component name="WordPressConfiguration" enabled="true">
+    <wordpressPath>D:\gc_accept_local\gc-local\~\vagrant-local\www\gebruikercentraal\public_html</wordpressPath>
+  </component>
+</project>
