@@ -150,19 +150,22 @@ h1 {
 
   // Negate page padding
   margin: -6rem -2rem -4rem;
-  height: 14rem;
+  height: 18rem;
 
   @include bp-up(sm) {
     margin-left: -3rem;
     margin-right: -3rem;
     margin-top: -9rem;
+    height: 18rem;
+  }
+  @include bp-up(md) {
     height: 30rem;
   }
 
   @include bp-up(lg) {
     margin-top: -12rem;
-    margin-bottom: -7rem;
-    height: 34rem;
+    margin-bottom: -25rem;
+    height: 50rem;
   }
 
   picture {

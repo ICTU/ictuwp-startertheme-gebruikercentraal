@@ -44,6 +44,13 @@
     &:after {
       height: 28rem;
     }
+    &.page-content--with-hero {
+      &:before,
+      &:after {
+        height: 30rem;
+      }
+    }
+
   }
 
   @include bp-up(lg) {
@@ -53,7 +60,17 @@
     &:after {
       height: 35rem;
     }
+
+    &.page-content--with-hero {
+      &:before,
+      &:after {
+        height: 50rem;
+      }
+    }
+
   }
+
+
 }
 
 .l-hero {
