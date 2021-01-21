@@ -2,9 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b934b414-7ef9-4bf9-893a-63ff625f41de" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/json.php" beforeDir="false" afterPath="$PROJECT_DIR$/assets/json.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/od.php" beforeDir="false" afterPath="$PROJECT_DIR$/assets/od.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/flavors/optimaaldigitaal/assets/css/od-theme.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/flavors/optimaaldigitaal/assets/css/od-theme.css.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scss/layout/_header.scss" beforeDir="false" afterPath="$PROJECT_DIR$/scss/layout/_header.scss" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
