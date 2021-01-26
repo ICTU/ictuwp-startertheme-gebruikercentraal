@@ -5,7 +5,9 @@
   </head>
 {% endblock %}
 
+{% block body_tag %}
 <body class="{{ body_class }}" data-template="base.twig">
+{% endblock %}
 
 <div class="site-container">
 
@@ -31,7 +33,13 @@
 
   {{ function('insert_breadcrumb') }}
 
-  <div class="page-content">
+  {% set class_pagecontent = 'page-content' %}
+
+  {% if hero_image.src %}
+    {% set class_pagecontent = 'page-content page-content--with-hero' %}
+  {% endif %}
+
+  <div class="{{ class_pagecontent }}">
   {% if hero_image.src %}
   <div class="l-hero">
 

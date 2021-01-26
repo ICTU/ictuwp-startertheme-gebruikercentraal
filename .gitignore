@@ -8,5 +8,8 @@
 /assets/css/*.map
 .DS_Store
 
+/.idea/
 
 
+
+.idea/workspace.xml
