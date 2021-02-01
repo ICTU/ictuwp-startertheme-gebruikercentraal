@@ -18,11 +18,24 @@ function gc_eventmanager_add_placeholders( $replace, $EM_Event, $result ) {
 
 	global $EM_Event;
 
+	$return = '';
+
 	switch ( $result ) {
 
-		case '#_GCATTENDEELIST':
+		case '#_GC_LOCATIONMAP':
 
-			$return      = '';
+			$hoofdlocatieid = $EM_Event->output( '#_LOCATIONPOSTID' );
+			if ( $hoofdlocatieid ) {
+				if ( get_field( 'gc_event_map_location', $hoofdlocatieid ) ) {
+					$return = get_field( 'gc_event_map_location', $hoofdlocatieid );
+				}
+			}
+
+			return $return;
+
+		case
+		'#_GCATTENDEELIST':
+
 			$EM_Bookings = $EM_Event->get_bookings();
 
 			if ( count( $EM_Bookings->bookings ) > 0 ) {
