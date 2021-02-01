@@ -2,8 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b934b414-7ef9-4bf9-893a-63ff625f41de" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/flavors/optimaaldigitaal/assets/css/od-theme.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/flavors/optimaaldigitaal/assets/css/od-theme.css.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scss/layout/_header.scss" beforeDir="false" afterPath="$PROJECT_DIR$/scss/layout/_header.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/includes/events-manager-functions.php" beforeDir="false" afterPath="$PROJECT_DIR$/includes/events-manager-functions.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/single.php" beforeDir="false" afterPath="$PROJECT_DIR$/single.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -13,6 +14,13 @@
   <component name="ComposerSettings" doNotAsk="true" synchronizationState="SYNCHRONIZE">
     <pharConfigPath>$PROJECT_DIR$/composer.json</pharConfigPath>
     <execution />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="HTML File" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -26,6 +34,7 @@
     <option name="showMembers" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
@@ -78,6 +87,8 @@
       <workItem from="1610706111613" duration="6119000" />
       <workItem from="1611010097737" duration="2671000" />
       <workItem from="1611234019708" duration="3087000" />
+      <workItem from="1611693072128" duration="8693000" />
+      <workItem from="1611823511366" duration="10225000" />
     </task>
     <servers />
   </component>
@@ -117,11 +128,12 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="656" y="344" key="com.intellij.ide.util.TipDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1607415093083" />
-    <state x="2058" y="124" width="1158" height="776" key="find.popup" timestamp="1611237719255">
+    <state x="2427" y="186" width="903" height="490" key="find.popup" timestamp="1612186394387">
       <screen x="1440" y="-277" width="2560" height="1417" />
     </state>
-    <state x="2058" y="124" width="1158" height="776" key="find.popup/0.23.1440.877/1440.-277.2560.1417@0.23.1440.877" timestamp="1611237719255" />
-    <state x="2427" y="186" width="623" height="490" key="find.popup/0.23.1440.877/1440.-277.2560.1417@1440.-277.2560.1417" timestamp="1608633717086" />
+    <state x="2058" y="124" width="1158" height="776" key="find.popup/0.23.1440.877/1440.-277.2560.1417@0.23.1440.877" timestamp="1611930652905" />
+    <state x="2427" y="186" width="903" height="490" key="find.popup/0.23.1440.877/1440.-277.2560.1417@1440.-277.2560.1417" timestamp="1612186394387" />
+    <state x="340" y="271" width="1100" height="582" key="find.popup/0.23.1440.877@0.23.1440.877" timestamp="1611693342880" />
     <state x="616" y="240" key="run.anything.popup" timestamp="1606734895421">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
