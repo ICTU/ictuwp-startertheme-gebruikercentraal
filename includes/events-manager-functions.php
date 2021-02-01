@@ -33,8 +33,7 @@ function gc_eventmanager_add_placeholders( $replace, $EM_Event, $result ) {
 
 			return $return;
 
-		case
-		'#_GCATTENDEELIST':
+		case '#_GCATTENDEELIST':
 
 			$EM_Bookings = $EM_Event->get_bookings();
 
