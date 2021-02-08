@@ -110,13 +110,14 @@ if ( 'nee' !== get_field( 'relatedtips_show_or_not', $post ) ) {
 
 				$relatedtips->the_post();
 				$counter ++;
+				//tipkaart__nummer
 
 				// Data klaarzetten voor related blok
-				$items[ $counter ]['title']    = od_wbvb_custom_post_title( $post->post_title ); // TODO: deze functie tot een filter maken voor titels überhaupt
-				$items[ $counter ]['url']      = get_the_permalink( $post );
-				$items[ $counter ]['category'] = $term_machine_name;
-				$items[ $counter ]['nr']       = get_field( 'tip-nummer', $post->ID );
-				$voorbeeld                     = [];
+				$items[ $counter ]['title']      = od_wbvb_custom_post_title( $post->post_title ); // TODO: deze functie tot een filter maken voor titels überhaupt
+				$items[ $counter ]['url']        = get_the_permalink( $post );
+				$items[ $counter ]['category']   = $term_machine_name;
+				$items[ $counter ]['tip_nummer'] = sprintf( _x( 'Tip %s', 'Label tip-nummer', 'gctheme' ), get_post_meta( $post->ID, 'tip-nummer', true ) );
+				$voorbeeld                       = [];
 
 
 				$context['related']['title'] = 'Meer ' . strtolower( $term->name ) . ' tips';
