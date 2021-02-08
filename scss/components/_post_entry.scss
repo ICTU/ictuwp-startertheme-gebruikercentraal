@@ -9,11 +9,8 @@
   }
 
   &--full {
-    .post__header,
-    .post__body > .section {
+    .post__header {
       @include ho-make-container($max-width-inner);
-
-      // Default = max width, unless..
     }
 
     .l-with-related & {
@@ -44,10 +41,13 @@
   }
 }
 
+.entry-content {
+  @include ho-padding;
+}
+
 // sections for either .post or .entry
 .post__body,
 .entry-content {
-  @include ho-padding;
 
   > .section {
     @include ho-make-container($max-width-inner);
@@ -70,7 +70,8 @@
       }
     }
 
-    &--bg-option {
+    &--bg-option,
+    &--overview {
       max-width: none;
       @include ho-padding;
       @include negate-padding;
