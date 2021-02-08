@@ -12,6 +12,8 @@
     .post__header,
     .post__body > .section {
       @include ho-make-container($max-width-inner);
+
+      // Default = max width, unless..
     }
 
     .l-with-related & {
@@ -61,7 +63,6 @@
       @include gc-last-padding;
     }
 
-
     &--paragraph {
       @include bp-down(md) {
         padding-left: 0;
@@ -69,14 +70,15 @@
       }
     }
 
-
     &--bg-option {
       max-width: none;
       @include ho-padding;
       @include negate-padding;
     }
 
-    &--overview.l-item-count-3 {
+    // Sections which don't need the default max-width
+    &--overview.l-item-count-3,
+    &--examples {
       max-width: none;
     }
   }
