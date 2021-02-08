@@ -1,0 +1,48 @@
+{
+    "key": "group_6017f513119eb",
+    "title": "Locatie",
+    "fields": [
+        {
+            "center_lat": 52.1551626,
+            "center_lng": 5.3872061,
+            "zoom": 15,
+            "key": "field_6017f51ba1069",
+            "label": "Wijs een locatie aan op de kaart",
+            "name": "gc_event_map_location",
+            "type": "open_street_map",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "leaflet",
+            "layers": [
+                "OpenStreetMap.Mapnik"
+            ],
+            "allow_map_layers": 1,
+            "height": 350,
+            "max_markers": 1
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "location"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "modified": 1612189303
+}
