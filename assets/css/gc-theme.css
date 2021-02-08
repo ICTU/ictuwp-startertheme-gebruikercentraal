@@ -1794,6 +1794,9 @@ body:not(.single-event) {
 .tax-tipthema .page__intro {
   max-width: 960px; }
 
+.entry--type-overview .entry-content {
+  padding: 0; }
+
 .archive__posts {
   margin-left: -2rem;
   margin-right: -2rem;
@@ -1896,18 +1899,6 @@ body:not(.single-event) {
   @media (min-width: 1100px) {
     .page-template-template-alle-tips .grid {
       padding-bottom: 7rem; } }
-
-.search .content-wrapper,
-.search .content header {
-  max-width: 760px;
-  margin-left: auto;
-  margin-right: auto; }
-
-.search .overview--list {
-  margin-top: 3rem; }
-  @media (min-width: 700px) {
-    .search .overview--list {
-      margin-top: 5rem; } }
 
 .search .content-wrapper,
 .search .content header {
@@ -2033,8 +2024,9 @@ body:not(.single-event) {
         .entry-content > .section--bg-option {
           margin-left: -3rem;
           margin-right: -3rem; } }
-    .post__body > .section--overview.l-item-count-3,
-    .entry-content > .section--overview.l-item-count-3 {
+    .post__body > .section--overview.l-item-count-3, .post__body > .section--examples,
+    .entry-content > .section--overview.l-item-count-3,
+    .entry-content > .section--examples {
       max-width: none; }
   .post__body > div:last-child.wp-block-coblocks-gallery-masonry,
   .entry-content > div:last-child.wp-block-coblocks-gallery-masonry {
@@ -2605,6 +2597,8 @@ body:not(.single-event) {
           font-size: 5.2rem;
           line-height: 7rem;
           margin-top: 4rem; } }
+    .tip--full .entry-content {
+      padding: 0; }
     .tip--full .tipkaart__categorie {
       margin-top: 3rem; }
       @media (min-width: 700px) {
@@ -6466,5 +6460,3 @@ browser exceptions
   .header-widget-area {
     padding-top: 1rem;
     width: 30%; } }
-
-/*# sourceMappingURL=gc-theme.css.map */

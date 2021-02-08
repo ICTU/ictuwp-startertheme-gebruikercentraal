@@ -96,6 +96,8 @@
   }
 }
 
+// Layout tip full
+
 .tip {
   &--full {
     overflow: hidden;
@@ -144,6 +146,10 @@
         line-height: 7rem;
         margin-top: 4rem;
       }
+    }
+
+    .entry-content {
+      padding: 0;
     }
 
     .tipkaart__categorie {
