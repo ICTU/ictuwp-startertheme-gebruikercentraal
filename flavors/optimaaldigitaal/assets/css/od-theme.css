@@ -824,6 +824,9 @@ Gutenberg corrections
 .section--paragraph + .section--cta {
   margin-top: 0; }
 
+.section--list + .section--paragraph {
+  margin-top: 2rem; }
+
 .section--heading + .section--list {
   margin-top: 2rem; }
 

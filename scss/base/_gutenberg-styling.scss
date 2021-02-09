@@ -55,6 +55,13 @@ Gutenberg corrections
   }
 }
 
+.section--list {
+  + .section--paragraph {
+    margin-top: 2rem;
+  }
+
+}
+
 .section--heading {
   + .section--list {
     margin-top: 2rem;
