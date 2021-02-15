@@ -9,6 +9,10 @@ Gutenberg corrections
   & + .section--text {
     margin-top: 0;
   }
+
+  &:first-child {
+    margin-top: 4rem;
+  }
 }
 
 // Toegevoegd als apart item, in plaats van een list in
@@ -187,12 +191,6 @@ Gutenberg corrections
       }
     }
   }
-
 }
 
 
-.section--heading {
-  &:first-child {
-    margin-top: 4rem;
-  }
-}

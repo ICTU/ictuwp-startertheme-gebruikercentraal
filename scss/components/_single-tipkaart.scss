@@ -226,6 +226,7 @@
     .section--links,
     .section--downloads {
       @include ho-padding;
+      max-width: calc(#{$max-width-inner} + #{$gutter * 2}); //max width + padding
     }
 
     .section--links {
