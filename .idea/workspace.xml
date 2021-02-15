@@ -1,9 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b934b414-7ef9-4bf9-893a-63ff625f41de" name="Default Changelist" comment="">
+    <list default="true" id="12aa066c-62bb-404e-a31d-cb54df849554" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/single-tips.php" beforeDir="false" afterPath="$PROJECT_DIR$/single-tips.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/css/editor-styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/assets/css/editor-styles.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/css/gc-theme.css" beforeDir="false" afterPath="$PROJECT_DIR$/assets/css/gc-theme.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/od.php" beforeDir="false" afterPath="$PROJECT_DIR$/assets/od.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/flavors/optimaaldigitaal/assets/css/od-theme.css" beforeDir="false" afterPath="$PROJECT_DIR$/flavors/optimaaldigitaal/assets/css/od-theme.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -133,11 +136,11 @@
       <screen x="1440" y="-98" width="1920" height="1057" />
     </state>
     <state x="2255" y="110" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.23.1440.877/1440.-98.1920.1057@1440.-98.1920.1057" timestamp="1612788351540" />
-    <state x="2180" y="247" width="903" height="490" key="find.popup" timestamp="1612788367245">
-      <screen x="1440" y="-98" width="1920" height="1057" />
+    <state x="2427" y="186" width="903" height="490" key="find.popup" timestamp="1613411839847">
+      <screen x="1440" y="-277" width="2560" height="1417" />
     </state>
     <state x="2058" y="124" width="1158" height="776" key="find.popup/0.23.1440.877/1440.-277.2560.1417@0.23.1440.877" timestamp="1611930652905" />
-    <state x="2427" y="186" width="903" height="490" key="find.popup/0.23.1440.877/1440.-277.2560.1417@1440.-277.2560.1417" timestamp="1612186394387" />
+    <state x="2427" y="186" width="903" height="490" key="find.popup/0.23.1440.877/1440.-277.2560.1417@1440.-277.2560.1417" timestamp="1613411839847" />
     <state x="2180" y="247" width="903" height="490" key="find.popup/0.23.1440.877/1440.-98.1920.1057@1440.-98.1920.1057" timestamp="1612788367245" />
     <state x="340" y="271" width="1100" height="582" key="find.popup/0.23.1440.877@0.23.1440.877" timestamp="1611693342880" />
     <state x="2056" y="146" key="run.anything.popup" timestamp="1612788409324">

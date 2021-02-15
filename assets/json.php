@@ -948,7 +948,7 @@ if ( ! class_exists( 'ICTUWP_GC_OD_registerposttypes' ) ) :
 							'label'             => __( "Nuttige links", "ictuwp-plugin-optimaaldigitaal" ),
 							'name'              => 'nuttige_links',
 							'type'              => 'repeater',
-							'instructions'      => '<img src="/wp-content/themes/optimaal-digitaal/images/linkbeschrijving-illustratie.png" alt="waar komen de velden terecht?" width="600" height="126" /><br />De URL is verplicht; de andere velden niet. Maar als er geen beschrijving, CTA of titel wordt ingevoerd, wordt er "<em>' . __( "Geen linkbeschrijving ingevoerd", "ictuwp-plugin-optimaaldigitaal" ) . '</em>" getoond.',
+							'instructions'      => 'De URL is verplicht; de andere velden niet. Maar als er geen beschrijving, CTA of titel wordt ingevoerd, wordt er "<em>' . __( "Geen linkbeschrijving ingevoerd", "ictuwp-plugin-optimaaldigitaal" ) . '</em>" getoond.',
 							'required'          => 0,
 							'conditional_logic' => 0,
 							'wrapper'           => array(
