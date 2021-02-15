@@ -2879,6 +2879,9 @@ body:not(.single-event) {
             transform: rotate(2deg); }
   .section--examples:before {
     height: 24rem; }
+  @media (min-width: 700px) {
+    .tip .section--examples {
+      margin-top: 3rem; } }
   .section--examples:after {
     content: " ";
     position: absolute;
@@ -6465,5 +6468,3 @@ browser exceptions
   .header-widget-area {
     padding-top: 1rem;
     width: 30%; } }
-
-/*# sourceMappingURL=gc-theme.css.map */

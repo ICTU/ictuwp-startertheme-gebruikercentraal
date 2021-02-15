@@ -310,6 +310,12 @@
     height: 24rem;
   }
 
+  @include bp-up(md){
+    .tip & {
+      margin-top: 3rem;
+    }
+  }
+
   &:after {
     content: " ";
     position: absolute;
