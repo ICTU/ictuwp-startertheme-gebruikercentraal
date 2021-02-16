@@ -109,6 +109,9 @@ require_once( get_template_directory() . '/gutenberg-blocks/spelleiders-block.ph
 // block voor het tonen van tipkaarten
 require_once( get_template_directory() . '/gutenberg-blocks/tipkaarten-block.php' );
 
+// block voor het tonen van partnerlogo's
+require_once( get_template_directory() . '/gutenberg-blocks/partnerlogos-block.php' );
+
 
 /**
  * Load other dependencies such as VAR DUMPER :D
@@ -1063,6 +1066,10 @@ if ( ! function_exists( 'od_wbvb_custom_post_title' ) ) {
 
 		$pattern     = '/uitgangspunt/i';
 		$replacement = 'uitgangs&shy;punt';
+		$title       = preg_replace( $pattern, $replacement, $title );
+
+		$pattern     = '/medewerkerreis/i';
+		$replacement = 'medewerker&shy;reis';
 		$title       = preg_replace( $pattern, $replacement, $title );
 
 		return $title;
