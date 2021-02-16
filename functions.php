@@ -1076,6 +1076,21 @@ if ( ! function_exists( 'od_wbvb_custom_post_title' ) ) {
 		$replacement = 'elf&shy;redz';
 		$title       = preg_replace( $pattern, $replacement, $title );
 
+		// ontwikkeling
+		$pattern     = '/ntwikke/i';
+		$replacement = 'ntwik&shy;ke';
+		$title       = preg_replace( $pattern, $replacement, $title );
+
+		// aantrekkelijk
+		$pattern     = '/antrekkelijk/i';
+		$replacement = 'antrek&shy;kelijk';
+		$title       = preg_replace( $pattern, $replacement, $title );
+
+		// afdelingsoverstijgend
+		$pattern     = '/fdelingsoverstijgend/i';
+		$replacement = 'fdelings&shy;over&shy;stij&shy;gend';
+		$title       = preg_replace( $pattern, $replacement, $title );
+
 		return $title;
 
 	}
