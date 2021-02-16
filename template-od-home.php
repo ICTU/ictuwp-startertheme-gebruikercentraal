@@ -17,6 +17,9 @@ if ( 'ja' === get_field( 'gerelateerde_content_toevoegen' ) ) {
 
 	$context['related'] = related_block_get_data();
 
+	// tipkaarten zien er niet prettig uit als het kolomaantal niet op 4 staat op de homepage
+	$context['related']['columncounter'] = 4;
+
 }
 
 

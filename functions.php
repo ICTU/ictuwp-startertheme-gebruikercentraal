@@ -1072,6 +1072,10 @@ if ( ! function_exists( 'od_wbvb_custom_post_title' ) ) {
 		$replacement = 'medewerker&shy;reis';
 		$title       = preg_replace( $pattern, $replacement, $title );
 
+		$pattern     = '/elfredz/i';
+		$replacement = 'elf&shy;redz';
+		$title       = preg_replace( $pattern, $replacement, $title );
+
 		return $title;
 
 	}

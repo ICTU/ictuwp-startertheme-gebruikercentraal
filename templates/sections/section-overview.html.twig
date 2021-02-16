@@ -40,7 +40,9 @@
   {# Wrapper for all section content #}
   <div class="l-section-content">
 
-    {% if items|length < 4 %}
+    {% if related.columncounter %}
+      {% set extra_class = 'grid--col-' ~ related.columncounter %}
+    {% elseif items|length < 4 %}
       {% set extra_class = 'grid--col-' ~ items|length %}
     {% elseif items|length == 4 or modifier == '4col' %}
       {% set extra_class = 'grid--col-4' %}
