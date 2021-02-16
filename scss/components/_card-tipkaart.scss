@@ -8,6 +8,12 @@
   overflow: hidden;
   height: 36rem;
 
+  // voor WCAG moeten we rekening houden met textzoom tot 200%
+  // om ervoor te zorgen dat de tekst voldoende ruimte heeft in het kader van
+  // de .tipkaart geven we 'm een minimumbreedte in rem.
+  // hiermee is de breedte mede afhankelijk van de textzoomgroote
+//  min-width: 20rem;
+
   h2, h3 {
     color: $white;
   }
@@ -27,6 +33,7 @@
     background: $gc_a11y_green;
     margin: 0 -5rem -5rem -5rem;
     transform: rotate(-3deg);
+    z-index: 10; // dit vlak moet onder de categorie en de titel
   }
 
   &--gebruiksgemak {
@@ -250,12 +257,14 @@
   margin: 0;
   padding: 0;
   word-break: break-word;
+  z-index: 30; // dit vlak moet boven de categorie en de gekleurde achtergrond
 }
 
 .tipkaart__categorie {
   position: relative;
   margin-top: auto;
   font-family: $font_secondary;
+  z-index: 20; // dit vlak moet onder de titel en boven de gekleurde achtergrond
 
   span {
     font-size: 2.2rem;
