@@ -112,6 +112,8 @@ require_once( get_template_directory() . '/gutenberg-blocks/tipkaarten-block.php
 // block voor het tonen van partnerlogo's
 require_once( get_template_directory() . '/gutenberg-blocks/partnerlogos-block.php' );
 
+// block voor het tonen van aankomende events
+require_once( get_template_directory() . '/gutenberg-blocks/events-block.php' );
 
 /**
  * Load other dependencies such as VAR DUMPER :D
