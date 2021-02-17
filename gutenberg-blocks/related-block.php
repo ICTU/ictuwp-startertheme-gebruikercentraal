@@ -48,8 +48,9 @@ function gb_render_related_block( $block, $content = '', $is_preview = false ) {
 function related_block_get_data() {
 
 	global $post;
-	$return     = array();
-	$type_block = 'section--related';
+	$return               = array();
+	$type_block           = 'section--related';
+	$imagesize_for_thumbs = IMAGESIZE_16x9;
 
 	if ( 'ja' === get_field( 'gerelateerde_content_toevoegen' ) ) {
 
@@ -63,6 +64,60 @@ function related_block_get_data() {
 				foreach ( $featured_posts as $post ):
 
 					$item              = prepare_card_content( $post );
+					$return['items'][] = $item;
+
+				endforeach;
+
+			endif;
+
+		} elseif ( 'vrije_invoer' === get_field( 'content_block_types' ) ) {
+			// Vrije invoer
+			$freeform_items = get_field( 'content_block_freeform_items' );
+			$type_block     = 'section--overview';
+
+			if ( $freeform_items ):
+
+				foreach ( $freeform_items as $freeform_item ):
+					$item               = array();
+					$link               = $freeform_item['content_block_freeform_item_link'];
+					$image              = $freeform_item['content_block_freeform_item_image'];
+					$item['post_title'] = wp_strip_all_tags( $link['title'] );
+					$item['title']      = $item['post_title']; // dit is dubbelop en overbodig en meer dan nodig, maar in de twig-files wordt afwisselend 'title' en 'post_title' gebruikt. Dat laatste is de meest correcte vorm
+					$item['descr']      = $freeform_item['content_block_freeform_item_description'];
+					$item['post_type']  = 'page'; // lijkt me de meest neutrale
+					$item['type']       = $item['post_type']; // dit is dubbelop en overbodig en meer dan nodig, maar in de twig-files wordt afwisselend 'type' en 'post_type' gebruikt. Dat laatste is de meest correcte vorm
+					$item['url']        = esc_url( $link['url'] );
+					if ( $image ) {
+						$item['img'] = '<img src="' . esc_url( $image['sizes'][ $imagesize_for_thumbs ] ) . '" alt="' . esc_attr( $image['alt'] ) . '" />';
+					}
+
+					$return['items'][] = $item;
+
+				endforeach;
+
+			endif;
+
+		} elseif ( 'taxonomie_tipgevers' === get_field( 'content_block_types' ) ) {
+
+			$tipgever_items = get_field( 'content_block_taxonomy_tipgever' );
+			$type_block     = 'section--overview';
+
+			if ( $tipgever_items ):
+
+				foreach ( $tipgever_items as $tipgever_item ):
+					$item               = array();
+					$term               = get_term( $tipgever_item, OD_CITAATAUTEUR );
+					$acfid              = OD_CITAATAUTEUR . '_' . $tipgever_item;
+					$image              = get_field( 'tipgever_foto', $acfid );
+					$item['post_title'] = wp_strip_all_tags( $term->name );
+					$item['title']      = $item['post_title']; // dit is dubbelop en overbodig en meer dan nodig, maar in de twig-files wordt afwisselend 'title' en 'post_title' gebruikt. Dat laatste is de meest correcte vorm
+					$item['post_type']  = OD_CITAATAUTEUR;
+					$item['type']       = $item['post_type']; // dit is dubbelop en overbodig en meer dan nodig, maar in de twig-files wordt afwisselend 'type' en 'post_type' gebruikt. Dat laatste is de meest correcte vorm
+					$item['url']        = esc_url( get_term_link( $term ) );
+					if ( $image ) {
+						$item['img'] = '<img src="' . esc_url( $image['sizes'][ $imagesize_for_thumbs ] ) . '" alt="' . esc_attr( $image['alt'] ) . '" />';
+					}
+
 					$return['items'][] = $item;
 
 				endforeach;
