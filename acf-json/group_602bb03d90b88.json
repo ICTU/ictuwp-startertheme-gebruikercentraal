@@ -1,0 +1,190 @@
+{
+    "key": "group_602bb03d90b88",
+    "title": "Partner-logo's",
+    "fields": [
+        {
+            "key": "field_602bb0c7f3b2b",
+            "label": "Partnerlogo's toevoegen?",
+            "name": "partners_block_tonen",
+            "type": "radio",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "nee": "Nee, geen logo's toevoegen",
+                "ja": "Ja, logo's toevoegen"
+            },
+            "allow_null": 0,
+            "other_choice": 0,
+            "default_value": "nee",
+            "layout": "vertical",
+            "return_format": "value",
+            "save_other_choice": 0
+        },
+        {
+            "key": "field_602bbf6e33bc4",
+            "label": "Titel",
+            "name": "partners_block_title",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_602bb0c7f3b2b",
+                        "operator": "==",
+                        "value": "ja"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_602bbfc30dd93",
+            "label": "Beschrijving",
+            "name": "partners_block_description",
+            "type": "textarea",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_602bb0c7f3b2b",
+                        "operator": "==",
+                        "value": "ja"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "maxlength": "",
+            "rows": "",
+            "new_lines": ""
+        },
+        {
+            "key": "field_602bb1260e62a",
+            "label": "Voeg logo's en links toe",
+            "name": "partners_block_logos",
+            "type": "repeater",
+            "instructions": "Volledige URL, zoals https:\/\/voorbeeld.nl\/ of http:\/\/voorbeeld.nl\/",
+            "required": 1,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_602bb0c7f3b2b",
+                        "operator": "==",
+                        "value": "ja"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "collapsed": "field_602bb2990e62c",
+            "min": 1,
+            "max": 0,
+            "layout": "row",
+            "button_label": "Logo toevoegen",
+            "sub_fields": [
+                {
+                    "key": "field_602bb13f0e62b",
+                    "label": "logo",
+                    "name": "partners_block_logo",
+                    "type": "image",
+                    "instructions": "Upload logo's in landscape-formaat, in de verhouding 16:9.",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "return_format": "array",
+                    "preview_size": "medium",
+                    "library": "all",
+                    "min_width": "",
+                    "min_height": "",
+                    "min_size": "",
+                    "max_width": "",
+                    "max_height": "",
+                    "max_size": "",
+                    "mime_types": ""
+                },
+                {
+                    "key": "field_602bb2990e62c",
+                    "label": "Linktekst",
+                    "name": "partners_block_linktext",
+                    "type": "text",
+                    "instructions": "Gebruik geen HTML; dit wordt weggefilterd.",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "maxlength": ""
+                },
+                {
+                    "key": "field_602bb2c50e62d",
+                    "label": "URL",
+                    "name": "partners_block_url",
+                    "type": "url",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": ""
+                }
+            ]
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "block",
+                "operator": "==",
+                "value": "acf\/gc-logopartners"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "modified": 1613485185
+}

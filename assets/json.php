@@ -1773,11 +1773,10 @@ endif;
 
 //========================================================================================================
 
-function ICTUWP_OD_change_tip_permalinks( $value, $post_id, $field ) {
+function ictuwp_od_change_tip_permalinks( $value, $post_id, $field ) {
 
 	if ( $value ) {
 
-		$asf = get_the_title( $value );
 		$permalink = get_the_permalink( $value );
 		$permalink = str_replace( home_url(), '', $permalink );
 		$permalink = trim( $permalink, '/');
@@ -1797,7 +1796,7 @@ function ICTUWP_OD_change_tip_permalinks( $value, $post_id, $field ) {
 			if ( WP_DEBUG ) {
 
 				// note in log
-				error_log( 'ICTUWP_OD_change_tip_permalinks: slug for ' . GC_TIP_CPT . " changed to " . $permalink );
+				error_log( 'ictuwp_od_change_tip_permalinks: slug for ' . GC_TIP_CPT . " changed to " . $permalink );
 
 			}
 		}
@@ -1807,6 +1806,6 @@ function ICTUWP_OD_change_tip_permalinks( $value, $post_id, $field ) {
 }
 
 // Apply to field named "od_overzicht_alle_tips".
-add_filter('acf/update_value/name=od_overzicht_alle_tips', 'ICTUWP_OD_change_tip_permalinks', 10, 3);
+add_filter('acf/update_value/name=od_overzicht_alle_tips', 'ictuwp_od_change_tip_permalinks', 10, 3);
 
 //========================================================================================================

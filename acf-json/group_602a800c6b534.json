@@ -1,0 +1,140 @@
+{
+    "key": "group_602a800c6b534",
+    "title": "Tipkaarten",
+    "fields": [
+        {
+            "key": "field_602a8393c7641",
+            "label": "Uit welke taxonomie wil je tipkaarten selecteren?",
+            "name": "tipkaartenblock_type",
+            "type": "radio",
+            "instructions": "Een speelset of een tipthema is zo'n taxonomie.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "geen": "Geen taxonomie",
+                "tipthema": "Tipthema",
+                "speelset": "Speelset",
+                "tipgever": "Tipgever"
+            },
+            "allow_null": 0,
+            "other_choice": 0,
+            "default_value": "geen",
+            "layout": "vertical",
+            "return_format": "value",
+            "save_other_choice": 0
+        },
+        {
+            "key": "field_602a8f5d0d7f3",
+            "label": "Kies 1 of meer tipthema's",
+            "name": "tipkaartenblock_tax_tipthema",
+            "type": "taxonomy",
+            "instructions": "",
+            "required": 1,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_602a8393c7641",
+                        "operator": "==",
+                        "value": "tipthema"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "taxonomy": "tipthema",
+            "field_type": "checkbox",
+            "add_term": 0,
+            "save_terms": 0,
+            "load_terms": 0,
+            "return_format": "id",
+            "multiple": 0,
+            "allow_null": 0
+        },
+        {
+            "key": "field_602a9a71419c9",
+            "label": "Kies 1 of meer tipgevers",
+            "name": "tipkaartenblock_tax_tipgever",
+            "type": "taxonomy",
+            "instructions": "",
+            "required": 1,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_602a8393c7641",
+                        "operator": "==",
+                        "value": "tipgever"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "taxonomy": "tipgever",
+            "field_type": "checkbox",
+            "add_term": 0,
+            "save_terms": 0,
+            "load_terms": 0,
+            "return_format": "id",
+            "multiple": 0,
+            "allow_null": 0
+        },
+        {
+            "key": "field_602a9a48623df",
+            "label": "Kies 1 of meer speelsets",
+            "name": "tipkaartenblock_tax_speelset",
+            "type": "taxonomy",
+            "instructions": "",
+            "required": 1,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_602a8393c7641",
+                        "operator": "==",
+                        "value": "speelset"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "taxonomy": "speelset",
+            "field_type": "checkbox",
+            "add_term": 0,
+            "save_terms": 0,
+            "load_terms": 0,
+            "return_format": "id",
+            "multiple": 0,
+            "allow_null": 0
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "block",
+                "operator": "==",
+                "value": "acf\/gc-tipkaarten"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "modified": 1613409919
+}

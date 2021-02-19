@@ -104,7 +104,8 @@
             "choices": {
                 "posts": "Losse items, zoals pagina's, berichten, tips",
                 "taxonomie_speelset": "Speelsets",
-                "taxonomie_tipgevers": "Tipgevers"
+                "taxonomie_tipgevers": "Tipgevers",
+                "vrije_invoer": "Vrije invoer"
             },
             "allow_null": 0,
             "other_choice": 0,
@@ -233,13 +234,100 @@
                 "id": ""
             },
             "taxonomy": "tipgever",
-            "field_type": "multi_select",
-            "allow_null": 0,
+            "field_type": "checkbox",
             "add_term": 0,
             "save_terms": 0,
             "load_terms": 0,
             "return_format": "id",
-            "multiple": 0
+            "multiple": 0,
+            "allow_null": 0
+        },
+        {
+            "key": "field_602cf49466f8b",
+            "label": "Items",
+            "name": "content_block_freeform_items",
+            "type": "repeater",
+            "instructions": "Hier kun je naar diverse soorten content linken door het invoeren van een titel, link, beschrijving en plaatje",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_5f033a4dfaec8",
+                        "operator": "==",
+                        "value": "vrije_invoer"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "collapsed": "field_602cf655057cf",
+            "min": 1,
+            "max": 0,
+            "layout": "row",
+            "button_label": "Nieuw item toevoegen",
+            "sub_fields": [
+                {
+                    "key": "field_602cf655057cf",
+                    "label": "Titel en link",
+                    "name": "content_block_freeform_item_link",
+                    "type": "link",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "return_format": "array"
+                },
+                {
+                    "key": "field_602cf4b466f8c",
+                    "label": "Samenvatting",
+                    "name": "content_block_freeform_item_description",
+                    "type": "textarea",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "",
+                    "maxlength": "",
+                    "rows": "",
+                    "new_lines": ""
+                },
+                {
+                    "key": "field_602cf69c057d1",
+                    "label": "Uitgelichte afbeelding",
+                    "name": "content_block_freeform_item_image",
+                    "type": "image",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "return_format": "array",
+                    "preview_size": "medium",
+                    "library": "all",
+                    "min_width": "",
+                    "min_height": "",
+                    "min_size": "",
+                    "max_width": "",
+                    "max_height": "",
+                    "max_size": "",
+                    "mime_types": ""
+                }
+            ]
         },
         {
             "key": "field_5f05d0290d8a8",
@@ -347,5 +435,5 @@
     "hide_on_screen": "",
     "active": true,
     "description": "",
-    "modified": 1604570446
+    "modified": 1613562186
 }

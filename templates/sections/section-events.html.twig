@@ -1,0 +1,114 @@
+{% if is_preview %}
+  <style type="text/css">
+    #events-{{ block.id }} .grid {
+      font-size: 16px !important;
+      margin-top: 0;
+      overflow: hidden;
+      border: 3px dashed #dadada;
+    }
+
+    #events-{{ block.id }} .card__title {
+      font-size: 22px;
+      line-height: 1.2;
+    }
+
+    #events-{{ block.id }} .card__description {
+      font-size: 16px;
+    }
+
+    #events-{{ block.id }} .card {
+      max-width: 48% !important;
+      flex: 0 1 48%;
+      padding: 0;
+    }
+
+    #events-{{ block.id }} .grid {
+      flex-direction: row;
+      display: flex;
+    }
+  </style>
+
+<div id="events-{{ block.id }}">
+
+
+  {% endif %}
+
+  {% set headerlevel = 'h2' %}
+
+  {% if related.items or related.title or related.description %}
+
+    <section
+      class="section {{ related.type_block ? related.type_block : 'section–overview' }}{{ related.columncounter ? ' l-item-count-' ~ related.columncounter : '' }}{{ related.modifier ? ' section--' ~ related.modifier }}"{% if id %} id="{{ id }}"{% endif %}>
+
+      {# Wrapper for section intro #}
+
+      {% if related.title or related.description %}
+        <div class="l-section-top">
+
+          {% if related.title %}
+
+            {% set headerlevel = 'h3' %}
+
+            <h2 class="section__title">
+              {{ related.title }}
+            </h2>
+          {% endif %}
+
+          {% if related.description %}
+            <p class="section__description">
+              {{ related.description }}
+            </p>
+          {% endif %}
+
+        </div>
+      {% endif %}
+
+      {# Wrapper for all section content #}
+      <div class="l-section-content">
+
+        <div class="grid grid--col-{{ is_preview ? '2' : related.columncounter }}">
+
+          {% for card in related.items %}
+
+            {% include 'components/card.html.twig' with {
+              'title': card.title,
+              'headerlevel': headerlevel,
+
+              'descr' : card.descr,
+              'img' : card.img,
+              'type' : card.type,
+              'tip_nummer' : card.tip_nummer,
+              'category' : card.category,
+              'toptip' : card.toptip,
+              'toptiptekst' : card.toptiptekst,
+              'url': is_preview ? '#' : card.url,
+              'start_date': ( card.start_date ?? '' ),
+              'end_date': ( card.end_date ?? '' ),
+              'post_date': ( card.post_date ?? '' ),
+              'meta': card.meta,
+            } %}
+
+          {% endfor %}
+
+          {% if related.cta_url and related.cta_title %}
+            <p class="l-cta-wrapper">
+              <a class="btn btn--primary" href="{{ related.cta_url }}">{{ related.cta_title }}</a>
+            </p>
+          {% endif %}
+
+        </div>
+
+
+      </div>
+    </section>
+  {% else %}
+
+  {% if is_preview %}
+    <p>Geen events</p>
+  {% endif %}
+
+  {% endif %}
+
+  {% if is_preview %}
+</div>
+{% endif %}

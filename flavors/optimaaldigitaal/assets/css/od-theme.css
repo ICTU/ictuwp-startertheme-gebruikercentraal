@@ -4510,7 +4510,8 @@ body:not(.single-event) {
   background: #1DA742;
   text-align: center;
   overflow: hidden;
-  height: 36rem; }
+  height: 36rem;
+  min-width: 20rem; }
   .tipkaart h2, .tipkaart h3 {
     color: #fff; }
   .tipkaart > a:hover {
@@ -4526,7 +4527,8 @@ body:not(.single-event) {
     background: #148839;
     margin: 0 -5rem -5rem -5rem;
     -webkit-transform: rotate(-3deg);
-            transform: rotate(-3deg); }
+            transform: rotate(-3deg);
+    z-index: 10; }
   .tipkaart--gebruiksgemak {
     background: #4c2974; }
     .tipkaart--gebruiksgemak:before {
@@ -4668,12 +4670,14 @@ body:not(.single-event) {
   line-height: 3.2rem;
   margin: 0;
   padding: 0;
-  word-break: break-word; }
+  word-break: break-word;
+  z-index: 30; }
 
 .tipkaart__categorie {
   position: relative;
   margin-top: auto;
-  font-family: "league_gothicregular", Impact, Helvetica, Arial, sans-serif; }
+  font-family: "league_gothicregular", Impact, Helvetica, Arial, sans-serif;
+  z-index: 20; }
   .tipkaart__categorie span {
     font-size: 2.2rem;
     line-height: 3rem;
