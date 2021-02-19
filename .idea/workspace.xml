@@ -26,6 +26,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="HTML File" />
+        <option value="composer.json" />
       </list>
     </option>
   </component>
@@ -150,10 +151,11 @@
     <state x="2427" y="186" width="997" height="582" key="find.popup/0.23.1440.877/1440.-277.2560.1417@1440.-277.2560.1417" timestamp="1613411168089" />
     <state x="2180" y="247" width="1012" height="518" key="find.popup/0.23.1440.877/1440.-98.1920.1057@1440.-98.1920.1057" timestamp="1612882558547" />
     <state x="340" y="271" width="1100" height="582" key="find.popup/0.23.1440.877@0.23.1440.877" timestamp="1611693342880" />
-    <state x="616" y="240" key="run.anything.popup" timestamp="1606734895421">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state x="2056" y="146" key="run.anything.popup" timestamp="1612788409324">
+      <screen x="1440" y="-98" width="1920" height="1057" />
     </state>
     <state x="616" y="240" key="run.anything.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1606734895421" />
+    <state x="2056" y="146" key="run.anything.popup/0.23.1440.877/1440.-98.1920.1057@1440.-98.1920.1057" timestamp="1612788409324" />
   </component>
   <component name="WordPressConfiguration" enabled="true">
     <wordpressPath>D:\gc_accept_local\gc-local\~\vagrant-local\www\gebruikercentraal\public_html</wordpressPath>

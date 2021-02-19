@@ -9,8 +9,7 @@
   }
 
   &--full {
-    .post__header,
-    .post__body > .section {
+    .post__header {
       @include ho-make-container($max-width-inner);
     }
 
@@ -42,10 +41,13 @@
   }
 }
 
+.entry-content {
+  @include ho-padding;
+}
+
 // sections for either .post or .entry
 .post__body,
 .entry-content {
-  @include ho-padding;
 
   > .section {
     @include ho-make-container($max-width-inner);
@@ -61,7 +63,6 @@
       @include gc-last-padding;
     }
 
-
     &--paragraph {
       @include bp-down(md) {
         padding-left: 0;
@@ -69,14 +70,16 @@
       }
     }
 
-
-    &--bg-option {
+    &--bg-option,
+    &--overview {
       max-width: none;
       @include ho-padding;
       @include negate-padding;
     }
 
-    &--overview.l-item-count-3 {
+    // Sections which don't need the default max-width
+    &--overview.l-item-count-3,
+    &--examples {
       max-width: none;
     }
   }
