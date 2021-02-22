@@ -1,0 +1,284 @@
+{
+    "key": "group_602d0818472fe",
+    "title": "GC - Events",
+    "fields": [
+        {
+            "key": "field_602d081857245",
+            "label": "Events toevoegen?",
+            "name": "events_content_toevoegen",
+            "type": "radio",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "ja": "Ja",
+                "nee": "Nee"
+            },
+            "allow_null": 0,
+            "other_choice": 0,
+            "default_value": "nee",
+            "layout": "vertical",
+            "return_format": "value",
+            "save_other_choice": 0
+        },
+        {
+            "key": "field_602d1b0948922",
+            "label": "Wat wil je tonen als er geen events beschikbaar zijn?",
+            "name": "events_content_alt_content",
+            "type": "radio",
+            "instructions": "",
+            "required": 1,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_602d081857245",
+                        "operator": "==",
+                        "value": "ja"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "niets": "Toon niets",
+                "titel_boodschap": "Toon titel en foutboodschap"
+            },
+            "allow_null": 0,
+            "other_choice": 0,
+            "default_value": "niets",
+            "layout": "vertical",
+            "return_format": "value",
+            "save_other_choice": 0
+        },
+        {
+            "key": "field_602d08185802a",
+            "label": "Titel",
+            "name": "content_block_title",
+            "type": "text",
+            "instructions": "",
+            "required": 1,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_602d081857245",
+                        "operator": "==",
+                        "value": "ja"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "Aankomende evenementen",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_602d1b8e61885",
+            "label": "Foutboodschap",
+            "name": "events_content_alt_content_message",
+            "type": "text",
+            "instructions": "Wordt alleen getoond als er geen geschikte evenementen getoond kunnen worden",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_602d1b0948922",
+                        "operator": "==",
+                        "value": "titel_boodschap"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "Er staan geen evenementen op het programma.",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_602d12a474f25",
+            "label": "Maximaal aantal events",
+            "name": "maximaal_aantal_events",
+            "type": "number",
+            "instructions": "",
+            "required": 1,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_602d081857245",
+                        "operator": "==",
+                        "value": "ja"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": 3,
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "min": "",
+            "max": "",
+            "step": ""
+        },
+        {
+            "key": "field_602d08185b57a",
+            "label": "Filter op event-categorieen",
+            "name": "content_block_taxonomy_events",
+            "type": "taxonomy",
+            "instructions": "Als je niks selecteert worden alle toekomstige events getoond.",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_602d081857245",
+                        "operator": "==",
+                        "value": "ja"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "taxonomy": "event-categories",
+            "field_type": "checkbox",
+            "add_term": 0,
+            "save_terms": 0,
+            "load_terms": 0,
+            "return_format": "id",
+            "multiple": 0,
+            "allow_null": 0
+        },
+        {
+            "key": "field_602d228f14abe",
+            "label": "Link naar event-pagina toevoegen",
+            "name": "events_content_eventspage_link",
+            "type": "radio",
+            "instructions": "",
+            "required": 1,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_602d081857245",
+                        "operator": "==",
+                        "value": "ja"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "ja": "Ja, voeg een link naar de eventpagina toe",
+                "nee": "Nee"
+            },
+            "allow_null": 0,
+            "other_choice": 0,
+            "default_value": "niets",
+            "layout": "vertical",
+            "return_format": "value",
+            "save_other_choice": 0
+        },
+        {
+            "key": "field_602d3da5c40c4",
+            "label": "Linktekst evenementepagina",
+            "name": "content_block_cta_eventspage",
+            "type": "text",
+            "instructions": "",
+            "required": 1,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_602d228f14abe",
+                        "operator": "==",
+                        "value": "ja"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "Alle evenementen",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_602d08185de93",
+            "label": "Achtergrond",
+            "name": "content_block_modifier",
+            "type": "radio",
+            "instructions": "",
+            "required": 1,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_602d081857245",
+                        "operator": "==",
+                        "value": "ja"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "none": "Toon geen achtergrond",
+                "bg-option": "Toon achtergrond"
+            },
+            "allow_null": 0,
+            "other_choice": 0,
+            "default_value": "none",
+            "layout": "vertical",
+            "return_format": "value",
+            "save_other_choice": 0
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "block",
+                "operator": "==",
+                "value": "acf\/gc-events"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "modified": 1613579025
+}

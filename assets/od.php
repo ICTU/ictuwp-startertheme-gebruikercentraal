@@ -1007,7 +1007,7 @@ if ( ! class_exists( 'ICTUWP_GC_OD_registerposttypes' ) ) :
 							'label'             => __( "Nuttige links", 'gctheme' ),
 							'name'              => 'nuttige_links',
 							'type'              => 'repeater',
-							'instructions'      => '<img src="/wp-content/themes/optimaal-digitaal/images/linkbeschrijving-illustratie.png" alt="waar komen de velden terecht?" width="600" height="126" /><br />De URL is verplicht; de andere velden niet. Maar als er geen beschrijving, CTA of titel wordt ingevoerd, wordt er "<em>' . __( "Geen linkbeschrijving ingevoerd", 'gctheme' ) . '</em>" getoond.',
+							'instructions'      => 'De URL is verplicht; de andere velden niet. Maar als er geen beschrijving, CTA of titel wordt ingevoerd, wordt er "<em>' . __( "Geen linkbeschrijving ingevoerd", 'gctheme' ) . '</em>" getoond.',
 							'required'          => 0,
 							'conditional_logic' => 0,
 							'wrapper'           => [
@@ -1941,12 +1941,12 @@ if ( ! function_exists( 'ictuwp_gc_filter_yoast_breadcrumb ' ) ) {
 }
 
 //========================================================================================================
-if ( ! function_exists( 'ICTUWP_OD_change_tip_permalinks ' ) ) {
+if ( ! function_exists( 'ictuwp_od_change_tip_permalinks ' ) ) {
 
 	// Apply to field named "od_overzicht_alle_tips".
-	add_filter( 'acf/update_value/name=od_overzicht_alle_tips', 'ICTUWP_OD_change_tip_permalinks', 10, 3 );
+	add_filter( 'acf/update_value/name=od_overzicht_alle_tips', 'ictuwp_od_change_tip_permalinks', 10, 3 );
 
-	function ICTUWP_OD_change_tip_permalinks( $value, $post_id, $field ) {
+	function ictuwp_od_change_tip_permalinks( $value, $post_id, $field ) {
 
 		if ( $value ) {
 
@@ -1973,7 +1973,7 @@ if ( ! function_exists( 'ICTUWP_OD_change_tip_permalinks ' ) ) {
 				if ( WP_DEBUG ) {
 
 					// note in log
-					error_log( 'ICTUWP_OD_change_tip_permalinks: slug for ' . GC_TIP_CPT . " changed to " . $permalink );
+					error_log( 'ictuwp_od_change_tip_permalinks: slug for ' . GC_TIP_CPT . " changed to " . $permalink );
 
 				}
 			}

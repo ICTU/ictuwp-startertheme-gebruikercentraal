@@ -1,41 +1,87 @@
-<section class="section section--brands{{ modifier ? ' ' ~ modifier }}">
+{% if is_preview %}
+  <style type="text/css">
+    #logoblock-{{ block.id }} {
+      border: 3px dashed #dadada;
+    }
+    #logoblock-{{ block.id }} .section {
+      margin-top: 2rem;
+    }
+    #logoblock-{{ block.id }} .grid {
+      font-size: 16px !important;
+      margin-top: 0;
+      overflow: hidden;
+    }
+    #logoblock-{{ block.id }} .brand {
+      max-width: 300px;
+      float: left;
+    }
+    #logoblock-{{ block.id }} .brand a {
+      font-size: 1.1rem;
+    }
 
-  {% if title or descr %}
-    <div class="l-section-top">
+    #logoblock-{{ block.id }} .section__title {
+      font-size: 2rem;
+      line-height: 1.2;
+    }
 
-      {% if title %}
-        <h2 class="section__title">{{ title }}</h2>
-      {% endif %}
+    #logoblock-{{ block.id }} .section__description {
+      font-size: 16px;
+    }
 
-      {% if descr %}
-        <p class="section__description">
-          {{ descr }}
-        </p>
-      {% endif %}
-    </div>
+  </style>
+
+<div id="logoblock-{{ block.id }}">
 
   {% endif %}
 
-  {% if items %}
+  <section class="section section--brands{{ modifier ? ' ' ~ modifier }}">
 
-  <div class="l-section-content">
-    <div class="grid grid--col-4">
+    {% if partnerlogos.title or partnerlogos.description %}
+      <div class="l-section-top">
 
-      {% for item in items %}
+        {% if partnerlogos.title %}
+          <h2 class="section__title">{{ partnerlogos.title }}</h2>
+        {% endif %}
 
-      <div class="brand">
-        <figure class="brand__image">
-          <img class="image image--brand" src="/uploads/styles/logo/{{ item.img }}">
-        </figure>
-
-        <a class="link link--arrow-icon" href="{{ item.url ? item.url : '#' }}">
-          {{ item.title }}
-        </a>
+        {% if partnerlogos.description %}
+          <p class="section__description">
+            {{ partnerlogos.description }}
+          </p>
+        {% endif %}
       </div>
 
-      {% endfor %}
-    </div>
-  </div>
+    {% endif %}
 
-  {% endif %}
-</section>
+    {% if partnerlogos.items %}
+
+      <div class="l-section-content">
+        <div class="grid {{ partnerlogos.columncounter ? ' grid--col-' ~ partnerlogos.columncounter : '' }}">
+
+          {% for item in partnerlogos.items %}
+
+            <div class="brand">
+              {% if item.image_src %}
+                <figure class="brand__image">
+                  <img class="image image--brand" src="{{ item.image_src }}" alt="{{ item.image_alt }}">
+                </figure>
+              {% endif %}
+              {% if item.link_url %}
+                <a class="link link--arrow-icon" href="{{ item.link_url }}">
+                  {{ item.link_linktext }}
+                </a>
+              {% endif %}
+            </div>
+
+          {% endfor %}
+        </div>
+      </div>
+
+    {% else %}
+      <p>Voeg logo's toe</p>
+
+    {% endif %}
+  </section>
+  {% if is_preview %}
+
+</div>
+{% endif %}

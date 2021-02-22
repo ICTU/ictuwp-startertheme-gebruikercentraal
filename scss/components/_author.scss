@@ -41,19 +41,43 @@
 
 
   &.l-with-image {
-    display: flex;
-    align-items: flex-start;
 
-    .author__image {
-      width: 8rem;
+    @include bp-down(sm) {
+      background: $gc-green;
+      @include gc-bg-rotated($gc-a11y-green);
+      text-align: center;
+
+      &:before {
+        z-index: -1;
+        top: 12rem;
+      }
+
+      .author__image {
+        max-width: 14rem;
+        margin: 0 auto;
+      }
+
+      .author__content {
+        margin-top: $gutter;
+      }
     }
 
-    .author__content {
-      width: calc(100% - 14rem);
-      padding-left: $gutter;
+    @include bp-up(sm) {
+      display: flex;
+      align-items: flex-start;
+
+
+      .author__image {
+        width: 8rem;
+      }
+
+      .author__content {
+        width: calc(100% - 14rem);
+        padding-left: $gutter;
+      }
     }
 
-    @include bp-up(lg) {
+    @include bp-up(md) {
       .author__image {
         width: 14rem;
       }
@@ -87,13 +111,13 @@
     .author__contact-info {
       border-top: .1rem solid darken($intro-bg, 5%);
 
-      @include bp-up(md){
+      @include bp-up(md) {
         padding-top: 1rem;
         margin-top: 2rem;
       }
     }
 
-    @include bp-up(md){
+    @include bp-up(md) {
       padding: 4rem 5rem;
     }
   }
@@ -209,7 +233,6 @@
 }
 
 
-
 // As a card, displayed in overviews
 
 $ac-margin: 30rem;
@@ -231,7 +254,7 @@ $ac-margin: 30rem;
     position: relative;
     z-index: -1;
 
-    @include bp-up(md){
+    @include bp-up(md) {
       padding: 13rem 3rem 2rem;
     }
 
@@ -337,7 +360,7 @@ $ac-margin: 30rem;
     }
 
     .author__contact-info {
-      border-top: .1rem solid  darken($intro-bg, 6%);
+      border-top: .1rem solid darken($intro-bg, 6%);
       padding-top: 1.5rem;
     }
 
@@ -365,7 +388,7 @@ $ac-margin: 30rem;
   @include ho-container;
   margin-top: 5rem;
 
-  @include bp-up(md){
+  @include bp-up(md) {
     margin-top: 8rem;
   }
 }

@@ -106,6 +106,14 @@ require_once( get_template_directory() . '/gutenberg-blocks/teaser-block.php' );
 require_once( get_template_directory() . '/gutenberg-blocks/handleiding-block.php' );
 require_once( get_template_directory() . '/gutenberg-blocks/spelleiders-block.php' );
 
+// block voor het tonen van tipkaarten
+require_once( get_template_directory() . '/gutenberg-blocks/tipkaarten-block.php' );
+
+// block voor het tonen van partnerlogo's
+require_once( get_template_directory() . '/gutenberg-blocks/partnerlogos-block.php' );
+
+// block voor het tonen van aankomende events
+require_once( get_template_directory() . '/gutenberg-blocks/events-block.php' );
 
 /**
  * Load other dependencies such as VAR DUMPER :D
@@ -716,6 +724,7 @@ class GebruikerCentraalTheme extends Timber\Site {
 			"template-overzichtspagina.php" => "Overzichtspagina",
 			"template-sitemap.php"          => "Sitemap",
 			"template-events-overview.php"  => "Events overzicht",
+			"page-initiatieven.php"         => "Initiatieven-pagina",
 		];
 
 		// check the flavor
@@ -1051,6 +1060,47 @@ if ( ! function_exists( 'od_wbvb_custom_post_title' ) ) {
 
 		$pattern     = '/verwachtingsmanagement/i';
 		$replacement = 'verwachtings&shy;management';
+		$title       = preg_replace( $pattern, $replacement, $title );
+
+		$pattern     = '/dienstverlening/i';
+		$replacement = 'dienst&shy;verlening';
+		$title       = preg_replace( $pattern, $replacement, $title );
+
+		$pattern     = '/uitgangspunt/i';
+		$replacement = 'uitgangs&shy;punt';
+		$title       = preg_replace( $pattern, $replacement, $title );
+
+		$pattern     = '/medewerkerreis/i';
+		$replacement = 'medewerker&shy;reis';
+		$title       = preg_replace( $pattern, $replacement, $title );
+
+		$pattern     = '/elfredz/i';
+		$replacement = 'elf&shy;redz';
+		$title       = preg_replace( $pattern, $replacement, $title );
+
+		// ontwikkeling
+		$pattern     = '/ntwikke/i';
+		$replacement = 'ntwik&shy;ke';
+		$title       = preg_replace( $pattern, $replacement, $title );
+
+		// aantrekkelijk
+		$pattern     = '/antrekkelijk/i';
+		$replacement = 'antrek&shy;kelijk';
+		$title       = preg_replace( $pattern, $replacement, $title );
+
+		// afdelingsoverstijgend
+		$pattern     = '/fdelingsoverstijgend/i';
+		$replacement = 'fdelings&shy;over&shy;stij&shy;gend';
+		$title       = preg_replace( $pattern, $replacement, $title );
+
+		// communiceer
+		$pattern     = '/communiceer/i';
+		$replacement = 'communi&shy;ceer';
+		$title       = preg_replace( $pattern, $replacement, $title );
+
+		// wachtwoord
+		$pattern     = '/wachtwoord/i';
+		$replacement = 'wacht&shy;woord';
 		$title       = preg_replace( $pattern, $replacement, $title );
 
 		return $title;
