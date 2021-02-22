@@ -7,7 +7,6 @@
 
 
 @mixin text-styles() {
-
   h2,
   h3,
   h4 {
@@ -53,6 +52,15 @@
     }
   }
 
+  ul {
+    margin: 1.6rem 0 0 0;
+    padding-left: 2rem;
+
+    + h2, + h3 {
+      margin-top: $gutter;
+    }
+  }
+
   .alignleft {
     float: left;
     margin: 0 2rem .5rem 0;
@@ -75,7 +83,8 @@
 .post__body,
 .manual-item__content,
 .example__content,
-.research__content {
+.research__content,
+.entry-body {
   @include text-styles;
 }
 

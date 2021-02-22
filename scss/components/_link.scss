@@ -93,7 +93,6 @@
       float: left;
       margin-right: 1rem;
       display: inline-block;
-
     }
 
     &:hover,
@@ -106,8 +105,14 @@
       }
     }
 
-    + .link--contact {
-      margin-left: 2rem;
+    @include bp-down(sm) {
+      display: block;
+      word-break: break-word;
+    }
+    @include bp-up(sm) {
+      + .link--contact {
+        margin-left: 2rem;
+      }
     }
   }
 
