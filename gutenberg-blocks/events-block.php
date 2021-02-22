@@ -11,7 +11,7 @@ function gb_add_events_block() {
 		// register a testimonial block.
 		acf_register_block_type( [
 			'name'            => 'gc/events',
-			'title'           => _x( 'GC events', 'Block titel', 'gctheme' ),
+			'title'           => _x( 'GC evenementenblok', 'Block titel', 'gctheme' ),
 			'description'     => _x( 'Collectie van aankomende events in een Gutenberg block', 'Block description', 'gctheme' ),
 			'render_callback' => 'gb_render_events_block',
 			'category'        => 'gc-blocks',
@@ -37,7 +37,7 @@ function gb_render_events_block( $block, $content = '', $is_preview = false ) {
 	$context['is_preview'] = $is_preview;
 
 	// verzamelen van de inhoud
-	$context['related'] = events_block_get_data();
+	$context['events'] = events_block_get_data();
 
 	// Hergebruik van section-related.html.twig, want dat voldoet prima
 	Timber::render( 'sections/section-events.html.twig', $context );
@@ -76,9 +76,14 @@ function events_block_get_data() {
 
 			if ( ( 'ja' === get_field( 'events_content_eventspage_link' ) ) && get_option( 'dbem_events_page' ) ) {
 
+				$content_block_cta_eventspage = get_field( 'content_block_cta_eventspage' );
+				if ( ! $content_block_cta_eventspage ) {
+					$return['cta_title'] = get_the_title( get_option( 'dbem_events_page' ) );
+				} else {
+					$return['cta_title'] = wp_strip_all_tags( $content_block_cta_eventspage );
+				}
 				// de titel boven dit blok is exact gelijk aan de pagina-titel van de event page
-				$return['cta_url']   = get_permalink( get_option( 'dbem_events_page' ) );
-				$return['cta_title'] = get_the_title( get_option( 'dbem_events_page' ) );
+				$return['cta_url'] = get_permalink( get_option( 'dbem_events_page' ) );
 			}
 
 
@@ -89,32 +94,20 @@ function events_block_get_data() {
 
 			endforeach;
 
-			$return['description'] = get_field( 'events_block_description' ) ? get_field( 'events_block_description' ) : '';
-			$return['descr']       = $return['description'];
-			$return['title']       = get_field( 'events_block_title' ) ? get_field( 'events_block_title' ) : '';
+			$return['title'] = get_field( 'content_block_title' ) ? get_field( 'content_block_title' ) : '';
 
 		} else {
 			// geen events beschikbaar
 			if ( 'titel_boodschap' === $alt_content ) {
 				// wel iets tonen
-				$return['description'] = get_field( 'events_block_description' ) ? get_field( 'events_block_description' ) : '';
-				if ( get_field( 'events_block_title' ) ) {
+				if ( get_field( 'content_block_title' ) ) {
 					// als er een titel is ingevoerd, dan moet de eventuele foutboodschap aan de description geplakt worden
-					$return['title']       = get_field( 'events_block_title' );
-
-					if ( $return['description']) {
-						$return['description'] .= '<br>' . $alt_content_message;
-					}
-					else {
-						$return['description'] = $alt_content_message;
-
-					}
-				}
-				else {
+					$return['title']       = get_field( 'content_block_title' );
+					$return['description'] = $alt_content_message;
+				} else {
 					// geen titel ingevoerd, dus is de foutboodschap de titel
-					$return['title']       = $alt_content_message;
+					$return['title'] = $alt_content_message;
 				}
-				$return['descr']       = $return['description'];
 
 
 			} else {
@@ -130,6 +123,9 @@ function events_block_get_data() {
 	wp_reset_postdata();
 
 	$columncounter = '3';
+	if ( isset( $return['description'] ) ) {
+		$return['descr'] = $return['description'];
+	}
 
 	if ( isset( $return['items'] ) ) {
 
