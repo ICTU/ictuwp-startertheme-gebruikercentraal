@@ -49,7 +49,7 @@
             },
             "choices": {
                 "niets": "Toon niets",
-                "titel_boodschap": "Toon foutboodschap (en eventueel de titel)"
+                "titel_boodschap": "Toon titel en foutboodschap"
             },
             "allow_null": 0,
             "other_choice": 0,
@@ -63,8 +63,8 @@
             "label": "Titel",
             "name": "content_block_title",
             "type": "text",
-            "instructions": "(niet verplicht)",
-            "required": 0,
+            "instructions": "",
+            "required": 1,
             "conditional_logic": [
                 [
                     {
@@ -79,7 +79,7 @@
                 "class": "",
                 "id": ""
             },
-            "default_value": "",
+            "default_value": "Aankomende evenementen",
             "placeholder": "",
             "prepend": "",
             "append": "",
@@ -113,33 +113,6 @@
             "maxlength": ""
         },
         {
-            "key": "field_602d08185894e",
-            "label": "description",
-            "name": "content_block_description",
-            "type": "textarea",
-            "instructions": "(niet verplicht)",
-            "required": 0,
-            "conditional_logic": [
-                [
-                    {
-                        "field": "field_602d081857245",
-                        "operator": "==",
-                        "value": "ja"
-                    }
-                ]
-            ],
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "",
-            "placeholder": "",
-            "maxlength": "",
-            "rows": "",
-            "new_lines": ""
-        },
-        {
             "key": "field_602d12a474f25",
             "label": "Maximaal aantal events",
             "name": "maximaal_aantal_events",
@@ -170,10 +143,10 @@
         },
         {
             "key": "field_602d08185b57a",
-            "label": "Event-categorieen",
+            "label": "Filter op event-categorieen",
             "name": "content_block_taxonomy_events",
             "type": "taxonomy",
-            "instructions": "",
+            "instructions": "Als je niks selecteert worden alle toekomstige events getoond.",
             "required": 0,
             "conditional_logic": [
                 [
@@ -231,6 +204,33 @@
             "save_other_choice": 0
         },
         {
+            "key": "field_602d3da5c40c4",
+            "label": "Linktekst evenementepagina",
+            "name": "content_block_cta_eventspage",
+            "type": "text",
+            "instructions": "",
+            "required": 1,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_602d228f14abe",
+                        "operator": "==",
+                        "value": "ja"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "Alle evenementen",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
             "key": "field_602d08185de93",
             "label": "Achtergrond",
             "name": "content_block_modifier",
@@ -280,5 +280,5 @@
     "hide_on_screen": "",
     "active": true,
     "description": "",
-    "modified": 1613571742
+    "modified": 1613579025
 }
