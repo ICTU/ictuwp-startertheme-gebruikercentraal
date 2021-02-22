@@ -38,6 +38,8 @@ function gb_render_partners_block( $block, $content = '', $is_preview = false ) 
 
 	$context['partnerlogos'] = partners_block_get_data();
 
+
+
 	// Render the block.
 	Timber::render( 'sections/section-brands.html.twig', $context );
 
@@ -52,7 +54,7 @@ function partners_block_get_data() {
 	global $post;
 	$return               = array();
 	$type_block           = 'section--partners';
-	$imagesize_for_thumbs = IMAGESIZE_16x9;
+	$imagesize_for_thumbs = BLOG_SINGLE_DESKTOP;
 
 	if ( 'ja' === get_field( 'partners_block_tonen' ) ) {
 

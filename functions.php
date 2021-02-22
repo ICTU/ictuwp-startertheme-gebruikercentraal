@@ -1093,6 +1093,16 @@ if ( ! function_exists( 'od_wbvb_custom_post_title' ) ) {
 		$replacement = 'fdelings&shy;over&shy;stij&shy;gend';
 		$title       = preg_replace( $pattern, $replacement, $title );
 
+		// communiceer
+		$pattern     = '/communiceer/i';
+		$replacement = 'communi&shy;ceer';
+		$title       = preg_replace( $pattern, $replacement, $title );
+
+		// wachtwoord
+		$pattern     = '/wachtwoord/i';
+		$replacement = 'wacht&shy;woord';
+		$title       = preg_replace( $pattern, $replacement, $title );
+
 		return $title;
 
 	}
