@@ -1,0 +1,88 @@
+// Overviews
+
+.section--overview {
+  max-width: none;
+
+  .l-section-content {
+    max-width: $max-width-container;
+
+    @include bp-down(sm) {
+      padding-left: 1.5rem;
+      padding-right: 1.5rem;
+    }
+  }
+
+  .grid + p {
+    display: flex;
+    @include bp-up(lg) {
+      padding: 0 $gutter / 2;
+    }
+  }
+
+  .btn {
+    margin-top: $gutter;
+    margin-left: auto;
+
+    @include bp-up(lg) {
+      margin-top: 4.5rem;
+    }
+  }
+
+  + .section--brands .section__title {
+    border: none;
+  }
+
+  .l-section-content {
+    @include ho-container-content;
+  }
+
+  .l-cta-wrapper {
+    text-align: center;
+    width: 100%;
+    margin-top: 0;
+  }
+
+  .btn {
+    margin-right: auto;
+  }
+
+  &.l-item-count-3,
+  &.l-display-grid {
+    .l-section-content {
+      max-width: calc(#{$max-width-content} - #{$gutter * 3});
+    }
+  }
+}
+
+
+// For events
+
+.section--events-block {
+  .l-section-top {
+    width: 100%;
+    border-top: .2rem solid $border-color;
+    padding-top: 3rem;
+
+    .section__title {
+      border: none;
+      margin: 0;
+      padding: 0;
+    }
+  }
+
+  @include bp-up(md) {
+    .l-section-top {
+      display: flex;
+      align-items: flex-start;
+
+      .btn {
+        margin: 0 0 0 auto;
+      }
+    }
+
+    .l-section-content {
+      margin-top: 1rem;
+    }
+  }
+}
+
