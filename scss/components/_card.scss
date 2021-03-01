@@ -24,10 +24,6 @@
     margin-bottom: 0;
   }
 
-  .meta-data dd:not(.location):before {
-    display: none;
-  }
-
   &--featured-image {
     padding: 0;
 
@@ -233,6 +229,32 @@
       }
       .card__title {
         padding-left: 5.5rem;
+      }
+    }
+
+    &:not(.card--with-image) {
+      @include gc-bg-rotated($white);
+
+      padding-bottom: 0;
+      background: $gc-pantybrown-light;
+
+      &:before {
+        top: 6rem;
+      }
+
+      .date-badge {
+        position: relative;
+        top: 0;
+        left: 0;
+      }
+
+      .card__title {
+        padding-left: 0;
+        margin-top: 2rem;
+      }
+
+      @include bp-up(md) {
+        padding-bottom: 0
       }
     }
   }

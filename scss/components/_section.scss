@@ -13,6 +13,7 @@
     margin-top: 7rem;
   }
 
+  &.bg-option,
   &--bg-option {
     @include gc-bg-rotated();
 
@@ -119,60 +120,6 @@
   margin-top: $gutter;
 }
 
-
-// Overviews
-
-.section--overview {
-  max-width: none;
-
-  .l-section-content {
-    max-width: $max-width-container;
-
-    @include bp-down(sm) {
-      padding-left: 1.5rem;
-      padding-right: 1.5rem;
-    }
-  }
-
-  .grid + p {
-    display: flex;
-    @include bp-up(lg) {
-      padding: 0 $gutter / 2;
-    }
-  }
-
-  .btn {
-    margin-top: $gutter;
-    margin-left: auto;
-
-    @include bp-up(lg) {
-      margin-top: 4.5rem;
-    }
-  }
-
-  + .section--brands .section__title {
-    border: none;
-  }
-
-  .l-section-content {
-    @include ho-container-content;
-  }
-
-  .l-cta-wrapper {
-    text-align: center;
-    width: 100%;
-    margin-top: 0;
-  }
-    .btn {
-      margin-right: auto;
-    }
-
-  &.l-item-count-3 {
-    .l-section-content {
-      max-width: calc(#{$max-width-content} - #{$gutter * 3});
-    }
-  }
-}
 
 /* Actueel - events & blogs */
 
