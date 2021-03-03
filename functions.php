@@ -1634,3 +1634,43 @@ function size_column_display( $column_name, $post_id ) {
 
 //========================================================================================================
 
+function gc_wbvb_auteursfoto_waarschuwing( $value, $post_id, $field ) {
+
+	$authorfoto_url = wp_get_attachment_image_src( $value, 'thumbnail' );
+
+	$warning = '';
+
+	if ( ! $authorfoto_url ) {
+		// mediabestand bestaat niet op deze omgeving
+		$user_id        = str_replace( "user_", "", $post_id );
+		$authorfoto_url = get_user_meta( $user_id, 'auteursfoto_url', true );
+		$warning        = '<div style="border: 1px solid silver; background: white; padding: 1rem; overflow:hidden;">';
+		if ( $authorfoto_url ) {
+			$warning .= '<a href="' . $authorfoto_url . '"><img alt="" src="' . $authorfoto_url . '" width="150" style="float: left; margin-right: 1rem;"></a>';
+			$warning .= '<h1 style="margin: 0; padding: 0;">Let op!</h1>';
+			$warning .= '<p>De auteursfoto die je hiernaast ziet is geupload via een andere subsite op deze WordPress-omgeving.<br>';
+			$warning .= 'Daarom zie je hieronder als waarde voor de auteurs-foto: ';
+			$warning .= '<strong><em>Geen afbeelding geselecteerd</em></strong><br>';
+		} else {
+			// nog geen plaatje beschikbaar
+			$warning .= '<h1 style="margin: 0; padding: 0;">Let op!</h1>';
+		}
+		$warning .= 'De foto die je hier uploadt, wordt hierna getoond op elke andere subsite die het Gebruiker Centraal-theme gebruikt.<br>';
+		$warning .= 'Er is maar 1 auteursfoto mogelijk voor een auteur. ';
+		$warning .= 'Een gebruiker / auteur MOET een auteursfoto hebben. Als je geen auteursfoto meer wil, upload dan een neutraal plaatje.</p>';
+		$warning .= '</div>';
+
+	}
+
+	if ( is_admin() ) {
+		echo $warning;
+	}
+
+	return $value;
+}
+
+// Apply to auteursfoto field
+add_filter( 'acf/load_value/name=auteursfoto', 'gc_wbvb_auteursfoto_waarschuwing', 10, 3 );
+
+//========================================================================================================
+

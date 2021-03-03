@@ -81,20 +81,31 @@ require plugin_dir_path( __FILE__ ) . '../includes/wmus-network.php';
 /*
  * This is a file for sync/unsync functions.
  */
-require plugin_dir_path( __FILE__ ) . '../includes/wmus-sync-unsync.php';
+//require plugin_dir_path( __FILE__ ) . '../includes/wmus-sync-unsync.php';
 
-add_action( 'acf/save_post', 'my_acf_save_post' );
-function my_acf_save_post( $post_id ) {
+//========================================================================================================
 
-	// Get newly saved values.
-	$values = get_fields( $post_id );
+// bij het wijzigen van de avatar van een slaan we de URL voor de foto op als een
+// globaal beschikbare waarde voor de gebruiker.
+// zo is de avatar die je invoerde op site [x] ook beschikbaar op site [y]
+// de user variable 'auteursfoto_url' kan ook door andere themes (zoals gebruiker-centraal)
+// worden gebruikt.
 
+add_action( 'acf/save_post', 'gc_wbvb_update_auteursfoto' );
 
-	$user_id = str_replace( "user_", "", $post_id );
+function gc_wbvb_update_auteursfoto( $post_id ) {
 
-	// Check the new value of a specific field.
-	$hero_image = get_user_meta( $user_id, 'auteursfoto', TRUE );
+	$user_id     = str_replace( "user_", "", $post_id );
+	$auteursfoto = get_user_meta( $user_id, 'auteursfoto', true );
+	$size        = 'thumb-cardv3';
 
-	update_user_meta( $user_id, 'auteursfoto_url', wp_get_attachment_url( $hero_image ) );
+	if ( $auteursfoto ) {
+		$image = wp_get_attachment_image_src( $auteursfoto, $size );
+		if ( $image[0] ) {
+			update_user_meta( $user_id, 'auteursfoto_url', $image[0] );
+		}
+	}
 
 }
+
+//========================================================================================================
