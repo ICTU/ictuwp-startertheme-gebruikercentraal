@@ -23,7 +23,7 @@ function gb_add_events_block() {
 
 //========================================================================================================
 
-function gb_render_events_block( $block, $content = '', $is_preview = false ) {
+function gb_render_events_block( $block, $content = '', $is_preview = FALSE ) {
 
 	$context = Timber::context();
 
@@ -37,9 +37,24 @@ function gb_render_events_block( $block, $content = '', $is_preview = false ) {
 	$context['is_preview'] = $is_preview;
 
 	// verzamelen van de inhoud
-	$context['events'] = events_block_get_data();
+	$block_data = events_block_get_data();
 
-	// Hergebruik van section-related.html.twig, want dat voldoet prima
+	// Prepare data to use template correctly
+	$context['title']       = ! empty( $block_data['title'] ) ? $block_data['title'] : '';
+	$context['description'] = ! empty( $block_data['description'] ) ? $block_data['description'] : '';
+
+	$context['items'] = !empty($block_data['items']) ? $block_data['items'] : '';
+
+	$context['cta'] = [
+		'url'   => ! empty( $block_data['cta_url'] ) ? $block_data['cta_url'] : '',
+		'title' => ! empty( $block_data['cta_title'] ) ? $block_data['cta_title'] : '',
+	];
+
+	$context['modifier'] = 'events-block';
+	$context['extra_class'] = !empty($block_data['extraclass']) ? $block_data['extraclass'] : '';
+
+
+	// Hergebruik van section-overview.html.twig, want dat voldoet prima
 	Timber::render( 'sections/section-events.html.twig', $context );
 
 }
@@ -53,6 +68,7 @@ function events_block_get_data() {
 	global $post;
 	$type_block           = 'section--overview';
 	$imagesize_for_thumbs = IMAGESIZE_16x9;
+	
 
 	if ( ( 'ja' === get_field( 'events_content_toevoegen' ) ) && ( class_exists( 'EM_Events' ) ) ) {
 
@@ -60,10 +76,10 @@ function events_block_get_data() {
 		$alt_content_message = get_field( 'events_content_alt_content_message' );
 		$maxnr               = ( get_field( 'maximaal_aantal_events' ) ) ? intval( get_field( 'maximaal_aantal_events' ) ) : 3;
 		// events selecteren
-		$args = array(
+		$args = [
 			'limit' => $maxnr,
-			'array' => true
-		);
+			'array' => TRUE,
+		];
 
 		$eventcategories = get_field( 'content_block_taxonomy_events' );
 		if ( $eventcategories ) {
@@ -112,7 +128,7 @@ function events_block_get_data() {
 
 			} else {
 				// helemaal niks tonen
-				$return = array();
+				$return = [];
 			}
 
 		}
@@ -136,8 +152,11 @@ function events_block_get_data() {
 		}
 	}
 
+
+
 	$return['columncounter'] = $columncounter;
 	$return['type_block']    = $type_block;
+	$return['extraclass'] = get_field( 'content_block_modifier' );
 
 	return $return;
 

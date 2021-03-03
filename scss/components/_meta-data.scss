@@ -45,51 +45,10 @@
       content: ": ";
     }
   }
-
-  dd {
-    @include gc-meta-bolletje;
-
-    &:before {
-      display: inline-block;
-      color: $meta-data-icon;
-      margin-right: 1rem;
-      font-size: 1.6rem;
-      float: left;
-    }
-
-    &:last-child {
-      &:after {
-        display: none;
-      }
-    }
-
-    &.datum {
-      @include icon(before, calendar);
-    }
-
-    &.price {
-      @include icon(before, euro);
-    }
-
-    &.tijdstip, &.time {
-      @include icon(before, clock);
-    }
-
-    &.auteur, &.author {
-      @include icon(before, user);
-    }
-
-    &.locatie, &.location {
-      @include icon(before, pin);
-    }
-
-    &.registrations {
-      @include icon(before, calendar);
-    }
-  }
 }
 
 .meta-data__item {
+  @include gc-meta-bolletje;
   display: inline-block;
 
   &:before {
@@ -103,35 +62,32 @@
     font-family: $font_primary_semi;
   }
 
-  &:after {
-    content: " ";
-    background: $border_color;
-    width: .4rem;
-    height: .4rem;
-    margin: 1.1rem 1rem 0;
-    display: inline-block;
-    float: right;
-  }
-
   &:last-child:after {
     display: none;
   }
 
-  &.times,
-  &.datum {
+  &.times {
     @include icon(before, clock);
   }
 
-  &.location {
-    @include icon(before, pin);
+  &.aanmeldingen, &.registrations, &.datum {
+    @include icon(before, calendar);
   }
 
-  &.pricing {
+  &.pricing, &.price {
     @include icon(before, euro);
   }
 
-  &.aanmeldingen {
-    @include icon(before, calendar);
+  &.tijdstip, &.time, &.times {
+    @include icon(before, clock);
+  }
+
+  &.auteur, &.author {
+    @include icon(before, user);
+  }
+
+  &.locatie, &.location {
+    @include icon(before, pin);
   }
 }
 
