@@ -50,7 +50,7 @@
 
                   <div class="author author--small{{ item.author.img ? ' l-with-picture' }}">
                     {% if item.author.img %}
-                      <img class="author__image" src="{{ item.author.img }}">
+                      <img class="author__image" src="{{ item.author.img }}" alt="{{ item.author.img_alt }}">
                     {% endif %}
                     <h4 class="author__name">{{ item.author.name }}</h4>
                     {% if item.author.function %}

@@ -196,6 +196,15 @@ if ( have_rows( 'goed_voorbeeld' ) ):
 				}
 				if ( ! empty( $tipgever_foto ) && $tipgever_foto['sizes']['thumbnail'] ) {
 					$voorbeeld['author']['img'] = $tipgever_foto['sizes']['thumbnail'];
+					if ( $tipgever_foto['alt']) {
+						$voorbeeld['author']['img_alt'] = $tipgever_foto['alt'];
+					} elseif ( $tipgever_foto['title'] ) {
+						$voorbeeld['author']['img_alt'] = $tipgever_foto['title'];
+					} elseif ( ! empty( $thetermdata->name ) ) {
+						$voorbeeld['author']['img_alt'] = $thetermdata->name;
+					} else {
+						$voorbeeld['author']['img_alt'] = '';
+					}
 				}
 			}
 
