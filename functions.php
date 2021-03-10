@@ -65,17 +65,6 @@ if ( $flavor_select == "OD" ) {
 
 // include file for all must-use plugins
 require_once( __DIR__ . '/plugin-activatie/must-use-plugins.php' );
-
-// include file for user sync multisite
-if ( is_multisite() ) {
-	require_once( __DIR__ . '/assets/multisite-user-sync.php' );
-}
-
-
-// include file for network media
-//require_once( __DIR__ . '/network-media-library/network-media-library.php' );
-
-
 //========================================================================================================
 /*
  * Extra functionaliteit en filters voor de Events Manager
