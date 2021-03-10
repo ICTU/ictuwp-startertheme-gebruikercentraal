@@ -2,12 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="12aa066c-62bb-404e-a31d-cb54df849554" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/acf-json/group_602d0818472fe.json" beforeDir="false" afterPath="$PROJECT_DIR$/acf-json/group_602d0818472fe.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/functions.php" beforeDir="false" afterPath="$PROJECT_DIR$/functions.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gutenberg-blocks/events-block.php" beforeDir="false" afterPath="$PROJECT_DIR$/gutenberg-blocks/events-block.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gutenberg-blocks/partnerlogos-block.php" beforeDir="false" afterPath="$PROJECT_DIR$/gutenberg-blocks/partnerlogos-block.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/sections/section-events.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/sections/section-events.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/css/wmus-style.css" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
