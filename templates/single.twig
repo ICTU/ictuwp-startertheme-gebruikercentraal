@@ -45,14 +45,6 @@
             {% include 'sections/section-authorbox.html.twig'%}
           {% endif %}
 
-          <nav class="pagination">
-            {% if post.prev %}
-              <div class="pagination-previous alignleft"><a href="{{ post.prev.link }}" rel="prev" data-ol-has-click-handler="">{{ post.prev.title }}</a></div>
-            {% endif %}
-            {% if post.next %}
-              <div class="pagination-next alignright"><a href="{{ post.next.link }}" rel="next" data-ol-has-click-handler="">{{ post.next.title }}</a></div>
-            {% endif %}
-          </nav>
         </div>
 
       {% if related %}
