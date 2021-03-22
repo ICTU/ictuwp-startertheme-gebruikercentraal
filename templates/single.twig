@@ -2,84 +2,89 @@
 
 {% block content %}
 
-    <article class="entry entry--full entry--type-{{ post.post_type }}" id="post-{{ post.ID }}">
-        <header class="entry-header">
-
-          {% if type == 'event' %}
-
-            {% include 'components/date-badge.html.twig' with {
-              'start_date': start_date,
-              'end_date': end_date,
-            } %}
-
-          {% elseif post_date %}
-            {% include 'components/date-badge.html.twig' with {
-              'post_date': post_date,
-              'modifier': '',
-            } %}
-          {% endif %}
+  {% if post.get_comment_count( ) > 0 or post.comment_status != "closed" %}
+    {% set has_comments = 'TRUE' %}
+  {% endif %}
 
 
-          <h1 class="entry-title">
-            {{ post.title }}
-          </h1>
-          {% if meta %}
-            {% include 'components/meta-data.html.twig' with {'items': meta} %}
-          {% else %}
-            <div class="meta-data">
-              <dl class="meta-data__list">
-                <dt class="visually-hidden">{{ __('Author', 'gctheme') }}</dt>
-                <dd class="meta-data__item author">{{ post.author.name }}</dd>
-              </dl>
-            </div>
+  <article class="entry entry--full entry--type-{{ post.post_type }}{{ has_comments ? ' ' ~ 'l-has-comments' }}" id="post-{{ post.ID }}">
+    <header class="entry-header">
 
-          {% endif %}
+      {% if type == 'event' %}
 
-        </header>
-        <div class="entry-content wrap">
-          <div class="entry-body">
-            {{ post.content }}
-          </div>
+        {% include 'components/date-badge.html.twig' with {
+          'start_date': start_date,
+          'end_date': end_date,
+        } %}
 
-          {% if post.author.meta('auteursfoto_url') is not empty %}
-            {% include 'sections/section-authorbox.html.twig'%}
-          {% endif %}
+      {% elseif post_date %}
+        {% include 'components/date-badge.html.twig' with {
+          'post_date': post_date,
+          'modifier': '',
+        } %}
+      {% endif %}
 
+
+      <h1 class="entry-title">
+        {{ post.title }}
+      </h1>
+      {% if meta %}
+        {% include 'components/meta-data.html.twig' with {'items': meta} %}
+      {% else %}
+        <div class="meta-data">
+          <dl class="meta-data__list">
+            <dt class="visually-hidden">{{ __('Author', 'gctheme') }}</dt>
+            <dd class="meta-data__item author">{{ post.author.name }}</dd>
+          </dl>
         </div>
 
-      {% if related %}
-        {% include 'sections/section-related.html.twig' with {
-          'title': related.title,
-          'descr': related.desc,
-          'items': related.items
-        } %}
       {% endif %}
 
-      {% if downloads %}
-        {% include 'sections/section-downloads.html.twig' with {
-          'title': downloads.title,
-          'descr': downloads.desc,
-          'items': downloads.items
-        } %}
+    </header>
+    <div class="entry-content wrap">
+      <div class="entry-body">
+        {{ post.content }}
+      </div>
+
+      {% if post.author.meta('auteursfoto_url') is not empty %}
+        {% include 'sections/section-authorbox.html.twig' %}
       {% endif %}
 
-      {% if links %}
-        {% include 'sections/section-links.html.twig' with {
-          'section_title': links.title,
-          'section_descr': links.desc,
-          'items': links.items
-        } %}
-      {% endif %}
+    </div>
+
+    {% if related %}
+      {% include 'sections/section-related.html.twig' with {
+        'title': related.title,
+        'descr': related.desc,
+        'items': related.items
+      } %}
+    {% endif %}
+
+    {% if downloads %}
+      {% include 'sections/section-downloads.html.twig' with {
+        'title': downloads.title,
+        'descr': downloads.desc,
+        'items': downloads.items
+      } %}
+    {% endif %}
+
+    {% if links %}
+      {% include 'sections/section-links.html.twig' with {
+        'section_title': links.title,
+        'section_descr': links.desc,
+        'items': links.items
+      } %}
+    {% endif %}
 
 
-    </article>
+  </article>
   <!-- comment box -->
 
   <!-- comments -->
 
   {% if post.get_comment_count( ) > 0 or post.comment_status != "closed" %}
-  <div id="comments" class="comments-area">
-      {% if post.get_comment_count( ) > 0  %}
+    <div id="comments" class="comments-area">
+      {% if post.get_comment_count( ) > 0 %}
         <h3 class="comments-title">{{ _n('One comment', '%d comments', n)|format(post.get_comment_count( )) }} </h3>
         <ul class="comment-list">
           {% for cmt in post.comments %}
@@ -97,4 +102,4 @@
 
 
   <!-- /content-wrapper -->
-  {% endblock %}
+{% endblock %}
