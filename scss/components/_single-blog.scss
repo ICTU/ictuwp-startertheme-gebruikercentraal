@@ -1,0 +1,11 @@
+.entry--full.entry--type-post {
+  padding-bottom: 3rem;
+
+  &:not(.l-has-comments) {
+    padding-bottom: 5rem;
+
+    @include bp-up(lg) {
+      padding-bottom: 10rem;
+    }
+  }
+}
