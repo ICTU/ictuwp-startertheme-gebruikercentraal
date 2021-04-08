@@ -111,6 +111,13 @@
                 "operator": "==",
                 "value": "template-od-handleiding.php"
             }
+        ],
+        [
+            {
+                "param": "page_template",
+                "operator": "==",
+                "value": "template-events-overview.php"
+            }
         ]
     ],
     "menu_order": 0,
@@ -121,5 +128,5 @@
     "hide_on_screen": "",
     "active": true,
     "description": "",
-    "modified": 1601629199
+    "modified": 1615812414
 }

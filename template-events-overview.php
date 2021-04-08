@@ -14,8 +14,20 @@ add_action( 'wp_head', 'remove_em_content_filter', 1000 );
 $context           = Timber::context();
 $timber_post       = new Timber\Post();
 $context['post']   = $timber_post;
+
+$spotlightblocks = spotlight_block_get_data();
+
+if ( $spotlightblocks ) {
+
+	$context['spotlight'] = $spotlightblocks;
+
+}
+
 $context['events'] = overviewpage_get_items();
 Timber::render( [ 'archive-events.twig', 'page.twig' ], $context );
+
+
+
 
 //========================================================================================================
 

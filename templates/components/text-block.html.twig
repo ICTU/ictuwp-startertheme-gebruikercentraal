@@ -1,7 +1,7 @@
 {% if title %}
   <section class="text-block">
     <h2 class="text-block__title">{{ title }}</h2>
-    <p>{{ descr }}</p>
+    {{ descr }}
     {% if link_primary %}<a href="{{ link_primary.url }}"
                             class="btn btn--primary">{{ link_primary.text }}</a>{% endif %}
     {% if link_secondary %}<a href="{{ link_secondary.url }}"
