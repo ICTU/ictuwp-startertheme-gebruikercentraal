@@ -73,7 +73,15 @@
       </article>
 
     </main>
+
   </div>
+
+  {% if spotlight %}
+    {% include 'sections/section-spotlight.html.twig' with {
+      'items': spotlight,
+      'modifier': 'bg-option',
+    } %}
+  {% endif %}
 
 
   {% block footer %}
