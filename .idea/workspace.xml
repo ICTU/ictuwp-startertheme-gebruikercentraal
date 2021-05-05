@@ -2,7 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="12aa066c-62bb-404e-a31d-cb54df849554" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/assets/css/wmus-style.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/functions.php" beforeDir="false" afterPath="$PROJECT_DIR$/functions.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plugin-activatie/must-use-plugins.php" beforeDir="false" afterPath="$PROJECT_DIR$/plugin-activatie/must-use-plugins.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -94,6 +95,7 @@
       <workItem from="1613494797226" duration="14932000" />
       <workItem from="1613723795357" duration="3019000" />
       <workItem from="1613984532183" duration="926000" />
+      <workItem from="1620227364994" duration="68000" />
     </task>
     <servers />
   </component>
@@ -101,55 +103,20 @@
     <option name="version" value="3" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="610" y="430" key="#WordPress" timestamp="1606734633109">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="610" y="430" key="#WordPress/0.0.1920.1040@0.0.1920.1040" timestamp="1606734633109" />
-    <state x="576" y="575" width="943" height="345" key="#com.intellij.structuralsearch.plugin.ui.StructuralSearchDialog" timestamp="1607349591096">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="576" y="575" width="943" height="345" key="#com.intellij.structuralsearch.plugin.ui.StructuralSearchDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1607349591096" />
-    <state x="740" y="275" key="FileChooserDialogImpl" timestamp="1606734620131">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="740" y="275" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1606734620131" />
-    <state width="1877" height="282" key="GridCell.Tab.0.bottom" timestamp="1606753842410">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state width="1877" height="282" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1606753842410" />
-    <state width="1877" height="282" key="GridCell.Tab.0.center" timestamp="1606753842410">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state width="1877" height="282" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1606753842410" />
-    <state width="1877" height="282" key="GridCell.Tab.0.left" timestamp="1606753842410">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state width="1877" height="282" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1606753842410" />
-    <state width="1877" height="282" key="GridCell.Tab.0.right" timestamp="1606753842410">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state width="1877" height="282" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1606753842410" />
-    <state x="656" y="344" key="com.intellij.ide.util.TipDialog" timestamp="1607415093083">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="656" y="344" key="com.intellij.ide.util.TipDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1607415093083" />
     <state x="2527" y="2" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1613410114886">
       <screen x="1440" y="-277" width="2560" height="1417" />
     </state>
     <state x="2527" y="2" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.23.1440.877/1440.-277.2560.1417@1440.-277.2560.1417" timestamp="1613410114886" />
     <state x="2255" y="110" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.23.1440.877/1440.-98.1920.1057@1440.-98.1920.1057" timestamp="1612788351540" />
-    <state x="1863" y="-130" width="997" height="582" key="find.popup" timestamp="1613988358367">
-      <screen x="1440" y="-275" width="2560" height="1415" />
+    <state x="238" y="115" width="717" height="490" key="find.popup" timestamp="1620227401703">
+      <screen x="0" y="25" width="1440" height="875" />
     </state>
     <state x="2058" y="124" width="1158" height="776" key="find.popup/0.23.1440.877/1440.-277.2560.1417@0.23.1440.877" timestamp="1611930652905" />
     <state x="1863" y="-132" width="997" height="582" key="find.popup/0.23.1440.877/1440.-277.2560.1417@1440.-277.2560.1417" timestamp="1613670888928" />
     <state x="2180" y="247" width="1012" height="518" key="find.popup/0.23.1440.877/1440.-98.1920.1057@1440.-98.1920.1057" timestamp="1612882558547" />
     <state x="340" y="271" width="1100" height="582" key="find.popup/0.23.1440.877@0.23.1440.877" timestamp="1611693342880" />
+    <state x="238" y="115" width="717" height="490" key="find.popup/0.25.1440.875/1440.-275.2560.1415@0.25.1440.875" timestamp="1620227401703" />
     <state x="1863" y="-130" width="997" height="582" key="find.popup/0.25.1440.875/1440.-275.2560.1415@1440.-275.2560.1415" timestamp="1613988358367" />
-    <state x="616" y="240" key="run.anything.popup" timestamp="1606734895421">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="616" y="240" key="run.anything.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1606734895421" />
     <state x="2385" y="48" key="search.everywhere.popup" timestamp="1613563809350">
       <screen x="1440" y="-277" width="2560" height="1417" />
     </state>

@@ -55,7 +55,7 @@ define( 'IMAGESIZE_HERO_IMAGE', 'hero-image' );
 //specific flavours functions
 
 $get_theme_option = get_option( 'gc2020_theme_options' );
-$flavor_select    = $get_theme_option['flavor_select'];
+$flavor_select    = isset( $get_theme_option['flavor_select'] ) ?  $get_theme_option['flavor_select'] : '';
 
 
 if ( $flavor_select == "OD" ) {
