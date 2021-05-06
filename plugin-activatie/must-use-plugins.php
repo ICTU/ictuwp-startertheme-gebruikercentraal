@@ -56,7 +56,8 @@ add_action( 'tgmpa_register', 'gctheme_register_required_plugins' );
  */
 function gctheme_register_required_plugins() {
 	$get_theme_option = get_option( 'gc2020_theme_options' );
-	$flavor_select    = $get_theme_option['flavor_select'];
+	$flavor_select    = isset( $get_theme_option['flavor_select'] ) ? $get_theme_option['flavor_select'] : '';
+
 	if ( $flavor_select == "KB" ) {
 		$plugins = [
 
@@ -146,7 +147,7 @@ function gctheme_register_required_plugins() {
 		$plugins[] = array(
 			'name'             => 'Advanced custom fields pro',
 			'slug'             => 'advanced-custom-fields-pro',
-			'source' => 'https://connect.advancedcustomfields.com/index.php?a=download&p=pro&k=b3JkZXJfaWQ9NDY1Mzd8dHlwZT1kZXZlbG9wZXJ8ZGF0ZT0yMDE0LTEyLTE4IDA2OjAzOjIz',
+			'source'           => 'https://connect.advancedcustomfields.com/index.php?a=download&p=pro&k=b3JkZXJfaWQ9NDY1Mzd8dHlwZT1kZXZlbG9wZXJ8ZGF0ZT0yMDE0LTEyLTE4IDA2OjAzOjIz',
 			'force_activation' => true,
 		);
 
