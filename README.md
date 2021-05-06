@@ -21,3 +21,14 @@ Standaard is het GC-smaakje actief, maar we hebben ook vormgeving voor deze subs
 Gebruikers met beheerders-rechten kunnen de customizer gebruiken. Deze vind je via 
 [admin] > Weergave > Customizer
 Hier vind je een lijst met opties. Zie de optie 'GC theme-opties'. Hier zie je een selectielijst; je keuze hier beinvloedt de vormgeving van je GC-site.
+
+## Contact
+* Victor Zuydweg
+* Tamara de Haas: [haas-ontwerp.nl](https://haas-ontwerp.nl/)
+* Paul van Buuren: paul@wbvb.nl
+
+## Current version:
+5.1.1 - HSTS-header verwijderd.
+
+## Version history
+* 5.1.1 - Gutenberg-blocks for upcoming events, related content, tips overview.
