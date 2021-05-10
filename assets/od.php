@@ -152,18 +152,19 @@ if ( ! class_exists( 'ICTUWP_GC_OD_registerposttypes' ) ) :
 			];
 
 			$args = [
-				"labels"            => $labels,
-				"hierarchical"      => true,
-				"label"             => __( "Tip-thema's", 'gctheme' ),
-				"show_ui"           => true,
-				"query_var"         => true,
-				'show_in_rest'      => true,
+				"labels"             => $labels,
+				"hierarchical"       => true,
+				"label"              => __( "Tip-thema's", 'gctheme' ),
+				"show_ui"            => true,
+				"query_var"          => true,
+				'show_in_rest'       => true,
 				// Needed for tax to appear in Gutenberg editor.
-				"rewrite"           => [
+				"rewrite"            => [
 					'slug'       => GC_TIPTHEMA,
 					'with_front' => true,
 				],
-				"show_admin_column" => false,
+				"show_admin_column"  => false,
+				"show_in_quick_edit" => true,
 			];
 			register_taxonomy( GC_TIPTHEMA, [ GC_TIP_CPT ], $args );
 
@@ -210,7 +211,7 @@ if ( ! class_exists( 'ICTUWP_GC_OD_registerposttypes' ) ) :
 				],
 				"show_admin_column"  => false,
 				"rest_base"          => "",
-				"show_in_quick_edit" => false,
+				"show_in_quick_edit" => true,
 			];
 
 			register_taxonomy( GC_ODSPEELSET, [ GC_TIP_CPT ], $args );
