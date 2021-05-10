@@ -13,7 +13,7 @@
     "absfolder": "/wp-content/themes/ictuwp-theme-gc2020/",
     "path": "../flavors/optimaaldigitaal/",
     "dest": "../flavors/optimaaldigitaal/assets/",
-    "proxy": "gebruikercentraal.test/optimaaldigitaal"
+    "proxy": "optimaaldigitaal.gebruikercentraal.test"
   },
   "kb": {
     "name": "Kennisbank",
