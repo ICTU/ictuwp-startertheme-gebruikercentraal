@@ -28,7 +28,9 @@ Hier vind je een lijst met opties. Zie de optie 'GC theme-opties'. Hier zie je e
 * Paul van Buuren: paul@wbvb.nl
 
 ## Current version:
-5.1.1 - HSTS-header verwijderd.
+5.1.2 - [OD] speelsettaxonomie toegevoegd aan quick edit.
 
 ## Version history
+* 5.1.2 - [OD] speelsettaxonomie toegevoegd aan quick edit.
+* 5.1.1 - HSTS-header verwijderd.
 * 5.1.1 - Gutenberg-blocks for upcoming events, related content, tips overview.
