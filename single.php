@@ -47,14 +47,16 @@ $context['type']       = $post->post_type;
 if ( 'post' === $post->post_type ) {
 
 	// de 'post_date' wordt enigszins getoond in de date-badge, zonder jaar
-	// ter discussie staat nog of daar wel of geen jaar getoond moet worden
-	$context['post_date'] = get_the_time( get_option( 'date_format' ), get_the_id() );
+	// dateformatting is d-m-Y om ervoor te zorgen dat de datum
+	// als een geldige datum begrepen wordt in date-bate.html.twig
+	$context['post_date'] = get_the_time( 'd-m-Y', get_the_id() );
+
 
 	// publicatiedatum voor berichten. Is met name van belang voor oudere berichten
 	$context['meta'][] = [
 		'title'     => _x( 'Publish date', 'Meta: value voor publicatiedatum', 'gctheme' ),
 		'classname' => 'datum',
-		'descr'     => $context['post_date'],
+		'descr'     => get_the_time( get_option( 'date_format' ), get_the_id() ), // hier gebruiken we dateformatting uit de instellingen
 	];
 
 	// auteur vermelden
@@ -129,7 +131,7 @@ if ( 'post' === $post->post_type ) {
 			'descr'     => $eventtimes,
 		];
 	} else {
-		$eventdates = sprintf( _x( '%s - %s', 'Meta voor event: label voor start- en eindtijd', 'gctheme' ), date_i18n( get_option( 'date_format' ), $event_start_datetime ), date_i18n( get_option( 'date_format' ), $event_end_datetime ) );
+		$eventdates        = sprintf( _x( '%s - %s', 'Meta voor event: label voor start- en eindtijd', 'gctheme' ), date_i18n( get_option( 'date_format' ), $event_start_datetime ), date_i18n( get_option( 'date_format' ), $event_end_datetime ) );
 		$context['meta'][] = [
 			'title'     => _x( 'Event date', 'Meta: value voor evenementdatum', 'gctheme' ),
 			'classname' => 'datum',
