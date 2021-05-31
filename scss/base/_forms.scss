@@ -243,7 +243,11 @@ legend {
       text-align: right;
     }
 
-    input,
+    input[type="text"],
+    input[type="email"],
+    input[type="password"],
+    input[type="url"],
+    input[type="search"],
     textarea,
     .form-description,
     .ginput_container {

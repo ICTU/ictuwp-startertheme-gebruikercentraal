@@ -702,11 +702,19 @@ legend {
         width: 30%;
         padding-right: 3rem;
         text-align: right; }
-      .form-item input,
+      .form-item input[type="text"],
+      .form-item input[type="email"],
+      .form-item input[type="password"],
+      .form-item input[type="url"],
+      .form-item input[type="search"],
       .form-item textarea,
       .form-item .form-description,
       .form-item .ginput_container,
-      .gfield input,
+      .gfield input[type="text"],
+      .gfield input[type="email"],
+      .gfield input[type="password"],
+      .gfield input[type="url"],
+      .gfield input[type="search"],
       .gfield textarea,
       .gfield .form-description,
       .gfield .ginput_container {
@@ -6581,3 +6589,5 @@ browser exceptions
   .header-widget-area {
     padding-top: 1rem;
     width: 30%; } }
+
+/*# sourceMappingURL=gc-theme.css.map */
