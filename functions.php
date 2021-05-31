@@ -90,6 +90,7 @@ require_once( get_template_directory() . '/gutenberg-blocks/links-block.php' );
 require_once( get_template_directory() . '/gutenberg-blocks/spotlight-block.php' );
 require_once( get_template_directory() . '/gutenberg-blocks/rijksvideo-block.php' );
 require_once( get_template_directory() . '/gutenberg-blocks/teaser-block.php' );
+require_once( get_template_directory() . '/gutenberg-blocks/testimonial.php' );
 
 // TODO: het block voor de handleiding zou alleen beschikbaar voor pagina's met het template 'template-od-handleiding.php'
 require_once( get_template_directory() . '/gutenberg-blocks/handleiding-block.php' );
