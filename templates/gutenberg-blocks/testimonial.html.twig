@@ -1,0 +1,42 @@
+{#
+/**
+ * Block Name: Testimonials
+ */
+#}
+
+{% set headerlevel = 'h2' %}
+
+{% if is_preview %}
+  <style type="text/css">
+    #testimonials-{{ block.id }} {
+      margin-top: 0;
+      overflow: hidden;
+      border: 3px dashed #dadada;
+    }
+  </style>
+{% endif %}
+
+<div class="section section--list-interlocked" id="testimonials-{{ block.id }}">
+
+  {% if testimonials.items %}
+    <div class="blocklist">
+      {% for item in testimonials.items %}
+        <blockquote class="{{ testimonials.classes|join(' ') }}">
+          <p> {{ item.blockquote }} </p>
+          {% if item.cite_name %}
+            <cite> {{ item.cite_name }}
+              {% if item.cite_name_function %}
+                <span>{{ item.cite_name_function }}</span>
+              {% endif %}
+            </cite>
+          {% endif %}
+        </blockquote>
+      {% endfor %}
+    </div>
+  {% else %}
+    {% if is_preview %}
+      <p>Voeg 1 of meer citaten toe</p>
+    {% endif %}
+  {% endif %}
+
+</div>
