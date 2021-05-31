@@ -53,13 +53,11 @@ function testimonial_block_get_data() {
 	global $post;
 	$imagesize_for_thumbs = IMAGESIZE_16x9;
 
-	$return                  = array();
-	$gc_gt_testimonials      = get_field( 'gc_gt_testimonials' );
-	$return['classes']       = 'wp-block-quote';
+	$return             = array();
+	$gc_gt_testimonials = get_field( 'gc_gt_testimonials' );
+	$return['classes']  = 'wp-block-quote';
 
 	if ( $gc_gt_testimonials ) {
-
-		$return = array();
 
 		foreach ( $gc_gt_testimonials as $block ) {
 
