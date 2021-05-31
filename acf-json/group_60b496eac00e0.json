@@ -61,7 +61,7 @@
                 },
                 {
                     "key": "field_60b49f035ab55",
-                    "label": "Functiebeschrijving van auteur",
+                    "label": "Functiebeschrijving",
                     "name": "cite_name_function",
                     "type": "text",
                     "instructions": "",
@@ -98,5 +98,5 @@
     "hide_on_screen": "",
     "active": true,
     "description": "",
-    "modified": 1622450667
+    "modified": 1622451901
 }
