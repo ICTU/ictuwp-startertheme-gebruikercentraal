@@ -264,9 +264,9 @@ class GebruikerCentraalTheme extends Timber\Site {
 		$context['maincontent_id_linktext'] = _x( 'Jump to main content', 'skiplinks', 'gctheme' );
 		$context['mainnav_id']              = 'menu-primary';
 		$context['mainnav_id_linktext']     = _x( 'Jump to main navigation', 'skiplinks', 'gctheme' );
-		$context['searchlabel']             = _x( 'Enter a keyword to search', 'searchform label', 'gctheme' );
-		$context['searchplaceholder']       = _x( 'Search...', 'searchform placeholder', 'gctheme' );
-		$context['searchbuttonlabel']       = _x( 'Search', 'searchform button label', 'gctheme' );
+		$context['searchlabel']             = _x( 'Search', 'searchform label', 'gctheme' );
+		$context['searchplaceholder']       = _x( 'Search', 'searchform label', 'gctheme' );
+		$context['searchbuttonlabel']       = _x( 'Go', 'searchform button label', 'gctheme' );
 		$context['searchterm']              = isset( $_GET['s'] ) ? sanitize_text_field( $_GET['s'] ) : '';
 
 		// Additional vars for archives
