@@ -1,15 +1,15 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Gebruiker Centraal (2020)\n"
-"POT-Creation-Date: 2021-02-15 18:45+0100\n"
-"PO-Revision-Date: 2021-02-15 18:45+0100\n"
+"POT-Creation-Date: 2021-06-18 13:09+0200\n"
+"PO-Revision-Date: 2021-06-18 13:09+0200\n"
 "Last-Translator: Paul van Buuren <poedit@wbvb.nl>\n"
 "Language-Team: \n"
 "Language: nl_NL\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 2.4.2\n"
+"X-Generator: Poedit 3.0\n"
 "X-Poedit-Basepath: ..\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Poedit-Flags-xgettext: --add-comments=translators:\n"
@@ -59,421 +59,410 @@ msgid_plural " tipkaarten geselecteerd in de thema's: "
 msgstr[0] ""
 msgstr[1] ""
 
-#: assets/json.php:94 assets/json.php:96 assets/od.php:88 assets/od.php:90
+#: assets/od.php:88 assets/od.php:90
 msgid "Tips"
 msgstr ""
 
-#: assets/json.php:95 assets/od.php:89
+#: assets/od.php:89
 msgid "Tip"
 msgstr ""
 
-#: assets/json.php:97 assets/od.php:91
+#: assets/od.php:91
 msgid "Alle tips"
 msgstr ""
 
-#: assets/json.php:98 assets/od.php:92 functions.php:760
+#: assets/od.php:92 functions.php:754
 msgid "Toevoegen"
 msgstr ""
 
-#: assets/json.php:99 assets/od.php:93
+#: assets/od.php:93
 msgid "Tip toevoegen"
 msgstr ""
 
-#: assets/json.php:100 assets/od.php:94
+#: assets/od.php:94
 msgid "Tip bewerken"
 msgstr ""
 
-#: assets/json.php:101 assets/od.php:95
+#: assets/od.php:95
 msgid "Bewerk tip"
 msgstr ""
 
-#: assets/json.php:102 assets/od.php:96
+#: assets/od.php:96
 msgid "Nieuwe tip"
 msgstr ""
 
-#: assets/json.php:103 assets/od.php:97 functions.php:765
+#: assets/od.php:97 functions.php:759
 msgid "Bekijk"
 msgstr ""
 
-#: assets/json.php:104 assets/od.php:98
+#: assets/od.php:98
 msgid "Bekijk tip"
 msgstr ""
 
-#: assets/json.php:105 assets/od.php:99
+#: assets/od.php:99
 msgid "Tips zoeken"
 msgstr ""
 
-#: assets/json.php:106 assets/od.php:100
+#: assets/od.php:100
 msgid "Geen tips gevonden"
 msgstr ""
 
-#: assets/json.php:107 assets/od.php:101
+#: assets/od.php:101
 msgid "Geen tips in de prullenbak"
 msgstr ""
 
-#: assets/json.php:112 assets/od.php:106
+#: assets/od.php:106
 msgid "Hier voer je de tips in."
 msgstr ""
 
-#: assets/json.php:120 assets/od.php:114 functions.php:782
+#: assets/od.php:114 functions.php:776
 msgid "post"
-msgstr ""
-
-#: assets/json.php:134 assets/json.php:135 assets/json.php:136
-#: assets/json.php:154
-msgid "Tip-thema"
-msgstr "Tip-thema"
-
-#: assets/json.php:137 assets/od.php:140
-msgid "Alle tip-thema's"
-msgstr ""
-
-#: assets/json.php:138 assets/od.php:141
-msgid "Bewerk thema"
-msgstr ""
-
-#: assets/json.php:139 assets/od.php:142
-msgid "Bekijk thema"
-msgstr ""
-
-#: assets/json.php:140 assets/od.php:143
-msgid "thema bijwerken"
-msgstr ""
-
-#: assets/json.php:141 assets/od.php:144
-msgid "thema toevoegen"
-msgstr ""
-
-#: assets/json.php:142 assets/od.php:145
-msgid "Nieuwe thema"
-msgstr ""
-
-#: assets/json.php:143 assets/od.php:146
-msgid "Zoek thema"
-msgstr ""
-
-#: assets/json.php:144 assets/od.php:147
-msgid "Meest gebruikte thema's"
-msgstr ""
-
-#: assets/json.php:145 assets/od.php:148
-msgid "Scheid met komma's"
-msgstr ""
-
-#: assets/json.php:146 assets/od.php:149
-msgid "thema toevoegen of verwijderen"
-msgstr ""
-
-#: assets/json.php:147 assets/od.php:150
-msgid "Kies uit de meest gebruikte"
-msgstr ""
-
-#: assets/json.php:148 assets/od.php:151
-msgid "Niet gevonden"
-msgstr ""
-
-#: assets/json.php:166 assets/json.php:171 assets/json.php:173
-#: assets/json.php:189 assets/json.php:193 assets/od.php:221 assets/od.php:226
-#: assets/od.php:228 assets/od.php:244 assets/od.php:248
-msgid "Tipgevers"
-msgstr ""
-
-#: assets/json.php:167 assets/json.php:172 assets/json.php:426
-#: assets/od.php:222 assets/od.php:227 assets/od.php:485
-msgid "Tipgever"
-msgstr ""
-
-#: assets/json.php:174 assets/od.php:229
-msgid "Alle tipgevers"
-msgstr ""
-
-#: assets/json.php:175 assets/od.php:230
-msgid "Nieuwe tipgever toevoegen"
-msgstr ""
-
-#: assets/json.php:176 assets/od.php:231
-msgid "Voeg nieuwe tipgever toe"
-msgstr ""
-
-#: assets/json.php:177 assets/od.php:232
-msgid "Bewerk tipgever"
-msgstr ""
-
-#: assets/json.php:178 assets/od.php:233
-msgid "Nieuwe tipgever"
-msgstr ""
-
-#: assets/json.php:179 assets/od.php:234
-msgid "Bekijk tipgever"
-msgstr ""
-
-#: assets/json.php:180 assets/od.php:235
-msgid "Zoek tipgever"
-msgstr ""
-
-#: assets/json.php:181 assets/od.php:236
-msgid "Geen tipgever gevonden"
-msgstr ""
-
-#: assets/json.php:182 assets/od.php:237
-msgid "Geen tipgever gevonden in de prullenbak"
-msgstr ""
-
-#: assets/json.php:183 assets/od.php:190 assets/od.php:238
-msgid "Uitgelichte afbeelding"
-msgstr ""
-
-#: assets/json.php:184 assets/od.php:191 assets/od.php:239
-msgid "Overzichten"
-msgstr ""
-
-#: assets/json.php:185 assets/od.php:192 assets/od.php:240
-msgid "Bijbehorende bestanden"
-msgstr ""
-
-#: assets/json.php:213 assets/od.php:272
-msgid ""
-"Extra content: layout-instellingen voor de inleiding, goede voorbeelden, "
-"waarom werkt dit"
-msgstr ""
-
-#: assets/json.php:217 assets/od.php:276
-msgid "Soort inleiding"
-msgstr ""
-
-#: assets/json.php:220 assets/od.php:279
-msgid ""
-"Wil je een inleiding met een grote foto of een aantal opsommingen onder "
-"elkaar?"
-msgstr ""
-
-#: assets/json.php:229 assets/od.php:288
-msgid "Geen foto"
-msgstr ""
-
-#: assets/json.php:230 assets/od.php:289
-msgid "Grote foto naast de tekst"
-msgstr ""
-
-#: assets/json.php:231 assets/od.php:290
-msgid "Lijstje met opsommingen en kleine foto's"
-msgstr ""
-
-#: assets/json.php:240 assets/od.php:299
-msgid "Grote foto"
-msgstr ""
-
-#: assets/json.php:272 assets/od.php:331
-msgid "Lijstjes met kleine foto"
-msgstr ""
-
-#: assets/json.php:295 assets/od.php:354
-msgid "Nieuwe regel"
-msgstr ""
-
-#: assets/json.php:299 assets/od.php:358
-msgid "Bijbehorende foto"
-msgstr ""
-
-#: assets/json.php:323 assets/json.php:383 assets/od.php:382 assets/od.php:442
-msgid "Titel"
-msgstr ""
-
-#: assets/json.php:344 assets/od.php:403
-msgid "Lijstje"
-msgstr ""
-
-#: assets/json.php:347 assets/od.php:406
-msgid "Voer alsjeblieft alleen lijstjes in."
-msgstr ""
-
-#: assets/json.php:364 assets/od.php:423
-msgid "Goed voorbeeld"
-msgstr ""
-
-#: assets/json.php:379 assets/od.php:438
-msgid "Voeg voorbeeld toe"
-msgstr ""
-
-#: assets/json.php:404 assets/od.php:463
-msgid "Tekst"
-msgstr ""
-
-#: assets/json.php:429 assets/od.php:488
-msgid "Selecteer één uit de lijst of voer een nieuwe naam in"
-msgstr ""
-
-#: assets/json.php:450 assets/od.php:509
-msgid "Naam van de tipgever"
-msgstr ""
-
-#: assets/json.php:466 assets/od.php:525
-msgid "Functie van de tipgever"
-msgstr ""
-
-#: assets/json.php:487 assets/od.php:546
-msgid "Afbeelding"
-msgstr ""
-
-#: assets/json.php:514 assets/od.php:573
-msgid "Waarom werkt dit?"
-msgstr ""
-
-#: assets/json.php:536 assets/od.php:595
-msgid "Onderzoek: inleiding"
-msgstr ""
-
-#: assets/json.php:558 assets/od.php:617
-msgid "Vraag 1 - titel"
-msgstr ""
-
-#: assets/json.php:580 assets/od.php:639
-msgid "Vraag 1 - cijfer"
-msgstr ""
-
-#: assets/json.php:604 assets/od.php:663
-msgid "Vraag 1 - antwoord"
-msgstr ""
-
-#: assets/json.php:627 assets/od.php:686
-msgid "Vraag 2 - titel"
-msgstr ""
-
-#: assets/json.php:649 assets/od.php:708
-msgid "Vraag 2 - cijfer"
-msgstr ""
-
-#: assets/json.php:673 assets/od.php:732
-msgid "Vraag 2 - antwoord"
-msgstr ""
-
-#: assets/json.php:696 assets/od.php:755
-msgid "Vraag 3 - titel"
-msgstr ""
-
-#: assets/json.php:718 assets/od.php:777
-msgid "Vraag 3 - cijfer"
-msgstr ""
-
-#: assets/json.php:742 assets/od.php:801
-msgid "Vraag 3 - antwoord"
-msgstr ""
-
-#: assets/json.php:765 assets/od.php:824
-msgid "Onderzoek: conclusie"
-msgstr ""
-
-#: assets/json.php:818 assets/od.php:877
-msgid "Tip-nummer"
-msgstr ""
-
-#: assets/json.php:948 assets/od.php:1007
-msgid "Nuttige links"
-msgstr ""
-
-#: assets/json.php:951 assets/od.php:1010
-msgid "Geen linkbeschrijving ingevoerd"
-msgstr ""
-
-#: assets/json.php:967 assets/od.php:1026
-msgid "URL"
-msgstr ""
-
-#: assets/json.php:983 assets/od.php:1042
-msgid "Link: icoon"
-msgstr ""
-
-#: assets/json.php:1005 assets/od.php:1064
-msgid "Link: Titel"
-msgstr ""
-
-#: assets/json.php:1026 assets/od.php:1085
-msgid "Link: beschrijving"
-msgstr ""
-
-#: assets/json.php:1047 assets/od.php:1106
-msgid "Link: CTA"
-msgstr ""
-
-#: assets/json.php:1068 assets/od.php:1127
-msgid "Link: hreflang"
-msgstr ""
-
-#: assets/json.php:1116 assets/od.php:1175
-msgid "Functietitel"
-msgstr ""
-
-#: assets/json.php:1136 assets/od.php:1195
-msgid "Foto"
-msgstr ""
-
-#: assets/json.php:1161 assets/od.php:1220
-msgid "E-mailadres"
-msgstr ""
-
-#: assets/json.php:1180 assets/od.php:1239
-msgid "Telefoonnummer"
-msgstr ""
-
-#: assets/json.php:1552 assets/od.php:1611
-msgid "Titel op 404-pagina"
-msgstr ""
-
-#: assets/json.php:1573 assets/od.php:1632
-msgid "Beschrijving op 404-pagina"
-msgstr ""
-
-#: assets/multisite-user-sync.php:37
-msgid "Every one minute"
 msgstr ""
 
 #: assets/od.php:137 assets/od.php:138 assets/od.php:139 assets/od.php:157
 msgid "Tip-thema's"
 msgstr "Tip-thema"
 
-#: assets/od.php:173 assets/od.php:178 assets/od.php:180 assets/od.php:196
-#: assets/od.php:200
+#: assets/od.php:140
+msgid "Alle tip-thema's"
+msgstr ""
+
+#: assets/od.php:141
+msgid "Bewerk thema"
+msgstr ""
+
+#: assets/od.php:142
+msgid "Bekijk thema"
+msgstr ""
+
+#: assets/od.php:143
+msgid "thema bijwerken"
+msgstr ""
+
+#: assets/od.php:144
+msgid "thema toevoegen"
+msgstr ""
+
+#: assets/od.php:145
+msgid "Nieuwe thema"
+msgstr ""
+
+#: assets/od.php:146
+msgid "Zoek thema"
+msgstr ""
+
+#: assets/od.php:147
+msgid "Meest gebruikte thema's"
+msgstr ""
+
+#: assets/od.php:148
+msgid "Scheid met komma's"
+msgstr ""
+
+#: assets/od.php:149
+msgid "thema toevoegen of verwijderen"
+msgstr ""
+
+#: assets/od.php:150
+msgid "Kies uit de meest gebruikte"
+msgstr ""
+
+#: assets/od.php:151
+msgid "Niet gevonden"
+msgstr ""
+
+#: assets/od.php:174 assets/od.php:179 assets/od.php:181 assets/od.php:197
+#: assets/od.php:201
 msgid "Speelsets"
 msgstr "Spel- en uitbreidingsets"
 
-#: assets/od.php:174 assets/od.php:179
+#: assets/od.php:175 assets/od.php:180
 msgid "Speelset"
 msgstr ""
 
-#: assets/od.php:181
+#: assets/od.php:182
 msgid "Alle speelsets"
 msgstr ""
 
-#: assets/od.php:182
+#: assets/od.php:183
 msgid "Nieuwe speelset toevoegen"
 msgstr ""
 
-#: assets/od.php:183
+#: assets/od.php:184
 msgid "Voeg nieuwe speelset toe"
 msgstr ""
 
-#: assets/od.php:184
+#: assets/od.php:185
 msgid "Bewerk speelset"
 msgstr ""
 
-#: assets/od.php:185
+#: assets/od.php:186
 msgid "Nieuwe speelset"
 msgstr ""
 
-#: assets/od.php:186
+#: assets/od.php:187
 msgid "Bekijk speelset"
 msgstr ""
 
-#: assets/od.php:187
+#: assets/od.php:188
 msgid "Zoek speelset"
 msgstr ""
 
-#: assets/od.php:188
+#: assets/od.php:189
 msgid "Geen speelset gevonden"
 msgstr ""
 
-#: assets/od.php:189
+#: assets/od.php:190
 msgid "Geen speelset gevonden in de prullenbak"
+msgstr ""
+
+#: assets/od.php:191 assets/od.php:239
+msgid "Uitgelichte afbeelding"
+msgstr ""
+
+#: assets/od.php:192 assets/od.php:240
+msgid "Overzichten"
+msgstr ""
+
+#: assets/od.php:193 assets/od.php:241
+msgid "Bijbehorende bestanden"
+msgstr ""
+
+#: assets/od.php:222 assets/od.php:227 assets/od.php:229 assets/od.php:245
+#: assets/od.php:249
+msgid "Tipgevers"
+msgstr ""
+
+#: assets/od.php:223 assets/od.php:228 assets/od.php:486
+msgid "Tipgever"
+msgstr ""
+
+#: assets/od.php:230
+msgid "Alle tipgevers"
+msgstr ""
+
+#: assets/od.php:231
+msgid "Nieuwe tipgever toevoegen"
+msgstr ""
+
+#: assets/od.php:232
+msgid "Voeg nieuwe tipgever toe"
+msgstr ""
+
+#: assets/od.php:233
+msgid "Bewerk tipgever"
+msgstr ""
+
+#: assets/od.php:234
+msgid "Nieuwe tipgever"
+msgstr ""
+
+#: assets/od.php:235
+msgid "Bekijk tipgever"
+msgstr ""
+
+#: assets/od.php:236
+msgid "Zoek tipgever"
+msgstr ""
+
+#: assets/od.php:237
+msgid "Geen tipgever gevonden"
+msgstr ""
+
+#: assets/od.php:238
+msgid "Geen tipgever gevonden in de prullenbak"
+msgstr ""
+
+#: assets/od.php:273
+msgid ""
+"Extra content: layout-instellingen voor de inleiding, goede voorbeelden, "
+"waarom werkt dit"
+msgstr ""
+
+#: assets/od.php:277
+msgid "Soort inleiding"
+msgstr ""
+
+#: assets/od.php:280
+msgid ""
+"Wil je een inleiding met een grote foto of een aantal opsommingen onder "
+"elkaar?"
+msgstr ""
+
+#: assets/od.php:289
+msgid "Geen foto"
+msgstr ""
+
+#: assets/od.php:290
+msgid "Grote foto naast de tekst"
+msgstr ""
+
+#: assets/od.php:291
+msgid "Lijstje met opsommingen en kleine foto's"
+msgstr ""
+
+#: assets/od.php:300
+msgid "Grote foto"
+msgstr ""
+
+#: assets/od.php:332
+msgid "Lijstjes met kleine foto"
+msgstr ""
+
+#: assets/od.php:355
+msgid "Nieuwe regel"
+msgstr ""
+
+#: assets/od.php:359
+msgid "Bijbehorende foto"
+msgstr ""
+
+#: assets/od.php:383 assets/od.php:443
+msgid "Titel"
+msgstr ""
+
+#: assets/od.php:404
+msgid "Lijstje"
+msgstr ""
+
+#: assets/od.php:407
+msgid "Voer alsjeblieft alleen lijstjes in."
+msgstr ""
+
+#: assets/od.php:424
+msgid "Goed voorbeeld"
+msgstr ""
+
+#: assets/od.php:439
+msgid "Voeg voorbeeld toe"
+msgstr ""
+
+#: assets/od.php:464
+msgid "Tekst"
+msgstr ""
+
+#: assets/od.php:489
+msgid "Selecteer één uit de lijst of voer een nieuwe naam in"
+msgstr ""
+
+#: assets/od.php:510
+msgid "Naam van de tipgever"
+msgstr ""
+
+#: assets/od.php:526
+msgid "Functie van de tipgever"
+msgstr ""
+
+#: assets/od.php:547
+msgid "Afbeelding"
+msgstr ""
+
+#: assets/od.php:574
+msgid "Waarom werkt dit?"
+msgstr ""
+
+#: assets/od.php:596
+msgid "Onderzoek: inleiding"
+msgstr ""
+
+#: assets/od.php:618
+msgid "Vraag 1 - titel"
+msgstr ""
+
+#: assets/od.php:640
+msgid "Vraag 1 - cijfer"
+msgstr ""
+
+#: assets/od.php:664
+msgid "Vraag 1 - antwoord"
+msgstr ""
+
+#: assets/od.php:687
+msgid "Vraag 2 - titel"
+msgstr ""
+
+#: assets/od.php:709
+msgid "Vraag 2 - cijfer"
+msgstr ""
+
+#: assets/od.php:733
+msgid "Vraag 2 - antwoord"
+msgstr ""
+
+#: assets/od.php:756
+msgid "Vraag 3 - titel"
+msgstr ""
+
+#: assets/od.php:778
+msgid "Vraag 3 - cijfer"
+msgstr ""
+
+#: assets/od.php:802
+msgid "Vraag 3 - antwoord"
+msgstr ""
+
+#: assets/od.php:825
+msgid "Onderzoek: conclusie"
+msgstr ""
+
+#: assets/od.php:878
+msgid "Tip-nummer"
+msgstr ""
+
+#: assets/od.php:1008
+msgid "Nuttige links"
+msgstr ""
+
+#: assets/od.php:1011
+msgid "Geen linkbeschrijving ingevoerd"
+msgstr ""
+
+#: assets/od.php:1027
+msgid "URL"
+msgstr ""
+
+#: assets/od.php:1043
+msgid "Link: icoon"
+msgstr ""
+
+#: assets/od.php:1065
+msgid "Link: Titel"
+msgstr ""
+
+#: assets/od.php:1086
+msgid "Link: beschrijving"
+msgstr ""
+
+#: assets/od.php:1107
+msgid "Link: CTA"
+msgstr ""
+
+#: assets/od.php:1128
+msgid "Link: hreflang"
+msgstr ""
+
+#: assets/od.php:1176
+msgid "Functietitel"
+msgstr ""
+
+#: assets/od.php:1196
+msgid "Foto"
+msgstr ""
+
+#: assets/od.php:1221
+msgid "E-mailadres"
+msgstr ""
+
+#: assets/od.php:1240
+msgid "Telefoonnummer"
+msgstr ""
+
+#: assets/od.php:1612
+msgid "Titel op 404-pagina"
+msgstr ""
+
+#: assets/od.php:1633
+msgid "Beschrijving op 404-pagina"
 msgstr ""
 
 #: author.php:29
@@ -482,304 +471,299 @@ msgctxt "Description author archive"
 msgid "Posts by %s."
 msgstr "Alle berichten door %s."
 
-#: functions.php:200
+#: functions.php:194
 msgctxt "menu location"
 msgid "Menu in header"
 msgstr ""
 
-#: functions.php:201
+#: functions.php:195
 msgctxt "menu location"
 msgid "Menu in footer"
 msgstr ""
 
-#: functions.php:262
+#: functions.php:256
 #, php-format
 msgctxt "Alt-tekst op logo"
 msgid "Logo %s"
 msgstr ""
 
-#: functions.php:270
+#: functions.php:264
 msgctxt "skiplinks"
 msgid "Jump to main content"
 msgstr "Direct naar de belangrijkste inhoud"
 
-#: functions.php:272
+#: functions.php:266
 msgctxt "skiplinks"
 msgid "Jump to main navigation"
 msgstr "Direct naar de hoofdnavigatie"
 
-#: functions.php:273
+#: functions.php:267 functions.php:268
 msgctxt "searchform label"
-msgid "Enter a keyword to search"
-msgstr "Voer een trefwoord in om te zoeken op de site"
-
-#: functions.php:274
-msgctxt "searchform placeholder"
-msgid "Search..."
-msgstr "Zoek…"
-
-#: functions.php:275
-msgctxt "searchform button label"
 msgid "Search"
-msgstr "Zoek"
+msgstr "Zoeken"
 
-#: functions.php:305 functions.php:494
+#: functions.php:269
+msgctxt "searchform button label"
+msgid "Go"
+msgstr "Start zoeken"
+
+#: functions.php:299 functions.php:488
 msgid "Wit"
 msgstr ""
 
-#: functions.php:310 functions.php:499
+#: functions.php:304 functions.php:493
 msgid "Zwart"
 msgstr ""
 
-#: functions.php:315
+#: functions.php:309
 msgid "GC Groen"
 msgstr ""
 
-#: functions.php:320
+#: functions.php:314
 msgid "GC Dark Blue"
 msgstr ""
 
-#: functions.php:325
+#: functions.php:319
 msgid "GC Pantybrown"
 msgstr ""
 
-#: functions.php:330
+#: functions.php:324
 msgid "GC Dark Purple"
 msgstr ""
 
-#: functions.php:335 functions.php:370
+#: functions.php:329 functions.php:364
 msgid "GC Blue"
 msgstr ""
 
-#: functions.php:340
+#: functions.php:334
 msgid "GC Pink"
 msgstr ""
 
-#: functions.php:345
+#: functions.php:339
 msgid "GC Orange"
 msgstr ""
 
-#: functions.php:350
+#: functions.php:344
 msgid "GC Cyan"
 msgstr ""
 
-#: functions.php:355 functions.php:360
+#: functions.php:349 functions.php:354
 msgid "Inclusie Orange"
 msgstr ""
 
-#: functions.php:365
+#: functions.php:359
 msgid "NLDS Purplish"
 msgstr ""
 
-#: functions.php:375
+#: functions.php:369
 msgid "GC Blue Safe"
 msgstr ""
 
-#: functions.php:380
+#: functions.php:374
 msgid "GC acessible green"
 msgstr ""
 
-#: functions.php:385
+#: functions.php:379
 msgid "od-orange"
 msgstr ""
 
-#: functions.php:390
+#: functions.php:384
 msgid "od-orange-darker"
 msgstr ""
 
-#: functions.php:395 functions.php:504
+#: functions.php:389 functions.php:498
 msgid "GC Pantybrown Xtra Light"
 msgstr ""
 
-#: functions.php:533
+#: functions.php:527
 msgid "Larger"
 msgstr "Groter"
 
-#: functions.php:538
+#: functions.php:532
 msgid "Extra large"
 msgstr "Grootst"
 
-#: functions.php:689
+#: functions.php:683
 msgctxt "Widget area"
 msgid "Footer widget left"
 msgstr ""
 
-#: functions.php:698
+#: functions.php:692
 msgctxt "Widget area"
 msgid "Footer widget right"
 msgstr ""
 
-#: functions.php:755
+#: functions.php:749
 msgid "Spotlight-blokken"
 msgstr ""
 
-#: functions.php:756
+#: functions.php:750
 msgid "Spotlight-blok"
 msgstr ""
 
-#: functions.php:757 functions.php:758
+#: functions.php:751 functions.php:752
 msgid "Spotlight"
 msgstr ""
 
-#: functions.php:759
+#: functions.php:753
 msgid "Alle spotlight-blokken"
 msgstr ""
 
-#: functions.php:761
+#: functions.php:755
 msgid "Spotlight-blok toevoegen"
 msgstr ""
 
-#: functions.php:762
+#: functions.php:756
 msgid "Spotlight-blok bewerken"
 msgstr ""
 
-#: functions.php:763
+#: functions.php:757
 msgid "Bewerk spotlight-blok"
 msgstr ""
 
-#: functions.php:764
+#: functions.php:758
 msgid "Nieuwe spotlight-blok"
 msgstr ""
 
-#: functions.php:766
+#: functions.php:760
 msgid "Bekijk spotlight-blok"
 msgstr ""
 
-#: functions.php:767
+#: functions.php:761
 msgid "Spotlight-blokken zoeken"
 msgstr ""
 
-#: functions.php:768
+#: functions.php:762
 msgid "Geen spotlight-blokken gevonden"
 msgstr ""
 
-#: functions.php:769
+#: functions.php:763
 msgid "Geen spotlight-blokken in de prullenbak"
 msgstr ""
 
-#: functions.php:774
+#: functions.php:768
 msgid "Hier voer je spotlight-blokken in."
 msgstr ""
 
-#: functions.php:911
+#: functions.php:905
 msgctxt "customizer"
 msgid "Gebruiker Centraal Instellingen"
 msgstr ""
 
-#: functions.php:912
+#: functions.php:906
 msgctxt "customizer"
 msgid ""
 "Selecteer hier het kleurenschema voor deze site. Je wijzigt hiermee de "
 "styling, logo en sommige functionaliteit van de site."
 msgstr ""
 
-#: functions.php:935
+#: functions.php:929
 msgctxt "customizer"
 msgid "Kies het kleurenschema"
 msgstr ""
 
-#: functions.php:1126
+#: functions.php:1153
 msgid "GC Kennisbank"
 msgstr ""
 
-#: functions.php:1282 functions.php:1431
+#: functions.php:1309 functions.php:1458 single-tips.php:119
 #, php-format
 msgctxt "Label tip-nummer"
 msgid "Tip %s"
 msgstr ""
 
-#: functions.php:1314
+#: functions.php:1341
 msgctxt "Mime-types"
 msgid "PNG"
 msgstr ""
 
-#: functions.php:1318 functions.php:1322
+#: functions.php:1345 functions.php:1349
 msgctxt "Mime-types"
 msgid "JPG"
 msgstr ""
 
-#: functions.php:1326
+#: functions.php:1353
 msgctxt "Mime-types"
 msgid "GIF"
 msgstr ""
 
-#: functions.php:1330 functions.php:1338
+#: functions.php:1357 functions.php:1365
 msgctxt "Mime-types"
 msgid "MP3"
 msgstr ""
 
-#: functions.php:1334
+#: functions.php:1361
 msgctxt "Mime-types"
 msgid "MOVIE"
 msgstr "Filmpje"
 
-#: functions.php:1342
+#: functions.php:1369
 msgctxt "Mime-types"
 msgid "PDF"
 msgstr ""
 
-#: functions.php:1346 functions.php:1350
+#: functions.php:1373 functions.php:1377
 msgctxt "Mime-types"
 msgid "Word"
 msgstr ""
 
-#: functions.php:1354 functions.php:1358
+#: functions.php:1381 functions.php:1385
 msgctxt "Mime-types"
 msgid "Powerpoint"
 msgstr ""
 
-#: functions.php:1362 functions.php:1366
+#: functions.php:1389 functions.php:1393
 msgctxt "Mime-types"
 msgid "Excel"
 msgstr ""
 
-#: functions.php:1370
+#: functions.php:1397
 msgctxt "Mime-types"
 msgid "TXT"
 msgstr ""
 
-#: functions.php:1437
+#: functions.php:1464
 msgctxt "Toptiptekst bij tip"
 msgid "Toptip"
 msgstr "Dit is een toptip"
 
-#: functions.php:1452 single.php:64
+#: functions.php:1479 single.php:66
 msgctxt "Meta: value voor auteur"
 msgid "Author"
 msgstr "Auteur"
 
-#: functions.php:1476 functions.php:1494 single.php:121 single.php:134
+#: functions.php:1503 functions.php:1521 single.php:123 single.php:136
 msgctxt "Meta: value voor evenementdatum"
 msgid "Event date"
 msgstr "Datum evenement"
 
-#: functions.php:1484 functions.php:1492 single.php:118 single.php:132
+#: functions.php:1511 functions.php:1519 single.php:120 single.php:134
 #, php-format
 msgctxt "Meta voor event: label voor start- en eindtijd"
 msgid "%s - %s"
 msgstr "%s - %s"
 
-#: functions.php:1487 single.php:128
+#: functions.php:1514 single.php:130
 msgctxt "Meta voor event: value voor start- en eindtijd"
 msgid "Times"
 msgstr "Aanvang"
 
-#: functions.php:1505 functions.php:1509 single.php:143 single.php:147
+#: functions.php:1532 functions.php:1536 single.php:145 single.php:149
 msgctxt "Meta voor event: value voor geen plek meer beschikbaar"
 msgid "Fully booked"
 msgstr "Vol"
 
-#: functions.php:1508 single.php:146
+#: functions.php:1535 single.php:148
 msgctxt "Meta voor event: label voor geen plek meer beschikbaar"
 msgid "Availability"
 msgstr "Beschikbaarheid"
 
-#: functions.php:1519 single.php:154 single.php:163
+#: functions.php:1546 single.php:156 single.php:165
 msgctxt "Meta voor event: label voor locatie"
 msgid "Location"
 msgstr "Locatie"
 
-#: functions.php:1559
+#: functions.php:1586
 msgctxt "404 widget space"
 msgid "Widgetruimte op 404 pagina"
 msgstr "Widgetruimte op 404 pagina"
@@ -815,6 +799,16 @@ msgctxt "Korte linktekst voor een download"
 msgid "Download"
 msgstr ""
 
+#: gutenberg-blocks/events-block.php:14
+msgctxt "Block titel"
+msgid "GC evenementenblok"
+msgstr ""
+
+#: gutenberg-blocks/events-block.php:15
+msgctxt "Block description"
+msgid "Collectie van aankomende events in een Gutenberg block"
+msgstr ""
+
 #: gutenberg-blocks/gutenberg-settings.php:17
 msgctxt "Block-categorie"
 msgid "Gebruiker Centraal"
@@ -838,6 +832,16 @@ msgstr ""
 #: gutenberg-blocks/links-block.php:14
 msgctxt "Block description"
 msgid "Lijst met Links"
+msgstr ""
+
+#: gutenberg-blocks/partnerlogos-block.php:15
+msgctxt "Block titel"
+msgid "GC Partner-logo's"
+msgstr ""
+
+#: gutenberg-blocks/partnerlogos-block.php:16
+msgctxt "Block description"
+msgid "Tonen van logo's van parners in een apart block"
 msgstr ""
 
 #: gutenberg-blocks/related-block.php:14
@@ -896,7 +900,7 @@ msgctxt "Block description"
 msgid "Collectie van van tipkaarten in een Gutenberg block"
 msgstr ""
 
-#: includes/events-manager-functions.php:105 single.php:173
+#: includes/events-manager-functions.php:105 single.php:175
 #, php-format
 msgid "%s attendee"
 msgid_plural "%s attendees"
@@ -914,11 +918,11 @@ msgstr[1] "%s aanmeldingen niet getoond"
 msgid "Other attendees"
 msgstr "Andere aanmeldingen"
 
-#: includes/events-manager-functions.php:203 single.php:243
+#: includes/events-manager-functions.php:203 single.php:245
 msgid "LinkedIn-profiel"
 msgstr ""
 
-#: includes/events-manager-functions.php:209 single.php:249
+#: includes/events-manager-functions.php:209 single.php:251
 msgid "Twitter-account"
 msgstr ""
 
@@ -1548,39 +1552,39 @@ msgstr ""
 msgid "Installing Plugin %1$s (%2$d/%3$d)"
 msgstr ""
 
-#: plugin-activatie/must-use-plugins.php:211
+#: plugin-activatie/must-use-plugins.php:212
 msgctxt "Plugins installer"
 msgid "Deze plugins zijn vereist om het thema te laten werken"
 msgstr "Deze plugins zijn de thema te laten werken"
 
-#: plugin-activatie/must-use-plugins.php:220
+#: plugin-activatie/must-use-plugins.php:221
 msgctxt "Plugins installer"
 msgid "Install Required Plugins"
 msgstr "Installeer vereiste plugins"
 
-#: plugin-activatie/must-use-plugins.php:221
+#: plugin-activatie/must-use-plugins.php:222
 msgctxt "Plugins installer"
 msgid "Install Plugins"
 msgstr "Installeer plugins"
 
-#: plugin-activatie/must-use-plugins.php:223
+#: plugin-activatie/must-use-plugins.php:224
 #, php-format
 msgctxt "Plugins installer"
 msgid "Installing Plugin: %s"
 msgstr "Plugin installeren: %s"
 
-#: plugin-activatie/must-use-plugins.php:225
+#: plugin-activatie/must-use-plugins.php:226
 #, php-format
 msgctxt "Plugins installer"
 msgid "Updating Plugin: %s"
 msgstr "Updaten Plugin: %s"
 
-#: plugin-activatie/must-use-plugins.php:226
+#: plugin-activatie/must-use-plugins.php:227
 msgctxt "Plugins installer"
 msgid "Something went wrong with the plugin API."
 msgstr "Er ging iets mis met de plugin API."
 
-#: plugin-activatie/must-use-plugins.php:229
+#: plugin-activatie/must-use-plugins.php:230
 #, php-format
 msgctxt "Plugins installer"
 msgid "This theme requires the following plugin: %1$s."
@@ -1588,7 +1592,7 @@ msgid_plural "This theme requires the following plugins: %1$s."
 msgstr[0] "Dit thema vereist de volgende plugin: %1$s."
 msgstr[1] "Dit thema vereist de volgende plugin: %1$s."
 
-#: plugin-activatie/must-use-plugins.php:233
+#: plugin-activatie/must-use-plugins.php:234
 #, php-format
 msgctxt "Plugins installer"
 msgid "This theme recommends the following plugin: %1$s."
@@ -1596,7 +1600,7 @@ msgid_plural "This theme recommends the following plugins: %1$s."
 msgstr[0] "Dit thema beveelt de volgende plugin aan: %1$s."
 msgstr[1] "Dit thema beveelt de volgende plugin aan: %1$s."
 
-#: plugin-activatie/must-use-plugins.php:237
+#: plugin-activatie/must-use-plugins.php:238
 #, php-format
 msgctxt "Plugins installer"
 msgid ""
@@ -1612,7 +1616,7 @@ msgstr[1] ""
 "De volgende plugin moet worden bijgewerkt naar de nieuwste versie voor "
 "maximale compatibiliteit met dit thema: %1$s."
 
-#: plugin-activatie/must-use-plugins.php:241
+#: plugin-activatie/must-use-plugins.php:242
 #, php-format
 msgctxt "Plugins installer"
 msgid "There is an update available for: %1$s."
@@ -1620,7 +1624,7 @@ msgid_plural "There are updates available for the following plugins: %1$s."
 msgstr[0] "Er is een update beschikbaar voor: %1$s."
 msgstr[1] "Er is een update beschikbaar voor: %1$s."
 
-#: plugin-activatie/must-use-plugins.php:245
+#: plugin-activatie/must-use-plugins.php:246
 #, php-format
 msgctxt "Plugins installer"
 msgid "The following required plugin is currently inactive: %1$s."
@@ -1628,7 +1632,7 @@ msgid_plural "The following required plugins are currently inactive: %1$s."
 msgstr[0] "De volgende vereiste plugin is momenteel inactief: %1$s."
 msgstr[1] "De volgende vereiste plugins is momenteel inactief: %1$s."
 
-#: plugin-activatie/must-use-plugins.php:249
+#: plugin-activatie/must-use-plugins.php:250
 #, php-format
 msgctxt "Plugins installer"
 msgid "The following recommended plugin is currently inactive: %1$s."
@@ -1636,49 +1640,49 @@ msgid_plural "The following recommended plugins are currently inactive: %1$s."
 msgstr[0] "De volgende aanbevolen plugin is momenteel inactief: %1$s."
 msgstr[1] "De volgende aanbevolen plugins zijn momenteel inactief: %1$s."
 
-#: plugin-activatie/must-use-plugins.php:252
+#: plugin-activatie/must-use-plugins.php:253
 msgctxt "Plugins installer"
 msgid "Begin installing plugin"
 msgid_plural "Begin installing plugins"
 msgstr[0] "Beginnen met het installeren van de plugin"
 msgstr[1] "Beginnen met het installeren van de plugins"
 
-#: plugin-activatie/must-use-plugins.php:255
+#: plugin-activatie/must-use-plugins.php:256
 msgctxt "Plugins installer"
 msgid "Begin updating plugin"
 msgid_plural "Begin updating plugins"
 msgstr[0] "Beginnen met bijwerken van de plugin"
 msgstr[1] "Beginnen met bijwerken van de plugins"
 
-#: plugin-activatie/must-use-plugins.php:258
+#: plugin-activatie/must-use-plugins.php:259
 msgctxt "Plugins installer"
 msgid "Begin activating plugin"
 msgid_plural "Begin activating plugins"
 msgstr[0] "Beginnen met het activeren van de plugin"
 msgstr[1] "Beginnen met het activeren van de plugins"
 
-#: plugin-activatie/must-use-plugins.php:260
+#: plugin-activatie/must-use-plugins.php:261
 msgctxt "Plugins installer"
 msgid "Return to Required Plugins Installer"
 msgstr ""
 
-#: plugin-activatie/must-use-plugins.php:261
+#: plugin-activatie/must-use-plugins.php:262
 msgctxt "Plugins installer"
 msgid "Plugin activated successfully."
 msgstr ""
 
-#: plugin-activatie/must-use-plugins.php:262
+#: plugin-activatie/must-use-plugins.php:263
 msgctxt "Plugins installer"
 msgid "The following plugin was activated successfully:"
 msgstr ""
 
-#: plugin-activatie/must-use-plugins.php:264
+#: plugin-activatie/must-use-plugins.php:265
 #, php-format
 msgctxt "Plugins installer"
 msgid "No action taken. Plugin %1$s was already active."
 msgstr ""
 
-#: plugin-activatie/must-use-plugins.php:266
+#: plugin-activatie/must-use-plugins.php:267
 #, php-format
 msgctxt "Plugins installer"
 msgid ""
@@ -1686,25 +1690,25 @@ msgid ""
 "Please update the plugin."
 msgstr ""
 
-#: plugin-activatie/must-use-plugins.php:268
+#: plugin-activatie/must-use-plugins.php:269
 #, php-format
 msgctxt "Plugins installer"
 msgid "All plugins installed and activated successfully. %1$s"
 msgstr ""
 
-#: plugin-activatie/must-use-plugins.php:269
+#: plugin-activatie/must-use-plugins.php:270
 msgctxt "Plugins installer"
 msgid "Dismiss this notice"
 msgstr ""
 
-#: plugin-activatie/must-use-plugins.php:270
+#: plugin-activatie/must-use-plugins.php:271
 msgctxt "Plugins installer"
 msgid ""
 "There are one or more required or recommended plugins to install, update or "
 "activate."
 msgstr ""
 
-#: plugin-activatie/must-use-plugins.php:271
+#: plugin-activatie/must-use-plugins.php:272
 msgctxt "Plugins installer"
 msgid "Please contact the administrator of this site for help."
 msgstr ""
@@ -1755,92 +1759,92 @@ msgctxt "Titel gerelateerde tips"
 msgid "Gerelateerde tips"
 msgstr ""
 
-#: single-tips.php:134
+#: single-tips.php:135
 #, php-format
 msgctxt "Titel gerelateerde tips"
 msgid "Meer tips over %s"
 msgstr ""
 
-#: single-tips.php:137
+#: single-tips.php:138
 #, php-format
 msgctxt "Linktekst overzicht tipthema"
 msgid "Alle tips over %s"
 msgstr ""
 
-#: single-tips.php:194
+#: single-tips.php:195
 #, php-format
 msgctxt "linktext auteur voorbeeld"
 msgid "Meer tips van %s"
 msgstr ""
 
-#: single-tips.php:226
+#: single-tips.php:236
 msgctxt "default link text"
 msgid "Link"
 msgstr ""
 
-#: single-tips.php:236 single-tips.php:266
+#: single-tips.php:246 single-tips.php:276
 msgctxt "Titel boven waaromwerktdit"
 msgid "Waarom werkt dit?"
 msgstr ""
 
-#: single-tips.php:242
+#: single-tips.php:252
 msgctxt "Titel boven waaromwerktdit"
 msgid "Onderzoek"
 msgstr ""
 
-#: single-tips.php:246
+#: single-tips.php:256
 msgctxt "Titel boven conclusie"
 msgid "Conclusie"
 msgstr ""
 
-#: single.php:55
+#: single.php:57
 msgctxt "Meta: value voor publicatiedatum"
 msgid "Publish date"
 msgstr "Publicatiedatum"
 
-#: single.php:78
+#: single.php:80
 msgctxt "Meta: value voor categorie"
 msgid "Category"
 msgstr "Categorie"
 
-#: single.php:155
+#: single.php:157
 msgctxt "Meta voor event: label voor online"
 msgid "Online"
 msgstr ""
 
-#: single.php:172
+#: single.php:174
 msgctxt "Meta voor event: label voor aanmeldingen"
 msgid "Aanmeldingen"
 msgstr ""
 
-#: template-events-overview.php:155 templates/partial/pagination.twig:8
+#: template-events-overview.php:167 templates/partial/pagination.twig:8
 msgctxt "pagination"
 msgid "First"
 msgstr "Eerste pagina"
 
-#: template-events-overview.php:157 template-events-overview.php:159
+#: template-events-overview.php:169 template-events-overview.php:171
 #: templates/partial/pagination.twig:16
 msgctxt "pagination"
 msgid "Previous"
 msgstr "Vorige"
 
-#: template-events-overview.php:172 templates/partial/pagination.twig:37
+#: template-events-overview.php:184 templates/partial/pagination.twig:37
 msgctxt "pagination"
 msgid "Next"
 msgstr "Volgende"
 
-#: template-events-overview.php:173 templates/partial/pagination.twig:45
+#: template-events-overview.php:185 templates/partial/pagination.twig:45
 msgctxt "pagination"
 msgid "Last"
 msgstr "Laatste pagina"
 
-#: template-od-home.php:84
+#: template-od-home.php:87
 #, php-format
 msgctxt "Arialabel agenda home"
 msgid "%s op %s"
 msgstr ""
 
-#: template-od-home.php:91 template-od-home.php:129
+#: template-od-home.php:94 template-od-home.php:132
 #, php-format
 msgctxt "Arialabel image-link"
 msgid "Link to %s"
@@ -2012,11 +2016,11 @@ msgstr "Twitter-account van %s"
 msgid "Facebook profile of %s"
 msgstr "Facebook-account van %s"
 
-#: templates/single-event.twig:31 templates/single.twig:31
+#: templates/single-event.twig:31 templates/single.twig:36
 msgid "Author"
 msgstr "Auteur"
 
-#: templates/single-event.twig:50 templates/single.twig:91
+#: templates/single-event.twig:50 templates/single.twig:88
 #, php-format
 msgid "One comment"
 msgid_plural "%d comments"
@@ -2042,8 +2046,11 @@ msgid "Links"
 msgstr "Links"
 
 #. Theme Name of the plugin/theme
-msgid "Gebruiker Centraal (2020)"
-msgstr ""
+#, fuzzy
+#| msgctxt "Block-categorie"
+#| msgid "Gebruiker Centraal"
+msgid "Gebruiker Centraal (ictuwp-theme-gc2020)"
+msgstr "Gebruiker Centraal-blocks"
 
 #. Description of the plugin/theme
 msgid "Theme voor Gebruiker Centraal op basis van .twig bestanden"
@@ -2092,6 +2099,21 @@ msgstr ""
 #. Template Name of the plugin/theme
 msgid "Template sitemap"
 msgstr ""
+
+#~ msgctxt "searchform placeholder"
+#~ msgid "Search"
+#~ msgstr "Zoeken"
+
+#~ msgctxt "searchform label"
+#~ msgid "Enter a keyword to search"
+#~ msgstr "Voer een trefwoord in om te zoeken op de site"
+
+#~ msgctxt "searchform placeholder"
+#~ msgid "Search..."
+#~ msgstr "Zoek…"
+
+#~ msgid "Tip-thema"
+#~ msgstr "Tip-thema"
 
 #~ msgid "all categories."
 #~ msgstr "alle thema’s."
