@@ -167,7 +167,8 @@ ul[aria-expanded="true"] {
 }
 
 .visually-hidden,
-.visuallyhidden {
+.visuallyhidden,
+.screen-reader-text {
   @include visually-hidden;
 }
 
