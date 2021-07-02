@@ -55,7 +55,7 @@ define( 'IMAGESIZE_HERO_IMAGE', 'hero-image' );
 //specific flavours functions
 
 $get_theme_option = get_option( 'gc2020_theme_options' );
-$flavor_select    = isset( $get_theme_option['flavor_select'] ) ?  $get_theme_option['flavor_select'] : '';
+$flavor_select    = isset( $get_theme_option['flavor_select'] ) ? $get_theme_option['flavor_select'] : '';
 
 
 if ( $flavor_select == "OD" ) {
@@ -253,7 +253,8 @@ class GebruikerCentraalTheme extends Timber\Site {
 		$context['footermenu']              = new Timber\Menu( 'footermenu' );
 		$context['site']                    = $this;
 		$context['site_name']               = ( get_bloginfo( 'name' ) ? get_bloginfo( 'name' ) : 'Gebruiker Centraal' );
-		$context['alt_logo']                = sprintf( _x( 'Logo %s', 'Alt-tekst op logo', 'gctheme' ), get_bloginfo( 'name' ) );
+		$context['site_linktext']           = _x( ", to the homepage", 'link op logo', 'gctheme' );
+		$context['alt_logo']                = _x( "Logo", 'Alt-tekst op logo', 'gctheme' );
 		$context['sprite_od']               = get_stylesheet_directory_uri() . '/assets/images/sprites/optimaal-digitaal/defs/svg/sprite.defs.svg';
 		$context['sprite_steps']            = get_stylesheet_directory_uri() . '/assets/images/sprites/stepchart/defs/svg/sprite.defs.svg';
 		$context['footer_widget_left']      = Timber::get_widgets( 'footer_widget_left' );

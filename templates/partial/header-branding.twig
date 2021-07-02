@@ -1,11 +1,14 @@
 <div class="branding">
-  <a href="{{ site.url }}" class="branding__home-link{{ site.description ? ' branding--with-slogan' }}">
+  <a href="{{ site.url }}" class="branding__home-link{{ site.description ? ' branding--with-slogan' }}" rel="home">
     {% if site_logo %}
     <img src="{{ site_logo }}" alt="{{ alt_logo }}" class="branding__logo">
     {% endif %}
     <span class="branding__name">{{ site_name ? site_name : 'Gebruiker Centraal' }}</span>
     {% if site.description %}
-      <span class="branding__slogan">{{ site.description }} </span>
+      <span class="branding__slogan"> {{ site.description }}</span>
+    {% endif %}
+    {% if site_linktext %}
+      <span class="visuallyhidden">{{ site_linktext }} </span>
     {% endif %}
   </a>
 </div>
