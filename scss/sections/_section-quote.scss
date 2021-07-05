@@ -40,7 +40,7 @@
     bottom: 0;
     margin-bottom: -39px;
     left: 20px;
-    background: url('../../img/b_example.svg') top left no-repeat;
+    background: url('../../assets/images/b_example.svg') top left no-repeat;
     background-size: 100% auto;
     border: none;
   }
@@ -91,6 +91,7 @@
   font-family: $font-primary;
 }
 
+.entry-body > blockquote, // voor opmaak uit de oude editor
 .section--paragraph > blockquote {
   @extend %quote;
 
@@ -127,4 +128,8 @@
       top: 1.5rem;
     }
   }
+}
+// voor opmaak uit de oude editor
+.entry-body > p + blockquote {
+  margin-top: 3rem;
 }
