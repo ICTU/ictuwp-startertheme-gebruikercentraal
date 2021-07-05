@@ -91,7 +91,7 @@
   font-family: $font-primary;
 }
 
-.section--text > blockquote {
+.section--paragraph > blockquote {
   @extend %quote;
 
   padding-left: 4.2rem;
