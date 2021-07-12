@@ -54,16 +54,16 @@
   background-color: #c42c76; }
 
 .has-gc-orange-color {
-  color: #f99d1c; }
+  color: #AD6500; }
 
 .has-gc-orange-background-color {
-  background-color: #f99d1c; }
+  background-color: #AD6500; }
 
 .has-gc-cyan-color {
-  color: #00b4ac; }
+  color: #00857E; }
 
 .has-gc-cyan-background-color {
-  background-color: #00b4ac; }
+  background-color: #00857E; }
 
 .has-inc-orange-color {
   color: #D94721; }
@@ -171,16 +171,16 @@
   background-color: #c42c76; }
 
 .has-gc-orange-color {
-  color: #f99d1c; }
+  color: #AD6500; }
 
 .has-gc-orange-background-color {
-  background-color: #f99d1c; }
+  background-color: #AD6500; }
 
 .has-gc-cyan-color {
-  color: #00b4ac; }
+  color: #00857E; }
 
 .has-gc-cyan-background-color {
-  background-color: #00b4ac; }
+  background-color: #00857E; }
 
 .has-inc-orange-color {
   color: #D94721; }
@@ -1608,19 +1608,19 @@
       background: #af2769;
       border-color: #A20E56; }
   .tipkaart--procesaanpak {
-    background: #009C95; }
+    background: #00857E; }
     .tipkaart--procesaanpak:before {
-      background: #00b4ac; }
+      background: #00857E; }
     .tipkaart--procesaanpak > a:hover, .tipkaart--procesaanpak > a:focus, .tipkaart--procesaanpak > a:active {
-      background: #009b94;
-      border-color: #00b4ac; }
+      background: #006c66;
+      border-color: #00857E; }
   .tipkaart--kanaalsturing {
-    background: #D77D00; }
+    background: #AD6500; }
     .tipkaart--kanaalsturing:before {
-      background: #f99d1c; }
+      background: #AD6500; }
     .tipkaart--kanaalsturing > a:hover, .tipkaart--kanaalsturing > a:focus, .tipkaart--kanaalsturing > a:active {
-      background: #be6e00;
-      border-color: #f99d1c; }
+      background: #945600;
+      border-color: #AD6500; }
   .tipkaart--samenwerking {
     background: #0095da; }
     .tipkaart--samenwerking:before {
@@ -1690,11 +1690,11 @@
     .tipkaart--commitment .tipkaart__toptip:before {
       background: #148839; }
     .tipkaart--procesaanpak .tipkaart__toptip:before {
-      background: #00b4ac; }
+      background: #00857E; }
     .tipkaart--gebruiksgemak .tipkaart__toptip:before {
       background: #2D114E; }
     .tipkaart--kanaalsturing .tipkaart__toptip:before {
-      background: #f99d1c; }
+      background: #AD6500; }
     .tipkaart--inclusie .tipkaart__toptip:before {
       background: #c73d19; }
   .tipkaart__toptip:after {
