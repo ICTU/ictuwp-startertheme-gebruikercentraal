@@ -2584,10 +2584,6 @@ body:not(.single-event) {
     .single-event .content {
       padding-bottom: 0; } }
 
-.single-event #comments {
-  padding-right: 3rem;
-  padding-left: 3rem; }
-
 .page--type-homepage {
   background: #f2ebe4; }
   .page--type-homepage .content {
@@ -6645,3 +6641,5 @@ browser exceptions
   .header-widget-area {
     padding-top: 1rem;
     width: 30%; } }
+
+/*# sourceMappingURL=gc-theme.css.map */

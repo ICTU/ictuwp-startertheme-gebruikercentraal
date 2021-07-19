@@ -7,9 +7,10 @@
   {% endif %}
 
 
-  <article class="entry entry--full entry--type-{{ post.post_type }}{{ has_comments ? ' ' ~ 'l-has-comments' }}" id="post-{{ post.ID }}">
-    <header class="entry-header">
+  <article class="post post--full post--type-{{ post.post_type }} {{ is_gutenberg == 'TRUE' ? 'post--gutenberg' : 'post--base-editor' }}{{ has_comments ? ' ' ~ 'l-has-comments' }} "
+           id="post-{{ post.ID }}">
 
+    <header class="post__header">
       {% if type == 'event' %}
 
         {% include 'components/date-badge.html.twig' with {
@@ -25,7 +26,7 @@
       {% endif %}
 
 
-      <h1 class="entry-title">
+      <h1 class="post__title">
         {{ post.title }}
       </h1>
       {% if meta %}
@@ -39,18 +40,15 @@
         </div>
 
       {% endif %}
-
     </header>
-    <div class="entry-content wrap">
-      <div class="entry-body">
-        {{ post.content }}
-      </div>
 
-      {% if post.author.meta('auteursfoto_url') is not empty %}
-        {% include 'sections/section-authorbox.html.twig' %}
-      {% endif %}
-
+    <div class="post__body">
+      {{ post.content }}
     </div>
+
+    {% block author %}
+
+    {% endblock %}
 
     {% if related %}
       {% include 'sections/section-related.html.twig' with {

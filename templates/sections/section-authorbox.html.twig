@@ -1,23 +1,28 @@
-<section class="author author--box l-with-image" itemprop="author" itemscope="itemscope"
+<section class="author author--box {{ post.author.auteursfoto_url ? 'l-with-image' : 'l-without-image' }}"
+         itemprop="author" itemscope="itemscope"
          itemtype="http://schema.org/Person">
 
+
+  {% if post.author.auteursfoto_url %}
   <figure class="author__picture">
-    <img src="{{ post.author.meta('auteursfoto_url')|resize(300,300) }}"
+    <img src="{{ post.author.auteursfoto_url }}"
          alt="{{ _x('Profile picture', 'authorbox', 'gctheme') }}">
   </figure>
 
   <div class="author__content">
 
+    {% endif %}
+
     <h2 class="author_title">
       <a class="arrow-link" href="{{ function( 'get_author_posts_url', post.author.ID ) }}">
         <span class="arrow-link__text"><span
-            class="visually-hidden">{{ _x('About', 'authorbox', 'gctheme') }}</span>{{ post.author.name }}</span>
+              class="visually-hidden">{{ _x('About', 'authorbox', 'gctheme') }}</span>{{ post.author.name }}</span>
       </a>
     </h2>
     {% if post.author.meta('functiebeschrijving') is not empty %}
       <span class="meta-data__item">{{ post.author.meta('functiebeschrijving') }}</span>
     {% endif %}
-    <hr>
+
     {% if post.author.description is not empty %}
       <p>{{ post.author.description }}</p>
     {% endif %}
@@ -55,6 +60,11 @@
           </li>
         {% endif %}
       </ul>
+
     </div>
+    {% if post.author.auteursfoto_url %}
   </div>
+  {% endif %}
+
+
 </section>
