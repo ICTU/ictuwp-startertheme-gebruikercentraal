@@ -5,7 +5,7 @@
     "path": "../",
     "dest": "../assets/",
     "absfolder": "/wp-content/themes/ictuwp-theme-gc2020/",
-    "proxy": "gebruikercentraal.test"
+    "proxy": "www.gebruikercentraal.test"
   },
   "od": {
     "name": "Optimaal Digitaal",
