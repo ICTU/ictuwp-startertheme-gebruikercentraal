@@ -8,7 +8,7 @@
   display: flex;
   justify-content: flex-end;
   align-items: center;
-  height: 8rem;
+  height: 7.5rem;
   padding-left: 1rem;
   width: 100%;
   max-width: $max-width-container;
@@ -25,6 +25,9 @@
   margin-right: auto;
 
   @include bp-down(nav) {
+    margin-right: 1rem;
+
+
     span {
       @include visually-hidden;
     }
@@ -45,7 +48,7 @@
 }
 
 .branding__logo {
-  height: 5.5rem;
+  height: 5rem;
   width: auto;
   display: block;
 
@@ -173,42 +176,50 @@
 // Mobile behaviour
 @include bp-down(nav) {
 
-  .page-content {
+  .page-content,
+  .breadcrumb {
     transition: transform .3s;
     width: 100%;
-  }
 
-  .l-header-nav {
-    transition: margin .2s;
-    margin-left: -80%;
-  }
-
-  .show-menu {
-    .page-content {
+    .show-menu & {
       transform: translateX(80%);
     }
+  }
 
-    .l-header-nav {
-      margin-left: 0;
-    }
+  .site-container {
+    padding-top: 7.5rem;
   }
 }
 
+.l-header-top {
+  @include bp-down(nav) {
+    position: fixed;
+    left: 0;
+    top: 0;
+    right: 0;
+    background: $gc-dark-blue;
+  }
+}
 
 .l-header-nav {
 
   @include bp-down(nav) {
     position: fixed;
     left: 0;
-    top: 8rem;
+    top: 7.5rem;
     bottom: 0;
     width: 80%;
     background: $gc_dark-blue;
     overflow-y: auto;
-  }
+    visibility: hidden;
+    margin-left: -80%;
+    transition: margin 0.2s;
 
-  @include bp-down(sm) {
-//    width: 100%;
+
+    &[aria-expanded="true"] {
+      visibility: visible;
+      margin-left: 0;
+    }
   }
 
   @include bp-up(nav) {
@@ -230,6 +241,25 @@
     &:focus {
       color: $white;
       text-decoration: underline;
+    }
+
+    span {
+      position: relative;
+
+      &:before {
+        content: " ";
+        display: block;
+        background: $gc-greyblue;
+        height: 0.3rem;
+        position: absolute;
+        left: 0;
+        width: 100%;
+        transition: transform 0.2s;
+      }
+    }
+
+    &.main-menu__link--active span:before {
+      background: $gc-green;
     }
   }
 
@@ -265,6 +295,36 @@
     a {
       width: 100%;
       transition: padding .2s;
+      position: relative;
+
+      span {
+        position: initial;
+
+        &:before {
+          left: 0;
+          top: 0;
+          bottom: 0;
+          width: .5rem;
+          content: " ";
+          position: absolute;
+          background: $gc-greyblue;
+          display: block;
+          transform: scaleY(0);
+          height: auto;
+        }
+      }
+
+      &.main-menu__link--active span:before {
+        background: $gc-a11y-green;
+      }
+
+      &:hover, &:focus, &.main-menu__link--active {
+        padding-left: 2.2rem;
+
+        span:before {
+          transform: scaleY(1);
+        }
+      }
     }
 
     > ul {
@@ -277,27 +337,6 @@
 
         > a {
           padding: 1rem 2rem;
-
-          &:before {
-            left: 0;
-            top: 0;
-            bottom: 0;
-            width: .5rem;
-            content: " ";
-            position: absolute;
-            background: $gc-a11y-green;
-            display: block;
-            transform: scaleY(0);
-            transition: transform .2s;
-          }
-
-          &:hover, &:focus {
-            padding-left: 2.2rem;
-
-            &:before {
-              transform: scaleY(1);
-            }
-          }
         }
 
         > ul {
@@ -307,6 +346,7 @@
 
           a {
             padding: .5rem 2rem .5rem 2.4rem;
+            font-size: $font-small;
           }
         }
       }
@@ -320,6 +360,22 @@
     max-width: $max-width-container;
     margin: 0 auto;
 
+    a {
+      span:before {
+        bottom: 0;
+        margin-bottom: -0.5rem;
+        transform: scaleX(0);
+      }
+
+      &:focus, &:hover, &.main-menu__link--active {
+        text-decoration: none;
+
+        span:before {
+          transform: scaleX(1);
+        }
+      }
+    }
+
     > ul {
       display: flex;
       flex-direction: row;
@@ -329,19 +385,24 @@
         position: relative;
 
         &.main-menu__item:last-of-type {
-            // als het laatste list-item
-            &.main-menu__item--with-sub {
-              // een listitem met een submenu is,
-              // zorg dan dat dit item minimaal 26rem breed is, zodat er voldoende ruimte is om de items in het
-              // submenu te zien, zonder dat deze onder een rand van een scherm verstopt raken
-              min-width: 13rem; // dit is de ene helft van de lengte van de <ul.main-menu__sublist>
-              margin-right: 13rem; // en dit de andere helft. Samen dus 23rem
+          // als het laatste list-item
+          &.main-menu__item--with-sub {
+            // een listitem met een submenu is,
+            // zorg dan dat dit item minimaal 26rem breed is, zodat er voldoende ruimte is om de items in het
+            // submenu te zien, zonder dat deze onder een rand van een scherm verstopt raken
+            min-width: 13rem; // dit is de ene helft van de lengte van de <ul.main-menu__sublist>
+            margin-right: 13rem; // en dit de andere helft. Samen dus 23rem
           }
         }
 
         > a {
           padding: 2rem;
           font-family: $font-primary-semi;
+        }
+
+        &.main-menu__item--active-trail > a span:before,
+        &.sub-shown > a span:before {
+          transform: scaleX(1);
         }
 
         &.main-menu__item--with-sub {
@@ -352,13 +413,6 @@
           > a {
             padding-right: .5rem;
           }
-
-          ul[aria-expanded=true] {
-            z-index: 999;
-            border-left: 1px solid #004152;
-            border-right: 1px solid #004152;
-          }
-
         }
 
         ul {
@@ -366,7 +420,26 @@
           background: $gc-darkest-blue;
           top: 7rem;
           width: 26rem;
-          font-size: $font-small;
+          padding: 0.5rem 0;
+
+          a {
+            font-size: $font-small;
+            line-height: 2.2rem;
+            border-top: .1rem solid transparent;
+            border-bottom: .1rem solid transparent;
+            padding: 0.5rem 2rem;
+
+            &:not(.main-menu__link--active) {
+              &:hover, &:focus {
+                border-color: darken($gc-greyblue, 5%);
+                text-decoration: underline;
+
+                span:before {
+                  display: none;
+                }
+              }
+            }
+          }
         }
       }
     }

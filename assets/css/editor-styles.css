@@ -1165,26 +1165,27 @@
   background: none;
   font-family: "montserratbold", Helvetica, Arial, sans-serif;
   color: #fff;
-  border: none; }
-  .btn--toggle-menu .btn--icon {
+  border: none;
+  font-size: 1.4rem; }
+  .btn--toggle-menu .btn__icon {
     display: block;
     width: 3rem;
     height: 3rem;
     overflow: hidden;
     line-height: 3rem;
     position: relative;
-    margin-right: 1.5rem; }
-    .btn--toggle-menu .btn--icon:before {
+    margin-right: 0.5rem; }
+    .btn--toggle-menu .btn__icon:before {
       content: "";
       font-style: normal;
       font-weight: normal;
       font-family: 'icons'; }
-    .btn--toggle-menu .btn--icon:after {
+    .btn--toggle-menu .btn__icon:after {
       content: "";
       font-style: normal;
       font-weight: normal;
       font-family: 'icons'; }
-    .btn--toggle-menu .btn--icon:before, .btn--toggle-menu .btn--icon:after {
+    .btn--toggle-menu .btn__icon:before, .btn--toggle-menu .btn__icon:after {
       position: absolute;
       top: 0;
       bottom: 0;
@@ -1205,15 +1206,15 @@
       transition: opacity .2s, -webkit-transform .2s;
       transition: transform .2s, opacity .2s;
       transition: transform .2s, opacity .2s, -webkit-transform .2s; }
-    .btn--toggle-menu .btn--icon:after {
+    .btn--toggle-menu .btn__icon:after {
       opacity: 0;
       -webkit-transform: rotate(-180deg);
               transform: rotate(-180deg); }
-  .btn--toggle-menu.active .btn--icon:after {
+  .btn--toggle-menu.active .btn__icon:after {
     opacity: 1;
     -webkit-transform: rotate(0);
             transform: rotate(0); }
-  .btn--toggle-menu.active .btn--icon:before {
+  .btn--toggle-menu.active .btn__icon:before {
     opacity: 0;
     -webkit-transform: rotate(180deg);
             transform: rotate(180deg); }
@@ -2893,5 +2894,3 @@ h2, h3, h4, h5 {
     min-height: 5.5rem; }
     .download-box--with-descr .meta-data {
       width: auto; }
-
-/*# sourceMappingURL=editor-styles.css.map */

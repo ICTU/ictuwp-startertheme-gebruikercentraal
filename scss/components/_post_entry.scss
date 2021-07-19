@@ -13,6 +13,18 @@
       @include ho-make-container($max-width-inner);
     }
 
+    // Old editor
+    .post__content > .post__body {
+      @include ho-make-container($max-width-inner);
+
+      margin-top: $gutter;
+      padding-bottom: $gutter;
+
+      @include bp-up(md){
+        padding-bottom: $gutter * 2;
+      }
+    }
+
     .l-with-related & {
       // remove margin top for "default" related - it's already in the last section
       .post__content > .section--overview {
@@ -39,10 +51,6 @@
       }
     }
   }
-}
-
-.entry-content {
-  @include ho-padding;
 }
 
 // sections for either .post or .entry
