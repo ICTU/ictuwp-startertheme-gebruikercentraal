@@ -54,16 +54,16 @@
   background-color: #c42c76; }
 
 .has-gc-orange-color {
-  color: #f99d1c; }
+  color: #AD6500; }
 
 .has-gc-orange-background-color {
-  background-color: #f99d1c; }
+  background-color: #AD6500; }
 
 .has-gc-cyan-color {
-  color: #00b4ac; }
+  color: #00857E; }
 
 .has-gc-cyan-background-color {
-  background-color: #00b4ac; }
+  background-color: #00857E; }
 
 .has-inc-orange-color {
   color: #D94721; }
@@ -252,7 +252,8 @@ ul[aria-expanded="true"] {
   display: block; }
 
 .visually-hidden,
-.visuallyhidden {
+.visuallyhidden,
+.screen-reader-text {
   margin: -1px;
   padding: 0;
   width: 1px;
@@ -531,9 +532,9 @@ select, textarea {
     border-color: #c73d19; }
     input:not([type="radio"]):not([type="checkbox"]):not([type="submit"]):not([type="search"])[aria-invalid="true"]:focus,
     select[aria-invalid="true"]:focus, textarea[aria-invalid="true"]:focus {
-      border-color: #f99d1c;
-      -webkit-box-shadow: 0.4rem 0.4rem 0 rgba(249, 157, 28, 0.2);
-              box-shadow: 0.4rem 0.4rem 0 rgba(249, 157, 28, 0.2); }
+      border-color: #AD6500;
+      -webkit-box-shadow: 0.4rem 0.4rem 0 rgba(173, 101, 0, 0.2);
+              box-shadow: 0.4rem 0.4rem 0 rgba(173, 101, 0, 0.2); }
 
 input[type="text"],
 input[type="email"],
@@ -1992,12 +1993,12 @@ body:not(.single-event) {
     background: #c42c76;
     border-color: #A20E56; }
   .form-item--filter.is-active label[for='kanaalsturing'] {
-    background: #f99d1c;
-    border-color: #D77D00;
+    background: #AD6500;
+    border-color: #AD6500;
     color: #004152; }
   .form-item--filter.is-active label[for='procesaanpak'] {
-    background: #009C95;
-    border-color: #00b4ac; }
+    background: #00857E;
+    border-color: #00857E; }
   .form-item--filter.is-active label[for='inclusie'] {
     background: #c73d19;
     border-color: #D94721; }
@@ -2821,9 +2822,9 @@ body:not(.single-event) {
     border: none;
     border-top: 0.1rem solid #9267C3; }
   .tip--procesaanpak .entry-header {
-    background: #009C95; }
+    background: #00857E; }
     .tip--procesaanpak .entry-header:after {
-      background: #009C95; }
+      background: #00857E; }
   .tip--procesaanpak .tipkaart__toptip:before {
     background: #00837E; }
   .tip--procesaanpak .research {
@@ -2838,12 +2839,12 @@ body:not(.single-event) {
     background: #00837E; }
   .tip--procesaanpak .research-block,
   .tip--procesaanpak .research__conclusion {
-    border: 0.1rem solid #00b4ac; }
+    border: 0.1rem solid #00857E; }
   .tip--procesaanpak .research-block__title {
-    border-bottom: 0.1rem solid #00b4ac; }
+    border-bottom: 0.1rem solid #00857E; }
   .tip--procesaanpak hr {
     border: none;
-    border-top: 0.1rem solid #00b4ac; }
+    border-top: 0.1rem solid #00857E; }
   .tip--commitment .entry-header {
     background: #148839; }
     .tip--commitment .entry-header:after {
@@ -2893,13 +2894,13 @@ body:not(.single-event) {
     border: none;
     border-top: 0.1rem solid #E86CA8; }
   .tip--kanaalsturing .entry-header {
-    background: #D77D00; }
+    background: #AD6500; }
     .tip--kanaalsturing .entry-header:after {
-      background: #D77D00; }
+      background: #AD6500; }
   .tip--kanaalsturing .tipkaart__toptip:before {
-    background: #f99d1c; }
+    background: #AD6500; }
   .tip--kanaalsturing .research {
-    background: #f99d1c;
+    background: #AD6500;
     color: #fff; }
     .tip--kanaalsturing .research h2, .tip--kanaalsturing .research h3, .tip--kanaalsturing .research a {
       color: #fff; }
@@ -2907,15 +2908,15 @@ body:not(.single-event) {
     background: #004152 url("../../assets/images/i_brains.svg") top -3rem right -2.5rem no-repeat;
     position: relative; }
   .tip--kanaalsturing .l-why-wrapper:before {
-    background: #f99d1c; }
+    background: #AD6500; }
   .tip--kanaalsturing .research-block,
   .tip--kanaalsturing .research__conclusion {
-    border: 0.1rem solid #D77D00; }
+    border: 0.1rem solid #AD6500; }
   .tip--kanaalsturing .research-block__title {
-    border-bottom: 0.1rem solid #D77D00; }
+    border-bottom: 0.1rem solid #AD6500; }
   .tip--kanaalsturing hr {
     border: none;
-    border-top: 0.1rem solid #D77D00; }
+    border-top: 0.1rem solid #AD6500; }
   .tip--kanaalsturing .research__content {
     color: #004152; }
     .tip--kanaalsturing .research__content a, .tip--kanaalsturing .research__content h2, .tip--kanaalsturing .research__content h3 {
@@ -4673,19 +4674,19 @@ body:not(.single-event) {
       background: #af2769;
       border-color: #A20E56; }
   .tipkaart--procesaanpak {
-    background: #009C95; }
+    background: #00857E; }
     .tipkaart--procesaanpak:before {
-      background: #00b4ac; }
+      background: #00857E; }
     .tipkaart--procesaanpak > a:hover, .tipkaart--procesaanpak > a:focus, .tipkaart--procesaanpak > a:active {
-      background: #009b94;
-      border-color: #00b4ac; }
+      background: #006c66;
+      border-color: #00857E; }
   .tipkaart--kanaalsturing {
-    background: #D77D00; }
+    background: #AD6500; }
     .tipkaart--kanaalsturing:before {
-      background: #f99d1c; }
+      background: #AD6500; }
     .tipkaart--kanaalsturing > a:hover, .tipkaart--kanaalsturing > a:focus, .tipkaart--kanaalsturing > a:active {
-      background: #be6e00;
-      border-color: #f99d1c; }
+      background: #945600;
+      border-color: #AD6500; }
   .tipkaart--samenwerking {
     background: #0095da; }
     .tipkaart--samenwerking:before {
@@ -4755,11 +4756,11 @@ body:not(.single-event) {
     .tipkaart--commitment .tipkaart__toptip:before {
       background: #148839; }
     .tipkaart--procesaanpak .tipkaart__toptip:before {
-      background: #00b4ac; }
+      background: #00857E; }
     .tipkaart--gebruiksgemak .tipkaart__toptip:before {
       background: #2D114E; }
     .tipkaart--kanaalsturing .tipkaart__toptip:before {
-      background: #f99d1c; }
+      background: #AD6500; }
     .tipkaart--inclusie .tipkaart__toptip:before {
       background: #c73d19; }
   .tipkaart__toptip:after {
@@ -5007,10 +5008,10 @@ body:not(.single-event) {
     border-color: #007BB0;
     text-decoration: underline; }
   .item--filter.procesaanpak input:focus + label {
-    border-color: #00b4ac;
+    border-color: #00857E;
     text-decoration: underline; }
   .item--filter.procesaanpak input:hover + label {
-    border-color: #00b4ac;
+    border-color: #00857E;
     text-decoration: underline; }
   .item--filter.gebruiksgemak input:focus + label {
     border-color: #2D114E;
@@ -5019,10 +5020,10 @@ body:not(.single-event) {
     border-color: #2D114E;
     text-decoration: underline; }
   .item--filter.kanaalsturing input:focus + label {
-    border-color: #f99d1c;
+    border-color: #AD6500;
     text-decoration: underline; }
   .item--filter.kanaalsturing input:hover + label {
-    border-color: #f99d1c;
+    border-color: #AD6500;
     text-decoration: underline; }
   .item--filter.inclusie input:focus + label {
     border-color: #c73d19;
@@ -5063,9 +5064,9 @@ body:not(.single-event) {
     border-color: #006997; }
 
 .item--filter.procesaanpak.filter-active {
-  background: #009C95; }
+  background: #00857E; }
   .item--filter.procesaanpak.filter-active:before {
-    border-color: #00837d; }
+    border-color: #006c66; }
 
 .item--filter.gebruiksgemak.filter-active {
   background: #2D114E; }
@@ -5073,9 +5074,9 @@ body:not(.single-event) {
     border-color: #210c39; }
 
 .item--filter.kanaalsturing.filter-active {
-  background: #D77D00; }
+  background: #AD6500; }
   .item--filter.kanaalsturing.filter-active:before {
-    border-color: #be6e00; }
+    border-color: #945600; }
 
 .item--filter.inclusie.filter-active {
   background: #c73d19; }
@@ -6306,7 +6307,7 @@ body:not(.single-event) {
         position: absolute;
         width: 8rem;
         height: 8rem;
-        background: #f99d1c;
+        background: #AD6500;
         border-radius: 50%;
         z-index: -1;
         top: 0;
@@ -6339,7 +6340,7 @@ body:not(.single-event) {
     .btn--stepchart:before {
       width: 9.6rem;
       height: 9.6rem;
-      background: #f99d1c;
+      background: #AD6500;
       margin-left: -4.8rem; } }
 
 .icon--stepchart {
@@ -6541,7 +6542,7 @@ body:not(.single-event) {
     top: 0;
     left: 50%;
     margin-left: -2.75rem;
-    background: #f99d1c;
+    background: #AD6500;
     z-index: -1;
     border-radius: 50%;
     -webkit-transition: background .2s, -webkit-transform .2s;
@@ -6553,7 +6554,7 @@ body:not(.single-event) {
     position: relative;
     z-index: +1; }
   .stepnav__link:hover:before, .stepnav__link:focus:before, .stepnav__link.is-active:before {
-    background: #f99d1c;
+    background: #AD6500;
     -webkit-transform: scale(1.05);
             transform: scale(1.05); }
   .stepnav__link:hover .icon--stepnav, .stepnav__link:focus .icon--stepnav, .stepnav__link.is-active .icon--stepnav {
