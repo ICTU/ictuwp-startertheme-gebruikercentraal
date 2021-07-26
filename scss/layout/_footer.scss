@@ -1,5 +1,4 @@
 .l-page-footer-wrapper {
-  @include ho-padding;
   color: $white;
   background: $gc-dark-blue;
   font-size: $font-smaller;
@@ -22,9 +21,10 @@
   }
 }
 
-.page-footer {
-  @include ho-container;
-  max-width: calc(#{$max-width-container} + #{$gutter});
+.page-footer-top {
+  @include ho-make-container($max-width-padding);
+  @include ho-padding;
+
   padding-top: 3rem;
   padding-bottom: 3rem;
 
@@ -66,27 +66,20 @@
   padding-left: 14rem;
 }
 
-.site-footer-menu {
+.page-footer-bottom {
   @include ho-padding;
+  background: $gc-darkest-blue;
+}
+
+.site-footer-menu {
   position: relative;
   padding-top: 1.5rem;
   padding-bottom: 1.5rem;
   font-size: $font-small;
+  @include ho-make-container($max-width-container);
 
-  &:before {
-    content: " ";
-    position: absolute;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    top: 0;
-    margin-left: -3rem;
-    margin-right: -3rem;
-    background: $gc-darkest-blue;
-  }
 
   .menu {
-    @include ho-container;
     padding: 0;
     margin: 0 auto;
     position: relative;

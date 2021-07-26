@@ -16,8 +16,8 @@
 
   @include bp-up(nav) {
     height: 9rem;
-    padding-left: 3rem;
-    padding-right: 3rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
   }
 }
 
@@ -25,8 +25,7 @@
   margin-right: auto;
 
   @include bp-down(nav) {
-    margin-right: 1rem;
-
+    padding-right: 1rem;
 
     span {
       @include visually-hidden;
@@ -224,6 +223,8 @@
 
   @include bp-up(nav) {
     background: $gc-dark-blue;
+    padding-left: 2rem;
+    padding-right: 2rem;
   }
 }
 

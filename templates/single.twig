@@ -7,8 +7,10 @@
   {% endif %}
 
 
-  <article class="entry entry--full entry--type-{{ post.post_type }}{{ has_comments ? ' ' ~ 'l-has-comments' }}" id="post-{{ post.ID }}">
-    <header class="entry-header">
+  <article
+      class="post post--full post--type-{{ post.post_type }} {{ is_gutenberg == 'TRUE' ? 'post--gutenberg' : 'post--plain' }}{{ has_comments ? ' ' ~ 'l-has-comments' }}"
+      id="post-{{ post.ID }}">
+    <header class="post__header">
 
       {% if type == 'event' %}
 
@@ -24,57 +26,54 @@
         } %}
       {% endif %}
 
-
-      <h1 class="entry-title">
+      <h1 class="post__title">
         {{ post.title }}
       </h1>
-      {% if meta %}
-        {% include 'components/meta-data.html.twig' with {'items': meta} %}
-      {% else %}
-        <div class="meta-data">
-          <dl class="meta-data__list">
-            <dt class="visually-hidden">{{ __('Author', 'gctheme') }}</dt>
-            <dd class="meta-data__item author">{{ post.author.name }}</dd>
-          </dl>
-        </div>
 
-      {% endif %}
+      {% block metadata %}
 
+      {% endblock %}
     </header>
-    <div class="entry-content wrap">
-      <div class="entry-body">
+
+    {% if not is_gutenberg %}
+    <div class="post__body">
+      {% else %}
+      <div class="post__sections">
+        {% endif %}
+
         {{ post.content }}
       </div>
 
-      {% if post.author.meta('auteursfoto_url') is not empty %}
-        {% include 'sections/section-authorbox.html.twig' %}
+      {% block author %}
+        {% if post.author is not empty %}
+          {% include 'sections/section-authorbox.html.twig' %}
+        {% endif %}
+      {% endblock %}
+
+      {% if related %}
+        {% include 'sections/section-related.html.twig' with {
+          'title': related.title,
+          'descr': related.desc,
+          'items': related.items
+        } %}
       {% endif %}
 
+      {% if downloads %}
+        {% include 'sections/section-downloads.html.twig' with {
+          'title': downloads.title,
+          'descr': downloads.desc,
+          'items': downloads.items
+        } %}
+      {% endif %}
+
+      {% if links %}
+        {% include 'sections/section-links.html.twig' with {
+          'section_title': links.title,
+          'section_descr': links.desc,
+          'items': links.items
+        } %}
+      {% endif %}
     </div>
-
-    {% if related %}
-      {% include 'sections/section-related.html.twig' with {
-        'title': related.title,
-        'descr': related.desc,
-        'items': related.items
-      } %}
-    {% endif %}
-
-    {% if downloads %}
-      {% include 'sections/section-downloads.html.twig' with {
-        'title': downloads.title,
-        'descr': downloads.desc,
-        'items': downloads.items
-      } %}
-    {% endif %}
-
-    {% if links %}
-      {% include 'sections/section-links.html.twig' with {
-        'section_title': links.title,
-        'section_descr': links.desc,
-        'items': links.items
-      } %}
-    {% endif %}
 
 
   </article>

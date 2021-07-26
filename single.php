@@ -44,18 +44,6 @@ if ($spotlightblocks) {
 $context['hero_image'] = get_hero_image();
 $context['type'] = $post->post_type;
 
-function is_gutenberg() {
-  $timber_post = Timber::query_post();
-
-  if (function_exists('has_blocks') && has_blocks($timber_post->ID)) {
-    return TRUE;
-  }
-  else {
-    return FALSE;
-  }
-}
-
-$context['is_gutenberg'] = is_gutenberg() ? 'TRUE' : 'FALSE';
 
 if ('post' === $post->post_type) {
 

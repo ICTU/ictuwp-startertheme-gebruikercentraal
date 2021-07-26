@@ -163,6 +163,7 @@ $max-width-large:         1900px !default;
 $max-width-container:     1280px !default;
 $max-width-content:       960px !default;
 $max-width-inner:         760px !default;
+$max-width-padding:       calc(#{$max-width-container} + 6rem);
 
 $gutter:                  3rem !default;
 $gutter-smaller:          2rem !default;
