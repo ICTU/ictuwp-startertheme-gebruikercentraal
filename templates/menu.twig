@@ -14,17 +14,20 @@
 
           {% if item.children %}
             {% set haspopup = ' aria-haspopup="true"' %}
-            <li class="main-menu__item main-menu__item--with-sub">
+            <li class="main-menu__item main-menu__item--with-sub{{ item.current_item_parent ? ' main-menu__item--active-trail' }}">
           {% else %}
-            <li class="main-menu__item">
+            <li class="main-menu__item{{ item.current_item_parent ? ' main-menu__item--active-trail' }}">
           {% endif %}
-          <a href="{{ item.link }}"{{ targetattr }}{{ haspopup }}><span>{{ item.title }}</span></a>
+
+          <a href="{{ item.link }}" class="main-menu__link{{ item.current ? ' main-menu__link--active' }}"><span class="main-menu__link-text">{{ item.title }}</span></a>
 
           {% if item.children %}
-            <ul class="main-menu__sublist" aria-expanded="false">
+            <button class="main-menu__open-sub" aria-haspopup="true" aria-controls="sublist-{{ item.id }}">Open submenu {{ item.title }}</button>
+
+            <ul id="sublist-{{ item.id }}" class="main-menu__sublist" aria-expanded="false">
               {% for child in item.children %}
                 <li class="main-menu__item main-menu__item--sub">
-                  <a href="{{ child.link }}">{{ child.title }}</a>
+                  <a href="{{ child.link }}" class="main-menu__link main-menu__link--sub {{ child.current ? ' main-menu__link--active' }}"><span class="main-menu__link-text">{{ child.title }}</span></a>
                 </li>
               {% endfor %}
             </ul>

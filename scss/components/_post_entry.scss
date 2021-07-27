@@ -13,12 +13,32 @@
       @include ho-make-container($max-width-inner);
     }
 
+    // Old editor
+    .post__body {
+      @include ho-make-container($max-width-inner);
+
+      margin-top: $gutter;
+      padding-bottom: $gutter;
+
+      @include bp-up(md) {
+        padding-bottom: $gutter * 2;
+      }
+    }
+
     .l-with-related & {
       // remove margin top for "default" related - it's already in the last section
       .post__content > .section--overview {
         margin-top: 0;
       }
     }
+
+    > .author {
+      @include ho-make-container($max-width-inner);
+    }
+  }
+
+  &--plain {
+    padding-bottom: 5rem;
   }
 
   &.l-with-stepchart {
@@ -41,22 +61,14 @@
   }
 }
 
-.entry-content {
-  @include ho-padding;
-}
-
 // sections for either .post or .entry
-.post__body,
-.entry-content {
-
-  > .section {
+.post__sections {
+  > .section,
+  > figure {
     @include ho-make-container($max-width-inner);
 
     &:first-child {
-      // Make margin smaller if first section is a text one
-      &.section--paragraph {
-        margin-top: 2rem;
-      }
+      margin-top: $gutter;
     }
 
     &:last-child {
@@ -90,6 +102,7 @@
       @include gc-last-padding;
     }
   }
+
 }
 
 // Sections buiten gutenberg / post body
