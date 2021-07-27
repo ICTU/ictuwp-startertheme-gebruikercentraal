@@ -132,8 +132,8 @@
 
 @font-face {
   font-family: "icons";
-  src: url("/wp-content/themes/ictuwp-theme-gc2020/assets/fonts/iconfont/gc-iconfont-6ej5ld.eot");
-  src: url("/wp-content/themes/ictuwp-theme-gc2020/assets/fonts/iconfont/gc-iconfont-6ej5ld.eot?#iefix") format("eot"), url("/wp-content/themes/ictuwp-theme-gc2020/assets/fonts/iconfont/gc-iconfont-6ej5ld.woff") format("woff"), url("/wp-content/themes/ictuwp-theme-gc2020/assets/fonts/iconfont/gc-iconfont-6ej5ld.ttf") format("truetype"), url("/wp-content/themes/ictuwp-theme-gc2020/assets/fonts/iconfont/gc-iconfont-6ej5ld.svg#icons") format("svg");
+  src: url("/wp-content/themes/ictuwp-theme-gc2020/assets/fonts/iconfont/gc-iconfont-gfoh8.eot");
+  src: url("/wp-content/themes/ictuwp-theme-gc2020/assets/fonts/iconfont/gc-iconfont-gfoh8.eot?#iefix") format("eot"), url("/wp-content/themes/ictuwp-theme-gc2020/assets/fonts/iconfont/gc-iconfont-gfoh8.woff") format("woff"), url("/wp-content/themes/ictuwp-theme-gc2020/assets/fonts/iconfont/gc-iconfont-gfoh8.ttf") format("truetype"), url("/wp-content/themes/ictuwp-theme-gc2020/assets/fonts/iconfont/gc-iconfont-gfoh8.svg#icons") format("svg");
   font-weight: normal;
   font-style: normal; }
 
@@ -917,31 +917,6 @@ Gutenberg corrections
   padding-left: 0;
   padding-right: 0; }
 
-.wp-block-quote {
-  border-left: 0.6rem solid #BA4F0C;
-  padding: .5rem 0 .5rem 2rem;
-  margin: 0;
-  font-size: 2.2rem;
-  line-height: 3.6rem; }
-  .wp-block-quote p {
-    margin-top: 0; }
-  .wp-block-quote cite {
-    font-size: 1.4rem;
-    color: #52757e;
-    font-family: "montserratsemibold", Helvetica, Arial, sans-serif;
-    margin-top: 2rem;
-    display: block; }
-  @media (min-width: 700px) {
-    .wp-block-quote {
-      padding-left: 3rem; } }
-  @media (min-width: 1100px) {
-    .wp-block-quote {
-      padding-left: 4rem; } }
-  @media (max-width: 559px) {
-    .wp-block-quote {
-      border-left: 0;
-      padding-left: 0; } }
-
 .has-larger-font-size,
 .has-extra-large-font-size {
   line-height: 1.5; }
@@ -1186,7 +1161,7 @@ Gutenberg corrections
 .search-form {
   position: relative; }
   .search-form:after {
-    content: "";
+    content: "";
     font-style: normal;
     font-weight: normal;
     font-family: 'icons'; }
@@ -2476,7 +2451,7 @@ body:not(.single-event) {
 
 .em-booking-form {
   margin-top: 2rem; }
-  .em-booking-form input:not([type='submit']):not([type='checkbox']):not([type='radio']):focus, .em-booking-form select:focus, .em-booking-form textarea:focus {
+  .em-booking-form input:not([type="submit"]):not([type="checkbox"]):not([type="radio"]):focus, .em-booking-form select:focus, .em-booking-form textarea:focus {
     -webkit-box-shadow: 0.4rem 0.4rem 0 rgba(0, 48, 61, 0.6);
             box-shadow: 0.4rem 0.4rem 0 rgba(0, 48, 61, 0.6);
     border-color: #0095da; }
@@ -3772,6 +3747,125 @@ body:not(.single-event) {
       margin: 0 0 0 auto; }
   .section--events-block .l-section-content {
     margin-top: 1rem; } }
+
+.quote .quote__quotee {
+  border: none; }
+
+.quote__quote, .entry-body > blockquote,
+.section--paragraph > blockquote {
+  position: relative;
+  font-size: 2.2rem;
+  line-height: 3.8rem;
+  font-family: "montserratsemibold", Helvetica, Arial, sans-serif;
+  font-style: normal; }
+  .quote__quote:after, .entry-body > blockquote:after,
+  .section--paragraph > blockquote:after {
+    content: "";
+    font-style: normal;
+    font-weight: normal;
+    font-family: 'icons'; }
+  .quote__quote:after, .entry-body > blockquote:after,
+  .section--paragraph > blockquote:after {
+    font-size: 1.9rem;
+    color: #BA4F0C;
+    position: absolute;
+    top: 2rem;
+    left: 2rem; }
+
+.quote__quote {
+  -webkit-box-shadow: 4px 4px 0 rgba(0, 0, 0, 0.15);
+          box-shadow: 4px 4px 0 rgba(0, 0, 0, 0.15);
+  margin: 0;
+  padding: 2rem 2rem 2.5rem 6rem;
+  border: 0.1rem solid #D1DFE3;
+  position: relative;
+  z-index: 5; }
+  .quote__quote:before {
+    width: 4rem;
+    height: 4rem;
+    content: " ";
+    display: block;
+    position: absolute;
+    bottom: 0;
+    margin-bottom: -39px;
+    left: 20px;
+    background: url("../../assets/images/b_example.svg") top left no-repeat;
+    background-size: 100% auto;
+    border: none; }
+  @media (max-width: 559px) {
+    .quote__quote:before {
+      -webkit-transform: scaleX(-1);
+              transform: scaleX(-1);
+      left: auto;
+      right: 20px; } }
+  @media (min-width: 700px) {
+    .quote__quote {
+      padding-right: 3rem; } }
+
+.l-author-wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex; }
+  @media (max-width: 559px) {
+    .l-author-wrapper {
+      margin: 4rem 0 0 0; } }
+  @media (min-width: 560px) {
+    .l-author-wrapper {
+      margin: 2rem 0 0 8rem; } }
+
+.quote__image {
+  max-width: 6rem;
+  height: auto;
+  margin-right: 3rem;
+  -webkit-box-shadow: 4px 4px 0 rgba(0, 0, 0, 0.15);
+          box-shadow: 4px 4px 0 rgba(0, 0, 0, 0.15); }
+
+.quote__quotee {
+  font-size: 2.2rem;
+  line-height: 2.8rem;
+  font-family: "montserratsemibold", Helvetica, Arial, sans-serif;
+  padding: 0; }
+
+.quote__instance {
+  display: block;
+  font-size: 1.4rem;
+  color: #52757e;
+  font-family: "montserratregular", Helvetica, Arial, sans-serif; }
+
+.entry-body > blockquote,
+.section--paragraph > blockquote {
+  padding-left: 4.2rem;
+  margin: 0; }
+  .entry-body > blockquote p:first-child,
+  .section--paragraph > blockquote p:first-child {
+    margin-top: 0; }
+  .entry-body > blockquote:after,
+  .section--paragraph > blockquote:after {
+    left: 0;
+    top: 0; }
+  .entry-body > blockquote cite,
+  .section--paragraph > blockquote cite {
+    font-size: 1.4rem;
+    color: #52757e;
+    font-family: "montserratregular", Helvetica, Arial, sans-serif;
+    position: relative;
+    padding-left: 3.6rem;
+    margin-top: 1rem;
+    display: block; }
+    .entry-body > blockquote cite:before,
+    .section--paragraph > blockquote cite:before {
+      content: " ";
+      display: block;
+      height: 0.2rem;
+      background: #BA4F0C;
+      width: 2rem;
+      float: left;
+      position: absolute;
+      left: 0;
+      top: 1.5rem; }
+
+.entry-body > p + blockquote {
+  margin-top: 3rem; }
 
 /* Components */
 .author .link--contact {
@@ -5150,7 +5244,7 @@ body:not(.single-event) {
     font-weight: normal;
     font-family: 'icons'; }
   .link--social.twitter:before {
-    content: "";
+    content: "";
     font-style: normal;
     font-weight: normal;
     font-family: 'icons'; }
@@ -5165,12 +5259,12 @@ body:not(.single-event) {
     font-weight: normal;
     font-family: 'icons'; }
   .link--social.tumblr:before {
-    content: "";
+    content: "";
     font-style: normal;
     font-weight: normal;
     font-family: 'icons'; }
   .link--social.soundcloud:before {
-    content: "";
+    content: "";
     font-style: normal;
     font-weight: normal;
     font-family: 'icons'; }
@@ -5180,17 +5274,17 @@ body:not(.single-event) {
     font-weight: normal;
     font-family: 'icons'; }
   .link--social.youtube:before {
-    content: "";
+    content: "";
     font-style: normal;
     font-weight: normal;
     font-family: 'icons'; }
   .link--social.wikipedia:before {
-    content: "";
+    content: "";
     font-style: normal;
     font-weight: normal;
     font-family: 'icons'; }
   .link--social.slack:before {
-    content: "";
+    content: "";
     font-style: normal;
     font-weight: normal;
     font-family: 'icons'; }
@@ -5291,7 +5385,7 @@ body:not(.single-event) {
 .link--external {
   display: inline-block; }
   .link--external:after {
-    content: "";
+    content: "";
     font-style: normal;
     font-weight: normal;
     font-family: 'icons'; }
@@ -5427,7 +5521,7 @@ body:not(.single-event) {
     font-weight: normal;
     font-family: 'icons'; }
   .meta-data__item.auteur:before, .meta-data__item.author:before {
-    content: "";
+    content: "";
     font-style: normal;
     font-weight: normal;
     font-family: 'icons'; }
@@ -5937,7 +6031,7 @@ body:not(.single-event) {
     font-size: 1.4rem;
     font-family: "montserratsemibold", Helvetica, Arial, sans-serif; }
     .video__video .collapsetoggle button:before {
-      content: "";
+      content: "";
       font-style: normal;
       font-weight: normal;
       font-family: 'icons'; }
@@ -7203,8 +7297,7 @@ browser exceptions
 @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
   main {
     display: block; }
-  .page-content:before,
-  .page-content:after {
+  .page-content:before, .page-content:after {
     height: 25rem;
     display: block; }
   .page-content:before {
