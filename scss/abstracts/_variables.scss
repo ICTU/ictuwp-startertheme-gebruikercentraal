@@ -24,6 +24,8 @@ $gc-blue-darker:            #005870;
 $gc-greyblue:               #52757e;
 $gc-blue-xlight:			#D1DFE3;
 
+$duivelsdrek-oranje:        #AD6500; // dit is de vervanging voor qua contrast te lichte kleur oranje
+$duivelsdrek-cyaan:         #00857E; // dit is de vervanging voor qua contrast te lichte kleur donkercyaan, blauwgroen
 
 // Secondary colors
 $gc-dark-purple:			#4c2974;
@@ -37,11 +39,11 @@ $gc-pink:					#c42c76;
 $gc-pink-darker:			#A20E56;
 $gc-pink-lighter:           #E86CA8;
 
-$gc-orange:					#f99d1c;
-$gc-a11y-orange-lg:			#D77D00;
+$gc-orange:                 $duivelsdrek-oranje; // dit was #f99d1c;
+$gc-a11y-orange-lg:         $duivelsdrek-oranje; // dit was #D77D00;
 
-$gc-cyan:					#00b4ac;
-$gc-a11y-cyan-lg:		    #009C95; // Ok for large texts
+$gc-cyan:                   $duivelsdrek-cyaan; // dit was #00b4ac;
+$gc-a11y-cyan-lg:           $duivelsdrek-cyaan; // dit was #009C95; // Ok for large texts
 $gc-a11y-cyan:              #00837E;
 
 // Optimaal Digitaal
