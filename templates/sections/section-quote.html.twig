@@ -1,0 +1,108 @@
+{% if is_preview %}
+  <style type="text/css">
+
+    #testmonialblock-{{ block.id }} {
+      border: 3px dashed #dadada;
+    }
+
+    #testmonialblock-{{ block.id }} .l-author-wrapper {
+      display: flex;
+      flex-direction: row;
+    }
+
+    #testmonialblock-{{ block.id }} .quote__image {
+      flex: 0 1 100px;
+      max-width: 100px !important;
+    }
+
+    #testmonialblock-{{ block.id }} .quote__quotee {
+      padding-left: 1rem;
+      flex: 1 1 auto;
+    }
+
+    #testmonialblock-{{ block.id }} .section--paragraph {
+      margin-top: 1rem;
+    }
+
+    #testmonialblock-{{ block.id }} blockquote p {
+      margin: 0;
+    }
+
+    #testmonialblock-{{ block.id }} blockquote {
+      border: 2px solid #dadada;
+      padding: 1rem 1rem 1rem 3rem;
+      margin-top: 1rem;
+      background-image: url('/wp-content/themes/ictuwp-theme-gc2020/assets/images/icons/quote.svg');
+      background-size: 1rem 1rem;
+      background-repeat: no-repeat;
+      background-position: top left;
+    }
+
+  </style>
+
+<div id="testmonialblock-{{ block.id }}">
+
+  {% endif %}
+
+  {% if testmonial.quote %}
+
+    {% if testmonial.simpel_citaat %}
+
+      <div class="section section--paragraph">
+        <blockquote class="wp-block-quote">
+          <p>{{ testmonial.quote }}</p>
+          {% if testmonial.quote_cite %}
+            <cite>{{ testmonial.quote_cite }}</cite>
+          {% endif %}
+        </blockquote>
+      </div>
+
+    {% else %}
+
+      <div class="section section--paragraph">
+        <figure class="quote">
+
+          <blockquote class="quote__quote">
+            <p>{{ testmonial.quote }}</p>
+          </blockquote>
+
+          <div class="l-author-wrapper">
+
+            {% if testmonial.quote_cite %}
+
+              {% if testmonial.image_src %}
+                <img class="quote__image" src="{{ testmonial.image_src }}" alt="{{ testmonial.image_alt }}">
+              {% endif %}
+
+              <figcaption class="quote__quotee">{{ testmonial.quote_cite }}{% if testmonial.quotee %},
+                  <cite class="quote__instance">{{ testmonial.quotee }}</cite>
+                {% endif %}
+              </figcaption>
+
+            {% else %}
+
+              {% if is_preview %}
+                {% if testmonial.image_src %}
+                  <p style="background: red; color: white;">Voer iets in onder 'persoon' in om het plaatje zichtbaar te
+                    maken.</p>
+                {% endif %}
+              {% endif %}
+
+            {% endif %}
+
+          </div>
+        </figure>
+      </div>
+
+    {% endif %}
+
+  {% else %}
+    {% if is_preview %}
+      <p style="background: red; color: white;">Voer een citaat in.</p>
+    {% endif %}
+  {% endif %}
+
+  {% if is_preview %}
+
+</div>
+{% endif %}

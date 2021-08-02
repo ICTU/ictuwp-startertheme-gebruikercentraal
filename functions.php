@@ -104,6 +104,10 @@ require_once(get_template_directory() . '/gutenberg-blocks/partnerlogos-block.ph
 // block voor het tonen van aankomende events
 require_once(get_template_directory() . '/gutenberg-blocks/events-block.php');
 
+// block voor testimonials
+require_once( get_template_directory() . '/gutenberg-blocks/testimonial-block.php' );
+
+
 /**
  * Load other dependencies such as VAR DUMPER :D
  */

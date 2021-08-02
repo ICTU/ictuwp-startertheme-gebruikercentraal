@@ -28,9 +28,10 @@ Hier vind je een lijst met opties. Zie de optie 'GC theme-opties'. Hier zie je e
 * Paul van Buuren: paul@wbvb.nl
 
 ## Current version:
-5.1.3 - Correct dateformat voor publicatiedatum in datebadge; uitlijning checkbox.
+5.2.1 - Gutenbergblock voor citaten; duivelsdrek-oranje toegevoegd als kleur omwille van contrast.
 
 ## Version history
+* 5.2.1 - Gutenbergblock voor citaten; duivelsdrek-oranje toegevoegd als kleur omwille van contrast.
 * 5.1.3 - Correct dateformat voor publicatiedatum in datebadge; uitlijning checkbox.
 * 5.1.2 - [OD] speelsettaxonomie toegevoegd aan quick edit.
 * 5.1.1 - HSTS-header verwijderd.
