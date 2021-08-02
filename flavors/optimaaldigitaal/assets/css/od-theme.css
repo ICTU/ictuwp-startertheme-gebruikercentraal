@@ -3228,15 +3228,55 @@ body:not(.single-event) {
         font-size: 5rem;
         line-height: 6rem; } }
 
-.page-template-template-landingspagina .page__intro {
-  -webkit-box-shadow: none;
-          box-shadow: none; }
+.page-template-template-landingspagina .content {
+  padding: 0; }
 
-.entry--type-landing .entry-content > .section:first-child.section--heading, .entry--type-landing .entry-content > .section:first-child.section--paragraph {
-  margin-top: 4rem; }
+.post--type-landing .post__header {
+  background: #148839;
+  max-width: none;
+  padding: 2rem; }
   @media (min-width: 700px) {
-    .entry--type-landing .entry-content > .section:first-child.section--heading, .entry--type-landing .entry-content > .section:first-child.section--paragraph {
-      margin-top: 7rem; } }
+    .post--type-landing .post__header {
+      padding: 4rem 5rem; } }
+  .post--type-landing .post__header h1, .post--type-landing .post__header h2, .post--type-landing .post__header h3, .post--type-landing .post__header a {
+    color: #fff; }
+
+.post--type-landing .post__sections {
+  padding-left: 2rem;
+  padding-right: 2rem;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box; }
+  @media (min-width: 560px) {
+    .post--type-landing .post__sections {
+      padding-right: 3rem;
+      padding-left: 3rem; } }
+  @media (min-width: 700px) {
+    .post--type-landing .post__sections > .section:first-child,
+    .post--type-landing .post__sections > figure:first-child {
+      margin-top: 5rem; } }
+
+.page-template-template-overzichtspagina .content {
+  padding: 0;
+  background: none;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  max-width: none; }
+
+.post--full.post--type-overview .post__header {
+  max-width: 960px;
+  background: #fff;
+  -webkit-box-shadow: 4px 4px 0 rgba(0, 0, 0, 0.2);
+          box-shadow: 4px 4px 0 rgba(0, 0, 0, 0.2); }
+
+.post--full.post--type-overview .post__intro {
+  background: #148839;
+  color: #fff;
+  padding: 2rem; }
+  .post--full.post--type-overview .post__intro h1, .post--full.post--type-overview .post__intro h2, .post--full.post--type-overview .post__intro h3, .post--full.post--type-overview .post__intro h4, .post--full.post--type-overview .post__intro a {
+    color: #fff; }
+  @media (min-width: 700px) {
+    .post--full.post--type-overview .post__intro {
+      padding: 4rem 5rem; } }
 
 /* Sections */
 .section {
