@@ -9,4 +9,8 @@
 .DS_Store
 
 /.idea/
+
+/bin/deploy/
+/bin/deploy/*
+
 .idea/workspace.xml
