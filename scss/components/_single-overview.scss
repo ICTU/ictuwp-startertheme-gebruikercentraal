@@ -1,0 +1,31 @@
+.page-template-template-overzichtspagina {
+  .content {
+    padding: 0;
+    background: none;
+    box-shadow: none;
+    max-width: none;
+  }
+}
+
+
+.post--full.post--type-overview {
+  .post__header {
+    max-width: $max-width-content;
+    background: $white;
+    box-shadow: 4px 4px 0 rgba($black, 0.2);
+  }
+
+  .post__intro {
+    background: $intro-bg;
+    color: $intro-color;
+    padding: 2rem;
+
+    h1, h2, h3, h4, a {
+      color: $intro-color;
+    }
+
+    @include bp-up(md){
+      padding: 4rem 5rem;
+    }
+  }
+}

@@ -1,19 +1,31 @@
 .page-template-template-landingspagina {
-  .page__intro {
-    box-shadow: none;
+  .content {
+    padding: 0;
   }
 }
 
-.entry--type-landing {
-  .entry-content > .section {
-    &:first-child {
-      &.section--heading,
-      &.section--paragraph {
-        margin-top: 4rem;
+.post--type-landing {
+  .post__header {
+    background: $intro-bg;
+    max-width: none;
+    padding: 2rem;
 
-        @include bp-up(md) {
-          margin-top: 7rem;
-        }
+    @include bp-up(md){
+      padding: 4rem 5rem;
+    }
+
+    h1, h2, h3, a {
+      color: $intro-color;
+    }
+  }
+
+  .post__sections {
+    @include ho-padding;
+
+    > .section:first-child,
+    > figure:first-child {
+      @include bp-up(md){
+        margin-top: 5rem;
       }
     }
   }

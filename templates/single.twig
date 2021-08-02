@@ -6,10 +6,13 @@
     {% set has_comments = 'TRUE' %}
   {% endif %}
 
-
-  <article
+  {% block post_intro %}
+    {% block post_classlist %}
+      <article
       class="post post--full post--type-{{ post.post_type }} {{ is_gutenberg == 'TRUE' ? 'post--gutenberg' : 'post--plain' }}{{ has_comments ? ' ' ~ 'l-has-comments' }}"
       id="post-{{ post.ID }}">
+    {% endblock %}
+
     <header class="post__header">
 
       {% if type == 'event' %}
@@ -34,46 +37,53 @@
 
       {% endblock %}
     </header>
+  {% endblock %}
 
-    {% if not is_gutenberg %}
-    <div class="post__body">
-      {% else %}
-      <div class="post__sections">
-        {% endif %}
+{% block post_body %}
 
-        {{ post.content }}
-      </div>
+  {% if not is_gutenberg %}
+  <div class="post__body">
+  {% else %}
+  <div class="post__sections">
+  {% endif %}
 
-      {% block author %}
-        {% if post.author is not empty %}
-          {% include 'sections/section-authorbox.html.twig' %}
-        {% endif %}
-      {% endblock %}
+  {{ post.content }}
 
-      {% if related %}
-        {% include 'sections/section-related.html.twig' with {
-          'title': related.title,
-          'descr': related.desc,
-          'items': related.items
-        } %}
-      {% endif %}
+{% endblock %}
 
-      {% if downloads %}
-        {% include 'sections/section-downloads.html.twig' with {
-          'title': downloads.title,
-          'descr': downloads.desc,
-          'items': downloads.items
-        } %}
-      {% endif %}
+  {% block post_fields %}
 
-      {% if links %}
-        {% include 'sections/section-links.html.twig' with {
-          'section_title': links.title,
-          'section_descr': links.desc,
-          'items': links.items
-        } %}
-      {% endif %}
-    </div>
+    {% if related %}
+      {% include 'sections/section-related.html.twig' with {
+        'title': related.title,
+        'descr': related.desc,
+        'items': related.items
+      } %}
+    {% endif %}
+
+    {% if downloads %}
+      {% include 'sections/section-downloads.html.twig' with {
+        'title': downloads.title,
+        'descr': downloads.desc,
+        'items': downloads.items
+      } %}
+    {% endif %}
+
+    {% if links %}
+      {% include 'sections/section-links.html.twig' with {
+        'section_title': links.title,
+        'section_descr': links.desc,
+        'items': links.items
+      } %}
+    {% endif %}
+  {% endblock %}
+  </div>
+
+  {% block author %}
+    {# override in twig for post tipe if there needs to be a #}
+  {% endblock %}
+
+  </div>
 
 
   </article>

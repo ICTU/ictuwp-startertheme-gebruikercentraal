@@ -1,84 +1,30 @@
-{% block html_head_container %}
-  {% include 'html-header.twig' %}
-  {% block head %}
-  {% endblock %}
-  </head>
-{% endblock %}
+{% extends 'single.twig' %}
 
-<body class="{{ body_class }} page--type-overview" data-template="base.twig">
 
-<div class="site-container">
+  {% block post_intro %}
+<article
+    class="post post--full post--type-overview {{ is_gutenberg == 'TRUE' ? 'post--gutenberg' : 'post--plain' }}{{ has_comments ? ' ' ~ 'l-has-comments' }}"
+    id="post-{{ post.ID }}">
 
-  <ul id="{{ skiplinks_id }}">
-    <li><a href="#{{ maincontent_id }}">{{ maincontent_id_linktext }}</a></li>
-    {% if menu %}
-      <li><a href="#{{ mainnav_id }}">{{ mainnav_id_linktext }}</a></li>
-    {% endif %}
-  </ul>
+  <header class="post__header">
+    <div class="post__intro">
+      <h1 class="post__title">
+        {{ post.title }}
+      </h1>
 
-  <header class="page-header">
-
-    <div class="l-header-top">
-      {% include "partial/header-branding.twig" %}
-      {% include "header-searchform.twig" %}
-      {% include "partial/header-mobile-button.twig" %}
+      {{ post.intro }}
+      {{ intro }}
     </div>
 
-    {% include "menu.twig" with {'items': menu.get_items} %}
-
+    <div class="post__body">
+      {{ post.content }}
+    </div>
   </header>
-
-  {{ function('insert_breadcrumb') }}
-
-
-  <div class="page-content" id="maincontent" tabindex="-1">
-    <main class="content">
-
-      <article class="entry entry--type-overview entry--full">
-
-        <div class="entry-content">
-
-          <div class="page__intro">
-            <header class="entry-header">
-              <h1 class="entry-title">{{ post.title }}</h1>
-
-              {% if intro %}
-                <p>{{ intro }}</p>
-              {% endif %}
-            </header>
-
-            {% if post.content %}
-
-              <div class="entry-body">
-                {{ post.content }}
-              </div>
-
-              {# end body #}
-            {% endif %}
-
-          </div>
-
-          {% if overview %}
-
-            {% include 'sections/section-overview.html.twig' with {
-              'title': '',
-              'items': overview.items
-            } %}
-
-          {% endif %}
-
-        </div>
-      </article>
-
-    </main>
-  </div>
-
-
-  {% block footer %}
-    {% include 'footer.twig' %}
-    {{ function('wp_footer') }}
   {% endblock %}
-</div>
 
-</body>
-</html>
+
+  {% block post_body %}
+
+  {{ dump(overview) }}
+
+{% endblock %}
