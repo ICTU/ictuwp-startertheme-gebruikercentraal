@@ -25,6 +25,27 @@
 
   {% block post_body %}
 
-  {{ dump(overview) }}
+  {{ overview['id'] }}
+
+  {% if overview['items'] %}
+
+  <div class="post__overview">
+
+    <div class="grid grid--col-3">
+
+  {% for item in overview['items']|slice(0, 5) %}
+
+    {% include 'components/card.html.twig' with {
+      'type': item['type'],
+      'title': item['title'],
+      'descr': item['descr'],
+      'img': item['img']
+    } %}
+
+  {% endfor %}
+      </div>
+    </div>
+
+  {% endif %}
 
 {% endblock %}

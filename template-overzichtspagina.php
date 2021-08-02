@@ -14,6 +14,9 @@ $timber_post         = new Timber\Post();
 $context['post']     = $timber_post;
 $context['overview'] = overviewpage_get_items();
 
+$category = get_queried_object();
+$context['overview']['id'] = !empty($category->term_id) ? $category->term_id : '';
+
 // Gerelateerde content metablocks
 if ( 'ja' === get_field( 'gerelateerde_content_toevoegen' ) ) {
 
@@ -80,10 +83,9 @@ function overviewpage_get_items() {
 
 			foreach ( $items as $post ):
 
-				$item = array();
 				setup_postdata( $post );
 				$item              = prepare_card_content( $post );
-				$return['items'][] = $item;
+				$return['items'][] = $item ? $item : '';
 
 			endforeach;
 

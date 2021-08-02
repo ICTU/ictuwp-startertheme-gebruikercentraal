@@ -1472,7 +1472,6 @@ function translate_posttype($posttype) {
  */
 function prepare_card_content($postitem) {
 
-
   $item = [];
   $postid = $postitem->ID;
   $item['post_title'] = od_wbvb_custom_post_title(get_the_title($postid));
@@ -1482,9 +1481,10 @@ function prepare_card_content($postitem) {
   $item['type'] = $item['post_type']; // dit is dubbelop en overbodig en meer dan nodig, maar in de twig-files wordt afwisselend 'type' en 'post_type' gebruikt. Dat laatste is de meest correcte vorm
   $item['post_date'] = get_the_date('Y-m-d', $postid);
   $item['url'] = get_the_permalink($postid);
-  $image = get_the_post_thumbnail($postid, 'large', []);
+  $image = get_the_post_thumbnail($postid, 'small', []);
+  $item['img_url'] = get_the_post_thumbnail_url();
+  $item['img_alt'] = get_post_meta( get_post_thumbnail_id(), '_wp_attachment_image_alt', true );
   $item['img'] = $image;
-  $item['img_alt'] = $image;
   $themakleuren = [];
 
   if ('tips' == $item['post_type']) {

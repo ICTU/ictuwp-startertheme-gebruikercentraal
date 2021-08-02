@@ -89,7 +89,6 @@
 
 
 // Events
-
 .tax-tipthema {
   .page__intro {
     max-width: $max-width-content;
@@ -102,9 +101,12 @@
   }
 }
 
+// When new archive template is being used
+
 // Archive posts
 
-.archive__posts {
+.archive__posts,
+.post__overview {
   @include negate-padding;
   padding-bottom: 5rem;
   margin-top: 3rem;
