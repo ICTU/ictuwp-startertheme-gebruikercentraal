@@ -1,0 +1,135 @@
+.quote .quote__quotee {
+  border: none;
+}
+
+%quote {
+  @include icon(after, quote);
+
+  position: relative;
+  font-size: 2.2rem;
+  line-height: 3.8rem;
+  font-family: $font-primary-semi;
+  font-style: normal;
+
+  &:after {
+    font-size: 1.9rem;
+    color: $color-primary;
+    position: absolute;
+    top: 2rem;
+    left: 2rem;
+  }
+}
+
+.quote__quote {
+  @extend %quote;
+
+  box-shadow: 4px 4px 0 rgba($black, 0.15);
+  margin: 0;
+  padding: 2rem 2rem 2.5rem 6rem;
+  border: .1rem solid $border-color;
+  position: relative;
+  z-index: 5;
+
+
+  &:before {
+    @include square(4rem);
+
+    content: " ";
+    display: block;
+    position: absolute;
+    bottom: 0;
+    margin-bottom: -39px;
+    left: 20px;
+    background: url('../../assets/images/b_example.svg') top left no-repeat;
+    background-size: 100% auto;
+    border: none;
+  }
+
+  @include bp-down(sm){
+    &:before {
+      transform: scaleX(-1);
+      left: auto;
+      right: 20px;
+    }
+  }
+
+  @include bp-up(md) {
+    padding-right: 3rem;
+  }
+}
+
+.l-author-wrapper {
+  display: flex;
+
+  @include bp-down(sm){
+    margin: 4rem 0 0 0;
+  }
+  @include bp-up(sm){
+    margin: 2rem 0 0 8rem;
+  }
+}
+
+.quote__image {
+  max-width: 6rem;
+  height: auto;
+  margin-right: 3rem;
+  box-shadow: $base-box-shadow;
+}
+
+
+.quote__quotee {
+  font-size: 2.2rem;
+  line-height: 2.8rem;
+  font-family: $font-primary-semi;
+  padding: 0;
+}
+
+.quote__instance {
+  display: block;
+  font-size: $font-small;
+  color: $meta-data;
+  font-family: $font-primary;
+}
+
+.entry-body > blockquote, // voor opmaak uit de oude editor
+.section--paragraph > blockquote {
+  @extend %quote;
+
+  padding-left: 4.2rem;
+  margin: 0;
+
+  p:first-child {
+    margin-top: 0;
+  }
+
+  &:after {
+    left: 0;
+    top: 0;
+  }
+
+  cite {
+    font-size: $font-small;
+    color: $meta-data;
+    font-family: $font-primary;
+    position: relative;
+    padding-left: 3.6rem;
+    margin-top: 1rem;
+    display: block;
+
+    &:before {
+      content: " ";
+      display: block;
+      height: 0.2rem;
+      background: $color-primary;
+      width: 2rem;
+      float: left;
+      position: absolute;
+      left: 0;
+      top: 1.5rem;
+    }
+  }
+}
+// voor opmaak uit de oude editor
+.entry-body > p + blockquote {
+  margin-top: 3rem;
+}

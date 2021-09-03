@@ -162,8 +162,9 @@
   font-family: $font-primary-bold;
   color: $white;
   border: none;
+  font-size: 1.4rem;
 
-  .btn--icon {
+  .btn__icon {
     @include icon(before, menu);
     @include icon(after, cross);
     display: block;
@@ -171,7 +172,7 @@
     overflow: hidden;
     line-height: 3rem;
     position: relative;
-    margin-right: 1.5rem;
+    margin-right: 0.5rem;
 
     &:before,
     &:after {
@@ -194,7 +195,7 @@
     }
   }
 
-  &.active .btn--icon {
+  &.active .btn__icon {
     &:after {
       opacity: 1;
       transform: rotate(0);

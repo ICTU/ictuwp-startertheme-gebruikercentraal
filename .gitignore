@@ -14,4 +14,3 @@
 /bin/deploy/*
 
 .idea/workspace.xml
-yarn.lock
