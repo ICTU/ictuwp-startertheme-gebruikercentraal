@@ -85,9 +85,6 @@ $context['author']['image']    = ( $image ? $image['sizes']['medium'] : '' );
 $context['author']['descr']    = ( $cat->description ? $cat->description : '' );
 $context['author']['contact']  = ( $contact ? $contact : '' );
 
-// todo: social media meuk voor een tipgever, ooit.
-//$context['author']['social']['twitter']  = 'paulvanbuuren';
-
 // Set overview
 $fullname = explode( ' ', trim( $archive->name ) );
 
