@@ -1469,12 +1469,10 @@ function prepare_card_content( $postitem ) {
 			$item['toptiptekst'] = _x( 'Toptip', 'Toptiptekst bij tip', 'gctheme' );
 		}
 
+		// Set term name
 		$taxonomie = get_the_terms( $postid, GC_TIPTHEMA );
 
-		if ( isset( $themakleuren[ $taxonomie[0]->term_id ] ) ) {
-			$item['category'] = $themakleuren[ $taxonomie[0]->term_id ];
-		}
-		$item['cat'] = $item['category']; // dit is dubbelop en overbodig en meer dan nodig, maar in de twig-files wordt afwisselend 'cat' en 'category' gebruikt. De meest correcte vorm is: 'tipthema'
+    $item['category'] = !empty($themakleuren[$taxonomie[0]->term_id]) ? $themakleuren[$taxonomie[0]->term_id] : '';
 
 	} elseif ( 'post' == $item['post_type'] ) {
 
