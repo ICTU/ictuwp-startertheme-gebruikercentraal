@@ -64,30 +64,6 @@ display tipgever info or
 
         {% endif %}
 
-        {% if author.social %}
-
-          <ul class="social-links">
-            {% if author.social.linkedin %}
-              <li class="social-links__item">
-                <a href="{{ author.social.linkedin }}"
-                   class="link link--social linkedin">{{ author.social.linkedin.linktext }}</a>
-              </li>
-            {% endif %}
-            {% if author.social.twitter %}
-              <li class="social-links__item">
-                <a href="{{ author.social.twitter }}" class="link link--social twitter"
-                   title="Twitter van Gebruiker Centraal Auteur">Twitter
-                  van Gebruiker Centraal Auteur</a></li>
-            {% endif %}
-            {% if author.social.satansboek %}
-              <li class="social-links__item">
-                <a href="{{ author.social.satansboek }}" class="link link--social facebook"
-                   title="Facebook van Gebruiker Centraal Auteur">Facebook
-                  van Gebruiker Centraal Auteur</a></li>
-            {% endif %}
-          </ul>
-
-        {% endif %}
       </div>
 
     </section>
