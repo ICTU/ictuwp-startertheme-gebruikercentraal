@@ -54,16 +54,16 @@
   background-color: #c42c76; }
 
 .has-gc-orange-color {
-  color: #f99d1c; }
+  color: #AD6500; }
 
 .has-gc-orange-background-color {
-  background-color: #f99d1c; }
+  background-color: #AD6500; }
 
 .has-gc-cyan-color {
-  color: #00b4ac; }
+  color: #00857E; }
 
 .has-gc-cyan-background-color {
-  background-color: #00b4ac; }
+  background-color: #00857E; }
 
 .has-inc-orange-color {
   color: #D94721; }
@@ -124,8 +124,8 @@
  */
 @font-face {
   font-family: "icons";
-  src: url("/wp-content/themes/ictuwp-theme-gc2020/assets/fonts/iconfont/gc-iconfont-6ej5ld.eot");
-  src: url("/wp-content/themes/ictuwp-theme-gc2020/assets/fonts/iconfont/gc-iconfont-6ej5ld.eot?#iefix") format("eot"), url("/wp-content/themes/ictuwp-theme-gc2020/assets/fonts/iconfont/gc-iconfont-6ej5ld.woff") format("woff"), url("/wp-content/themes/ictuwp-theme-gc2020/assets/fonts/iconfont/gc-iconfont-6ej5ld.ttf") format("truetype"), url("/wp-content/themes/ictuwp-theme-gc2020/assets/fonts/iconfont/gc-iconfont-6ej5ld.svg#icons") format("svg");
+  src: url("/wp-content/themes/ictuwp-theme-gc2020/assets/fonts/iconfont/gc-iconfont-gfoh8.eot");
+  src: url("/wp-content/themes/ictuwp-theme-gc2020/assets/fonts/iconfont/gc-iconfont-gfoh8.eot?#iefix") format("eot"), url("/wp-content/themes/ictuwp-theme-gc2020/assets/fonts/iconfont/gc-iconfont-gfoh8.woff") format("woff"), url("/wp-content/themes/ictuwp-theme-gc2020/assets/fonts/iconfont/gc-iconfont-gfoh8.ttf") format("truetype"), url("/wp-content/themes/ictuwp-theme-gc2020/assets/fonts/iconfont/gc-iconfont-gfoh8.svg#icons") format("svg");
   font-weight: normal;
   font-style: normal; }
 

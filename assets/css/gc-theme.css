@@ -1182,7 +1182,7 @@ Gutenberg corrections
     padding: 1rem 1.5rem;
     font-family: "montserratregular", Helvetica, Arial, sans-serif;
     width: 100%;
-    border: 0.1rem solid #D1DFE3;
+    border: 0.1rem solid #587F88;
     outline: none;
     background: none;
     color: #fff;
@@ -1240,7 +1240,7 @@ Gutenberg corrections
     left: 0;
     top: 0;
     right: 0;
-    background: #004152; } }
+    background: #00303d; } }
 
 @media (max-width: 999px) {
   .l-header-nav {
@@ -6740,3 +6740,5 @@ browser exceptions
   .header-widget-area {
     padding-top: 1rem;
     width: 30%; } }
+
+/*# sourceMappingURL=gc-theme.css.map */

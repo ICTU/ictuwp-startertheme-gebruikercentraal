@@ -1288,7 +1288,7 @@ msgstr ""
 
 #: templates/author.twig:67
 msgid "Phone number: "
-msgstr ""
+msgstr "Telefoonnummer"
 
 #: templates/author.twig:70
 msgid "Email adres: "

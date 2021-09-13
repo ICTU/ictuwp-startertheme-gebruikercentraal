@@ -34,7 +34,7 @@
 
   {{ function('insert_breadcrumb') }}
 
-  
+
   <div class="page-content" id="maincontent" tabindex="-1">
     <main class="content">
       {% block archive_intro %}
@@ -64,7 +64,7 @@
           </div>
           <div class="author__contact-info">
             {% if author.publiek_telefoonnummer %}
-            <a href="tel:{{author.publiek_telefoonnummer}}" class="link link--contact link--phone" title="{{ __('Phone number: ', 'gctheme') }} {{author.display_name}}" itemprop="phone">{{author.publiek_telefoonnummer}}</a>
+            <a href="tel:{{author.publiek_telefoonnummer}}" class="link link--contact link--phone" title="Telefoonnummer van {{author.display_name}}" itemprop="phone">{{author.publiek_telefoonnummer}}</a>
             {% endif %}
             {% if author.publiek_mailadres %}
             <a href="{{author.publiek_mailadres}}" class="link link--contact link--email" title="{{ __('Email adres: ', 'gctheme') }} {{author.display_name}}" itemprop="email">{{author.publiek_mailadres}}</a>
