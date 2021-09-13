@@ -25,7 +25,7 @@
   margin-right: auto;
 
   @include bp-down(nav) {
-    margin-right: 1rem;
+    padding-right: 1rem;
 
 
     span {
@@ -141,7 +141,6 @@
       outline: none;
       background: none;
       color: $white;
-      border-color: $gc_greyblue;
       height: 4rem;
       font-size: $font_small;
 

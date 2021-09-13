@@ -259,6 +259,7 @@ class GebruikerCentraalTheme extends Timber\Site {
 		$context['site_name']               = ( get_bloginfo( 'name' ) ? get_bloginfo( 'name' ) : 'Gebruiker Centraal' );
 		$context['site_linktext']           = _x( ", to the homepage", 'link op logo', 'gctheme' );
 		$context['alt_logo']                = _x( "Logo", 'Alt-tekst op logo', 'gctheme' );
+		$context['sprite']                  = get_stylesheet_directory_uri() . '/assets/images/sprites/gc/defs/svg/sprite.defs.svg';
 		$context['sprite_od']               = get_stylesheet_directory_uri() . '/assets/images/sprites/optimaal-digitaal/defs/svg/sprite.defs.svg';
 		$context['sprite_steps']            = get_stylesheet_directory_uri() . '/assets/images/sprites/stepchart/defs/svg/sprite.defs.svg';
 		$context['footer_widget_left']      = Timber::get_widgets( 'footer_widget_left' );

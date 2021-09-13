@@ -114,14 +114,15 @@
         margin-left: 2rem;
       }
     }
-  }
 
-  &--phone {
-    @include icon(before, phone);
-  }
+    .icon {
+      @include square(2rem);
 
-  &--email {
-    @include icon(before, mail);
+      fill: $intro-color;
+      float: left;
+      margin-top: 0.5rem;
+      margin-right: 1.5rem;
+    }
   }
 
   &--arrow {

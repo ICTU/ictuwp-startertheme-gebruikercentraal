@@ -44,99 +44,90 @@
           author.auteursfoto_url ? 'l-with-image' : 'l-no-image'
 
         ] %}
-      <section class="{{ styles|join(' ') }}" itemprop="author" itemtype="http://schema.org/Person">
-        {% if author.auteursfoto_url %}
-        <figure class="author__image">
-          <img src="{{author.auteursfoto_url}}" class="author-photo photo avatar" alt="{{author.display_name}}">
-        </figure>
-        {% endif %}
-        <div class="author__content">
-          <div class="l-author-header">
-            <h1 class="page__title">{{author.display_name}}</h1>
-            {% if author.functiebeschrijving %}
-            <div class="meta-data">
-              <dl class="meta-data__list">
-                <dt class="visually-hidden">{{ __('Job function', 'gctheme') }}</dt>
-                <dd class="meta-data__item functie">{{author.functiebeschrijving}}</dd>
-              </dl>
+        <section class="{{ styles|join(' ') }}" itemprop="author" itemtype="http://schema.org/Person">
+          {% if author.auteursfoto_url %}
+            <figure class="author__image">
+              <img src="{{ author.auteursfoto_url }}" class="author-photo photo avatar" alt="{{ author.display_name }}">
+            </figure>
+          {% endif %}
+          <div class="author__content">
+            <div class="l-author-header">
+              <h1 class="page__title">{{ author.display_name }}</h1>
+              {% if author.functiebeschrijving %}
+                <div class="meta-data">
+                  <dl class="meta-data__list">
+                    <dt class="visually-hidden">{{ __('Job function', 'gctheme') }}</dt>
+                    <dd class="meta-data__item functie">{{ author.functiebeschrijving }}</dd>
+                  </dl>
+                </div>
+              {% endif %}
             </div>
-            {% endif %}
-          </div>
-          <div class="author__contact-info">
-            {% if author.publiek_telefoonnummer %}
-            <a href="tel:{{author.publiek_telefoonnummer}}" class="link link--contact link--phone" title="Telefoonnummer van {{author.display_name}}" itemprop="phone">{{author.publiek_telefoonnummer}}</a>
-            {% endif %}
-            {% if author.publiek_mailadres %}
-            <a href="{{author.publiek_mailadres}}" class="link link--contact link--email" title="{{ __('Email adres: ', 'gctheme') }} {{author.display_name}}" itemprop="email">{{author.publiek_mailadres}}</a>
-            {% endif %}
-            <ul class="social-links">
-              {% for channel in socialmediachannels %}
-                {% include 'components/social-links__author.twig' with {
-                  'name' : channel.name,
-                  'link' : channel.link,
-                  'author' : author.display_name,
+            <div class="author__contact-info">
+              {% if author.publiek_telefoonnummer %}
+                <a href="tel:{{ author.publiek_telefoonnummer }}" class="link link--contact link--phone"
+                   title="Telefoonnummer van {{ author.display_name }}"
+                   itemprop="phone">{{ author.publiek_telefoonnummer }}</a>
+              {% endif %}
+              {% if author.publiek_mailadres %}
+                <a href="{{ author.publiek_mailadres }}" class="link link--contact link--email"
+                   title="{{ __('Email adres: ', 'gctheme') }} {{ author.display_name }}"
+                   itemprop="email">{{ author.publiek_mailadres }}</a>
+              {% endif %}
+              <ul class="social-links">
+                {% for channel in socialmediachannels %}
+                  {% include 'components/social-links__author.twig' with {
+                    'name' : channel.name,
+                    'link' : channel.link,
+                    'author' : author.display_name,
                   } %}
 
-              {% endfor %}
-            </ul>
+                {% endfor %}
+              </ul>
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
       {% endblock %}
 
-        {% block archive_overview %}
+      {% block archive_overview %}
 
-          <section class="section section--overview-list l-item-count-3">
-            <div class="l-section-content">
-              <div class="l-section-top">
-                {% if descr %}
-                  <h2 class="section__title">
-                    {{ descr }}
-                  </h2>
-                {% endif %}
-              </div>
-              <div class="overview overview--list">
-                {% for post in items %}
-                  {% include 'components/teaser.html.twig' with {
-                    'title' : post.title,
-                    'headerlevel' : 'h3',
-                    'descr' : post.descr,
-                    'img' : post.img,
-                    'type' : post.type,
-                    'meta': post.meta,
-                    'category': post.category,
-                    'post_date': ( post.post_date ?? '' ),
-                    'url': post.url
-                  } %}
-                {% endfor %}
-
-              </div>
+        <section class="section section--overview-list l-item-count-3">
+          <div class="l-section-content">
+            <div class="l-section-top">
+              {% if descr %}
+                <h2 class="section__title">
+                  {{ descr }}
+                </h2>
+              {% endif %}
             </div>
-          </section>
-        {% endblock %}
+            <div class="overview overview--list">
+              {% for post in items %}
+                {% include 'components/teaser.html.twig' with {
+                  'title' : post.title,
+                  'headerlevel' : 'h3',
+                  'descr' : post.descr,
+                  'img' : post.img,
+                  'type' : post.type,
+                  'meta': post.meta,
+                  'category': post.category,
+                  'post_date': ( post.post_date ?? '' ),
+                  'url': post.url
+                } %}
+              {% endfor %}
 
-
-
-
-
+            </div>
+          </div>
+        </section>
+      {% endblock %}
 
       {% block content %}
         <article class="entry entry--type-overview entry--full">
 
           <div class="entry-content">
-
-
-
-
-
-
             {% block pagination %}
-
               {% include 'partial/pagination.twig' with { pagination: posts.pagination({show_all: false, mid_size: 3, end_size: 2}) } %}
-
             {% endblock %}
-
-
+          </div>
+        </article>
       {% endblock %}
     </main>
   </div>

@@ -49,19 +49,6 @@
     }
   }
 
-  &--gebruiksgemak {
-    background: $gc_dark_purple;
-
-    &:before {
-      background: $gc_dark_purple_darker;
-    }
-
-    > a:hover, > a:focus, > a:active {
-      background: darken($gc_dark_purple, 5%);
-      border-color: $gc_dark_purple_darker;
-    }
-  }
-
   &--informatieveiligheid {
     background: $gc_pink;
 
@@ -78,25 +65,43 @@
   &--procesaanpak {
     background: $gc_a11y_cyan_lg;
 
-    &:before {
-      background: $gc_cyan;
+    &:before,
+    .tipkaart__toptip:before {
+      background: darken($gc_a11y-cyan-lg, 3%);
+    }
+
+    &:hover, &:focus {
+      &:before,
+      .tipkaart__toptip:before {
+        background: darken($gc_a11y-cyan-lg, 5%);
+      }
     }
 
     > a:hover, > a:focus, > a:active {
-      background: darken($gc_cyan, 5%);
+      background: darken($gc_cyan, 3%);
       border-color: $gc_cyan;
     }
+
+
   }
 
   &--kanaalsturing {
-    background: $gc_a11y_orange_lg;
+    background: $duivelsdrek-oranje;
 
-    &:before {
-      background: $gc_orange;
+    &:before,
+    .tipkaart__toptip:before {
+      background: darken($duivelsdrek-oranje, 5%);
+    }
+
+    &:hover, &:focus {
+      &:before,
+      .tipkaart__toptip:before {
+        background: darken($duivelsdrek-oranje, 10%);
+      }
     }
 
     > a:hover, > a:focus, > a:active {
-      background: darken($gc_a11y_orange_lg, 5%);
+      background: darken($duivelsdrek-oranje, 2%);
       border-color: $gc_orange;
     }
   }
@@ -155,8 +160,6 @@
   }
 }
 
-
-
 .tipkaart__toptip {
   position: absolute;
   right: 0;
@@ -167,7 +170,7 @@
   overflow: hidden;
 
   &:after,
-  &:before{
+  &:before {
     content: " ";
     display: block;
     position: absolute;
@@ -194,16 +197,8 @@
       background: $gc_a11y_green;
     }
 
-    .tipkaart--procesaanpak & {
-      background: $gc_cyan;
-    }
-
     .tipkaart--gebruiksgemak & {
       background: $gc_dark_purple_darker;
-    }
-
-    .tipkaart--kanaalsturing & {
-      background: $gc_orange;
     }
 
     .tipkaart--inclusie & {
@@ -219,12 +214,6 @@
     background: url('/wp-content/themes/ictuwp-theme-gc2020/assets/images/ico-star.svg') center center no-repeat;
   }
 }
-
-
-
-
-
-
 
 .tipkaart__nummer {
   font-family: $font_secondary;

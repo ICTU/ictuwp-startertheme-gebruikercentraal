@@ -1,5 +1,12 @@
-{# template for an icon  #}
-<svg class="btn__icon icon icon--stepchart" focusable="false" alt="{{ alt ? 'Icoon' }}">
+{# template for an icon #}
+
+{% set classList = [
+  'icon',
+  size ? 'icon--' ~ size : 'icon--small',
+  modifier ? 'icon--' ~ modifier
+] %}
+
+<svg class="{{ classList|join(' ')|trim(' ', 'right') }}" focusable="false" alt="{{ alt ? alt : 'Icoon' }}">
   <use xmlns:xlink="http://www.w3.org/1999/xlink"
-       xlink:href="/wp-content/themes/ictuwp-theme-gc2020/assets/images/sprits/svg/{{ flavor ? flavor : 'gc' }}/defs/svg/sprite.defs.svg#{{ icon }}"></use>
+       xlink:href="{{ sprite_url ? sprite_url : sprite }}#{{ icon }}"></use>
 </svg>
