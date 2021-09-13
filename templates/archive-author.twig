@@ -35,29 +35,28 @@ display tipgever info or
           <div class="author__contact-info">
 
             {% for key, link in author.contact %}
-              {% set url = link %}
 
               {% if key == 'email' %}
-                {% set url = 'mailto:' ~ link %}
-                {% set title = 'E-mail adres' %}
                 {% set icon = 'mail' %}
-                {% set iconTitle = 'Icoon envelop' %}
+                {% set iconTitle = 'mail' %}
               {% elseif key == 'phone' %}
-                {% set url = 'tel:' ~ link %}
-                {% set title = 'Telefoonnummer' %}
                 {% set icon = key %}
-                {% set iconTitle = 'Icoon telefoon' %}
+                {% set iconTitle = 'telefoon' %}
               {% endif %}
 
-              <a href="{{ url }}" class="link link--contact link--{{ key }}"
-                 title="{{ title }} van {{ author.title }}">
+              {% if link['href'] and link['linktext'] %}
 
-                {% include 'partial/icon.html.twig' with {
-                  'icon': icon,
-                  'alt': iconTitle,
-                } %}
+                <a href="{{ link['href'] }}" class="link link--contact link--{{ key }}"
+                   aria-label="{{ link['arialabel'] }}">
 
-                {{ link }}</a>
+                  {% include 'partial/icon.html.twig' with {
+                    'icon': icon,
+                    'alt': iconTitle
+                  } %}
+
+                  {{ link['linktext'] }}</a>
+
+              {% endif %}
 
             {% endfor %}
 

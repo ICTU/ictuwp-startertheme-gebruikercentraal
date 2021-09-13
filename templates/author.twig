@@ -65,7 +65,6 @@
             <div class="author__contact-info">
               {% if author.publiek_telefoonnummer %}
                 <a href="tel:{{ author.publiek_telefoonnummer }}" class="link link--contact link--phone"
-                   title="Telefoonnummer van {{ author.display_name }}"
                    itemprop="phone">{{ author.publiek_telefoonnummer }}</a>
               {% endif %}
               {% if author.publiek_mailadres %}
