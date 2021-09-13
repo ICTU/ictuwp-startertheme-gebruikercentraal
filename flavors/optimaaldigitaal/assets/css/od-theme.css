@@ -179,12 +179,16 @@ a {
 /* -------------------------------------------------------------------------
 enkele uitzonderingen voor hover over links en het weghalen van de underline
 zie: https://trello.com/c/Xmmyu8ho/363-styling-van-hover-over-links
-suggesties welkom
+
 */
-.entry-content a:not(.tipkaart__link):hover, .entry-content a:not(.tipkaart__link):focus {
+.section--paragraph a:not(.tipkaart__link):hover, .section--paragraph a:not(.tipkaart__link):focus,
+.entry-body a:not(.tipkaart__link):hover,
+.entry-body a:not(.tipkaart__link):focus {
   text-decoration: underline; }
 
-.entry-content a:not(.tipkaart__link):not(.btn):not(.arrow-link):not(.link--arrow):hover, .entry-content a:not(.tipkaart__link):not(.btn):not(.arrow-link):not(.link--arrow):focus {
+.section--paragraph a:not(.tipkaart__link):not(.btn):not(.arrow-link):not(.link--arrow):hover, .section--paragraph a:not(.tipkaart__link):not(.btn):not(.arrow-link):not(.link--arrow):focus,
+.entry-body a:not(.tipkaart__link):not(.btn):not(.arrow-link):not(.link--arrow):hover,
+.entry-body a:not(.tipkaart__link):not(.btn):not(.arrow-link):not(.link--arrow):focus {
   color: #BA4F0C; }
 
 .meta-data__list a:hover, .meta-data__list a:focus {
@@ -1080,7 +1084,7 @@ Gutenberg corrections
   margin-right: auto; }
   @media (max-width: 999px) {
     .branding {
-      margin-right: 1rem; }
+      padding-right: 1rem; }
       .branding span {
         margin: -1px;
         padding: 0;
@@ -1185,11 +1189,10 @@ Gutenberg corrections
     padding: 1rem 1.5rem;
     font-family: "montserratregular", Helvetica, Arial, sans-serif;
     width: 100%;
-    border: 0.1rem solid #577F87;
+    border: 0.1rem solid #587F88;
     outline: none;
     background: none;
     color: #fff;
-    border-color: #52757e;
     height: 4rem;
     font-size: 1.4rem; }
     .search-form input[type='search']::-webkit-input-placeholder {
@@ -1243,7 +1246,7 @@ Gutenberg corrections
     left: 0;
     top: 0;
     right: 0;
-    background: #004152; } }
+    background: #00303d; } }
 
 @media (max-width: 999px) {
   .l-header-nav {
@@ -1658,6 +1661,9 @@ h1 {
     .breadcrumb {
       padding-right: 3rem;
       padding-left: 3rem; } }
+  @media (max-width: 999px) {
+    .breadcrumb {
+      background: #004152; } }
   .breadcrumb > nav {
     max-width: 1280px;
     margin-left: auto;
@@ -1908,8 +1914,8 @@ body:not(.single-event) {
         margin-left: -3rem;
         margin-right: -3rem; } }
   .archive__posts .grid {
-    padding-left: 1.5rem;
-    padding-right: 1.5rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
     max-width: 1280px;
     margin-left: auto;
     margin-right: auto; }
@@ -2412,10 +2418,7 @@ body:not(.single-event) {
   margin-left: auto;
   margin-right: auto;
   color: #fff;
-  padding-top: 3rem;
-  padding-bottom: 3rem;
-  padding-right: 3rem;
-  padding-left: 3rem;
+  padding: 3rem 2rem;
   margin-top: 3rem; }
   .event-bookings:before {
     content: " ";
@@ -2435,6 +2438,9 @@ body:not(.single-event) {
     color: #fff; }
     .event-bookings a:hover, .event-bookings a:focus {
       color: #D1DFE3; }
+  .event-bookings input[type='submit'] {
+    -webkit-box-shadow: 4px 4px 0 #00313D;
+            box-shadow: 4px 4px 0 #00313D; }
   @media (min-width: 700px) {
     .event-bookings {
       margin-top: 8rem;
@@ -2890,16 +2896,12 @@ body:not(.single-event) {
     background: #AD6500; }
   .tip--kanaalsturing .research-block,
   .tip--kanaalsturing .research__conclusion {
-    border: 0.1rem solid #AD6500; }
+    border: 0.1rem solid #e08300; }
   .tip--kanaalsturing .research-block__title {
-    border-bottom: 0.1rem solid #AD6500; }
+    border-bottom: 0.1rem solid #e08300; }
   .tip--kanaalsturing hr {
     border: none;
-    border-top: 0.1rem solid #AD6500; }
-  .tip--kanaalsturing .research__content {
-    color: #004152; }
-    .tip--kanaalsturing .research__content a, .tip--kanaalsturing .research__content h2, .tip--kanaalsturing .research__content h3 {
-      color: #004152; }
+    border-top: 0.1rem solid #e08300; }
   .tip--inclusie .entry-header {
     background: #D94721; }
     .tip--inclusie .entry-header:after {
@@ -3965,6 +3967,8 @@ body:not(.single-event) {
   color: #fff; }
   .author--full h1, .author--full h2, .author--full h3, .author--full a {
     color: #fff; }
+  .author--full a:focus, .author--full a:hover {
+    color: #fff; }
   .author--full .author__function {
     font-size: 1.6rem;
     line-height: 2.4rem;
@@ -4757,13 +4761,6 @@ body:not(.single-event) {
     .tipkaart--gebruiksgemak > a:hover, .tipkaart--gebruiksgemak > a:focus, .tipkaart--gebruiksgemak > a:active {
       background: #402261;
       border-color: #2D114E; }
-  .tipkaart--gebruiksgemak {
-    background: #4c2974; }
-    .tipkaart--gebruiksgemak:before {
-      background: #2D114E; }
-    .tipkaart--gebruiksgemak > a:hover, .tipkaart--gebruiksgemak > a:focus, .tipkaart--gebruiksgemak > a:active {
-      background: #402261;
-      border-color: #2D114E; }
   .tipkaart--informatieveiligheid {
     background: #c42c76; }
     .tipkaart--informatieveiligheid:before {
@@ -4773,17 +4770,27 @@ body:not(.single-event) {
       border-color: #A20E56; }
   .tipkaart--procesaanpak {
     background: #00857E; }
-    .tipkaart--procesaanpak:before {
-      background: #00857E; }
+    .tipkaart--procesaanpak:before,
+    .tipkaart--procesaanpak .tipkaart__toptip:before {
+      background: #007670; }
+    .tipkaart--procesaanpak:hover:before,
+    .tipkaart--procesaanpak:hover .tipkaart__toptip:before, .tipkaart--procesaanpak:focus:before,
+    .tipkaart--procesaanpak:focus .tipkaart__toptip:before {
+      background: #006c66; }
     .tipkaart--procesaanpak > a:hover, .tipkaart--procesaanpak > a:focus, .tipkaart--procesaanpak > a:active {
-      background: #006c66;
+      background: #007670;
       border-color: #00857E; }
   .tipkaart--kanaalsturing {
     background: #AD6500; }
-    .tipkaart--kanaalsturing:before {
-      background: #AD6500; }
+    .tipkaart--kanaalsturing:before,
+    .tipkaart--kanaalsturing .tipkaart__toptip:before {
+      background: #945600; }
+    .tipkaart--kanaalsturing:hover:before,
+    .tipkaart--kanaalsturing:hover .tipkaart__toptip:before, .tipkaart--kanaalsturing:focus:before,
+    .tipkaart--kanaalsturing:focus .tipkaart__toptip:before {
+      background: #7a4700; }
     .tipkaart--kanaalsturing > a:hover, .tipkaart--kanaalsturing > a:focus, .tipkaart--kanaalsturing > a:active {
-      background: #945600;
+      background: #a35f00;
       border-color: #AD6500; }
   .tipkaart--samenwerking {
     background: #0095da; }
@@ -4853,12 +4860,8 @@ body:not(.single-event) {
       background: #007BB0; }
     .tipkaart--commitment .tipkaart__toptip:before {
       background: #148839; }
-    .tipkaart--procesaanpak .tipkaart__toptip:before {
-      background: #00857E; }
     .tipkaart--gebruiksgemak .tipkaart__toptip:before {
       background: #2D114E; }
-    .tipkaart--kanaalsturing .tipkaart__toptip:before {
-      background: #AD6500; }
     .tipkaart--inclusie .tipkaart__toptip:before {
       background: #c73d19; }
   .tipkaart__toptip:after {
@@ -4871,7 +4874,7 @@ body:not(.single-event) {
 .tipkaart__nummer {
   font-family: "league_gothicregular", Impact, Helvetica, Arial, sans-serif;
   text-transform: uppercase;
-  font-size: 2.2rem;
+  font-size: 2.4rem;
   padding-top: 1rem;
   padding-bottom: 1rem; }
   .tipkaart__nummer:after, .tipkaart__nummer:before {
@@ -4887,8 +4890,8 @@ body:not(.single-event) {
     margin-left: 8px; }
 
 .tipkaart__title {
-  font-size: 2.4rem;
-  line-height: 3.2rem;
+  font-size: 2.6rem;
+  line-height: 3.4rem;
   margin: 0;
   padding: 0;
   word-break: break-word;
@@ -5321,18 +5324,13 @@ body:not(.single-event) {
   @media (min-width: 560px) {
     .link--contact + .link--contact {
       margin-left: 2rem; } }
-
-.link--phone:before {
-  content: "";
-  font-style: normal;
-  font-weight: normal;
-  font-family: 'icons'; }
-
-.link--email:before {
-  content: "";
-  font-style: normal;
-  font-weight: normal;
-  font-family: 'icons'; }
+  .link--contact .icon {
+    width: 2rem;
+    height: 2rem;
+    fill: #fff;
+    float: left;
+    margin-top: 0.5rem;
+    margin-right: 1.5rem; }
 
 .link--arrow {
   position: relative;
@@ -7330,5 +7328,3 @@ browser exceptions
   .header-widget-area {
     padding-top: 1rem;
     width: 30%; } }
-
-/*# sourceMappingURL=od-theme.css.map */

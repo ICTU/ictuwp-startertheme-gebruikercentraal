@@ -81,8 +81,6 @@
       background: darken($gc_cyan, 3%);
       border-color: $gc_cyan;
     }
-
-
   }
 
   &--kanaalsturing {
@@ -218,7 +216,7 @@
 .tipkaart__nummer {
   font-family: $font_secondary;
   text-transform: uppercase;
-  font-size: 2.2rem;
+  font-size: 2.4rem;
   padding-top: 1rem;
   padding-bottom: 1rem;
 
@@ -241,8 +239,8 @@
 }
 
 .tipkaart__title {
-  font-size: 2.4rem;
-  line-height: 3.2rem;
+  font-size: 2.6rem;
+  line-height: 3.4rem;
   margin: 0;
   padding: 0;
   word-break: break-word;
