@@ -802,6 +802,8 @@
   color: #fff; }
   .author--full h1, .author--full h2, .author--full h3, .author--full a {
     color: #fff; }
+  .author--full a:focus, .author--full a:hover {
+    color: #fff; }
   .author--full .author__function {
     font-size: 1.6rem;
     line-height: 2.4rem;
@@ -1594,13 +1596,6 @@
     .tipkaart--gebruiksgemak > a:hover, .tipkaart--gebruiksgemak > a:focus, .tipkaart--gebruiksgemak > a:active {
       background: #402261;
       border-color: #2D114E; }
-  .tipkaart--gebruiksgemak {
-    background: #4c2974; }
-    .tipkaart--gebruiksgemak:before {
-      background: #2D114E; }
-    .tipkaart--gebruiksgemak > a:hover, .tipkaart--gebruiksgemak > a:focus, .tipkaart--gebruiksgemak > a:active {
-      background: #402261;
-      border-color: #2D114E; }
   .tipkaart--informatieveiligheid {
     background: #c42c76; }
     .tipkaart--informatieveiligheid:before {
@@ -1610,17 +1605,27 @@
       border-color: #A20E56; }
   .tipkaart--procesaanpak {
     background: #00857E; }
-    .tipkaart--procesaanpak:before {
-      background: #00857E; }
+    .tipkaart--procesaanpak:before,
+    .tipkaart--procesaanpak .tipkaart__toptip:before {
+      background: #007670; }
+    .tipkaart--procesaanpak:hover:before,
+    .tipkaart--procesaanpak:hover .tipkaart__toptip:before, .tipkaart--procesaanpak:focus:before,
+    .tipkaart--procesaanpak:focus .tipkaart__toptip:before {
+      background: #006c66; }
     .tipkaart--procesaanpak > a:hover, .tipkaart--procesaanpak > a:focus, .tipkaart--procesaanpak > a:active {
-      background: #006c66;
+      background: #007670;
       border-color: #00857E; }
   .tipkaart--kanaalsturing {
     background: #AD6500; }
-    .tipkaart--kanaalsturing:before {
-      background: #AD6500; }
+    .tipkaart--kanaalsturing:before,
+    .tipkaart--kanaalsturing .tipkaart__toptip:before {
+      background: #945600; }
+    .tipkaart--kanaalsturing:hover:before,
+    .tipkaart--kanaalsturing:hover .tipkaart__toptip:before, .tipkaart--kanaalsturing:focus:before,
+    .tipkaart--kanaalsturing:focus .tipkaart__toptip:before {
+      background: #7a4700; }
     .tipkaart--kanaalsturing > a:hover, .tipkaart--kanaalsturing > a:focus, .tipkaart--kanaalsturing > a:active {
-      background: #945600;
+      background: #a35f00;
       border-color: #AD6500; }
   .tipkaart--samenwerking {
     background: #0095da; }
@@ -1690,12 +1695,8 @@
       background: #007BB0; }
     .tipkaart--commitment .tipkaart__toptip:before {
       background: #148839; }
-    .tipkaart--procesaanpak .tipkaart__toptip:before {
-      background: #00857E; }
     .tipkaart--gebruiksgemak .tipkaart__toptip:before {
       background: #2D114E; }
-    .tipkaart--kanaalsturing .tipkaart__toptip:before {
-      background: #AD6500; }
     .tipkaart--inclusie .tipkaart__toptip:before {
       background: #c73d19; }
   .tipkaart__toptip:after {
@@ -1708,7 +1709,7 @@
 .tipkaart__nummer {
   font-family: "league_gothicregular", Impact, Helvetica, Arial, sans-serif;
   text-transform: uppercase;
-  font-size: 2.2rem;
+  font-size: 2.4rem;
   padding-top: 1rem;
   padding-bottom: 1rem; }
   .tipkaart__nummer:after, .tipkaart__nummer:before {
@@ -1724,8 +1725,8 @@
     margin-left: 8px; }
 
 .tipkaart__title {
-  font-size: 2.4rem;
-  line-height: 3.2rem;
+  font-size: 2.6rem;
+  line-height: 3.4rem;
   margin: 0;
   padding: 0;
   word-break: break-word;
@@ -1985,18 +1986,13 @@
   @media (min-width: 560px) {
     .link--contact + .link--contact {
       margin-left: 2rem; } }
-
-.link--phone:before {
-  content: "";
-  font-style: normal;
-  font-weight: normal;
-  font-family: 'icons'; }
-
-.link--email:before {
-  content: "";
-  font-style: normal;
-  font-weight: normal;
-  font-family: 'icons'; }
+  .link--contact .icon {
+    width: 2rem;
+    height: 2rem;
+    fill: #fff;
+    float: left;
+    margin-top: 0.5rem;
+    margin-right: 1.5rem; }
 
 .link--arrow {
   position: relative;

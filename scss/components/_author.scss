@@ -101,6 +101,12 @@
       color: $intro-color;
     }
 
+    a {
+      &:focus, &:hover {
+        color: $intro-hover-color;
+      }
+    }
+
     .author__function {
       font-size: 1.6rem;
       line-height: 2.4rem;

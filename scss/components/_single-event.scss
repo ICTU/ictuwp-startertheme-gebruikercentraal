@@ -79,15 +79,7 @@
   @include backstretch($gc_blue_darker);
   @include ho-container-content;
   color: $white;
-  padding-top: 3rem;
-  padding-bottom: 3rem;
-
-
-
-  // gelijktrekken uitlijning
-  padding-right: 3rem;
-  padding-left: 3rem;
-
+  padding: 3rem 2rem;
   margin-top: 3rem;
 
   h2, h3 {
@@ -101,6 +93,11 @@
       color: $gc_blue_xlight;
     }
   }
+
+  input[type='submit'] {
+    box-shadow: 4px 4px 0 #00313D;
+  }
+
 
   @include bp-up(md) {
     margin-top: 8rem;

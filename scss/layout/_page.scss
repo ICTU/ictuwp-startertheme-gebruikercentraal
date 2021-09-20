@@ -113,6 +113,10 @@ h1 {
   padding-top: .3rem;
   padding-bottom: .3rem;
 
+  @include bp-down(nav){
+    background: $gc-dark-blue;
+  }
+
   > nav {
     @include ho-container;
   }

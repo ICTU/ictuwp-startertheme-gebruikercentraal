@@ -107,19 +107,19 @@ function getFolders(dir) {
 }
 
 function makeSprites(done) {
-  var folders = getFolders('images/sprites/');
+  var folders = getFolders('../assets/images/sprites/');
 
   if (folders) {
     console.log(folders);
 
     folders.map(function (folder) {
 
-      return gulp.src('images/sprites/' + folder + '/*.svg')
+      return gulp.src('../assets/images/sprites/' + folder + '/*.svg')
         .pipe(svgmin())
         .pipe(svgSprite(svgSpriteConfig)).on('error', function (error) {
           gutil.log(gutil.colors.red(error));
         })
-        .pipe(gulp.dest('../images/svg/' + folder))
+        .pipe(gulp.dest('../assets/images/sprites/' + folder))
         .pipe(notify({message: folder + ' SVG Sprite generated'}));
     });
 

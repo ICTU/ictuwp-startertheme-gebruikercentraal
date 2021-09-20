@@ -259,6 +259,7 @@ class GebruikerCentraalTheme extends Timber\Site {
 		$context['site_name']               = ( get_bloginfo( 'name' ) ? get_bloginfo( 'name' ) : 'Gebruiker Centraal' );
 		$context['site_linktext']           = _x( ", to the homepage", 'link op logo', 'gctheme' );
 		$context['alt_logo']                = _x( "Logo", 'Alt-tekst op logo', 'gctheme' );
+		$context['sprite']                  = get_stylesheet_directory_uri() . '/assets/images/sprites/gc/defs/svg/sprite.defs.svg';
 		$context['sprite_od']               = get_stylesheet_directory_uri() . '/assets/images/sprites/optimaal-digitaal/defs/svg/sprite.defs.svg';
 		$context['sprite_steps']            = get_stylesheet_directory_uri() . '/assets/images/sprites/stepchart/defs/svg/sprite.defs.svg';
 		$context['footer_widget_left']      = Timber::get_widgets( 'footer_widget_left' );
@@ -1469,12 +1470,10 @@ function prepare_card_content( $postitem ) {
 			$item['toptiptekst'] = _x( 'Toptip', 'Toptiptekst bij tip', 'gctheme' );
 		}
 
+		// Set term name
 		$taxonomie = get_the_terms( $postid, GC_TIPTHEMA );
 
-		if ( isset( $themakleuren[ $taxonomie[0]->term_id ] ) ) {
-			$item['category'] = $themakleuren[ $taxonomie[0]->term_id ];
-		}
-		$item['cat'] = $item['category']; // dit is dubbelop en overbodig en meer dan nodig, maar in de twig-files wordt afwisselend 'cat' en 'category' gebruikt. De meest correcte vorm is: 'tipthema'
+    $item['category'] = !empty($themakleuren[$taxonomie[0]->term_id]) ? $themakleuren[$taxonomie[0]->term_id] : '';
 
 	} elseif ( 'post' == $item['post_type'] ) {
 

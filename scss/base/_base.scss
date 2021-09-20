@@ -47,9 +47,10 @@ a {
 /* -------------------------------------------------------------------------
 enkele uitzonderingen voor hover over links en het weghalen van de underline
 zie: https://trello.com/c/Xmmyu8ho/363-styling-van-hover-over-links
-suggesties welkom
+
 */
-.entry-content {
+.section--paragraph,
+.entry-body {
   a:not(.tipkaart__link) {
     &:hover,
     &:focus {
