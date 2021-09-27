@@ -2026,7 +2026,7 @@ msgstr "Laatst gewijzigd op"
 #: templates/sections/section-authorbox.html.twig:6
 msgctxt "authorbox"
 msgid "Profile picture"
-msgstr "Avatar"
+msgstr "Profielfoto"
 
 #: templates/sections/section-authorbox.html.twig:14
 msgctxt "authorbox"

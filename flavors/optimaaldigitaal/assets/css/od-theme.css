@@ -4049,6 +4049,10 @@ body:not(.single-event) {
   .author--box .meta-data__item {
     color: #52757e;
     font-size: 1.4rem; }
+  .author--box .author__description {
+    border-top: 0.1rem solid #e8d8c7;
+    margin-top: 1.5rem;
+    padding-top: 1.5rem; }
   .author--box hr {
     border-color: #f2ebe4;
     margin: 1.5rem 0; }

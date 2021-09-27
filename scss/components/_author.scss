@@ -219,6 +219,12 @@
     font-size: $font_small;
   }
 
+  .author__description {
+    border-top: .1rem solid $gc-pantybrown;
+    margin-top: 1.5rem;
+    padding-top: 1.5rem;
+  }
+
   hr {
     border-color: $gc_pantybrown-light;
     margin: 1.5rem 0;
