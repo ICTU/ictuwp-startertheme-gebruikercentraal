@@ -7,58 +7,69 @@
   img ? ' l-with-image' : ' l-without-image'
 ] %}
 
+{% set current_year = "now"|date("Y") %}
+
+{% if (start_date and start_date|date("Y") != current_year) or
+  (end_date and end_date|date("Y") != current_year) or
+  (post_date and post_date|date("Y") != current_year) %}
+  {% set not_current_year = 'true' %}
+{% endif %}
+
+{% set classes = [
+  'teaser',
+  type ? 'teaser--type-' ~ type : 'teaser--type-page',
+  img ? 'l-with-image' : 'l-without-image',
+  not_current_year ? 'teaser--not-current' : '',
+  modifier ? 'teaser--' ~ modifier: ''
+] %}
+
+
 <section
-    class="teaser teaser--type-{{ type ? type : 'page' }}{{ modifier ? ' teaser--'~ modifier }}{{ img ? ' l-with-image' : ' l-without-image' }}">
-  <div class="teaser__link">
+    class="{{ classes|join(' ')|trim(' ', side='right') }}">
 
-    {% if img %}
-      <a href="{{ url }}" aria-hidden="true">
-        <div class="teaser__image">
-          {{ img }}
-        </div>
-      </a>
-    {% endif %}
+  <header class="teaser__header{{ post_date or type=='event' ? ' teaser__header--with-badge' }}">
 
-    {% if img %}
-    <div class="l-teaser-content">{% endif %}
-      <header class="teaser__header">
-        {% if type == 'event' %}
+    <{{ headerlevel }} itemprop="name" class="teaser__title">
+    <a href="{{ url }}" class="link link--arrow">
+      <span class="arrow-link__text">{{ title }}</span>
+    </a>
+  </{{ headerlevel }}>
 
-          {% include 'components/date-badge.html.twig' with {
-            'start_date': start_date,
-            'end_date': end_date,
-          } %}
+  {% if type == 'event' %}
+    {% include 'components/date-badge.html.twig' with {
+      'start_date': start_date,
+      'end_date': end_date,
+    } %}
 
-        {% elseif post_date %}
-          {% include 'components/date-badge.html.twig' with {
-            'post_date': post_date,
-            'modifier': '',
-          } %}
-        {% endif %}
+  {% elseif post_date %}
+    {% include 'components/date-badge.html.twig' with {
+      'post_date': post_date,
+      'modifier': '',
+    } %}
+  {% endif %}
 
-        <{{ headerlevel }} itemprop="name" class="teaser__title">
-        <a href="{{ url }}">
-          <span class="arrow-link">
-            <span class="arrow-link__text">{{ title }}</span><span class="arrow-link__icon" aria-hidden="true"></span>
-          </span>
-        </a>
-      </{{ headerlevel }}>
+  {% if full %}
+    <span class="label label--full">{{ full }}</span>
+  {% endif %}
 
-      {% if full %}
-        <span class="label label--full">{{ full }}</span>
-      {% endif %}
+  {% if meta %}
+    {% include 'components/meta-data.html.twig' with {'items': meta} %}
+  {% endif %}
+  </header>
 
-      {% if meta %}
-        {% include 'components/meta-data.html.twig' with {'items': meta} %}
-      {% endif %}
-      </header>
 
-      {% if descr %}
-        <div class="teaser__description">
-          {{ descr }}
-        </div>
-      {% endif %}
+  {% if img %}
+    <a href="{{ url }}" class="link link--image">
+      <div class="teaser__image">
+        {{ img }}
+      </div>
+    </a>
+  {% endif %}
 
-      {% if img %}</div>{% endif %}
-  </div>
+  {% if descr %}
+    <div class="teaser__description">
+      {{ descr }}
+    </div>
+  {% endif %}
+
 </section>

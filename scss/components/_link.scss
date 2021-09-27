@@ -134,17 +134,23 @@
 
     &:after {
       position: absolute;
-      right: .5rem;
+      right: 0;
       top: 0;
       font-size: 1.6rem;
-      transition: right .2s;
+      transition: margin .2s;
+      border: .1rem solid transparent;
+      width: 2.5rem;
+      text-align: center;
+      margin-right: -.5rem;
     }
 
     &:hover, &:focus {
       text-decoration: underline;
 
       &:after {
-        right: 0.3rem;
+        @include gc-box-shadow();
+        margin-right: -.7rem;
+        border-color: $border-color;
       }
     }
   }
