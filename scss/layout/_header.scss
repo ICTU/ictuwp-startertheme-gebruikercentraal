@@ -27,6 +27,7 @@
   @include bp-down(nav) {
     padding-right: 1rem;
 
+
     span {
       @include visually-hidden;
     }

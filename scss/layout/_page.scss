@@ -105,8 +105,6 @@ h1 {
   }
 }
 
-
-
 .breadcrumb {
   padding-left: 1rem;
   padding-right: 1rem;
@@ -116,7 +114,8 @@ h1 {
   padding-top: .3rem;
   padding-bottom: .3rem;
 
-  @include bp-up(nav){
+  @include bp-down(nav){
+    background: $gc-dark-blue;
   }
 
   > nav {
@@ -149,6 +148,9 @@ h1 {
       position: absolute;
     }
 
+    &:hover, &:focus {
+      padding-right: .2rem;
+    }
   }
 
   ol {
