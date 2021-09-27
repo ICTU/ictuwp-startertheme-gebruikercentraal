@@ -29,7 +29,7 @@
       left: 0;
     }
 
-    @include bp-down(sm){
+    @include bp-down(sm) {
       padding-top: 28rem;
 
       .teaser__image {
@@ -39,7 +39,7 @@
       }
     }
 
-    @include bp-up(sm){
+    @include bp-up(sm) {
       padding-left: 19rem;
 
       .teaser__image {
@@ -47,7 +47,7 @@
       }
     }
 
-    @include bp-up(lg){
+    @include bp-up(lg) {
       padding-left: 23rem;
 
       .teaser__image {
@@ -124,17 +124,42 @@
   &--small {
     background: none;
     box-shadow: none;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
 
     .teaser__image {
       width: 100%;
       height: auto;
       position: relative;
+      order: 1;
+      background: $brand-color;
+
+      img {
+        display: block;
+        transition: opacity .3s, transform .3s;
+      }
+
+      > a {
+        display: block;
+        overflow: hidden;
+      }
+
+      a:hover, a:focus {
+        img {
+          opacity: 0.6;
+          transform: scale(1.05);
+        }
+      }
     }
 
     .teaser__title {
       margin-top: 1.6rem;
       font-size: 2rem;
       line-height: 2.8rem;
+      order: 2;
     }
 
     .date-badge {
@@ -152,26 +177,6 @@
 }
 
 
-.teaser__image {
-  width: 10rem;
-  height: auto;
-  margin-right: 2.4rem;
-
-  @include bp-down(sm) {
-    width: 100%;
-    max-width: none;
-  }
-
-  @include bp-up(sm) {
-    width: 16rem;
-    flex: 1 0 16rem;
-  }
-
-  @include bp-up(md) {
-    width: 20rem;
-    flex: 1 0 20rem;
-  }
-}
 
 .teaser__header {
   h3 {

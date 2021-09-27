@@ -17,22 +17,21 @@
 ] %}
 
 <div class="{{ styles|join(' ') }}">
-  <div class="card__image">
-    {% if img is not empty %}
-      <a href="{{ url }}" aria-hidden="true">
-        <img src="{{ img }}" alt="{{ img_alt }}" class="image image--doelgroep">
-      </a>
-    {% endif %}
-  </div>
+
   <div class="author__content">
-    {% if type == 'event' %}
-      {% include 'components/date-badge.html.twig' %}
-    {% endif %}
     <{{ headerlevelcard }} class="author__title">
     <a href="{{ url }}">{{ title }}</a>
   </{{ headerlevelcard }}>
 
   <span class="author__function">{{ function }}</span>
-
 </div>
+
+<div class="card__image">
+  {% if img is not empty %}
+    <a href="{{ url }}" aria-hidden="true">
+      <img src="{{ img }}" alt="{{ img_alt }}" class="image image--doelgroep">
+    </a>
+  {% endif %}
+</div>
+
 </div>

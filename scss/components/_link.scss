@@ -150,7 +150,7 @@
       &:after {
         @include gc-box-shadow();
         margin-right: -.7rem;
-        border-color: $border-color;
+        border-color: $gc-dark-blue;
       }
     }
   }
