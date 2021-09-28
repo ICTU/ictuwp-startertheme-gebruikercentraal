@@ -1,0 +1,16 @@
+<div class="teaser teaser--{{ type ? type : 'page' }} teaser--small">
+  <h3 class="teaser__title"><a href="{{ url }}" aria-hidden="true" class="link link--arrow">{{ title }}</a></h3>
+
+  <div class="teaser__image">
+
+    {% if date %}
+    {% include 'components/date-badge.html.twig' with {
+      'post_date': date,
+      'modifier': 'date-badge--small'
+    } %}
+    {% endif %}
+
+    <a href="{{ url }}" aria-hidden="true"><img src="{{ img }}" alt="{{ img_alt }}"/></a>
+  </div>
+
+</div>

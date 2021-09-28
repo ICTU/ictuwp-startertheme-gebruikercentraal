@@ -6,6 +6,7 @@
 
 #dont commit .map sites
 /assets/css/*.map
+/flavors/*/assets/css/*.map
 .DS_Store
 
 /.idea/
