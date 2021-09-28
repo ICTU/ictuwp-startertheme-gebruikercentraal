@@ -1,43 +1,58 @@
 
-
 .teaser {
   @include gc-box-shadow();
   background: $white;
   margin-top: $gutter;
   font-size: $font-smaller;
   line-height: 2.8rem;
-
-  h3 {
-    @include bp-down(sm) {
-      font-size: 2rem;
-      line-height: 2.8rem;
-    }
-  }
+  padding: 2rem;
 
   .l-teaser-content {
     transition: background-color .2s;
   }
 
+  @include bp-up(sm) {
+    padding: 3rem;
+
+    h3 {
+      font-size: 2rem;
+      line-height: 2.8rem;
+    }
+  }
+
   &.l-with-image {
-    .teaser__link {
-      @include bp-down(sm) {
-        padding: 0;
+    position: relative;
 
-        .l-teaser-content {
-          padding: 2rem;
-        }
-      }
+    .teaser__image {
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
 
-      @include bp-up(sm) {
-        display: flex;
-        align-items: flex-start;
-        padding-left: 0;
-        padding-top: 0;
+    @include bp-down(sm) {
+      padding-top: 28rem;
+
+      .teaser__image {
+        position: absolute;
+        top: 0;
+        left: 0;
       }
     }
 
-    .l-teaser-content {
-      padding-top: 2rem;
+    @include bp-up(sm) {
+      padding-left: 19rem;
+
+      .teaser__image {
+        width: 16rem;
+      }
+    }
+
+    @include bp-up(lg) {
+      padding-left: 23rem;
+
+      .teaser__image {
+        width: 20rem;
+      }
     }
   }
 
@@ -104,67 +119,47 @@
         height: 70rem;
       }
     }
-
-    &.l-with-image {
-
-      .teaser__link {
-        padding: 0;
-        display: block;
-        position: relative;
-        background: $color-secondary;
-
-        &:focus, &:hover {
-          .teaser__image {
-            opacity: 0.8;
-          }
-
-          .l-teaser-content {
-            background: $gc-pantybrown-xlight;
-          }
-        }
-      }
-
-      .l-teaser-content {
-        padding: 2rem;
-        background: $white;
-
-        @include bp-down(sm) {
-          margin: -2rem 2rem 0;
-          position: relative;
-        }
-
-        @include bp-up(sm) {
-          position: absolute;
-          bottom: 3rem;
-          right: 0;
-          background: $white;
-          padding: 2.5rem 3rem;
-          margin-left: 10%;
-          width: 90%;
-          max-width: 68rem;
-        }
-
-        @include bp-up(lg) {
-          bottom: 8rem;
-        }
-      }
-    }
   }
 
   &--small {
     background: none;
     box-shadow: none;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
 
     .teaser__image {
       width: 100%;
       height: auto;
       position: relative;
+      order: 1;
+      background: $brand-color;
+
+      img {
+        display: block;
+        transition: opacity .3s, transform .3s;
+      }
+
+      > a {
+        display: block;
+        overflow: hidden;
+      }
+
+      a:hover, a:focus {
+        img {
+          opacity: 0.6;
+          transform: scale(1.05);
+        }
+      }
     }
 
     .teaser__title {
       margin-top: 1.6rem;
       font-size: 2rem;
       line-height: 2.8rem;
+      order: 2;
     }
 
     .date-badge {
@@ -175,80 +170,31 @@
       background: $color-secondary;
     }
   }
-}
 
-.teaser__link {
-  text-decoration: none;
-  display: block;
-  padding: 2rem;
-  transition: background .2s;
-  position: relative;
-  overflow: hidden;
-
-  @include bp-up(md) {
-    padding: 3rem;
-  }
-
-  &:hover, &:focus {
-    background: $gc-pantybrown-xlight;
-
-    .arrow-link__icon {
-      @include gc-box-shadow();
-      border-color: $gc-dark-blue;
-    }
-
-    .teaser__title {
-      text-decoration: underline;
-    }
+  &--type-event {
+    padding-top: 2.5rem
   }
 }
 
-.teaser__image {
-  width: 10rem;
-  height: auto;
-  margin-right: 2.4rem;
 
-  @include bp-down(sm) {
-    width: 100%;
-    max-width: none;
-  }
-
-  @include bp-up(sm) {
-    width: 16rem;
-    flex: 1 0 16rem;
-  }
-
-  @include bp-up(md) {
-    width: 20rem;
-    flex: 1 0 20rem;
-  }
-}
 
 .teaser__header {
-  .date-badge {
-    float: left;
-    margin-right: 2rem;
-    width: auto;
-    height: auto;
-    margin-bottom: 1rem;
-  }
-
   h3 {
     width: 100%;
   }
 
-  .teaser--type-blog & {
+  &--with-badge {
     position: relative;
-    padding-left: 5.6rem;
-
-    @include bp-up(sm){
-      padding-left: 6.5rem;
-    }
+    padding-left: 6rem;
 
     .date-badge {
       position: absolute;
       left: 0;
       top: 0;
+    }
+
+    .teaser--not-current & {
+      padding-left: 8.5rem;
     }
   }
 }

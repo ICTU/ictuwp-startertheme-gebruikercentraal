@@ -46,7 +46,7 @@
         {{ post.content }}
       </div>
 
-      {% if post.author.meta('auteursfoto_url') is not empty %}
+      {% if post.author is not empty %}
         {% include 'sections/section-authorbox.html.twig' %}
       {% endif %}
 
