@@ -1665,5 +1665,30 @@ function gc_wbvb_auteursfoto_waarschuwing( $value, $post_id, $field ) {
 // Apply to auteursfoto field
 add_filter( 'acf/load_value/name=auteursfoto', 'gc_wbvb_auteursfoto_waarschuwing', 10, 3 );
 
+
 //========================================================================================================
 
+// bij het wijzigen van de avatar van een slaan we de URL voor de foto op als een
+// globaal beschikbare waarde voor de gebruiker.
+// zo is de avatar die je invoerde op site [x] ook beschikbaar op site [y]
+// de user variable 'auteursfoto_url' kan ook door andere themes (zoals ictuwp-theme-gc2020)
+// worden gebruikt.
+
+add_action( 'acf/save_post', 'gc_wbvb_update_auteursfoto' );
+
+function gc_wbvb_update_auteursfoto( $post_id ) {
+
+	$user_id     = str_replace( "user_", "", $post_id );
+	$auteursfoto = get_user_meta( $user_id, 'auteursfoto', true );
+	$size        = 'thumb-cardv3';
+
+	if ( $auteursfoto ) {
+		$image = wp_get_attachment_image_src( $auteursfoto, $size );
+		if ( $image[0] ) {
+			update_user_meta( $user_id, 'auteursfoto_url', $image[0] );
+		}
+	}
+
+}
+
+//========================================================================================================

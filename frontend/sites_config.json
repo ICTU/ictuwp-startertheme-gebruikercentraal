@@ -21,7 +21,7 @@
     "absfolder": "/wp-content/themes/ictuwp-theme-gc2020/",
     "path": "../flavors/kennisbank/",
     "dest": "../flavors/kennisbank/assets/",
-    "proxy": "gebruikercentraal.test/gckennisbank"
+    "proxy": "redactie.gebruikercentraal.test"
   }
 }
 
