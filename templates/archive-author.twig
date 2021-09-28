@@ -35,16 +35,28 @@ display tipgever info or
           <div class="author__contact-info">
 
             {% for key, link in author.contact %}
-              {% set url = link %}
 
               {% if key == 'email' %}
-                {% set url = 'mailto:' ~ link %}
+                {% set icon = 'mail' %}
+                {% set iconTitle = 'mail' %}
               {% elseif key == 'phone' %}
-                {% set url = 'tel:' ~ link %}
+                {% set icon = key %}
+                {% set iconTitle = 'telefoon' %}
               {% endif %}
 
-              <a href="{{ url }}" class="link link--contact link--{{ key }}"
-                 title="E-mail adres van {{ author.title }}">{{ link }}</a>
+              {% if link['href'] and link['linktext'] %}
+
+                <a href="{{ link['href'] }}" class="link link--contact link--{{ key }}"
+                   aria-label="{{ link['arialabel'] }}">
+
+                  {% include 'partial/icon.html.twig' with {
+                    'icon': icon,
+                    'alt': iconTitle
+                  } %}
+
+                  {{ link['linktext'] }}</a>
+
+              {% endif %}
 
             {% endfor %}
 
@@ -52,27 +64,6 @@ display tipgever info or
 
         {% endif %}
 
-        {% if author.social %}
-
-          <ul class="social-links">
-            {% if author.social.linkedin %}
-              <li class="social-links__item">
-                <a href="{{ author.social.linkedin }}" class="link link--social linkedin">{{ author.social.linkedin.linktext }}</a>
-              </li>
-            {% endif %}
-            {% if author.social.twitter %}
-              <li class="social-links__item">
-                <a href="{{ author.social.twitter }}" class="link link--social twitter" title="Twitter van Gebruiker Centraal Auteur">Twitter
-                  van Gebruiker Centraal Auteur</a></li>
-            {% endif %}
-            {% if author.social.satansboek %}
-              <li class="social-links__item">
-                <a href="{{ author.social.satansboek }}" class="link link--social facebook" title="Facebook van Gebruiker Centraal Auteur">Facebook
-                  van Gebruiker Centraal Auteur</a></li>
-            {% endif %}
-          </ul>
-
-        {% endif %}
       </div>
 
     </section>
@@ -93,32 +84,36 @@ display tipgever info or
       <h2 class="section__title">{{ overview.title }}</h2>
     {% endif %}
 
-    <div class="grid grid--{{ overview.modifier ? overview.modifier : 'col-3' }}">
-      {% for post in overview.items %}
+    {% block archive_posts %}
 
-        {% set cat = '' %}
+      <div class="grid grid--{{ overview.modifier ? overview.modifier : 'col-3' }}">
+        {% for post in overview.items %}
 
-        {% set template = post.post_type == 'tips' ? 'card--tipkaart' : 'card' %}
+          {% set cat = '' %}
 
-        {% for term in post.terms %}
-          {% if term.taxonomy == 'tipthema' %}
-            {% set cat = term.name|lower %}
-          {% endif %}
+          {% set template = post.post_type == 'tips' ? 'card--tipkaart' : 'card' %}
+
+          {% for term in post.terms %}
+            {% if term.taxonomy == 'tipthema' %}
+              {% set cat = term.name|lower %}
+            {% endif %}
+          {% endfor %}
+
+          {% include 'components/'~ template ~'.html.twig' with {
+            'title': post.post_title,
+            'tip_nummer': post.tip_nummer,
+            'category': post.cat,
+            'toptip': post.toptip,
+            'toptiptekst': post.toptiptekst,
+            'headerlevel': headerlevelcard,
+            'url': post.url
+          } %}
+
         {% endfor %}
 
-        {% include 'components/'~ template ~'.html.twig' with {
-          'title': post.post_title,
-          'tip_nummer': post.tip_nummer,
-          'category': post.cat,
-          'toptip': post.toptip,
-          'toptiptekst': post.toptiptekst,
-          'headerlevel': headerlevelcard,
-          'url': post.url
-        } %}
+      </div>
 
-      {% endfor %}
-
-    </div>
+    {% endblock %}
 
   </div>
 {% endblock %}

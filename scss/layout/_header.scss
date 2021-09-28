@@ -16,8 +16,8 @@
 
   @include bp-up(nav) {
     height: 9rem;
-    padding-left: 2rem;
-    padding-right: 2rem;
+    padding-left: 3rem;
+    padding-right: 3rem;
   }
 }
 
@@ -26,6 +26,7 @@
 
   @include bp-down(nav) {
     padding-right: 1rem;
+
 
     span {
       @include visually-hidden;
@@ -136,11 +137,10 @@
       padding: 1rem 1.5rem;
       font-family: $font-primary;
       width: 100%;
-      border: .1rem solid $input-border;
+      border: .1rem solid $border-color-darkbg-a11y;
       outline: none;
       background: none;
       color: $white;
-      border-color: $gc_greyblue;
       height: 4rem;
       font-size: $font_small;
 
@@ -196,7 +196,7 @@
     left: 0;
     top: 0;
     right: 0;
-    background: $gc-dark-blue;
+    background: $gc-darkest-blue;
   }
 }
 
@@ -223,8 +223,6 @@
 
   @include bp-up(nav) {
     background: $gc-dark-blue;
-    padding-left: 2rem;
-    padding-right: 2rem;
   }
 }
 

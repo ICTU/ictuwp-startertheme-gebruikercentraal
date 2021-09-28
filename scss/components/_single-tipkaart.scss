@@ -40,7 +40,6 @@
           background-size: 100% auto;
         }
 
-
         &:before {
           display: none;
         }
@@ -282,15 +281,7 @@
   }
 
   &--kanaalsturing {
-    @include gc-tipkaart-full($gc-a11y-orange-lg, $gc-dark-blue, $gc-orange, $gc-a11y-orange-lg, $gc-orange);
-
-    .research__content {
-      color: $base-font-color;
-
-      a, h2, h3 {
-        color: $base-font-color;
-      }
-    }
+    @include gc-tipkaart-full($gc-a11y-orange-lg, $gc-dark-blue, $gc-orange, lighten($gc-a11y-orange-lg, 10%), $gc-orange);
   }
 
   &--inclusie {

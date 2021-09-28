@@ -105,50 +105,37 @@ h1 {
   }
 }
 
-
-
 .breadcrumb {
-  padding-left: 1rem;
-  padding-right: 1rem;
+  @include ho-padding;
   background: $gc-darkest-blue;
   font-size: $font-small;
   color: $white;
   padding-top: .3rem;
   padding-bottom: .3rem;
 
-  @include bp-up(nav){
+  @include bp-down(nav){
+    background: $gc-dark-blue;
   }
 
   > nav {
-    @include ho-make-container(calc(#{$max-width-container} - 4rem));
+    @include ho-container;
   }
 
   a {
+    @include icon(after, arrow);
     color: $white;
     transition: padding .2s;
-
-    &:hover, &:focus {
-      padding-right: .2rem;
-    }
-  }
-
-  .breadcrumb__separator {
-    @include icon(after, arrow);
-
-    position: relative;
-    color: transparent;
-    margin: 0 1rem;
-    display: inline-block;
 
     &:after {
       display: inline-block;
       font-size: .8rem;
+      margin: 0 1rem;
       color: $gc-a11y-green;
-      left: 0;
-      top: 0;
-      position: absolute;
     }
 
+    &:hover, &:focus {
+      padding-right: .2rem;
+    }
   }
 
   ol {
