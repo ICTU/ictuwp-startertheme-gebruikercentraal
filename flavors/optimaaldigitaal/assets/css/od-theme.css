@@ -2,7 +2,7 @@
 /*
  * CSS flavor voor Optimaal Digitaal
  * Author: Tamara, Mark, Paul
- * Version: 5.0.32
+ * Version: 5.2.2
  *
  */
 .has-white-color {
@@ -856,29 +856,72 @@ Gutenberg corrections
 .section--heading:first-child {
   margin-top: 4rem; }
 
+.wp-block-list,
 .section--list {
   margin-top: 1rem; }
-  .section--list ul, .section--list ol {
+  .wp-block-list ul li,
+  .section--list ul li {
+    list-style-image: url("/wp-content/themes/ictuwp-theme-gc2020/assets/images/bullet.svg"); }
+  .wp-block-list ul, .wp-block-list ol,
+  .section--list ul,
+  .section--list ol {
     margin-top: 0; }
+  .wp-block-list + .section--heading,
   .section--list + .section--heading {
     margin-top: 4rem; }
+  .wp-block-list ol li,
+  .wp-block-list ol.decimal li,
+  .section--list ol li,
+  .section--list ol.decimal li {
+    list-style-image: none;
+    list-style-type: decimal; }
+  .wp-block-list ol ol,
+  .wp-block-list ol.lower-alpha,
+  .wp-block-list ol.lower-latin,
+  .section--list ol ol,
+  .section--list ol.lower-alpha,
+  .section--list ol.lower-latin {
+    margin-bottom: .5rem; }
+    .wp-block-list ol ol li,
+    .wp-block-list ol.lower-alpha li,
+    .wp-block-list ol.lower-latin li,
+    .section--list ol ol li,
+    .section--list ol.lower-alpha li,
+    .section--list ol.lower-latin li {
+      list-style-type: lower-alpha; }
+  .wp-block-list ol ol ol li,
+  .wp-block-list ol.lower-roman li,
+  .section--list ol ol ol li,
+  .section--list ol.lower-roman li {
+    list-style-type: lower-roman; }
+  .wp-block-list ol ol ol ol li,
+  .wp-block-list ol.square li,
+  .section--list ol ol ol ol li,
+  .section--list ol.square li {
+    list-style-type: square; }
 
+.wp-block-paragraph p,
 .section--paragraph p {
   margin-top: 1rem; }
 
+.wp-block-paragraph + .section--heading,
 .section--paragraph + .section--heading {
   margin-top: 4rem; }
 
+.wp-block-paragraph + .section--paragraph,
 .section--paragraph + .section--paragraph {
   margin-top: 4rem; }
 
+.wp-block-paragraph + .section--list,
 .section--paragraph + .section--list {
   margin-top: 2rem; }
 
+.wp-block-paragraph + .wp-block-image,
 .section--paragraph + .wp-block-image {
   margin-top: 4rem;
   margin-bottom: 4rem; }
 
+.wp-block-paragraph + .section--cta,
 .section--paragraph + .section--cta {
   margin-top: 0; }
 
@@ -2197,8 +2240,16 @@ body:not(.single-event) {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   margin-top: 3rem;
-  border: none; }
+  border: none;
+  padding-bottom: 3rem; }
   @media (min-width: 1100px) {
     .pagination {
       margin-top: 5rem; } }
@@ -2210,7 +2261,23 @@ body:not(.single-event) {
     -webkit-transition: padding .2s, background-color .2s;
     transition: padding .2s, background-color .2s;
     line-height: 2.6rem;
-    border: 0.1rem solid #D1DFE3; }
+    border: 0.1rem solid #D1DFE3;
+    background: white;
+    -webkit-box-shadow: 0.4rem 0.4rem 0 rgba(0, 0, 0, 0.15);
+            box-shadow: 0.4rem 0.4rem 0 rgba(0, 0, 0, 0.15); }
+  .pagination li {
+    list-style-image: none;
+    list-style-type: none;
+    margin-left: .5rem;
+    margin-right: .5rem;
+    padding-left: 0;
+    padding-right: 0;
+    -ms-flex-preferred-size: 44px;
+        flex-basis: 44px;
+    text-align: center; }
+    .pagination li.pagination-omission {
+      -ms-flex-preferred-size: 22px;
+          flex-basis: 22px; }
   .pagination a {
     font-family: "montserratbold", Helvetica, Arial, sans-serif; }
     .pagination a:hover, .pagination a:focus, .pagination a:active {
@@ -2219,8 +2286,7 @@ body:not(.single-event) {
       text-decoration: underline;
       color: #004152; }
   .pagination span.current {
-    border: 0.1rem solid #52757e;
-    padding: .5rem 1rem; }
+    border: 0.1rem solid #52757e; }
   .pagination .alignright {
     margin-left: auto; }
   .pagination .pagination-previous a:before,
@@ -2260,6 +2326,8 @@ body:not(.single-event) {
       right: .6rem; }
     .pagination .pagination-next a:hover, .pagination .pagination-next a:focus, .pagination .pagination-next a:active {
       padding-right: 3.9rem; }
+  .pagination .btn {
+    margin-top: 0; }
 
 /*
  * Comments

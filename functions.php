@@ -722,6 +722,12 @@ class GebruikerCentraalTheme extends Timber\Site {
 			"page-initiatieven.php"         => "Initiatieven-pagina",
 		];
 
+		if ( defined( 'ICTUWP_VIMEO_EMBED_TEMPLATE' ) ) {
+			// dit template is actief als de webinar embed plugin actief is
+			// zie https://redactie.gebruikercentraal.nl/artikel/webinars-embedden-via-een-pagina/
+			$allowed_templates[ ICTUWP_VIMEO_EMBED_TEMPLATE ] = "Webinar embed";
+		}
+
 		// check the flavor
 		$theme_options = get_option( 'gc2020_theme_options' );
 		if ( isset( $theme_options['flavor_select'] ) ) {
@@ -1473,7 +1479,7 @@ function prepare_card_content( $postitem ) {
 		// Set term name
 		$taxonomie = get_the_terms( $postid, GC_TIPTHEMA );
 
-    $item['category'] = !empty($themakleuren[$taxonomie[0]->term_id]) ? $themakleuren[$taxonomie[0]->term_id] : '';
+		$item['category'] = ! empty( $themakleuren[ $taxonomie[0]->term_id ] ) ? $themakleuren[ $taxonomie[0]->term_id ] : '';
 
 	} elseif ( 'post' == $item['post_type'] ) {
 

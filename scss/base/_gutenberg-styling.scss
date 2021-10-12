@@ -19,8 +19,13 @@ Gutenberg corrections
 // .section--paragraph
 // hiermee kunnen we een list makkelijker omhoog trekken tegen
 // een paragraph aan.
+.wp-block-list,
 .section--list {
   margin-top: 1rem;
+
+  ul li {
+    list-style-image: url('/wp-content/themes/ictuwp-theme-gc2020/assets/images/bullet.svg');
+  }
 
   ul, ol {
     margin-top: 0;
@@ -30,8 +35,46 @@ Gutenberg corrections
     margin-top: 4rem;
   }
 
+  // voor <ol> voor sub-lists aparte types nummering gebruiken
+  // voor niveau 1: decimaal (nummers)
+  ol,
+  ol.decimal {
+    li {
+      list-style-image: none;
+      list-style-type: decimal;
+    }
+  }
+
+  // voor niveau 2: alfabetisch in onderkast
+  ol ol,
+  ol.lower-alpha,
+  ol.lower-latin {
+    margin-bottom: .5rem;
+
+    li {
+      list-style-type: lower-alpha;
+    }
+  }
+
+  // voor niveau 3: Romeinse cijfers in onderkast
+  ol ol ol,
+  ol.lower-roman {
+    li {
+      list-style-type: lower-roman;
+    }
+  }
+
+  // voor niveau 4: vierkantje
+  ol ol ol ol,
+  ol.square {
+    li {
+      list-style-type: square;
+    }
+  }
+
 }
 
+.wp-block-paragraph,
 .section--paragraph {
   p {
     margin-top: 1rem;
@@ -136,6 +179,7 @@ Gutenberg corrections
 // is een .wp-block-media-text
 .wp-block-media-text {
   margin-bottom: 4rem;
+
   .wp-block-media-text__content {
     padding: 0;
 
@@ -151,6 +195,7 @@ Gutenberg corrections
       }
     }
   }
+
   &.has-media-on-the-right {
     .wp-block-media-text__content {
       .section--paragraph {
