@@ -856,29 +856,72 @@ Gutenberg corrections
 .section--heading:first-child {
   margin-top: 4rem; }
 
+.wp-block-list,
 .section--list {
   margin-top: 1rem; }
-  .section--list ul, .section--list ol {
+  .wp-block-list ul li,
+  .section--list ul li {
+    list-style-image: url("/wp-content/themes/ictuwp-theme-gc2020/assets/images/bullet.svg"); }
+  .wp-block-list ul, .wp-block-list ol,
+  .section--list ul,
+  .section--list ol {
     margin-top: 0; }
+  .wp-block-list + .section--heading,
   .section--list + .section--heading {
     margin-top: 4rem; }
+  .wp-block-list ol li,
+  .wp-block-list ol.decimal li,
+  .section--list ol li,
+  .section--list ol.decimal li {
+    list-style-image: none;
+    list-style-type: decimal; }
+  .wp-block-list ol ol,
+  .wp-block-list ol.lower-alpha,
+  .wp-block-list ol.lower-latin,
+  .section--list ol ol,
+  .section--list ol.lower-alpha,
+  .section--list ol.lower-latin {
+    margin-bottom: .5rem; }
+    .wp-block-list ol ol li,
+    .wp-block-list ol.lower-alpha li,
+    .wp-block-list ol.lower-latin li,
+    .section--list ol ol li,
+    .section--list ol.lower-alpha li,
+    .section--list ol.lower-latin li {
+      list-style-type: lower-alpha; }
+  .wp-block-list ol ol ol li,
+  .wp-block-list ol.lower-roman li,
+  .section--list ol ol ol li,
+  .section--list ol.lower-roman li {
+    list-style-type: lower-roman; }
+  .wp-block-list ol ol ol ol li,
+  .wp-block-list ol.square li,
+  .section--list ol ol ol ol li,
+  .section--list ol.square li {
+    list-style-type: square; }
 
+.wp-block-paragraph p,
 .section--paragraph p {
   margin-top: 1rem; }
 
+.wp-block-paragraph + .section--heading,
 .section--paragraph + .section--heading {
   margin-top: 4rem; }
 
+.wp-block-paragraph + .section--paragraph,
 .section--paragraph + .section--paragraph {
   margin-top: 4rem; }
 
+.wp-block-paragraph + .section--list,
 .section--paragraph + .section--list {
   margin-top: 2rem; }
 
+.wp-block-paragraph + .wp-block-image,
 .section--paragraph + .wp-block-image {
   margin-top: 4rem;
   margin-bottom: 4rem; }
 
+.wp-block-paragraph + .section--cta,
 .section--paragraph + .section--cta {
   margin-top: 0; }
 
