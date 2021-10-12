@@ -14,13 +14,13 @@
     }
 
     // Old editor
-    .post__body {
+    .post__content > .post__body {
       @include ho-make-container($max-width-inner);
 
       margin-top: $gutter;
       padding-bottom: $gutter;
 
-      @include bp-up(md) {
+      @include bp-up(md){
         padding-bottom: $gutter * 2;
       }
     }
@@ -31,14 +31,6 @@
         margin-top: 0;
       }
     }
-
-    > .author {
-      @include ho-make-container($max-width-inner);
-    }
-  }
-
-  &--plain {
-    padding-bottom: 5rem;
   }
 
   &.l-with-stepchart {
@@ -106,7 +98,6 @@
       @include gc-last-padding;
     }
   }
-
 }
 
 // Sections buiten gutenberg / post body

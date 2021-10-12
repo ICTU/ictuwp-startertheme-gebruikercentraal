@@ -2084,26 +2084,18 @@ body:not(.single-event) {
   margin-left: auto;
   margin-right: auto; }
 
-.post--full .post__body {
+.post--full .post__content > .post__body {
   max-width: 760px;
   margin-left: auto;
   margin-right: auto;
   margin-top: 3rem;
   padding-bottom: 3rem; }
   @media (min-width: 700px) {
-    .post--full .post__body {
+    .post--full .post__content > .post__body {
       padding-bottom: 6rem; } }
 
 .l-with-related .post--full .post__content > .section--overview {
   margin-top: 0; }
-
-.post--full > .author {
-  max-width: 760px;
-  margin-left: auto;
-  margin-right: auto; }
-
-.post--plain {
-  padding-bottom: 5rem; }
 
 .post.l-with-stepchart .page__intro {
   padding-bottom: 5rem; }
