@@ -2116,29 +2116,29 @@ body:not(.single-event) {
         .post.l-with-stepchart .page__intro + .section--text-blocks .l-section-content {
           margin-top: -8rem; } }
 
-.post__sections > .section,
-.post__sections > figure {
+.post__body > .section,
+.entry-content > .section {
   max-width: 760px;
   margin-left: auto;
   margin-right: auto; }
-  .post__sections > .section:first-child,
-  .post__sections > figure:first-child {
-    margin-top: 3rem; }
-  .post__sections > .section:last-child,
-  .post__sections > figure:last-child {
+  .post__body > .section:first-child.section--paragraph,
+  .entry-content > .section:first-child.section--paragraph {
+    margin-top: 2rem; }
+  .post__body > .section:last-child,
+  .entry-content > .section:last-child {
     padding-bottom: 4rem; }
     @media (min-width: 1100px) {
-      .post__sections > .section:last-child,
-      .post__sections > figure:last-child {
+      .post__body > .section:last-child,
+      .entry-content > .section:last-child {
         padding-bottom: 7rem; } }
   @media (max-width: 699px) {
-    .post__sections > .section--paragraph,
-    .post__sections > figure--paragraph {
+    .post__body > .section--paragraph,
+    .entry-content > .section--paragraph {
       padding-left: 0;
       padding-right: 0; } }
-  .post__sections > .section--bg-option, .post__sections > .section--overview,
-  .post__sections > figure--bg-option,
-  .post__sections > figure--overview {
+  .post__body > .section--bg-option, .post__body > .section--overview,
+  .entry-content > .section--bg-option,
+  .entry-content > .section--overview {
     max-width: none;
     padding-left: 2rem;
     padding-right: 2rem;
@@ -2147,26 +2147,28 @@ body:not(.single-event) {
     margin-left: -2rem;
     margin-right: -2rem; }
     @media (min-width: 560px) {
-      .post__sections > .section--bg-option, .post__sections > .section--overview,
-      .post__sections > figure--bg-option,
-      .post__sections > figure--overview {
+      .post__body > .section--bg-option, .post__body > .section--overview,
+      .entry-content > .section--bg-option,
+      .entry-content > .section--overview {
         padding-right: 3rem;
         padding-left: 3rem; } }
     @media (min-width: 560px) {
-      .post__sections > .section--bg-option, .post__sections > .section--overview,
-      .post__sections > figure--bg-option,
-      .post__sections > figure--overview {
+      .post__body > .section--bg-option, .post__body > .section--overview,
+      .entry-content > .section--bg-option,
+      .entry-content > .section--overview {
         margin-left: -3rem;
         margin-right: -3rem; } }
-  .post__sections > .section--overview.l-item-count-3, .post__sections > .section--examples,
-  .post__sections > figure--overview.l-item-count-3,
-  .post__sections > figure--examples {
+  .post__body > .section--overview.l-item-count-3, .post__body > .section--examples,
+  .entry-content > .section--overview.l-item-count-3,
+  .entry-content > .section--examples {
     max-width: none; }
 
-.post__sections > div:last-child.wp-block-coblocks-gallery-masonry {
+.post__body > div:last-child.wp-block-coblocks-gallery-masonry,
+.entry-content > div:last-child.wp-block-coblocks-gallery-masonry {
   padding-bottom: 4rem; }
   @media (min-width: 1100px) {
-    .post__sections > div:last-child.wp-block-coblocks-gallery-masonry {
+    .post__body > div:last-child.wp-block-coblocks-gallery-masonry,
+    .entry-content > div:last-child.wp-block-coblocks-gallery-masonry {
       padding-bottom: 7rem; } }
 
 .entry > .section,

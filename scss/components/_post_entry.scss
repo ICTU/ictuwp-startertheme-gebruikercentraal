@@ -62,13 +62,17 @@
 }
 
 // sections for either .post or .entry
-.post__sections {
-  > .section,
-  > figure {
+.post__body,
+.entry-content {
+
+  > .section {
     @include ho-make-container($max-width-inner);
 
     &:first-child {
-      margin-top: $gutter;
+      // Make margin smaller if first section is a text one
+      &.section--paragraph {
+        margin-top: 2rem;
+      }
     }
 
     &:last-child {
