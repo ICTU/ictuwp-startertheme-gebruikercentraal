@@ -57,11 +57,25 @@ $contact = array();
 $ci      = 0;
 
 if ( ! empty( $author['tipgever_telefoonnummer'][0] ) ) {
-	$contact['phone'] = $author['tipgever_telefoonnummer'][0];
+	// niets dan cijfers, spatie en streepje in telefoonnummer
+	$tipgever_telefoonnummer = trim( $author['tipgever_telefoonnummer'][0] );
+	$tipgever_telefoonnummer = preg_replace( '/[^0-9- ]/', '', $tipgever_telefoonnummer );
+	$telefoonnummer_link     = preg_replace( '/[^0-9]/', '', $tipgever_telefoonnummer );
+	$contact['phone']        = array(
+		'linktext'  => $tipgever_telefoonnummer,
+		'href'      => 'tel:' . $telefoonnummer_link,
+		'arialabel' => sprintf( _x( 'Call %s', 'Tipgever telefoonnummer', 'gctheme' ), $tipgever_telefoonnummer ),
+		'icontitle' => _x( 'phone', 'Icon title', 'gctheme' )
+	);
 }
 
 if ( ! empty( $author['tipgever_mail'][0] ) ) {
-	$contact['email'] = $author['tipgever_mail'][0];
+	$contact['email'] = array(
+		'linktext'  => $author['tipgever_mail'][0],
+		'href'      => 'mailto:' . $author['tipgever_mail'][0],
+		'arialabel' => sprintf( _x( 'Mail %s', 'Tipgever mailadres', 'gctheme' ), $author['tipgever_mail'][0] ),
+		'icontitle' => _x( 'email', 'Icon title', 'gctheme' )
+	);
 }
 
 // Set author vars
@@ -70,9 +84,6 @@ $context['author']['function'] = ( $author['tipgever_functietitel'][0] ? $author
 $context['author']['image']    = ( $image ? $image['sizes']['medium'] : '' );
 $context['author']['descr']    = ( $cat->description ? $cat->description : '' );
 $context['author']['contact']  = ( $contact ? $contact : '' );
-
-// todo: social media meuk voor een tipgever, ooit.
-//$context['author']['social']['twitter']  = 'paulvanbuuren';
 
 // Set overview
 $fullname = explode( ' ', trim( $archive->name ) );

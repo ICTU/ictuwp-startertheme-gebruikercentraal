@@ -1,12 +1,28 @@
 {#
-  Dit bestand heette eerst 'archive-tipgever.twig'.
-  Het wordt gebruikt voor tips-overzichten voor deze taxonomieën:
-  - speelset
-  - tipgever
+Dit bestand heette eerst 'archive-tipgever.twig'.
+Het wordt gebruikt voor tips-overzichten voor deze taxonomieën:
+- speelset
+- tipgever
 #}
 
 {% extends "archive-author.twig" %}
 
-{% block pagination %}
+    {% block archive_posts %}
 
-{% endblock %}
+      <div class="grid grid--col-4 }}">
+        {% for post in overview.items %}
+
+          {% include 'components/card--tipkaart.html.twig' with {
+            'title': post.post_title,
+            'tip_nummer': post.tip_nummer,
+            'category': post.category,
+            'toptip': post.toptip,
+            'toptiptekst': post.toptiptekst,
+            'headerlevel': headerlevelcard,
+            'url': post.url
+          } %}
+        {% endfor %}
+
+      </div>
+
+    {% endblock %}
