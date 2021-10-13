@@ -12,26 +12,14 @@
 
         {% for event in items.events.items %}
 
-
-          <div class="teaser teaser--event teaser--small">
-            <div class="teaser__image">
-              <a href="{{ event.url }}" aria-hidden="true">
-                <img src="{{ event.img }}" alt="{{ event.img_alt }}"/>
-
-                {% include 'components/date-badge.html.twig' with {
-                  'start_date': ( event.start_date ?? '' ),
-                  'end_date': ( event.end_date ?? '' ),
-                  'post_date': ( event.post_date ?? '' ),
-                  'modifier': 'date-badge--small'
-                } %}
-              </a>
-
-            </div>
-            <h3 class="teaser__title">
-              <a href="{{ event.url }}" class="link link--arrow"
-                 aria-label="{{ event.arialabel }}">{{ event.title }}</a>
-            </h3>
-          </div>
+          {% include 'components/teaser-small.html.twig' with {
+            'title': event.title,
+            'url': event.url,
+            'img': event.img,
+            'alt': event.img_alt,
+            'date': event.start_date,
+            'type': 'event'
+          } %}
 
         {% endfor %}
       </div>
@@ -49,17 +37,13 @@
       <div class="grid grid--col-2">
 
         {% for blog in items.blogs.items %}
-          <div class="teaser teaser--event teaser--small">
-            <div class="teaser__image">
-              <a href="{{ blog.url }}" aria-hidden="true">
-                <img src="{{ blog.img }}" alt="{{ blog.img_alt }}"/>
-              </a>
-            </div>
-
-            <h3 class="teaser__title">
-              <a href="{{ blog.url }}" class="link link--arrow">{{ blog.title }}</a>
-            </h3>
-          </div>
+          {% include 'components/teaser-small.html.twig' with {
+            'title': blog.title,
+            'url': blog.url,
+            'img': blog.img,
+            'alt': blog.img_alt,
+            'type': 'blog'
+          } %}
 
         {% endfor %}
       </div>

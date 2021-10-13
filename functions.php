@@ -39,6 +39,8 @@ if ( ! defined( 'GC_TWITTERACCOUNT' ) ) {
 	define( 'GC_TWITTERACCOUNT', 'gebrcentraal' );
 }
 
+// Gutenberg block editor ook voor events actief maken
+define('EM_GUTENBERG', true);
 
 // constants for image sizes
 define( 'BLOG_SINGLE_MOBILE', 'blog-single-mobile' );
@@ -259,6 +261,7 @@ class GebruikerCentraalTheme extends Timber\Site {
 		$context['site_name']               = ( get_bloginfo( 'name' ) ? get_bloginfo( 'name' ) : 'Gebruiker Centraal' );
 		$context['site_linktext']           = _x( ", to the homepage", 'link op logo', 'gctheme' );
 		$context['alt_logo']                = _x( "Logo", 'Alt-tekst op logo', 'gctheme' );
+		$context['sprite']                  = get_stylesheet_directory_uri() . '/assets/images/sprites/gc/defs/svg/sprite.defs.svg';
 		$context['sprite_od']               = get_stylesheet_directory_uri() . '/assets/images/sprites/optimaal-digitaal/defs/svg/sprite.defs.svg';
 		$context['sprite_steps']            = get_stylesheet_directory_uri() . '/assets/images/sprites/stepchart/defs/svg/sprite.defs.svg';
 		$context['footer_widget_left']      = Timber::get_widgets( 'footer_widget_left' );
@@ -720,6 +723,12 @@ class GebruikerCentraalTheme extends Timber\Site {
 			"template-events-overview.php"  => "Events overzicht",
 			"page-initiatieven.php"         => "Initiatieven-pagina",
 		];
+
+		if ( defined( 'ICTUWP_VIMEO_EMBED_TEMPLATE' ) ) {
+			// dit template is actief als de webinar embed plugin actief is
+			// zie https://redactie.gebruikercentraal.nl/artikel/webinars-embedden-via-een-pagina/
+			$allowed_templates[ ICTUWP_VIMEO_EMBED_TEMPLATE ] = "Webinar embed";
+		}
 
 		// check the flavor
 		$theme_options = get_option( 'gc2020_theme_options' );
@@ -1469,12 +1478,10 @@ function prepare_card_content( $postitem ) {
 			$item['toptiptekst'] = _x( 'Toptip', 'Toptiptekst bij tip', 'gctheme' );
 		}
 
+		// Set term name
 		$taxonomie = get_the_terms( $postid, GC_TIPTHEMA );
 
-		if ( isset( $themakleuren[ $taxonomie[0]->term_id ] ) ) {
-			$item['category'] = $themakleuren[ $taxonomie[0]->term_id ];
-		}
-		$item['cat'] = $item['category']; // dit is dubbelop en overbodig en meer dan nodig, maar in de twig-files wordt afwisselend 'cat' en 'category' gebruikt. De meest correcte vorm is: 'tipthema'
+		$item['category'] = ! empty( $themakleuren[ $taxonomie[0]->term_id ] ) ? $themakleuren[ $taxonomie[0]->term_id ] : '';
 
 	} elseif ( 'post' == $item['post_type'] ) {
 
@@ -1666,5 +1673,30 @@ function gc_wbvb_auteursfoto_waarschuwing( $value, $post_id, $field ) {
 // Apply to auteursfoto field
 add_filter( 'acf/load_value/name=auteursfoto', 'gc_wbvb_auteursfoto_waarschuwing', 10, 3 );
 
+
 //========================================================================================================
 
+// bij het wijzigen van de avatar van een slaan we de URL voor de foto op als een
+// globaal beschikbare waarde voor de gebruiker.
+// zo is de avatar die je invoerde op site [x] ook beschikbaar op site [y]
+// de user variable 'auteursfoto_url' kan ook door andere themes (zoals ictuwp-theme-gc2020)
+// worden gebruikt.
+
+add_action( 'acf/save_post', 'gc_wbvb_update_auteursfoto' );
+
+function gc_wbvb_update_auteursfoto( $post_id ) {
+
+	$user_id     = str_replace( "user_", "", $post_id );
+	$auteursfoto = get_user_meta( $user_id, 'auteursfoto', true );
+	$size        = 'thumb-cardv3';
+
+	if ( $auteursfoto ) {
+		$image = wp_get_attachment_image_src( $auteursfoto, $size );
+		if ( $image[0] ) {
+			update_user_meta( $user_id, 'auteursfoto_url', $image[0] );
+		}
+	}
+
+}
+
+//========================================================================================================

@@ -111,8 +111,11 @@
 
 @mixin gc-pagination() {
   display: flex;
+  flex-direction: row;
+  justify-content: center;
   margin-top: $gutter;
   border: none;
+  padding-bottom: $gutter;
 
   @include bp-up(lg) {
     margin-top: 5rem;
@@ -127,6 +130,23 @@
     transition: padding .2s, background-color .2s;
     line-height: 2.6rem;
     border: .1rem solid $border-color;
+    background: white;
+    @include gc-box-shadow();
+  }
+
+  li {
+    list-style-image: none;
+    list-style-type: none;
+    margin-left: .5rem;
+    margin-right: .5rem;
+    padding-left: 0;
+    padding-right: 0;
+    flex-basis: 44px; // verwijzing naar WCAG 2.5.5: Target Size
+    text-align: center;
+
+    &.pagination-omission {
+      flex-basis: 22px;
+    }
   }
 
   a {
@@ -144,7 +164,7 @@
 
   span.current {
     border: .1rem solid $gc_greyblue;
-    padding: .5rem 1rem;
+//    padding: .5rem 1rem;
   }
 
   .alignright {
@@ -190,6 +210,10 @@
       padding-right: 3.9rem;
     }
   }
+  .btn {
+    margin-top: 0;
+  }
+
 }
 
 
