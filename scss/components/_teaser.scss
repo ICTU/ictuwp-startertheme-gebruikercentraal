@@ -172,7 +172,13 @@
   }
 
   &--type-event {
-    padding-top: 2.5rem
+    padding-top: 0;
+    .teaser__header {
+      padding-top: 2.5rem;
+    }
+    .date-badge {
+      margin-top: 2.5rem;
+    }
   }
 }
 
@@ -186,6 +192,7 @@
   &--with-badge {
     position: relative;
     padding-left: 6rem;
+    overflow: hidden;
 
     .date-badge {
       position: absolute;

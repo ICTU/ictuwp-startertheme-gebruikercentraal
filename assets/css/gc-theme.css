@@ -5785,14 +5785,19 @@ body:not(.single-event) {
               box-shadow: none;
       background: #4c2974; }
   .teaser--type-event {
-    padding-top: 2.5rem; }
+    padding-top: 0; }
+    .teaser--type-event .teaser__header {
+      padding-top: 2.5rem; }
+    .teaser--type-event .date-badge {
+      margin-top: 2.5rem; }
 
 .teaser__header h3 {
   width: 100%; }
 
 .teaser__header--with-badge {
   position: relative;
-  padding-left: 6rem; }
+  padding-left: 6rem;
+  overflow: hidden; }
   .teaser__header--with-badge .date-badge {
     position: absolute;
     left: 0;
