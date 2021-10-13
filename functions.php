@@ -39,6 +39,8 @@ if ( ! defined( 'GC_TWITTERACCOUNT' ) ) {
 	define( 'GC_TWITTERACCOUNT', 'gebrcentraal' );
 }
 
+// Gutenberg block editor ook voor events actief maken
+define('EM_GUTENBERG', true);
 
 // constants for image sizes
 define( 'BLOG_SINGLE_MOBILE', 'blog-single-mobile' );
