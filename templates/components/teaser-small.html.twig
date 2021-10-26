@@ -1,5 +1,5 @@
 <div class="teaser teaser--{{ type ? type : 'page' }} teaser--small">
-  <h3 class="teaser__title"><a href="{{ url }}" aria-hidden="true" class="link link--arrow">{{ title }}</a></h3>
+  <h3 class="teaser__title"><a href="{{ url }}" class="link link--arrow">{{ title }}</a></h3>
 
   <div class="teaser__image">
 
@@ -10,7 +10,7 @@
     } %}
     {% endif %}
 
-    <a href="{{ url }}" aria-hidden="true"><img src="{{ img }}" alt="{{ img_alt }}"/></a>
+    <a href="{{ url }}" aria-hidden="true" tabindex="-1"><img src="{{ img }}" alt="{{ img_alt }}"/></a>
   </div>
 
 </div>
