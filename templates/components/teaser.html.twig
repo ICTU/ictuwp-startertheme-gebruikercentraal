@@ -25,11 +25,11 @@
 
 
 <section
-    class="{{ classes|join(' ')|trim(' ', side='right') }}">
+  class="{{ classes|join(' ')|trim(' ', side='right') }}">
 
   <header class="teaser__header{{ post_date or type=='event' ? ' teaser__header--with-badge' }}">
 
-    <{{ headerlevel }} itemprop="name" class="teaser__title">
+    <{{ headerlevel }} class="teaser__title">
     <a href="{{ url }}" class="link link--arrow">
       <span class="arrow-link__text">{{ title }}</span>
     </a>
