@@ -28,7 +28,15 @@
       <nav class="footer-menu">
         <ul class="footer-menu__list menu">
           {% for item in footermenu.items %}
-            <li class="footer-menu__list-item"><a target="{{ item.target }}" href="{{ item.link }}"><span>{{ item.title }}</span></a></li>
+
+            {% if item.target is empty %}
+              {% set targetattr = '' %}
+            {% else %}
+              {% set targetattr = ' target="' ~ item.target ~ '"' %}
+            {% endif %}
+
+            <li class="footer-menu__list-item"><a
+                href="{{ item.link }}"{{ targetattr }}><span>{{ item.title }}</span></a></li>
           {% endfor %}
         </ul>
       </nav>
