@@ -1,15 +1,18 @@
 {% set currentYear = "now"|date("Y") %}
+{% set dateteimeformat = "now"|date("c") %}
 
 {% if post_date %}
   {% set day = post_date|date('d') %}
   {% set month = post_date|date('M') %}
   {% set month_full = post_date|date('F') %}
   {% set year = post_date|date('Y') %}
+  {% set dateteimeformat = post_date|date("c") %}
 {% elseif start_date %}
   {% set day = start_date|date('d') %}
   {% set month = start_date|date('M') %}
   {% set month_full = start_date|date('F') %}
   {% set year = start_date|date('Y') %}
+  {% set dateteimeformat = start_date|date("c") %}
 {% endif %}
 
 {% set fullDate = day ~' '~ month_full ~ ' ' ~ year %}
@@ -19,7 +22,7 @@
 {% endif %}
 
 <time class="date-badge{{ show_year ? ' date-badge--with-year' }}" itemprop="datePublished"
-      content="{{ fullDate }}" datetime="{{ fullDate }}">
+      content="{{ fullDate }}" datetime="{{ dateteimeformat }}">
   <span class="date-badge__day">{{ day }}</span>
   <span class="date-badge__month">{{ month }}</span>
   <span class="date-badge__year{{ show_year is empty ? ' visually-hidden' }}">{{ year }}</span>

@@ -28,7 +28,7 @@
 
 <div class="card__image">
   {% if img is not empty %}
-    <a href="{{ url }}" aria-hidden="true">
+    <a href="{{ url }}" aria-hidden="true" tabindex="-1">
       <img src="{{ img }}" alt="{{ img_alt }}" class="image image--doelgroep">
     </a>
   {% endif %}

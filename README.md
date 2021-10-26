@@ -26,6 +26,7 @@ Hier vind je een lijst met opties. Zie de optie 'GC theme-opties'. Hier zie je e
 * Victor Zuydweg
 * Tamara de Haas: [haas-ontwerp.nl](https://haas-ontwerp.nl/)
 * Paul van Buuren: paul@wbvb.nl
+* Mark van der Zande: mark@cca.app
 
 ## Current version:
 5.2.2 - Paginering aangepast, nummering voor geordende lijsten verbeterd, toegankelijkheidsbugs verholpen.
