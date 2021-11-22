@@ -38,8 +38,8 @@
       display: flex;
 
       picture {
-        margin-left: $gutter-smaller / 2;
-        margin-right: $gutter-smaller / 2;
+        margin-left: $gutter-smaller * 0.5;
+        margin-right: $gutter-smaller * 0.5;
         width: calc(50% - #{$gutter-smaller});
       }
     }
@@ -66,8 +66,8 @@
       .image {
         margin-top: $gutter-xsmall;
         width: calc(50% - #{$gutter-xsmall});
-        margin-left: $gutter-xsmall / 2;
-        margin-right: $gutter-xsmall / 2;
+        margin-left: $gutter-xsmall * 0.5;
+        margin-right: $gutter-xsmall * 0.5;
 
         &:nth-child(3n+1) {
           width: calc(100% - #{$gutter-xsmall});

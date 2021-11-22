@@ -28,11 +28,11 @@
       display: flex;
 
       .spotlight:nth-child(odd) {
-        margin-right: $gutter / 2;
+        margin-right: $gutter * 0.5;
       }
 
       .spotlight:nth-child(even) {
-        margin-left: $gutter / 2;
+        margin-left: $gutter * 0.5;
       }
     }
 

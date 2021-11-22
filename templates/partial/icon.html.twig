@@ -6,7 +6,7 @@
   modifier ? 'icon--' ~ modifier
 ] %}
 
-<svg class="{{ classList|join(' ')|trim(' ', 'right') }}" focusable="false" alt="{{ alt ? alt : icon }}">
+<svg class="{{ classList|join(' ')|trim(' ', 'right') }}" aria-hidden="true" focusable="false" alt="{{ alt ? alt : icon }}">
   <use xmlns:xlink="http://www.w3.org/1999/xlink"
        xlink:href="{{ sprite_url ? sprite_url : sprite }}#{{ icon }}"></use>
 </svg>
