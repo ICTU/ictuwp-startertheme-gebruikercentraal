@@ -39,6 +39,8 @@ if ( ! defined( 'GC_TWITTERACCOUNT' ) ) {
 	define( 'GC_TWITTERACCOUNT', 'gebrcentraal' );
 }
 
+// Gutenberg block editor ook voor events actief maken
+define('EM_GUTENBERG', true);
 
 // constants for image sizes
 define( 'BLOG_SINGLE_MOBILE', 'blog-single-mobile' );
@@ -721,6 +723,12 @@ class GebruikerCentraalTheme extends Timber\Site {
 			"template-events-overview.php"  => "Events overzicht",
 			"page-initiatieven.php"         => "Initiatieven-pagina",
 		];
+
+		if ( defined( 'ICTUWP_VIMEO_EMBED_TEMPLATE' ) ) {
+			// dit template is actief als de webinar embed plugin actief is
+			// zie https://redactie.gebruikercentraal.nl/artikel/webinars-embedden-via-een-pagina/
+			$allowed_templates[ ICTUWP_VIMEO_EMBED_TEMPLATE ] = "Webinar embed";
+		}
 
 		// check the flavor
 		$theme_options = get_option( 'gc2020_theme_options' );
@@ -1473,7 +1481,7 @@ function prepare_card_content( $postitem ) {
 		// Set term name
 		$taxonomie = get_the_terms( $postid, GC_TIPTHEMA );
 
-    $item['category'] = !empty($themakleuren[$taxonomie[0]->term_id]) ? $themakleuren[$taxonomie[0]->term_id] : '';
+		$item['category'] = ! empty( $themakleuren[ $taxonomie[0]->term_id ] ) ? $themakleuren[ $taxonomie[0]->term_id ] : '';
 
 	} elseif ( 'post' == $item['post_type'] ) {
 
@@ -1665,5 +1673,30 @@ function gc_wbvb_auteursfoto_waarschuwing( $value, $post_id, $field ) {
 // Apply to auteursfoto field
 add_filter( 'acf/load_value/name=auteursfoto', 'gc_wbvb_auteursfoto_waarschuwing', 10, 3 );
 
+
 //========================================================================================================
 
+// bij het wijzigen van de avatar van een slaan we de URL voor de foto op als een
+// globaal beschikbare waarde voor de gebruiker.
+// zo is de avatar die je invoerde op site [x] ook beschikbaar op site [y]
+// de user variable 'auteursfoto_url' kan ook door andere themes (zoals ictuwp-theme-gc2020)
+// worden gebruikt.
+
+add_action( 'acf/save_post', 'gc_wbvb_update_auteursfoto' );
+
+function gc_wbvb_update_auteursfoto( $post_id ) {
+
+	$user_id     = str_replace( "user_", "", $post_id );
+	$auteursfoto = get_user_meta( $user_id, 'auteursfoto', true );
+	$size        = 'thumb-cardv3';
+
+	if ( $auteursfoto ) {
+		$image = wp_get_attachment_image_src( $auteursfoto, $size );
+		if ( $image[0] ) {
+			update_user_meta( $user_id, 'auteursfoto_url', $image[0] );
+		}
+	}
+
+}
+
+//========================================================================================================

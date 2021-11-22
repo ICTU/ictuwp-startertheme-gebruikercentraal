@@ -26,11 +26,13 @@ Hier vind je een lijst met opties. Zie de optie 'GC theme-opties'. Hier zie je e
 * Victor Zuydweg
 * Tamara de Haas: [haas-ontwerp.nl](https://haas-ontwerp.nl/)
 * Paul van Buuren: paul@wbvb.nl
+* Mark van der Zande: mark@cca.app
 
 ## Current version:
-5.2.1 - Gutenbergblock voor citaten; duivelsdrek-oranje toegevoegd als kleur omwille van contrast.
+5.2.2 - Paginering aangepast, nummering voor geordende lijsten verbeterd, toegankelijkheidsbugs verholpen.
 
 ## Version history
+* 5.2.2 - Paginering aangepast, nummering voor geordende lijsten verbeterd, toegankelijkheidsbugs verholpen.
 * 5.2.1 - Gutenbergblock voor citaten; duivelsdrek-oranje toegevoegd als kleur omwille van contrast.
 * 5.1.3 - Correct dateformat voor publicatiedatum in datebadge; uitlijning checkbox.
 * 5.1.2 - [OD] speelsettaxonomie toegevoegd aan quick edit.
