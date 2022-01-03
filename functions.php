@@ -959,32 +959,29 @@ add_action( 'customize_register', 'gc2020_customize_register' );
 add_action( 'wp_enqueue_scripts', 'gc_ho_dequeue_css', 999 );
 
 function gc_ho_dequeue_css() {
-	include_once( 'wp-admin/includes/plugin.php' );
 
-	/*
-	if(is_plugin_active('ictuwp-plugin-rijksvideo/ictuwp-plugin-rijksvideo.php')) {
-		wp_dequeue_script('rhswp_video_collapsible');
-		wp_dequeue_style( 'rhswp-frontend');
+	if ( ! is_admin() ) {
+
+		// geen styling van events manager
+		wp_deregister_style( 'events-manager' );
+		wp_dequeue_style( 'events-manager' );
+
+		// of events manager pro
+		wp_deregister_style( 'events-manager-pro' );
+		wp_dequeue_style( 'events-manager' );
+
+		// geen css van newsletterplugin
+		wp_deregister_style( 'newsletter' );
+		wp_dequeue_style( 'newsletter-css' );
+
+		// geen css van newsletterplugin
+		wp_deregister_style( 'contact-form-7' );
+		wp_dequeue_style( 'contact-form-7-css' );
+
 	}
-	*/
-
-	// geen styling van events manager
-	wp_deregister_style( 'events-manager' );
-	wp_dequeue_style( 'events-manager' );
-
-	// of events manager pro
-	wp_deregister_style( 'events-manager-pro' );
-	wp_dequeue_style( 'events-manager' );
-
-	// geen css van newsletterplugin
-	wp_deregister_style( 'newsletter' );
-	wp_dequeue_style( 'newsletter-css' );
-
-	// geen css van newsletterplugin
-	wp_deregister_style( 'contact-form-7' );
-	wp_dequeue_style( 'contact-form-7-css' );
 
 }
+
 
 //========================================================================================================
 
