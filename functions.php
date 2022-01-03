@@ -531,16 +531,16 @@ class GebruikerCentraalTheme extends Timber\Site {
 
 		// forces the dropdown for font sizes to only contain "normal"
 		add_theme_support( 'editor-font-sizes', [
-			[
-				'name' => __( 'Larger', 'gctheme' ),
+			array(
+				'name' => esc_attr__( 'Regular', 'gctheme' ),
+				'size' => 18,
+				'slug' => 'regular'
+			),
+			array(
+				'name' => esc_attr__( 'Larger', 'gctheme' ),
 				'size' => 24,
 				'slug' => 'larger',
-			],
-			[
-				'name' => __( 'Extra large', 'gctheme' ),
-				'size' => 32,
-				'slug' => 'extra-large',
-			],
+			)
 		] );
 
 
