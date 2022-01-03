@@ -105,7 +105,7 @@ if ( $searchterm ) {
 				}
 			}
 			if ( 'post' === $posttype ) {
-				$card['author'] = get_the_author( $postid );
+				$card['author'] = get_the_author();
 				$taxonomie      = get_the_terms( $postid, 'category' );
 
 				if ( $taxonomie && ! is_wp_error( $taxonomie ) ) {
@@ -165,7 +165,7 @@ if ( $searchterm ) {
 					$card['post_date']         = get_the_date();
 				}
 				if ( 'post' === $posttype ) {
-					$card['author'] = get_the_author( $postid );
+					$card['author'] = get_the_author();
 					$taxonomie      = get_the_terms( $postid, 'category' );
 
 					if ( $taxonomie && ! is_wp_error( $taxonomie ) ) {

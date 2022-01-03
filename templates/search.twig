@@ -3,27 +3,30 @@
 
 {% block content %}
 
-  <header class="post__header">
-    <h1 class="page__title">{{ title }}</h1>
-  </header>
+    <header class="post__header">
+        <h1 class="page__title">{{ title }}</h1>
+    </header>
 
-  <div class="content-wrapper">
+    <div class="content-wrapper">
 
-    {% if descr %}
-      <p class="search__descr">
-        {{ descr }}
-      </p>
-    {% endif %}
+        {% if descr %}
+            <p class="search__descr">
+                {{ descr }}
+            </p>
+        {% endif %}
 
-    {% if results %}
-      <ol class="overview overview--list overview--search-results">
-        {% for post in results %}
-          <li
-            class="overview__item">{% include ['searchresult-item-'~post.post_type~'.twig', 'searchresult-item.twig'] %}</li>
-        {% endfor %}
-      </ol>
-    {% endif %}
-
-    {% include 'partial/pagination.twig' with { pagination: posts.pagination({show_all: false, mid_size: 3, end_size: 2}) } %}
-  </div>
+        {% if results %}
+            <ol class="overview overview--list overview--search-results">
+                {% for post in results %}
+                    <li
+                            class="overview__item">{% include ['searchresult-item-'~post.post_type~'.twig', 'searchresult-item.twig'] %}</li>
+                {% endfor %}
+            </ol>
+        {% endif %}
+    </div>
 {% endblock %}
+
+
+  {% block page_bottom %}
+      {% include 'partial/pagination.twig' with { pagination: posts.pagination({show_all: false, mid_size: 3, end_size: 2}) } %}
+  {% endblock %}

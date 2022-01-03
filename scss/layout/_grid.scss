@@ -13,8 +13,8 @@
   @include bp-up(sm) {
     display: flex;
     flex-wrap: wrap;
-    margin-left: -$gutter/2;
-    margin-right: -$gutter/2;
+    margin-left: -$gutter*0.5;
+    margin-right: -$gutter*0.5;
   }
 
   &--col-3 {
@@ -22,8 +22,8 @@
       > div,
       > section {
         width: calc(50% - #{$gutter});
-        margin-left: $gutter / 2;
-        margin-right: $gutter /2;
+        margin-left: $gutter * 0.5;
+        margin-right: $gutter *0.5;
 
         &:first-child {
           width: 100%;
@@ -48,8 +48,8 @@
       > div,
       > section {
         width: calc(50% - #{$gutter});
-        margin-left: $gutter / 2;
-        margin-right: $gutter /2;
+        margin-left: $gutter * 0.5;
+        margin-right: $gutter *0.5;
       }
     }
 
@@ -73,8 +73,8 @@
       > div,
       > section {
         width: calc(50% - #{$gutter});
-        margin-left: ($gutter / 2);
-        margin-right: ($gutter / 2);
+        margin-left: ($gutter * 0.5);
+        margin-right: ($gutter * 0.5);
       }
     }
   }
