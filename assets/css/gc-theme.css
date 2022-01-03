@@ -7312,7 +7312,7 @@ body:not(.single-event) {
   display: inline-block;
   margin-right: 1.5rem;
 }
-.pagination .pagination__item__current > span,
+.pagination .pagination__item > span,
 .pagination a {
   -webkit-box-shadow: 0.4rem 0.4rem 0 rgba(0, 0, 0, 0.15);
           box-shadow: 0.4rem 0.4rem 0 rgba(0, 0, 0, 0.15);
@@ -8433,3 +8433,4 @@ browser exceptions
     width: 30%;
   }
 }
+/*# sourceMappingURL=gc-theme.css.map */

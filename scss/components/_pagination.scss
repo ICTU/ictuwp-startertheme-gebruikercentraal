@@ -24,7 +24,7 @@
     margin-right: 1.5rem;
   }
 
-  .pagination__item__current > span,
+  .pagination__item > span,
   a {
     @include gc-box-shadow();
 
