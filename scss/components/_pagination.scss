@@ -17,11 +17,15 @@
   ul {
     margin: 0;
     padding: 0;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
   }
 
   li {
     display: inline-block;
     margin-right: 1.5rem;
+    margin-bottom: 1rem;
   }
 
   .pagination__item > span,
@@ -60,7 +64,13 @@
     }
     .icon {
       transform: rotate(180deg);
-      margin-right: 1rem;
+      margin-left: .5rem;
+      margin-right: .25rem;
+    }
+  }
+  &__first {
+    .icon {
+      border-right: 2px solid $link;
     }
   }
 
@@ -71,7 +81,13 @@
       padding-right: 1.2rem;
     }
     .icon {
-      margin-left: 1rem;
+      margin-left: .25rem;
+      margin-right: .5rem;
+    }
+  }
+  &__last {
+    .icon {
+      border-right: 2px solid $link;
     }
   }
 
