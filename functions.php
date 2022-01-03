@@ -543,6 +543,8 @@ class GebruikerCentraalTheme extends Timber\Site {
 			)
 		] );
 
+		/* Disable block editor for widgets */
+		remove_theme_support( 'widgets-block-editor' );
 
 	}
 
