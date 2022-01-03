@@ -40,7 +40,7 @@ if ( ! defined( 'GC_TWITTERACCOUNT' ) ) {
 }
 
 // Gutenberg block editor ook voor events actief maken
-define('EM_GUTENBERG', true);
+define( 'EM_GUTENBERG', true );
 
 // constants for image sizes
 define( 'BLOG_SINGLE_MOBILE', 'blog-single-mobile' );
@@ -531,18 +531,20 @@ class GebruikerCentraalTheme extends Timber\Site {
 
 		// forces the dropdown for font sizes to only contain "normal"
 		add_theme_support( 'editor-font-sizes', [
-			[
-				'name' => __( 'Larger', 'gctheme' ),
+			array(
+				'name' => esc_attr__( 'Regular', 'gctheme' ),
+				'size' => 18,
+				'slug' => 'regular'
+			),
+			array(
+				'name' => esc_attr__( 'Larger', 'gctheme' ),
 				'size' => 24,
 				'slug' => 'larger',
-			],
-			[
-				'name' => __( 'Extra large', 'gctheme' ),
-				'size' => 32,
-				'slug' => 'extra-large',
-			],
+			)
 		] );
 
+		/* Disable block editor for widgets */
+		remove_theme_support( 'widgets-block-editor' );
 
 	}
 
@@ -959,32 +961,29 @@ add_action( 'customize_register', 'gc2020_customize_register' );
 add_action( 'wp_enqueue_scripts', 'gc_ho_dequeue_css', 999 );
 
 function gc_ho_dequeue_css() {
-	include_once( 'wp-admin/includes/plugin.php' );
 
-	/*
-	if(is_plugin_active('ictuwp-plugin-rijksvideo/ictuwp-plugin-rijksvideo.php')) {
-		wp_dequeue_script('rhswp_video_collapsible');
-		wp_dequeue_style( 'rhswp-frontend');
+	if ( ! is_admin() ) {
+
+		// geen styling van events manager
+		wp_deregister_style( 'events-manager' );
+		wp_dequeue_style( 'events-manager' );
+
+		// of events manager pro
+		wp_deregister_style( 'events-manager-pro' );
+		wp_dequeue_style( 'events-manager' );
+
+		// geen css van newsletterplugin
+		wp_deregister_style( 'newsletter' );
+		wp_dequeue_style( 'newsletter-css' );
+
+		// geen css van newsletterplugin
+		wp_deregister_style( 'contact-form-7' );
+		wp_dequeue_style( 'contact-form-7-css' );
+
 	}
-	*/
-
-	// geen styling van events manager
-	wp_deregister_style( 'events-manager' );
-	wp_dequeue_style( 'events-manager' );
-
-	// of events manager pro
-	wp_deregister_style( 'events-manager-pro' );
-	wp_dequeue_style( 'events-manager' );
-
-	// geen css van newsletterplugin
-	wp_deregister_style( 'newsletter' );
-	wp_dequeue_style( 'newsletter-css' );
-
-	// geen css van newsletterplugin
-	wp_deregister_style( 'contact-form-7' );
-	wp_dequeue_style( 'contact-form-7-css' );
 
 }
+
 
 //========================================================================================================
 

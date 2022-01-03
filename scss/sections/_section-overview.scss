@@ -15,7 +15,7 @@
   .grid + p {
     display: flex;
     @include bp-up(lg) {
-      padding: 0 $gutter / 2;
+      padding: 0 $gutter * 0.5;
     }
   }
 

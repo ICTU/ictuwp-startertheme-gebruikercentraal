@@ -1,0 +1,12 @@
+.icon {
+  @include square(2.2rem);
+  fill: $base-font-color;
+
+  use {
+    fill: $base-font-color;
+  }
+
+  &--small {
+    @include square(1.4rem);
+  }
+}

@@ -26,3 +26,18 @@
 .overview__item {
   list-style: none;
 }
+
+
+.page--overview-archive {
+  .content {
+    padding-bottom: 5rem;
+
+    @include bp-up(md){
+      padding-bottom: 8rem;
+    }
+
+    @include bp-up(xlg){
+      padding-bottom: 12rem;
+    }
+  }
+}

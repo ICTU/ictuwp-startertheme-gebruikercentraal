@@ -1858,11 +1858,25 @@ msgctxt "pagination"
 msgid "First"
 msgstr "Eerste pagina"
 
-#: template-events-overview.php:169 template-events-overview.php:171
+#: templates/partial/pagination.twig:30
+msgctxt "pagination"
+msgid "Go to page"
+msgstr "Ga naar pagina"
+
+#: templates/partial/pagination.twig:36
+msgctxt "pagination"
+msgid "Currently at"
+msgstr "Momenteel op pagina"
+
 #: templates/partial/pagination.twig:16
 msgctxt "pagination"
 msgid "Previous"
 msgstr "Vorige"
+
+#: template-events-overview.php:184 templates/partial/pagination.twig:37
+msgctxt "pagination"
+msgid "Next"
+msgstr "Volgende"
 
 #: template-events-overview.php:184 templates/partial/pagination.twig:37
 msgctxt "pagination"
