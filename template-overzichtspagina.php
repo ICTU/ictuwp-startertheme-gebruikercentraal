@@ -13,6 +13,8 @@ $context = Timber::context();
 $timber_post         = new Timber\Post();
 $context['post']     = $timber_post;
 $context['overview'] = overviewpage_get_items();
+$context['page_name'] = sanitize_html_class($timber_post->post_name);
+
 
 // Gerelateerde content metablocks
 if ( 'ja' === get_field( 'gerelateerde_content_toevoegen' ) ) {
@@ -35,7 +37,6 @@ if ( get_field( 'post_inleiding' ) ) {
 	$intro            = get_field( 'post_inleiding' );
 	$context['intro'] = wpautop( $intro );
 }
-
 
 Timber::render( [ 'overview.html.twig', 'page.twig' ], $context );
 
@@ -65,7 +66,6 @@ function overviewpage_get_items() {
 			while ( $the_query->have_posts() ) {
 
 				$the_query->the_post();
-				$item              = array();
 				$item              = prepare_card_content( $post );
 				$return['items'][] = $item;
 

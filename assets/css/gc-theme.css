@@ -2185,7 +2185,8 @@ body:not(.single-event) {
 }
 
 .archive,
-.page--overview-archive {
+.page--overview-archive,
+.page-template-template-overzichtspagina {
   -webkit-box-shadow: 0.4rem 0.4rem 0 rgba(0, 0, 0, 0.15);
           box-shadow: 0.4rem 0.4rem 0 rgba(0, 0, 0, 0.15);
   background: #fff;
@@ -2194,7 +2195,8 @@ body:not(.single-event) {
   max-width: none;
 }
 .archive .entry-header,
-.page--overview-archive .entry-header {
+.page--overview-archive .entry-header,
+.page-template-template-overzichtspagina .entry-header {
   background: #4c2974;
   color: #fff;
   padding: 3rem;
@@ -2202,27 +2204,33 @@ body:not(.single-event) {
 }
 @media (min-width: 700px) {
   .archive .entry-header,
-.page--overview-archive .entry-header {
+.page--overview-archive .entry-header,
+.page-template-template-overzichtspagina .entry-header {
     padding: 4rem 5rem;
   }
 }
 .archive .entry-header h1, .archive .entry-header h2,
 .page--overview-archive .entry-header h1,
-.page--overview-archive .entry-header h2 {
+.page--overview-archive .entry-header h2,
+.page-template-template-overzichtspagina .entry-header h1,
+.page-template-template-overzichtspagina .entry-header h2 {
   color: #fff;
 }
 .archive .entry-header a,
-.page--overview-archive .entry-header a {
+.page--overview-archive .entry-header a,
+.page-template-template-overzichtspagina .entry-header a {
   color: #fff;
 }
 .archive .entry-header p,
-.page--overview-archive .entry-header p {
+.page--overview-archive .entry-header p,
+.page-template-template-overzichtspagina .entry-header p {
   color: #fff;
   padding-left: 0;
   padding-right: 0;
 }
 .archive .page__intro,
-.page--overview-archive .page__intro {
+.page--overview-archive .page__intro,
+.page-template-template-overzichtspagina .page__intro {
   max-width: 760px;
   margin-left: auto;
   margin-right: auto;
@@ -2230,7 +2238,9 @@ body:not(.single-event) {
 .archive .page__intro .entry-body,
 .archive .archive__descr,
 .page--overview-archive .page__intro .entry-body,
-.page--overview-archive .archive__descr {
+.page--overview-archive .archive__descr,
+.page-template-template-overzichtspagina .page__intro .entry-body,
+.page-template-template-overzichtspagina .archive__descr {
   padding: 3rem;
   margin-top: 0;
 }
@@ -2238,22 +2248,27 @@ body:not(.single-event) {
   .archive .page__intro .entry-body,
 .archive .archive__descr,
 .page--overview-archive .page__intro .entry-body,
-.page--overview-archive .archive__descr {
+.page--overview-archive .archive__descr,
+.page-template-template-overzichtspagina .page__intro .entry-body,
+.page-template-template-overzichtspagina .archive__descr {
     padding-left: 5rem;
     padding-right: 5rem;
   }
 }
 .archive .author--full,
-.page--overview-archive .author--full {
+.page--overview-archive .author--full,
+.page-template-template-overzichtspagina .author--full {
   -webkit-box-shadow: 0.4rem 0.4rem 0 rgba(0, 0, 0, 0.15);
           box-shadow: 0.4rem 0.4rem 0 rgba(0, 0, 0, 0.15);
 }
 .archive .page-content,
-.page--overview-archive .page-content {
+.page--overview-archive .page-content,
+.page-template-template-overzichtspagina .page-content {
   padding-bottom: 0;
 }
 .archive .content,
-.page--overview-archive .content {
+.page--overview-archive .content,
+.page-template-template-overzichtspagina .content {
   -webkit-box-shadow: none;
           box-shadow: none;
   background: none;
@@ -2261,53 +2276,64 @@ body:not(.single-event) {
   padding: 0;
 }
 .archive .entry,
-.page--overview-archive .entry {
+.page--overview-archive .entry,
+.page-template-template-overzichtspagina .entry {
   max-width: none;
 }
 .archive .section--overview.section--4col .l-section-content,
-.page--overview-archive .section--overview.section--4col .l-section-content {
+.page--overview-archive .section--overview.section--4col .l-section-content,
+.page-template-template-overzichtspagina .section--overview.section--4col .l-section-content {
   max-width: 1280px;
 }
 .archive .entry-body,
-.page--overview-archive .entry-body {
+.page--overview-archive .entry-body,
+.page-template-template-overzichtspagina .entry-body {
   padding-left: 2rem;
   padding-right: 2rem;
 }
 .archive .entry-body > .section--paragraph:first-child,
-.page--overview-archive .entry-body > .section--paragraph:first-child {
+.page--overview-archive .entry-body > .section--paragraph:first-child,
+.page-template-template-overzichtspagina .entry-body > .section--paragraph:first-child {
   margin-top: 0;
 }
 .archive > p,
-.page--overview-archive > p {
+.page--overview-archive > p,
+.page-template-template-overzichtspagina > p {
   margin: 2rem auto 0;
 }
 .archive > p:first-child,
-.page--overview-archive > p:first-child {
+.page--overview-archive > p:first-child,
+.page-template-template-overzichtspagina > p:first-child {
   padding-top: 5rem;
 }
 .archive > p:last-child,
-.page--overview-archive > p:last-child {
+.page--overview-archive > p:last-child,
+.page-template-template-overzichtspagina > p:last-child {
   padding-bottom: 5rem;
 }
 .archive .entry-content + .grid,
-.page--overview-archive .entry-content + .grid {
+.page--overview-archive .entry-content + .grid,
+.page-template-template-overzichtspagina .entry-content + .grid {
   margin-top: 5rem;
   padding-bottom: 5rem;
 }
 @media (min-width: 700px) {
   .archive .entry-content + .grid,
-.page--overview-archive .entry-content + .grid {
+.page--overview-archive .entry-content + .grid,
+.page-template-template-overzichtspagina .entry-content + .grid {
     margin-top: 7rem;
   }
 }
 @media (min-width: 1100px) {
   .archive .entry-content + .grid,
-.page--overview-archive .entry-content + .grid {
+.page--overview-archive .entry-content + .grid,
+.page-template-template-overzichtspagina .entry-content + .grid {
     padding-bottom: 7rem;
   }
 }
 .archive .grid,
-.page--overview-archive .grid {
+.page--overview-archive .grid,
+.page-template-template-overzichtspagina .grid {
   max-width: 1280px;
   margin-left: auto;
   margin-right: auto;
@@ -4650,6 +4676,9 @@ body:not(.single-event) {
 }
 .section--overview.l-item-count-3 .l-section-content, .section--overview.l-display-grid .l-section-content {
   max-width: calc(960px - 9rem);
+}
+.section--page-overview.l-item-count-3 .l-section-content, .section--page-overview.l-display-grid .l-section-content {
+  max-width: 1280px;
 }
 
 .section--events-block .l-section-top {

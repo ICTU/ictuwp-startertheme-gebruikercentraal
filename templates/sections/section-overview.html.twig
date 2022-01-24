@@ -1,16 +1,16 @@
 {% if template is empty %}
-  {% set template = 'card' %}
+    {% set template = 'card' %}
 {% endif %}
 
 
 {% set headerlevelcard = 'h2' %}
 
 {% set sectionClasses = [
-  'section',
-  'section--overview',
-  modifier ? 'section--' ~ modifier,
-  items|length < 3 ? ' l-item-count-' ~items|length : 'l-display-grid',
-  extra_class ? extra_class,
+    'section',
+    'section--overview',
+    modifier ? 'section--' ~ modifier:'',
+    items|length < 3 ? ' l-item-count-' ~items|length : 'l-display-grid',
+    extra_class ? extra_class,
 ] %}
 
 
@@ -19,95 +19,97 @@
 {% endblock %}
 
 
-<section class="{{ sectionClasses|join(' ') }}">
+<section class="{{ sectionClasses|join(' ')|trim }}">
 
-  {% block top %}
-    {# Wrapper for section intro #}
-    {% if title or description %}
-      <div class="l-section-top">
+    {% block top %}
+        {# Wrapper for section intro #}
+        {% if title or description %}
+            <div class="l-section-top">
 
-        {% if title %}
-          {% set headerlevelcard = 'h3' %}
-          <h2 class="section__title">
-            {{ title }}
-          </h2>
+                {% if title %}
+                    {% set headerlevelcard = 'h3' %}
+                    <h2 class="section__title">
+                        {{ title }}
+                    </h2>
+                {% endif %}
+
+                {% if description %}
+                    <p class="section__description">
+                        {{ description }}
+                    </p>
+                {% endif %}
+            </div>
+
         {% endif %}
 
-        {% if description %}
-          <p class="section__description">
-            {{ description }}
-          </p>
-        {% endif %}
-      </div>
+    {% endblock %}
 
-    {% endif %}
+    {# Wrapper for all section content #}
+    {% block section_content %}
+        <div class="l-section-content">
 
-  {% endblock %}
+            {% if related.columncounter %}
+                {% set extra_class = 'grid--col-' ~ related.columncounter %}
+            {% elseif items|length < 4 %}
+                {% set extra_class = 'grid--col-' ~ items|length %}
+            {% elseif items|length == 4 or modifier == '4col' %}
+                {% set extra_class = 'grid--col-4' %}
+            {% elseif items|length > 4 and modifier != '4col ' %}
+                {% set extra_class = 'grid--col-3' %}
+            {% endif %}
 
-  {# Wrapper for all section content #}
-  {% block section_content %}
-    <div class="l-section-content">
+            {% if items %}
+                {% if filter == true %}
+                    <div class="filter--show--counter" id="cartcount">
+                        <p id="text--cat--filter" aria-live="polite"><span
+                                    id="cards--count">{{ items|length }}</span><span
+                                    id="cards--text"> tipkaarten geselecteerd in alle thema's.</span><span
+                                    id="cards--cats"></span></p>
+                    </div>
+                {% endif %}
 
-      {% if related.columncounter %}
-        {% set extra_class = 'grid--col-' ~ related.columncounter %}
-      {% elseif items|length < 4 %}
-        {% set extra_class = 'grid--col-' ~ items|length %}
-      {% elseif items|length == 4 or modifier == '4col' %}
-        {% set extra_class = 'grid--col-4' %}
-      {% elseif items|length > 4 and modifier != '4col ' %}
-        {% set extra_class = 'grid--col-3' %}
-      {% endif %}
+                <div class="grid {{ extra_class }}">
 
-      {% if items %}
-      {% if filter == true %}
-        <div class="filter--show--counter" id="cartcount">
-          <p id="text--cat--filter" aria-live="polite"><span id="cards--count">{{ items|length }}</span><span
-                id="cards--text"> tipkaarten geselecteerd in alle thema's.</span><span id="cards--cats"></span></p>
+                    {% for key, item in items %}
+
+                        {% if item.tip_nummer is empty and item.category %}
+                            {% set tip_nummer = key %}
+                        {% else %}
+                            {% set tip_nummer = item.tip_nummer %}
+                        {% endif %}
+                        {% include 'components/'~ template ~'.html.twig' with {
+                            'title' : item.title,
+                            'descr' : item.descr,
+                            'img' : item.img,
+                            'type' : item.type,
+                            'quote' : item.quote,
+                            'meta': item.meta,
+                            'tip_nummer': tip_nummer,
+                            'category': item.category,
+                            'toptip': item.toptip,
+                            'toptiptekst': item.toptiptekst,
+                            'start_date': ( item.start_date ?? '' ),
+                            'end_date': ( item.end_date ?? '' ),
+                            'post_date': ( item.post_date ?? '' ),
+                            'headerlevel': headerlevelcard,
+                            'url': item.url
+                        } %}
+                    {% endfor %}
+                </div>
+
+            {% endif %}
+
         </div>
-      {% endif %}
 
-      <div class="grid {{ extra_class }}">
+    {% endblock %}
 
-        {% for key, item in items %}
-
-          {% if item.tip_nummer is empty and item.category %}
-            {% set tip_nummer = key %}
-          {% else %}
-            {% set tip_nummer = item.tip_nummer %}
-          {% endif %}
-          {% include 'components/'~ template ~'.html.twig' with {
-            'title' : item.title,
-            'descr' : item.descr,
-            'img' : item.img,
-            'type' : item.type,
-            'quote' : item.quote,
-            'meta': item.meta,
-            'tip_nummer': tip_nummer,
-            'category': item.category,
-            'toptip': item.toptip,
-            'toptiptekst': item.toptiptekst,
-            'start_date': ( item.start_date ?? '' ),
-            'end_date': ( item.end_date ?? '' ),
-            'post_date': ( item.post_date ?? '' ),
-            'headerlevel': headerlevelcard,
-            'url': item.url
-          } %}
-        {% endfor %}
-      </div>
-
-      {% endif %}
-
-    </div>
-
-  {% endblock %}
-
-  {% block bottom %}
-    {% if cta.url and cta.title %}
-      <p class="l-cta-wrapper">
-        <a class="btn btn--primary" href="{{ cta.url }}">{{ cta.title }}</a>
-      </p>
-    {% endif %}
-  {% endblock %}
+    {% block bottom %}
+        {% if cta.url and cta.title %}
+            <p class="l-cta-wrapper">
+                <a class="btn btn--primary" href="{{ cta.url }}">{{ cta.title }}</a>
+            </p>
+        {% endif %}
+    {% endblock %}
 
 
 </section>

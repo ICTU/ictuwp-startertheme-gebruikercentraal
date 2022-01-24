@@ -1,6 +1,7 @@
 
 .archive,
-.page--overview-archive {
+.page--overview-archive,
+.page-template-template-overzichtspagina {
   @include gc-page-intro();
   max-width: none;
 
