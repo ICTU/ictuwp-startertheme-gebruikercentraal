@@ -954,12 +954,10 @@
 }
 @media (max-width: 559px) {
   .author.l-with-image {
-    background: #25b34b;
     position: relative;
     overflow: hidden;
     z-index: 5;
     padding-bottom: 5rem;
-    text-align: center;
   }
 }
 @media (max-width: 559px) and (min-width: 700px) {

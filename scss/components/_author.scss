@@ -43,9 +43,7 @@
   &.l-with-image {
 
     @include bp-down(sm) {
-      background: $gc-green;
       @include gc-bg-rotated($gc-a11y-green);
-      text-align: center;
 
       &:before {
         z-index: -1;
