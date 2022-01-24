@@ -15,32 +15,31 @@
  */
 
 
-$archive       = get_queried_object();
-$taxonomy_name = $archive->taxonomy;
+$archive = get_queried_object();
+$taxonomy_name = isset($archive->taxonomy) ? $archive->taxonomy : '';
 
 $templates = [
-	'archive-' . $taxonomy_name . '.twig',
-	'archive.twig',
-	'index.twig',
+    !empty($taxonomy_name) ?: 'archive-' . $taxonomy_name . '.twig',
+    'archive.twig',
+    'index.twig',
 ];
 
 $context = Timber::context();
 
-
 // Set vars
 $context['title'] = get_the_archive_title();
 
-if ( is_day() ) {
-	$context['title']  = sprintf( _x( 'Posts for %s.', 'Archive title for date: dag', 'gctheme' ), get_the_date( get_option('date_format') ) );
-} elseif ( is_month() ) {
-	$context['title']  = sprintf( _x( 'Posts for %s.', 'Archive title for date', 'gctheme' ), get_the_date( 'F Y' ) );
-} elseif ( is_year() ) {
-	$context['title']  = sprintf( _x( 'Posts for %s.', 'Archive title for date', 'gctheme' ), get_the_date( 'Y' ) );
+if (is_day()) {
+    $context['title'] = sprintf(_x('Posts for %s.', 'Archive title for date: dag', 'gctheme'), get_the_date(get_option('date_format')));
+} elseif (is_month()) {
+    $context['title'] = sprintf(_x('Posts for %s.', 'Archive title for date', 'gctheme'), get_the_date('F Y'));
+} elseif (is_year()) {
+    $context['title'] = sprintf(_x('Posts for %s.', 'Archive title for date', 'gctheme'), get_the_date('Y'));
 }
 
 // If term archive
-if ( isset( $context['archive_term'] ) && ! empty( $context['archive_term']['descr'] ) ) {
-	$context['descr'] = $context['archive_term']['descr'];
+if (isset($context['archive_term']) && !empty($context['archive_term']['descr'])) {
+    $context['descr'] = $context['archive_term']['descr'];
 }
 
 $posts = new Timber\PostQuery();
@@ -50,61 +49,61 @@ $posts = new Timber\PostQuery();
 $context['overview'] = [];
 
 // Set data for tipkaarts
-if ( $context['pagetype'] === 'archive_tipthema' ) {
+if ($context['pagetype'] === 'archive_tipthema') {
 
-	// Set data for overview
-	$i = 0;
-	foreach ( $posts as $post ) {
-		$i ++;
-		$items[ $i ] = prepare_card_content( $post );
-	}
+    // Set data for overview
+    $i = 0;
+    foreach ($posts as $post) {
+        $i++;
+        $items[$i] = prepare_card_content($post);
+    }
 
-	$context['overview']['items']    = $items;
-	$context['overview']['template'] = 'card--tipkaart';
-	$context['overview']['modifier'] = '4col';
+    $context['overview']['items'] = $items;
+    $context['overview']['template'] = 'card--tipkaart';
+    $context['overview']['modifier'] = '4col';
 
 } else {
-	foreach ( $posts as $post ) {
-		$context['items'][] = prepare_card_content( $post );
-	}
+    foreach ($posts as $post) {
+        $context['items'][] = prepare_card_content($post);
+    }
 }
 
-if ( $taxonomy_name === OD_CITAATAUTEUR ) {
+if ($taxonomy_name === OD_CITAATAUTEUR) {
 
-	// Get all data from the term
-	$cat    = get_term( $archive->term_id );
-	$author = get_term_meta( $archive->term_id );
+    // Get all data from the term
+    $cat = get_term($archive->term_id);
+    $author = get_term_meta($archive->term_id);
 
-	// Get fields
-	$image = get_field( 'tipgever_foto', $archive );
+    // Get fields
+    $image = get_field('tipgever_foto', $archive);
 
-	// Set up contact links
-	$contact = [];
-	$ci      = 0;
+    // Set up contact links
+    $contact = [];
+    $ci = 0;
 
-	if ( ! empty( $author['tipgever_telefoonnummer'][0] ) ) {
-		$contact['phone'] = $author['tipgever_telefoonnummer'][0];
-	}
+    if (!empty($author['tipgever_telefoonnummer'][0])) {
+        $contact['phone'] = $author['tipgever_telefoonnummer'][0];
+    }
 
-	if ( ! empty( $author['tipgever_mail'][0] ) ) {
-		$contact['email'] = $author['tipgever_mail'][0];
-	}
+    if (!empty($author['tipgever_mail'][0])) {
+        $contact['email'] = $author['tipgever_mail'][0];
+    }
 
-	// Set author vars
-	$context['author']['title']    = $archive->name;
-	$context['author']['function'] = ( $author['tipgever_functietitel'][0] ? $author['tipgever_functietitel'][0] : '' );
-	$context['author']['image']    = ( $image ? $image['sizes']['medium'] : '' );
-	$context['author']['descr']    = ( $cat->description ? $cat->description : '' );
-	$context['author']['contact']  = ( $contact ? $contact : '' );
+    // Set author vars
+    $context['author']['title'] = $archive->name;
+    $context['author']['function'] = ($author['tipgever_functietitel'][0] ? $author['tipgever_functietitel'][0] : '');
+    $context['author']['image'] = ($image ? $image['sizes']['medium'] : '');
+    $context['author']['descr'] = ($cat->description ? $cat->description : '');
+    $context['author']['contact'] = ($contact ? $contact : '');
 
-	// Set overview
-	$fullname = explode( ' ', trim( $archive->name ) );
+    // Set overview
+    $fullname = explode(' ', trim($archive->name));
 
-	// Set 4 column grid for tipgevers. Default is col-3
-	$context['overview']['modifier'] = 'col-4';
-	$context['overview']['title']    = 'Tips van ' . $fullname[0];
+    // Set 4 column grid for tipgevers. Default is col-3
+    $context['overview']['modifier'] = 'col-4';
+    $context['overview']['title'] = 'Tips van ' . $fullname[0];
 
 }
 
 
-Timber::render( $templates, $context );
+Timber::render($templates, $context);

@@ -279,9 +279,9 @@ class GebruikerCentraalTheme extends Timber\Site {
 
 		// Additional vars for archives
 		if ( is_archive() ) {
-			$context['archive_term']['tid']   = get_queried_object()->term_id;
+			$context['archive_term']['tid']   = isset(get_queried_object()->term_id) ? get_queried_object()->term_id : '';
 			$context['archive_term']['descr'] = get_queried_object()->description;
-			$context['pagetype']              = 'archive_' . get_queried_object()->taxonomy;
+			$context['pagetype']              = isset(get_queried_object()->taxonomy) ? 'archive_' . get_queried_object()->taxonomy: ' ';
 		}
 
 		return $context;
@@ -879,18 +879,19 @@ function my_body_classes( $classes ) {
 	} elseif ( is_archive() ) {
 		//print_r(get_queried_object()->taxonomy);
 
-		switch ( get_queried_object()->taxonomy ) {
-			case 'tipthema':
-				//$classes[] = 'page--overview-header-lg';
-				break;
+        if(isset( get_queried_object()->taxonomy)) {
+            switch (get_queried_object()->taxonomy) {
+                case 'tipthema':
+                    //$classes[] = 'page--overview-header-lg';
+                    break;
 
-		}
+            }
+        }
 	}
 
 	return $classes;
 
 }
-
 /*
  * Generate archive titles
  */
