@@ -7310,10 +7310,19 @@ body:not(.single-event) {
 .pagination ul {
   margin: 0;
   padding: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
 }
 .pagination li {
   display: inline-block;
   margin-right: 1.5rem;
+  margin-bottom: 1rem;
 }
 .pagination .pagination__item > span,
 .pagination a {
@@ -7345,13 +7354,21 @@ body:not(.single-event) {
 .pagination__item__first .icon, .pagination__item__prev .icon {
   -webkit-transform: rotate(180deg);
           transform: rotate(180deg);
-  margin-right: 1rem;
+  margin-left: 0.5rem;
+  margin-right: 0.25rem;
+}
+.pagination__item__first .icon {
+  border-right: 2px solid #004152;
 }
 .pagination__item__next a, .pagination__item__last a {
   padding-right: 1.2rem;
 }
 .pagination__item__next .icon, .pagination__item__last .icon {
-  margin-left: 1rem;
+  margin-left: 0.25rem;
+  margin-right: 0.5rem;
+}
+.pagination__item__last .icon {
+  border-right: 2px solid #004152;
 }
 
 .video {
