@@ -157,7 +157,7 @@ if ( have_rows( 'goed_voorbeeld' ) ):
 		$voorbeeld['author']['function'] = get_sub_field( 'voorbeeld-auteur-functie' );
 		$afbeelding_goed_voorbeeld       = get_sub_field( 'afbeelding_goed_voorbeeld' );
 
-		if ( $afbeelding_goed_voorbeeld['sizes']['thumbnail'] ) {
+		if ( isset($afbeelding_goed_voorbeeld['sizes']['thumbnail'] )) {
 			$voorbeeld['author']['img'] = $afbeelding_goed_voorbeeld['sizes']['thumbnail'];
 		}
 
