@@ -39,43 +39,44 @@
   {% endif %}
 
   <div class="{{ class_pagecontent }}">
-  {% if hero_image.src %}
-  <div class="l-hero">
+    {% if hero_image.src %}
+      <div class="l-hero">
 
-    <picture class="image image--hero">
-      <source srcset="{{ hero_image.src|resize(1000) }} 1x" media="(max-width: 800px)" type="{{ hero_image.mime }}">
-      <source srcset="{{ hero_image.src|resize(1600) }} 1.5x" media="(min-width: 800px)" type="{{ hero_image.mime }}">
-      <source srcset="{{ hero_image.src}} 1x" media="(min-width: 1200px)" type="{{ hero_image.mime }}">
-      <img src="{{ hero_image.src}}" alt="{{ hero_image.alt}}">
-    </picture>
-  </div>
-  {% endif %}
+        <picture class="image image--hero">
+          <source srcset="{{ hero_image.src|resize(1000) }} 1x" media="(max-width: 800px)" type="{{ hero_image.mime }}">
+          <source srcset="{{ hero_image.src|resize(1600) }} 1.5x" media="(min-width: 800px)"
+                  type="{{ hero_image.mime }}">
+          <source srcset="{{ hero_image.src }} 1x" media="(min-width: 1200px)" type="{{ hero_image.mime }}">
+          <img src="{{ hero_image.src }}" alt="{{ hero_image.alt }}">
+        </picture>
+      </div>
+    {% endif %}
 
-  <main class="content" id="{{ maincontent_id }}">
-    {% block content %}
-      Sorry, no content
+    <main class="content" id="{{ maincontent_id }}">
+      {% block content %}
+        Sorry, no content
+      {% endblock %}
+
+    </main>
+
+
+    {% if spotlight %}
+      {% include 'sections/section-spotlight.html.twig' with {
+        'items': spotlight,
+        'modifier': 'bg-option',
+      } %}
+    {% endif %}
+
+
+    {% block page_bottom %}
+
     {% endblock %}
+  </div>
 
-  </main>
-
-
-  {% if spotlight %}
-    {% include 'sections/section-spotlight.html.twig' with {
-      'items': spotlight,
-      'modifier': 'bg-option',
-    } %}
-  {% endif %}
-
-
-  {% block page_bottom %}
-
+  {% block footer %}
+    {% include 'footer.twig' %}
+    {{ function('wp_footer') }}
   {% endblock %}
-</div>
-
-{% block footer %}
-  {% include 'footer.twig' %}
-  {{ function('wp_footer') }}
-{% endblock %}
 </div>
 
 </body>

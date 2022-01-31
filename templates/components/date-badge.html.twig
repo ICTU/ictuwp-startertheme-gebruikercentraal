@@ -25,8 +25,12 @@
   {% set show_year = 'true' %}
 {% endif %}
 
+{#
+  De datebadge heeft attribuut 'aria-hidden="true"' om de tekst hier te verbergen voor screenreaders.
+  De eventdatum of de publicatiedatum worden als metadata toegevoegd onder de titel.
+#}
 <time class="date-badge{{ show_year ? ' date-badge--with-year' }}"{{ itemprop_post }}
-      content="{{ fullDate }}" datetime="{{ dateteimeformat }}">
+      content="{{ fullDate }}" datetime="{{ dateteimeformat }}" aria-hidden="true">
   <span class="date-badge__day">{{ day }}</span>
   <span class="date-badge__month">{{ month }}</span>
   <span class="date-badge__year{{ show_year is empty ? ' visually-hidden' }}">{{ year }}</span>

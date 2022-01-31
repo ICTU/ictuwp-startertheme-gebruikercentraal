@@ -505,12 +505,12 @@
 
   @include bp-up(sm) {
     display: flex;
-    margin-left: -$gutter / 2;
-    margin-right: -$gutter / 2;
+    margin-left: -$gutter * 0.5;
+    margin-right: -$gutter * 0.5;
 
     .research-block {
-      margin-left: $gutter / 2;
-      margin-right: $gutter / 2;
+      margin-left: $gutter * 0.5;
+      margin-right: $gutter * 0.5;
       flex: 1;
     }
   }

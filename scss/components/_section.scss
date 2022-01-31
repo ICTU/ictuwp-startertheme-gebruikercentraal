@@ -75,8 +75,8 @@
     }
 
     &--col-1 {
-      padding-left: $gutter / 2;
-      padding-right: $gutter / 2;
+      padding-left: $gutter * 0.5;
+      padding-right: $gutter * 0.5;
       margin-left: -1.5rem;
       margin-right: -1.5rem;
     }
@@ -149,8 +149,8 @@
       display: flex;
 
       .grid {
-        margin-left: -$gutter / 2;
-        margin-right: -$gutter / 2;
+        margin-left: -$gutter * 0.5;
+        margin-right: -$gutter * 0.5;
       }
     }
   }
@@ -162,11 +162,11 @@
       width: 50%;
 
       &:nth-child(odd) {
-        margin-right: $gutter / 2;
+        margin-right: $gutter * 0.5;
       }
 
       &:nth-child(even) {
-        margin-left: $gutter / 2;
+        margin-left: $gutter * 0.5;
       }
     }
   }

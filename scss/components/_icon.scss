@@ -1,0 +1,21 @@
+.icon {
+  @include square(2.2rem);
+  fill: $base-font-color;
+
+  use {
+    fill: $base-font-color;
+  }
+
+  &--small {
+    @include square(1.4rem);
+  }
+
+  &--tipkaart {
+    mask-image: none;
+    height: 6rem;
+    width: 5rem;
+    use {
+      fill: $white;
+    }
+  }
+}

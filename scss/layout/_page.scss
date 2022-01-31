@@ -187,8 +187,7 @@ h1 {
 
 // Page types
 
-.page,
-body[data-template='base.twig'] { //All pages that use the base twig template
+.page { //All pages that use the base twig template
 
   .page__widgets { // Generic wrapper for widgets
     border-top: .1rem solid $border-color;
@@ -258,3 +257,16 @@ body:not(.single-event) {
     padding-bottom: 7rem;
   }
 }*/
+
+
+.search-results .content {
+  padding-bottom: 3rem;
+
+  @include bp-up(md) {
+    padding-bottom: 5rem;
+  }
+
+  @include bp-up(lg) {
+    padding-bottom: 8rem;
+  }
+}

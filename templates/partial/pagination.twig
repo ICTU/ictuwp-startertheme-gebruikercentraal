@@ -1,52 +1,79 @@
 {% if posts.pagination.pages is not empty %}
-  <nav class="pagination-block">
-    <ul class="pagination">
+    <nav class="pagination">
+        <ul class="pagination__items">
 
-      {# First #}
-      {% if posts.pagination.pages|first and posts.pagination.pages|first.current != true %}
-        <li class="first btn">
-          <a href="{{ posts.pagination.pages|first.link }}" aria-label="{{ _x('First', 'pagination', 'gctheme') }}">&lt;&lt;</a>
-        </li>
-      {% else %}
-      {% endif %}
+            {# First #}
+            {% if posts.pagination.pages|first and posts.pagination.pages|first.current != true %}
+                <li class="pagination__item pagination__item__first">
+                    <a href="{{ posts.pagination.pages|first.link }}"
+                       aria-label="{{ _x('First', 'pagination', 'gctheme') }}">
+                        {% include 'partial/icon.html.twig' with { icon: 'arrow'} %}
+                        <span class="pagination__linktext pagination__text">{{ _x('First', 'pagination', 'gctheme') }}</span></a>
+                </li>
+            {% else %}
+            {% endif %}
 
-      {# Previous #}
-      {% if posts.pagination.prev %}
-        <li class="prev btn">
-          <a href="{{ posts.pagination.prev.link }}" aria-label="{{ _x('Previous', 'pagination', 'gctheme') }}">&lt;</a>
-        </li>
-      {% else %}
-      {% endif %}
+            {# Previous #}
+            {% if posts.pagination.prev %}
+                <li class="pagination__item pagination__item__prev">
+                    <a href="{{ posts.pagination.prev.link }}"
+                       aria-label="{{ _x('Previous', 'pagination', 'gctheme') }}">
+                        {% include 'partial/icon.html.twig' with { icon: 'arrow'} %}
+                        <span class="pagination__linktext pagination__text">{{ _x('Previous', 'pagination', 'gctheme') }}</span></a>
+                </li>
+            {% else %}
+            {% endif %}
 
-      {# Pages #}
-      {% for page in posts.pagination.pages %}
-        {% if page.link %}
-          <li>
-            <a href="{{ page.link }}" class="{{ page.class }}">{{ page.title }}</a>
-          </li>
-        {% else %}
-          <li class="current">
-            <span class="{{ page.class }}">{{ page.title }}</span>
-          </li>
-        {% endif %}
-      {% endfor %}
+            {# Pages
+              come in 3 forms:
+              - with a link
+              - as pagination dots [...]
+              - else, which must then be the current page
+            #}
 
-      {# Next #}
-      {% if posts.pagination.next %}
-        <li class="next btn">
-          <a href="{{ posts.pagination.next.link }}" aria-label="{{ _x('Next', 'pagination', 'gctheme') }}">&gt;</a>
-        </li>
-      {% else %}
-      {% endif %}
+            {% for page in posts.pagination.pages %}
+                {% if page.link %}
+                    <li class="pagination__item pagination__item--page">
+                        <a class="pagination__link {{ page.class }}" href="{{ page.link }}">
+                            <span class="pagination__text">{{ _x('Go to page', 'pagination', 'gctheme') }} </span>{{ page.title }}
+                        </a>
 
-      {# Last #}
-      {% if posts.pagination.pages|last and posts.pagination.pages|last.current != true %}
-        <li class="last btn">
-          <a href="{{ posts.pagination.pages|last.link }}" aria-label="{{ _x('Last', 'pagination', 'gctheme') }}">&gt;&gt;</a>
-        </li>
-      {% else %}
-      {% endif %}
+                    </li>
+                {% elseif page.class == 'dots' %}
+                    <li class="pagination__item pagination__item--dots">
+                        <span class="pagination__text {{ page.class }}">{{ page.title }}</span>
+                    </li>
+                {% else %}
+                    <li class="pagination__item pagination__item--current"><span
+                                class="pagination__text">{{ _x('Currently at', 'pagination', 'gctheme') }} </span><span class="current"> {{ page.title }}</span>
+                    </li>
+                {% endif %}
+            {% endfor %}
 
-    </ul>
-  </nav>
+            {# Next #}
+            {% if posts.pagination.next %}
+                <li class="pagination__item pagination__item__next">
+                    <a href="{{ posts.pagination.next.link }}"
+                       aria-label="{{ _x('Next', 'pagination', 'gctheme') }}">
+                        <span class="pagination__text">{{ _x('Next', 'pagination', 'gctheme') }}</span>
+                        {% include 'partial/icon.html.twig' with { icon: 'arrow'} %}
+                    </a>
+                </li>
+            {% else %}
+            {% endif %}
+
+            {# Last #}
+            {% if posts.pagination.pages|last and posts.pagination.pages|last.current != true %}
+                <li class="pagination__item pagination__item__last">
+                    <a href="{{ posts.pagination.pages|last.link }}"
+                       aria-label="{{ _x('Last', 'pagination', 'gctheme') }}">
+                        <span class="pagination__text">{{ _x('Last', 'pagination', 'gctheme') }}</span>
+                        {% include 'partial/icon.html.twig' with { icon: 'arrow'} %}
+                    </a>
+                </li>
+            {% else %}
+            {% endif %}
+
+        </ul>
+    </nav>
 {% endif %}
