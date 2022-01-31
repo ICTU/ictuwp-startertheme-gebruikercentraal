@@ -3348,8 +3348,6 @@ body:not(.single-event) {
 .tip--full .icon--tipkaart {
   height: 6.5rem;
   width: auto;
-  -webkit-mask-image: none;
-          mask-image: none;
 }
 @media (max-width: 559px) {
   .tip--full .icon--tipkaart {
@@ -6488,6 +6486,12 @@ body:not(.single-event) {
   width: 1.4rem;
   height: 1.4rem;
 }
+.icon--tipkaart {
+  -webkit-mask-image: none;
+          mask-image: none;
+  height: 6rem;
+  width: 5rem;
+}
 .icon--tipkaart use {
   fill: #fff;
 }
@@ -8496,3 +8500,4 @@ browser exceptions
     width: 30%;
   }
 }
+/*# sourceMappingURL=gc-theme.css.map */
