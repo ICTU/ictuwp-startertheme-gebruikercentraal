@@ -9,4 +9,10 @@
   &--small {
     @include square(1.4rem);
   }
+
+  &--tipkaart {
+    use {
+      fill: $white;
+    }
+  }
 }
