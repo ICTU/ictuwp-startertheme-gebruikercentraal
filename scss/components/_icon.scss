@@ -11,6 +11,9 @@
   }
 
   &--tipkaart {
+    mask-image: none;
+    height: 6rem;
+    width: 5rem;
     use {
       fill: $white;
     }

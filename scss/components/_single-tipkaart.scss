@@ -209,7 +209,6 @@
     .icon--tipkaart {
       height: 6.5rem;
       width: auto;
-      mask-image: none;
     }
 
     @include bp-down(sm) {
