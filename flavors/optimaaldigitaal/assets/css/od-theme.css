@@ -3351,8 +3351,6 @@ body:not(.single-event) {
 .tip--full .icon--tipkaart {
   height: 6.5rem;
   width: auto;
-  -webkit-mask-image: none;
-          mask-image: none;
 }
 @media (max-width: 559px) {
   .tip--full .icon--tipkaart {
@@ -4864,12 +4862,10 @@ body:not(.single-event) {
 }
 @media (max-width: 559px) {
   .author.l-with-image {
-    background: #25b34b;
     position: relative;
     overflow: hidden;
     z-index: 5;
     padding-bottom: 5rem;
-    text-align: center;
   }
 }
 @media (max-width: 559px) and (min-width: 700px) {
@@ -6492,6 +6488,15 @@ body:not(.single-event) {
 .icon--small {
   width: 1.4rem;
   height: 1.4rem;
+}
+.icon--tipkaart {
+  -webkit-mask-image: none;
+          mask-image: none;
+  height: 6rem;
+  width: 5rem;
+}
+.icon--tipkaart use {
+  fill: #fff;
 }
 
 .link--linklist {
@@ -9246,3 +9251,4 @@ browser exceptions
     width: 30%;
   }
 }
+/*# sourceMappingURL=od-theme.css.map */

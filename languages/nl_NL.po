@@ -1,17 +1,17 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Gebruiker Centraal (2020)\n"
-"POT-Creation-Date: 2022-01-03 16:38+0100\n"
-"PO-Revision-Date: 2022-01-03 16:39+0100\n"
+"POT-Creation-Date: 2022-01-24 23:31+0100\n"
+"PO-Revision-Date: 2022-01-24 23:31+0100\n"
 "Last-Translator: Paul van Buuren <poedit@wbvb.nl>\n"
 "Language-Team: \n"
 "Language: nl_NL\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 3.0\n"
-"X-Poedit-Basepath: ..\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 3.0.1\n"
+"X-Poedit-Basepath: ..\n"
 "X-Poedit-Flags-xgettext: --add-comments=translators:\n"
 "X-Poedit-WPHeader: style.css\n"
 "X-Poedit-SourceCharset: UTF-8\n"
@@ -71,7 +71,7 @@ msgstr ""
 msgid "Alle tips"
 msgstr ""
 
-#: assets/od.php:92 functions.php:773
+#: assets/od.php:92 functions.php:770
 msgid "Toevoegen"
 msgstr ""
 
@@ -91,7 +91,7 @@ msgstr ""
 msgid "Nieuwe tip"
 msgstr ""
 
-#: assets/od.php:97 functions.php:778
+#: assets/od.php:97 functions.php:775
 msgid "Bekijk"
 msgstr ""
 
@@ -115,7 +115,7 @@ msgstr ""
 msgid "Hier voer je de tips in."
 msgstr ""
 
-#: assets/od.php:114 functions.php:795
+#: assets/od.php:114 functions.php:792
 msgid "post"
 msgstr ""
 
@@ -587,191 +587,187 @@ msgstr ""
 msgid "Larger"
 msgstr "Groter"
 
-#: functions.php:545
-msgid "Extra large"
-msgstr "Grootst"
-
-#: functions.php:696
+#: functions.php:693
 msgctxt "Widget area"
 msgid "Footer widget left"
 msgstr ""
 
-#: functions.php:705
+#: functions.php:702
 msgctxt "Widget area"
 msgid "Footer widget right"
 msgstr ""
 
-#: functions.php:768
+#: functions.php:765
 msgid "Spotlight-blokken"
 msgstr ""
 
-#: functions.php:769
+#: functions.php:766
 msgid "Spotlight-blok"
 msgstr ""
 
-#: functions.php:770 functions.php:771
+#: functions.php:767 functions.php:768
 msgid "Spotlight"
 msgstr ""
 
-#: functions.php:772
+#: functions.php:769
 msgid "Alle spotlight-blokken"
 msgstr ""
 
-#: functions.php:774
+#: functions.php:771
 msgid "Spotlight-blok toevoegen"
 msgstr ""
 
-#: functions.php:775
+#: functions.php:772
 msgid "Spotlight-blok bewerken"
 msgstr ""
 
-#: functions.php:776
+#: functions.php:773
 msgid "Bewerk spotlight-blok"
 msgstr ""
 
-#: functions.php:777
+#: functions.php:774
 msgid "Nieuwe spotlight-blok"
 msgstr ""
 
-#: functions.php:779
+#: functions.php:776
 msgid "Bekijk spotlight-blok"
 msgstr ""
 
-#: functions.php:780
+#: functions.php:777
 msgid "Spotlight-blokken zoeken"
 msgstr ""
 
-#: functions.php:781
+#: functions.php:778
 msgid "Geen spotlight-blokken gevonden"
 msgstr ""
 
-#: functions.php:782
+#: functions.php:779
 msgid "Geen spotlight-blokken in de prullenbak"
 msgstr ""
 
-#: functions.php:787
+#: functions.php:784
 msgid "Hier voer je spotlight-blokken in."
 msgstr ""
 
-#: functions.php:924
+#: functions.php:921
 msgctxt "customizer"
 msgid "Gebruiker Centraal Instellingen"
 msgstr ""
 
-#: functions.php:925
+#: functions.php:922
 msgctxt "customizer"
 msgid ""
 "Selecteer hier het kleurenschema voor deze site. Je wijzigt hiermee de "
 "styling, logo en sommige functionaliteit van de site."
 msgstr ""
 
-#: functions.php:948
+#: functions.php:945
 msgctxt "customizer"
 msgid "Kies het kleurenschema"
 msgstr ""
 
-#: functions.php:1172
+#: functions.php:1166
 msgid "GC Kennisbank"
 msgstr ""
 
-#: functions.php:1328 functions.php:1477 single-tips.php:119
+#: functions.php:1322 functions.php:1471 single-tips.php:119
 #, php-format
 msgctxt "Label tip-nummer"
 msgid "Tip %s"
 msgstr ""
 
-#: functions.php:1360
+#: functions.php:1354
 msgctxt "Mime-types"
 msgid "PNG"
 msgstr ""
 
-#: functions.php:1364 functions.php:1368
+#: functions.php:1358 functions.php:1362
 msgctxt "Mime-types"
 msgid "JPG"
 msgstr ""
 
-#: functions.php:1372
+#: functions.php:1366
 msgctxt "Mime-types"
 msgid "GIF"
 msgstr ""
 
-#: functions.php:1376 functions.php:1384
+#: functions.php:1370 functions.php:1378
 msgctxt "Mime-types"
 msgid "MP3"
 msgstr ""
 
-#: functions.php:1380
+#: functions.php:1374
 msgctxt "Mime-types"
 msgid "MOVIE"
 msgstr "Filmpje"
 
-#: functions.php:1388
+#: functions.php:1382
 msgctxt "Mime-types"
 msgid "PDF"
 msgstr ""
 
-#: functions.php:1392 functions.php:1396
+#: functions.php:1386 functions.php:1390
 msgctxt "Mime-types"
 msgid "Word"
 msgstr ""
 
-#: functions.php:1400 functions.php:1404
+#: functions.php:1394 functions.php:1398
 msgctxt "Mime-types"
 msgid "Powerpoint"
 msgstr ""
 
-#: functions.php:1408 functions.php:1412
+#: functions.php:1402 functions.php:1406
 msgctxt "Mime-types"
 msgid "Excel"
 msgstr ""
 
-#: functions.php:1416
+#: functions.php:1410
 msgctxt "Mime-types"
 msgid "TXT"
 msgstr ""
 
-#: functions.php:1483
+#: functions.php:1477
 msgctxt "Toptiptekst bij tip"
 msgid "Toptip"
 msgstr "Dit is een toptip"
 
-#: functions.php:1496 single.php:66
+#: functions.php:1490 single.php:66
 msgctxt "Meta: value voor auteur"
 msgid "Author"
 msgstr "Auteur"
 
-#: functions.php:1520 functions.php:1538 single.php:123 single.php:136
+#: functions.php:1514 functions.php:1532 single.php:123 single.php:136
 msgctxt "Meta: value voor evenementdatum"
 msgid "Event date"
 msgstr "Datum evenement"
 
-#: functions.php:1528 functions.php:1536 single.php:120 single.php:134
+#: functions.php:1522 functions.php:1530 single.php:120 single.php:134
 #, php-format
 msgctxt "Meta voor event: label voor start- en eindtijd"
 msgid "%s - %s"
 msgstr "%s - %s"
 
-#: functions.php:1531 single.php:130
+#: functions.php:1525 single.php:130
 msgctxt "Meta voor event: value voor start- en eindtijd"
 msgid "Times"
 msgstr "Aanvang"
 
-#: functions.php:1549 functions.php:1553 single.php:145 single.php:149
+#: functions.php:1543 functions.php:1547 single.php:145 single.php:149
 msgctxt "Meta voor event: value voor geen plek meer beschikbaar"
 msgid "Fully booked"
 msgstr "Vol"
 
-#: functions.php:1552 single.php:148
+#: functions.php:1546 single.php:148
 msgctxt "Meta voor event: label voor geen plek meer beschikbaar"
 msgid "Availability"
 msgstr "Beschikbaarheid"
 
-#: functions.php:1563 single.php:156 single.php:165
+#: functions.php:1557 single.php:156 single.php:165
 msgctxt "Meta voor event: label voor locatie"
 msgid "Location"
 msgstr "Locatie"
 
-#: functions.php:1603
+#: functions.php:1597
 msgctxt "404 widget space"
 msgid "Widgetruimte op 404 pagina"
 msgstr "Widgetruimte op 404 pagina"
@@ -2144,6 +2140,9 @@ msgstr ""
 #. Template Name of the plugin/theme
 msgid "Template sitemap"
 msgstr ""
+
+#~ msgid "Extra large"
+#~ msgstr "Grootst"
 
 #~ msgid "Email adres: "
 #~ msgstr "E-mailadres: "
