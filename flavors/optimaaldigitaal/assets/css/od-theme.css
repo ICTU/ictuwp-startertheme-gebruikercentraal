@@ -3355,6 +3355,8 @@ body:not(.single-event) {
 .tip--full .icon--tipkaart {
   height: 6.5rem;
   width: auto;
+  -webkit-mask-image: none;
+          mask-image: none;
 }
 @media (max-width: 559px) {
   .tip--full .icon--tipkaart {

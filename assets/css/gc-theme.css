@@ -3352,6 +3352,8 @@ body:not(.single-event) {
 .tip--full .icon--tipkaart {
   height: 6.5rem;
   width: auto;
+  -webkit-mask-image: none;
+          mask-image: none;
 }
 @media (max-width: 559px) {
   .tip--full .icon--tipkaart {
@@ -6492,6 +6494,9 @@ body:not(.single-event) {
   width: 1.4rem;
   height: 1.4rem;
 }
+.icon--tipkaart use {
+  fill: #fff;
+}
 
 .link--linklist {
   font-family: "montserratbold", Helvetica, Arial, sans-serif;
@@ -8450,4 +8455,3 @@ browser exceptions
     width: 30%;
   }
 }
-/*# sourceMappingURL=gc-theme.css.map */
