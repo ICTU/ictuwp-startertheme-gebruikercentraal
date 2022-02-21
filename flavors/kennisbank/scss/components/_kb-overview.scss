@@ -1,11 +1,11 @@
 .mkb-columns {
   display: flex;
   flex-wrap: wrap;
-  margin-left: -$gutter / 2;
-  margin-right: -$gutter / 2;
+  margin-left: -$gutter * 0.5;
+  margin-right: -$gutter * 0.5;
 
   .mkb-row {
-    margin: $gutter $gutter / 2 0;
+    margin: $gutter $gutter * 0.5 0;
     width: calc(100% - #{$gutter});
 
     .kb-topic + .kb-topic {
