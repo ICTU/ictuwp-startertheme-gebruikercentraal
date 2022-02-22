@@ -29,7 +29,7 @@
     margin: 2rem 0 0;
   }
 
-  .author__image {
+  .author__picture {
     @include gc-box-shadow();
   }
 
@@ -50,7 +50,7 @@
         top: 12rem;
       }
 
-      .author__image {
+      .author__picture {
         max-width: 14rem;
         margin: 0 auto;
       }
@@ -64,8 +64,7 @@
       display: flex;
       align-items: flex-start;
 
-
-      .author__image {
+      .author__picture {
         width: 8rem;
       }
 
@@ -76,7 +75,7 @@
     }
 
     @include bp-up(md) {
-      .author__image {
+      .author__picture {
         width: 14rem;
       }
 
@@ -254,7 +253,7 @@ $ac-margin: 30rem;
   display: flex;
   flex-direction: column;
 
-  .author__image {
+  .author__picture {
     order: 1;
   }
 

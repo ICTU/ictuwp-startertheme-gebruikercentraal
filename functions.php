@@ -1519,7 +1519,7 @@ function prepare_card_content( $postitem ) {
 
 			// dan start- en eindtijd tonen, als die nuttig zijn
 			if ( date_i18n( get_option( 'time_format' ), $event_start_datetime ) !== date_i18n( get_option( 'time_format' ), $event_end_datetime ) ) {
-				$eventtimes     = sprintf( _x( '%s - %s', 'Meta voor event: label voor start- en eindtijd', 'gctheme' ), date_i18n( get_option( 'time_format' ), $event_start_datetime ), date_i18n( get_option( 'time_format' ), $event_end_datetime ) );
+				$eventtimes     = gc_format_times( $event_start_datetime, $event_end_datetime );
 				$item['meta'][] = [
 					'classname' => 'times',
 					'title'     => _x( 'Times', 'Meta voor event: value voor start- en eindtijd', 'gctheme' ),
@@ -1699,3 +1699,20 @@ function gc_wbvb_update_auteursfoto( $post_id ) {
 }
 
 //========================================================================================================
+
+function gc_format_times( $date_start = '', $date_end = '' ) {
+	$return = '';
+
+	if ( $date_start && $date_end ) {
+		$time_start        = date_i18n( get_option( 'time_format' ), $date_start );
+		$time_start_prefix = sprintf( _x( '<span class="visuallyhidden">Starts at</span> %s', 'Meta voor event: label voor starttijd', 'gctheme' ), $time_start );
+		$time_end          = date_i18n( get_option( 'time_format' ), $date_end );
+		$time_end_prefix   = sprintf( _x( '<span class="visuallyhidden">ends at </span> %s', 'Meta voor event: label voor eindtijd', 'gctheme' ), $time_end );
+		$return            = sprintf( _x( '%s %s %s', 'Meta voor event: label voor start-, eindtijd en tussenvoegsel', 'gctheme' ), $time_start_prefix, '<span aria-hidden="true">-</span>', $time_end_prefix );
+	}
+
+	return $return;
+}
+
+//========================================================================================================
+

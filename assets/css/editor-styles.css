@@ -940,7 +940,7 @@
 .author p {
   margin: 2rem 0 0;
 }
-.author .author__image {
+.author .author__picture {
   -webkit-box-shadow: 0.4rem 0.4rem 0 rgba(0, 0, 0, 0.15);
           box-shadow: 0.4rem 0.4rem 0 rgba(0, 0, 0, 0.15);
 }
@@ -986,7 +986,7 @@
   }
 }
 @media (max-width: 559px) {
-  .author.l-with-image .author__image {
+  .author.l-with-image .author__picture {
     max-width: 14rem;
     margin: 0 auto;
   }
@@ -1005,7 +1005,7 @@
         -ms-flex-align: start;
             align-items: flex-start;
   }
-  .author.l-with-image .author__image {
+  .author.l-with-image .author__picture {
     width: 8rem;
   }
   .author.l-with-image .author__content {
@@ -1014,7 +1014,7 @@
   }
 }
 @media (min-width: 700px) {
-  .author.l-with-image .author__image {
+  .author.l-with-image .author__picture {
     width: 14rem;
   }
   .author.l-with-image .author__content {
@@ -1171,7 +1171,7 @@
       -ms-flex-direction: column;
           flex-direction: column;
 }
-.author--card .author__image {
+.author--card .author__picture {
   -webkit-box-ordinal-group: 2;
       -ms-flex-order: 1;
           order: 1;
@@ -2367,11 +2367,11 @@
   width: 3rem;
   height: 3rem;
   display: block;
-  border: 0.1rem solid #D1DFE3;
+  border: 0.1rem solid transparent;
   text-decoration: none;
   overflow: hidden;
-  -webkit-transition: background-color 0.2s;
-  transition: background-color 0.2s;
+  -webkit-transition: background-color 0.2s, border-color 0.2s;
+  transition: background-color 0.2s, border-color 0.2s;
 }
 .link--social:before {
   display: block;
@@ -2383,6 +2383,7 @@
   transition: -webkit-transform 0.2s;
   transition: transform 0.2s;
   transition: transform 0.2s, -webkit-transform 0.2s;
+  font-size: 1.8rem;
 }
 .link--social.linkedin:before {
   content: "\ea0c";
@@ -2476,6 +2477,9 @@
 .link--contact:hover:before, .link--contact:focus:before, .link--contact:active:before {
   margin-right: 1.1rem;
 }
+.link--contact:hover .icon, .link--contact:focus .icon, .link--contact:active .icon {
+  margin-right: 1.7rem;
+}
 @media (max-width: 559px) {
   .link--contact {
     display: block;
@@ -2490,10 +2494,14 @@
 .link--contact .icon {
   width: 2rem;
   height: 2rem;
-  fill: #fff;
   float: left;
   margin-top: 0.5rem;
   margin-right: 1.5rem;
+  -webkit-transition: margin 0.2s;
+  transition: margin 0.2s;
+}
+.link--contact .icon use {
+  fill: #148839;
 }
 .link--arrow {
   position: relative;
@@ -3766,4 +3774,3 @@ Gutenberg corrections
 .download-box--with-descr .meta-data {
   width: auto;
 }
-/*# sourceMappingURL=editor-styles.css.map */

@@ -17,10 +17,10 @@
   &--social {
     @include square(3rem);
     display: block;
-    border: .1rem solid $border-color;
+    border: .1rem solid transparent;
     text-decoration: none;
     overflow: hidden;
-    transition: background-color .2s;
+    transition: background-color .2s, border-color .2s;
 
     &:before {
       display: block;
@@ -29,6 +29,7 @@
       text-align: center;
       line-height: 3rem;
       transition: transform .2s;
+      font-size: 1.8rem;
     }
 
     &.linkedin {
@@ -103,6 +104,10 @@
       &:before {
         margin-right: 1.1rem;
       }
+
+      .icon {
+        margin-right: 1.7rem;
+      }
     }
 
     @include bp-down(sm) {
@@ -117,11 +122,14 @@
 
     .icon {
       @include square(2rem);
-
-      fill: $intro-color;
       float: left;
       margin-top: 0.5rem;
       margin-right: 1.5rem;
+      transition: margin .2s;
+
+      use {
+        fill: $color-primary;
+      }
     }
   }
 
