@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Gebruiker Centraal (2020)\n"
-"POT-Creation-Date: 2022-01-24 23:31+0100\n"
-"PO-Revision-Date: 2022-01-24 23:31+0100\n"
+"POT-Creation-Date: 2022-02-23 00:52+0100\n"
+"PO-Revision-Date: 2022-02-23 00:52+0100\n"
 "Last-Translator: Paul van Buuren <poedit@wbvb.nl>\n"
 "Language-Team: \n"
 "Language: nl_NL\n"
@@ -731,7 +731,7 @@ msgctxt "Toptiptekst bij tip"
 msgid "Toptip"
 msgstr "Dit is een toptip"
 
-#: functions.php:1490 single.php:66
+#: functions.php:1490 single.php:67
 msgctxt "Meta: value voor auteur"
 msgid "Author"
 msgstr "Auteur"
@@ -741,16 +741,16 @@ msgctxt "Meta: value voor evenementdatum"
 msgid "Event date"
 msgstr "Datum evenement"
 
-#: functions.php:1522 functions.php:1530 single.php:120 single.php:134
-#, php-format
-msgctxt "Meta voor event: label voor start- en eindtijd"
-msgid "%s - %s"
-msgstr "%s - %s"
-
 #: functions.php:1525 single.php:130
 msgctxt "Meta voor event: value voor start- en eindtijd"
 msgid "Times"
 msgstr "Aanvang"
+
+#: functions.php:1530 single.php:134
+#, php-format
+msgctxt "Meta voor event: label voor start- en eindtijd"
+msgid "%s - %s"
+msgstr "%s - %s"
 
 #: functions.php:1543 functions.php:1547 single.php:145 single.php:149
 msgctxt "Meta voor event: value voor geen plek meer beschikbaar"
@@ -771,6 +771,24 @@ msgstr "Locatie"
 msgctxt "404 widget space"
 msgid "Widgetruimte op 404 pagina"
 msgstr "Widgetruimte op 404 pagina"
+
+#: functions.php:1708
+#, php-format
+msgctxt "Meta voor event: label voor starttijd"
+msgid "<span class=\"visuallyhidden\">Starts at</span> %s"
+msgstr "<span class=\"visuallyhidden\">Begintijd</span> %s"
+
+#: functions.php:1710
+#, php-format
+msgctxt "Meta voor event: label voor eindtijd"
+msgid "<span class=\"visuallyhidden\">ends at </span> %s"
+msgstr "<span class=\"visuallyhidden\">einde</span> %s"
+
+#: functions.php:1711
+#, php-format
+msgctxt "Meta voor event: label voor start-, eindtijd en tussenvoegsel"
+msgid "%s %s %s"
+msgstr "%s %s %s"
 
 #: gutenberg-blocks/cta-block.php:16
 msgctxt "Block titel"
@@ -1816,7 +1834,7 @@ msgctxt "Meta: value voor publicatiedatum"
 msgid "Publish date"
 msgstr "Publicatiedatum"
 
-#: single.php:80
+#: single.php:81
 msgctxt "Meta: value voor categorie"
 msgid "Category"
 msgstr "Categorie"
@@ -2002,7 +2020,7 @@ msgstr "Widgets onder in de pagina"
 msgid "Menu"
 msgstr ""
 
-#: templates/partial/pagination.twig:37
+#: templates/partial/pagination.twig:38
 msgctxt "pagination"
 msgid "Go to page"
 msgstr "Ga naar pagina"
@@ -2042,17 +2060,17 @@ msgctxt "authorbox"
 msgid "About"
 msgstr "Over"
 
-#: templates/sections/section-authorbox.html.twig:49
+#: templates/sections/section-authorbox.html.twig:48
 #, php-format
 msgid "LinkedIn profile of %s"
 msgstr "LinkedIn-account van %s"
 
-#: templates/sections/section-authorbox.html.twig:56
+#: templates/sections/section-authorbox.html.twig:55
 #, php-format
 msgid "Twitter account of %s"
 msgstr "Twitter-account van %s"
 
-#: templates/sections/section-authorbox.html.twig:63
+#: templates/sections/section-authorbox.html.twig:62
 #, php-format
 msgid "Facebook profile of %s"
 msgstr "Facebook-account van %s"
@@ -2140,6 +2158,11 @@ msgstr ""
 #. Template Name of the plugin/theme
 msgid "Template sitemap"
 msgstr ""
+
+#, php-format
+#~ msgctxt "Meta voor event: label voor starttijd"
+#~ msgid "<span class=\"visuallyhidden\">Begintijd</span> %s"
+#~ msgstr "<span class=\"visuallyhidden\">Begintijd</span> %s"
 
 #~ msgid "Extra large"
 #~ msgstr "Grootst"
