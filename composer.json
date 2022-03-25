@@ -1,0 +1,26 @@
+{
+    "name": "ictu/ictuwp-theme-gc2020",
+    "description": "Het meest recente theme (2020) voor de sites van gebruikercentraal.nl",
+    "type": "wordpress-theme",
+    "license": "GPL-2.0-or-later",
+    "authors": [
+        {
+            "name": "Paul van Buuren",
+            "email": "paul@wbvb.nl",
+            "homepage": "https://wbvb.nl"
+        },
+        {
+            "name": "Tamara de Haas",
+            "email": "info@haas-ontwerp.nl",
+            "homepage": "http://haas-ontwerp.nl/"
+        },
+        {
+            "name": "David Hund",
+            "email": "david@valuedstandards.com",
+            "homepage": "https://valuedstandards.com"
+        }
+    ],
+    "support": {
+        "issues": "https://github.com/ICTU/ictuwp-theme-gc2020/issues"
+    }
+}
