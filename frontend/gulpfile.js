@@ -22,6 +22,13 @@ const del = require('del'),
 const config = require('./sites_config.json');
 const siteConfig = config[(argv.site === undefined) ? 'base' : argv.site];
 
+/**
+ * Use 'http://' for siteConfig proxy URL's
+ * ..unless `https` is passed as an argument to Gulp
+ *   with: gulp --https
+ * Used in browserSync.init() config
+ */
+const proxyProtocol = `http${ argv.https ? `s` : `` }://`;
 
 const r = Math.random().toString(36).substring(7);
 const fontName = 'gc-iconfont-' + r;
@@ -257,7 +264,15 @@ function watch() {
   console.log("Name: " + siteConfig.name);
 
   browserSync.init({
-    proxy: siteConfig.proxy
+    /**
+     * Use proxyProtocol based on passed `--https` param
+     * Allows for proxy strings with- or without protocol:
+     * - proxy.url
+     * - //proxy.url
+     * - https://www.proxy.url
+     * - http://proxy.url
+     */
+    proxy: `${proxyProtocol}${siteConfig.proxy.replace(/^(\/\/)|(https?:\/\/)/i,``)}`
   });
 
   gulp.watch('../assets/js/components/*.js',{ usePolling: true }, js);
