@@ -1,3 +1,6 @@
+# BackstopJS: we ignore failed images
+frontend/backstop_data/bitmaps_test
+
 # ignore node dependency directories
 /frontend/node_modules
 

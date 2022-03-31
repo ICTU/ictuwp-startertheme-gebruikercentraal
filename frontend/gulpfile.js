@@ -17,7 +17,8 @@ const del = require('del'),
   plumber = require("gulp-plumber"),
   concat = require('gulp-concat-util'),
   clean = require('gulp-clean'),
-  fs = require('node-fs');
+  fs = require('node-fs'),
+  backstop = require('backstopjs');
 
 const config = require('./sites_config.json');
 const siteConfig = config[(argv.site === undefined) ? 'base' : argv.site];
@@ -285,3 +286,20 @@ exports.default = watch;
 exports.all = prodAll;
 //exports.styleguide = styleGuide;
 
+
+/**
+ * Backstop JS Visual Regression Testing
+ * https://github.com/garris/BackstopJS
+ * 
+ * We have installed it _locally_ and use it (only)
+ * through Gulp:
+ * https://github.com/garris/BackstopJS#since-the-backstop-returns-promises-so-it-can-run-natively-as-a-task-in-build-systems-like-gulp
+ * 
+ * gulp backstop
+ * 
+ */
+exports.backstop = _ => backstop('test');
+exports.backstop_init = _ => backstop('init');
+exports.backstop_test = _ => backstop('test');
+exports.backstop_approve = _ => backstop('approve');
+exports.backstop_reference = _ => backstop('reference');

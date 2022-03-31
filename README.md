@@ -22,6 +22,27 @@ Gebruikers met beheerders-rechten kunnen de customizer gebruiken. Deze vind je v
 [admin] > Weergave > Customizer
 Hier vind je een lijst met opties. Zie de optie 'GC theme-opties'. Hier zie je een selectielijst; je keuze hier beinvloedt de vormgeving van je GC-site.
 
+### BackstopJS Visual Regressie Tests
+Er is een Gulp taak voor het runnen van [BackstopJS](https://garris.github.io/BackstopJS/) Visual Regression Tests van de _lokale_ Gebruiker Centraal Homepage (SSL): https://www.gebruikercentraal.test/
+
+- (Run `npm install` om de nieuwe `backstopjs` dependency op te halen)
+
+Vanuit de `./frontend/` folder heb je de volgende Gulp taken:
+
+- `gulp backstop` (== `backstop_test`)
+- `gulp backstop_approve`
+- `gulp backstop_reference`
+- `gulp backstop_init`
+
+De workflow spreekt voor zich. Uitgebreide informatie in de [BackstopJS Documentatie](https://github.com/garris/BackstopJS#the-backstopjs-workflow)
+
+1. `backstop_test` draait een test: de 1e keer faalt deze, want er zijn nog geen 'reference' afbeeldingen
+2. `backstop_approve` maakt 'reference' afbeeldingen van de huidige test resultaten. Deze worden bij een volgende test gebruikt
+
+Als het goed is opent een browser met de resultaten.
+
+Falende afbeeldingen worden 'exclude' uit Git.
+
 ## Contact
 * Victor Zuydweg
 * Tamara de Haas: [haas-ontwerp.nl](https://haas-ontwerp.nl/)
