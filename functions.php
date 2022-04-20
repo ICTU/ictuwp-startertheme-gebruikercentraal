@@ -538,7 +538,7 @@ class GebruikerCentraalTheme extends Timber\Site {
 			),
 			array(
 				'name' => esc_attr__( 'Larger', 'gctheme' ),
-				'size' => 24,
+				'size' => 22,
 				'slug' => 'larger',
 			)
 		] );
