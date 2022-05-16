@@ -5,16 +5,21 @@
 }
 
 .entry--type-landing {
-  .entry-content > .section {
-    &:first-child {
-      &.section--heading,
-      &.section--paragraph {
-        margin-top: 4rem;
+  .entry-content {
+    @include ho-padding;
 
-        @include bp-up(md) {
-          margin-top: 7rem;
+    > .section {
+      &:first-child {
+        &.section--heading,
+        &.section--paragraph {
+          margin-top: 4rem;
+
+          @include bp-up(md) {
+            margin-top: 7rem;
+          }
         }
       }
     }
   }
+
 }

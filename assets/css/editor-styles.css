@@ -3592,8 +3592,7 @@ Gutenberg corrections
 }
 
 .has-larger-font-size {
-  /* 122% ~= 22px (based on 18px) */
-  font-size: 122%;
+  font-size: 120%;
 }
 
 .has-extra-large-font-size {

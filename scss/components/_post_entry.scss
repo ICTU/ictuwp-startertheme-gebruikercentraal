@@ -20,7 +20,7 @@
       margin-top: $gutter;
       padding-bottom: $gutter;
 
-      @include bp-up(md){
+      @include bp-up(md) {
         padding-bottom: $gutter * 2;
       }
     }
@@ -81,8 +81,8 @@
     &--bg-option,
     &--overview {
       max-width: none;
-      @include ho-padding;
       @include negate-padding;
+      @include ho-padding;
     }
 
     // Sections which don't need the default max-width
@@ -98,6 +98,21 @@
       @include gc-last-padding;
     }
   }
+
+  // WP Gutenberg blocks
+  > .wp-block {
+
+    &-embed {
+      margin-top: 5rem;
+    }
+
+    // Video
+    &-embed-vimeo {
+      //@include ho-container();
+      @include ho-make-container($max-width-inner);
+    }
+  }
+
 }
 
 // Sections buiten gutenberg / post body
