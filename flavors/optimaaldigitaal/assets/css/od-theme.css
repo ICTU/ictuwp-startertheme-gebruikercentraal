@@ -982,6 +982,16 @@ legend + div {
   }
 }
 
+.gform_validation_container,
+.gform_wrapper .gform_validation_container,
+body .gform_wrapper li.gform_validation_container,
+body .gform_wrapper .gform_body ul.gform_fields li.gfield.gform_validation_container,
+body .gform_wrapper ul.gform_fields li.gfield.gform_validation_container {
+  display: none !important;
+  position: absolute !important;
+  left: -9000px;
+}
+
 /*
 Gutenberg corrections
  */
@@ -2595,20 +2605,12 @@ body:not(.single-event) {
 .entry-content > .section--bg-option,
 .entry-content > .section--overview {
   max-width: none;
+  margin-left: -2rem;
+  margin-right: -2rem;
   padding-left: 2rem;
   padding-right: 2rem;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
-  margin-left: -2rem;
-  margin-right: -2rem;
-}
-@media (min-width: 560px) {
-  .post__body > .section--bg-option, .post__body > .section--overview,
-.entry-content > .section--bg-option,
-.entry-content > .section--overview {
-    padding-right: 3rem;
-    padding-left: 3rem;
-  }
 }
 @media (min-width: 560px) {
   .post__body > .section--bg-option, .post__body > .section--overview,
@@ -2616,6 +2618,14 @@ body:not(.single-event) {
 .entry-content > .section--overview {
     margin-left: -3rem;
     margin-right: -3rem;
+  }
+}
+@media (min-width: 560px) {
+  .post__body > .section--bg-option, .post__body > .section--overview,
+.entry-content > .section--bg-option,
+.entry-content > .section--overview {
+    padding-right: 3rem;
+    padding-left: 3rem;
   }
 }
 .post__body > .section--overview.l-item-count-3, .post__body > .section--examples,
@@ -2632,6 +2642,16 @@ body:not(.single-event) {
 .entry-content > div:last-child.wp-block-coblocks-gallery-masonry {
     padding-bottom: 7rem;
   }
+}
+.post__body > .wp-block-embed,
+.entry-content > .wp-block-embed {
+  margin-top: 5rem;
+}
+.post__body > .wp-block-embed-vimeo,
+.entry-content > .wp-block-embed-vimeo {
+  max-width: 760px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .entry > .section,
@@ -4005,6 +4025,18 @@ body:not(.single-event) {
           box-shadow: none;
 }
 
+.entry--type-landing .entry-content {
+  padding-left: 2rem;
+  padding-right: 2rem;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+@media (min-width: 560px) {
+  .entry--type-landing .entry-content {
+    padding-right: 3rem;
+    padding-left: 3rem;
+  }
+}
 .entry--type-landing .entry-content > .section:first-child.section--heading, .entry--type-landing .entry-content > .section:first-child.section--paragraph {
   margin-top: 4rem;
 }
