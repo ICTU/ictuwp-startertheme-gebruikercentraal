@@ -17,11 +17,19 @@ const del = require('del'),
   plumber = require("gulp-plumber"),
   concat = require('gulp-concat-util'),
   clean = require('gulp-clean'),
-  fs = require('node-fs');
+  fs = require('node-fs'),
+  backstop = require('backstopjs');
 
 const config = require('./sites_config.json');
 const siteConfig = config[(argv.site === undefined) ? 'base' : argv.site];
 
+/**
+ * Use 'http://' for siteConfig proxy URL's
+ * ..unless `https` is passed as an argument to Gulp
+ *   with: gulp --https
+ * Used in browserSync.init() config
+ */
+const proxyProtocol = `http${ argv.https ? `s` : `` }://`;
 
 const r = Math.random().toString(36).substring(7);
 const fontName = 'gc-iconfont-' + r;
@@ -257,7 +265,15 @@ function watch() {
   console.log("Name: " + siteConfig.name);
 
   browserSync.init({
-    proxy: siteConfig.proxy
+    /**
+     * Use proxyProtocol based on passed `--https` param
+     * Allows for proxy strings with- or without protocol:
+     * - proxy.url
+     * - //proxy.url
+     * - https://www.proxy.url
+     * - http://proxy.url
+     */
+    proxy: `${proxyProtocol}${siteConfig.proxy.replace(/^(\/\/)|(https?:\/\/)/i,``)}`
   });
 
   gulp.watch('../assets/js/components/*.js',{ usePolling: true }, js);
@@ -285,3 +301,20 @@ exports.default = watch;
 exports.all = prodAll;
 //exports.styleguide = styleGuide;
 
+
+/**
+ * Backstop JS Visual Regression Testing
+ * https://github.com/garris/BackstopJS
+ * 
+ * We have installed it _locally_ and use it (only)
+ * through Gulp:
+ * https://github.com/garris/BackstopJS#since-the-backstop-returns-promises-so-it-can-run-natively-as-a-task-in-build-systems-like-gulp
+ * 
+ * gulp backstop
+ * 
+ */
+exports.backstop = _ => backstop('test');
+exports.backstop_init = _ => backstop('init');
+exports.backstop_test = _ => backstop('test');
+exports.backstop_approve = _ => backstop('approve');
+exports.backstop_reference = _ => backstop('reference');

@@ -65,8 +65,6 @@ if ( $flavor_select == "OD" ) {
 	add_action( 'init', [ 'ICTUWP_GC_OD_registerposttypes', 'init' ], 1 );
 }
 
-// include file for all must-use plugins
-require_once( __DIR__ . '/plugin-activatie/must-use-plugins.php' );
 //========================================================================================================
 /*
  * Extra functionaliteit en filters voor de Events Manager
@@ -538,7 +536,7 @@ class GebruikerCentraalTheme extends Timber\Site {
 			),
 			array(
 				'name' => esc_attr__( 'Larger', 'gctheme' ),
-				'size' => 24,
+				'size' => 22,
 				'slug' => 'larger',
 			)
 		] );
