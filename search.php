@@ -13,12 +13,22 @@ global $wp_query;
 
 $templates = array( 'search.twig', 'archive.twig', 'index.twig' );
 
-$context        = Timber::context();
-$searchterm     = isset( $_GET['s'] ) ? sanitize_text_field( $_GET['s'] ) : '';
+$context     = Timber::context();
+$searchterm  = null;
+$name_engine = 'supplemental';
+if ( isset( $_GET['searchwp'] ) ) {
+	// a search query for the supplemental engine
+	$searchterm = sanitize_text_field( $_GET['searchwp'] );
+} elseif ( isset( $_GET['s'] ) ) {
+	$searchterm = sanitize_text_field( $_GET['s'] );
+}
 $number_results = 0;
 
 // default title, voor als er geen zoekterm bekend is
 $context['title'] = _x( "Please enter a search term", 'Search results - title', 'gctheme' );
+
+// maak het mogelijk dat tipgevers ook gevonden worden op gedeeltes van hun naam
+add_filter( 'searchwp_tax_term_or_logic', '__return_true' );
 
 if ( $searchterm ) {
 
@@ -26,17 +36,13 @@ if ( $searchterm ) {
 	$currentpagenumber = ( get_query_var( 'paged' ) ) ? get_query_var( 'paged' ) : 1;
 	$pagenumber_start  = ( $posts_per_page * $currentpagenumber ) - ( $posts_per_page - 1 );
 
-	if ( class_exists( 'SearchWP' ) ) {
-		// SearchWP v3 (!), niet versie 4
-		// Alleen geldig als de SearchWP plugin aan staat, zoals op de accept- en live-site.
-		// SearchWP biedt aparte zoekfunctionaliteit zoals bijvoorbeeld
-		// het uitlichten van taxonomieen, zoals tipgevers
+	// SearchWP biedt aparte zoekfunctionaliteit zoals bijvoorbeeld
+	// het uitlichten van taxonomieen, zoals tipgevers.
+	// Tot aug. gebruikten we versie 3, daarna upgrade naar versie 4.
 
-		// maak het mogelijk dat tipgevers ook gevonden worden op gedeeltes van hun naam
-		add_filter( 'searchwp_tax_term_or_logic', '__return_true' );
-
-		$engine      = SearchWP::instance();     // instatiate SearchWP
-		$name_engine = 'supplemental';
+	if ( property_exists( 'SearchWP', 'instance' ) ) {
+		// SearchWP v3.x
+		$engine = SearchWP::instance();     // instatiate SearchWP
 
 		// check of 'supplemntal bestaat'
 		if ( $engine->settings['engines'][ $name_engine ] ) {
@@ -47,87 +53,28 @@ if ( $searchterm ) {
 			$name_engine = 'default';
 		}
 
-		$posts          = $engine->search( $name_engine, $searchterm, $currentpagenumber );
+		$posts = $engine->search( $name_engine, $searchterm, $currentpagenumber );
 
-		if ( $posts ) {
-			$context['title'] = sprintf( _x( "Results for '%s'", 'Search results no results', 'gctheme' ), $searchterm );
-		} else {
-			$context['title'] = sprintf( _x( "No result for '%s'", 'Search results no results', 'gctheme' ), $searchterm );
-			$context['descr'] = sprintf( _x( "Sorry. Maybe check your search term and try again.", "Search results", 'gctheme' ) );
-		}
-		// TODO: tonen van aantal gevonden records
-		// ik zou graag het aantal resultaten tonen en het aantal pagina's maar dat werkt voor SearchWP blijkbaar anders
-		// dan je zou verwachten.
-		// oh well ¯\_(ツ)_/¯
+	} elseif ( class_exists( '\\SearchWP\\Query' ) ) {
+		// SearchWP v4.x
+		$search_page = isset( $_GET['swppg'] ) ? absint( $_GET['swppg'] ) : 1;
+		$searchwp_query = new \SearchWP\Query( $searchterm, [
+			'engine' => $name_engine, // The Engine name.
+			'fields' => 'all',          // Load proper native objects of each result.
+			'page'   => $search_page
+		] );
 
-		foreach ( $posts as $post ) :
-			$card     = [];
-			$posttype = get_post_type( $post->ID );
+		$posts = $searchwp_query->get_results();
 
-			if ( 'SearchWPTermResult' == get_class( $post ) ) {
-
-				// dit is een taxonomie
-				$card['title']             = $post->name;
-				$card['link']              = $post->link;
-				$card['ID']                = $post->term->taxonomy . '-' . $post->term->term_id;
-				$card['post_excerpt']      = wp_strip_all_tags( $post->description );
-				$card['post_type_display'] = $post->taxonomy;
-				$posttype                  = $post->term->taxonomy;
-
-				if ( 'tipgever' == $post->term->taxonomy ) {
-					if ( get_field( 'tipgever_functietitel', $post->term ) ) {
-						// tipgevers hebben een apart ACF veld
-						$card['post_excerpt'] = wp_strip_all_tags( get_field( 'tipgever_functietitel', $post->term ) );
-					}
-				}
-
-			} else {
-
-				$postid                    = $post->ID;
-				$card['title']             = od_wbvb_custom_post_title( get_the_title( $postid ) );
-				$card['link']              = get_the_permalink( $postid );
-				$card['ID']                = $postid;
-				$card['post_excerpt']      = get_the_excerpt( $postid );
-				$card['post_type_display'] = translate_posttype( $posttype );
-
-				/*
-				 * het kan voor sommige mensen in sommige omstandigheden heel informatief zijn om te weten wanneer
-				 * een post voor het laatst gewijzigd is
-				 */
-				// $card['last_changed'] = get_the_modified_time( get_option( 'date_format' ) . ' ' . get_option( 'time_format' ), $postid );
-
-			}
-
-			if ( 'page' !== $posttype && 'SearchWPTermResult' !== get_class( $post ) ) {
-				$card['post_type_display'] = translate_posttype( $posttype );
-				if ( GC_TIP_CPT !== $posttype ) {
-					$card['post_date']         = get_the_date() . ' - ' . $posttype;
-				}
-			}
-			if ( 'post' === $posttype ) {
-				$card['author'] = get_the_author();
-				$taxonomie      = get_the_terms( $postid, 'category' );
-
-				if ( $taxonomie && ! is_wp_error( $taxonomie ) ) {
-					$categories = array();
-					foreach ( $taxonomie as $term ) {
-						$categories[] = $term->name;
-					}
-				}
-
-				$card['post_type_display'] = implode( ', ', $categories );
-
-			}
-
-			$card['post_type'] = $posttype;
-
-			if ( $card['title'] ) {
-				$context['results'][] = $card;
-			}
-
-		endforeach;
-
-		wp_reset_postdata();
+		// TODO
+		// paginering aanpassen voor grote hoeveelheden zoekresultaten
+		// zie https://trello.com/c/AM65KJpw/449-searchwp-updaten
+		// en https://trello.com/c/5kxi8KXX/671-paginering-blog-zoekresultaten-od-bevinding-33
+		$search_pagination = paginate_links( array(
+			'format'  => '?swppg=%#%',
+			'current' => $search_page,
+			'total'   => $searchwp_query->max_num_pages,
+		) );
 
 	} else {
 		// we gebruiken de standaard WP-zoekmachine
@@ -145,45 +92,12 @@ if ( $searchterm ) {
 
 				$wp_query->the_post();
 
-				$card                 = [];
-				$postid               = $post->ID;
-				$card['title']        = od_wbvb_custom_post_title( get_the_title( $postid ) );
-				$card['link']         = get_the_permalink( $postid );
-				$card['ID']           = $postid;
-				$card['post_excerpt'] = get_the_excerpt( $postid );
-				$posttype             = get_post_type( $postid );
-				$card['post_type']    = $posttype;
+				$card = gc_search_prepare_card( $post );
 
-				/*
-				 * het kan voor sommige mensen in sommige omstandigheden heel informatief zijn om te weten wanneer
-				 * een post voor het laatst gewijzigd is
-				 */
-				// $card['last_changed'] = get_the_modified_time( get_option( 'date_format' ) . ' ' . get_option( 'time_format' ), $postid );
-
-				if ( 'page' !== $posttype ) {
-					$card['post_type_display'] = translate_posttype( $posttype );
-					$card['post_date']         = get_the_date();
+				if ( $card ) {
+					$context['results'][] = $card;
 				}
-				if ( 'post' === $posttype ) {
-					$card['author'] = get_the_author();
-					$taxonomie      = get_the_terms( $postid, 'category' );
-
-					if ( $taxonomie && ! is_wp_error( $taxonomie ) ) {
-						$categories = array();
-						foreach ( $taxonomie as $term ) {
-							$categories[] = $term->name;
-						}
-					}
-
-					$card['post_type_display'] = implode( ', ', $categories );
-
-				}
-
-				$context['results'][] = $card;
-
-
 			}
-
 		}
 
 		if ( ( $posts_per_page * $currentpagenumber ) <= ( $number_results ) ) {
@@ -220,9 +134,109 @@ if ( $searchterm ) {
 	}
 
 
+	if ( $posts ) {
+		$context['title'] = sprintf( _x( "Results for '%s'", 'Search results no results', 'gctheme' ), $searchterm );
+	} else {
+		$context['title'] = sprintf( _x( "No result for '%s'", 'Search results no results', 'gctheme' ), $searchterm );
+		$context['descr'] = sprintf( _x( "Sorry. Maybe check your search term and try again.", "Search results", 'gctheme' ) );
+	}
+	// TODO: tonen van aantal gevonden records
+	// ik zou graag het aantal resultaten tonen en het aantal pagina's maar dat werkt voor SearchWP blijkbaar anders
+	// dan je zou verwachten.
+	// oh well ¯\_(ツ)_/¯
+
+	foreach ( $posts as $post ) :
+		$card = gc_search_prepare_card( $post );
+
+		if ( $card ) {
+			$context['results'][] = $card;
+		}
+
+	endforeach;
+
+	wp_reset_postdata();
 
 
 }
 
 Timber::render( $templates, $context );
 
+
+/**
+ * Format data from a postobjet for use within a single twig card in the search results
+ *
+ * @param   object $post_object     The object (maybe a post, page, or a taxonomy term)
+ * @return  array                   Array with data for card, or null
+ */
+
+function gc_search_prepare_card( $post_object ) {
+	$return   = null;
+	$card     = [];
+	$posttype = get_post_type( $post_object->ID );
+
+	if ( 'SearchWPTermResult' == get_class( $post_object ) ) {
+
+		// dit is een taxonomie
+		$card['title']             = $post_object->name;
+		$card['link']              = $post_object->link;
+		$card['ID']                = $post_object->term->taxonomy . '-' . $post_object->term->term_id;
+		$card['post_excerpt']      = wp_strip_all_tags( $post_object->description );
+		$card['post_type_display'] = $post_object->taxonomy;
+		$posttype                  = $post_object->term->taxonomy;
+
+		if ( 'tipgever' == $post_object->term->taxonomy ) {
+			// Tipgevers is een taxonomie op Optimaal Digitaal. Deze taxonomie koppelt een tip aan
+			// een tipgever, i.e. een persoon met naam, foto en contactgegevens.
+			if ( get_field( 'tipgever_functietitel', $post->term ) ) {
+				// tipgevers hebben een apart ACF veld
+				$card['post_excerpt'] = wp_strip_all_tags( get_field( 'tipgever_functietitel', $post->term ) );
+			}
+		}
+
+	} else {
+
+		$postid                    = $post_object->ID;
+		$card['title']             = od_wbvb_custom_post_title( get_the_title( $postid ) );
+		$card['link']              = get_the_permalink( $postid );
+		$card['ID']                = $postid;
+		$card['post_excerpt']      = get_the_excerpt( $postid );
+		$card['post_type_display'] = translate_posttype( $posttype );
+
+		/*
+		 * het kan voor sommige mensen in sommige omstandigheden heel informatief zijn om te weten wanneer
+		 * een post voor het laatst gewijzigd is
+		 */
+		// $card['last_changed'] = get_the_modified_time( get_option( 'date_format' ) . ' ' . get_option( 'time_format' ), $postid );
+
+		if ( 'page' !== $posttype ) {
+			$card['post_type_display'] = translate_posttype( $posttype );
+			if ( GC_TIP_CPT !== $posttype ) {
+				$card['post_date'] = get_the_date() . ' - ' . $posttype;
+			}
+		}
+	}
+
+	if ( 'post' === $posttype ) {
+		$card['author'] = get_the_author();
+		$taxonomie      = get_the_terms( $postid, 'category' );
+
+		if ( $taxonomie && ! is_wp_error( $taxonomie ) ) {
+			$categories = array();
+			foreach ( $taxonomie as $term ) {
+				$categories[] = $term->name;
+			}
+		}
+
+		$card['post_type_display'] = implode( ', ', $categories );
+
+	}
+
+	$card['post_type'] = $posttype;
+
+	if ( $card['title'] ) {
+		$return = $card;
+	}
+
+	return $return;
+	
+}
