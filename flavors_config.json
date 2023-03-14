@@ -9,6 +9,7 @@
         "file": "/assets/js/main-min.js",
         "version": "5.2.3",
         "dependencies": "jquery, wp-i18n",
+
         "infooter": ""
       }
     },
@@ -95,7 +96,7 @@
         "handle": "main-min",
         "file": "/assets/js/main-min.js",
         "version": "",
-        "dependencies": "",
+        "dependencies": "wp-i18n",
         "infooter": ""
       }
     },
