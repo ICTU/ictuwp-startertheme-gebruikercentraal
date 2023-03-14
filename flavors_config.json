@@ -7,8 +7,9 @@
       "js1": {
         "handle": "main-min",
         "file": "/assets/js/main-min.js",
-        "version": "5.2.2",
-        "dependencies": "wp-i18n",
+        "version": "5.2.3",
+        "dependencies": "jquery, wp-i18n",
+
         "infooter": ""
       }
     },
@@ -16,13 +17,13 @@
       "Fonts": {
         "handle": "skiplinks",
         "file": "/assets/fonts/fonts.css",
-        "version": "5.2.2",
+        "version": "5.2.3",
         "dependencies": ""
       },
       "Styling": {
         "handle": "gc-theme",
         "file": "/assets/css/gc-theme.css",
-        "version": "5.2.2",
+        "version": "5.2.3",
         "dependencies": ""
       }
     },
@@ -43,13 +44,13 @@
       "Fonts": {
         "handle": "skiplinks",
         "file": "/assets/fonts/fonts.css",
-        "version": "5.2.2",
+        "version": "5.2.3",
         "dependencies": ""
       },
       "css1": {
         "handle": "od-theme",
         "file": "/flavors/optimaaldigitaal/assets/css/od-theme.css",
-        "version": "5.2.2",
+        "version": "5.2.3",
         "dependencies": ""
       }
     },
@@ -103,13 +104,13 @@
       "Fonts": {
         "handle": "skiplinks",
         "file": "/assets/fonts/fonts.css",
-        "version": "5.2.2",
+        "version": "5.2.3",
         "dependencies": ""
       },
       "Styling": {
         "handle": "gc-theme",
         "file": "/assets/css/gc-theme.css",
-        "version": "5.2.2",
+        "version": "5.2.3",
         "dependencies": ""
       },
       "KB": {

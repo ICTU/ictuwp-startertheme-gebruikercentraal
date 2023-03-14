@@ -594,7 +594,7 @@ class GebruikerCentraalTheme extends Timber\Site {
 				$versie       = filemtime( $file );
 				$dependencies = $value['dependencies'];
 
-				if ( !empty( $dependencies ) ) {
+				if ( ! empty( $dependencies ) ) {
 					// Convert comma-separated string
 					// to proper Array with registered script handles
 					// And deal with spaces, quotes, etc.
@@ -603,17 +603,18 @@ class GebruikerCentraalTheme extends Timber\Site {
 					//  - "dependencies": "'wp-i18n'",
 					//  - "dependencies": "foo, bar,  'baz uh', \"wp-i18n\", 123",
 					$dependencies = array_map(
-						function( $handle ) {
+						function ( $handle ) {
 							$handle = sanitize_title( $handle );
 							$handle = esc_attr( $handle );
 							$handle = trim( $handle );
+
 							return $handle;
 						},
-						explode(',', $dependencies)
+						explode( ',', $dependencies )
 					);
 				}
-
 				wp_enqueue_script( $value['handle'], get_stylesheet_directory_uri() . $value['file'], $dependencies, $versie, $value['infooter'] );
+
 			}
 		}
 
