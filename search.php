@@ -57,7 +57,7 @@ if ( $searchterm ) {
 
 	} elseif ( class_exists( '\\SearchWP\\Query' ) ) {
 		// SearchWP v4.x
-		$search_page = isset( $_GET['swppg'] ) ? absint( $_GET['swppg'] ) : 1;
+		$search_page    = isset( $_GET['swppg'] ) ? absint( $_GET['swppg'] ) : 1;
 		$searchwp_query = new \SearchWP\Query( $searchterm, [
 			'engine' => $name_engine, // The Engine name.
 			'fields' => 'all',          // Load proper native objects of each result.
@@ -165,7 +165,8 @@ Timber::render( $templates, $context );
 /**
  * Format data from a postobjet for use within a single twig card in the search results
  *
- * @param   object $post_object     The object (maybe a post, page, or a taxonomy term)
+ * @param object $post_object The object (maybe a post, page, or a taxonomy term)
+ *
  * @return  array                   Array with data for card, or null
  */
 
@@ -217,8 +218,11 @@ function gc_search_prepare_card( $post_object ) {
 	}
 
 	if ( 'post' === $posttype ) {
-		$card['author'] = get_the_author();
-		$taxonomie      = get_the_terms( $postid, 'category' );
+		$author_id = get_post_field( 'post_author', $postid );
+		if ( $author_id ) {
+			$card['author'] = get_the_author_meta( 'display_name', $author_id );
+		}
+		$taxonomie = get_the_terms( $postid, 'category' );
 
 		if ( $taxonomie && ! is_wp_error( $taxonomie ) ) {
 			$categories = array();
@@ -238,5 +242,5 @@ function gc_search_prepare_card( $post_object ) {
 	}
 
 	return $return;
-	
+
 }
