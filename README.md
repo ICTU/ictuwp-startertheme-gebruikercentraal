@@ -50,9 +50,10 @@ Falende afbeeldingen worden 'exclude' uit Git.
 * Mark van der Zande: mark@cca.app
 
 ## Current version:
-5.2.2 - Paginering aangepast, nummering voor geordende lijsten verbeterd, toegankelijkheidsbugs verholpen.
+5.2.3 - jQuery weer toegevoegd als JS dependency. Kleine bugfix voor zoekrsesultaten.
 
 ## Version history
+* 5.2.3 - jQuery weer toegevoegd als JS dependency. Kleine bugfix voor zoekrsesultaten.
 * 5.2.2 - Paginering aangepast, nummering voor geordende lijsten verbeterd, toegankelijkheidsbugs verholpen.
 * 5.2.1 - Gutenbergblock voor citaten; duivelsdrek-oranje toegevoegd als kleur omwille van contrast.
 * 5.1.3 - Correct dateformat voor publicatiedatum in datebadge; uitlijning checkbox.
