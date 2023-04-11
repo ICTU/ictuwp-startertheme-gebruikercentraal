@@ -2126,7 +2126,7 @@ msgstr ""
 #, fuzzy
 #| msgctxt "Block-categorie"
 #| msgid "Gebruiker Centraal"
-msgid "Gebruiker Centraal (ictuwp-theme-gc2020)"
+msgid "Gebruiker Centraal (ictuwp-theme-gc2020-hotfixes)"
 msgstr "GC blocks"
 
 #. Description of the plugin/theme

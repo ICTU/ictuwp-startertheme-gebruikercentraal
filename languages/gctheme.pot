@@ -1481,7 +1481,7 @@ msgid "Links"
 msgstr ""
 
 #. Theme Name of the plugin/theme
-msgid "Gebruiker Centraal (ictuwp-theme-gc2020)"
+msgid "Gebruiker Centraal (ictuwp-theme-gc2020-hotfixes)"
 msgstr ""
 
 #. Description of the plugin/theme
